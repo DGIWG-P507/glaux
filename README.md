@@ -6,6 +6,14 @@ Developed under the auspices of the Defense Geospatial Information Working Group
 
 ---
 
+## 🌐 Project Website
+
+For an overview of the Glaux software suite, vision, and deployment guidance, visit the project homepage:
+
+**[https://dgiwg-p507.github.io/glaux/](https://dgiwg-p507.github.io/glaux/)**
+
+---
+
 ## 🏛️ The Glaux Ecosystem
 
 DGIWG Glaux is maintained as a modular ecosystem of specialized components. This repository serves as the **meta-repository** and single source of truth connecting these independent sub-projects:
