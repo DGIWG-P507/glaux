@@ -10,7 +10,7 @@ Developed under the auspices of the Defense Geospatial Information Working Group
 
 For an overview of the Glaux software suite, vision, and deployment guidance, visit the project homepage:
 
-**[https://dgiwg-p507.github.io/glaux/](https://dgiwg-p507.github.io/glaux/)**
+**<a href="https://dgiwg-p507.github.io/glaux/" target="_blank" rel="noopener noreferrer">https://dgiwg-p507.github.io/glaux/</a>**
 
 ---
 
