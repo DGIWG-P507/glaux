@@ -10,7 +10,7 @@
         :root { --pico-primary: #0056b3; } /* Professional Defense Blue */
         .hero { padding: 3rem 0; text-align: center; background: var(--pico-card-background-color); border-bottom: 1px solid var(--pico-border-color); margin-bottom: 2rem; }
         .badge { display: inline-block; padding: 0.25rem 0.75rem; background: var(--pico-primary); color: white; border-radius: 4px; font-size: 0.85rem; font-weight: bold; margin-bottom: 1rem; }
-        .seal { display: block; margin: 0 auto 1.5rem; max-width: 700px; width: 100%; }
+        .seal { display: block; margin: 0 auto 1.5rem; max-width: 400px; width: 100%; }
     </style>
 </head>
 <body>
@@ -28,3 +28,71 @@
         <!-- Introduction -->
         <section id="overview">
             <img src="assets/glaux-seal.png" alt="DGIWG Glaux Seal" class="seal" />
+            <h2>Vision &amp; Mandate</h2>
+            <p>Conceived during the DGIWG Spring 2026 sessions in Athens, Greece, <strong>Glaux</strong> delivers an open-source suite of reference implementations and ecosystem software. Its primary mission is to provide the resources, evaluation tooling, and implementation guidance necessary to accelerate plug-and-play sensor interoperability across the Alliance.</p>
+        </section>
+
+        <hr />
+
+        <!-- Significance of Glaux -->
+        <section id="significance">
+            <h2>🏛️ The Significance of Glaux</h2>
+            <p>In classical Greek, Glaux (γλαύξ) refers to the Little Owl that traditionally accompanies Athena, the goddess of strategy, craft, and intelligence. Unlike Ares, who personified chaotic conflict, Athena represented organized defense and <em>Techne</em>—the practical mastery of systematic execution.</p>
+            <p>The selection of Glaux as the moniker for this DGIWG reference implementation carries a profound dual significance for modern coalition operations:</p>
+            <ul>
+                <li><strong>Vision Through the Darkness:</strong> The owl is renowned for its luminous, night-seeing eyes, possessing acute perception where others see only noise and obscurity. For a Connected Systems server, this is a flawless operational parallel: the software functions as the central intelligence node, absorbing raw data streams across disparate networks and translating them into a clear, actionable operational picture.</li>
+                <li><strong>The International Standard of Exchange:</strong> In antiquity, the silver tetradrachm coins minted in Athens were universally stamped with the Glaux and colloquially known across the Mediterranean simply as "owls." These coins became the trusted, authoritative standard of currency for trade, diplomacy, and alliance across the civilized world.</li>
+            </ul>
+            <p>Conceived on the historic slopes of Athens during the DGIWG Spring 2026 sessions—overlooking the Acropolis and the Areopagus—DGIWG Glaux honors this heritage. It is engineered to be the definitive, trusted baseline for international interoperability, bringing absolute vision, clarity, and standardized harmony to modern Joint ISR sensor networks.</p>
+        </section>
+
+        <hr />
+
+        <!-- Ecosystem Components -->
+        <section id="components">
+            <h2>The Glaux Software Suite</h2>
+            <p>Glaux is delivered as a modular suite of tightly decoupled components designed for rapid coalition deployment:</p>
+            
+            <div class="grid">
+                <article>
+                    <h3>&#x1F6E1;&#xFE0F; Glaux Server</h3>
+                    <p>The foundational, core OGC API - Connected Systems reference implementation handling secure compliant routing.</p>
+                    <a href="https://github.com/p507-swe/glaux-server" role="button" class="outline">View Repository</a>
+                </article>
+                <article>
+                    <h3>&#x1F4CA; Glaux Web App</h3>
+                    <p>The operational front-end dashboard providing real-time visualization of connected platforms and sensor states.</p>
+                    <a href="https://github.com/p507-swe/glaux-webapp" role="button" class="outline">View Repository</a>
+                </article>
+            </div>
+
+            <div class="grid">
+                <article>
+                    <h3>&#x1F4E1; Glaux Simulator</h3>
+                    <p>A robust telemetry generator simulating STANAG 4789 data streams for compliance evaluation and stress testing.</p>
+                    <a href="https://github.com/p507-swe/glaux-simulator" role="button" class="outline">View Repository</a>
+                </article>
+                <article>
+                    <h3>&#x1F504; Glaux Publisher</h3>
+                    <p>The ingestion pipeline serving as a bridge to translate legacy sensor networks into modern interoperable feeds.</p>
+                    <a href="https://github.com/p507-swe/glaux-publisher" role="button" class="outline">View Repository</a>
+                </article>
+            </div>
+        </section>
+
+        <hr />
+
+        <!-- Getting Started -->
+        <section id="deployment">
+            <h2>Technical Evaluation</h2>
+            <p>To pull the meta-repository and all nested software components down to a local evaluation environment, execute the recursive clone command:</p>
+            <pre><code>git clone --recursive https://github.com/p507-swe/glaux.git</code></pre>
+        </section>
+    </main>
+
+    <footer class="container" style="text-align: center; margin-top: 3rem; font-size: 0.9rem;">
+        <p>Managed by Technical Panel 5, Project 07 (Sensor Web Enablement) &bull; Built openly on GitHub</p>
+    </footer>
+
+</body>
+</html>
