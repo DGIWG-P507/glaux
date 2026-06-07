@@ -42,37 +42,37 @@
 
   <!-- LAYER BOUNDARY LABELS -->
   <g font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#64748b" letter-spacing="1.5">
-    <text x="120" y="125" text-anchor="middle">INGESTION &amp; SIMULATION</text>
+    <text x="145" y="125" text-anchor="middle">INGESTION &amp; SIMULATION</text>
     <text x="480" y="125" text-anchor="middle">CORE DISSEMINATION SERVICES</text>
-    <text x="840" y="125" text-anchor="middle">TACTICAL CONSUMERS &amp; EDGE CLIENTS</text>
+    <text x="815" y="125" text-anchor="middle">TACTICAL CONSUMERS &amp; EDGE CLIENTS</text>
   </g>
 
   <!-- LINKAGE & CONNECTIONS LAYER (Z-INDEX BOTTOM) -->
   <g stroke-linecap="round" stroke-linejoin="round">
     <!-- Simulator -> Core Server Line -->
-    <path d="M 220,205 L 360,205" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6,4" />
+    <path d="M 230,205 L 360,205" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6,4" />
     <polygon points="360,205 352,200 352,210" fill="#38bdf8" />
 
     <!-- Legacy Feeds -> Publisher Line -->
-    <path d="M 110,360 L 140,360" stroke="#64748b" stroke-width="2" />
-    <polygon points="140,360 134,356 134,364" fill="#64748b" />
+    <path d="M 115,360 L 150,360" stroke="#64748b" stroke-width="2" />
+    <polygon points="150,360 144,356 144,364" fill="#64748b" />
 
     <!-- Publisher -> Core Server Line -->
-    <path d="M 220,385 L 290,385 L 290,265 L 360,265" stroke="#34d399" stroke-width="2.5" />
+    <path d="M 230,385 L 290,385 L 290,265 L 360,265" stroke="#34d399" stroke-width="2.5" />
     <polygon points="360,265 352,260 352,270" fill="#34d399" />
 
     <!-- Core Server -> Web App Line -->
-    <path d="M 600,205 L 740,205" stroke="#38bdf8" stroke-width="2.5" />
-    <polygon points="740,205 732,200 732,210" fill="#38bdf8" />
+    <path d="M 600,205 L 730,205" stroke="#38bdf8" stroke-width="2.5" />
+    <polygon points="730,205 722,200 722,210" fill="#38bdf8" />
 
     <!-- Core Server -> Mobile App Line -->
-    <path d="M 600,265 L 670,265 L 670,385 L 740,385" stroke="#38bdf8" stroke-width="2.5" />
-    <polygon points="740,385 732,380 732,390" fill="#38bdf8" />
+    <path d="M 600,265 L 670,265 L 670,385 L 730,385" stroke="#38bdf8" stroke-width="2.5" />
+    <polygon points="730,385 722,380 722,390" fill="#38bdf8" />
   </g>
 
   <!-- INGESTION & SIMULATION NODE LAYER -->
   <!-- External Legacy Data Sources Base -->
-  <g transform="translate(40, 310)" filter="url(#shadow)">
+  <g transform="translate(45, 310)" filter="url(#shadow)">
     <rect width="70" height="100" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1" />
     <text x="35" y="40" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#94a3b8" text-anchor="middle">LEGACY</text>
     <text x="35" y="55" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#94a3b8" text-anchor="middle">FEEDS</text>
@@ -80,7 +80,7 @@
   </g>
 
   <!-- glaux-publisher -->
-  <g transform="translate(140, 325)" filter="url(#shadow)">
+  <g transform="translate(150, 325)" filter="url(#shadow)">
     <rect width="80" height="120" rx="6" fill="url(#comp-grad)" stroke="#10b981" stroke-width="1.5" />
     <rect width="80" height="28" rx="4" fill="#042f2e" opacity="0.6" />
     <text x="40" y="18" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="800" fill="#34d399" text-anchor="middle" letter-spacing="0.5">PUBLISHER</text>
@@ -91,7 +91,7 @@
   </g>
 
   <!-- glaux-simulator -->
-  <g transform="translate(80, 145)" filter="url(#shadow)">
+  <g transform="translate(90, 145)" filter="url(#shadow)">
     <rect width="140" height="120" rx="6" fill="url(#comp-grad)" stroke="#38bdf8" stroke-width="1.5" />
     <rect width="140" height="28" rx="4" fill="#0c4a6e" opacity="0.6" />
     <text x="70" y="18" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="0.5">SIMULATION ENGINE</text>
@@ -141,7 +141,7 @@
 
   <!-- OPERATIONAL APP LAYER -->
   <!-- glaux-webapp -->
-  <g transform="translate(740, 145)" filter="url(#shadow)">
+  <g transform="translate(730, 145)" filter="url(#shadow)">
     <rect width="140" height="120" rx="6" fill="url(#comp-grad)" stroke="#38bdf8" stroke-width="1.5" />
     <rect width="140" height="28" rx="4" fill="#0c4a6e" opacity="0.6" />
     <text x="70" y="18" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="0.5">COMMAND DASHBOARD</text>
@@ -151,7 +151,7 @@
   </g>
 
   <!-- glaux-mobile -->
-  <g transform="translate(740, 325)" filter="url(#shadow)">
+  <g transform="translate(730, 325)" filter="url(#shadow)">
     <rect width="140" height="120" rx="6" fill="url(#comp-grad)" stroke="#38bdf8" stroke-width="1.5" />
     <rect width="140" height="28" rx="4" fill="#0c4a6e" opacity="0.6" />
     <text x="70" y="18" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="0.5">TACTICAL EDGE FIELD APP</text>
@@ -162,11 +162,11 @@
 
 
   <!-- OVERARCHING GLOBAL MANAGEMENT MATRIX -->
-  <!-- glaux Meta-Repository Frame Boundary -->
-  <g transform="translate(20, 95)">
-    <rect width="920" height="415" rx="8" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="8,4" />
-    <rect width="165" height="24" rx="4" x="15" y="-12" fill="#334155" />
-    <text x="97" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="0.75">SYSTEM META-REPO FRAMEWORK: glaux</text>
+  <!-- Shifted container to X=30 to eliminate edge cutoff, expanded label badge to width=290 to comfortably fit text -->
+  <g transform="translate(30, 95)">
+    <rect width="900" height="415" rx="8" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="8,4" />
+    <rect width="290" height="24" rx="4" x="25" y="-12" fill="#334155" />
+    <text x="170" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="0.75">SYSTEM META-REPO FRAMEWORK: glaux</text>
   </g>
 
   <!-- FOOTER ORCHESTRATION LEGEND -->
