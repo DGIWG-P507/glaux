@@ -263,6 +263,6 @@ Use these as source references and structural examples.
 - Planning Folder (OS4CSAPI, phase-9):
   - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/planning
 - Initial Planning Guidance (this repository):
-  - ../initial-planning-guidance.md
+  - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/initial-planning-guidance.md
 - Contribution and Goal Definition Template (this repository):
-  - ./contribution-goal-and-definition-template.md
+  - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/contribution-goal-and-definition-template.md
