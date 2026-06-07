@@ -53,119 +53,337 @@ Research lifecycle:
 
 ## Planning Index of Topics
 
+Scope rule for topic admission:
+
+- A topic belongs in Glaux Server IDR only if the answer changes server obligations, API behavior, resource/data model, storage/query design, security model, tasking behavior, dynamic-data behavior, conformance strategy, deployment shape, or ecosystem integration contracts.
+
 ### Category A: Standards and Obligation Baseline
 
-#### IDR-SRV-001: Part 1 Requirement Baseline
+#### IDR-SRV-A01: STANAG 4789 / AEP-4789 Server Obligation Baseline
 
-- Focus: Exhaustive extraction of Part 1 normative requirements affecting server behavior.
-- Output target: Part 1 requirement inventory with clause-level traceability anchors.
+- Focus: Extract direct server obligations from the NATO framework.
+- Output target: Server-obligation baseline with traceability anchors.
 
-#### IDR-SRV-002: Part 2 Requirement Baseline
+#### IDR-SRV-A02: AEP-4789 Volume I Functional Mapping to Server Responsibilities
 
-- Focus: Exhaustive extraction of Part 2 normative requirements affecting server behavior.
-- Output target: Part 2 requirement inventory with clause-level traceability anchors.
+- Focus: Map functional areas (discovery, registration/description, access/exchange, streaming/dynamic data, tasking/control, status/availability) to server responsibilities.
+- Output target: Function-to-responsibility mapping baseline.
 
-#### IDR-SRV-003: Conformance-Class and Requirement Mapping
+#### IDR-SRV-A03: AEP-4789 Volume II Standards Package Implementation Baseline
+
+- Focus: Treat CSAPI Part 1, CSAPI Part 2, SensorML, and SWE Common as a coherent package for server implementation.
+- Output target: Volume II implementation baseline.
+
+#### IDR-SRV-A04: Terminology and Concept Crosswalk
+
+- Focus: Crosswalk STANAG/AEP terminology to CSAPI/SensorML/SWE/Common and Glaux server terms.
+- Output target: Terminology and concept crosswalk matrix.
+
+#### IDR-SRV-A05: Related NATO Standards Boundary Review
+
+- Focus: Identify adjacent standards only to define interoperability boundaries (not implementation absorption).
+- Output target: Boundary and interoperability-not-implementation notes.
+
+### Category B: CSAPI Server Behavior and Conformance
+
+#### IDR-SRV-B01: CSAPI Part 1 Requirement Baseline
+
+- Focus: Extract Part 1 normative server requirements.
+- Output target: Part 1 requirement inventory.
+
+#### IDR-SRV-B02: CSAPI Part 2 Requirement Baseline
+
+- Focus: Extract Part 2 normative server requirements.
+- Output target: Part 2 requirement inventory.
+
+#### IDR-SRV-B03: Conformance Class and Requirement Mapping
 
 - Focus: Map requirements to conformance classes and implementation obligations.
-- Output target: Initial conformance matrix baseline.
+- Output target: Conformance matrix baseline.
 
-### Category B: Canonical Domain and Interface Model
+#### IDR-SRV-B04: Landing Page, API Definition, and Conformance Declaration Behavior
 
-#### IDR-SRV-004: Canonical Resource Model
+- Focus: Define required behavior for landing page, API definition exposure, and conformance declaration.
+- Output target: API entrypoint and declaration behavior baseline.
 
-- Focus: Canonical entities, relationships, identifiers, and lifecycle model across Part 1/2 resources.
-- Output target: Resource model decision baseline.
+#### IDR-SRV-B05: Collections, Resources, Links, and Navigation Behavior
 
-#### IDR-SRV-005: API Surface and URI Design Baseline
+- Focus: Define collections/resources/linking/navigation behavior.
+- Output target: Navigation and linking behavior baseline.
 
-- Focus: Endpoint structure, path patterns, operation coverage, and subresource navigation.
-- Output target: API surface map with operation completeness checklist.
+#### IDR-SRV-B06: Query, Filtering, Sorting, Pagination, and Selection Semantics
 
-#### IDR-SRV-006: Query and Filter Semantics
-
-- Focus: Query parameter behavior (spatial, temporal, hierarchical, relationship, property filters), pagination, and sorting semantics.
+- Focus: Define server semantics for query/filter/sort/pagination/selection.
 - Output target: Query behavior specification baseline.
 
-#### IDR-SRV-007: Temporal and Validity Model
+#### IDR-SRV-B07: Content Negotiation, Media Types, and Encoding Selection
 
-- Focus: Phenomenon/result/valid/execution/report time semantics, interval handling, open bounds, and representation consistency.
-- Output target: Temporal handling decision baseline.
+- Focus: Define content negotiation and media-type/encoding behavior.
+- Output target: Representation and negotiation baseline.
 
-#### IDR-SRV-008: Content Negotiation and Encoding Strategy
+#### IDR-SRV-B08: Error Model, HTTP Status Codes, and Failure Semantics
 
-- Focus: Media types, representation variants, schema responses, and content negotiation rules.
-- Output target: Format and negotiation behavior baseline.
+- Focus: Define deterministic error taxonomy, status mapping, and failure contracts.
+- Output target: Error and failure behavior baseline.
 
-#### IDR-SRV-009: Error Model and Failure Semantics
+#### IDR-SRV-B09: OpenAPI Description and API Documentation Strategy
 
-- Focus: Error taxonomy, status-code policy, validation failures, and deterministic failure behavior.
-- Output target: Error-handling baseline and response contract.
+- Focus: Define OpenAPI and API documentation strategy for server contracts.
+- Output target: Documentation and machine-contract publication baseline.
 
-#### IDR-SRV-011: Transaction and Consistency Behavior
+### Category C: Server Resource and Domain Model
 
-- Focus: CRUD semantics, idempotency, conflict handling, eventual vs strong consistency expectations.
-- Output target: State mutation and consistency baseline.
+#### IDR-SRV-C01: Canonical Glaux Server Resource Model
 
-### Category C: Cross-Cutting Operational Constraints
+- Focus: Define canonical resources, entities, and lifecycle boundaries.
+- Output target: Canonical resource model baseline.
 
-#### IDR-SRV-010: Security and Access Control Model
+#### IDR-SRV-C02: Identifier, URI, and Resource Lifecycle Strategy
 
-- Focus: Authentication/authorization assumptions, role boundaries, control-path protections, and auditability requirements.
-- Output target: Security design constraints baseline.
+- Focus: Define persistent IDs, stable URIs, aliasing, updates, deletion, and tombstone handling.
+- Output target: Identifier/URI/lifecycle strategy baseline.
 
-#### IDR-SRV-014: Performance and Scalability Research Baseline
+#### IDR-SRV-C03: Relationship and Linkage Model
 
-- Focus: Capacity assumptions, bottleneck risks, and performance-sensitive design constraints.
-- Output target: Performance constraints and measurement baseline.
+- Focus: Define hierarchy and linkage semantics across resources.
+- Output target: Relationship and linkage baseline.
 
-### Category D: Ecosystem Reality and Verification Strategy
+#### IDR-SRV-C04: Temporal, Validity, and Freshness Model
 
-#### IDR-SRV-013: Cross-Implementation Interoperability Findings Baseline
+- Focus: Define phenomenon/result/valid/report time and stale/last-known semantics.
+- Output target: Temporal and freshness baseline.
 
-- Focus: Behavioral differences and interoperability lessons from OSH, CS-GO, pygeoapi CSAPI, and SECD observations.
-- Output target: Interoperability risk and compatibility guidance baseline.
+#### IDR-SRV-C05: Provenance, Lineage, Quality, and Trust Metadata Model
 
-#### IDR-SRV-012: Verification and Conformance Harness Strategy
+- Focus: Define provenance/lineage/quality/trust metadata expectations.
+- Output target: Metadata and trust model baseline.
 
-- Focus: How requirement-level conformance is tested and evidenced.
-- Output target: Conformance harness and evidence strategy baseline.
+#### IDR-SRV-C06: Status, Availability, and System Event Model
 
-### Category E: Final Synthesis
+- Focus: Define status/availability/event behavior and representation.
+- Output target: Status and system-event model baseline.
 
-#### IDR-SRV-015: Architecture Decision Synthesis Baseline
+### Category D: SensorML, SWE Common, and Semantic Representation
 
-- Focus: Consolidate all topic findings into a coherent architecture decision package.
-- Output target: Initial architecture decision set for implementation planning artifacts.
+#### IDR-SRV-D01: SensorML Representation Strategy
+
+- Focus: Define what SensorML is stored, validated, linked, generated, and exposed.
+- Output target: SensorML representation baseline.
+
+#### IDR-SRV-D02: SWE Common Data Component Strategy
+
+- Focus: Define SWE Common handling for observations, status, command/task inputs, units, records, and arrays.
+- Output target: SWE Common component baseline.
+
+#### IDR-SRV-D03: Schema and Encoding Validation Strategy
+
+- Focus: Define validation strategy across JSON Schema, OpenAPI, CSAPI, SensorML, and SWE.
+- Output target: Validation architecture baseline.
+
+#### IDR-SRV-D04: Units, Observed Properties, and Semantic Binding Strategy
+
+- Focus: Define units/properties/semantic binding behavior.
+- Output target: Semantic binding baseline.
+
+### Category E: Server Persistence and Query Architecture
+
+#### IDR-SRV-E01: Database and Persistence Architecture Options
+
+- Focus: Evaluate persistence architecture options for server obligations.
+- Output target: Persistence architecture decision baseline.
+
+#### IDR-SRV-E02: Geospatial Storage and Query Strategy
+
+- Focus: Define geospatial storage/index/query strategy.
+- Output target: Geospatial strategy baseline.
+
+#### IDR-SRV-E03: Time-Series Observation Storage Strategy
+
+- Focus: Define time-series observation storage/query behavior.
+- Output target: Time-series strategy baseline.
+
+#### IDR-SRV-E04: Metadata and Document Storage Strategy
+
+- Focus: Define metadata/document storage behavior and boundaries.
+- Output target: Metadata/document strategy baseline.
+
+#### IDR-SRV-E05: Transaction, Consistency, Idempotency, and Concurrency Strategy
+
+- Focus: Define transactional and concurrency semantics.
+- Output target: Consistency and mutation behavior baseline.
+
+#### IDR-SRV-E06: Data Lifecycle, Retention, Archival, and Deletion Strategy
+
+- Focus: Define data lifecycle controls and retention behavior.
+- Output target: Lifecycle and retention baseline.
+
+### Category F: Dynamic Data, Ingestion, and Tasking
+
+#### IDR-SRV-F01: Server Write and Ingestion Model
+
+- Focus: Define what server accepts directly vs rejects or delegates.
+- Output target: Ingestion boundary baseline.
+
+#### IDR-SRV-F02: Publisher-to-Server Contract Boundary
+
+- Focus: Define server-side contract/auth/validation/error behavior for publisher integration.
+- Output target: Publisher contract boundary baseline.
+
+#### IDR-SRV-F03: Simulator-to-Server Contract Boundary
+
+- Focus: Define server-side contract behavior for simulator replay/reset/synthetic interactions.
+- Output target: Simulator contract boundary baseline.
+
+#### IDR-SRV-F04: Datastream, Observation, and Status Update Semantics
+
+- Focus: Define server semantics for dynamic update behavior.
+- Output target: Dynamic update semantics baseline.
+
+#### IDR-SRV-F05: Streaming and Event Publication Strategy
+
+- Focus: Define server-side streaming/event behavior (protocols, subscriptions, replay, ordering, backpressure).
+- Output target: Streaming/event strategy baseline.
+
+#### IDR-SRV-F06: Control Stream and Command Lifecycle Model
+
+- Focus: Define control/command lifecycle behavior.
+- Output target: Tasking and control lifecycle baseline.
+
+#### IDR-SRV-F07: Feasibility and Asynchronous Tasking Strategy
+
+- Focus: Define feasibility exchange and asynchronous tasking behavior.
+- Output target: Feasibility and async-tasking baseline.
+
+#### IDR-SRV-F08: Command Authorization, Safety, and Audit Strategy
+
+- Focus: Define command authorization/safety/audit semantics.
+- Output target: Command-governance baseline.
+
+### Category G: Security, Federation, and DDIL-Informed Server Behavior
+
+#### IDR-SRV-G01: Authentication and Authorization Architecture
+
+- Focus: Define authn/authz architecture for server scope.
+- Output target: Authentication/authorization baseline.
+
+#### IDR-SRV-G02: Policy, Releasability, and Cross-Boundary Access Constraints
+
+- Focus: Define policy/releasability/cross-boundary constraints.
+- Output target: Access-governance baseline.
+
+#### IDR-SRV-G03: Audit Logging and Accountability Strategy
+
+- Focus: Define audit and accountability behavior.
+- Output target: Audit/accountability baseline.
+
+#### IDR-SRV-G04: DDIL-Informed Server Semantics
+
+- Focus: Define freshness/validity/last-known/delayed-update semantics for constrained operations.
+- Output target: DDIL-informed behavior baseline.
+
+#### IDR-SRV-G05: Server Synchronization and Conflict Handling Boundary
+
+- Focus: Define server sync/conflict semantics without absorbing full network architecture scope.
+- Output target: Synchronization boundary baseline.
+
+### Category H: Implementation Platform and Reference Deployment
+
+#### IDR-SRV-H01: Implementation Language and Framework Options
+
+- Focus: Evaluate language/framework options for the reference server.
+- Output target: Platform decision baseline.
+
+#### IDR-SRV-H02: Service Architecture and Modularization Strategy
+
+- Focus: Define service decomposition/modularization.
+- Output target: Service architecture baseline.
+
+#### IDR-SRV-H03: Reference Deployment Strategy
+
+- Focus: Define deployment strategy sufficient for run/test/demo.
+- Output target: Reference deployment baseline.
+
+#### IDR-SRV-H04: Configuration, Secrets, and Environment Strategy
+
+- Focus: Define configuration and secret-management approach.
+- Output target: Configuration/environment baseline.
+
+#### IDR-SRV-H05: Observability, Logs, Metrics, and Health Check Strategy
+
+- Focus: Define observability and health strategy.
+- Output target: Observability baseline.
+
+#### IDR-SRV-H06: Migration, Upgrade, Backup, and Restore Strategy
+
+- Focus: Define operational data continuity controls.
+- Output target: Continuity and recoverability baseline.
+
+### Category I: Verification and Implementation Readiness
+
+#### IDR-SRV-I01: Conformance Harness Strategy
+
+- Focus: Define conformance-harness architecture and evidence model.
+- Output target: Conformance harness baseline.
+
+#### IDR-SRV-I02: Requirement-to-Test Traceability Strategy
+
+- Focus: Define requirement-to-test traceability controls.
+- Output target: Traceability strategy baseline.
+
+#### IDR-SRV-I03: Unit, Integration, Contract, and End-to-End Test Architecture
+
+- Focus: Define test architecture layers and boundaries.
+- Output target: Test architecture baseline.
+
+#### IDR-SRV-I04: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy
+
+- Focus: Define data/fixture/golden/scenario strategy.
+- Output target: Test data and scenario baseline.
+
+#### IDR-SRV-I05: Performance, Load, Stress, and Streaming Test Strategy
+
+- Focus: Define performance and streaming verification strategy.
+- Output target: Performance verification baseline.
+
+#### IDR-SRV-I06: Security, Authorization, and Command-Control Test Strategy
+
+- Focus: Define security/authorization/command-control verification approach.
+- Output target: Security and control verification baseline.
+
+#### IDR-SRV-I07: Interoperability Test Matrix for External CSAPI Clients
+
+- Focus: Define external-client interoperability test matrix.
+- Output target: Interoperability verification baseline.
+
+#### IDR-SRV-I08: Final Glaux Server IDR Synthesis Report
+
+- Focus: Consolidate all findings into an implementation-ready synthesis package.
+- Output target: Final IDR synthesis report and architecture decision baseline.
 
 ---
 
 ## Topic Execution Order
 
-Default execution order follows dependency and evidence flow (not numeric ID order):
+Default execution order follows category dependencies in sequence:
 
-1. IDR-SRV-001 - Part 1 Requirement Baseline
-2. IDR-SRV-002 - Part 2 Requirement Baseline
-3. IDR-SRV-003 - Conformance-Class and Requirement Mapping
-4. IDR-SRV-004 - Canonical Resource Model
-5. IDR-SRV-005 - API Surface and URI Design Baseline
-6. IDR-SRV-006 - Query and Filter Semantics
-7. IDR-SRV-007 - Temporal and Validity Model
-8. IDR-SRV-008 - Content Negotiation and Encoding Strategy
-9. IDR-SRV-009 - Error Model and Failure Semantics
-10. IDR-SRV-011 - Transaction and Consistency Behavior
-11. IDR-SRV-010 - Security and Access Control Model
-12. IDR-SRV-014 - Performance and Scalability Research Baseline
-13. IDR-SRV-013 - Cross-Implementation Interoperability Findings Baseline
-14. IDR-SRV-012 - Verification and Conformance Harness Strategy
-15. IDR-SRV-015 - Architecture Decision Synthesis Baseline
+1. Category A (IDR-SRV-A01 through IDR-SRV-A05)
+2. Category B (IDR-SRV-B01 through IDR-SRV-B09)
+3. Category C (IDR-SRV-C01 through IDR-SRV-C06)
+4. Category D (IDR-SRV-D01 through IDR-SRV-D04)
+5. Category E (IDR-SRV-E01 through IDR-SRV-E06)
+6. Category F (IDR-SRV-F01 through IDR-SRV-F08)
+7. Category G (IDR-SRV-G01 through IDR-SRV-G05)
+8. Category H (IDR-SRV-H01 through IDR-SRV-H06)
+9. Category I (IDR-SRV-I01 through IDR-SRV-I08)
 
-Rationale for this order:
+Dependency rationale:
 
-- Standards obligations are fixed first.
-- Domain/API semantics are defined before cross-cutting policy and runtime constraints.
-- Interoperability findings inform verification strategy before final synthesis.
-- Final architecture synthesis closes only after all prerequisite evidence is complete.
+- A establishes obligation boundaries before implementation semantics.
+- B defines externally visible server behavior before internal modeling/storage decisions.
+- C and D stabilize domain and representation semantics before persistence/dynamic-data strategy.
+- E, F, and G define storage, runtime interaction, and policy constraints before deployment and testing strategy.
+- H defines implementation/deployment shape before final verification architecture.
+- I closes with readiness, traceability, and final synthesis.
 
 Order may change only when:
 
@@ -215,8 +433,8 @@ A topic is complete when all are true:
 
 The overall IDR research effort is complete when all are true:
 
-- All indexed topics (IDR-SRV-001 to IDR-SRV-015) have completed topic reports.
-- Findings are sufficiently complete to support contribution, implementation guide, and roadmap authoring.
+- All indexed topics in Categories A through I have completed topic reports.
+- Findings are sufficiently complete to support goal and definition, implementation guide, and roadmap authoring.
 - A final overall IDR research report is produced that responds to this overall plan.
 
 ---
@@ -242,28 +460,23 @@ The final report must:
 |---|---|---|---|---|
 | 2026-06-07 | Plan Alignment | Added objective quality standards, change control, and progress tracking sections to align with governance template | Improve objective governance and repeatability | Glaux Core Team |
 | 2026-06-07 | Topic Reorganization | Grouped topics into dependency-based categories and replaced ID-order execution with evidence-driven sequence | Improve research flow so outputs inform downstream topics in a wise order | Glaux Core Team |
+| 2026-06-07 | Scope Bounding and Expanded Topic Model | Replaced compact topic set with bounded full-scope server IDR categories (A-I) and server-only admission rule | Keep full-scope server rigor while preventing ecosystem research bleed-in from other components | Glaux Core Team |
 
 ---
 
 ## Progress Tracking
 
-| Topic ID | Plan File | Report File | Status | Last Updated | Notes |
-|---|---|---|---|---|---|
-| IDR-SRV-001 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-002 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-003 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-004 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-005 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-006 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-007 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-008 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-009 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-010 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-011 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-012 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-013 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-014 | TBD | TBD | Not Started | 2026-06-07 | |
-| IDR-SRV-015 | TBD | TBD | Not Started | 2026-06-07 | |
+| Category | Topics | Plan Coverage | Report Coverage | Status | Last Updated | Notes |
+|---|---|---|---|---|---|---|
+| A | IDR-SRV-A01 to IDR-SRV-A05 | TBD | TBD | Not Started | 2026-06-07 | |
+| B | IDR-SRV-B01 to IDR-SRV-B09 | TBD | TBD | Not Started | 2026-06-07 | |
+| C | IDR-SRV-C01 to IDR-SRV-C06 | TBD | TBD | Not Started | 2026-06-07 | |
+| D | IDR-SRV-D01 to IDR-SRV-D04 | TBD | TBD | Not Started | 2026-06-07 | |
+| E | IDR-SRV-E01 to IDR-SRV-E06 | TBD | TBD | Not Started | 2026-06-07 | |
+| F | IDR-SRV-F01 to IDR-SRV-F08 | TBD | TBD | Not Started | 2026-06-07 | |
+| G | IDR-SRV-G01 to IDR-SRV-G05 | TBD | TBD | Not Started | 2026-06-07 | |
+| H | IDR-SRV-H01 to IDR-SRV-H06 | TBD | TBD | Not Started | 2026-06-07 | |
+| I | IDR-SRV-I01 to IDR-SRV-I08 | TBD | TBD | Not Started | 2026-06-07 | |
 
 ---
 
