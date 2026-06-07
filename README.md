@@ -28,7 +28,7 @@ DGIWG Glaux is maintained as a modular ecosystem of specialized components. This
 * **[Glaux Simulator](../glaux-simulator)** - The STANAG 4789 telemetry generator for validation, stress-testing, and demonstrations without live tactical feeds.
 * **[Glaux Publisher](../glaux-publisher)** - The ingestion bridge that translates legacy or non-standard sensor feeds into compliant interoperable streams.
 
-### Operational Clients
+### Visualization Clients
 
 * **[Glaux Web App](../glaux-webapp)** - The browser-based operational dashboard for monitoring and visualization of connected platforms and sensor states.
 * **[Glaux Mobile](../glaux-mobile)** - The cross-platform Android/iOS tactical-edge client for field-level situational awareness and sensor interaction.
@@ -41,7 +41,7 @@ DGIWG Glaux is maintained as a modular ecosystem of specialized components. This
 | Server | Authority | Conformance-harness-backed interoperability for OGC/NATO workflows |
 | Simulator | Validation | Rapid prototyping without real-world hardware |
 | Publisher | Integration | Bridges legacy systems to modern compliant streams |
-| Web/Mobile | Visualization | Turns raw sensor data into actionable operational intelligence |
+| Visualization Clients (Web/Mobile) | Visualization | Turns raw sensor data into actionable operational intelligence |
 
 ---
 
