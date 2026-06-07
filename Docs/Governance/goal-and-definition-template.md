@@ -1,4 +1,4 @@
-# Contribution Goal and Definition
+# Goal and Definition
 
 **Version:** [MAJOR.MINOR]
 **Date:** [Month Day, Year]
@@ -9,7 +9,7 @@
 
 ## Purpose
 
-Use this template to define the contribution intent and scope baseline before implementation planning. This document should be completed and approved before writing the implementation guide or roadmap.
+Use this template to define intent and scope baseline before implementation planning. This document should be completed and approved before writing the implementation guide or roadmap.
 
 Before drafting content, review the references listed at the end of this template and align your document to their best-practice characteristics for:
 
@@ -20,12 +20,12 @@ Before drafting content, review the references listed at the end of this templat
 
 ---
 
-## Contribution Goal
+## Goal
 
 State the mission-level outcome in clear operational terms.
 
 - What capability is being delivered?
-- Who benefits from the contribution?
+- Who benefits from this effort?
 - What ecosystem or program gap does this close?
 
 ### Goal Statement
@@ -38,11 +38,11 @@ State the mission-level outcome in clear operational terms.
 
 ### Scope Focus for This Effort
 
-[State the specific subset of work this contribution targets.]
+[State the specific subset of work this effort targets.]
 
 ---
 
-## Contribution Definition
+## Definition
 
 Define exactly what will be implemented in this effort.
 
@@ -88,7 +88,7 @@ Capture hard requirements that must be true for acceptance.
 
 ## Quality Standards
 
-Define acceptance quality bars for this contribution.
+Define acceptance quality bars for this effort.
 
 - Type safety requirements: [e.g., no untyped outputs]
 - Test coverage expectations: [e.g., target threshold and test types]
@@ -151,7 +151,7 @@ List concrete outputs to be produced.
 
 ## Completion Criteria
 
-Define objective criteria that indicate the contribution is complete.
+Define objective criteria that indicate the effort is complete.
 
 - [Criterion tied to scope item]
 - [Criterion tied to conformance/quality]
@@ -161,7 +161,9 @@ Define objective criteria that indicate the contribution is complete.
 
 ## References
 
-The following documents are reference examples for structure and content quality:
+The following documents are reference examples for structure and content quality.
+
+Note: Some reference artifacts use legacy "contribution" naming. Use them for structure quality, not terminology.
 
 - Contribution and Goal Definition (OS4CSAPI, phase-9):
   - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/planning/contribution-goal-and-definition.md
