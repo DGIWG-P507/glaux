@@ -58,7 +58,7 @@ All topic-level research plans shall be drafted before topic execution begins. T
 
 ---
 
-**Total Topics:** 59
+**Total Topics:** 65
 
 Scope rule for topic admission:
 
@@ -143,10 +143,40 @@ Scope rule for topic admission:
 - Focus: Define OpenAPI and API documentation strategy for server contracts.
 - Output target: Documentation and machine-contract publication baseline.
 
-#### IDR-SRV-014A: Existing CSAPI Implementations, Conformance Resources, and Interoperability Behavior Survey
+#### IDR-SRV-014A: OSH CSAPI Server Implementation Study
 
-- Focus: Review relevant existing CSAPI servers, clients, examples, conformance resources, reference implementations, exemplar deployments, interoperability demonstrations, and current online best-practice guidance to identify implementation lessons, compatibility risks, and test implications for Glaux Server.
-- Output target: Existing-implementation, conformance-resource, and interoperability findings baseline.
+- Focus: Research the OSH / OpenSensorHub CSAPI server implementation approach, behavior, architecture, standards alignment, API patterns, conformance posture, strengths, gaps, and lessons relevant to Glaux Server.
+- Output target: OSH implementation findings baseline.
+
+#### IDR-SRV-014B: Connected Systems Go CSAPI Server Implementation Study
+
+- Focus: Research the Connected Systems Go / CS-GO CSAPI server implementation approach, behavior, architecture, standards alignment, API patterns, conformance posture, strengths, gaps, and lessons relevant to Glaux Server.
+- Output target: Connected Systems Go implementation findings baseline.
+
+#### IDR-SRV-014C: pygeoapi CSAPI Server Implementation Study
+
+- Focus: Research the pygeoapi CSAPI server implementation approach, behavior, architecture, standards alignment, API patterns, conformance posture, strengths, gaps, and lessons relevant to Glaux Server.
+- Output target: pygeoapi CSAPI implementation findings baseline.
+
+#### IDR-SRV-014D: SECD CSAPI Server Implementation Study
+
+- Focus: Research the SECD CSAPI server implementation approach, behavior, architecture, standards alignment, API patterns, conformance posture, strengths, gaps, and lessons relevant to Glaux Server.
+- Output target: SECD implementation findings baseline.
+
+#### IDR-SRV-014E: OS4CSAPI Client Smoke Test Findings Study
+
+- Focus: Research the smoke-test findings, compatibility observations, implementation gaps, and interoperability lessons identified in the OS4CSAPI client work at https://github.com/OS4CSAPI/ogc-client-CSAPI_2, especially findings that affect Glaux Server API behavior, conformance, validation, interoperability, and test strategy.
+- Output target: OS4CSAPI client smoke-test findings baseline.
+
+#### IDR-SRV-014F: SECD Interoperability Findings Study
+
+- Focus: Research the findings, issues, implementation observations, compatibility notes, and interoperability lessons identified in https://github.com/Sam-Bolling/csapi-server-interop-secd, especially findings that affect Glaux Server API behavior, conformance, validation, interoperability, and test strategy.
+- Output target: SECD interoperability findings baseline.
+
+#### IDR-SRV-014G: OS4CSAPI Discussions Lessons-Learned Study
+
+- Focus: Review the discussions at https://github.com/orgs/OS4CSAPI/discussions to identify lessons learned, implementation concerns, interoperability issues, developer pain points, standards interpretation questions, testing implications, and community recommendations relevant to Glaux Server.
+- Output target: OS4CSAPI discussions lessons-learned baseline.
 
 ### Category C: Server Resource and Domain Model
 
@@ -385,7 +415,7 @@ Default execution order follows category dependencies in sequence:
 
 1. Category A (IDR-SRV-001 through IDR-SRV-005)
 2. Category B core behavior topics (IDR-SRV-006 through IDR-SRV-014, plus IDR-SRV-010A)
-3. IDR-SRV-014A
+3. Existing implementation, smoke-test, interoperability, and lessons-learned studies (IDR-SRV-014A through IDR-SRV-014G)
 4. IDR-SRV-044 and IDR-SRV-052 drafted early during topic-plan development
 5. Category C (IDR-SRV-015 through IDR-SRV-020)
 6. Category D (IDR-SRV-021 through IDR-SRV-024)
@@ -401,7 +431,7 @@ Dependency rationale:
 
 - A establishes obligation boundaries before implementation semantics.
 - B defines externally visible server behavior before internal modeling/storage decisions.
-- IDR-SRV-014A captures existing implementation/interoperability evidence early to inform model and behavior decisions.
+- IDR-SRV-014A through IDR-SRV-014G capture existing implementation, smoke-test, interoperability, and community lessons early to inform model, behavior, conformance, validation, and test-strategy decisions.
 - IDR-SRV-044 and IDR-SRV-052 are drafted early so Rust platform and TDD architecture assumptions inform downstream topic-plan development.
 - C and D stabilize domain and representation semantics before persistence/dynamic-data strategy.
 - E, F, and G define storage, runtime interaction, and policy constraints before full deployment-shape finalization.
@@ -493,6 +523,7 @@ The final report must:
 | 2026-06-07 | Scope Bounding and Expanded Topic Model | Replaced compact topic set with bounded full-scope server IDR categories (A-I) and server-only admission rule | Keep full-scope server rigor while preventing ecosystem research bleed-in from other components | Glaux Core Team |
 | 2026-06-07 | Rust/TDD Refinement | Added IDR-SRV-014A, strengthened security threat-model and Rust platform topics, and adjusted execution order to pull 044/052 earlier | Make Rust and test-driven obligations first-class and better sequence dependency-informing research | Glaux Core Team |
 | 2026-06-07 | Topic Index Refinement | Added API versioning topic, refined existing CSAPI/conformance survey, strengthened Rust robustness/TDD coverage, and clarified early drafting of Rust platform and TDD plans | Incorporate external review feedback while preserving full-plan-before-execution workflow | Glaux Core Team |
+| 2026-06-07 | Existing Implementation Research Expansion | Replaced broad IDR-SRV-014A survey with focused studies for OSH, Connected Systems Go, pygeoapi, SECD, OS4CSAPI smoke-test findings, SECD interoperability findings, and OS4CSAPI discussion lessons learned | Ensure existing implementation and interoperability evidence is researched in enough detail to inform Glaux Server design and test strategy | Glaux Core Team |
 
 ---
 
@@ -501,7 +532,7 @@ The final report must:
 | Category | Topics | Plan Coverage | Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|
 | A | IDR-SRV-001 to IDR-SRV-005 | TBD | TBD | Not Started | 2026-06-07 | |
-| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A | TBD | TBD | Not Started | 2026-06-07 | |
+| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | TBD | TBD | Not Started | 2026-06-07 | |
 | C | IDR-SRV-015 to IDR-SRV-020 | TBD | TBD | Not Started | 2026-06-07 | |
 | D | IDR-SRV-021 to IDR-SRV-024 | TBD | TBD | Not Started | 2026-06-07 | |
 | E | IDR-SRV-025 to IDR-SRV-030 | TBD | TBD | Not Started | 2026-06-07 | |
