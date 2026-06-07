@@ -491,7 +491,7 @@ The final report must:
 | 2026-06-07 | Plan Alignment | Added objective quality standards, change control, and progress tracking sections to align with governance template | Improve objective governance and repeatability | Glaux Core Team |
 | 2026-06-07 | Topic Reorganization | Grouped topics into dependency-based categories and replaced ID-order execution with evidence-driven sequence | Improve research flow so outputs inform downstream topics in a wise order | Glaux Core Team |
 | 2026-06-07 | Scope Bounding and Expanded Topic Model | Replaced compact topic set with bounded full-scope server IDR categories (A-I) and server-only admission rule | Keep full-scope server rigor while preventing ecosystem research bleed-in from other components | Glaux Core Team |
-| 2026-06-07 | Rust/TDD Refinement | Added IDR-SRV-014A, strengthened security threat-model and Rust platform topics, and adjusted execution order to pull 044/045 earlier | Make Rust and test-driven obligations first-class and better sequence dependency-informing research | Glaux Core Team |
+| 2026-06-07 | Rust/TDD Refinement | Added IDR-SRV-014A, strengthened security threat-model and Rust platform topics, and adjusted execution order to pull 044/052 earlier | Make Rust and test-driven obligations first-class and better sequence dependency-informing research | Glaux Core Team |
 | 2026-06-07 | Topic Index Refinement | Added API versioning topic, refined existing CSAPI/conformance survey, strengthened Rust robustness/TDD coverage, and clarified early drafting of Rust platform and TDD plans | Incorporate external review feedback while preserving full-plan-before-execution workflow | Glaux Core Team |
 
 ---
