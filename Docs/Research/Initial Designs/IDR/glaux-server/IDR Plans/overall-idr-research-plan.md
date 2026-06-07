@@ -13,7 +13,9 @@
 
 This document is the **overall IDR research plan** for Glaux Server.
 
-It defines the indexed set of research topics needed to produce a complete, high-rigor design foundation for a full OGC CSAPI Part 1 and Part 2 implementation.
+It defines the indexed set of research topics needed to produce a complete, high-rigor design foundation for a Rust-based Glaux Server implementation aligned to STANAG 4789 / AEP-4789, OGC API - Connected Systems Parts 1 and 2, SensorML, and SWE Common.
+
+The research effort shall support a test-driven implementation approach. Architecture, API behavior, validation behavior, conformance strategy, and implementation sequencing shall be informed by standards evidence and by current Rust, web API, security, and testing best-practice research.
 
 ---
 
@@ -24,6 +26,9 @@ Produce a complete set of topic-level IDR research plans and topic-level researc
 - Standards-correct design direction
 - Conformance-first implementation boundaries
 - Traceable decisions for architecture, API behavior, validation, and testing
+- Rust-first implementation architecture and framework decisions
+- Test-driven design and implementation strategy
+- Research-backed Rust testing, CI, quality-gate, and dependency-management practices
 
 ---
 
@@ -288,10 +293,10 @@ Scope rule for topic admission:
 
 ### Category H: Implementation Platform and Reference Deployment
 
-#### IDR-SRV-044: Implementation Language and Framework Options
+#### IDR-SRV-044: Rust Implementation Language and Framework Strategy
 
-- Focus: Evaluate language/framework options for the reference server.
-- Output target: Platform decision baseline.
+- Focus: Research current Rust server implementation options, including web framework, async runtime, database access, serialization, validation, OpenAPI support, error handling, observability, and ecosystem maturity.
+- Output target: Rust implementation platform decision baseline.
 
 #### IDR-SRV-045: Service Architecture and Modularization Strategy
 
@@ -330,10 +335,10 @@ Scope rule for topic admission:
 - Focus: Define requirement-to-test traceability controls.
 - Output target: Traceability strategy baseline.
 
-#### IDR-SRV-052: Unit, Integration, Contract, and End-to-End Test Architecture
+#### IDR-SRV-052: Rust Test-Driven Unit, Integration, Contract, and End-to-End Test Architecture
 
-- Focus: Define test architecture layers and boundaries.
-- Output target: Test architecture baseline.
+- Focus: Define the Rust test-driven implementation strategy, including unit tests, integration tests, API contract tests, conformance tests, database-backed tests, async tests, golden-file tests, CI execution, and quality gates.
+- Output target: Rust TDD and test architecture baseline.
 
 #### IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy
 
@@ -401,6 +406,7 @@ Each topic report must satisfy all standards below.
 - Claims are supported by direct references.
 - References are specific and reproducible (URL, section/clause, artifact path).
 - Assumptions are explicitly marked.
+- Research involving Rust implementation, testing, CI, security tooling, framework selection, or dependency management shall use current online sources and record source dates, tool versions, and assumptions where relevant.
 
 ### Decision-Usefulness Standard
 
