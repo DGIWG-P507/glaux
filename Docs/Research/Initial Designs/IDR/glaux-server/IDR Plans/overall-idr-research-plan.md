@@ -53,77 +53,87 @@ Research lifecycle:
 
 ## Planning Index of Topics
 
-### IDR-SRV-001: Part 1 Requirement Baseline
+### Category A: Standards and Obligation Baseline
+
+#### IDR-SRV-001: Part 1 Requirement Baseline
 
 - Focus: Exhaustive extraction of Part 1 normative requirements affecting server behavior.
 - Output target: Part 1 requirement inventory with clause-level traceability anchors.
 
-### IDR-SRV-002: Part 2 Requirement Baseline
+#### IDR-SRV-002: Part 2 Requirement Baseline
 
 - Focus: Exhaustive extraction of Part 2 normative requirements affecting server behavior.
 - Output target: Part 2 requirement inventory with clause-level traceability anchors.
 
-### IDR-SRV-003: Conformance-Class and Requirement Mapping
+#### IDR-SRV-003: Conformance-Class and Requirement Mapping
 
 - Focus: Map requirements to conformance classes and implementation obligations.
 - Output target: Initial conformance matrix baseline.
 
-### IDR-SRV-004: Canonical Resource Model
+### Category B: Canonical Domain and Interface Model
+
+#### IDR-SRV-004: Canonical Resource Model
 
 - Focus: Canonical entities, relationships, identifiers, and lifecycle model across Part 1/2 resources.
 - Output target: Resource model decision baseline.
 
-### IDR-SRV-005: API Surface and URI Design Baseline
+#### IDR-SRV-005: API Surface and URI Design Baseline
 
 - Focus: Endpoint structure, path patterns, operation coverage, and subresource navigation.
 - Output target: API surface map with operation completeness checklist.
 
-### IDR-SRV-006: Query and Filter Semantics
+#### IDR-SRV-006: Query and Filter Semantics
 
 - Focus: Query parameter behavior (spatial, temporal, hierarchical, relationship, property filters), pagination, and sorting semantics.
 - Output target: Query behavior specification baseline.
 
-### IDR-SRV-007: Temporal and Validity Model
+#### IDR-SRV-007: Temporal and Validity Model
 
 - Focus: Phenomenon/result/valid/execution/report time semantics, interval handling, open bounds, and representation consistency.
 - Output target: Temporal handling decision baseline.
 
-### IDR-SRV-008: Content Negotiation and Encoding Strategy
+#### IDR-SRV-008: Content Negotiation and Encoding Strategy
 
 - Focus: Media types, representation variants, schema responses, and content negotiation rules.
 - Output target: Format and negotiation behavior baseline.
 
-### IDR-SRV-009: Error Model and Failure Semantics
+#### IDR-SRV-009: Error Model and Failure Semantics
 
 - Focus: Error taxonomy, status-code policy, validation failures, and deterministic failure behavior.
 - Output target: Error-handling baseline and response contract.
 
-### IDR-SRV-010: Security and Access Control Model
-
-- Focus: Authentication/authorization assumptions, role boundaries, control-path protections, and auditability requirements.
-- Output target: Security design constraints baseline.
-
-### IDR-SRV-011: Transaction and Consistency Behavior
+#### IDR-SRV-011: Transaction and Consistency Behavior
 
 - Focus: CRUD semantics, idempotency, conflict handling, eventual vs strong consistency expectations.
 - Output target: State mutation and consistency baseline.
 
-### IDR-SRV-012: Verification and Conformance Harness Strategy
+### Category C: Cross-Cutting Operational Constraints
 
-- Focus: How requirement-level conformance is tested and evidenced.
-- Output target: Conformance harness and evidence strategy baseline.
+#### IDR-SRV-010: Security and Access Control Model
 
-### IDR-SRV-013: Cross-Implementation Interoperability Findings Baseline
+- Focus: Authentication/authorization assumptions, role boundaries, control-path protections, and auditability requirements.
+- Output target: Security design constraints baseline.
 
-- Focus: Behavioral differences and interoperability lessons from OSH, CS-GO, pygeoapi CSAPI, and SECD observations.
-- Output target: Interoperability risk and compatibility guidance baseline.
-
-### IDR-SRV-014: Performance and Scalability Research Baseline
+#### IDR-SRV-014: Performance and Scalability Research Baseline
 
 - Focus: Capacity assumptions, bottleneck risks, and performance-sensitive design constraints.
 - Output target: Performance constraints and measurement baseline.
 
-### IDR-SRV-015: Architecture Decision Synthesis Baseline
+### Category D: Ecosystem Reality and Verification Strategy
+
+#### IDR-SRV-013: Cross-Implementation Interoperability Findings Baseline
+
+- Focus: Behavioral differences and interoperability lessons from OSH, CS-GO, pygeoapi CSAPI, and SECD observations.
+- Output target: Interoperability risk and compatibility guidance baseline.
+
+#### IDR-SRV-012: Verification and Conformance Harness Strategy
+
+- Focus: How requirement-level conformance is tested and evidenced.
+- Output target: Conformance harness and evidence strategy baseline.
+
+### Category E: Final Synthesis
+
+#### IDR-SRV-015: Architecture Decision Synthesis Baseline
 
 - Focus: Consolidate all topic findings into a coherent architecture decision package.
 - Output target: Initial architecture decision set for implementation planning artifacts.
@@ -132,9 +142,30 @@ Research lifecycle:
 
 ## Topic Execution Order
 
-Default execution order is the same as topic index order:
+Default execution order follows dependency and evidence flow (not numeric ID order):
 
-1. IDR-SRV-001 through IDR-SRV-015 in sequence.
+1. IDR-SRV-001 - Part 1 Requirement Baseline
+2. IDR-SRV-002 - Part 2 Requirement Baseline
+3. IDR-SRV-003 - Conformance-Class and Requirement Mapping
+4. IDR-SRV-004 - Canonical Resource Model
+5. IDR-SRV-005 - API Surface and URI Design Baseline
+6. IDR-SRV-006 - Query and Filter Semantics
+7. IDR-SRV-007 - Temporal and Validity Model
+8. IDR-SRV-008 - Content Negotiation and Encoding Strategy
+9. IDR-SRV-009 - Error Model and Failure Semantics
+10. IDR-SRV-011 - Transaction and Consistency Behavior
+11. IDR-SRV-010 - Security and Access Control Model
+12. IDR-SRV-014 - Performance and Scalability Research Baseline
+13. IDR-SRV-013 - Cross-Implementation Interoperability Findings Baseline
+14. IDR-SRV-012 - Verification and Conformance Harness Strategy
+15. IDR-SRV-015 - Architecture Decision Synthesis Baseline
+
+Rationale for this order:
+
+- Standards obligations are fixed first.
+- Domain/API semantics are defined before cross-cutting policy and runtime constraints.
+- Interoperability findings inform verification strategy before final synthesis.
+- Final architecture synthesis closes only after all prerequisite evidence is complete.
 
 Order may change only when:
 
@@ -210,6 +241,7 @@ The final report must:
 | Date | Change Type | Description | Rationale | Approved By |
 |---|---|---|---|---|
 | 2026-06-07 | Plan Alignment | Added objective quality standards, change control, and progress tracking sections to align with governance template | Improve objective governance and repeatability | Glaux Core Team |
+| 2026-06-07 | Topic Reorganization | Grouped topics into dependency-based categories and replaced ID-order execution with evidence-driven sequence | Improve research flow so outputs inform downstream topics in a wise order | Glaux Core Team |
 
 ---
 
