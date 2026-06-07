@@ -1,0 +1,174 @@
+# Glaux Server Overall IDR Research Plan
+
+**Version:** 1.0
+**Date:** June 7, 2026
+**Status:** Draft
+**Scope:** Initial Design Research (IDR) for `glaux-server`
+
+---
+
+## Purpose
+
+This document is the **overall IDR research plan** for Glaux Server.
+
+It defines the indexed set of research topics needed to produce a complete, high-rigor design foundation for a full OGC CSAPI Part 1 and Part 2 implementation.
+
+---
+
+## Research Objective
+
+Produce a complete set of topic-level IDR research plans and topic-level research reports that establish:
+
+- Standards-correct design direction
+- Conformance-first implementation boundaries
+- Traceable decisions for architecture, API behavior, validation, and testing
+
+---
+
+## Operating Rules
+
+1. Each topic in the index receives its own topic-specific research plan.
+2. Topics are worked one at a time in index order unless explicitly re-prioritized.
+3. Each completed topic produces exactly one topic research report.
+4. The final overall IDR report is written only after all indexed topics are complete.
+5. All reports must include explicit references and evidence.
+
+---
+
+## Planning Index of Topics
+
+### IDR-SRV-001: Part 1 Requirement Baseline
+
+- Focus: Exhaustive extraction of Part 1 normative requirements affecting server behavior.
+- Output target: Part 1 requirement inventory with clause-level traceability anchors.
+
+### IDR-SRV-002: Part 2 Requirement Baseline
+
+- Focus: Exhaustive extraction of Part 2 normative requirements affecting server behavior.
+- Output target: Part 2 requirement inventory with clause-level traceability anchors.
+
+### IDR-SRV-003: Conformance-Class and Requirement Mapping
+
+- Focus: Map requirements to conformance classes and implementation obligations.
+- Output target: Initial conformance matrix baseline.
+
+### IDR-SRV-004: Canonical Resource Model
+
+- Focus: Canonical entities, relationships, identifiers, and lifecycle model across Part 1/2 resources.
+- Output target: Resource model decision baseline.
+
+### IDR-SRV-005: API Surface and URI Design Baseline
+
+- Focus: Endpoint structure, path patterns, operation coverage, and subresource navigation.
+- Output target: API surface map with operation completeness checklist.
+
+### IDR-SRV-006: Query and Filter Semantics
+
+- Focus: Query parameter behavior (spatial, temporal, hierarchical, relationship, property filters), pagination, and sorting semantics.
+- Output target: Query behavior specification baseline.
+
+### IDR-SRV-007: Temporal and Validity Model
+
+- Focus: Phenomenon/result/valid/execution/report time semantics, interval handling, open bounds, and representation consistency.
+- Output target: Temporal handling decision baseline.
+
+### IDR-SRV-008: Content Negotiation and Encoding Strategy
+
+- Focus: Media types, representation variants, schema responses, and content negotiation rules.
+- Output target: Format and negotiation behavior baseline.
+
+### IDR-SRV-009: Error Model and Failure Semantics
+
+- Focus: Error taxonomy, status-code policy, validation failures, and deterministic failure behavior.
+- Output target: Error-handling baseline and response contract.
+
+### IDR-SRV-010: Security and Access Control Model
+
+- Focus: Authentication/authorization assumptions, role boundaries, control-path protections, and auditability requirements.
+- Output target: Security design constraints baseline.
+
+### IDR-SRV-011: Transaction and Consistency Behavior
+
+- Focus: CRUD semantics, idempotency, conflict handling, eventual vs strong consistency expectations.
+- Output target: State mutation and consistency baseline.
+
+### IDR-SRV-012: Verification and Conformance Harness Strategy
+
+- Focus: How requirement-level conformance is tested and evidenced.
+- Output target: Conformance harness and evidence strategy baseline.
+
+### IDR-SRV-013: Cross-Implementation Interoperability Findings Baseline
+
+- Focus: Behavioral differences and interoperability lessons from OSH, CS-GO, pygeoapi CSAPI, and SECD observations.
+- Output target: Interoperability risk and compatibility guidance baseline.
+
+### IDR-SRV-014: Performance and Scalability Research Baseline
+
+- Focus: Capacity assumptions, bottleneck risks, and performance-sensitive design constraints.
+- Output target: Performance constraints and measurement baseline.
+
+### IDR-SRV-015: Architecture Decision Synthesis Baseline
+
+- Focus: Consolidate all topic findings into a coherent architecture decision package.
+- Output target: Initial architecture decision set for implementation planning artifacts.
+
+---
+
+## Topic Execution Order
+
+Default execution order is the same as topic index order:
+
+1. IDR-SRV-001 through IDR-SRV-015 in sequence.
+
+Order may change only when:
+
+- A dependency requires reordering, or
+- A documented priority decision is made and recorded.
+
+---
+
+## Topic Completion Criteria
+
+A topic is complete when all are true:
+
+- Topic-specific research plan exists and is in scope.
+- Topic-specific report is completed.
+- Report includes evidence and references.
+- Report conclusion is explicit and decision-usable.
+- Open issues (if any) are clearly listed.
+
+---
+
+## Overall IDR Completion Criteria
+
+The overall IDR research effort is complete when all are true:
+
+- All indexed topics (IDR-SRV-001 to IDR-SRV-015) have completed topic reports.
+- Findings are sufficiently complete to support contribution, implementation guide, and roadmap authoring.
+- A final overall IDR research report is produced that responds to this overall plan.
+
+---
+
+## Final Overall IDR Report Requirement
+
+After all indexed topics are complete, produce:
+
+- `final-idr-research-report.md`
+
+The final report must:
+
+- Respond directly to this overall plan
+- Summarize each topic conclusion
+- State consolidated overall conclusions
+- Identify any unresolved cross-topic issues
+
+---
+
+## References
+
+- Glaux Governance: Research Planning Approach
+  - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/research-planning-approach.md
+- Glaux Server Initial Planning Guidance
+  - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Research/Initial%20Designs/IDR/glaux-server/IDR%20Plans/initial-planning-guidance.md
+- OGC CSAPI planning exemplar (OS4CSAPI)
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/planning
