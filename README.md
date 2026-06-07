@@ -16,15 +16,32 @@ For an overview of the Glaux software suite, vision, and deployment guidance, vi
 
 ## 🏛️ The Glaux Ecosystem
 
-DGIWG Glaux is maintained as a modular ecosystem of specialized components. This repository serves as the **meta-repository** and single source of truth connecting these independent sub-projects:
+DGIWG Glaux is maintained as a modular ecosystem of specialized components. This repository is the **meta-repository** and central source of truth for architecture, documentation, and orchestration policy across independent codebases.
 
-*   **[Glaux Server (Core)](../glaux-server)** – The foundational OGC API - Connected Systems reference implementation and authority node for secure discovery, observations, and tasking.
-*   **[Glaux Web App](../glaux-webapp)** – The web-based operational monitoring, visualization, and management dashboard.
-*   **[Glaux Simulator](../glaux-simulator)** – The STANAG 4789 telemetry generator for system validation, stress-testing, and compliance evaluation.
-*   **[Glaux Publisher](../glaux-publisher)** – The ingestion bridge engineered to translate legacy or non-standard sensor feeds into compliant streams.
-*   **[Glaux Mobile](../glaux-mobile)** – The cross-platform tactical-edge client for Android/iOS situational awareness and interaction.
+### Core Infrastructure
 
-The meta-repo provides central documentation and ecosystem orchestration through release-tag alignment and shared integration manifests across independent component repositories.
+* **[Glaux (Meta-Repo)](../glaux)** - The flagship landing page and documentation hub, coordinating ecosystem orchestration through release-tag alignment and shared integration manifests.
+* **[Glaux Server](../glaux-server)** - The foundational OGC API - Connected Systems authority node for secure discovery, observations, and tasking workflows.
+
+### Data and Simulation
+
+* **[Glaux Simulator](../glaux-simulator)** - The STANAG 4789 telemetry generator for validation, stress-testing, and demonstrations without live tactical feeds.
+* **[Glaux Publisher](../glaux-publisher)** - The ingestion bridge that translates legacy or non-standard sensor feeds into compliant interoperable streams.
+
+### Operational Clients
+
+* **[Glaux Web App](../glaux-webapp)** - The browser-based operational dashboard for monitoring and visualization of connected platforms and sensor states.
+* **[Glaux Mobile](../glaux-mobile)** - The cross-platform Android/iOS tactical-edge client for field-level situational awareness and sensor interaction.
+
+### Functional Summary
+
+| Component | Primary Role | Stakeholder Value |
+| --- | --- | --- |
+| Meta-Repo | Orchestration | Unified documentation and integration baseline across the suite |
+| Server | Authority | Conformance-harness-backed interoperability for OGC/NATO workflows |
+| Simulator | Validation | Rapid prototyping without real-world hardware |
+| Publisher | Integration | Bridges legacy systems to modern compliant streams |
+| Web/Mobile | Visualization | Turns raw sensor data into actionable operational intelligence |
 
 ---
 
