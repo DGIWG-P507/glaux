@@ -1,6 +1,6 @@
 # Research Planning Approach
 
-**Version:** 1.0
+**Version:** 1.1
 **Date:** June 7, 2026
 **Status:** Draft
 
@@ -8,231 +8,99 @@
 
 ## Purpose
 
-This document defines the governance approach for planning and executing research across the Glaux ecosystem. It standardizes how research topics are identified, planned, reported, reviewed, and promoted into contribution, implementation, and roadmap decisions.
+This document defines the governance approach for conducting research in this repository.
 
-The objective is to ensure research is:
-
-- Traceable
-- Evidence-driven
-- Reviewable
-- Consistent across all projects
+The goal is to produce a series of rigorous research plans that generate high-value research reports.
 
 ---
 
-## Scope
+## Core Process
 
-This approach applies to all research efforts under:
+Research work follows this sequence:
 
-- Ecosystem-level research
-- Component-level research (`glaux`, `glaux-server`, `glaux-webapp`, `glaux-simulator`, `glaux-publisher`, `glaux-mobile`)
-- Cross-cutting domains (testing, standards, interoperability, performance, governance)
+1. Create one overall research plan.
+2. Include a planning index of topics in that overall research plan.
+3. For each topic in the index, create one topic-specific research plan.
+4. Execute topic research one topic at a time.
+5. Produce one research report per completed topic.
+6. After all indexed topics are complete, produce one final research report that responds to the overall research plan.
 
----
-
-## Research Lifecycle
-
-All research follows this mandatory lifecycle:
-
-1. Topic Indexing
-2. Research Planning
-3. Research Execution and Reporting
-4. Review and Synthesis
-5. Promotion to Planning and Implementation Artifacts
-
-No phase should be skipped.
+This is the required process.
 
 ---
 
-## Phase 1: Topic Indexing
+## Required Artifacts
 
-### Objective
+### 1) Overall Research Plan
 
-Build an explicit index of research topics tied to project scope and decision needs.
+The overall research plan must contain:
 
-### Required Outputs
+- Scope of the overall research effort
+- Planning index of research topics
+- Topic IDs and titles
+- Topic priority/order
+- Completion criteria for the full research effort
 
-- Numbered topic list with stable IDs
-- Topic title and problem statement
-- Scope mapping (which project/component is affected)
-- Priority classification
+### 2) Topic Research Plans
 
-### Rules
+Each topic plan must contain:
 
-- IDs are stable and never reused
-- Topics must map to a real planning or implementation decision
-- Duplicate topics should be merged, not parallel-tracked
+- Topic ID and title (must match the overall index)
+- Research question(s)
+- Why the topic matters
+- Sources to review
+- Method to use
+- Topic completion criteria
 
----
+### 3) Topic Research Reports
 
-## Phase 2: Research Planning
-
-### Objective
-
-Define exactly how each indexed topic will be researched before work begins.
-
-### Required Plan Elements
+Each topic report must contain:
 
 - Topic ID and title
-- Research question(s)
-- Why the question matters
-- Sources and evidence strategy
-- Method and evaluation criteria
-- Expected output format
-- Completion criteria
-
-### Rules
-
-- No research report may be written without an approved plan
-- Plans must remain in-scope to the indexed topic
-- Any scope expansion requires a plan update and version bump
-
----
-
-## Phase 3: Research Execution and Reporting
-
-### Objective
-
-Execute the plan and produce a report that is evidence-first and decision-useful.
-
-### Required Report Elements
-
-- Topic ID linkage to the plan
-- Sources reviewed
+- Summary of research performed
 - Findings
-- Evidence citations
-- Conclusion
-- Confidence assessment
-- Open issues / unresolved questions
+- Supporting evidence/references
+- Conclusion for that topic
+- Any unresolved questions for that topic
 
-### Rules
+### 4) Final Research Report
 
-- Conclusions must be evidence-backed
-- Distinguish facts, interpretation, and recommendation
-- Include explicit in-scope and out-of-scope boundaries
+The final report is written only after all indexed topics are complete.
 
----
+It must contain:
 
-## Phase 4: Review and Synthesis
-
-### Objective
-
-Aggregate individual reports into review artifacts that support planning decisions.
-
-### Required Outputs
-
-- Review notes or synthesis document
-- Consolidated patterns and conflicts
-- Decision-ready recommendations
-- Risk implications and follow-up topics
-
-### Rules
-
-- Synthesis should not drop contradictory findings
-- Confidence and uncertainty must be preserved
-- Promotion-ready findings must be explicitly identified
+- Response to the overall research plan
+- Summary of all topic-level conclusions
+- Overall conclusions
+- Remaining open issues (if any)
 
 ---
 
-## Phase 5: Promotion to Planning Artifacts
+## Governance Rules
 
-### Objective
-
-Promote validated findings into contribution, implementation, and roadmap documents.
-
-### Promotion Targets
-
-- Contribution and Goal Definition
-- Implementation Guide
-- Roadmap
-- Technical standards or governance constraints
-
-### Rules
-
-- Only reviewed findings are promotable
-- Promotions must reference source topic IDs and reports
-- Planning changes must include traceability back to research evidence
+- No topic report without a topic research plan.
+- No topic plan without a matching topic ID in the overall research-plan index.
+- Work topics one at a time until complete.
+- Do not skip directly to a final report.
+- Final report is produced only after all indexed topics are complete.
+- Use explicit references in every topic report.
 
 ---
 
-## Governance Controls
+## Working Model
 
-### Mandatory Controls
+The working model is simple and strict:
 
-- Plan-before-report enforcement
-- Stable topic IDs
-- Versioned updates (no silent rewrites)
-- Review checkpoint before promotion
-- Traceability from topic -> plan -> report -> planning decision
-
-### Quality Gates
-
-- **Gate A:** Topic indexed and accepted
-- **Gate B:** Plan approved
-- **Gate C:** Report reviewed
-- **Gate D:** Findings promoted with traceability
-
----
-
-## Folder and File Model
-
-Recommended structure for each research domain:
-
-- `research-plans/` - approved plans by topic ID
-- `findings/` - completed reports by topic ID
-- `review/` - synthesis and validation artifacts
-- `results/` - finalized promotion-ready outputs
-- `archive/` - superseded or historical versions
-
-This preserves history while keeping active work navigable.
-
----
-
-## Writing and Evidence Standards
-
-### Evidence Standards
-
-- Cite sources directly
-- Use exact URLs where possible
-- Record source date/version when relevant
-- Separate observed evidence from interpretation
-
-### Content Standards
-
-- Keep research outputs decision-focused
-- Use explicit assumptions and constraints
-- State confidence level for each major conclusion
-- Document unresolved questions clearly
-
----
-
-## Change Management
-
-### Versioning
-
-- Major version: structural changes to approach
-- Minor version: clarifications, non-breaking control changes
-
-### Update Protocol
-
-- Changes require documented rationale
-- Prior version remains discoverable
-- Downstream templates should be reviewed after approach changes
-
----
-
-## Initial Next Steps
-
-1. Create a research plan template aligned to this approach
-2. Create a research report template aligned to this approach
-3. Pilot the lifecycle on a small topic set before full-scale rollout
+- Overall research plan (with indexed topics) controls the effort.
+- Topic plans control execution quality per topic.
+- Topic reports capture per-topic outcomes.
+- Final report closes the full research effort against the overall plan.
 
 ---
 
 ## References
 
-- Testing research exemplar (OS4CSAPI, phase-9):
+- Research testing exemplar folder (OS4CSAPI, phase-9):
   - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/research/testing
 - Testing strategy research anchor document:
   - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/testing-strategy-research.md
-- Initial Planning Guidance (this repository):
-  - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/initial-planning-guidance.md
