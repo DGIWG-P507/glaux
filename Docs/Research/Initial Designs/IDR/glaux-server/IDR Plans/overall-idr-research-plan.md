@@ -56,7 +56,7 @@ Research lifecycle:
 
 ---
 
-**Total Topics:** 57
+**Total Topics:** 58
 
 Scope rule for topic admission:
 
@@ -135,6 +135,11 @@ Scope rule for topic admission:
 
 - Focus: Define OpenAPI and API documentation strategy for server contracts.
 - Output target: Documentation and machine-contract publication baseline.
+
+#### IDR-SRV-014A: Existing CSAPI Implementation and Interoperability Behavior Survey
+
+- Focus: Review relevant existing CSAPI servers, clients, examples, and interoperability demonstrations to identify implementation lessons, behavior patterns, compatibility risks, and test implications for Glaux Server.
+- Output target: Existing-implementation and interoperability findings baseline.
 
 ### Category C: Server Resource and Domain Model
 
@@ -266,10 +271,10 @@ Scope rule for topic admission:
 
 ### Category G: Security, Federation, and DDIL-Informed Server Behavior
 
-#### IDR-SRV-039: Authentication and Authorization Architecture
+#### IDR-SRV-039: Authentication, Authorization, and API Security Threat Model
 
-- Focus: Define authn/authz architecture for server scope.
-- Output target: Authentication/authorization baseline.
+- Focus: Define authn/authz architecture and API security threat model for server scope, including object-level authorization, function-level authorization, command/tasking authorization, resource-consumption controls, and security misconfiguration risks.
+- Output target: Authentication, authorization, and API threat-model baseline.
 
 #### IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints
 
@@ -295,7 +300,7 @@ Scope rule for topic admission:
 
 #### IDR-SRV-044: Rust Implementation Language and Framework Strategy
 
-- Focus: Research current Rust server implementation options, including web framework, async runtime, database access, serialization, validation, OpenAPI support, error handling, observability, and ecosystem maturity.
+- Focus: Research current Rust server implementation options, including web framework, async runtime, database access, serialization, validation, OpenAPI support, error handling, observability, ecosystem maturity, dependency management, supply-chain risk, license compatibility, unsafe-code policy, and CI quality gates.
 - Output target: Rust implementation platform decision baseline.
 
 #### IDR-SRV-045: Service Architecture and Modularization Strategy
@@ -373,21 +378,25 @@ Default execution order follows category dependencies in sequence:
 
 1. Category A (IDR-SRV-001 through IDR-SRV-005)
 2. Category B (IDR-SRV-006 through IDR-SRV-014)
-3. Category C (IDR-SRV-015 through IDR-SRV-020)
-4. Category D (IDR-SRV-021 through IDR-SRV-024)
-5. Category E (IDR-SRV-025 through IDR-SRV-030)
-6. Category F (IDR-SRV-031 through IDR-SRV-038)
-7. Category G (IDR-SRV-039 through IDR-SRV-043)
-8. Category H (IDR-SRV-044 through IDR-SRV-049)
-9. Category I (IDR-SRV-050 through IDR-SRV-057)
+3. IDR-SRV-014A
+4. Category C (IDR-SRV-015 through IDR-SRV-020)
+5. Category D (IDR-SRV-021 through IDR-SRV-024)
+6. IDR-SRV-044 and IDR-SRV-045
+7. Category E (IDR-SRV-025 through IDR-SRV-030)
+8. Category F (IDR-SRV-031 through IDR-SRV-038)
+9. Category G (IDR-SRV-039 through IDR-SRV-043)
+10. IDR-SRV-046 through IDR-SRV-049
+11. Category I (IDR-SRV-050 through IDR-SRV-057)
 
 Dependency rationale:
 
 - A establishes obligation boundaries before implementation semantics.
 - B defines externally visible server behavior before internal modeling/storage decisions.
+- IDR-SRV-014A captures existing implementation/interoperability evidence early to inform model and behavior decisions.
 - C and D stabilize domain and representation semantics before persistence/dynamic-data strategy.
+- IDR-SRV-044 and IDR-SRV-045 establish Rust platform/framework and modularization constraints before persistence/runtime/security design.
 - E, F, and G define storage, runtime interaction, and policy constraints before deployment and testing strategy.
-- H defines implementation/deployment shape before final verification architecture.
+- IDR-SRV-046 through IDR-SRV-049 complete implementation/deployment shape before final verification architecture.
 - I closes with readiness, traceability, and final synthesis.
 
 Order may change only when:
@@ -467,6 +476,7 @@ The final report must:
 | 2026-06-07 | Plan Alignment | Added objective quality standards, change control, and progress tracking sections to align with governance template | Improve objective governance and repeatability | Glaux Core Team |
 | 2026-06-07 | Topic Reorganization | Grouped topics into dependency-based categories and replaced ID-order execution with evidence-driven sequence | Improve research flow so outputs inform downstream topics in a wise order | Glaux Core Team |
 | 2026-06-07 | Scope Bounding and Expanded Topic Model | Replaced compact topic set with bounded full-scope server IDR categories (A-I) and server-only admission rule | Keep full-scope server rigor while preventing ecosystem research bleed-in from other components | Glaux Core Team |
+| 2026-06-07 | Rust/TDD Refinement | Added IDR-SRV-014A, strengthened security threat-model and Rust platform topics, and adjusted execution order to pull 044/045 earlier | Make Rust and test-driven obligations first-class and better sequence dependency-informing research | Glaux Core Team |
 
 ---
 
@@ -475,7 +485,7 @@ The final report must:
 | Category | Topics | Plan Coverage | Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|
 | A | IDR-SRV-001 to IDR-SRV-005 | TBD | TBD | Not Started | 2026-06-07 | |
-| B | IDR-SRV-006 to IDR-SRV-014 | TBD | TBD | Not Started | 2026-06-07 | |
+| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-014A | TBD | TBD | Not Started | 2026-06-07 | |
 | C | IDR-SRV-015 to IDR-SRV-020 | TBD | TBD | Not Started | 2026-06-07 | |
 | D | IDR-SRV-021 to IDR-SRV-024 | TBD | TBD | Not Started | 2026-06-07 | |
 | E | IDR-SRV-025 to IDR-SRV-030 | TBD | TBD | Not Started | 2026-06-07 | |
