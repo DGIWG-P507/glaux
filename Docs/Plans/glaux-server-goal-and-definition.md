@@ -34,10 +34,11 @@ Define the planning baseline for Glaux Server implementation, consisting of:
 - Conformance/verification strategy defined before implementation scheduling.
 - Security, validation, and failure semantics designed as first-order requirements.
 
-**Out of Scope (This Document)**
-- Writing production server code.
-- Full endpoint-by-endpoint implementation specification (belongs in Implementation Guide).
-- Task sequencing and milestone planning (belongs in Roadmap).
+**Out of Scope (Glaux Server Project)**
+- Building Glaux Web App, Glaux Mobile, Glaux Publisher, or Glaux Simulator product functionality.
+- Implementing non-CSAPI service families as primary project scope (for example WMS/WFS/WMTS/STAC/TMS feature sets).
+- Creating a full enterprise platform offering (multi-tenant admin portals, billing, and organization management).
+- Providing production hosting/operations ownership as a project deliverable (cloud account management, 24/7 SRE, SOC operations).
 
 **Non-Negotiable Requirements**
 - No silent scope drift; major planning changes are versioned and recorded.
