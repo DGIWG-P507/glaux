@@ -4,6 +4,8 @@
 **Date:** June 7, 2026
 **Status:** Draft
 **Scope:** Initial Design Research (IDR) for `glaux-server`
+**Plan Owner:** Glaux Core Team
+**Final Report Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/final-idr-research-report.md`
 
 ---
 
@@ -25,13 +27,27 @@ Produce a complete set of topic-level IDR research plans and topic-level researc
 
 ---
 
-## Operating Rules
+## Governance Rules (Required)
 
-1. Each topic in the index receives its own topic-specific research plan.
-2. Topics are worked one at a time in index order unless explicitly re-prioritized.
-3. Each completed topic produces exactly one topic research report.
-4. The final overall IDR report is written only after all indexed topics are complete.
-5. All reports must include explicit references and evidence.
+1. No topic research report without a topic research plan.
+2. No topic plan without a matching topic ID in this overall index.
+3. Topics are worked one at a time in index order unless explicitly re-prioritized.
+4. Each completed topic produces exactly one topic research report.
+5. The final overall IDR report is written only after all indexed topics are complete.
+6. All reports must include explicit references and evidence.
+
+---
+
+## Operating Model
+
+Research lifecycle:
+
+1. Create this overall IDR research plan.
+2. Build and finalize the topic index in this document.
+3. Create one topic research plan per indexed topic.
+4. Execute topic research one topic at a time.
+5. Produce one topic research report per completed topic.
+6. Produce one final overall IDR research report after all topics are complete.
 
 ---
 
@@ -127,6 +143,30 @@ Order may change only when:
 
 ---
 
+## Objective Quality Standards
+
+Each topic report must satisfy all standards below.
+
+### Evidence Standard
+
+- Claims are supported by direct references.
+- References are specific and reproducible (URL, section/clause, artifact path).
+- Assumptions are explicitly marked.
+
+### Decision-Usefulness Standard
+
+- Conclusion is explicit (not implied).
+- Recommendation is actionable and bounded.
+- Open issues and impact are clearly documented.
+
+### Completeness Standard
+
+- Topic plan scope is fully addressed.
+- Core questions are answered.
+- Unresolved items are explicitly listed with next action.
+
+---
+
 ## Topic Completion Criteria
 
 A topic is complete when all are true:
@@ -136,6 +176,7 @@ A topic is complete when all are true:
 - Report includes evidence and references.
 - Report conclusion is explicit and decision-usable.
 - Open issues (if any) are clearly listed.
+- Topic status in the progress table is updated to `Complete`.
 
 ---
 
@@ -161,6 +202,44 @@ The final report must:
 - Summarize each topic conclusion
 - State consolidated overall conclusions
 - Identify any unresolved cross-topic issues
+
+---
+
+## Change Log for Reprioritization and Scope Changes
+
+| Date | Change Type | Description | Rationale | Approved By |
+|---|---|---|---|---|
+| 2026-06-07 | Plan Alignment | Added objective quality standards, change control, and progress tracking sections to align with governance template | Improve objective governance and repeatability | Glaux Core Team |
+
+---
+
+## Progress Tracking
+
+| Topic ID | Plan File | Report File | Status | Last Updated | Notes |
+|---|---|---|---|---|---|
+| IDR-SRV-001 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-002 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-003 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-004 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-005 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-006 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-007 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-008 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-009 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-010 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-011 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-012 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-013 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-014 | TBD | TBD | Not Started | 2026-06-07 | |
+| IDR-SRV-015 | TBD | TBD | Not Started | 2026-06-07 | |
+
+---
+
+## Risks and Constraints
+
+- Normative specification interpretation may vary by clause and cross-reference depth.
+- Upstream interoperability behaviors may diverge from strict conformance language.
+- Scope expansion risk if topic boundaries are not enforced at report time.
 
 ---
 
