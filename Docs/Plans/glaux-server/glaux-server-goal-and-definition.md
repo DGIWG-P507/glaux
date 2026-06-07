@@ -126,7 +126,7 @@ The Glaux Server project does not include:
 
 - Building the full product functionality of Glaux Web App, Glaux Mobile, Glaux Publisher, or Glaux Simulator
 - Replacing the authoritative OGC or NATO standards with project-specific technical definitions
-- Implementing unrelated service families as primary server scope, including WMS, WFS, WMTS, STAC, TMS, or NSILI, except where documented integration or interoperability hooks are required
+- Implementing unrelated service families as primary server scope, including WMS, WFS, WMTS, STAC, TMS, NSILI, TAK/COT, or other adjacent service models, except where documented integration or interoperability hooks are required
 - Creating a general-purpose enterprise platform unrelated to connected-system interoperability
 - Providing production hosting, managed-service operations, 24/7 SRE, SOC operations, or cloud-account administration as project deliverables
 - Defining operator tactics, techniques, and procedures
