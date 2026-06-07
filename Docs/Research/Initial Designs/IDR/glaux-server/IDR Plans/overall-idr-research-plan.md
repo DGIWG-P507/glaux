@@ -381,13 +381,13 @@ Default execution order follows category dependencies in sequence:
 1. Category A (IDR-SRV-001 through IDR-SRV-005)
 2. Category B (IDR-SRV-006 through IDR-SRV-014)
 3. IDR-SRV-014A
-4. Category C (IDR-SRV-015 through IDR-SRV-020)
-5. Category D (IDR-SRV-021 through IDR-SRV-024)
-6. IDR-SRV-044 and IDR-SRV-045
+4. IDR-SRV-044
+5. Category C (IDR-SRV-015 through IDR-SRV-020)
+6. Category D (IDR-SRV-021 through IDR-SRV-024)
 7. Category E (IDR-SRV-025 through IDR-SRV-030)
 8. Category F (IDR-SRV-031 through IDR-SRV-038)
 9. Category G (IDR-SRV-039 through IDR-SRV-043)
-10. IDR-SRV-046 through IDR-SRV-049
+10. IDR-SRV-045 through IDR-SRV-049
 11. Category I (IDR-SRV-050 through IDR-SRV-057)
 
 Dependency rationale:
@@ -395,10 +395,10 @@ Dependency rationale:
 - A establishes obligation boundaries before implementation semantics.
 - B defines externally visible server behavior before internal modeling/storage decisions.
 - IDR-SRV-014A captures existing implementation/interoperability evidence early to inform model and behavior decisions.
+- IDR-SRV-044 establishes Rust platform/framework constraints early enough to inform downstream modeling, persistence, runtime, security, and testing decisions.
 - C and D stabilize domain and representation semantics before persistence/dynamic-data strategy.
-- IDR-SRV-044 and IDR-SRV-045 establish Rust platform/framework and modularization constraints before persistence/runtime/security design.
-- E, F, and G define storage, runtime interaction, and policy constraints before deployment and testing strategy.
-- IDR-SRV-046 through IDR-SRV-049 complete implementation/deployment shape before final verification architecture.
+- E, F, and G define storage, runtime interaction, and policy constraints before full deployment-shape finalization.
+- IDR-SRV-045 through IDR-SRV-049 complete platform modularization and implementation/deployment shape before final verification architecture.
 - I closes with readiness, traceability, and final synthesis.
 
 Order may change only when:
