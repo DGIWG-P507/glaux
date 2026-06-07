@@ -11,6 +11,13 @@
 
 Use this template to define the contribution intent and scope baseline before implementation planning. This document should be completed and approved before writing the implementation guide or roadmap.
 
+Before drafting content, review the references listed at the end of this template and align your document to their best-practice characteristics for:
+
+- Nature of content (what belongs in this document vs. other planning artifacts)
+- Type of content (goal statements, scope definitions, quality bars, deliverables, exclusions)
+- Level of content (program-level intent vs. implementation-level detail)
+- Level of detail (specific enough to be actionable, without leaking into implementation-guide or roadmap territory)
+
 ---
 
 ## Contribution Goal
