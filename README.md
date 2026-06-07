@@ -18,10 +18,19 @@ For an overview of the Glaux software suite, vision, and deployment guidance, vi
 
 DGIWG Glaux is maintained as a modular ecosystem of specialized components. This repository serves as the **meta-repository** and single source of truth connecting these independent sub-projects:
 
-*   **[Glaux Server (Core)](../glaux-server)** – The foundational OGC API - Connected Systems server reference implementation.
+*   **[Glaux Server (Core)](../glaux-server)** – The foundational OGC API - Connected Systems reference implementation and authority node for secure discovery, observations, and tasking.
 *   **[Glaux Web App](../glaux-webapp)** – The web-based operational monitoring, visualization, and management dashboard.
-*   **[Glaux Simulator](../glaux-simulator)** – The STANAG 4789 data and telemetry generator for system validation, stress-testing, and compliance evaluation.
-*   **[Glaux Publisher](../glaux-publisher)** – The ingestion engine designed to translate and bridge legacy sensor feeds into compliant streams.
+*   **[Glaux Simulator](../glaux-simulator)** – The STANAG 4789 telemetry generator for system validation, stress-testing, and compliance evaluation.
+*   **[Glaux Publisher](../glaux-publisher)** – The ingestion bridge engineered to translate legacy or non-standard sensor feeds into compliant streams.
+*   **[Glaux Mobile](../glaux-mobile)** – The cross-platform tactical-edge client for Android/iOS situational awareness and interaction.
+
+The meta-repo provides central documentation and ecosystem orchestration through release-tag alignment and shared integration manifests across independent component repositories.
+
+---
+
+## ✅ Conformance
+
+Glaux Server compliance claims are validated through an explicit **conformance test harness** and implementation profiles aligned to OGC and NATO interoperability requirements.
 
 ---
 
