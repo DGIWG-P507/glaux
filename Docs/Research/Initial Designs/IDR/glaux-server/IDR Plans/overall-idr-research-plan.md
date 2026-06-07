@@ -54,6 +54,8 @@ Research lifecycle:
 5. Produce one topic research report per completed topic.
 6. Produce one final overall IDR research report after all topics are complete.
 
+All topic-level research plans shall be drafted before topic execution begins. Topic execution shall then proceed one topic at a time, using the approved topic-level research plan to produce the corresponding topic-level research report.
+
 ---
 
 **Total Topics:** 58
@@ -417,6 +419,10 @@ Each topic report must satisfy all standards below.
 - Assumptions are explicitly marked.
 - Research involving Rust implementation, testing, CI, security tooling, framework selection, or dependency management shall use current online sources and record source dates, tool versions, and assumptions where relevant.
 
+### Literature Review Standard
+
+Each topic-level research report shall function as a focused literature review and applied research assessment. Reports shall identify the relevant sources reviewed, summarize what those sources establish, synthesize key findings, assess implementation implications, provide recommendations, and identify unresolved questions or gaps.
+
 ### Decision-Usefulness Standard
 
 - Conclusion is explicit (not implied).
@@ -437,8 +443,10 @@ A topic is complete when all are true:
 
 - Topic-specific research plan exists and is in scope.
 - Topic-specific report is completed.
+- Topic report is written as a focused literature review and applied research assessment.
 - Report includes evidence and references.
 - Report conclusion is explicit and decision-usable.
+- Topic report includes findings, recommendations, implementation implications, and unresolved questions.
 - Open issues (if any) are clearly listed.
 - Topic status in the progress table is updated to `Complete`.
 
