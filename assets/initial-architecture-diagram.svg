@@ -1,61 +1,113 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 540" width="100%" height="100%">
   <defs>
+    <!-- Background Gradient -->
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0f172a" />
       <stop offset="100%" stop-color="#1e293b" />
     </linearGradient>
 
+    <!-- Component Box Gradient -->
     <linearGradient id="comp-grad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#1e293b" />
       <stop offset="100%" stop-color="#0f172a" />
     </linearGradient>
 
+    <!-- Core Server Glow -->
     <filter id="core-glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="6" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
 
+    <!-- Standard Component Drop Shadow -->
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.5" />
     </filter>
   </defs>
 
-  <rect width="960" height="540" fill="url(#bg-grad)" />
+  <!-- Canvas Background -->
+  <rect width="1060" height="540" fill="url(#bg-grad)" />
 
+  <!-- Grid Overlay Layer -->
   <g stroke="#334155" stroke-width="0.5" opacity="0.3">
-    <path d="M 0,90 L 960,90 M 0,180 L 960,180 M 0,270 L 960,270 M 0,360 L 960,360 M 0,450 L 960,450" />
-    <path d="M 160,0 L 160,540 M 320,0 L 320,540 M 480,0 L 480,540 M 640,0 L 640,540 M 800,0 L 800,540" />
+    <path d="M 0,90 L 1060,90 M 0,270 L 1060,270 M 0,450 L 1060,450" />
+    <path d="M 160,0 L 160,540 M 320,0 L 320,540 M 480,0 L 480,540 M 640,0 L 640,540 M 800,0 L 800,540 M 940,0 L 940,540" />
   </g>
 
+  <!-- HEADER COMPOSITION -->
   <g transform="translate(40, 45)">
-    <text x="0" y="0" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#f8fafc" letter-spacing="1">DGIWG GLAUX ECOSYSTEM</text>
-    <text x="0" y="22" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="500" fill="#38bdf8" letter-spacing="0.5">Notional Architecture Deployment &amp; Development Roadmap Phase Sequences</text>
-    <line x1="0" y1="35" x2="880" y2="35" stroke="#334155" stroke-width="1" />
+    <text x="0" y="0" font-family="'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="700" fill="#f8fafc" letter-spacing="1">DGIWG GLAUX ECOSYSTEM</text>
+    <text x="0" y="22" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#38bdf8" letter-spacing="0.5">Ecosystem Interfacing, Consumer Coproduction, and Human-in-the-Loop Architecture</text>
+    <line x1="0" y1="35" x2="980" y2="35" stroke="#334155" stroke-width="1" />
   </g>
 
-  <g font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" fill="#64748b" letter-spacing="1.5">
-    <text x="145" y="125" text-anchor="middle">INGESTION &amp; SIMULATION</text>
-    <text x="480" y="125" text-anchor="middle">CORE DISSEMINATION SERVICES</text>
-    <text x="815" y="125" text-anchor="middle">TACTICAL CONSUMERS &amp; EDGE CLIENTS</text>
+  <!-- LAYER BOUNDARY LABELS -->
+  <g font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#64748b" letter-spacing="1.5">
+    <text x="145" y="115" text-anchor="middle">INGESTION &amp; SIMULATION</text>
+    <text x="445" y="115" text-anchor="middle">CORE DISSEMINATION SERVICES</text>
+    <text x="795" y="115" text-anchor="middle">INTERACTION &amp; COGNITIVE LAYER</text>
+    <text x="980" y="115" text-anchor="middle">OPERATIONAL EDGE</text>
   </g>
 
+  <!-- SYSTEM OVERARCHING BOUNDARY ENVELOPE (EXTENDED) -->
+  <g transform="translate(30, 95)">
+    <rect width="900" height="375" rx="8" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="8,4" />
+    <rect width="290" height="24" rx="4" x="25" y="-12" fill="#334155" />
+    <text x="170" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="0.75">SYSTEM META-REPO FRAMEWORK: glaux</text>
+  </g>
+
+  <!-- PIPELINES & ROUTING LINKS (Z-INDEX BOTTOM) -->
   <g stroke-linecap="round" stroke-linejoin="round">
-    <path d="M 230,205 L 360,205" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6,4" />
-    <polygon points="360,205 352,200 352,210" fill="#38bdf8" />
+    <!-- Simulator -> Core Server -->
+    <path d="M 230,195 L 325,195" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6,4" />
+    <polygon points="325,195 317,190 317,200" fill="#38bdf8" />
 
+    <!-- Legacy Feeds -> Publisher -->
     <path d="M 115,360 L 150,360" stroke="#64748b" stroke-width="2" />
     <polygon points="150,360 144,356 144,364" fill="#64748b" />
 
-    <path d="M 230,385 L 290,385 L 290,265 L 360,265" stroke="#34d399" stroke-width="2.5" />
-    <polygon points="360,265 352,260 352,270" fill="#34d399" />
+    <!-- Publisher -> Core Server -->
+    <path d="M 230,385 L 275,385 L 275,265 L 325,265" stroke="#34d399" stroke-width="2.5" />
+    <polygon points="325,265 317,260 317,270" fill="#34d399" />
 
-    <path d="M 600,205 L 730,205" stroke="#38bdf8" stroke-width="2.5" />
-    <polygon points="730,205 722,200 722,210" fill="#38bdf8" />
+    <!-- Core Server -> Web App -->
+    <path d="M 565,195 L 710,195" stroke="#38bdf8" stroke-width="2.5" />
+    <polygon points="710,195 702,190 702,200" fill="#38bdf8" />
 
-    <path d="M 600,265 L 670,265 L 670,385 L 730,385" stroke="#38bdf8" stroke-width="2.5" />
-    <polygon points="730,385 722,380 722,390" fill="#38bdf8" />
+    <!-- Core Server -> AI Agent Core API Boundary -->
+    <path d="M 565,265 L 710,265" stroke="#38bdf8" stroke-width="2.5" />
+    <polygon points="710,265 702,260 702,270" fill="#38bdf8" />
+
+    <!-- Core Server -> Mobile App -->
+    <path d="M 565,335 L 640,335 L 640,415 L 710,415" stroke="#38bdf8" stroke-width="2.5" />
+    <polygon points="710,415 702,410 702,420" fill="#38bdf8" />
+
+    <!-- ==================== ECOSYSTEM RE-INTERFACING LINKS ==================== -->
+    <!-- Web App &lt;-&gt; Agent Bi-directional Data and Query Interlock -->
+    <path d="M 790,225 L 790,245" stroke="#a5f3fc" stroke-width="2" stroke-dasharray="4,4" />
+    <polygon points="790,225 786,231 794,231" fill="#a5f3fc" />
+    <polygon points="790,245 786,239 794,239" fill="#a5f3fc" />
+
+    <!-- Mobile App &lt;-&gt; Agent Bi-directional Data and Query Interlock -->
+    <path d="M 790,340 L 790,360" stroke="#a5f3fc" stroke-width="2" stroke-dasharray="4,4" />
+    <polygon points="790,340 786,346 794,346" fill="#a5f3fc" />
+    <polygon points="790,360 786,354 794,354" fill="#a5f3fc" />
+
+    <!-- ==================== HUMAN INTERACTION SURFACE LINKS ==================== -->
+    <!-- Web App &lt;-&gt; Human Operator Interface -->
+    <path d="M 870,180 L 945,180" stroke="#e2e8f0" stroke-width="1.5" />
+    <polygon points="945,180 939,176 939,184" fill="#e2e8f0" />
+
+    <!-- AI Agent &lt;-&gt; Human Direct Conversational Interface -->
+    <path d="M 870,280 L 945,260" stroke="#a5f3fc" stroke-width="1.5" stroke-dasharray="3,3" />
+    <polygon points="945,260 937,257 941,264" fill="#a5f3fc" />
+
+    <!-- Mobile App &lt;-&gt; Human Tactical User Interface -->
+    <path d="M 870,405 L 945,300" stroke="#e2e8f0" stroke-width="1.5" />
+    <polygon points="945,300 937,301 942,308" fill="#e2e8f0" />
   </g>
 
+  <!-- INGESTION & SIMULATION NODES -->
+  <!-- External Legacy Data Sources -->
   <g transform="translate(45, 310)" filter="url(#shadow)">
     <rect width="70" height="100" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1" />
     <text x="35" y="40" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#94a3b8" text-anchor="middle">LEGACY</text>
@@ -63,6 +115,7 @@
     <text x="35" y="80" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">(Non-Standard)</text>
   </g>
 
+  <!-- glaux-publisher (#3) -->
   <g transform="translate(150, 325)" filter="url(#shadow)">
     <rect width="80" height="120" rx="6" fill="url(#comp-grad)" stroke="#10b981" stroke-width="1.5" />
     <rect width="80" height="28" rx="4" fill="#042f2e" opacity="0.6" />
@@ -70,47 +123,43 @@
     <text x="40" y="55" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#f8fafc" text-anchor="middle">glaux-</text>
     <text x="40" y="70" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#f8fafc" text-anchor="middle">publisher</text>
     <text x="40" y="100" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#94a3b8" text-anchor="middle">Data Translation</text>
-    <text x="40" y="110" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#94a3b8" text-anchor="middle">&amp; Normalization</text>
-    
     <g transform="translate(26, -10)">
       <rect width="28" height="18" rx="4" fill="#10b981" />
       <text x="14" y="13" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#0f172a" text-anchor="middle">#3</text>
     </g>
   </g>
 
-  <g transform="translate(90, 145)" filter="url(#shadow)">
+  <!-- glaux-simulator (#4) -->
+  <g transform="translate(90, 135)" filter="url(#shadow)">
     <rect width="140" height="120" rx="6" fill="url(#comp-grad)" stroke="#38bdf8" stroke-width="1.5" />
     <rect width="140" height="28" rx="4" fill="#0c4a6e" opacity="0.6" />
     <text x="70" y="18" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="0.5">SIMULATION ENGINE</text>
     <text x="70" y="62" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f8fafc" text-anchor="middle">glaux-simulator</text>
     <text x="70" y="95" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#94a3b8" text-anchor="middle">Native STANAG 4789</text>
-    <text x="70" y="107" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#94a3b8" text-anchor="middle">Data Generator</text>
-    
+    <text x="70" y="107" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">Data Generator</text>
     <g transform="translate(56, -10)">
       <rect width="28" height="18" rx="4" fill="#38bdf8" />
       <text x="14" y="13" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#0f172a" text-anchor="middle">#4</text>
     </g>
   </g>
 
-
-  <g transform="translate(360, 145)" filter="url(#core-glow)">
-    <rect width="240" height="300" rx="8" fill="url(#comp-grad)" stroke="#38bdf8" stroke-width="2.5" />
-    
-    <path d="M 362 153 A 6 6 0 0 1 368 147 L 592 147 A 6 6 0 0 1 598 153 L 598 185 L 362 185 Z" fill="#0c4a6e" />
+  <!-- CORE STANDARDS REFERENCE INFRASTRUCTURE SERVICE -->
+  <!-- glaux-server (#1) -->
+  <g transform="translate(325, 135)" filter="url(#core-glow)">
+    <rect width="240" height="310" rx="8" fill="url(#comp-grad)" stroke="#38bdf8" stroke-width="2.5" />
+    <path d="M 327 143 A 6 6 0 0 1 333 137 L 557 137 A 6 6 0 0 1 563 143 L 563 175 L 327 175 Z" fill="#0c4a6e" />
     <text x="120" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="900" fill="#38bdf8" text-anchor="middle" letter-spacing="1.5">CORE REFERENCE SERVER</text>
+    <text x="120" y="72" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">glaux-server</text>
     
-    <text x="120" y="75" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">glaux-server</text>
-    
-    <g transform="translate(20, 110)">
-      <rect width="200" height="32" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1" />
-      <text x="100" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#e2e8f0" text-anchor="middle">OGC API - Connected Systems</text>
+    <g transform="translate(20, 105)">
+      <rect width="200" height="30" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="100" y="19" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#e2e8f0" text-anchor="middle">OGC API - Connected Systems</text>
     </g>
-    <g transform="translate(20, 150)">
-      <rect width="200" height="32" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1" />
-      <text x="100" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#e2e8f0" text-anchor="middle">NATO STANAG 4789 Baseline</text>
+    <g transform="translate(20, 142)">
+      <rect width="200" height="30" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="100" y="19" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#e2e8f0" text-anchor="middle">NATO STANAG 4789 Baseline</text>
     </g>
-
-    <g transform="translate(20, 205)" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#94a3b8">
+    <g transform="translate(20, 195)" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#94a3b8">
       <rect width="95" height="40" rx="4" fill="#0f172a" stroke="#1e293b" />
       <text x="47" y="20" text-anchor="middle">Discovery &amp;</text>
       <text x="47" y="32" text-anchor="middle">Registration</text>
@@ -119,61 +168,84 @@
       <text x="152" y="20" text-anchor="middle">Dynamic Data</text>
       <text x="152" y="32" text-anchor="middle">Dissemination</text>
 
-      <rect width="200" height="30" rx="4" y="50" fill="#0f172a" stroke="#1e293b" />
-      <text x="100" y="69" text-anchor="middle" font-weight="700" fill="#38bdf8">Sensor Tasking &amp; Control Plane</text>
+      <rect width="200" height="30" rx="4" y="52" fill="#0f172a" stroke="#1e293b" />
+      <text x="100" y="71" text-anchor="middle" font-weight="700" fill="#38bdf8">Sensor Tasking &amp; Control Plane</text>
     </g>
-    
     <g transform="translate(106, -10)">
       <rect width="28" height="18" rx="4" fill="#38bdf8" />
       <text x="14" y="13" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#0f172a" text-anchor="middle">#1</text>
     </g>
   </g>
 
-
-  <g transform="translate(730, 145)" filter="url(#shadow)">
-    <rect width="140" height="120" rx="6" fill="url(#comp-grad)" stroke="#38bdf8" stroke-width="1.5" />
-    <rect width="140" height="28" rx="4" fill="#0c4a6e" opacity="0.6" />
-    <text x="70" y="18" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="0.5">COMMAND DASHBOARD</text>
-    <text x="70" y="62" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f8fafc" text-anchor="middle">glaux-webapp</text>
-    <text x="70" y="95" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#94a3b8" text-anchor="middle">Web Management UI &amp;</text>
-    <text x="70" y="107" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#94a3b8" text-anchor="middle">Situational Awareness</text>
-    
-    <g transform="translate(56, -10)">
+  <!-- APPS & COGNITIVE CONSUMER SERVICES MATRIX -->
+  <!-- glaux-webapp (#2) -->
+  <g transform="translate(710, 135)" filter="url(#shadow)">
+    <rect width="160" height="90" rx="6" fill="url(#comp-grad)" stroke="#38bdf8" stroke-width="1.5" />
+    <rect width="160" height="24" rx="4" fill="#0c4a6e" opacity="0.6" />
+    <text x="80" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="0.5">COMMAND DASHBOARD</text>
+    <text x="80" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f8fafc" text-anchor="middle">glaux-webapp</text>
+    <text x="80" y="72" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#94a3b8" text-anchor="middle">Visual Coproduction Layer</text>
+    <g transform="translate(66, -10)">
       <rect width="28" height="18" rx="4" fill="#38bdf8" />
       <text x="14" y="13" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#0f172a" text-anchor="middle">#2</text>
     </g>
   </g>
 
-  <g transform="translate(730, 325)" filter="url(#shadow)">
-    <rect width="140" height="120" rx="6" fill="url(#comp-grad)" stroke="#38bdf8" stroke-width="1.5" />
-    <rect width="140" height="28" rx="4" fill="#0c4a6e" opacity="0.6" />
-    <text x="70" y="18" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="0.5">TACTICAL EDGE FIELD APP</text>
-    <text x="70" y="62" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#f8fafc" text-anchor="middle">glaux-mobile</text>
-    <text x="70" y="95" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#94a3b8" text-anchor="middle">Cross-Platform Mobile</text>
-    <text x="70" y="107" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#94a3b8" text-anchor="middle">Deployment Client (iOS/Android)</text>
-    
-    <g transform="translate(56, -10)">
+  <!-- glaux-agent (#6 - INTEGRATED COGNITIVE ASSET) -->
+  <g transform="translate(710, 245)" filter="url(#shadow)">
+    <rect width="160" height="95" rx="6" fill="url(#comp-grad)" stroke="#22d3ee" stroke-width="1.5" />
+    <rect width="160" height="24" rx="4" fill="#155e75" opacity="0.6" />
+    <text x="80" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="800" fill="#22d3ee" text-anchor="middle" letter-spacing="0.5">INTELLIGENT LLM CONSUMER</text>
+    <text x="80" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f8fafc" text-anchor="middle">glaux-agent</text>
+    <text x="80" y="70" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" fill="#a5f3fc" text-anchor="middle">Conversational Interlocking</text>
+    <text x="80" y="82" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="500" fill="#64748b" text-anchor="middle">Contextual API Coprocessor</text>
+    <g transform="translate(66, -10)">
+      <rect width="28" height="18" rx="4" fill="#22d3ee" />
+      <text x="14" y="13" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#0f172a" text-anchor="middle">#6</text>
+    </g>
+  </g>
+
+  <!-- glaux-mobile (#5) -->
+  <g transform="translate(710, 360)" filter="url(#shadow)">
+    <rect width="160" height="90" rx="6" fill="url(#comp-grad)" stroke="#38bdf8" stroke-width="1.5" />
+    <rect width="160" height="24" rx="4" fill="#0c4a6e" opacity="0.6" />
+    <text x="80" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="0.5">TACTICAL EDGE FIELD APP</text>
+    <text x="80" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f8fafc" text-anchor="middle">glaux-mobile</text>
+    <text x="80" y="72" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="500" fill="#94a3b8" text-anchor="middle">Tactical Coproduction Client</text>
+    <g transform="translate(66, -10)">
       <rect width="28" height="18" rx="4" fill="#38bdf8" />
       <text x="14" y="13" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="900" fill="#0f172a" text-anchor="middle">#5</text>
     </g>
   </g>
 
-
-  <g transform="translate(30, 95)">
-    <rect width="900" height="415" rx="8" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="8,4" />
-    <rect width="290" height="24" rx="4" x="25" y="-12" fill="#334155" />
-    <text x="170" y="4" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="0.75">SYSTEM META-REPO FRAMEWORK: glaux</text>
+  <!-- ==================== HUMAN OPERATIONAL EDGE COLUMNS ==================== -->
+  <!-- Human-in-the-Loop Node Vector Layout -->
+  <g transform="translate(940, 195)" filter="url(#shadow)">
+    <!-- Node Container Outer Boundary -->
+    <rect width="80" height="150" rx="8" fill="#090d16" stroke="#475569" stroke-width="1.5" />
+    
+    <!-- Abstract Stylized Human Interface Token Icon -->
+    <g fill="#cbd5e1" stroke="#475569" stroke-width="1">
+      <circle cx="40" cy="45" r="14" fill="#475569" />
+      <path d="M 20,80 C 20,65 30,65 40,65 C 50,65 60,65 60,80 L 60,95 L 20,95 Z" fill="#475569" />
+    </g>
+    
+    <!-- Structural Vector Description Labels -->
+    <text x="40" y="112" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#f8fafc" text-anchor="middle">HUMAN</text>
+    <text x="40" y="125" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">OPERATORS</text>
+    <text x="40" y="137" font-family="'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="500" fill="#64748b" text-anchor="middle">Coalition Edge</text>
   </g>
 
-  <g transform="translate(40, 485)" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#64748b">
+  <!-- FOOTER DIAGRAM CAPTION LEGEND MATRIX -->
+  <g transform="translate(40, 492)" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#64748b">
     <circle cx="10" cy="5" r="4" fill="#38bdf8" />
-    <text x="22" y="9">Native OGC API Ecosystem Interoperability Protocol</text>
+    <text x="22" y="9">Native CSAPI Standard Broker Flow (Core API Datastreams)</text>
 
-    <circle cx="340" cy="5" r="4" fill="#34d399" />
-    <text x="352" y="9">Normalized STANAG 4789 Data Stream</text>
+    <circle cx="310" cy="5" r="4" fill="#a5f3fc" />
+    <text x="322" y="9">Ecosystem Inter-App Coproduction Loop (Conversational UI Enhancements / Context Translation)</text>
 
-    <circle cx="630" cy="5" r="4" fill="#475569" />
-    <text x="642" y="9">Bespoke Non-Standard / Legacy Ingestion</text>
+    <circle cx="740" cy="5" r="4" fill="#e2e8f0" />
+    <text x="752" y="9">Human-in-the-Loop Mission Boundary Surface Interaction Link</text>
   </g>
 
 </svg>
