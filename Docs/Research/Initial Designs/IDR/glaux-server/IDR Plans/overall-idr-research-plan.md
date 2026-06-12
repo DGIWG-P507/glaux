@@ -58,7 +58,7 @@ All topic-level research plans shall be drafted before topic execution begins. T
 
 ---
 
-**Total Topics:** 65
+**Total Topics:** 66
 
 Scope rule for topic admission:
 
@@ -313,6 +313,11 @@ Scope rule for topic admission:
 - Focus: Define authn/authz architecture and API security threat model for server scope, including object-level authorization, function-level authorization, command/tasking authorization, resource-consumption controls, and security misconfiguration risks.
 - Output target: Authentication, authorization, and API threat-model baseline.
 
+#### IDR-SRV-039A: Zero-Trust Architecture Alignment and Enforcement Model
+
+- Focus: Define how zero-trust architecture principles are mapped, enforced, and verified across Glaux Server identities, resources, commands, data flows, and trust boundaries.
+- Output target: Zero-trust alignment and enforcement baseline.
+
 #### IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints
 
 - Focus: Define policy/releasability/cross-boundary constraints.
@@ -421,7 +426,7 @@ Default execution order follows category dependencies in sequence:
 6. Category D (IDR-SRV-021 through IDR-SRV-024)
 7. Category E (IDR-SRV-025 through IDR-SRV-030)
 8. Category F (IDR-SRV-031 through IDR-SRV-038)
-9. Category G (IDR-SRV-039 through IDR-SRV-043)
+9. Category G (IDR-SRV-039, IDR-SRV-039A, and IDR-SRV-040 through IDR-SRV-043)
 10. Remaining Category H topics (IDR-SRV-045 through IDR-SRV-049)
 11. Remaining Category I topics (IDR-SRV-050 through IDR-SRV-057)
 
@@ -524,6 +529,7 @@ The final report must:
 | 2026-06-07 | Rust/TDD Refinement | Added IDR-SRV-014A, strengthened security threat-model and Rust platform topics, and adjusted execution order to pull 044/052 earlier | Make Rust and test-driven obligations first-class and better sequence dependency-informing research | Glaux Core Team |
 | 2026-06-07 | Topic Index Refinement | Added API versioning topic, refined existing CSAPI/conformance survey, strengthened Rust robustness/TDD coverage, and clarified early drafting of Rust platform and TDD plans | Incorporate external review feedback while preserving full-plan-before-execution workflow | Glaux Core Team |
 | 2026-06-07 | Existing Implementation Research Expansion | Replaced broad IDR-SRV-014A survey with focused studies for OSH, Connected Systems Go, pygeoapi, SECD, OS4CSAPI smoke-test findings, SECD interoperability findings, and OS4CSAPI discussion lessons learned | Ensure existing implementation and interoperability evidence is researched in enough detail to inform Glaux Server design and test strategy | Glaux Core Team |
+| 2026-06-12 | Security Topic Expansion | Added IDR-SRV-039A for zero-trust architecture alignment and enforcement model within Category G | Strengthen security architecture research coverage between threat modeling and policy/access constraints | Glaux Core Team |
 
 ---
 
@@ -537,7 +543,7 @@ The final report must:
 | D | IDR-SRV-021 to IDR-SRV-024 | TBD | TBD | Not Started | 2026-06-07 | |
 | E | IDR-SRV-025 to IDR-SRV-030 | TBD | TBD | Not Started | 2026-06-07 | |
 | F | IDR-SRV-031 to IDR-SRV-038 | TBD | TBD | Not Started | 2026-06-07 | |
-| G | IDR-SRV-039 to IDR-SRV-043 | TBD | TBD | Not Started | 2026-06-07 | |
+| G | IDR-SRV-039, IDR-SRV-039A, IDR-SRV-040 to IDR-SRV-043 | TBD | TBD | Not Started | 2026-06-12 | |
 | H | IDR-SRV-044 to IDR-SRV-049 | TBD | TBD | Not Started | 2026-06-07 | |
 | I | IDR-SRV-050 to IDR-SRV-057 | TBD | TBD | Not Started | 2026-06-07 | |
 
