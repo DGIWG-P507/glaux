@@ -1,7 +1,7 @@
 # Section 001: STANAG 4789 / AEP-4789 Server Obligation Baseline - Research Plan
 
 **Status:** Planned  
-**Last Updated:** June 7, 2026  
+**Last Updated:** July 29, 2026\
 **Estimated Research Time:** 8-12 hours  
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-001-stanag-4789-aep-4789-server-obligation-baseline-report.md`
@@ -144,15 +144,14 @@ The future research report must analyze these sources directly.
 
 ### STANAG / AEP Source Material
 
-- STANAG 4789 source material available to the Glaux project team.
-  - Use the controlled or project-provided copy available in the working environment.
-  - Record exact title, volume, version, date, and storage location in the report.
-- AEP-4789 Volume I source material available to the Glaux project team.
-  - Extract operational functions, reference-view concepts, interoperability needs, operational environments, and boundary conditions.
-  - Record exact title, volume, version, date, and storage location in the report.
-- AEP-4789 Volume II source material available to the Glaux project team.
-  - Extract standards-package adoption language, server-relevant obligations, and references to CSAPI, SensorML, and SWE Common.
-  - Record exact title, volume, version, date, and storage location in the report.
+- Project-controlling ratification package: `AC/224(JCGISR)D(2026)0005`, dated 27 April 2026.
+  - Status for this IDR: most-current ratification draft, as confirmed by the Glaux project lead on 29 July 2026.
+  - SHA-256: `56DC757B6E677B3584E3152A957849F21A24B22854F562613FF283A8B599DA8C`.
+  - The local working copy is supplied by the project lead and is not stored in the public repository.
+  - Enclosure 1: STANAG 4789, Edition 1, *Sensor Integration Standard for NATO JISR Operations*.
+  - Enclosure 2: AEP-4789 Volume I, Edition A, Version 1, *Sensor Integration Standard for NATO JISR Operations - Reference View*.
+  - Enclosure 3: AEP-4789 Volume II, Edition A, Version 1, *Sensor Integration Standard for NATO JISR Operations - Core APIs and Encodings*.
+  - Cite the enclosing document, enclosed publication, and exact page/section in the report.
 
 ### OGC Standards Package Sources
 
@@ -293,7 +292,7 @@ Use these sources to interpret context, constraints, downstream dependencies, an
 
 This topic research is complete when:
 
-- [ ] All controlling STANAG 4789 / AEP-4789 source material available to the project team has been reviewed or explicitly marked unavailable.
+- [ ] The project-controlling `AC/224(JCGISR)D(2026)0005` package and all three enclosures have been reviewed.
 - [ ] All source documents used in the report are listed with title, version/date, URL/path, access date, and authority classification.
 - [ ] Direct server obligations are extracted and traced to source anchors.
 - [ ] Server-side contract obligations are distinguished from broader ecosystem obligations.
@@ -334,7 +333,7 @@ This topic research is complete when:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- STANAG 4789 / AEP-4789 source material must be available to the researcher or explicitly marked unavailable.
+- The project-controlling `AC/224(JCGISR)D(2026)0005` package must be available to the researcher. If it is unavailable, this topic is blocked.
 - Research report template must be available.
 
 ### Blocks (What This Topic Unlocks)

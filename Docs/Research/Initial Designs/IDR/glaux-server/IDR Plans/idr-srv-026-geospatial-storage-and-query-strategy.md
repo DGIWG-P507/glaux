@@ -183,7 +183,7 @@ This topic follows `IDR-SRV-025: Database and Persistence Architecture Options`.
 - How should moving platforms and trajectories be represented?
 - How should latest known location differ from historical location?
 - How should out-of-order location updates, delayed observations, stale status, and cached/federated positions be handled?
-- Which findings should be handed to `IDR-SRV-027`, `IDR-SRV-033`, `IDR-SRV-034`, and `IDR-SRV-041`?
+- Which findings should be handed to `IDR-SRV-027`, `IDR-SRV-031`, `IDR-SRV-034`, `IDR-SRV-042`, and `IDR-SRV-043`?
 
 #### SensorML, SWE Common, and Semantic Integration
 
@@ -215,7 +215,7 @@ This topic follows `IDR-SRV-025: Database and Persistence Architecture Options`.
 - How should spatial queries behave under limited bandwidth or degraded connectivity?
 - Which spatial indexes, materialized extents, simplified geometries, or cached query results might support DDIL operation?
 - How should data volume, observation velocity, trajectory history, and event history affect spatial storage strategy?
-- Which findings should be handed to `IDR-SRV-041` and `IDR-SRV-054`?
+- Which findings should be handed to `IDR-SRV-042`, `IDR-SRV-043`, and `IDR-SRV-054`?
 
 #### Fixtures, Conformance, and Interoperability
 
@@ -528,11 +528,12 @@ The geospatial data-category matrix should include, at minimum:
 - `IDR-SRV-027: Time-Series Observation Storage Strategy`
 - `IDR-SRV-028: Metadata and Document Storage Strategy`
 - `IDR-SRV-029: Transaction, Consistency, Idempotency, and Concurrency Strategy`
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-031: Server Write and Ingestion Model`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
-- `IDR-SRV-045: Service Packaging, Containerization, and Deployment Topology`
-- `IDR-SRV-049: Observability, Logging, Metrics, and Operational Diagnostics`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
+- `IDR-SRV-045: Service Architecture and Modularization Strategy`
+- `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`
 - `IDR-SRV-054: Performance, Load, Stress, and Streaming Test Strategy`
 - `IDR-SRV-056: Interoperability Test Matrix for External CSAPI Clients`

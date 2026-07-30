@@ -383,7 +383,7 @@ The implementation findings matrix should include, at minimum:
 - `IDR-SRV-023: Schema and Encoding Validation Strategy`
 - `IDR-SRV-025: Database and Persistence Architecture Options`
 - `IDR-SRV-028: Metadata and Document Storage Strategy`
-- `IDR-SRV-030: Configuration, Secrets, and Environment Management`
+- `IDR-SRV-047: Configuration, Secrets, and Environment Strategy`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-051: Requirement-to-Test Traceability Strategy`

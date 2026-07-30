@@ -1,6 +1,6 @@
 # Glaux Server Goal and Definition
-**Version:** 1.3
-**Date:** 7 June 2026
+**Version:** 1.4
+**Date:** 29 July 2026
 **Status:** Draft planning baseline
 
 ---
@@ -118,6 +118,15 @@ Glaux Server shall be planned as a full-scope reference implementation component
 Implementation may be sequenced, but sequencing decisions shall not reduce the intended capability model. Each implementation increment shall preserve architectural integrity and remain aligned to the complete Glaux Server definition.
 
 Where a capability is not implemented immediately, the planning record shall identify whether it is deferred, dependent on another design decision, blocked by a standards interpretation question, or assigned to another Glaux component.
+
+Glaux Server shall be implemented in **Rust** and released as open-source software. The implementation target is a robust, best-of-breed OGC API - Connected Systems reference server whose behavior is standards-correct, interoperable, testable, maintainable, and useful to other implementers.
+
+Research and planning serve two equal purposes:
+
+- reduce the risk that AI-assisted development misunderstands the standards or makes poorly informed implementation decisions; and
+- equip AI-assisted development with the standards knowledge, implementation evidence, and engineering analysis needed to build the strongest reference implementation practical.
+
+Each topic research effort shall conclude in a polished, independently readable report. These reports are shared decision material for the project lead and AI-assisted development, and shall explain the evidence reviewed, findings, recommendations, implementation implications, and unresolved questions in clear language.
 
 ---
 

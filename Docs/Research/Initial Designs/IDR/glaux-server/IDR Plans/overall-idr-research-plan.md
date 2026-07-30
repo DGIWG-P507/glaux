@@ -1,7 +1,7 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 1.0
-**Date:** June 7, 2026
+**Version:** 1.1
+**Date:** July 29, 2026
 **Status:** Draft
 **Scope:** Initial Design Research (IDR) for `glaux-server`
 **Plan Owner:** Glaux Core Team
@@ -15,7 +15,9 @@ This document is the **overall IDR research plan** for Glaux Server.
 
 It defines the indexed set of research topics needed to produce a complete, high-rigor design foundation for a Rust-based Glaux Server implementation aligned to STANAG 4789 / AEP-4789, OGC API - Connected Systems Parts 1 and 2, SensorML, and SWE Common.
 
-The research effort shall support a test-driven implementation approach. Architecture, API behavior, validation behavior, conformance strategy, and implementation sequencing shall be informed by standards evidence and by current Rust, web API, security, and testing best-practice research.
+The research effort shall support a test-driven implementation approach for a robust, best-of-breed, open-source OGC API - Connected Systems reference server written in Rust. Architecture, API behavior, validation behavior, conformance strategy, and implementation sequencing shall be informed by standards evidence and by current Rust, web API, security, and testing best-practice research.
+
+The topic reports are intended to serve as common decision material for both the project lead and AI-assisted development. Each report shall therefore be polished, independently readable, evidence-backed, clear about recommendations and unresolved questions, and directly useful when the implementation guide and roadmap are written.
 
 ---
 
@@ -29,6 +31,11 @@ Produce a complete set of topic-level IDR research plans and topic-level researc
 - Rust-first implementation architecture and framework decisions
 - Test-driven design and implementation strategy
 - Research-backed Rust testing, CI, quality-gate, and dependency-management practices
+
+The research has two equal purposes:
+
+- prevent standards misunderstandings and poorly informed implementation choices during AI-assisted development; and
+- provide AI-assisted development with sufficient high-quality knowledge and analysis to build the strongest practical reference implementation.
 
 ---
 
@@ -530,6 +537,8 @@ The final report must:
 | 2026-06-07 | Topic Index Refinement | Added API versioning topic, refined existing CSAPI/conformance survey, strengthened Rust robustness/TDD coverage, and clarified early drafting of Rust platform and TDD plans | Incorporate external review feedback while preserving full-plan-before-execution workflow | Glaux Core Team |
 | 2026-06-07 | Existing Implementation Research Expansion | Replaced broad IDR-SRV-014A survey with focused studies for OSH, Connected Systems Go, pygeoapi, SECD, OS4CSAPI smoke-test findings, SECD interoperability findings, and OS4CSAPI discussion lessons learned | Ensure existing implementation and interoperability evidence is researched in enough detail to inform Glaux Server design and test strategy | Glaux Core Team |
 | 2026-06-12 | Security Topic Expansion | Added IDR-SRV-039A for zero-trust architecture alignment and enforcement model within Category G | Strengthen security architecture research coverage between threat modeling and policy/access constraints | Glaux Core Team |
+| 2026-07-29 | Baseline Clarification | Confirmed Rust as the implementation language and clarified that polished research reports serve both the project lead and AI-assisted development | Preserve the project's simple implementation goal while making the purpose of research explicit | Glaux Project Lead |
+| 2026-07-29 | Plan Baseline Repair | Realigned seven topic plans with the approved index, registered the controlling NATO draft package locally, and normalized report-directory and final-report targets | Ensure the research library produces the intended evidence for a Rust CSAPI reference-server implementation | Glaux Project Lead |
 
 ---
 
@@ -537,15 +546,15 @@ The final report must:
 
 | Category | Topics | Plan Coverage | Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|
-| A | IDR-SRV-001 to IDR-SRV-005 | TBD | TBD | Not Started | 2026-06-07 | |
-| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | TBD | TBD | Not Started | 2026-06-07 | |
-| C | IDR-SRV-015 to IDR-SRV-020 | TBD | TBD | Not Started | 2026-06-07 | |
-| D | IDR-SRV-021 to IDR-SRV-024 | TBD | TBD | Not Started | 2026-06-07 | |
-| E | IDR-SRV-025 to IDR-SRV-030 | TBD | TBD | Not Started | 2026-06-07 | |
-| F | IDR-SRV-031 to IDR-SRV-038 | TBD | TBD | Not Started | 2026-06-07 | |
-| G | IDR-SRV-039, IDR-SRV-039A, IDR-SRV-040 to IDR-SRV-043 | TBD | TBD | Not Started | 2026-06-12 | |
-| H | IDR-SRV-044 to IDR-SRV-049 | TBD | TBD | Not Started | 2026-06-07 | |
-| I | IDR-SRV-050 to IDR-SRV-057 | TBD | TBD | Not Started | 2026-06-07 | |
+| A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 0/5 | Research Not Started | 2026-07-29 | |
+| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 0/17 | Research Not Started | 2026-07-29 | |
+| C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 0/6 | Research Not Started | 2026-07-29 | |
+| D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | Research Not Started | 2026-07-29 | |
+| E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | Research Not Started | 2026-07-29 | |
+| F | IDR-SRV-031 to IDR-SRV-038 | Complete (8/8) | 0/8 | Research Not Started | 2026-07-29 | |
+| G | IDR-SRV-039, IDR-SRV-039A, IDR-SRV-040 to IDR-SRV-043 | Complete (6/6) | 0/6 | Research Not Started | 2026-07-29 | |
+| H | IDR-SRV-044 to IDR-SRV-049 | Complete (6/6) | 0/6 | Research Not Started | 2026-07-29 | |
+| I | IDR-SRV-050 to IDR-SRV-057 | Complete (8/8) | 0/8 | Research Not Started | 2026-07-29 | |
 
 ---
 
@@ -562,6 +571,6 @@ The final report must:
 - Glaux Governance: Research Planning Approach
   - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/research-planning-approach.md
 - Glaux Server Initial Planning Guidance
-  - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Research/Initial%20Designs/IDR/glaux-server/IDR%20Plans/initial-planning-guidance.md
+  - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/initial-planning-guidance.md
 - OGC CSAPI planning exemplar (OS4CSAPI)
   - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/planning

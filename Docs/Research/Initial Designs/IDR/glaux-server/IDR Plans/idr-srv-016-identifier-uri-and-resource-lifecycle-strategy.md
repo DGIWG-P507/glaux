@@ -49,7 +49,7 @@ This topic follows `IDR-SRV-015: Canonical Glaux Server Resource Model`.
 - Do not design the database schema here. Identify persistence implications and hand them to Category E topics.
 - Do not finalize relationship/link behavior here. Identify link and relationship needs and hand detailed relationship modeling to `IDR-SRV-017`.
 - Do not finalize temporal/freshness semantics here. Identify lifecycle-time requirements and hand detailed temporal modeling to `IDR-SRV-018`.
-- Do not finalize registration/update operation semantics here. Identify lifecycle needs and hand operation semantics to `IDR-SRV-019`.
+- Do not finalize registration/update operation semantics here. Identify provenance implications for `IDR-SRV-019` and hand operation semantics to `IDR-SRV-031`.
 - Do not finalize security policy here. Identify identifier and lifecycle risks and hand security implications to Category G and test topics.
 - Do not conflate identifiers with URLs, database keys, SensorML identifiers, or human labels. Distinguish them explicitly.
 - Keep the research bounded to Glaux Server behavior and server-side contracts.
@@ -440,14 +440,15 @@ The identifier/lifecycle matrix should include, at minimum:
 
 - `IDR-SRV-017: Relationship and Linkage Model`
 - `IDR-SRV-018: Temporal, Validity, and Freshness Model`
-- `IDR-SRV-019: Registration, Update, and State Change Semantics`
+- `IDR-SRV-019: Provenance, Lineage, Quality, and Trust Metadata Model`
 - `IDR-SRV-020: Status, Availability, and System Event Model`
 - `IDR-SRV-025: Database and Persistence Architecture Options`
 - `IDR-SRV-026: Geospatial Storage and Query Strategy`
 - `IDR-SRV-027: Time-Series Observation Storage Strategy`
 - `IDR-SRV-028: Metadata and Document Storage Strategy`
 - `IDR-SRV-029: Transaction, Consistency, Idempotency, and Concurrency Strategy`
-- `IDR-SRV-030: Configuration, Secrets, and Environment Management`
+- `IDR-SRV-030: Data Lifecycle, Retention, Archival, and Deletion Strategy`
+- `IDR-SRV-047: Configuration, Secrets, and Environment Strategy`
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`

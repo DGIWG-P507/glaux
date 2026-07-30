@@ -1,7 +1,7 @@
 # Section 005: Related NATO Standards Boundary Review - Research Plan
 
 **Status:** Planned  
-**Last Updated:** June 7, 2026  
+**Last Updated:** July 29, 2026\
 **Estimated Research Time:** 8-12 hours  
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-005-related-nato-standards-boundary-review-report.md`
@@ -173,15 +173,13 @@ The future research report must analyze these sources directly.
 
 ### STANAG / AEP Source Material
 
-- STANAG 4789 source material available to the Glaux project team.
-  - Use to identify related standards explicitly referenced or implied.
-  - Record exact title, version/date, status, and project storage location in the report.
-- AEP-4789 Volume I source material available to the Glaux project team.
-  - Use to identify reference-view, interoperability, and adjacent-standard boundary context.
-  - Record exact title, volume, version/date, status, and project storage location in the report.
-- AEP-4789 Volume II source material available to the Glaux project team.
-  - Use to confirm the adopted core APIs and encodings package and to identify any adjacent standards or exclusions.
-  - Record exact title, volume, version/date, status, and project storage location in the report.
+- Project-controlling ratification package: `AC/224(JCGISR)D(2026)0005`, dated 27 April 2026.
+  - Status for this IDR: most-current ratification draft, as confirmed by the Glaux project lead on 29 July 2026.
+  - SHA-256: `56DC757B6E677B3584E3152A957849F21A24B22854F562613FF283A8B599DA8C`.
+  - Use STANAG 4789, Edition 1 and AEP-4789 Volumes I and II, Edition A, Version 1.
+  - Use their explicit normative and informative references to bound the related-standards review.
+  - The local working copy is supplied by the project lead and is not stored in the public repository.
+  - Cite the enclosing document, enclosed publication, and exact page/section in the report.
 
 ### Related NATO Standards and Standards Catalog Sources
 
@@ -414,7 +412,7 @@ The classification matrix should include, at minimum:
 - `IDR-SRV-002` research report should be complete or explicitly marked unavailable/deferred.
 - `IDR-SRV-003` research report should be complete or explicitly marked unavailable/deferred.
 - `IDR-SRV-004` research report should be complete or explicitly marked unavailable/deferred.
-- STANAG 4789 / AEP-4789 source material must be available to the researcher or explicitly marked unavailable.
+- The project-controlling `AC/224(JCGISR)D(2026)0005` package must be available to the researcher. If it is unavailable, this topic is blocked.
 - Candidate related NATO standards must be available, summarized, or explicitly marked unavailable.
 - Research report template must be available.
 
@@ -423,7 +421,7 @@ The classification matrix should include, at minimum:
 - `IDR-SRV-006: CSAPI Part 1 Requirement Baseline`
 - `IDR-SRV-007: CSAPI Part 2 Requirement Baseline`
 - `IDR-SRV-008: Conformance Class and Requirement Mapping`
-- `IDR-SRV-014A through IDR-SRV-014G: Existing implementation, interoperability, and lessons-learned studies`
+- `IDR-SRV-014A` through `IDR-SRV-014G` implementation, interoperability, and lessons-learned studies
 - `IDR-SRV-015: Canonical Glaux Server Resource Model`
 - `IDR-SRV-032: Publisher-to-Server Contract Boundary`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`

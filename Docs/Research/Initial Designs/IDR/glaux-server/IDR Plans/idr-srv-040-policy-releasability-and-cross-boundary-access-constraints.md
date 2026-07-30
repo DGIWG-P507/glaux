@@ -267,7 +267,7 @@ This topic follows:
 - Which operations should be disabled or constrained in DDIL mode?
 - How should delayed synchronization preserve policy and releasability metadata?
 - How should conflicts between stale local policy and updated central policy be handled?
-- Which findings should be handed to `IDR-SRV-041`?
+- Which findings require audit treatment in `IDR-SRV-041`, DDIL behavior in `IDR-SRV-042`, or synchronization/conflict handling in `IDR-SRV-043`?
 
 #### Configuration and Deployment Policy
 
@@ -611,10 +611,12 @@ The policy/releasability matrix should include, at minimum:
 
 ### Blocks (What This Topic Unlocks)
 
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
-- `IDR-SRV-045: Service Packaging, Containerization, and Deployment Topology`
-- `IDR-SRV-046: Local Development and CI Environment Strategy`
-- `IDR-SRV-049: Observability, Logging, Metrics, and Operational Diagnostics`
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
+- `IDR-SRV-045: Service Architecture and Modularization Strategy`
+- `IDR-SRV-046: Reference Deployment Strategy`
+- `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-052: Rust Test-Driven Architecture and Multi-Layer Test Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`

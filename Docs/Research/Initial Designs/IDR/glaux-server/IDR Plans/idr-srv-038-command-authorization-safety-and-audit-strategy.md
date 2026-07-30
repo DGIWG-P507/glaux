@@ -54,7 +54,7 @@ The output must be a command authorization, safety, and audit strategy baseline 
 This topic follows:
 
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
-- `IDR-SRV-037: Feasibility and Command Validation Strategy`
+- `IDR-SRV-037: Feasibility and Asynchronous Tasking Strategy`
 
 Those topics define the command lifecycle and feasibility/validation behavior. This topic specializes authorization, safety, and audit for command/control operations before the broader Category G security, policy, and DDIL topics. It must clarify command-specific controls so later security threat modeling, policy/releasability design, DDIL behavior, security testing, conformance testing, and interoperability testing can be grounded in explicit command safety requirements.
 
@@ -270,7 +270,7 @@ Those topics define the command lifecycle and feasibility/validation behavior. T
 - What local audit records must be retained until reconnect?
 - How should delayed audit synchronization be reconciled?
 - How should stale policy, stale source trust, stale feasibility, and unknown target status affect command safety?
-- Which findings should be handed to `IDR-SRV-041`?
+- Which findings require general audit treatment in `IDR-SRV-041`, DDIL behavior in `IDR-SRV-042`, or synchronization/conflict handling in `IDR-SRV-043`?
 
 #### Event Publication and Observability
 
@@ -619,9 +619,11 @@ The command authorization/safety/audit matrix should include, at minimum:
 
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
-- `IDR-SRV-045: Service Packaging, Containerization, and Deployment Topology`
-- `IDR-SRV-049: Observability, Logging, Metrics, and Operational Diagnostics`
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
+- `IDR-SRV-045: Service Architecture and Modularization Strategy`
+- `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-052: Rust Test-Driven Architecture and Multi-Layer Test Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`

@@ -52,7 +52,7 @@ This topic follows:
 - Do not design the final database schema here. Identify time-series data categories, storage patterns, indexing needs, query semantics, retention implications, and downstream handoffs.
 - Do not collapse all time-indexed records into “observations.” Distinguish observations, status updates, system events, command status history, feasibility records, ingestion metadata, and audit records.
 - Do not collapse phenomenon time, result time, ingestion time, publication time, transaction time, event time, command time, and freshness time into one timestamp.
-- Do not finalize ingestion normalization here. Identify storage requirements and hand ingestion behavior to `IDR-SRV-033`.
+- Do not finalize ingestion normalization here. Identify storage requirements and hand ingestion behavior to `IDR-SRV-031`.
 - Do not finalize datastream/observation API semantics here. Identify storage implications and hand detailed API behavior to `IDR-SRV-034`.
 - Do not finalize streaming/event publication here. Identify storage/backfill/replay needs and hand streaming design to `IDR-SRV-035`.
 - Do not assume cloud-only time-series infrastructure. Evaluate open-source, reproducible, local, containerized, and disconnected/tactical-edge deployment implications.
@@ -208,7 +208,7 @@ This topic follows:
 - How should raw ingestion payloads, normalized records, validation results, rejected records, quarantined records, and provenance be stored?
 - How should SWE Common result structures and semantic bindings guide storage layout and validation?
 - How should duplicate detection, idempotency, replay, and out-of-order data be supported?
-- Which findings should be handed to `IDR-SRV-033`, `IDR-SRV-034`, `IDR-SRV-023`, and `IDR-SRV-029`?
+- Which findings should be handed to `IDR-SRV-031`, `IDR-SRV-034`, `IDR-SRV-023`, and `IDR-SRV-029`?
 
 #### Streaming, Event Publication, and Backfill Interaction
 
@@ -241,7 +241,7 @@ This topic follows:
 - How should Glaux Server store replay queues, synchronization cursors, source offsets, conflict markers, stale records, late records, and duplicate records?
 - How should federated sources and cached external records be distinguished from authoritative local records?
 - How should synchronization affect latest-value views and event histories?
-- Which findings should be handed to `IDR-SRV-041` and federation topics?
+- Which findings should be handed to `IDR-SRV-043` and federation topics?
 
 #### Security, Policy, Audit, and Releasability Implications
 
@@ -572,15 +572,16 @@ The time-series data-category matrix should include, at minimum:
 
 - `IDR-SRV-028: Metadata and Document Storage Strategy`
 - `IDR-SRV-029: Transaction, Consistency, Idempotency, and Concurrency Strategy`
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-031: Server Write and Ingestion Model`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 - `IDR-SRV-035: Streaming and Event Publication Strategy`
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
-- `IDR-SRV-037: Feasibility and Command Validation Strategy`
+- `IDR-SRV-037: Feasibility and Asynchronous Tasking Strategy`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
-- `IDR-SRV-045: Service Packaging, Containerization, and Deployment Topology`
-- `IDR-SRV-049: Observability, Logging, Metrics, and Operational Diagnostics`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
+- `IDR-SRV-045: Service Architecture and Modularization Strategy`
+- `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`
 - `IDR-SRV-054: Performance, Load, Stress, and Streaming Test Strategy`
 - `IDR-SRV-056: Interoperability Test Matrix for External CSAPI Clients`

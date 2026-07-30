@@ -310,7 +310,7 @@ The preceding dynamic data and command/control topics establish server functions
 
 #### Configuration, Secrets, and Deployment Security
 
-- How should findings from `IDR-SRV-030` feed into the API security model?
+- What secure-default, configuration, and secret-management requirements should this threat model hand to `IDR-SRV-047`?
 - What configuration controls are required for secure defaults, disabled endpoints, token validation, TLS, CORS, trusted proxies, admin mode, command enablement, and demo/test behavior?
 - How should secrets be protected in local development, CI, demo, operational deployment, and DDIL/tactical-edge deployments?
 - Which deployment controls are required but outside Glaux Server code?
@@ -323,7 +323,7 @@ The preceding dynamic data and command/control topics establish server functions
 - How should revocation, stale tokens, stale policy, stale source trust, and delayed audit synchronization be handled?
 - How should federated server-to-server trust be represented?
 - Which operations should be disabled, constrained, or marked degraded in DDIL mode?
-- Which findings should be handed to `IDR-SRV-041`?
+- Which security findings require audit treatment in `IDR-SRV-041`, DDIL behavior in `IDR-SRV-042`, or synchronization/conflict handling in `IDR-SRV-043`?
 
 #### Error, Logging, Metrics, and Diagnostic Security
 
@@ -660,10 +660,12 @@ The security threat model matrix should include, at minimum:
 ### Blocks (What This Topic Unlocks)
 
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
-- `IDR-SRV-045: Service Packaging, Containerization, and Deployment Topology`
-- `IDR-SRV-046: Local Development and CI Environment Strategy`
-- `IDR-SRV-049: Observability, Logging, Metrics, and Operational Diagnostics`
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
+- `IDR-SRV-045: Service Architecture and Modularization Strategy`
+- `IDR-SRV-046: Reference Deployment Strategy`
+- `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-052: Rust Test-Driven Architecture and Multi-Layer Test Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`

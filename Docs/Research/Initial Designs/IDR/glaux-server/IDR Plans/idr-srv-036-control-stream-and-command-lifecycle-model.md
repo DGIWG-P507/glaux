@@ -176,7 +176,7 @@ This topic follows `IDR-SRV-035: Streaming and Event Publication Strategy`. The 
 - How should delayed command status updates be reconciled after reconnect?
 - How should unknown outcomes be represented?
 - Which command operations should be disabled or constrained in DDIL mode?
-- Which findings should be handed to `IDR-SRV-041`?
+- Which audit findings should be handed to `IDR-SRV-041`, DDIL behavior to `IDR-SRV-042`, and synchronization/conflict behavior to `IDR-SRV-043`?
 
 #### Security, Authorization, Safety, and Audit Hooks
 
@@ -469,13 +469,15 @@ The command lifecycle matrix should include, at minimum:
 
 ### Blocks (What This Topic Unlocks)
 
-- `IDR-SRV-037: Feasibility and Command Validation Strategy`
+- `IDR-SRV-037: Feasibility and Asynchronous Tasking Strategy`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
-- `IDR-SRV-045: Service Packaging, Containerization, and Deployment Topology`
-- `IDR-SRV-049: Observability, Logging, Metrics, and Operational Diagnostics`
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
+- `IDR-SRV-045: Service Architecture and Modularization Strategy`
+- `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-052: Rust Test-Driven Architecture and Multi-Layer Test Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`

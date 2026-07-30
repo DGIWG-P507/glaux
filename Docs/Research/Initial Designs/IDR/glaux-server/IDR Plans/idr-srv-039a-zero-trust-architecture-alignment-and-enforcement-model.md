@@ -1,4 +1,4 @@
-# Section 039A: Zero Trust Architecture Alignment and Enforcement Model - Research Plan
+# Section 039A: Zero-Trust Architecture Alignment and Enforcement Model - Research Plan
 
 **Status:** Planned / Supplemental  
 **Last Updated:** June 12, 2026  
@@ -553,11 +553,11 @@ The future research report must analyze these sources directly and use current s
 
 The research should review all prior reports where available, with special attention to:
 
-- `IDR-SRV-032: External Source Registration and Trust Model`
+- `IDR-SRV-032: Publisher-to-Server Contract Boundary`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
 - `IDR-SRV-042: DDIL-Informed Server Semantics`
 - `IDR-SRV-047: Configuration, Secrets, and Environment Strategy`
 - `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`

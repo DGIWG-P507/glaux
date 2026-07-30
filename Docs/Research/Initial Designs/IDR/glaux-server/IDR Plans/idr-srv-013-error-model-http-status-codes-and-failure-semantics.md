@@ -147,7 +147,7 @@ This topic must precede OpenAPI documentation strategy, schema validation strate
 - How should Glaux Server distinguish server error, dependency error, degraded service, stale data, last-known state, and intentionally unavailable resources?
 - What response semantics are needed for DDIL-informed behavior?
 - Which failures should be represented through HTTP status, status resources, system events, warnings, metadata, or retry guidance?
-- Which findings should be handed to `IDR-SRV-020`, `IDR-SRV-035`, `IDR-SRV-041`, and `IDR-SRV-042`?
+- Which findings should be handed to `IDR-SRV-020`, `IDR-SRV-035`, `IDR-SRV-041`, `IDR-SRV-042`, `IDR-SRV-043`, and `IDR-SRV-046`?
 
 #### OpenAPI, Documentation, and Testing
 
@@ -414,8 +414,9 @@ The error matrix should include, at minimum:
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: Federation, Intermittent Connectivity, and Edge Deployment Constraints`
 - `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
+- `IDR-SRV-046: Reference Deployment Strategy`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-051: Requirement-to-Test Traceability Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`

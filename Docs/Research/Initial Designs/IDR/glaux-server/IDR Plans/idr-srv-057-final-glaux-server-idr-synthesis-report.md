@@ -1,10 +1,10 @@
 # Section 057: Final Glaux Server IDR Synthesis Report - Research Plan
 
 **Status:** Planned  
-**Last Updated:** June 12, 2026  
+**Last Updated:** July 29, 2026\
 **Estimated Research Time:** 24-32 hours  
 **Actual Research Time:** TBD until complete  
-**Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-057-final-glaux-server-idr-synthesis-report.md`
+**Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/final-idr-research-report.md`
 
 ---
 
@@ -512,7 +512,7 @@ This topic research is complete when:
 ## 7. Deliverable
 
 **Deliverable Name:** Final Glaux Server IDR Synthesis Report  
-**Deliverable File:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-057-final-glaux-server-idr-synthesis-report.md`
+**Deliverable File:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/final-idr-research-report.md`
 
 **Required Content:**
 
