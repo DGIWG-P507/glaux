@@ -1,8 +1,9 @@
 # Section 042: DDIL-Informed Server Semantics - Research Plan
 
+**Topic ID:** IDR-SRV-042<br>
 **Status:** Planned  
-**Last Updated:** June 12, 2026  
-**Estimated Research Time:** 14-18 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 18.5-23.5 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-042-ddil-informed-server-semantics-report.md`
 
@@ -44,10 +45,11 @@ The output must be a DDIL-informed server semantics baseline with source anchors
 This topic follows:
 
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
+- `IDR-SRV-039A: Zero-Trust Architecture Alignment and Enforcement Model`
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: Audit Logging and Accountability Strategy` or the available command/security/audit baseline for this topic set
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
 
-Authentication, policy, and audit define what can be trusted, shown, hidden, recorded, and proven. DDIL-informed semantics define how Glaux Server behaves when those dependencies or external sources are degraded or unreachable. This topic should precede `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`, because synchronization decisions need clear semantic rules for staleness, tentative state, delayed updates, local authority, and recovery.
+Authentication, zero-trust enforcement, policy, and audit define what can be trusted, shown, hidden, recorded, and proven. DDIL-informed semantics define how Glaux Server behaves when those dependencies or external sources are degraded or unreachable. This topic should precede `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`, because synchronization decisions need clear semantic rules for staleness, tentative state, delayed updates, local authority, and recovery.
 
 ### Critical Constraints
 
@@ -578,7 +580,7 @@ The DDIL-informed semantics matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` through `IDR-SRV-041` research reports should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-001` through `IDR-SRV-041`, including `IDR-SRV-039A`, research reports must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - Official CSAPI Part 1 and Part 2, SensorML, SWE Common, relevant OGC schemas/OpenAPI artifacts, DDIL/caching/reliability sources, and project-available AEP-4789 material must be reachable or explicitly marked unavailable.
 - Implementation-study and interoperability findings must be reachable or explicitly marked unavailable.
 - Research report template must be available.

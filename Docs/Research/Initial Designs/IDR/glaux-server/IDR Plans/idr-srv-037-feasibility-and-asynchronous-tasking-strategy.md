@@ -1,9 +1,10 @@
 # Section 037: Feasibility and Asynchronous Tasking Strategy - Research Plan
 
-**Status:** Planned
-**Last Updated:** July 29, 2026
-**Estimated Research Time:** 18-24 hours
-**Actual Research Time:** TBD until complete
+**Topic ID:** IDR-SRV-037<br>
+**Status:** Planned<br>
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 18-24 hours<br>
+**Actual Research Time:** TBD until complete<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-037-feasibility-and-asynchronous-tasking-strategy-report.md`
 
 ---
@@ -11,6 +12,8 @@
 ## Usage Instructions
 
 This plan defines the research needed for IDR-SRV-037. It does not perform the research or make final implementation decisions.
+
+This plan uses a topic-specific structural variant of the standard research-plan template approved by the Glaux Project Lead on July 30, 2026. Its published-behavior, source/evidence, required-report, dependency/handoff, and status sections preserve the template's required content and governance controls; the variant changes organization only.
 
 The resulting report must be polished, recommendation-first, independently readable, and directly useful to the project lead, implementers, and later AI agents. It must supply enough context to stand on its own, synthesize the evidence instead of mirroring the research questions, explain the evidence and tradeoffs behind its recommendations, and clearly distinguish:
 
@@ -199,7 +202,7 @@ At minimum, reconcile the report with:
 - IDR-SRV-031 for the server write/ingestion model, IDR-SRV-032 for the publisher contract, IDR-SRV-033 for the simulator contract, IDR-SRV-034 for dynamic update semantics, and IDR-SRV-035 for streaming/event publication; and
 - IDR-SRV-036 for the controlling command lifecycle.
 
-If a prerequisite report is not yet complete, use its plan and clearly label the dependency as provisional. Do not silently make a decision that belongs to another topic.
+If the project lead has formally approved a prerequisite exception under the overall-plan Governance Rules, use the affected plan provisionally, identify the exception and impact, and do not silently make a decision that belongs to another topic.
 
 ### Implementation and Interoperability Evidence
 
@@ -346,6 +349,7 @@ The research is complete when the report:
 - IDR-SRV-029: Transaction, Consistency, Idempotency, and Concurrency Strategy
 - IDR-SRV-031: Server Write and Ingestion Model
 - IDR-SRV-032: Publisher-to-Server Contract Boundary
+- IDR-SRV-033: Simulator-to-Server Contract Boundary
 - IDR-SRV-034: Datastream, Observation, and Status Update Semantics
 - IDR-SRV-035: Streaming and Event Publication Strategy
 - IDR-SRV-036: Control Stream and Command Lifecycle Model
@@ -371,10 +375,24 @@ The research is complete when the report:
 - [ ] Security/DDIL handoffs bounded
 - [ ] Test and interoperability scenarios traced
 - [ ] Report drafted, edited for readability, and source-verified
+- [ ] Report reviewed
+- [ ] Report accepted
+
+**Actual Research Time:** TBD until complete<br>
+**Completion Date:** TBD until complete
 
 ---
 
-## 10. References
+## 10. Notes and Open Questions
+
+- This approved structural variant changes organization only; the controlling overall-plan governance and acceptance rules still apply in full.
+- Open question: Which implementation or interoperability evidence available at execution time best exercises asynchronous feasibility, cancellation, retry, and restart-recovery behavior?
+- Risk: Treating feasibility as authorization, acceptance, dispatch, or execution success would collapse distinct command-lifecycle decisions and produce unsafe server semantics.
+- Risk: Recommendations that are not traced to CSAPI requirements, conformance tests, or clearly classified implementation evidence could misdirect the later Rust design.
+
+---
+
+## References
 
 - Glaux Server Overall IDR Research Plan
   `Docs/Research/Initial Designs/IDR/glaux-server/IDR Plans/overall-idr-research-plan.md`

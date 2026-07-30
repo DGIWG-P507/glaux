@@ -1,14 +1,20 @@
 # [Program/Domain] Final Overall Research Report
 
-**Overall Report Status:** [Draft | In Review | Final]
-**Overall Research Plan:** [Link to the controlling overall research plan]
-**Scope:** [Exact scope boundary from overall plan]
-**Reporting Period:** [Start date - End date]
-**Total Topic Plans in Index:** [N]
-**Total Topic Reports Completed:** [N]
-**Program Owner:** [Name/Team]
-**Report Author(s):** [Name/Team]
-**Date:** [Month Day, Year]
+**Overall Report Status:** [Draft | In Review | Final]<br>
+**Overall Research Plan:** [Link to the controlling overall research plan]<br>
+**Final Report Model:** [Indexed synthesis topic | Unindexed closeout]<br>
+**Synthesis Topic ID:** [Topic ID | N/A]<br>
+**Synthesis Topic Research Plan:** [Link | N/A]<br>
+**Scope:** [Exact scope boundary from overall plan]<br>
+**Reporting Period:** [Start date - End date]<br>
+**Total Topic Plans in Index:** [N]<br>
+**Total Topic Reports Completed:** [N]<br>
+**Total Topic Reports Accepted:** [N]<br>
+**Program Owner:** [Name/Team]<br>
+**Report Author(s):** [Name/Team]<br>
+**Accepted By:** [TBD until controlling-plan owner acceptance]<br>
+**Acceptance Date:** [TBD until accepted]<br>
+**Date:** [Month Day, Year]<br>
 **Last Updated:** [Month Day, Year]
 
 ---
@@ -17,11 +23,12 @@
 
 This template is only for the final overall report that closes the full research effort.
 
-1. Use this report only after all indexed topic plans/reports are complete, or explicitly document approved exceptions.
-2. Every topic ID from the overall plan index must be accounted for in the completion matrix.
-3. Overall conclusions must be traceable to topic report evidence.
-4. Recommendations must be implementation-usable and prioritized.
-5. Remaining unresolved cross-topic issues must be explicit.
+1. Follow the final-report model declared by the controlling overall plan. For an indexed synthesis topic, begin after every other indexed topic report is complete and accepted. For an unindexed closeout report, begin after every indexed topic report is complete and accepted. Any exception must be formally approved under the controlling overall plan and documented with its approval, rationale, scope impact, and downstream handling.
+2. For an indexed synthesis topic, complete the synthesis Topic ID and research-plan fields so this report also satisfies the topic-report identity requirement. For an unindexed closeout report, set both fields to `N/A`.
+3. Every topic ID from the overall plan index must be accounted for in the completion matrix.
+4. Overall conclusions must be traceable to topic report evidence.
+5. Recommendations must be implementation-usable and prioritized.
+6. Remaining unresolved cross-topic issues must be explicit.
 
 ---
 
@@ -85,15 +92,25 @@ Document whether the research output is sufficient for each downstream artifact.
 
 Account for every topic in the overall plan index.
 
-| Topic ID | Topic Title | Topic Plan | Topic Report | Status | Conclusion Summary |
-|---|---|---|---|---|---|
-| [ID-001] | [Title] | [Link] | [Link] | [Complete/Partial/Deferred] | [One-line conclusion] |
-| [ID-002] | [Title] | [Link] | [Link] | [Complete/Partial/Deferred] | [One-line conclusion] |
+| Topic ID | Topic Title | Topic Plan | Topic Report | Completion Status | Acceptance / Exception Status | Conclusion Summary |
+|---|---|---|---|---|---|---|
+| [ID-001] | [Title] | [Link] | [Link or N/A] | [Complete/Partial/Not Produced (Approved Exception)] | [Accepted/Approved Exception/In Progress] | [One-line conclusion] |
+| [ID-002] | [Title] | [Link] | [Link or N/A] | [Complete/Partial/Not Produced (Approved Exception)] | [Accepted/Approved Exception/In Progress] | [One-line conclusion] |
 
-### 3.1 Coverage Summary
+### 3.1 Approved Prerequisite Exceptions
+
+Record every exception authorized by the controlling overall plan. If there are none, state `None`.
+
+| Topic ID | Approved By | Approval Date | Rationale | Scope Impact | Downstream Handling | Resolution Status |
+|---|---|---|---|---|---|---|
+| [ID-###] | [Authority] | [YYYY-MM-DD] | [Why execution proceeded] | [Affected scope/conclusions] | [Required treatment] | [Open/Resolved] |
+
+### 3.2 Coverage Summary
 
 - Topics complete: [N]
-- Topics partial/deferred: [N]
+- Topic reports accepted: [N]
+- Approved prerequisite exceptions: [N]
+- Topics partial: [N]
 - Coverage confidence: [High/Medium/Low]
 
 ---
@@ -225,4 +242,5 @@ List all referenced plans, topic reports, specifications, and repositories.
 - [ ] Readiness for contribution/implementation guide/roadmap is stated
 - [ ] Unresolved cross-topic issues and risks are documented
 - [ ] Overall completion criteria are validated
+- [ ] Plan-owner acceptance and acceptance date are recorded
 - [ ] Final handoff actions are assigned

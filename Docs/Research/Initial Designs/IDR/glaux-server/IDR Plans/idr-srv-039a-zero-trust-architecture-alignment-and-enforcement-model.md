@@ -1,8 +1,9 @@
 # Section 039A: Zero-Trust Architecture Alignment and Enforcement Model - Research Plan
 
+**Topic ID:** IDR-SRV-039A<br>
 **Status:** Planned / Supplemental  
-**Last Updated:** June 12, 2026  
-**Estimated Research Time:** 18-24 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 22-28 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-039a-zero-trust-architecture-alignment-and-enforcement-model-report.md`
 
@@ -79,7 +80,7 @@ The research must answer:
   - tactical-edge/DDIL simulation,
   - operational-reference deployment?
 - What is mandatory for first implementation versus deferred full-scope ZTA alignment?
-- What changes or additions should this supplemental topic feed into `IDR-SRV-039`, `IDR-SRV-040`, `IDR-SRV-047`, `IDR-SRV-048`, `IDR-SRV-055`, `IDR-SRV-056`, and the final synthesis?
+- What changes or additions should this supplemental topic feed into `IDR-SRV-039` through `IDR-SRV-043`, `IDR-SRV-047`, `IDR-SRV-048`, `IDR-SRV-055`, `IDR-SRV-056`, and the final synthesis?
 
 The output must be a full research report with source anchors, ZTA authority analysis, Glaux-specific ZTA interpretation, enforcement-point model, policy decision/information/enforcement model, profile-specific ZTA baseline, command/control and publisher/source trust implications, DDIL considerations, observability/audit implications, test and evidence requirements, downstream handoffs, and recommendations for Glaux Server.
 
@@ -551,19 +552,13 @@ The future research report must analyze these sources directly and use current s
 
 ### Prior IDR Topic Sources
 
-The research should review all prior reports where available, with special attention to:
+The research must review completed upstream reports, with special attention to:
 
 - `IDR-SRV-032: Publisher-to-Server Contract Boundary`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
-- `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: Audit Logging and Accountability Strategy`
-- `IDR-SRV-042: DDIL-Informed Server Semantics`
-- `IDR-SRV-047: Configuration, Secrets, and Environment Strategy`
-- `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
-- `IDR-SRV-055: Security, Authorization, and Command-Control Test Strategy`
-- `IDR-SRV-056: Interoperability Test Matrix for External CSAPI Clients`
-- `IDR-SRV-057: Final Glaux Server IDR Synthesis Report`
+
+`IDR-SRV-040` through `IDR-SRV-043`, `IDR-SRV-047`, `IDR-SRV-048`, `IDR-SRV-055`, `IDR-SRV-056`, and `IDR-SRV-057` are downstream consumers and must not be treated as prerequisites or prior sources for this topic.
 
 ### Zero Trust Architecture Sources
 
@@ -718,7 +713,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 2. Map ZTA tests to conformance, Rust TDD, fixtures, security testing, and interoperability testing.
 3. Define evidence artifacts and redaction rules.
 4. Identify interoperability impacts for external clients.
-5. Identify updates needed for `IDR-SRV-039`, `IDR-SRV-040`, `IDR-SRV-047`, `IDR-SRV-048`, `IDR-SRV-055`, `IDR-SRV-056`, and final synthesis.
+5. Identify updates needed for `IDR-SRV-039` through `IDR-SRV-043`, `IDR-SRV-047`, `IDR-SRV-048`, `IDR-SRV-055`, `IDR-SRV-056`, and final synthesis.
 6. Identify proof-of-concept tasks.
 
 **Expected Output:** ZTA verification, interoperability, and downstream handoff matrix.
@@ -815,17 +810,20 @@ The ZTA enforcement matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-032`, `IDR-SRV-038`, `IDR-SRV-039`, `IDR-SRV-040`, `IDR-SRV-041`, `IDR-SRV-042`, `IDR-SRV-047`, `IDR-SRV-048`, `IDR-SRV-055`, and `IDR-SRV-056` research reports should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-032`, `IDR-SRV-038`, and `IDR-SRV-039` research reports must be complete and accepted before this topic starts unless an exception is approved and recorded under the overall-plan Governance Rules.
 - Official ZTA, identity, authorization, policy, OWASP, NIST, DoD/CISA, CSAPI, OpenAPI, HTTP, and problem-detail sources must be reachable.
 - Implementation-study and interoperability findings must be reachable or explicitly marked unavailable.
 - Research report template must be available.
 
-### Blocks or Updates (What This Topic Should Feed)
+### Downstream Consumers and Update Handoffs
 
-Because this is a supplemental topic inserted after the original sequence, it should feed updates or addenda to:
+Because this supplemental topic executes after IDR-SRV-039, its findings must be consumed directly by later topics and may identify an explicitly scoped addendum or correction to IDR-SRV-039:
 
-- `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
+- `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model` — addendum or correction recommendations only
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
 - `IDR-SRV-047: Configuration, Secrets, and Environment Strategy`
 - `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
 - `IDR-SRV-055: Security, Authorization, and Command-Control Test Strategy`

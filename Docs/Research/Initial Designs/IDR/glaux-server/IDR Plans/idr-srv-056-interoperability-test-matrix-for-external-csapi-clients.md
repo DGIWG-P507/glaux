@@ -1,8 +1,9 @@
 # Section 056: Interoperability Test Matrix for External CSAPI Clients - Research Plan
 
+**Topic ID:** IDR-SRV-056<br>
 **Status:** Planned  
-**Last Updated:** June 12, 2026  
-**Estimated Research Time:** 16-20 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 18.5-24 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-056-interoperability-test-matrix-for-external-csapi-clients-report.md`
 
@@ -727,9 +728,9 @@ The interoperability test matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` through `IDR-SRV-055` research reports should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-001` through `IDR-SRV-055`, including `IDR-SRV-039A`, research reports must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - Official CSAPI Part 1 and Part 2, SensorML, SWE Common, OGC API - Features, OpenAPI, JSON Schema, HTTP, GeoJSON, and problem-detail sources must be reachable.
-- Conformance, traceability, Rust TDD, fixture, performance, and security strategy findings must be available or explicitly marked unavailable/deferred.
+- Conformance, traceability, Rust TDD, fixture, performance, and security strategy findings must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - External client and peer implementation sources must be reachable or explicitly marked unavailable.
 - Research report template must be available.
 

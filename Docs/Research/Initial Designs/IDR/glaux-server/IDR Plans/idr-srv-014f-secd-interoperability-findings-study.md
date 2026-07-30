@@ -1,8 +1,9 @@
 # Section 014F: SECD Interoperability Findings Study - Research Plan
 
+**Topic ID:** IDR-SRV-014F<br>
 **Status:** Planned  
-**Last Updated:** June 8, 2026  
-**Estimated Research Time:** 10-14 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 11.5-15 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014f-secd-interoperability-findings-study-report.md`
 
@@ -56,6 +57,8 @@ This topic is distinct from `IDR-SRV-014D`, which studies SECD server implementa
 - Distinguish SECD server behavior from external-client behavior, test-harness behavior, fixture issues, schema issues, and standards ambiguity.
 - Distinguish reproducible findings from anecdotal observations, stale results, exploratory notes, inferred conclusions, and unresolved hypotheses.
 - Distinguish SECD-specific issues from broader CSAPI interoperability concerns.
+- Treat `IDR-SRV-014D` as the baseline for observable server behavior and explicitly declared architecture. Do not repeat its endpoint inventory except to establish the exact test condition for an interoperability finding.
+- Treat the SECD interoperability repository as test and findings evidence, not as SECD server source. Reproduce drift-sensitive findings against the current deployment and classify each as current, changed, resolved, stale, or not reproducible.
 - Do not convert findings directly into engineering tickets; translate them into research findings, risks, design implications, validation needs, and test strategy handoffs.
 - Keep the research bounded to Glaux Server relevance.
 
@@ -141,9 +144,19 @@ The future research report must analyze these sources directly.
 
 ### SECD Interoperability Sources
 
-- SECD interoperability repository:
-  - https://github.com/Sam-Bolling/csapi-server-interop-secd
-- SECD repository issues, pull requests, README files, scripts, test outputs, notes, fixtures, sample responses, compatibility observations, and generated artifacts.
+- SECD interoperability evidence repository, currently access-controlled and not the SECD server source repository:
+  - https://github.com/Sam-Bolling/csapi-server-interop-secd/tree/f018fd129bf0d0d1ce75e68198e3ab4d99d937a0
+- Primary evaluation report:
+  - https://github.com/Sam-Bolling/csapi-server-interop-secd/blob/f018fd129bf0d0d1ce75e68198e3ab4d99d937a0/evaluation/csapi-server-evaluation-results.md
+- Independent secondary evaluation:
+  - https://github.com/Sam-Bolling/csapi-server-interop-secd/blob/f018fd129bf0d0d1ce75e68198e3ab4d99d937a0/evaluation/csapi-server-evaluation-results-codex.md
+- Adjudicated evidence register:
+  - https://github.com/Sam-Bolling/csapi-server-interop-secd/blob/f018fd129bf0d0d1ce75e68198e3ab4d99d937a0/reinvestigation/adjudication/pre-grading-evidence-register-v1.md
+- SECD report card publication candidate:
+  - https://github.com/Sam-Bolling/csapi-server-interop-secd/blob/f018fd129bf0d0d1ce75e68198e3ab4d99d937a0/report-cards/publication-ready/secd-report-card.md
+- Historical snapshot and initial compatibility report:
+  - https://github.com/Sam-Bolling/csapi-server-interop-secd/blob/f018fd129bf0d0d1ce75e68198e3ab4d99d937a0/analysis/00-server-snapshot.md
+  - https://github.com/Sam-Bolling/csapi-server-interop-secd/blob/f018fd129bf0d0d1ce75e68198e3ab4d99d937a0/analysis/01-initial-compatibility-report.md
 - Any SECD-related interoperability reports, smoke-test outputs, manual test notes, screenshots, logs, or issue comments identified during the research phase.
 - SECD implementation-study findings from `IDR-SRV-014D`.
 
@@ -353,8 +366,8 @@ The interoperability findings matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-006` through `IDR-SRV-014E` research reports should be complete or explicitly marked unavailable/deferred.
-- SECD interoperability repository, relevant branches, test artifacts, notes, and discussion/issue sources must be reachable or explicitly marked unavailable.
+- `IDR-SRV-006` through `IDR-SRV-014E` research reports must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
+- The pinned SECD interoperability evidence and relevant test artifacts must be reachable where required. For any unavailable external artifact, record its identity, access attempt, affected questions, and resulting evidence limits; do not infer its contents.
 - Research report template must be available.
 
 ### Blocks (What This Topic Unlocks)
@@ -397,6 +410,7 @@ Update this section as work progresses.
 ## 10. Notes and Open Questions
 
 - SECD interoperability findings are evidence, not normative sources.
+- The pinned interoperability repository is test/findings evidence, not SECD server source.
 - This topic should not repeat the SECD implementation study except where needed to explain interoperability findings.
 - Some findings may have been fixed or superseded; the report must record freshness and current relevance.
 - Open question: Which SECD interoperability artifacts best represent the current baseline?
@@ -418,7 +432,7 @@ Update this section as work progresses.
 - Research Report Template: https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/research-report-template.md
 - Overall Research Report Template: https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/overall-research-report-template.md
 - Research Planning Approach: https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/research-planning-approach.md
-- SECD interoperability repository: https://github.com/Sam-Bolling/csapi-server-interop-secd
+- SECD interoperability evidence repository at reviewed commit: https://github.com/Sam-Bolling/csapi-server-interop-secd/tree/f018fd129bf0d0d1ce75e68198e3ab4d99d937a0
 - OS4CSAPI organization: https://github.com/OS4CSAPI
 - OS4CSAPI client work: https://github.com/OS4CSAPI/ogc-client-CSAPI_2
 - CSAPI Explorer: https://ogc-csapi-explorer.pages.dev/

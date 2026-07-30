@@ -1,8 +1,9 @@
 # Section 001: STANAG 4789 / AEP-4789 Server Obligation Baseline - Research Plan
 
+**Topic ID:** IDR-SRV-001<br>
 **Status:** Planned  
-**Last Updated:** July 29, 2026\
-**Estimated Research Time:** 8-12 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 7.5-12 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-001-stanag-4789-aep-4789-server-obligation-baseline-report.md`
 
@@ -53,6 +54,8 @@ If this topic is incomplete or too vague, later research may incorrectly treat G
 ### Critical Constraint(s)
 
 - Treat STANAG 4789 / AEP-4789 as the controlling NATO/DGIWG obligation frame for this topic.
+- For this topic, the project-supplied `AC/224(JCGISR)D(2026)0005` package dated 27 April 2026 is a fixed project baseline, not a version-discovery question. Verify the local file against the registered SHA-256 before use.
+- Do not search for or substitute other copies, drafts, or editions. If hash verification fails, stop and obtain project-lead resolution; only a documented project-lead baseline change may designate another copy. Discovery of related NATO publications belongs to `IDR-SRV-005` and does not reopen this topic's controlling package.
 - Keep conclusions bounded to **Glaux Server** responsibilities.
 - Do not define Glaux Web App, Glaux Mobile, Glaux Publisher, or Glaux Simulator product behavior except where the server must expose contracts they depend on.
 - Do not replace authoritative NATO, DGIWG, or OGC standards with project-specific definitions.
@@ -145,8 +148,9 @@ The future research report must analyze these sources directly.
 ### STANAG / AEP Source Material
 
 - Project-controlling ratification package: `AC/224(JCGISR)D(2026)0005`, dated 27 April 2026.
-  - Status for this IDR: most-current ratification draft, as confirmed by the Glaux project lead on 29 July 2026.
+  - Status for this IDR: project-controlling ratification package, as designated by the Glaux project lead on 29 July 2026.
   - SHA-256: `56DC757B6E677B3584E3152A957849F21A24B22854F562613FF283A8B599DA8C`.
+  - Baseline handling: a matching SHA-256 establishes this file as the controlling package for this topic. If the file is unavailable or the hash does not match, stop and obtain project-lead resolution; do not substitute another copy.
   - The local working copy is supplied by the project lead and is not stored in the public repository.
   - Enclosure 1: STANAG 4789, Edition 1, *Sensor Integration Standard for NATO JISR Operations*.
   - Enclosure 2: AEP-4789 Volume I, Edition A, Version 1, *Sensor Integration Standard for NATO JISR Operations - Reference View*.
@@ -207,13 +211,13 @@ Use these sources to interpret context, constraints, downstream dependencies, an
 
 **Tasks:**
 
-1. Gather the controlling STANAG 4789 / AEP-4789 source material available to the project team.
-2. Record title, version, volume, date, status, source location, and access limitations for each STANAG/AEP source.
+1. Obtain the project-supplied `AC/224(JCGISR)D(2026)0005` file and verify its SHA-256 against the registered value before opening it.
+2. Record the enclosing package and three enclosure identities exactly as registered in Section 3, together with the controlled source location and access limitations. Do not conduct independent version discovery. If verification fails, stop and obtain project-lead resolution.
 3. Gather the Glaux Server Goal and Definition and the overall IDR research plan.
 4. Gather the official OGC standards-package sources listed above.
 5. Classify each source as controlling, adopted technical standard, project governance, supporting context, or exemplar.
 
-**Expected Output:** Evidence inventory with authority classification and notes on any unavailable, controlled, or ambiguous sources.
+**Expected Output:** Evidence inventory confirming the registered package hash, enclosure identities, authority classification, controlled source location, and access limitations.
 
 ### Phase 2: STANAG / AEP Obligation Extraction (2-3 hours)
 
@@ -292,7 +296,7 @@ Use these sources to interpret context, constraints, downstream dependencies, an
 
 This topic research is complete when:
 
-- [ ] The project-controlling `AC/224(JCGISR)D(2026)0005` package and all three enclosures have been reviewed.
+- [ ] The project-controlling `AC/224(JCGISR)D(2026)0005` package has been hash-verified and all three enclosures have been reviewed.
 - [ ] All source documents used in the report are listed with title, version/date, URL/path, access date, and authority classification.
 - [ ] Direct server obligations are extracted and traced to source anchors.
 - [ ] Server-side contract obligations are distinguished from broader ecosystem obligations.
@@ -333,7 +337,7 @@ This topic research is complete when:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- The project-controlling `AC/224(JCGISR)D(2026)0005` package must be available to the researcher. If it is unavailable, this topic is blocked.
+- The project-controlling `AC/224(JCGISR)D(2026)0005` package must be available and its SHA-256 must match the registered value. If it is unavailable or mismatched, this topic is blocked pending project-lead resolution; another copy must not be substituted.
 - Research report template must be available.
 
 ### Blocks (What This Topic Unlocks)
@@ -375,8 +379,8 @@ Update this section as work progresses.
 - The availability and citation handling for STANAG 4789 / AEP-4789 source material may depend on access controls. If a source cannot be linked publicly, the report must still record enough internal identifying information to support review.
 - The research must avoid treating broad operational interoperability goals as direct Glaux Server implementation obligations unless the source evidence supports that interpretation.
 - The research should identify where later topics must perform more detailed technical extraction from CSAPI, SensorML, SWE Common, and related OGC materials.
-- Open question: Which specific STANAG 4789 / AEP-4789 source copies are authoritative for this IDR effort?
-- Open question: Are any AEP/SRD materials still draft, unpublished, or expected to change during the Glaux Server planning cycle?
+- Open question: What internal citation notation will identify the enclosing package, enclosure, and exact page/section without publishing the controlled file or its local path?
+- Open question: How will any later project-authorized baseline change be recorded and propagated to dependent IDR topics?
 - Risk: If the obligation baseline is too broad, downstream topics may absorb ecosystem responsibilities into Glaux Server.
 - Risk: If the obligation baseline is too narrow, downstream topics may miss NATO/DGIWG requirements that should shape the server architecture.
 

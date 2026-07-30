@@ -1,9 +1,10 @@
 # Section [NN]: [Research Topic Title] - Research Plan
 
-**Status:** [Planned | In Progress | Complete]
-**Last Updated:** [Month Day, Year]
-**Estimated Research Time:** [X-Y hours]
-**Actual Research Time:** [TBD until complete]
+**Topic ID:** [Must match the overall research plan index, e.g., IDR-SRV-001]<br>
+**Status:** [Planned | In Progress | Complete]<br>
+**Last Updated:** [Month Day, Year]<br>
+**Estimated Research Time:** [X-Y hours]<br>
+**Actual Research Time:** [TBD until complete]<br>
 **Deliverable Target:** [Finding/Report file path]
 
 ---
@@ -12,16 +13,18 @@
 
 Before drafting this plan, review the full exemplar corpus and align your plan to the proven standards for content nature, type, level, and detail:
 
-- Full research-plans corpus:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/research/testing/research-plans
+- Full research-plans corpus (audited snapshot `754411897173c2ec4debaa9bcf4ed9e0f8a9e230`):
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans
 - Early exemplar (blueprint-first depth):
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/01-pr114-blueprint-analysis.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/01-pr114-blueprint-analysis.md
 - Mid-stream exemplar (inventory + sourcing rigor):
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/15-fixture-sourcing-organization.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/15-fixture-sourcing-organization.md
 - End-state synthesis exemplar:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/38-testing-playbook-synthesis.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/38-testing-playbook-synthesis.md
 
 This template is intentionally structured to match the dominant and highest-value pattern used across that corpus.
+The commit-pinned snapshot above controls exemplar structure and style; a mutable branch link must not silently change the planning baseline.
+Every report produced from this template must follow the audience and evidence-discipline rules in the Research Report Template. Do not duplicate those universal rules as topic-specific boilerplate unless the topic needs a stricter domain guardrail.
 
 ---
 
@@ -171,9 +174,18 @@ Define the exact output file and what it must contain.
 
 ### Must Complete Before Starting
 
-- [Dependency]
-- [Dependency]
-- [Dependency]
+**Internal project prerequisites (completion gates):**
+
+- [Prior topic report or internal artifact that must be complete and accepted]
+- [Prior topic report or internal artifact that must be complete and accepted]
+
+Internal prerequisites are not waived by labeling them unavailable or deferred. Reorder or change them only through an explicit, recorded update to the controlling overall plan or this plan's approved dependency record.
+
+**External evidence prerequisites:**
+
+- [External, public, or controlled source family needed for this topic]
+
+If an external source cannot be accessed, record its identity, the access attempt, the questions affected, and the resulting evidence limitation; do not infer its contents.
 
 ### Blocks (What This Topic Unlocks)
 
@@ -215,5 +227,5 @@ Capture unresolved issues, assumptions, caveats, and follow-up actions.
   - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/research-planning-approach.md
 - Initial Planning Guidance (this repository):
   - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/initial-planning-guidance.md
-- Testing research exemplar corpus (OS4CSAPI):
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/research/testing/research-plans
+- Testing research exemplar corpus (OS4CSAPI, audited snapshot):
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans

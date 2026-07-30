@@ -1,10 +1,11 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 1.1
-**Date:** July 29, 2026
-**Status:** Draft
-**Scope:** Initial Design Research (IDR) for `glaux-server`
-**Plan Owner:** Glaux Core Team
+**Version:** 1.2<br>
+**Date:** July 30, 2026<br>
+**Status:** Draft<br>
+**Scope:** Initial Design Research (IDR) for `glaux-server`<br>
+**Plan Owner:** Glaux Project Lead<br>
+**Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
 **Final Report Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/final-idr-research-report.md`
 
 ---
@@ -44,9 +45,12 @@ The research has two equal purposes:
 1. No topic research report without a topic research plan.
 2. No topic plan without a matching topic ID in this overall index.
 3. Topics are worked one at a time in index order unless explicitly re-prioritized.
-4. Each completed topic produces exactly one topic research report.
-5. The final overall IDR report is written only after all indexed topics are complete.
-6. All reports must include explicit references and evidence.
+4. Before a topic starts, every indexed-topic report named as its prerequisite must be complete and accepted by the plan owner. This rule supersedes softer wording retained in any topic plan, including `should`, `when available`, `unavailable`, `deferred`, or `provisional`. An exception requires the plan owner's explicit approval and a recorded rationale, scope impact, and downstream handling before execution. A project-produced report is not "unavailable" merely because it is incomplete.
+5. External-source unavailability is an evidence limitation, not completion of an indexed topic. Record the source, access limitation, affected questions, and resulting limits without inventing or silently substituting content.
+6. Each completed topic produces exactly one research report. For `IDR-SRV-057`, the final overall IDR report is that topic's report; no separate topic report is created.
+7. Execution of `IDR-SRV-057`, including drafting the final overall IDR report, begins only after every other indexed topic report is complete and accepted, except for an exception approved and recorded under Rule 4.
+8. All reports must include explicit, reproducible references and evidence.
+9. `Accepted` means the plan owner has reviewed a completed report for alignment with its topic plan and suitability for downstream decisions. The acceptance authority and date are recorded in the report, and aggregate acceptance coverage is recorded in progress tracking.
 
 ---
 
@@ -57,15 +61,17 @@ Research lifecycle:
 1. Create this overall IDR research plan.
 2. Build and finalize the topic index in this document.
 3. Create one topic research plan per indexed topic.
-4. Execute topic research one topic at a time.
-5. Produce one topic research report per completed topic.
-6. Produce one final overall IDR research report after all topics are complete.
+4. Execute topic research one topic at a time in the order below, after satisfying each topic's prerequisites.
+5. Produce and obtain plan-owner acceptance of one topic research report for each of `IDR-SRV-001` through `IDR-SRV-056`.
+6. Execute `IDR-SRV-057` last and produce the final overall IDR research report, which also serves as the `IDR-SRV-057` report, after every other topic is complete and accepted or any Rule 4 exception is explicitly accounted for.
 
 All topic-level research plans shall be drafted before topic execution begins. Topic execution shall then proceed one topic at a time, using the approved topic-level research plan to produce the corresponding topic-level research report.
 
 ---
 
 **Total Topics:** 66
+
+Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014G`, and `IDR-SRV-039A`.
 
 Scope rule for topic admission:
 
@@ -416,44 +422,45 @@ Scope rule for topic admission:
 
 #### IDR-SRV-057: Final Glaux Server IDR Synthesis Report
 
-- Focus: Consolidate all findings into an implementation-ready synthesis package.
-- Output target: Final IDR synthesis report and architecture decision baseline.
+- Focus: Produce the governance-mandated final overall IDR report by consolidating all completed topic findings into an implementation-ready research synthesis.
+- Output target: `final-idr-research-report.md`, the single final overall IDR report and architecture-decision evidence baseline. It supplies inputs to, but does not replace, the later Implementation Guide or Roadmap.
 
 ---
 
 ## Topic Execution Order
 
-Default execution order follows category dependencies in sequence:
+Default research execution follows category dependencies in sequence:
 
 1. Category A (IDR-SRV-001 through IDR-SRV-005)
 2. Category B core behavior topics (IDR-SRV-006 through IDR-SRV-014, plus IDR-SRV-010A)
 3. Existing implementation, smoke-test, interoperability, and lessons-learned studies (IDR-SRV-014A through IDR-SRV-014G)
-4. IDR-SRV-044 and IDR-SRV-052 drafted early during topic-plan development
-5. Category C (IDR-SRV-015 through IDR-SRV-020)
-6. Category D (IDR-SRV-021 through IDR-SRV-024)
-7. Category E (IDR-SRV-025 through IDR-SRV-030)
-8. Category F (IDR-SRV-031 through IDR-SRV-038)
-9. Category G (IDR-SRV-039, IDR-SRV-039A, and IDR-SRV-040 through IDR-SRV-043)
-10. Remaining Category H topics (IDR-SRV-045 through IDR-SRV-049)
-11. Remaining Category I topics (IDR-SRV-050 through IDR-SRV-057)
+4. Category C (IDR-SRV-015 through IDR-SRV-020)
+5. Category D (IDR-SRV-021 through IDR-SRV-024)
+6. Category E (IDR-SRV-025 through IDR-SRV-030)
+7. Category F (IDR-SRV-031 through IDR-SRV-038)
+8. Category G (IDR-SRV-039, IDR-SRV-039A, and IDR-SRV-040 through IDR-SRV-043)
+9. Category H (IDR-SRV-044 through IDR-SRV-049)
+10. Category I (IDR-SRV-050 through IDR-SRV-057)
 
-Because Glaux Server is intended to be Rust-based and test-driven, IDR-SRV-044 and IDR-SRV-052 shall be drafted early during topic-plan development so Rust platform and test-driven architecture assumptions can inform later topic plans. All topic-level research plans shall still be drafted before topic execution begins.
+IDR-SRV-044 and IDR-SRV-052 were drafted early during topic-plan development. That historical drafting order does not change their research execution positions in Categories H and I. All topic-level research plans shall still be drafted before topic execution begins.
 
 Dependency rationale:
 
 - A establishes obligation boundaries before implementation semantics.
 - B defines externally visible server behavior before internal modeling/storage decisions.
 - IDR-SRV-014A through IDR-SRV-014G capture existing implementation, smoke-test, interoperability, and community lessons early to inform model, behavior, conformance, validation, and test-strategy decisions.
-- IDR-SRV-044 and IDR-SRV-052 are drafted early so Rust platform and TDD architecture assumptions inform downstream topic-plan development.
+- IDR-SRV-044 and IDR-SRV-052 were drafted early as planning inputs, but their research executes in Categories H and I after their stated prerequisites.
 - C and D stabilize domain and representation semantics before persistence/dynamic-data strategy.
 - E, F, and G define storage, runtime interaction, and policy constraints before full deployment-shape finalization.
-- IDR-SRV-045 through IDR-SRV-049 complete platform modularization and implementation/deployment shape before final verification architecture.
+- IDR-SRV-044 through IDR-SRV-049 complete implementation-platform, modularization, and deployment-shape research before final verification architecture.
 - I closes with readiness, traceability, and final synthesis.
 
 Order may change only when:
 
 - A dependency requires reordering, or
 - A documented priority decision is made and recorded.
+
+Any change must identify the affected prerequisites, scope impact, downstream handling, approval, and change-log entry before the reordered topic begins.
 
 ---
 
@@ -497,7 +504,8 @@ A topic is complete when all are true:
 - Report conclusion is explicit and decision-usable.
 - Topic report includes findings, recommendations, implementation implications, and unresolved questions.
 - Open issues (if any) are clearly listed.
-- Topic status in the progress table is updated to `Complete`.
+- The plan owner has accepted the report and the report records the acceptance authority and date.
+- The topic plan status is updated to `Complete`, and the category's report and accepted-report coverage counts are updated in the progress table.
 
 ---
 
@@ -505,17 +513,19 @@ A topic is complete when all are true:
 
 The overall IDR research effort is complete when all are true:
 
-- All indexed topics in Categories A through I have completed topic reports.
+- Every topic preceding `IDR-SRV-057` has a completed and accepted report, or a plan-owner-approved exception is recorded with its approval, rationale, scope impact, and downstream handling.
 - Findings are sufficiently complete to support goal and definition, implementation guide, and roadmap authoring.
-- A final overall IDR research report is produced that responds to this overall plan.
+- A final overall IDR research report is produced and accepted, responds to this overall plan, and thereby completes `IDR-SRV-057`.
 
 ---
 
 ## Final Overall IDR Report Requirement
 
-After all indexed topics are complete, produce:
+IDR-SRV-057 produces the single governance-mandated final overall IDR report:
 
 - `final-idr-research-report.md`
+
+Start that report only after every other indexed topic report (`IDR-SRV-001` through `IDR-SRV-056`, including all letter-suffixed topics) is complete and accepted, except for an exception approved and recorded under the Governance Rules above. Completion and acceptance of the final report completes `IDR-SRV-057` itself.
 
 The final report must:
 
@@ -523,6 +533,7 @@ The final report must:
 - Summarize each topic conclusion
 - State consolidated overall conclusions
 - Identify any unresolved cross-topic issues
+- State evidence-backed readiness and planning inputs for the later Implementation Guide and Roadmap without replacing either artifact
 
 ---
 
@@ -533,28 +544,29 @@ The final report must:
 | 2026-06-07 | Plan Alignment | Added objective quality standards, change control, and progress tracking sections to align with governance template | Improve objective governance and repeatability | Glaux Core Team |
 | 2026-06-07 | Topic Reorganization | Grouped topics into dependency-based categories and replaced ID-order execution with evidence-driven sequence | Improve research flow so outputs inform downstream topics in a wise order | Glaux Core Team |
 | 2026-06-07 | Scope Bounding and Expanded Topic Model | Replaced compact topic set with bounded full-scope server IDR categories (A-I) and server-only admission rule | Keep full-scope server rigor while preventing ecosystem research bleed-in from other components | Glaux Core Team |
-| 2026-06-07 | Rust/TDD Refinement | Added IDR-SRV-014A, strengthened security threat-model and Rust platform topics, and adjusted execution order to pull 044/052 earlier | Make Rust and test-driven obligations first-class and better sequence dependency-informing research | Glaux Core Team |
+| 2026-06-07 | Rust/TDD Refinement | Added IDR-SRV-014A, strengthened security threat-model and Rust platform topics, and adjusted topic-plan drafting order to draft 044/052 earlier | Make Rust and test-driven obligations first-class and better sequence dependency-informing research | Glaux Core Team |
 | 2026-06-07 | Topic Index Refinement | Added API versioning topic, refined existing CSAPI/conformance survey, strengthened Rust robustness/TDD coverage, and clarified early drafting of Rust platform and TDD plans | Incorporate external review feedback while preserving full-plan-before-execution workflow | Glaux Core Team |
 | 2026-06-07 | Existing Implementation Research Expansion | Replaced broad IDR-SRV-014A survey with focused studies for OSH, Connected Systems Go, pygeoapi, SECD, OS4CSAPI smoke-test findings, SECD interoperability findings, and OS4CSAPI discussion lessons learned | Ensure existing implementation and interoperability evidence is researched in enough detail to inform Glaux Server design and test strategy | Glaux Core Team |
 | 2026-06-12 | Security Topic Expansion | Added IDR-SRV-039A for zero-trust architecture alignment and enforcement model within Category G | Strengthen security architecture research coverage between threat modeling and policy/access constraints | Glaux Core Team |
 | 2026-07-29 | Baseline Clarification | Confirmed Rust as the implementation language and clarified that polished research reports serve both the project lead and AI-assisted development | Preserve the project's simple implementation goal while making the purpose of research explicit | Glaux Project Lead |
-| 2026-07-29 | Plan Baseline Repair | Realigned seven topic plans with the approved index, registered the controlling NATO draft package locally, and normalized report-directory and final-report targets | Ensure the research library produces the intended evidence for a Rust CSAPI reference-server implementation | Glaux Project Lead |
+| 2026-07-29 | Plan Baseline Repair | Realigned seven topic plans—IDR-SRV-019, IDR-SRV-030, IDR-SRV-031, IDR-SRV-032, IDR-SRV-033, IDR-SRV-037, and IDR-SRV-041—with the approved index, registered the controlling NATO draft package locally, and normalized report-directory and final-report targets | Ensure the research library produces the intended evidence for a Rust CSAPI reference-server implementation | Glaux Project Lead |
+| 2026-07-30 | Review Adjudication Hardening | Established the Glaux Project Lead as plan owner and acceptance/exception authority, distinguished internal completion gates from external evidence gaps, clarified research execution order and final-report boundaries, and registered targeted topic-plan corrections from two independent reviews | Freeze a clear, reproducible baseline before executing IDR-SRV-001 without broad plan churn | Glaux Project Lead |
 
 ---
 
 ## Progress Tracking
 
-| Category | Topics | Plan Coverage | Report Coverage | Status | Last Updated | Notes |
-|---|---|---|---|---|---|---|
-| A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 0/5 | Research Not Started | 2026-07-29 | |
-| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 0/17 | Research Not Started | 2026-07-29 | |
-| C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 0/6 | Research Not Started | 2026-07-29 | |
-| D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | Research Not Started | 2026-07-29 | |
-| E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | Research Not Started | 2026-07-29 | |
-| F | IDR-SRV-031 to IDR-SRV-038 | Complete (8/8) | 0/8 | Research Not Started | 2026-07-29 | |
-| G | IDR-SRV-039, IDR-SRV-039A, IDR-SRV-040 to IDR-SRV-043 | Complete (6/6) | 0/6 | Research Not Started | 2026-07-29 | |
-| H | IDR-SRV-044 to IDR-SRV-049 | Complete (6/6) | 0/6 | Research Not Started | 2026-07-29 | |
-| I | IDR-SRV-050 to IDR-SRV-057 | Complete (8/8) | 0/8 | Research Not Started | 2026-07-29 | |
+| Category | Topics | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated | Notes |
+|---|---|---|---|---|---|---|---|
+| A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 0/5 | 0/5 | Research Not Started | 2026-07-30 | |
+| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 0/17 | 0/17 | Research Not Started | 2026-07-30 | |
+| C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
+| D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
+| E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
+| F | IDR-SRV-031 to IDR-SRV-038 | Complete (8/8) | 0/8 | 0/8 | Research Not Started | 2026-07-30 | |
+| G | IDR-SRV-039, IDR-SRV-039A, IDR-SRV-040 to IDR-SRV-043 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
+| H | IDR-SRV-044 to IDR-SRV-049 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
+| I | IDR-SRV-050 to IDR-SRV-057 | Complete (8/8) | 0/8 | 0/8 | Research Not Started | 2026-07-30 | |
 
 ---
 

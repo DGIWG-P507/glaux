@@ -1,8 +1,9 @@
 # Section 055: Security, Authorization, and Command-Control Test Strategy - Research Plan
 
+**Topic ID:** IDR-SRV-055<br>
 **Status:** Planned  
-**Last Updated:** June 12, 2026  
-**Estimated Research Time:** 16-20 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 18.5-24 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-055-security-authorization-and-command-control-test-strategy-report.md`
 
@@ -789,9 +790,9 @@ The security/command test matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` through `IDR-SRV-054` research reports should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-001` through `IDR-SRV-054`, including `IDR-SRV-039A`, research reports must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - Official CSAPI Part 1 and Part 2, SensorML, SWE Common, HTTP, problem-detail, security, OIDC/JWT, OAuth, OWASP, NIST, Rust security, and testing sources must be reachable.
-- Conformance, traceability, Rust TDD, fixture, and performance strategy findings must be available or explicitly marked unavailable/deferred.
+- Conformance, traceability, Rust TDD, fixture, and performance strategy findings must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - Implementation-study and interoperability findings must be reachable or explicitly marked unavailable.
 - Research report template must be available.
 
