@@ -131,7 +131,7 @@ Those topics define persistence categories and storage patterns that must partic
 - How should out-of-order and late-arriving data be handled?
 - How should ingestion validation failures interact with transactional commits?
 - How should ingestion records, validation artifacts, normalized records, latest-value updates, system events, and audit records be coordinated?
-- Which findings should be handed to `IDR-SRV-033` and `IDR-SRV-034`?
+- Which findings should be handed to `IDR-SRV-031` and `IDR-SRV-034`?
 
 #### Status/Event and Outbox/Inbox Implications
 
@@ -141,7 +141,7 @@ Those topics define persistence categories and storage patterns that must partic
 - How should event publication differ from durable event storage?
 - How should retries avoid duplicate event publication?
 - How should subscription backfill and replay depend on committed events?
-- Which findings should be handed to `IDR-SRV-035` and `IDR-SRV-041`?
+- Which findings should be handed to `IDR-SRV-035` and `IDR-SRV-043`?
 
 #### Command, Control Stream, and Feasibility Transaction Strategy
 
@@ -168,7 +168,7 @@ Those topics define persistence categories and storage patterns that must partic
 - How should federated or external-source records be distinguished from local authoritative records?
 - How should last-known-state views be updated after delayed synchronization?
 - How should conflict resolution preserve audit and provenance?
-- Which findings should be handed to `IDR-SRV-041` and federation/interoperability topics?
+- Which findings should be handed to `IDR-SRV-041`, `IDR-SRV-043`, and federation/interoperability topics?
 
 #### Error, Retry, and Client Behavior
 
@@ -464,18 +464,21 @@ The operation-family transaction matrix should include, at minimum:
 
 ### Blocks (What This Topic Unlocks)
 
-- `IDR-SRV-030: Configuration, Secrets, and Environment Management`
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-030: Data Lifecycle, Retention, Archival, and Deletion Strategy`
+- `IDR-SRV-047: Configuration, Secrets, and Environment Strategy`
+- `IDR-SRV-031: Server Write and Ingestion Model`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 - `IDR-SRV-035: Streaming and Event Publication Strategy`
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
-- `IDR-SRV-037: Feasibility and Command Validation Strategy`
+- `IDR-SRV-037: Feasibility and Asynchronous Tasking Strategy`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
-- `IDR-SRV-045: Service Packaging, Containerization, and Deployment Topology`
-- `IDR-SRV-049: Observability, Logging, Metrics, and Operational Diagnostics`
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
+- `IDR-SRV-045: Service Architecture and Modularization Strategy`
+- `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
 - `IDR-SRV-052: Rust Test-Driven Architecture and Multi-Layer Test Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`
 - `IDR-SRV-054: Performance, Load, Stress, and Streaming Test Strategy`

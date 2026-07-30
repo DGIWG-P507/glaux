@@ -44,14 +44,14 @@ This topic follows:
 - `IDR-SRV-016: Identifier, URI, and Resource Lifecycle Strategy`
 - `IDR-SRV-017: Relationship and Linkage Model`
 
-Those topics define resource families, stable identity, lifecycle strategy, and relationships. This topic defines the time and freshness semantics needed to make those resources operationally meaningful. It must precede registration/update semantics, status/event modeling, persistence architecture, time-series storage, dynamic-data semantics, streaming, tasking, DDIL behavior, validation, fixtures, and interoperability tests.
+Those topics define resource families, stable identity, lifecycle strategy, and relationships. This topic defines the time and freshness semantics needed to make those resources operationally meaningful. It must precede provenance modeling, status/event modeling, persistence architecture, write/ingestion semantics, time-series storage, dynamic-data semantics, streaming, tasking, DDIL behavior, validation, fixtures, and interoperability tests.
 
 ### Critical Constraint(s)
 
 - Treat OGC API - Connected Systems Part 1 and Part 2, OGC API - Features, SensorML, SWE Common, temporal/query behavior from the OGC API family, AEP-4789 Volume II adoption context, and earlier IDR findings as controlling.
 - Do not collapse all time fields into a single timestamp. Distinguish temporal concepts explicitly.
 - Do not design the database schema here. Identify temporal persistence and indexing implications and hand them to Category E topics.
-- Do not finalize registration/update operation semantics here. Identify temporal needs and hand operation semantics to `IDR-SRV-019`.
+- Do not finalize registration/update operation semantics here. Identify provenance implications for `IDR-SRV-019` and hand operation semantics to `IDR-SRV-031`.
 - Do not finalize status/event resource semantics here. Identify time/freshness needs and hand detailed status/event modeling to `IDR-SRV-020`.
 - Do not finalize dynamic-data storage or streaming semantics here. Identify temporal needs and hand them to Category F.
 - Do not finalize DDIL behavior here. Identify freshness, cache, synchronization, and degraded-operation implications for Category G.
@@ -139,7 +139,7 @@ Those topics define resource families, stable identity, lifecycle strategy, and 
 - How should Glaux Server represent active, inactive, retired, archived, superseded, stale, unavailable, unknown, pending, completed, failed, canceled, and expired states over time?
 - Which lifecycle transitions need timestamps?
 - Which resources require historical state tracking?
-- Which temporal lifecycle findings should be handed to `IDR-SRV-019`, `IDR-SRV-020`, and `IDR-SRV-036`?
+- Which temporal lifecycle findings should be handed to `IDR-SRV-019`, `IDR-SRV-020`, `IDR-SRV-031`, and `IDR-SRV-036`?
 
 #### Freshness, Staleness, and Availability
 
@@ -466,17 +466,18 @@ The temporal model matrix should include, at minimum:
 
 ### Blocks (What This Topic Unlocks)
 
-- `IDR-SRV-019: Registration, Update, and State Change Semantics`
+- `IDR-SRV-019: Provenance, Lineage, Quality, and Trust Metadata Model`
 - `IDR-SRV-020: Status, Availability, and System Event Model`
 - `IDR-SRV-025: Database and Persistence Architecture Options`
 - `IDR-SRV-026: Geospatial Storage and Query Strategy`
 - `IDR-SRV-027: Time-Series Observation Storage Strategy`
 - `IDR-SRV-029: Transaction, Consistency, Idempotency, and Concurrency Strategy`
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-031: Server Write and Ingestion Model`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 - `IDR-SRV-035: Streaming and Event Publication Strategy`
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-051: Requirement-to-Test Traceability Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`

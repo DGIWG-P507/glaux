@@ -41,9 +41,11 @@ The output must be a datastream, observation, and status update semantics baseli
 
 This topic follows:
 
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-031: Server Write and Ingestion Model`
+- `IDR-SRV-032: Publisher-to-Server Contract Boundary`
+- `IDR-SRV-033: Simulator-to-Server Contract Boundary`
 
-`IDR-SRV-033` defines the pipeline that receives, validates, normalizes, and persists dynamic data. This topic defines what the ingested records mean once they become standards-aligned server resources or values. It must precede streaming/event publication, command lifecycle modeling, feasibility validation, command safety/audit, DDIL behavior, conformance harness design, fixture generation, performance testing, and external-client interoperability testing.
+`IDR-SRV-031` defines the common pipeline that receives, validates, normalizes, and persists dynamic data; `IDR-SRV-032` and `IDR-SRV-033` specialize live-publisher and simulator traffic. This topic defines what accepted records mean once they become standards-aligned server resources or values. It must precede streaming/event publication, command lifecycle modeling, feasibility validation, command safety/audit, DDIL behavior, conformance harness design, fixture generation, performance testing, and external-client interoperability testing.
 
 ### Critical Constraints
 
@@ -236,7 +238,7 @@ This topic follows:
 - How should late-arriving data, replay, synchronization, stale values, and source authority be represented after reconnect?
 - How should federated data be distinguished from local authoritative data?
 - How should latest values and event histories handle delayed or conflicting updates?
-- Which findings should be handed to `IDR-SRV-041`?
+- Which findings should be handed to `IDR-SRV-042` and `IDR-SRV-043`?
 
 #### Security, Policy, and Releasability
 
@@ -436,7 +438,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 3. Analyze latest-value semantics for observations, status, and dynamic properties.
 4. Analyze stale, degraded, unknown, unavailable, simulated, invalid, and policy-filtered values.
 5. Analyze how status/events should interact with streaming/event publication.
-6. Map findings to `IDR-SRV-035`, `IDR-SRV-041`, and observability topics.
+6. Map findings to `IDR-SRV-035`, `IDR-SRV-041`, `IDR-SRV-042`, `IDR-SRV-043`, and `IDR-SRV-048`.
 
 **Expected Output:** Status/event/latest-value semantics matrix.
 
@@ -550,10 +552,12 @@ The dynamic-data semantics matrix should include, at minimum:
 
 - `IDR-SRV-035: Streaming and Event Publication Strategy`
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
-- `IDR-SRV-037: Feasibility and Command Validation Strategy`
+- `IDR-SRV-037: Feasibility and Asynchronous Tasking Strategy`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
-- `IDR-SRV-049: Observability, Logging, Metrics, and Operational Diagnostics`
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
+- `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`
 - `IDR-SRV-054: Performance, Load, Stress, and Streaming Test Strategy`

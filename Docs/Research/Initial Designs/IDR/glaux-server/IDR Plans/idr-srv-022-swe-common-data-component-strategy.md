@@ -123,7 +123,7 @@ SensorML defines system/procedure metadata and refers to inputs, outputs, parame
 - How should status values and dynamic properties be represented?
 - How should latest values, historical observations, and event payloads use or refer to SWE Common structures?
 - How should null/nil/missing/error/out-of-range values be represented and validated?
-- Which findings should be handed to `IDR-SRV-027`, `IDR-SRV-033`, `IDR-SRV-034`, and `IDR-SRV-035`?
+- Which findings should be handed to `IDR-SRV-027`, `IDR-SRV-031`, `IDR-SRV-034`, and `IDR-SRV-035`?
 
 #### Command, Control Stream, and Feasibility Implications
 
@@ -308,7 +308,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 2. Analyze control stream input structures, command parameters, feasibility requests, parameter constraints, and command-status outputs.
 3. Identify unit, observed-property, controlled-property, semantic definition, and SSN/SOSA dependencies.
 4. Identify temporal, quality, nil-value, and uncertainty implications.
-5. Map findings to `IDR-SRV-024`, `IDR-SRV-027`, `IDR-SRV-033`, `IDR-SRV-034`, `IDR-SRV-036`, and `IDR-SRV-037`.
+5. Map findings to `IDR-SRV-024`, `IDR-SRV-027`, `IDR-SRV-031`, `IDR-SRV-034`, `IDR-SRV-036`, and `IDR-SRV-037`.
 
 **Expected Output:** Observation/status/command/semantic dependency matrix.
 
@@ -422,11 +422,11 @@ The SWE Common mapping matrix should include, at minimum:
 - `IDR-SRV-024: Units, Observed Properties, and Semantic Binding Strategy`
 - `IDR-SRV-027: Time-Series Observation Storage Strategy`
 - `IDR-SRV-028: Metadata and Document Storage Strategy`
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-031: Server Write and Ingestion Model`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 - `IDR-SRV-035: Streaming and Event Publication Strategy`
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
-- `IDR-SRV-037: Feasibility and Command Validation Strategy`
+- `IDR-SRV-037: Feasibility and Asynchronous Tasking Strategy`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`

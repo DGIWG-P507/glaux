@@ -154,7 +154,7 @@ SensorML and SWE Common establish the representation structures that carry units
 - What vocabulary caches, lookup tables, mappings, profiles, or term registries are needed?
 - How should vocabulary source provenance and versioning be preserved?
 - How should semantic bindings be stored for imported SensorML/SWE definitions versus normalized views?
-- Which findings should be handed to `IDR-SRV-025`, `IDR-SRV-028`, and `IDR-SRV-030`?
+- Which findings should be handed to `IDR-SRV-025`, `IDR-SRV-028`, and `IDR-SRV-047`?
 
 #### Security, Policy, and Releasability Implications
 
@@ -443,15 +443,16 @@ The semantic binding matrix should include, at minimum:
 
 - `IDR-SRV-027: Time-Series Observation Storage Strategy`
 - `IDR-SRV-028: Metadata and Document Storage Strategy`
-- `IDR-SRV-030: Configuration, Secrets, and Environment Management`
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-047: Configuration, Secrets, and Environment Strategy`
+- `IDR-SRV-031: Server Write and Ingestion Model`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
-- `IDR-SRV-037: Feasibility and Command Validation Strategy`
+- `IDR-SRV-037: Feasibility and Asynchronous Tasking Strategy`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-051: Requirement-to-Test Traceability Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`

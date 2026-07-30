@@ -45,10 +45,10 @@ This topic follows the Category C resource/domain-model block:
 - `IDR-SRV-016: Identifier, URI, and Resource Lifecycle Strategy`
 - `IDR-SRV-017: Relationship and Linkage Model`
 - `IDR-SRV-018: Temporal, Validity, and Freshness Model`
-- `IDR-SRV-019: Registration, Update, and State Change Semantics`
+- `IDR-SRV-019: Provenance, Lineage, Quality, and Trust Metadata Model`
 - `IDR-SRV-020: Status, Availability, and System Event Model`
 
-Those topics define the server's resource families, identity, relationships, lifecycle, temporal behavior, and status/event concepts. This topic starts Category D: SensorML, SWE Common, and Semantic Representation. It determines how SensorML should represent descriptive system/procedure/deployment metadata and how those representations should support CSAPI interoperability, validation, and downstream server design.
+Those topics define the server's resource families, identity, relationships, lifecycle, temporal behavior, provenance/quality/trust metadata, and status/event concepts. This topic starts Category D: SensorML, SWE Common, and Semantic Representation. It determines how SensorML should represent descriptive system/procedure/deployment metadata and how those representations should support CSAPI interoperability, validation, and downstream server design.
 
 ### Critical Constraint(s)
 
@@ -431,7 +431,7 @@ The SensorML mapping matrix should include, at minimum:
 - `IDR-SRV-023: Schema and Encoding Validation Strategy`
 - `IDR-SRV-024: Units, Observed Properties, and Semantic Binding Strategy`
 - `IDR-SRV-028: Metadata and Document Storage Strategy`
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-031: Server Write and Ingestion Model`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`

@@ -48,10 +48,12 @@ The output must be a streaming and event publication strategy baseline with sour
 
 This topic follows:
 
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-031: Server Write and Ingestion Model`
+- `IDR-SRV-032: Publisher-to-Server Contract Boundary`
+- `IDR-SRV-033: Simulator-to-Server Contract Boundary`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 
-`IDR-SRV-033` defines how dynamic records are received, validated, normalized, and persisted. `IDR-SRV-034` defines what datastreams, observations, status updates, latest values, and dynamic records mean after ingestion. This topic defines when and how those persisted or state-changing records should be published as live events or streams. It must precede command lifecycle, feasibility, command authorization/safety/audit, DDIL synchronization, observability, performance testing, and interoperability testing because all of those depend on clear event and publication semantics.
+`IDR-SRV-031` defines how dynamic records are received, validated, normalized, and persisted; `IDR-SRV-032` and `IDR-SRV-033` specialize publisher and simulator traffic. `IDR-SRV-034` defines what datastreams, observations, status updates, latest values, and dynamic records mean after ingestion. This topic defines when and how those persisted or state-changing records should be published as live events or streams. It must precede command lifecycle, feasibility, command authorization/safety/audit, DDIL synchronization, observability, performance testing, and interoperability testing because all of those depend on clear event and publication semantics.
 
 ### Critical Constraints
 
@@ -60,7 +62,7 @@ This topic follows:
 - Do not assume one publication protocol satisfies all use cases. Evaluate patterns and identify first-implementation and full-scope candidates.
 - Do not claim exactly-once delivery unless evidence supports a practical implementation path. Distinguish durable persistence, at-least-once delivery, idempotent clients, replay, and duplicate handling.
 - Do not finalize command lifecycle semantics here. Identify publication needs and hand detailed command behavior to `IDR-SRV-036` through `IDR-SRV-038`.
-- Do not finalize DDIL behavior here. Identify replay, backfill, cache, and reconnect requirements and hand detailed DDIL work to `IDR-SRV-041`.
+- Do not finalize DDIL behavior here. Identify replay, backfill, cache, reconnect, and conflict requirements and hand detailed work to `IDR-SRV-042` and `IDR-SRV-043`.
 - Do not finalize security/policy architecture here. Identify streaming-specific security and releasability implications and hand detailed policy work to Category G.
 - Keep the research bounded to Glaux Server behavior and server-side publication contracts.
 
@@ -276,7 +278,7 @@ This topic follows:
 - How should Glaux Server support local buffering, replay, catch-up, summaries, latest-state snapshots, and bandwidth-reduced streams?
 - How should federated servers exchange or expose events?
 - How should stale streams, delayed events, reconnection, and conflict events be represented?
-- Which findings should be handed to `IDR-SRV-041` and federation/interoperability topics?
+- Which findings should be handed to `IDR-SRV-042`, `IDR-SRV-043`, and federation/interoperability topics?
 
 #### Command, Control Stream, and Feasibility Publication
 
@@ -475,7 +477,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 **Tasks:**
 
-1. Inventory dynamic record categories and state changes from `IDR-SRV-033` and `IDR-SRV-034`.
+1. Inventory dynamic record categories and state changes from `IDR-SRV-031` through `IDR-SRV-034`.
 2. Classify publication candidates as observations, status updates, latest-value changes, system events, source-health events, command-status events, feasibility events, validation events, DDIL events, operational diagnostics, or audit-only records.
 3. Identify which candidates require durable event records.
 4. Identify which candidates are client-visible, administrator-only, internal-only, or audit-only.
@@ -619,14 +621,15 @@ The streaming/event publication matrix should include, at minimum:
 ### Blocks (What This Topic Unlocks)
 
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
-- `IDR-SRV-037: Feasibility and Command Validation Strategy`
+- `IDR-SRV-037: Feasibility and Asynchronous Tasking Strategy`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
-- `IDR-SRV-045: Service Packaging, Containerization, and Deployment Topology`
-- `IDR-SRV-046: Local Development and CI Environment Strategy`
-- `IDR-SRV-049: Observability, Logging, Metrics, and Operational Diagnostics`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
+- `IDR-SRV-045: Service Architecture and Modularization Strategy`
+- `IDR-SRV-046: Reference Deployment Strategy`
+- `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-052: Rust Test-Driven Architecture and Multi-Layer Test Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`

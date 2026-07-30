@@ -54,7 +54,7 @@ Those topics establish what must be implemented, how the API behaves, and what p
 - Do not finalize URI/identifier rules here. Identify identifier needs and hand them to `IDR-SRV-016`.
 - Do not finalize relationship/link behavior here. Identify relationship needs and hand them to `IDR-SRV-017`.
 - Do not finalize temporal/freshness rules here. Identify temporal needs and hand them to `IDR-SRV-018`.
-- Do not finalize registration/update APIs here. Identify lifecycle needs and hand them to `IDR-SRV-019`.
+- Do not finalize registration/update APIs here. Identify provenance implications for `IDR-SRV-019` and hand operation semantics to `IDR-SRV-031`.
 - Do not finalize status/event semantics here. Identify status/event needs and hand them to `IDR-SRV-020`.
 - Do not collapse API resources, domain entities, persistence records, schemas, and serialized representations into one concept; distinguish them explicitly.
 - Keep the research bounded to Glaux Server behavior and server-side contracts.
@@ -124,7 +124,7 @@ Those topics establish what must be implemented, how the API behaves, and what p
 - Which resource families are registered, updated, archived, deleted, derived, observed, streamed, commanded, or generated?
 - Which resources are authoritative records versus derived views?
 - Which resources have lifecycle states, such as active, inactive, retired, stale, unavailable, pending, accepted, rejected, completed, failed, or canceled?
-- Which lifecycle questions must be handed to `IDR-SRV-019`, `IDR-SRV-020`, `IDR-SRV-036`, `IDR-SRV-037`, and `IDR-SRV-038`?
+- Which lifecycle, provenance, status, write, and command questions must be handed to `IDR-SRV-019`, `IDR-SRV-020`, `IDR-SRV-031`, `IDR-SRV-036`, `IDR-SRV-037`, and `IDR-SRV-038`?
 - How should the canonical model preserve full-scope capability without prematurely reducing scope?
 
 #### Relationship and Linkage Implications
@@ -428,7 +428,7 @@ The canonical resource-model matrix should include, at minimum:
 - `IDR-SRV-016: Identifier, URI, and Resource Lifecycle Strategy`
 - `IDR-SRV-017: Relationship and Linkage Model`
 - `IDR-SRV-018: Temporal, Validity, and Freshness Model`
-- `IDR-SRV-019: Registration, Update, and State Change Semantics`
+- `IDR-SRV-019: Provenance, Lineage, Quality, and Trust Metadata Model`
 - `IDR-SRV-020: Status, Availability, and System Event Model`
 - `IDR-SRV-021: SensorML Representation Strategy`
 - `IDR-SRV-022: SWE Common Data Component Strategy`

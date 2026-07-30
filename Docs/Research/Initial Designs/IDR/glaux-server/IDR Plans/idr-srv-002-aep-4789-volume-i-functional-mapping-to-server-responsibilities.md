@@ -1,7 +1,7 @@
 # Section 002: AEP-4789 Volume I Functional Mapping to Server Responsibilities - Research Plan
 
 **Status:** Planned  
-**Last Updated:** June 7, 2026  
+**Last Updated:** July 29, 2026\
 **Estimated Research Time:** 10-14 hours  
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-002-aep-4789-volume-i-functional-mapping-to-server-responsibilities-report.md`
@@ -178,15 +178,13 @@ The future research report must analyze these sources directly.
 
 ### AEP / STANAG Source Material
 
-- AEP-4789 Volume I source material available to the Glaux project team.
-  - This is the controlling source for this topic.
-  - Record exact title, volume, version, date, status, and project storage location in the report.
-- STANAG 4789 source material available to the Glaux project team.
-  - Use as parent context for Volume I functions and obligation boundaries.
-  - Record exact title, version/date, status, and project storage location in the report.
-- AEP-4789 Volume II source material available to the Glaux project team.
-  - Use only as a supporting alignment check, not as the primary source for this topic.
-  - Record exact title, version/date, status, and project storage location in the report.
+- Project-controlling ratification package: `AC/224(JCGISR)D(2026)0005`, dated 27 April 2026.
+  - Status for this IDR: most-current ratification draft, as confirmed by the Glaux project lead on 29 July 2026.
+  - SHA-256: `56DC757B6E677B3584E3152A957849F21A24B22854F562613FF283A8B599DA8C`.
+  - Use AEP-4789 Volume I, Edition A, Version 1 as the controlling source for this topic.
+  - Use STANAG 4789, Edition 1 as parent context and AEP-4789 Volume II, Edition A, Version 1 as a supporting alignment check.
+  - The local working copy is supplied by the project lead and is not stored in the public repository.
+  - Cite the enclosing document, enclosed publication, and exact page/section in the report.
 
 ### OGC Standards Package Sources
 
@@ -342,7 +340,7 @@ Use these sources to interpret context, downstream dependencies, expected resear
 
 This topic research is complete when:
 
-- [ ] AEP-4789 Volume I source material available to the project team has been reviewed or explicitly marked unavailable.
+- [ ] AEP-4789 Volume I, Edition A, Version 1 from the project-controlling package has been reviewed.
 - [ ] Source documents used in the report are listed with title, version/date, URL/path, status, and authority classification.
 - [ ] Volume I functions relevant to Glaux Server have been extracted with source anchors.
 - [ ] Each relevant function is classified as direct server responsibility, server-side contract responsibility, ecosystem responsibility, adjacent/future-profile consideration, or out-of-scope.
@@ -385,7 +383,7 @@ This topic research is complete when:
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
 - `IDR-SRV-001` research report should be complete or explicitly marked unavailable/deferred.
-- AEP-4789 Volume I source material must be available to the researcher or explicitly marked unavailable.
+- The project-controlling `AC/224(JCGISR)D(2026)0005` package must be available to the researcher. If it is unavailable, this topic is blocked.
 - Research report template must be available.
 
 ### Blocks (What This Topic Unlocks)

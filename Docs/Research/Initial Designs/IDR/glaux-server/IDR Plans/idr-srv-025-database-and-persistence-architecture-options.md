@@ -177,7 +177,7 @@ Those topics define what must be persisted and why. This topic evaluates persist
 - What persistence support is needed for disconnected, degraded, intermittent, and limited-bandwidth operation?
 - What synchronization state, source authority state, cache state, replay buffers, conflict markers, and last-known state must be stored?
 - How should persistence architecture support federation without assuming constant connectivity?
-- Which findings should be handed to `IDR-SRV-041`, ingestion topics, and interoperability topics?
+- Which findings should be handed to `IDR-SRV-043`, ingestion topics, and interoperability topics?
 
 #### Security, Policy, Audit, and Releasability Implications
 
@@ -493,13 +493,16 @@ The data-category matrix should include, at minimum:
 - `IDR-SRV-027: Time-Series Observation Storage Strategy`
 - `IDR-SRV-028: Metadata and Document Storage Strategy`
 - `IDR-SRV-029: Transaction, Consistency, Idempotency, and Concurrency Strategy`
-- `IDR-SRV-030: Configuration, Secrets, and Environment Management`
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-030: Data Lifecycle, Retention, Archival, and Deletion Strategy`
+- `IDR-SRV-047: Configuration, Secrets, and Environment Strategy`
+- `IDR-SRV-031: Server Write and Ingestion Model`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 - `IDR-SRV-035: Streaming and Event Publication Strategy`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
-- `IDR-SRV-045: Service Packaging, Containerization, and Deployment Topology`
-- `IDR-SRV-049: Observability, Logging, Metrics, and Operational Diagnostics`
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
+- `IDR-SRV-045: Service Architecture and Modularization Strategy`
+- `IDR-SRV-048: Observability, Logs, Metrics, and Health Check Strategy`
 - `IDR-SRV-052: Rust Test-Driven Architecture and Multi-Layer Test Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`
 - `IDR-SRV-054: Performance, Load, Stress, and Streaming Test Strategy`

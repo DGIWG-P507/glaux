@@ -46,7 +46,7 @@ This topic follows `IDR-SRV-025`, `IDR-SRV-026`, and `IDR-SRV-027`. Those topics
 - Do not design the full database schema here. Identify metadata/document categories, storage patterns, indexing needs, versioning implications, validation implications, and handoffs.
 - Do not collapse source documents and normalized metadata. Preserve source fidelity while identifying what must be indexed or normalized.
 - Do not treat imported SensorML, SWE Common, OpenAPI, or profile documents as trusted without validation, provenance, and policy controls.
-- Do not finalize configuration/secrets handling here. Identify configuration-adjacent metadata and hand detailed configuration/secrets work to `IDR-SRV-030`.
+- Do not finalize configuration/secrets handling here. Identify configuration-adjacent metadata and hand detailed configuration/secrets work to `IDR-SRV-047`.
 - Do not finalize policy/releasability behavior here. Identify metadata disclosure risks and hand detailed policy work to Category G.
 - Do not require cloud-only object storage or managed document services. Evaluate open-source, local, containerized, reproducible, and DDIL-suitable options.
 - Keep the research bounded to Glaux Server behavior and server-side contracts.
@@ -114,7 +114,7 @@ This topic follows `IDR-SRV-025`, `IDR-SRV-026`, and `IDR-SRV-027`. Those topics
 
 - How should document versions be represented?
 - How should metadata update history be retained?
-- How should source document lifecycle relate to resource lifecycle from `IDR-SRV-016` and registration/update behavior from `IDR-SRV-019`?
+- How should source document lifecycle relate to resource lifecycle from `IDR-SRV-016`, provenance/lineage requirements from `IDR-SRV-019`, and write behavior later specified by `IDR-SRV-031`?
 - How should document valid time, ingestion time, update time, publication time, and validation time be recorded?
 - How should superseded, deprecated, retired, archived, or rejected documents be handled?
 - How should schema/profile/vocabulary version changes affect stored documents and validation results?
@@ -456,15 +456,18 @@ The metadata/document category matrix should include, at minimum:
 ### Blocks (What This Topic Unlocks)
 
 - `IDR-SRV-029: Transaction, Consistency, Idempotency, and Concurrency Strategy`
-- `IDR-SRV-030: Configuration, Secrets, and Environment Management`
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-030: Data Lifecycle, Retention, Archival, and Deletion Strategy`
+- `IDR-SRV-047: Configuration, Secrets, and Environment Strategy`
+- `IDR-SRV-031: Server Write and Ingestion Model`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
-- `IDR-SRV-037: Feasibility and Command Validation Strategy`
+- `IDR-SRV-037: Feasibility and Asynchronous Tasking Strategy`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-051: Requirement-to-Test Traceability Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`

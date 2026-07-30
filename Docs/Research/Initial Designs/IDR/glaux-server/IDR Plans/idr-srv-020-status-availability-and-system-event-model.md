@@ -45,9 +45,9 @@ This topic follows:
 - `IDR-SRV-016: Identifier, URI, and Resource Lifecycle Strategy`
 - `IDR-SRV-017: Relationship and Linkage Model`
 - `IDR-SRV-018: Temporal, Validity, and Freshness Model`
-- `IDR-SRV-019: Registration, Update, and State Change Semantics`
+- `IDR-SRV-019: Provenance, Lineage, Quality, and Trust Metadata Model`
 
-Those topics define resource families, identity, relationships, temporal/freshness semantics, and state-change behavior. This topic defines the model for operational status, availability, and system events that results from those resources and changes. It closes the Category C resource/domain-model block and provides critical handoffs to SensorML/SWE representation topics, persistence, dynamic-data ingestion, streaming, command lifecycle, DDIL behavior, validation, and interoperability testing.
+Those topics define resource families, identity, relationships, lifecycle and temporal/freshness semantics, and provenance/quality/trust context. This topic defines the model for operational status, availability, and system events associated with those resources. It closes the Category C resource/domain-model block and provides event requirements to later write/ingestion, dynamic-data, streaming, command, DDIL, validation, and interoperability topics.
 
 ### Critical Constraint(s)
 
@@ -56,7 +56,7 @@ Those topics define resource families, identity, relationships, temporal/freshne
 - Do not design the database schema here. Identify status/event persistence and indexing implications and hand them to Category E topics.
 - Do not finalize dynamic-data ingestion or streaming behavior here. Identify status/event needs and hand them to Category F topics.
 - Do not finalize command lifecycle semantics here. Identify command-status and availability needs and hand detailed command lifecycle work to `IDR-SRV-036`.
-- Do not finalize DDIL behavior here. Identify freshness, availability, last-known-state, cache, and synchronization implications for `IDR-SRV-041`.
+- Do not finalize DDIL or synchronization behavior here. Identify freshness, availability, last-known-state, cache, and synchronization implications for `IDR-SRV-042` and `IDR-SRV-043`.
 - Do not finalize authorization or policy behavior here. Identify status/event disclosure and audit risks and hand them to Category G.
 - Distinguish externally exposed CSAPI status/event resources from internal monitoring, service telemetry, health probes, and implementation logs.
 - Keep the research bounded to Glaux Server behavior and server-side contracts.
@@ -141,7 +141,7 @@ Those topics define resource families, identity, relationships, temporal/freshne
 #### System Event Model
 
 - What event categories should Glaux Server support?
-- Which state changes from `IDR-SRV-019` should produce system events?
+- Which lifecycle transitions from `IDR-SRV-016` and write outcomes later specified by `IDR-SRV-031` should produce system events?
 - Which dynamic-data or status changes should produce system events?
 - Which command/control lifecycle changes should produce system events?
 - Which service, source, publisher, simulator, federation, cache, or DDIL changes should produce events?
@@ -163,7 +163,7 @@ Those topics define resource families, identity, relationships, temporal/freshne
 - How should status and events interact with temporal freshness findings from `IDR-SRV-018`?
 - How should Glaux Server represent stale status, old-but-valid observations, unavailable sources, cached last-known state, reconnected sources, delayed events, and out-of-order status updates?
 - How should DDIL conditions affect status confidence, event publication, cached state, synchronization, and client warnings?
-- Which findings should be handed to `IDR-SRV-041`, `IDR-SRV-035`, and dynamic-data topics?
+- Which findings should be handed to `IDR-SRV-035`, `IDR-SRV-042`, `IDR-SRV-043`, and dynamic-data topics?
 
 #### Dynamic Data, Observations, and Status Update Semantics
 
@@ -275,7 +275,7 @@ Use implementation-study outputs and source repositories as non-normative eviden
 - Identifier, URI, and Resource Lifecycle findings from `IDR-SRV-016`
 - Relationship and Linkage findings from `IDR-SRV-017`
 - Temporal, Validity, and Freshness findings from `IDR-SRV-018`
-- Registration, Update, and State Change findings from `IDR-SRV-019`
+- Provenance, Lineage, Quality, and Trust Metadata findings from `IDR-SRV-019`
 - OS4CSAPI organization: https://github.com/OS4CSAPI
 - OS4CSAPI client work: https://github.com/OS4CSAPI/ogc-client-CSAPI_2
 - SECD interoperability repository: https://github.com/Sam-Bolling/csapi-server-interop-secd
@@ -370,7 +370,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 **Tasks:**
 
 1. Identify event categories for resource lifecycle, system operational state, data/observation updates, status updates, command/control lifecycle, service/source health, federation/DDIL synchronization, and administrative changes.
-2. Identify which state changes from `IDR-SRV-019` should generate events.
+2. Identify which lifecycle transitions from `IDR-SRV-016` and later write outcomes in `IDR-SRV-031` should generate events.
 3. Identify event metadata, links, severity/confidence/provenance needs, and time fields.
 4. Identify query, filtering, retention, and representation requirements.
 5. Identify handoffs to streaming/event-publication, dynamic data, command lifecycle, security/audit, and persistence topics.
@@ -492,14 +492,16 @@ The status/event matrix should include, at minimum:
 - `IDR-SRV-024: Units, Observed Properties, and Semantic Binding Strategy`
 - `IDR-SRV-025: Database and Persistence Architecture Options`
 - `IDR-SRV-027: Time-Series Observation Storage Strategy`
-- `IDR-SRV-033: Dynamic Data Ingestion and Normalization Pipeline`
+- `IDR-SRV-031: Server Write and Ingestion Model`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 - `IDR-SRV-035: Streaming and Event Publication Strategy`
 - `IDR-SRV-036: Control Stream and Command Lifecycle Model`
 - `IDR-SRV-038: Command Authorization, Safety, and Audit Strategy`
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
 - `IDR-SRV-040: Policy, Releasability, and Cross-Boundary Access Constraints`
-- `IDR-SRV-041: DDIL Behavior, Caching, and Synchronization Semantics`
+- `IDR-SRV-041: Audit Logging and Accountability Strategy`
+- `IDR-SRV-042: DDIL-Informed Server Semantics`
+- `IDR-SRV-043: Server Synchronization and Conflict Handling Boundary`
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-051: Requirement-to-Test Traceability Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`

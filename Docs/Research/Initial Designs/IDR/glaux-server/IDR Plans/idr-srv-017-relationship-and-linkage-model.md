@@ -51,7 +51,7 @@ This topic follows:
 - Do not invent relationship semantics that conflict with CSAPI resource relationships, OGC API - Features collection/item behavior, SensorML process/system semantics, SWE Common data component semantics, or Web linking conventions.
 - Do not finalize database graph schema or storage structures here. Identify persistence implications and hand them to Category E topics.
 - Do not finalize temporal/freshness semantics here. Identify temporal relationship needs and hand them to `IDR-SRV-018`.
-- Do not finalize registration/update behavior here. Identify lifecycle relationship implications and hand them to `IDR-SRV-019`.
+- Do not finalize registration/update behavior here. Identify provenance implications for `IDR-SRV-019` and hand operation semantics to `IDR-SRV-031`.
 - Do not finalize status/event semantics here. Identify status/event relationship needs and hand them to `IDR-SRV-020`.
 - Do not finalize authorization/policy model here. Identify relationship-level access-control and releasability implications and hand them to Category G.
 - Distinguish relationship semantics from URI hierarchy. Nested paths may express access patterns but do not automatically define ownership or lifecycle.
@@ -445,7 +445,7 @@ The relationship matrix should include, at minimum:
 ### Blocks (What This Topic Unlocks)
 
 - `IDR-SRV-018: Temporal, Validity, and Freshness Model`
-- `IDR-SRV-019: Registration, Update, and State Change Semantics`
+- `IDR-SRV-019: Provenance, Lineage, Quality, and Trust Metadata Model`
 - `IDR-SRV-020: Status, Availability, and System Event Model`
 - `IDR-SRV-021: SensorML Representation Strategy`
 - `IDR-SRV-022: SWE Common Data Component Strategy`
