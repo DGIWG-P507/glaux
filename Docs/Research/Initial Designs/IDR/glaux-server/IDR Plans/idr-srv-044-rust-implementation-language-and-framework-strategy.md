@@ -1,8 +1,9 @@
 # Section 044: Rust Implementation Language and Framework Strategy - Research Plan
 
+**Topic ID:** IDR-SRV-044<br>
 **Status:** Planned  
-**Last Updated:** June 12, 2026  
-**Estimated Research Time:** 18-24 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 18.5-24.5 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-044-rust-implementation-language-and-framework-strategy-report.md`
 
@@ -23,13 +24,13 @@ This plan is limited to research planning. It does not execute the research and 
 
 ## 1. Research Objective
 
-This topic research must define the Glaux Server planning baseline for the **Rust implementation language and framework strategy** for a standards-aligned, test-driven, secure, maintainable, interoperable, and deployment-ready Glaux Server implementation.
+This topic research must define the Glaux Server planning baseline for the **Rust implementation platform and framework strategy** for a standards-aligned, test-driven, secure, maintainable, interoperable, and deployment-ready Glaux Server implementation.
 
 The research must evaluate the Rust ecosystem and implementation patterns needed to support Glaux Server obligations across OGC API - Connected Systems Parts 1 and 2, SensorML, SWE Common, OpenAPI, JSON/GeoJSON, HTTP API behavior, validation, content negotiation, query/filter behavior, geospatial and time-series storage, ingestion, streaming/event publication, command/control, security, DDIL-informed behavior, observability, conformance testing, CI, and future maintenance.
 
 The research must answer:
 
-- Is Rust still the appropriate implementation language for Glaux Server given the current project goals, server responsibilities, performance/security expectations, ecosystem maturity, and developer experience?
+- What constraints, ecosystem risks, and engineering mitigations must Glaux Server address to satisfy its approved implementation-in-Rust decision?
 - Which Rust web framework, async runtime, HTTP stack, OpenAPI tooling, serialization stack, validation stack, database access stack, geospatial/time-series integration approach, streaming/event stack, observability stack, testing stack, and CI/static-analysis stack should Glaux Server evaluate for first implementation and full-scope readiness?
 - How should Glaux Server organize Rust modules, domain types, API handlers, error types, persistence abstractions, validation layers, service boundaries, feature flags, and test layers?
 - Which crates, tools, and architectural patterns best support:
@@ -76,6 +77,7 @@ This topic begins Category H and should inform:
 
 ### Critical Constraints
 
+- Rust is the approved implementation language under the Glaux Server Goal and Definition. This topic evaluates how to satisfy Glaux Server requirements in Rust and must not reopen language selection or recommend an alternative implementation language.
 - Treat prior IDR findings as functional requirements for the implementation platform, not optional nice-to-haves.
 - Do not select frameworks based only on popularity. Evaluate standards fit, testability, maintainability, security posture, async/runtime fit, ecosystem maturity, and operational readiness.
 - Do not hardcode final implementation details that belong to service modularization, deployment topology, configuration management, observability, migrations, or verification topics.
@@ -99,9 +101,9 @@ This topic begins Category H and should inform:
 
 ### Detailed Questions
 
-#### Language Fit and Rust Suitability
+#### Rust Requirement Fit, Constraints, and Mitigations
 
-- Why is Rust appropriate or not appropriate for Glaux Server?
+- Which Glaux Server requirements are straightforward, difficult, or currently weakly supported in the Rust ecosystem?
 - How does Rust align with:
   - memory safety,
   - predictable performance,
@@ -746,7 +748,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] Rust language fit is evaluated against Glaux Server requirements with source anchors.
+- [ ] Rust-specific requirement fit, ecosystem constraints, risks, and mitigations are evaluated with source anchors without reopening the approved language decision.
 - [ ] Web framework, async runtime, HTTP stack, serialization, OpenAPI, validation, error-handling, database, geospatial, time-series, streaming, security, configuration, observability, testing, CI, and supply-chain options are evaluated.
 - [ ] Recommended first-implementation stack candidates and full-scope readiness candidates are documented.
 - [ ] Framework/tooling recommendations are tied to prior IDR server obligations and standards behavior.
@@ -769,7 +771,7 @@ This topic research is complete when:
 2. Scope and plan alignment
 3. Evidence base and authority classification
 4. Implementation requirement extraction methodology
-5. Rust language suitability assessment
+5. Rust requirement-fit constraints, ecosystem risks, and mitigation assessment
 6. Core web framework and HTTP stack evaluation
 7. Async runtime and concurrency model evaluation
 8. Domain modeling and serialization strategy findings
@@ -814,7 +816,7 @@ The implementation stack evaluation matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` through `IDR-SRV-043` research reports should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-001` through `IDR-SRV-043`, including `IDR-SRV-039A`, research reports must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - Official Rust, crate, framework, database, OpenAPI, validation, security, testing, and CI sources must be reachable.
 - Official CSAPI Part 1 and Part 2, SensorML, SWE Common, and relevant OpenAPI/schema artifacts must be reachable.
 - Implementation-study and interoperability findings must be reachable or explicitly marked unavailable.

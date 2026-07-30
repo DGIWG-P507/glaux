@@ -1,8 +1,9 @@
 # Section 040: Policy, Releasability, and Cross-Boundary Access Constraints - Research Plan
 
+**Topic ID:** IDR-SRV-040<br>
 **Status:** Planned  
-**Last Updated:** June 12, 2026  
-**Estimated Research Time:** 16-20 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 18.5-23.5 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-040-policy-releasability-and-cross-boundary-access-constraints-report.md`
 
@@ -61,8 +62,9 @@ The output must be a policy, releasability, and cross-boundary access constraint
 This topic follows:
 
 - `IDR-SRV-039: Authentication, Authorization, and API Security Threat Model`
+- `IDR-SRV-039A: Zero-Trust Architecture Alignment and Enforcement Model`
 
-`IDR-SRV-039` defines actors, identities, protected assets, API surfaces, trust boundaries, and broad security controls. This topic specializes policy and releasability: what information can be shown, hidden, generalized, delayed, redacted, or withheld across organizational, mission, coalition, national, public-demo, tactical, and DDIL boundaries. It must precede DDIL behavior, deployment topology, observability, conformance, fixtures, security tests, and interoperability testing because those topics need clear policy expectations and redaction rules.
+`IDR-SRV-039` defines actors, identities, protected assets, API surfaces, trust boundaries, and broad security controls, while `IDR-SRV-039A` defines the zero-trust alignment and enforcement model. This topic specializes policy and releasability: what information can be shown, hidden, generalized, delayed, redacted, or withheld across organizational, mission, coalition, national, public-demo, tactical, and DDIL boundaries. It must precede DDIL behavior, deployment topology, observability, conformance, fixtures, security tests, and interoperability testing because those topics need clear policy expectations and redaction rules.
 
 ### Critical Constraints
 
@@ -341,7 +343,7 @@ The future research report must analyze these sources directly.
 
 ### Prior IDR Topic Sources
 
-- `IDR-SRV-001` through `IDR-SRV-039` research reports, once complete:
+- `IDR-SRV-001` through `IDR-SRV-039` and `IDR-SRV-039A` research reports, once complete:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/`
 
 ### Controlling Standards and API Sources
@@ -400,7 +402,7 @@ Use implementation-study outputs and source repositories as non-normative eviden
 - Category D findings from `IDR-SRV-021` through `IDR-SRV-024`
 - Category E findings from `IDR-SRV-025` through `IDR-SRV-030`
 - Category F findings from `IDR-SRV-031` through `IDR-SRV-038`
-- Category G findings from `IDR-SRV-039`
+- Category G findings from `IDR-SRV-039` and `IDR-SRV-039A`
 - OS4CSAPI organization: https://github.com/OS4CSAPI
 - OS4CSAPI client work: https://github.com/OS4CSAPI/ogc-client-CSAPI_2
 - SECD interoperability repository: https://github.com/Sam-Bolling/csapi-server-interop-secd
@@ -604,7 +606,7 @@ The policy/releasability matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` through `IDR-SRV-039` research reports should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-001` through `IDR-SRV-039` and `IDR-SRV-039A` research reports must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - Official CSAPI Part 1 and Part 2, SensorML, SWE Common, relevant OGC schemas/OpenAPI artifacts, policy/access-control/disclosure sources, and project-available AEP-4789 material must be reachable or explicitly marked unavailable.
 - Implementation-study and interoperability findings must be reachable or explicitly marked unavailable.
 - Research report template must be available.

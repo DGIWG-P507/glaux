@@ -1,8 +1,9 @@
 # Section 039: Authentication, Authorization, and API Security Threat Model - Research Plan
 
+**Topic ID:** IDR-SRV-039<br>
 **Status:** Planned  
-**Last Updated:** June 12, 2026  
-**Estimated Research Time:** 16-20 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 17.5-22.5 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-039-authentication-authorization-and-api-security-threat-model-report.md`
 
@@ -652,7 +653,7 @@ The security threat model matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` through `IDR-SRV-038` research reports should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-001` through `IDR-SRV-038` research reports must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - Official CSAPI Part 1 and Part 2, SensorML, SWE Common, relevant OGC schemas/OpenAPI artifacts, API security/identity/threat-modeling sources, and project-available AEP-4789 material must be reachable or explicitly marked unavailable.
 - Implementation-study and interoperability findings must be reachable or explicitly marked unavailable.
 - Research report template must be available.

@@ -1,8 +1,9 @@
 # Section 004: Terminology and Concept Crosswalk - Research Plan
 
+**Topic ID:** IDR-SRV-004<br>
 **Status:** Planned  
-**Last Updated:** July 29, 2026\
-**Estimated Research Time:** 10-14 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 11.5-16 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-004-terminology-and-concept-crosswalk-report.md`
 
@@ -27,7 +28,7 @@ This plan is intentionally limited to research planning. It does not execute the
 
 ## 1. Research Objective
 
-This topic research must produce a **terminology and concept crosswalk** that aligns STANAG 4789 / AEP-4789 terminology with the terminology used by OGC API - Connected Systems, SensorML, SWE Common, SOSA/SSN where relevant, and Glaux Server planning.
+This topic research must produce a **terminology and concept crosswalk** that aligns STANAG 4789 / AEP-4789 terminology with the terminology used by OGC API - Connected Systems, SensorML, SWE Common, the Sensor, Observation, Sample, and Actuator (SOSA) ontology and Semantic Sensor Network (SSN) ontology where relevant, and Glaux Server planning.
 
 The research must answer:
 
@@ -395,9 +396,7 @@ The crosswalk matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` research report should be complete or explicitly marked unavailable/deferred.
-- `IDR-SRV-002` research report should be complete or explicitly marked unavailable/deferred.
-- `IDR-SRV-003` research report should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-001` through `IDR-SRV-003` research reports must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - The project-controlling `AC/224(JCGISR)D(2026)0005` package must be available to the researcher. If it is unavailable, this topic is blocked.
 - Official OGC, SensorML, SWE Common, and SOSA/SSN sources must be reachable. Unavailable controlling sources block the affected terminology conclusion.
 - Research report template must be available.

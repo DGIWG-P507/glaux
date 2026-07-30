@@ -1,6 +1,6 @@
 # Glaux Server Goal and Definition
-**Version:** 1.4
-**Date:** 29 July 2026
+**Version:** 1.5<br>
+**Date:** 30 July 2026<br>
 **Status:** Draft planning baseline
 
 ---
@@ -85,6 +85,8 @@ Glaux Server shall be designed with explicit treatment of security, authorizatio
 Security and authorization shall not be treated as deployment afterthoughts. The server design shall account for cross-organizational, coalition, federated, and differently accredited environments in which access to information or tasking authority may vary by user, system, organization, mission, role, policy, or operational context.
 
 ### 5.8 Cross-Environment and DDIL-Informed Operation
+In this planning baseline, **DDIL-informed** refers broadly to disconnected, denied, degraded, intermittent, and limited-bandwidth operating conditions; it does not assert that one fixed operating-state taxonomy has already been selected.
+
 Glaux Server shall be designed with awareness of enterprise, coalition, federated, tactical, constrained, and DDIL-informed operating environments.
 
 The server architecture and implementation planning shall account for degraded connectivity, intermittent synchronization, constrained exchange, asynchronous updates, last-known state reporting, staged metadata enrichment, freshness and validity assessment, and efficient handling of updates where continuous high-quality connectivity cannot be assumed.

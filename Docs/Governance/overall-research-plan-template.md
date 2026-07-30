@@ -1,10 +1,11 @@
 # [Program/Domain] Overall Research Plan
 
-**Version:** 1.0
-**Date:** [Month Day, Year]
-**Status:** [Draft | Active | Complete]
-**Scope:** [Define exact scope boundary]
-**Plan Owner:** [Name/Team]
+**Version:** 1.0<br>
+**Date:** [Month Day, Year]<br>
+**Status:** [Draft | Active | Complete]<br>
+**Scope:** [Define exact scope boundary]<br>
+**Plan Owner:** [Name/Team]<br>
+**Final Report Model:** [Indexed synthesis topic: ID-### | Unindexed closeout report]<br>
 **Final Report Target:** [Path to final overall report file]
 
 ---
@@ -41,9 +42,11 @@ State the exact overall decision or output this full research effort must suppor
 1. No topic research report without a topic research plan.
 2. No topic plan without a matching topic ID in this overall index.
 3. Work one topic at a time unless a dependency-based reprioritization is explicitly documented.
-4. Each completed topic produces exactly one topic research report.
-5. Final overall report is produced only after all indexed topics are complete.
-6. Every topic report must include explicit references and evidence.
+4. Before a topic starts, every indexed-topic report named as its prerequisite must be complete and accepted by the plan owner. An exception requires the plan owner's explicit approval and a recorded rationale, scope impact, and downstream handling before execution.
+5. Each completed topic produces exactly one research report. Under an indexed-synthesis model, the final overall report is also the synthesis topic's report.
+6. Follow the declared final-report model: an indexed synthesis topic starts only after every other indexed topic report is complete and accepted; an unindexed closeout report starts only after every indexed topic report is complete and accepted. Either gate permits only an approved and recorded Rule 4 exception.
+7. Every topic report must include explicit references and evidence.
+8. `Accepted` means the plan owner has reviewed a completed report for plan alignment and downstream decision usability, and the acceptance authority and date are recorded.
 
 ---
 
@@ -55,8 +58,8 @@ Research lifecycle:
 2. Build and finalize the planning topic index in this document.
 3. Create one topic research plan per indexed topic.
 4. Execute topic research one topic at a time.
-5. Produce one topic research report per completed topic.
-6. Produce one final overall research report after all topics are complete.
+5. Produce and obtain plan-owner acceptance of one research report per completed topic.
+6. Produce the final overall research report under the declared model: execute the indexed synthesis topic after every preceding topic is complete and accepted, or produce the unindexed closeout report after every indexed topic is complete and accepted. Record any approved exception.
 
 ---
 
@@ -123,6 +126,7 @@ A topic is complete only when all are true:
 - Evidence and references are included
 - Conclusion is explicit and decision-usable
 - Open issues (if any) are documented
+- Plan-owner acceptance authority and date are recorded
 - Topic status in index is updated to `Complete`
 
 ---
@@ -131,16 +135,16 @@ A topic is complete only when all are true:
 
 The overall research effort is complete only when all are true:
 
-- All indexed topics are marked `Complete`
-- All topic reports exist at their declared output targets
+- Every indexed topic that precedes an indexed synthesis topic, or every indexed topic under an unindexed-closeout model, is complete and accepted or has a documented approved exception
+- All non-excepted required topic reports exist at their declared output targets
 - Findings are sufficient to support downstream planning artifacts
-- Final overall report is produced and accepted
+- Final overall report is produced and accepted; under an indexed-synthesis model, this also completes the final synthesis topic
 
 ---
 
 ## Final Overall Report Requirement
 
-After all indexed topics are complete, produce:
+After satisfying the declared indexed-synthesis or unindexed-closeout gate, produce:
 
 - [final-overall-research-report.md]
 
@@ -166,10 +170,10 @@ Record any changes to index, ordering, scope, or criteria.
 
 ## Progress Tracking
 
-| Topic ID | Plan File | Report File | Status | Last Updated | Notes |
-|---|---|---|---|---|---|
-| [ID-001] | [path] | [path] | [Not Started/In Progress/Complete] | [YYYY-MM-DD] | [note] |
-| [ID-002] | [path] | [path] | [Not Started/In Progress/Complete] | [YYYY-MM-DD] | [note] |
+| Topic ID | Plan File | Report File | Status | Accepted By | Acceptance Date | Last Updated | Notes |
+|---|---|---|---|---|---|---|---|
+| [ID-001] | [path] | [path] | [Not Started/In Progress/Complete] | [Name/Team or TBD] | [YYYY-MM-DD or TBD] | [YYYY-MM-DD] | [note] |
+| [ID-002] | [path] | [path] | [Not Started/In Progress/Complete] | [Name/Team or TBD] | [YYYY-MM-DD or TBD] | [YYYY-MM-DD] | [note] |
 
 ---
 
@@ -189,5 +193,5 @@ Record any changes to index, ordering, scope, or criteria.
   - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/initial-planning-guidance.md
 - Topic Research Plan Template (this repository):
   - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/research-plan-template.md
-- Research exemplar corpus (OS4CSAPI):
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/research/testing/research-plans
+- Research exemplar corpus (OS4CSAPI, audited snapshot `754411897173c2ec4debaa9bcf4ed9e0f8a9e230`):
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans

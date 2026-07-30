@@ -1,9 +1,10 @@
 # Section 041: Audit Logging and Accountability Strategy - Research Plan
 
-**Status:** Planned
-**Last Updated:** July 29, 2026
-**Estimated Research Time:** 14-18 hours
-**Actual Research Time:** TBD until complete
+**Topic ID:** IDR-SRV-041<br>
+**Status:** Planned<br>
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 15-18.5 hours<br>
+**Actual Research Time:** TBD until complete<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-041-audit-logging-and-accountability-strategy-report.md`
 
 ---
@@ -242,7 +243,7 @@ This topic must precede:
 - Glaux Server Goal and Definition
 - Research Planning Approach
 - Research Report Template
-- IDR-SRV-019, IDR-SRV-030, and IDR-SRV-036 through IDR-SRV-040 reports, when available
+- IDR-SRV-019, IDR-SRV-030, and IDR-SRV-036 through IDR-SRV-040 reports, including IDR-SRV-039A
 - Project-available AEP-4789 and STANAG 4789 security, command/control, audit, accountability, records, and cross-boundary material, with document identity, edition, date, approval status, handling restrictions, and repository location recorded
 
 ### Standards and Authoritative Guidance
@@ -418,8 +419,8 @@ This topic research is complete when:
 ### Must Complete Before Starting
 
 - Overall Glaux Server IDR Research Plan and Glaux Server Goal and Definition must be current.
-- IDR-SRV-019 and IDR-SRV-030 reports must be available for provenance and lifecycle boundaries, or their absence must be recorded as a limitation.
-- IDR-SRV-036 through IDR-SRV-040 command, security, identity, authorization, and policy reports must be available, or each unavailable input must be explicitly bounded.
+- IDR-SRV-019 and IDR-SRV-030 reports must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
+- IDR-SRV-036 through IDR-SRV-040 command, security, identity, authorization, and policy reports, including IDR-SRV-039A, must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - Official public guidance and project-available AEP/STANAG audit material must be accessible or explicitly unavailable.
 - Research report template must be available.
 

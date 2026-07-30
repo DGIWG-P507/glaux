@@ -1,8 +1,9 @@
 # Section 057: Final Glaux Server IDR Synthesis Report - Research Plan
 
+**Topic ID:** IDR-SRV-057<br>
 **Status:** Planned  
-**Last Updated:** July 29, 2026\
-**Estimated Research Time:** 24-32 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 29-37 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/final-idr-research-report.md`
 
@@ -17,7 +18,9 @@ Before executing this plan, review the exemplar corpus and align the report to t
 - Inventory/sourcing rigor exemplar: https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/15-fixture-sourcing-organization.md
 - End-state synthesis exemplar: https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/38-testing-playbook-synthesis.md
 
-This plan is limited to research planning. It does not execute the synthesis and does not produce the final IDR synthesis report.
+This plan document is limited to research planning; it does not itself execute the synthesis or produce the final IDR synthesis report.
+
+Executing IDR-SRV-057 produces the governance-mandated final overall Glaux Server IDR report at the target path above. That report also serves as this topic's report. It provides evidence-backed design and planning inputs to the later Implementation Guide and Roadmap; it does not replace either artifact.
 
 ---
 
@@ -32,10 +35,10 @@ The synthesis must answer:
 - What architecture, resource model, API behavior, persistence model, dynamic-data behavior, tasking model, security model, deployment model, and verification model should the first implementation use?
 - What is mandatory for first implementation versus deferred full-scope readiness?
 - What risks, unresolved questions, assumptions, dependencies, and proof-of-concept tasks remain?
-- What implementation roadmap should follow from the IDR?
+- What evidence-backed implementation-sequencing, proof-of-concept, and candidate work-package inputs should be handed to the later Implementation Guide and Roadmap?
 - What decisions should be promoted from research findings into project governance, implementation issues, requirements registers, test matrices, architecture documents, and repository scaffolding?
 
-The final synthesis report must produce a consolidated design baseline, not a loose summary. It should reconcile conflicts, identify dependencies, trace recommendations back to topic reports, and produce action-ready implementation guidance.
+The final synthesis report must produce a consolidated design baseline, not a loose summary. It should reconcile conflicts, identify dependencies, trace recommendations back to topic reports, and produce evidence-backed recommendations and inputs for subsequent Implementation Guide and Roadmap authoring.
 
 ### Why This Topic Order
 
@@ -71,17 +74,17 @@ This topic exists to synthesize all findings into one coherent initial design re
 ### Core Questions
 
 1. What complete initial design baseline emerges from the Glaux Server IDR topic reports?
-2. What implementation scope should be first release, follow-on release, and deferred full-scope readiness?
+2. What first-implementation, follow-on, and deferred full-scope classifications are supported by the evidence for use in downstream planning?
 3. What architecture, API, resource model, persistence, dynamic data, security, DDIL, deployment, and verification decisions are now recommended?
 4. What unresolved risks, dependencies, assumptions, and proof-of-concept tasks remain?
-5. What implementation roadmap, issue structure, and governance updates should follow from the IDR?
+5. What implementation-sequencing inputs, candidate issue groupings, and governance updates should be handed to downstream planning?
 
 ### Detailed Questions
 
 #### Source Corpus and Evidence Integrity
 
 - Are all planned IDR topic reports complete?
-- Which topic reports are incomplete, deferred, stale, or superseded?
+- Which topic reports, if any, have a formally approved exception, are stale, or have been superseded, and what is the documented impact?
 - Which reports contain findings that must be reconciled with later reports?
 - Are references current and sufficient?
 - Which findings are supported by standards, project decisions, implementation studies, or reasoned synthesis?
@@ -237,10 +240,10 @@ This topic exists to synthesize all findings into one coherent initial design re
 - Which tasking features are command-disabled/simulated?
 - Which security profile is required?
 
-#### Full-Scope Roadmap
+#### Follow-on Scope and Sequencing Inputs
 
-- What should follow after first implementation?
-- What capabilities should be phased:
+- What evidence supports the recommended work after first implementation?
+- Which capabilities should be proposed to later planning for phased treatment:
   - richer query support,
   - full streaming,
   - command/control,
@@ -290,8 +293,8 @@ This topic exists to synthesize all findings into one coherent initial design re
   - fixtures,
   - docs,
   - interoperability?
-- What milestones should be defined?
-- What issue dependencies should be captured?
+- What candidate milestones should the later Roadmap evaluate?
+- What issue dependencies should be handed to later planning?
 - How should traceability IDs be included?
 
 #### Documentation and Governance Updates
@@ -299,7 +302,7 @@ This topic exists to synthesize all findings into one coherent initial design re
 - Which project documents should be updated after synthesis?
 - Which recommendations should become architecture decision records?
 - Which findings should become requirements registers?
-- Which findings should become implementation-roadmap items?
+- Which findings should be handed forward as implementation-roadmap inputs?
 - Which findings should become test matrices?
 - Which findings should become public-facing documentation?
 
@@ -321,7 +324,7 @@ The final synthesis report must analyze and integrate all completed prior IDR re
 
 ### Required Prior IDR Reports
 
-The synthesis depends on all prior topic reports:
+The synthesis depends on every other indexed topic report. Under the overall-plan range rule, the range below includes all letter-suffixed topics:
 
 - `IDR-SRV-001` through `IDR-SRV-056` research reports:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/`
@@ -386,7 +389,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 **Tasks:**
 
-1. Inventory all `IDR-SRV-001` through `IDR-SRV-056` reports.
+1. Inventory every indexed report preceding `IDR-SRV-057` (`IDR-SRV-001` through `IDR-SRV-056`, including all letter-suffixed topics).
 2. Identify missing, incomplete, stale, contradictory, superseded, or deferred reports.
 3. Create an evidence map by topic category:
    - standards obligations,
@@ -444,21 +447,21 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 **Expected Output:** Integrated initial design baseline.
 
-### Phase 4: Implementation Roadmap and Readiness Analysis (4-5 hours)
+### Phase 4: Downstream Implementation-Planning Inputs and Readiness Analysis (4-5 hours)
 
-**Objective:** Convert synthesis findings into implementation-ready guidance.
+**Objective:** Convert synthesis findings into evidence-backed inputs for subsequent Implementation Guide and Roadmap authoring.
 
 **Tasks:**
 
-1. Define first implementation scope.
-2. Define follow-on implementation phases.
-3. Define deferred full-scope capabilities.
-4. Define proof-of-concept tasks.
-5. Define risk register and mitigation plan.
-6. Define issue/milestone/work-package structure.
+1. Document evidence-backed first-implementation scope recommendations.
+2. Identify sequencing considerations for candidate follow-on phases.
+3. Identify deferred full-scope capabilities.
+4. Identify proof-of-concept task candidates.
+5. Define the research risk register and mitigation recommendations.
+6. Identify candidate issue, milestone, and work-package groupings without creating the formal roadmap.
 7. Define documentation and governance update requirements.
 
-**Expected Output:** Implementation roadmap, risk register, and work package map.
+**Expected Output:** Implementation-planning input set, risk register, and candidate work-package map for later Implementation Guide and Roadmap authoring.
 
 ### Phase 5: Traceability and Validation Against Prior Reports (3-4 hours)
 
@@ -482,7 +485,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 **Tasks:**
 
 1. Draft the report using the overall research report template.
-2. Include executive summary, design baseline, implementation roadmap, verification strategy, risk register, and decision summary.
+2. Include executive summary, design baseline, implementation-planning inputs, downstream-artifact readiness assessment, verification strategy, risk register, and decision summary.
 3. Include clear recommendation tables and traceability to topic reports.
 4. Include unresolved decisions and next actions.
 5. Review for overclaiming, sensitive content, internal-only references, and controlled content handling.
@@ -496,12 +499,12 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] All prior IDR reports are inventoried and their readiness is assessed.
+- [ ] Every indexed report preceding `IDR-SRV-057` is complete, accepted, and inventoried, or an explicitly approved exception is documented with its approval, rationale, scope impact, and downstream handling.
 - [ ] Key findings, recommendations, risks, dependencies, and open questions are extracted and normalized.
 - [ ] Cross-topic conflicts are reconciled or explicitly documented.
 - [ ] Complete initial design baseline is synthesized across standards, API behavior, model, representation, persistence, dynamic data, tasking, security, DDIL, synchronization, implementation architecture, deployment, and verification.
 - [ ] First implementation scope is clearly distinguished from follow-on and deferred full-scope capabilities.
-- [ ] Implementation roadmap, proof-of-concept tasks, issue/work-package structure, and governance/documentation updates are documented.
+- [ ] Evidence-backed implementation-sequencing inputs, proof-of-concept candidates, candidate issue/work-package groupings, and governance/documentation recommendations are documented without replacing the later Implementation Guide or Roadmap.
 - [ ] Final recommendations are traced back to topic reports.
 - [ ] Risk register and unresolved decision register are documented.
 - [ ] Report avoids overclaiming operational accreditation, production hardening, cross-domain readiness, or official certification.
@@ -533,12 +536,12 @@ This topic research is complete when:
 15. Rust implementation, service architecture, modularization, and deployment baseline
 16. Configuration, observability, backup/restore, and operational-reference baseline
 17. Conformance harness, traceability, TDD, fixtures, performance, security, and interoperability verification baseline
-18. First implementation scope
-19. Follow-on roadmap and deferred full-scope capabilities
-20. Proof-of-concept task list
+18. Evidence-backed first-implementation scope recommendations
+19. Downstream implementation-sequencing inputs and deferred full-scope capabilities
+20. Proof-of-concept task candidates
 21. Risk register
 22. Open decision register
-23. Implementation issue/work-package structure
+23. Candidate implementation issue/work-package groupings
 24. Documentation and governance update recommendations
 25. Final recommendation summary
 26. Validation against this plan's success criteria
@@ -554,7 +557,7 @@ The synthesis recommendation matrix should include, at minimum:
 - Dependency references
 - Risk references
 - Verification references
-- Implementation work-package reference
+- Candidate downstream work-package reference
 - Decision status
 - Notes / unresolved issues
 
@@ -566,9 +569,9 @@ The synthesis recommendation matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` through `IDR-SRV-056` research reports should be complete or explicitly marked unavailable/deferred.
+- Every indexed report preceding `IDR-SRV-057` (`IDR-SRV-001` through `IDR-SRV-056`, including all letter-suffixed topics) must be complete and accepted before this topic starts. Any exception must be approved under the overall-plan Governance Rules and recorded in the final report's approved-prerequisite-exceptions table with its approval, rationale, scope impact, and downstream handling.
 - Overall research report template must be available.
-- Topic report references, standards references, implementation-study references, and interoperability references must be reachable or explicitly marked unavailable.
+- All accepted prior reports and their internal report links must be reachable. Missing internal material from a non-excepted prerequisite blocks synthesis; formally excepted gaps must be handled exactly as approved and recorded. For an unavailable external standards, implementation, or interoperability source, record the source, access limitation, affected conclusions, and resulting evidence limits without inferring its contents.
 - Project governance path for turning recommendations into implementation issues or ADRs must be available or identified.
 
 ### Blocks (What This Topic Unlocks)
@@ -606,8 +609,9 @@ Update this section as work progresses.
 ## 10. Notes and Open Questions
 
 - This topic is a synthesis activity, not another narrow technical research topic.
+- This topic produces the final overall IDR report; its planning recommendations are inputs to, and do not replace, the later Implementation Guide and Roadmap.
 - The synthesis must reconcile the entire IDR corpus and convert it into implementation-ready recommendations.
-- The final report should be clear enough to drive repository scaffolding, issue creation, architecture decisions, and first implementation planning.
+- The final report should be clear enough to inform subsequent Implementation Guide and Roadmap authoring, architecture-decision work, repository scaffolding, and issue planning.
 - Open question: Should the final synthesis include a separate executive briefing appendix?
 - Open question: Should recommendations be exported to machine-readable YAML/JSON for issue generation?
 - Open question: Which unresolved decisions require DGIWG project-level approval?

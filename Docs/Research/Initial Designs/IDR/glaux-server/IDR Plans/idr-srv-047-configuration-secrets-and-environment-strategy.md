@@ -1,8 +1,9 @@
 # Section 047: Configuration, Secrets, and Environment Strategy - Research Plan
 
+**Topic ID:** IDR-SRV-047<br>
 **Status:** Planned  
-**Last Updated:** June 12, 2026  
-**Estimated Research Time:** 14-18 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 15.5-21 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-047-configuration-secrets-and-environment-strategy-report.md`
 
@@ -673,7 +674,7 @@ The configuration matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` through `IDR-SRV-046` research reports should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-001` through `IDR-SRV-046`, including `IDR-SRV-039A`, research reports must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - Official Rust, configuration, Docker/Compose, Kubernetes/secret-management, database, security, and deployment sources must be reachable.
 - Official CSAPI Part 1 and Part 2, SensorML, SWE Common, and relevant OpenAPI/schema artifacts must be reachable.
 - Implementation-study and interoperability findings must be reachable or explicitly marked unavailable.

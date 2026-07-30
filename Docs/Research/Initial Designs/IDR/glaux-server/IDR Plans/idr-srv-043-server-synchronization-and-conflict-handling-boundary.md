@@ -1,8 +1,9 @@
 # Section 043: Server Synchronization and Conflict Handling Boundary - Research Plan
 
+**Topic ID:** IDR-SRV-043<br>
 **Status:** Planned  
-**Last Updated:** June 12, 2026  
-**Estimated Research Time:** 16-20 hours  
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 18.5-23.5 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-043-server-synchronization-and-conflict-handling-boundary-report.md`
 
@@ -713,7 +714,7 @@ The synchronization and conflict matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` through `IDR-SRV-042` research reports should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-001` through `IDR-SRV-042`, including `IDR-SRV-039A`, research reports must be complete and accepted before starting unless an exception is approved and recorded under the overall-plan Governance Rules.
 - Official CSAPI Part 1 and Part 2, SensorML, SWE Common, relevant OGC schemas/OpenAPI artifacts, synchronization/replication/reliability sources, and project-available AEP-4789 material must be reachable or explicitly marked unavailable.
 - Implementation-study and interoperability findings must be reachable or explicitly marked unavailable.
 - Research report template must be available.
