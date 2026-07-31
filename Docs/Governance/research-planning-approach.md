@@ -1,7 +1,7 @@
 # Research Planning Approach
 
-**Version:** 1.2<br>
-**Date:** July 30, 2026<br>
+**Version:** 1.3<br>
+**Date:** July 31, 2026<br>
 **Status:** Draft
 
 ---
@@ -87,6 +87,7 @@ It must contain:
 - Work topics one at a time until complete.
 - A project-produced topic report named as a prerequisite must be complete and accepted before a dependent topic begins. It is not "unavailable" merely because it has not been produced.
 - `Accepted` means the controlling overall-plan owner has reviewed the report for alignment and downstream decision usability, and the acceptance authority and date are recorded.
+- Every topic-completion handoff must explicitly state the next two actions when another topic remains: first, plan-owner acceptance of the completed report; second, authorization to execute exactly one next eligible topic. The handoff must give the plan owner a single combined response pattern that both records acceptance and supplies the next-topic execution instruction in one message, for example: `Approve IDR-SRV-NNN. Then execute exactly one Glaux Server research plan: the next one, using the standing single-topic execution instructions.` The handoff does not itself record acceptance or begin the next topic; those occur only when the plan owner sends that combined instruction.
 - A prerequisite exception requires controlling-plan-owner approval, a recorded rationale and impact, and an explicit sequencing or completion-record update.
 - An external source may be unavailable. The report must identify the source and access limitation, avoid inventing its contents, narrow affected conclusions, and state what remains unresolved.
 - Normative or authoritative claims must come from the controlling source. Implementation repositories, examples, tests, discussions, and prior practice are informative evidence unless the controlling source gives them another status.

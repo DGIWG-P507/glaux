@@ -1,7 +1,7 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 1.2<br>
-**Date:** July 30, 2026<br>
+**Version:** 1.3<br>
+**Date:** July 31, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
@@ -51,6 +51,7 @@ The research has two equal purposes:
 7. Execution of `IDR-SRV-057`, including drafting the final overall IDR report, begins only after every other indexed topic report is complete and accepted, except for an exception approved and recorded under Rule 4.
 8. All reports must include explicit, reproducible references and evidence.
 9. `Accepted` means the plan owner has reviewed a completed report for alignment with its topic plan and suitability for downstream decisions. The acceptance authority and date are recorded in the report, and aggregate acceptance coverage is recorded in progress tracking.
+10. Every completed-topic handoff shall state the next two actions when another topic remains: plan-owner acceptance of the completed report, followed by authorization to execute exactly one next eligible topic. The handoff shall provide a single combined response pattern that performs both actions in one message. The handoff wording alone neither records acceptance nor begins the next topic; only the plan owner's combined instruction does so.
 
 ---
 
@@ -551,6 +552,7 @@ The final report must:
 | 2026-07-29 | Baseline Clarification | Confirmed Rust as the implementation language and clarified that polished research reports serve both the project lead and AI-assisted development | Preserve the project's simple implementation goal while making the purpose of research explicit | Glaux Project Lead |
 | 2026-07-29 | Plan Baseline Repair | Realigned seven topic plans—IDR-SRV-019, IDR-SRV-030, IDR-SRV-031, IDR-SRV-032, IDR-SRV-033, IDR-SRV-037, and IDR-SRV-041—with the approved index, registered the controlling NATO draft package locally, and normalized report-directory and final-report targets | Ensure the research library produces the intended evidence for a Rust CSAPI reference-server implementation | Glaux Project Lead |
 | 2026-07-30 | Review Adjudication Hardening | Established the Glaux Project Lead as plan owner and acceptance/exception authority, distinguished internal completion gates from external evidence gaps, clarified research execution order and final-report boundaries, and registered targeted topic-plan corrections from two independent reviews | Freeze a clear, reproducible baseline before executing IDR-SRV-001 without broad plan churn | Glaux Project Lead |
+| 2026-07-31 | Transition Handoff Rule | Required each completed-topic handoff to state acceptance and next-topic authorization as the next two actions and provide one combined response pattern | Make one-topic research transitions predictable without weakening plan-owner acceptance or single-topic controls | Glaux Project Lead |
 
 ---
 
@@ -558,7 +560,7 @@ The final report must:
 
 | Category | Topics | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|---|
-| A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 2/5 | 2/5 | Research In Progress | 2026-07-31 | IDR-SRV-001 and IDR-SRV-002 reports complete and accepted; next scheduled topic is IDR-SRV-003. |
+| A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 3/5 | 2/5 | Research In Progress | 2026-07-31 | IDR-SRV-001 and IDR-SRV-002 reports complete and accepted; IDR-SRV-003 report complete and in review with plan-owner acceptance pending. No later topic has begun. |
 | B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 0/17 | 0/17 | Research Not Started | 2026-07-30 | |
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
