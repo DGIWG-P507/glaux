@@ -1,10 +1,10 @@
 # Section 001: STANAG 4789 / AEP-4789 Server Obligation Baseline - Research Plan
 
 **Topic ID:** IDR-SRV-001<br>
-**Status:** Planned  
+**Status:** In Progress<br>
 **Last Updated:** July 30, 2026<br>
 **Estimated Research Time:** 7.5-12 hours<br>
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 0.5 hours of AI-assisted elapsed execution time on July 30, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-001-stanag-4789-aep-4789-server-obligation-baseline-report.md`
 
 ---
@@ -360,29 +360,30 @@ This topic research is complete when:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 0.5 hours of AI-assisted elapsed execution time on July 30, 2026<br>
+**Completion Date:** TBD pending Glaux Project Lead acceptance
 
 ---
 
 ## 10. Notes and Open Questions
 
-- The availability and citation handling for STANAG 4789 / AEP-4789 source material may depend on access controls. If a source cannot be linked publicly, the report must still record enough internal identifying information to support review.
+- The project-controlling package was available and matched the registered SHA-256 before review. The report records the package identifier, hash, enclosure, section, PDF page, and publication page without exposing the local controlled-file path.
 - The research must avoid treating broad operational interoperability goals as direct Glaux Server implementation obligations unless the source evidence supports that interpretation.
 - The research should identify where later topics must perform more detailed technical extraction from CSAPI, SensorML, SWE Common, and related OGC materials.
-- Open question: What internal citation notation will identify the enclosing package, enclosure, and exact page/section without publishing the controlled file or its local path?
+- Resolved for this report: controlled citations use source shorthand plus section, PDF page, and publication page, backed by the package identifier and SHA-256.
 - Open question: How will any later project-authorized baseline change be recorded and propagated to dependent IDR topics?
 - Risk: If the obligation baseline is too broad, downstream topics may absorb ecosystem responsibilities into Glaux Server.
 - Risk: If the obligation baseline is too narrow, downstream topics may miss NATO/DGIWG requirements that should shape the server architecture.
+- The polished deliverable is present at the target path and has completed internal source, standards-alignment, coverage, link, and traceability review. Plan-owner acceptance remains pending.
 
 ---
 
