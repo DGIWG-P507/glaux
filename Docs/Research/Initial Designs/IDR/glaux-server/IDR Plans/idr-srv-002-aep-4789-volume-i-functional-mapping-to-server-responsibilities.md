@@ -1,8 +1,8 @@
 # Section 002: AEP-4789 Volume I Functional Mapping to Server Responsibilities - Research Plan
 
 **Topic ID:** IDR-SRV-002<br>
-**Status:** In Progress<br>
-**Last Updated:** July 30, 2026<br>
+**Status:** Complete<br>
+**Last Updated:** July 31, 2026<br>
 **Estimated Research Time:** 10-14 hours<br>
 **Actual Research Time:** Approximately 0.75 hours of AI-assisted elapsed execution time on July 30, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-002-aep-4789-volume-i-functional-mapping-to-server-responsibilities-report.md`
@@ -417,10 +417,10 @@ Update this section as work progresses.
 - [x] Phase 6 synthesis complete
 - [x] Deliverable draft complete
 - [x] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Deliverable accepted
 
 **Actual Research Time:** Approximately 0.75 hours of AI-assisted elapsed execution time on July 30, 2026<br>
-**Completion Date:** TBD pending Glaux Project Lead acceptance
+**Completion Date:** July 31, 2026
 
 ---
 
@@ -433,7 +433,7 @@ Update this section as work progresses.
 - Resolved: Volume I formally defines `shall`, `should`, and `may`; lowercase `must` and other strong functional prose are not silently treated as convention-defined mandatory requirements, and representative workflows remain illustrative.
 - Resolved for this topic: future-profile/SRD concerns are classified and assigned to later IDR topics rather than invented as current server obligations.
 - Prerequisite satisfied: `IDR-SRV-001` is complete and accepted; no prerequisite exception was used.
-- The polished report completed independent AEP source, OGC alignment, full-plan coverage, traceability, and local validation review. Plan-owner acceptance remains pending.
+- The polished report completed independent AEP source, OGC alignment, full-plan coverage, traceability, and local validation review and was accepted by the Glaux Project Lead on July 31, 2026.
 - Risk: Over-mapping Volume I operational functions could cause Glaux Server to absorb ecosystem-level responsibilities.
 - Risk: Under-mapping Volume I functions could cause later design topics to miss NATO/DGIWG operational intent.
 

@@ -1,7 +1,7 @@
 # Section 002: AEP-4789 Volume I Functional Mapping to Server Responsibilities - Research Report
 
 **Topic ID:** IDR-SRV-002<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-002 Research Plan](../IDR%20Plans/idr-srv-002-aep-4789-volume-i-functional-mapping-to-server-responsibilities.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** 45 of 45 (5 core and 40 detailed questions)<br>
@@ -20,10 +20,10 @@
 - [Research Report Template](../../../../../Governance/research-report-template.md)
 **Document Purpose:** Turn the AEP-4789 Volume I functional view into a bounded, traceable responsibility baseline that the project lead and later AI-assisted work can use to design the open-source Rust Glaux Server without shrinking its intended capability or absorbing the rest of the ecosystem into the server<br>
 **Author(s):** OpenAI Codex<br>
-**Accepted By:** TBD - Glaux Project Lead review pending<br>
-**Acceptance Date:** TBD - review pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** July 31, 2026<br>
 **Date:** July 30, 2026<br>
-**Last Updated:** July 30, 2026
+**Last Updated:** July 31, 2026
 
 ---
 
@@ -654,22 +654,15 @@ None of these questions blocks acceptance of this report as a functional respons
 
 ## 10. Next Steps and Handoff
 
-### 10.1 Acceptance Required
+### 10.1 Acceptance Recorded
 
-The project lead should decide whether:
+The Glaux Project Lead accepted this report on July 31, 2026. That acceptance confirms that:
 
 1. the layered responsibility model is understandable and useful;
 2. Section 5.2 is an acceptable controlling Volume I baseline for downstream research; and
 3. the unresolved matters are assigned to the correct later topics.
 
-Until that review occurs:
-
-- report status remains **In Review**;
-- the topic plan remains **In Progress**;
-- `Accepted By` and `Acceptance Date` remain pending; and
-- later topics may read the report but must not represent it as plan-owner accepted.
-
-No other substantive project decision is required to complete this topic.
+The report is therefore **Final**, the topic plan is **Complete**, and downstream topics may use this report as an accepted baseline. No other substantive project decision remains for IDR-SRV-002.
 
 ### 10.2 Downstream Topic Handoff Matrix
 
@@ -836,5 +829,5 @@ Each answer below is deliberately concise; the evidence column points to the ful
 - [x] No other Glaux product was designed
 - [x] No other IDR research topic was begun
 - [x] Findings were independently checked for coverage and overclaiming
-- [ ] Plan-owner acceptance completed
-- [ ] `Accepted By` and `Acceptance Date` recorded
+- [x] Plan-owner acceptance completed
+- [x] `Accepted By` and `Acceptance Date` recorded
