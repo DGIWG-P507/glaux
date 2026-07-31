@@ -1,7 +1,7 @@
 # Section 001: STANAG 4789 / AEP-4789 Server Obligation Baseline - Research Plan
 
 **Topic ID:** IDR-SRV-001<br>
-**Status:** In Progress<br>
+**Status:** Complete<br>
 **Last Updated:** July 30, 2026<br>
 **Estimated Research Time:** 7.5-12 hours<br>
 **Actual Research Time:** Approximately 0.5 hours of AI-assisted elapsed execution time on July 30, 2026<br>
@@ -367,10 +367,10 @@ Update this section as work progresses.
 - [x] Phase 5 synthesis complete
 - [x] Deliverable draft complete
 - [x] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Deliverable accepted
 
 **Actual Research Time:** Approximately 0.5 hours of AI-assisted elapsed execution time on July 30, 2026<br>
-**Completion Date:** TBD pending Glaux Project Lead acceptance
+**Completion Date:** July 30, 2026
 
 ---
 
@@ -383,7 +383,7 @@ Update this section as work progresses.
 - Open question: How will any later project-authorized baseline change be recorded and propagated to dependent IDR topics?
 - Risk: If the obligation baseline is too broad, downstream topics may absorb ecosystem responsibilities into Glaux Server.
 - Risk: If the obligation baseline is too narrow, downstream topics may miss NATO/DGIWG requirements that should shape the server architecture.
-- The polished deliverable is present at the target path and has completed internal source, standards-alignment, coverage, link, and traceability review. Plan-owner acceptance remains pending.
+- The polished deliverable completed internal source, standards-alignment, coverage, link, and traceability review and was accepted by the Glaux Project Lead on July 30, 2026.
 
 ---
 

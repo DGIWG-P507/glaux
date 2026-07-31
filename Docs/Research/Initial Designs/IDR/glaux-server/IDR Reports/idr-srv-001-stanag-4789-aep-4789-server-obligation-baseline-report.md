@@ -1,7 +1,7 @@
 # Section 001: STANAG 4789 / AEP-4789 Server Obligation Baseline - Research Report
 
 **Topic ID:** IDR-SRV-001<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-001 Research Plan](../IDR%20Plans/idr-srv-001-stanag-4789-aep-4789-server-obligation-baseline.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** 32 of 32 (5 core and 27 detailed questions)<br>
@@ -18,9 +18,9 @@
 - [Research Planning Approach](../../../../../Governance/research-planning-approach.md)
 - [Research Report Template](../../../../../Governance/research-report-template.md)
 **Document Purpose:** Provide a reviewable NATO/AEP-derived obligation boundary and traceability baseline that later research can translate into a best-of-breed, open-source Rust OGC API - Connected Systems server without either shrinking the server below its mission or expanding it into the whole Glaux ecosystem<br>
-**Author(s):** OpenAI Codex, for Glaux Project Lead review<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD<br>
+**Author(s):** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** July 30, 2026<br>
 **Date:** July 30, 2026<br>
 **Last Updated:** July 30, 2026
 
@@ -423,7 +423,7 @@ The AEP anchor and OGC requirement must remain separate. The AEP explains **why 
 
 1. **Adopt the boundary statement in Section 1 as the reusable Glaux Server scope rule.**
    - Rationale: It preserves the full reference-server mission while preventing identity systems, sensors, gateways, networks, and other Glaux products from becoming hidden server internals.
-   - Preconditions: Plan-owner acceptance of this report.
+   - Preconditions: Satisfied by plan-owner acceptance on July 30, 2026.
    - Priority: High
 
 2. **Create a versioned Glaux AEP/CSAPI conformance profile after the dedicated standards-extraction topics are accepted.**
@@ -434,7 +434,7 @@ The AEP anchor and OGC requirement must remain separate. The AEP explains **why 
 
 3. **Use two-layer traceability: AEP operational anchor plus OGC normative requirement.**
    - Rationale: This prevents operational objectives from being mistaken for exact protocol rules and prevents a technically conformant subset from being mistaken for mission coverage.
-   - Preconditions: None after report acceptance.
+   - Preconditions: Satisfied by report acceptance on July 30, 2026.
    - Priority: High
 
 4. **Make external dependencies explicit ports/contracts in the eventual Rust architecture.**
@@ -525,9 +525,9 @@ The absence of invented hours is intentional. Later reports should narrow these 
 | Controlled source is not publicly linkable | External reviewers cannot reproduce NATO citations unaided | Preserve package ID, hash, enclosure, PDF page, publication page, and section | Project lead controls authorized access |
 | Stale unrelated embedded PDF `Subject` metadata | Automated metadata tooling could misidentify source | Do not use embedded subject; validate visible identity and hash | Evidence handling |
 
-### 8.2 Questions Requiring Plan-Owner Acceptance Now
+### 8.2 Plan-Owner Acceptance Decision
 
-The project lead’s acceptance of this report should confirm:
+The Glaux Project Lead accepted this report on July 30, 2026. That acceptance confirms:
 
 1. the fixed package remains the project-controlling baseline despite its visible pre-promulgation status;
 2. the direct-server / server-contract / ecosystem boundary in Section 4.2 is suitable for downstream planning;
@@ -591,7 +591,7 @@ These are not omissions from IDR-SRV-001. The report identifies the obligations 
 - Source authority, normative strength, inference, and project recommendations are labeled separately.
 - No inaccessible adjacent standard was inferred.
 - No other IDR research topic was executed.
-- The report is complete as a deliverable but remains **In Review** until the plan owner accepts it.
+- The report is complete, accepted, and **Final**.
 
 ---
 
@@ -599,9 +599,9 @@ These are not omissions from IDR-SRV-001. The report identifies the obligations 
 
 ### 10.1 Immediate Next Step
 
-1. **Review and accept or return IDR-SRV-001.** Owner: Glaux Project Lead. Due: TBD by project lead.
-2. If accepted, complete the report’s `Accepted By` and `Acceptance Date` fields, mark the topic plan complete, and increment accepted-report coverage. Owner: Glaux Project Lead / research executor.
-3. Only after acceptance, proceed to the next scheduled topic under the controlling overall plan. No subsequent topic is begun by this report.
+1. `IDR-SRV-001` was accepted by the Glaux Project Lead on July 30, 2026; its topic and aggregate progress records are closed accordingly.
+2. The next scheduled research action is `IDR-SRV-002`, to be executed separately under its own plan and prompt.
+3. No subsequent research topic was begun during this report or acceptance closeout.
 
 ### 10.2 Downstream Handoff Matrix
 
@@ -803,5 +803,5 @@ Detailed AEP Volume II:
 - [x] Recommendations are explicit and actionable
 - [x] Risks and open questions are documented
 - [x] Success criteria, methodology phases, research questions, and deliverable requirements are validated
-- [ ] Plan-owner acceptance and acceptance date are recorded before the topic is treated as complete downstream
+- [x] Plan-owner acceptance and acceptance date are recorded before the topic is treated as complete downstream
 - [x] Next steps and downstream handoffs are assigned
