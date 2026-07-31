@@ -1,7 +1,7 @@
 # Section 005: Related NATO Standards Boundary Review - Research Report
 
 **Topic ID:** IDR-SRV-005<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-005 Related NATO Standards Boundary Review](../IDR%20Plans/idr-srv-005-related-nato-standards-boundary-review.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 20 detailed questions; all candidate-family, methodology, success-criterion, and deliverable requirements are mapped<br>
@@ -16,8 +16,8 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-004 reports, DGIWG public metadata and standards resources, the Glaux Server Goal and Definition, and the project governance corpus<br>
 **Document Purpose:** Establish which adjacent NATO publications matter at the Glaux Server boundary, what the server may need to reference or integrate with, and what it must not absorb into its core implementation<br>
 **Author:** OpenAI Codex, with independent read-only evidence, boundary, and plan-completeness reviews<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD pending acceptance<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** July 31, 2026<br>
 **Date:** July 31, 2026<br>
 **Last Updated:** July 31, 2026
 
@@ -701,7 +701,7 @@ Three independent read-only reviews covered plan and question completeness; auth
 
 ### 13.1 Current Status
 
-Research, synthesis, validation, and repository review for `IDR-SRV-005` are complete. This report is **In Review**. It is not an accepted downstream baseline until the Glaux Project Lead records acceptance.
+Research, synthesis, validation, and repository review for `IDR-SRV-005` are complete. The Glaux Project Lead accepted this report on July 31, 2026, making it an approved downstream baseline.
 
 No technical decision is required before acceptance unless the project lead disagrees with the core boundary in §1.3. The unresolved edition and profile questions are deliberately owned by later work and do not block the next topic.
 
@@ -712,7 +712,7 @@ The next workflow transition has exactly two actions:
 1. The Glaux Project Lead accepts `IDR-SRV-005`.
 2. The Glaux Project Lead authorizes execution of exactly one next eligible topic, `IDR-SRV-006`.
 
-Both actions may be given in one instruction. Until then, `IDR-SRV-006` and every later topic remain unstarted.
+Both actions were given in one instruction on July 31, 2026. That instruction recorded acceptance and authorized execution of `IDR-SRV-006`; it did not authorize any later topic.
 
 Copyable combined instruction:
 
@@ -818,5 +818,5 @@ Copyable combined instruction:
 - [x] Every formal downstream Block is handed off
 - [x] Independent evidence, boundary, usability, and completeness reviews were performed
 - [x] IDR-SRV-004 acceptance was recorded from the plan owner's combined instruction
-- [x] IDR-SRV-006 and all later topics remain unstarted
-- [ ] Plan-owner acceptance and acceptance date recorded
+- [x] IDR-SRV-006 and all later topics were unstarted when this report entered review
+- [x] Plan-owner acceptance and acceptance date recorded
