@@ -1,9 +1,10 @@
 # Section 002: AEP-4789 Volume I Functional Mapping to Server Responsibilities - Research Plan
 
-**Status:** Planned  
-**Last Updated:** July 29, 2026\
-**Estimated Research Time:** 10-14 hours  
-**Actual Research Time:** TBD until complete  
+**Topic ID:** IDR-SRV-002<br>
+**Status:** In Progress<br>
+**Last Updated:** July 30, 2026<br>
+**Estimated Research Time:** 10-14 hours<br>
+**Actual Research Time:** Approximately 0.75 hours of AI-assisted elapsed execution time on July 30, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-002-aep-4789-volume-i-functional-mapping-to-server-responsibilities-report.md`
 
 ---
@@ -13,13 +14,13 @@
 Before executing this plan, review the full exemplar corpus and align the report to the proven standards for content nature, type, level, and detail:
 
 - Full research-plans corpus:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/research/testing/research-plans
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans
 - Early exemplar (blueprint-first depth):
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/01-pr114-blueprint-analysis.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/01-pr114-blueprint-analysis.md
 - Mid-stream exemplar (inventory + sourcing rigor):
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/15-fixture-sourcing-organization.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/15-fixture-sourcing-organization.md
 - End-state synthesis exemplar:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/38-testing-playbook-synthesis.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/38-testing-playbook-synthesis.md
 
 This plan is intentionally limited to research planning. It does not execute the research and does not produce the research report.
 
@@ -222,13 +223,13 @@ Use these sources to interpret context, downstream dependencies, expected resear
 - OS4CSAPI organization:
   - https://github.com/OS4CSAPI
 - OS4CSAPI testing research-plan corpus:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/research/testing/research-plans
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans
 - Blueprint-first exemplar:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/01-pr114-blueprint-analysis.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/01-pr114-blueprint-analysis.md
 - Inventory/sourcing rigor exemplar:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/15-fixture-sourcing-organization.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/15-fixture-sourcing-organization.md
 - End-state synthesis exemplar:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/38-testing-playbook-synthesis.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/38-testing-playbook-synthesis.md
 - OS4CSAPI discussions, for background only:
   - https://github.com/orgs/OS4CSAPI/discussions
 
@@ -408,29 +409,31 @@ This topic research is complete when:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 0.75 hours of AI-assisted elapsed execution time on July 30, 2026<br>
+**Completion Date:** TBD pending Glaux Project Lead acceptance
 
 ---
 
 ## 10. Notes and Open Questions
 
-- AEP-4789 Volume I may contain operational or architectural language that is broader than Glaux Server. The report must classify such material carefully rather than converting all functional language into server requirements.
-- Some Volume I functions may depend on later Volume II standards-package interpretation; those should be handed to `IDR-SRV-003` instead of resolved prematurely.
-- Some functions may require server-side contracts with Publisher, Simulator, Web App, or Mobile, but the report must not design those components.
-- Open question: Which exact AEP-4789 Volume I copy is authoritative for this IDR cycle?
-- Open question: Does Volume I distinguish between required functions, recommended functions, and illustrative reference-view behavior?
-- Open question: Which Volume I functions require future SRD/profile interpretation rather than Glaux Server implementation?
+- The report classifies broad operational and architectural language rather than converting every functional outcome into a direct server requirement.
+- Volume II/OGC interpretation questions were handed to later topics instead of being resolved prematurely here.
+- Server-side contracts were identified without designing Publisher, Simulator, Web App, Mobile, gateways, identity services, or transports.
+- Resolved: the registered `AC/224(JCGISR)D(2026)0005` package, verified against SHA-256 `56DC757B6E677B3584E3152A957849F21A24B22854F562613FF283A8B599DA8C`, is the controlling Volume I copy for this IDR cycle.
+- Resolved: Volume I formally defines `shall`, `should`, and `may`; lowercase `must` and other strong functional prose are not silently treated as convention-defined mandatory requirements, and representative workflows remain illustrative.
+- Resolved for this topic: future-profile/SRD concerns are classified and assigned to later IDR topics rather than invented as current server obligations.
+- Prerequisite satisfied: `IDR-SRV-001` is complete and accepted; no prerequisite exception was used.
+- The polished report completed independent AEP source, OGC alignment, full-plan coverage, traceability, and local validation review. Plan-owner acceptance remains pending.
 - Risk: Over-mapping Volume I operational functions could cause Glaux Server to absorb ecosystem-level responsibilities.
 - Risk: Under-mapping Volume I functions could cause later design topics to miss NATO/DGIWG operational intent.
 
@@ -467,4 +470,4 @@ Update this section as work progresses.
 - OGC schemas:
   - https://schemas.opengis.net/
 - OS4CSAPI testing research-plan corpus:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/research/testing/research-plans
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans
