@@ -1,7 +1,7 @@
 # Section 003: AEP-4789 Volume II Standards Package Implementation Baseline - Research Report
 
 **Topic ID:** IDR-SRV-003<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-003 Research Plan](../IDR%20Plans/idr-srv-003-aep-4789-volume-ii-standards-package-implementation-baseline.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** 33 of 33 (5 core and 28 detailed questions)<br>
@@ -20,8 +20,8 @@
 - [Research Planning Approach](../../../../../Governance/research-planning-approach.md)
 **Document Purpose:** Establish how the four standards adopted by AEP-4789 Volume II fit together as the technical baseline for a best-of-breed, open-source Rust OGC API - Connected Systems server, while preserving clear conformance, validation, implementation, and ecosystem boundaries<br>
 **Author(s):** OpenAI Codex<br>
-**Accepted By:** TBD - Glaux Project Lead review required<br>
-**Acceptance Date:** TBD<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** July 31, 2026<br>
 **Date:** July 31, 2026<br>
 **Last Updated:** July 31, 2026
 
@@ -660,22 +660,18 @@ The reviews found no material conflict with accepted IDR-SRV-001 or IDR-SRV-002.
 
 ## 10. Next Steps and Handoff
 
-### 10.1 Acceptance State
+### 10.1 Acceptance Recorded
 
-Research and report review are complete, but plan-owner acceptance remains pending. This report must not be treated as accepted downstream until the Glaux Project Lead approves it and the `Accepted By` and `Acceptance Date` fields are updated.
+The Glaux Project Lead accepted this report on July 31, 2026. The report is therefore **Final**, the topic plan is **Complete**, and downstream topics may use it as an accepted baseline.
 
 ### 10.2 Required Two-Action Transition
 
-When the plan owner is satisfied, the next two actions are:
+The plan owner's combined July 31, 2026 instruction completed both required actions:
 
-1. Accept `IDR-SRV-003`.
-2. Authorize execution of exactly one next eligible topic, `IDR-SRV-004`.
+1. `IDR-SRV-003` was accepted.
+2. Execution of exactly one next eligible topic, `IDR-SRV-004`, was authorized.
 
-Both actions can be given in one response:
-
-> `Approve IDR-SRV-003. Then execute exactly one Glaux Server research plan: the next one, using the standing single-topic execution instructions.`
-
-This wording in the report does not itself record acceptance or begin IDR-SRV-004. Only the plan owner’s combined response does so.
+No authorization was given to begin `IDR-SRV-005` or any later topic.
 
 ---
 
@@ -786,4 +782,4 @@ Strength codes: `AD` explicit adoption declaration; `SHALL`, `SHOULD`, and `MAY`
 - [x] Findings are reconciled with accepted IDR-SRV-001 and IDR-SRV-002
 - [x] Independent coverage, standards, and overclaim checks were completed
 - [x] No other IDR research topic was begun
-- [ ] Plan-owner acceptance recorded
+- [x] Plan-owner acceptance recorded

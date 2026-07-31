@@ -560,7 +560,7 @@ The final report must:
 
 | Category | Topics | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|---|
-| A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 3/5 | 2/5 | Research In Progress | 2026-07-31 | IDR-SRV-001 and IDR-SRV-002 reports complete and accepted; IDR-SRV-003 report complete and in review with plan-owner acceptance pending. No later topic has begun. |
+| A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 4/5 | 3/5 | Research In Progress | 2026-07-31 | IDR-SRV-001 through IDR-SRV-003 reports complete and accepted; IDR-SRV-004 report complete and in review with plan-owner acceptance pending. IDR-SRV-005 and all later topics remain unstarted. |
 | B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 0/17 | 0/17 | Research Not Started | 2026-07-30 | |
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
