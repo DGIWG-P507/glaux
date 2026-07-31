@@ -1,9 +1,10 @@
 # Section 003: AEP-4789 Volume II Standards Package Implementation Baseline - Research Plan
 
-**Status:** Planned  
-**Last Updated:** July 29, 2026\
-**Estimated Research Time:** 10-14 hours  
-**Actual Research Time:** TBD until complete  
+**Topic ID:** IDR-SRV-003<br>
+**Status:** Complete<br>
+**Last Updated:** July 31, 2026<br>
+**Estimated Research Time:** 10-14 hours<br>
+**Actual Research Time:** Approximately 1.0 hour of AI-assisted elapsed execution time on July 31, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-003-aep-4789-volume-ii-standards-package-implementation-baseline-report.md`
 
 ---
@@ -13,13 +14,13 @@
 Before executing this plan, review the full exemplar corpus and align the report to the proven standards for content nature, type, level, and detail:
 
 - Full research-plans corpus:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/research/testing/research-plans
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans
 - Early exemplar (blueprint-first depth):
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/01-pr114-blueprint-analysis.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/01-pr114-blueprint-analysis.md
 - Mid-stream exemplar (inventory + sourcing rigor):
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/15-fixture-sourcing-organization.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/15-fixture-sourcing-organization.md
 - End-state synthesis exemplar:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/38-testing-playbook-synthesis.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/38-testing-playbook-synthesis.md
 
 This plan is intentionally limited to research planning. It does not execute the research and does not produce the research report.
 
@@ -211,13 +212,13 @@ Use these sources to interpret implementation context, downstream dependencies, 
 - OS4CSAPI organization:
   - https://github.com/OS4CSAPI
 - OS4CSAPI testing research-plan corpus:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/research/testing/research-plans
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans
 - Blueprint-first exemplar:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/01-pr114-blueprint-analysis.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/01-pr114-blueprint-analysis.md
 - Inventory/sourcing rigor exemplar:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/15-fixture-sourcing-organization.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/15-fixture-sourcing-organization.md
 - End-state synthesis exemplar:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/research/testing/research-plans/38-testing-playbook-synthesis.md
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans/38-testing-playbook-synthesis.md
 - OS4CSAPI discussions, for background only:
   - https://github.com/orgs/OS4CSAPI/discussions
 - OS4CSAPI client work, for later interoperability context only:
@@ -404,6 +405,7 @@ This topic research is complete when:
 - `IDR-SRV-050: Conformance Harness Strategy`
 - `IDR-SRV-051: Requirement-to-Test Traceability Strategy`
 - `IDR-SRV-053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy`
+- `IDR-SRV-056: Interoperability Test Matrix for External CSAPI Clients`
 - Final overall IDR synthesis report
 
 ---
@@ -412,18 +414,18 @@ This topic research is complete when:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 1.0 hour of AI-assisted elapsed execution time on July 31, 2026<br>
+**Completion Date:** July 31, 2026 (plan-owner acceptance pending)
 
 ---
 
@@ -433,9 +435,9 @@ Update this section as work progresses.
 - Official OGC standards and schemas remain authoritative for technical requirements even when AEP-4789 Volume II provides the NATO adoption context.
 - This topic should not duplicate later detailed requirement extraction from CSAPI Part 1 or Part 2.
 - This topic should not pre-design SensorML/SWE persistence, validation, or encoding behavior; it should identify where that work must occur later.
-- Open question: Which exact AEP-4789 Volume II copy is authoritative for this IDR cycle?
-- Open question: Does Volume II adopt all relevant conformance classes from the referenced standards or only a subset?
-- Open question: Are any standards-package elements optional, future-facing, or profile-dependent for Glaux Server?
+- Resolution: the plan-owner-registered 27 April 2026 package, with the recorded matching SHA-256, is the authoritative copy for this IDR cycle; it remains visibly pre-promulgation.
+- Resolution: Volume II adopts the four fixed standards and says alignment claimants should use them coherently, but does not select every optional conformance class. Exact Glaux class selection remains with `IDR-SRV-006` through `IDR-SRV-008`.
+- Resolution: the four OGC standards are modular; future AEP/SRD profiles, Part 3 pub/sub, security/trust profiles, domain semantics, and several constrained-environment matters remain future, profile-dependent, or downstream work.
 - Risk: Treating the standards as unrelated documents could cause inconsistent server design.
 - Risk: Treating the standards package too broadly could cause Glaux Server to absorb ecosystem or profile-level responsibilities.
 - Risk: Treating the standards package too narrowly could cause later topics to miss necessary SensorML, SWE Common, validation, or conformance obligations.
@@ -481,4 +483,4 @@ Update this section as work progresses.
 - OGC API - Features:
   - https://ogcapi.ogc.org/features/
 - OS4CSAPI testing research-plan corpus:
-  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/research/testing/research-plans
+  - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/research-plans
