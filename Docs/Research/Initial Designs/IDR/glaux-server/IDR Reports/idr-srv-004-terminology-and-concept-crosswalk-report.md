@@ -1,7 +1,7 @@
 # Section 004: Terminology and Concept Crosswalk - Research Report
 
 **Topic ID:** IDR-SRV-004<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-004 Terminology and Concept Crosswalk](../IDR%20Plans/idr-srv-004-terminology-and-concept-crosswalk.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 29 detailed questions; the 4 objective-level prompts are also mapped<br>
@@ -16,8 +16,8 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-003 reports, official published schemas, the Glaux Server Goal and Definition, and the project governance corpus<br>
 **Document Purpose:** Establish a shared vocabulary that prevents later requirements, architecture, Rust implementation, and tests from silently assigning different meanings to the same term<br>
 **Author:** OpenAI Codex, with independent read-only evidence and coverage reviews<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD pending acceptance<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** July 31, 2026<br>
 **Date:** July 31, 2026<br>
 **Last Updated:** July 31, 2026
 
@@ -594,20 +594,16 @@ Three bounded evidence reviews independently covered the controlled NATO termino
 
 ### 10.1 Current Status
 
-Research, synthesis, validation, and repository review for `IDR-SRV-004` are complete. The report is **In Review**. Under the overall-plan governance rules, it is not an accepted downstream baseline until the Glaux Project Lead accepts it and the acceptance fields are completed.
+Research, synthesis, validation, and repository review for `IDR-SRV-004` are complete. The Glaux Project Lead accepted this report on July 31, 2026, so it is the accepted terminology baseline for downstream research.
 
-### 10.2 Required Two-Action Transition
+### 10.2 Recorded Two-Action Transition
 
-The next workflow transition has exactly two actions, and neither is implied by publication of this report:
+The Glaux Project Lead completed the required transition in one instruction on July 31, 2026:
 
-1. The Glaux Project Lead reviews and accepts `IDR-SRV-004`.
-2. The Glaux Project Lead authorizes execution of exactly one next eligible topic, `IDR-SRV-005`.
+1. accepted `IDR-SRV-004`; and
+2. authorized execution of exactly one next eligible topic, `IDR-SRV-005`.
 
-Both actions may be given in one instruction. Until then, `IDR-SRV-005` and all later research topics remain unstarted.
-
-The copyable combined instruction is:
-
-> Approve IDR-SRV-004 and execute exactly one Glaux Server research plan: IDR-SRV-005, using the standing single-topic execution instructions.
+This authorization does not extend to `IDR-SRV-006` or any later topic.
 
 ---
 
@@ -746,4 +742,4 @@ The matrix is intentionally implementation-oriented rather than an attempt at a 
 - [x] Findings are reconciled with accepted IDR-SRV-001 through IDR-SRV-003
 - [x] Independent evidence, coverage, handoff, and overclaim checks were completed
 - [x] No other IDR research topic was begun
-- [ ] Plan-owner acceptance and acceptance date recorded
+- [x] Plan-owner acceptance and acceptance date recorded
