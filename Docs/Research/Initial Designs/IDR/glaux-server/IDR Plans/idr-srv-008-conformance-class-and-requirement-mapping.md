@@ -1,9 +1,9 @@
 # Section 008: Conformance Class and Requirement Mapping - Research Plan
 
-**Status:** Planned  
+**Status:** In Progress<br>
 **Last Updated:** August 1, 2026<br>
 **Estimated Research Time:** 13-17 hours<br>
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 4 hours of AI-assisted elapsed execution time, including three parallel independent read-only audits, on August 1, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-008-conformance-class-and-requirement-mapping-report.md`
 
 ---
@@ -367,17 +367,17 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] CSAPI Part 1 and Part 2 conformance classes are identified with source anchors.
-- [ ] Requirement classes and conformance class relationships are documented.
-- [ ] Conformance declaration identifiers or URIs are identified where available.
-- [ ] Part 1 and Part 2 requirements are mapped to conformance classes where possible.
-- [ ] Inherited OGC API behavior is identified where relevant.
-- [ ] Each conformance class is classified for Glaux Server applicability.
-- [ ] Dependencies and evidence needs for conformance claims are identified.
-- [ ] Relevant official issue/PR/release history is date-checked, linked to affected mappings, and authority-classified without changing the normative baseline.
-- [ ] Downstream handoffs to behavior, validation, testing, conformance harness, and requirement-to-test topics are documented.
-- [ ] Unresolved mapping or applicability issues are explicitly listed.
-- [ ] References are explicit and reproducible.
+- [x] CSAPI Part 1 and Part 2 conformance classes are identified with source anchors.
+- [x] Requirement classes and conformance class relationships are documented.
+- [x] Conformance declaration identifiers or URIs are identified where available.
+- [x] Part 1 and Part 2 requirements are mapped to conformance classes where possible.
+- [x] Inherited OGC API behavior is identified where relevant.
+- [x] Each conformance class is classified for Glaux Server applicability.
+- [x] Dependencies and evidence needs for conformance claims are identified.
+- [x] Relevant official issue/PR/release history is date-checked, linked to affected mappings, and authority-classified without changing the normative baseline.
+- [x] Downstream handoffs to behavior, validation, testing, conformance harness, and requirement-to-test topics are documented.
+- [x] Unresolved mapping or applicability issues are explicitly listed.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -464,18 +464,19 @@ The mapping matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 4 hours of AI-assisted elapsed execution time, including three parallel independent read-only audits, on August 1, 2026<br>
+**Research Execution Completed:** August 1, 2026<br>
+**Completion Date:** TBD until plan-owner acceptance
 
 ---
 
