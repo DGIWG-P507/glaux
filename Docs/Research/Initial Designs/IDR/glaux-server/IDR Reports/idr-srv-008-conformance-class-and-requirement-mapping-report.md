@@ -1,7 +1,7 @@
 # Section 008: Conformance Class and Requirement Mapping - Research Report
 
 **Topic ID:** IDR-SRV-008<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-008 Conformance Class and Requirement Mapping](../IDR%20Plans/idr-srv-008-conformance-class-and-requirement-mapping.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 34 detailed questions; all six methodology phases, eleven success criteria, seventeen deliverable requirements, and sixteen enumerated minimum mapping fields are validated<br>
@@ -17,8 +17,8 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-007 reports; the tagged `opengeospatial/ogcapi-connected-systems` Version 1.0.0 source and API artifacts; the official OGC NamingAuthority mappings; the bounded upstream-history register; and the pinned OGC API - Features Part 4 draft<br>
 **Document Purpose:** Establish the complete, decision-usable conformance profile and requirement-to-class traceability baseline for the full-scope Rust Glaux Server implementation<br>
 **Author:** OpenAI Codex, with independent read-only Part 1, Part 2, and upstream/test-resource audits<br>
-**Accepted By:** TBD - Glaux Project Lead review pending<br>
-**Acceptance Date:** TBD until accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 1, 2026<br>
 **Date:** August 1, 2026<br>
 **Last Updated:** August 1, 2026
 
@@ -862,20 +862,11 @@ Two additional independent read-only report audits then checked technical correc
 
 ### 18.1 Current Status
 
-Research execution, drafting, traceability checks, and independent technical review are complete. The report is **In Review**. Plan-owner acceptance fields remain pending by design. No work on IDR-SRV-009 has begun.
+Research execution, drafting, traceability checks, independent technical review, and plan-owner acceptance are complete. The report is **Final**. The Glaux Project Lead accepted it on August 1, 2026.
 
-### 18.2 Required Two-Action Transition
+### 18.2 Transition Completed
 
-The next two actions are:
-
-1. The Glaux Project Lead reviews and approves IDR-SRV-008, which changes this report to `Final` and the topic plan to `Complete`.
-2. In the same instruction, the project lead authorizes execution of exactly one next topic: **IDR-SRV-009, Landing Page, API Definition, and Conformance Declaration Behavior**.
-
-Combined response pattern:
-
-> Approve IDR-SRV-008 and execute exactly one Glaux Server research plan: IDR-SRV-009.
-
-That combined instruction accepts this report and starts only the next plan. It does not authorize any later topic.
+On August 1, 2026, the Glaux Project Lead supplied the combined instruction that accepted IDR-SRV-008 and authorized execution of exactly one next topic: **IDR-SRV-009, Landing Page, API Definition, and Conformance Declaration Behavior**. No later topic was authorized by that instruction.
 
 ---
 
@@ -994,5 +985,5 @@ The full URI is `CS2` plus the displayed identifier. For every entry, replace `/
 - [x] Evidence limitations and unresolved issues are explicit
 - [x] Prior accepted reports are reconciled
 - [x] Independent read-only technical reviews are reconciled
-- [x] Plan-owner acceptance fields remain pending
+- [x] Plan-owner acceptance is recorded
 - [x] No other research topic was begun
