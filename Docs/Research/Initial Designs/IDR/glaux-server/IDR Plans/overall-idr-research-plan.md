@@ -1,7 +1,7 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 1.3<br>
-**Date:** July 31, 2026<br>
+**Version:** 1.4<br>
+**Date:** August 1, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
@@ -52,6 +52,8 @@ The research has two equal purposes:
 8. All reports must include explicit, reproducible references and evidence.
 9. `Accepted` means the plan owner has reviewed a completed report for alignment with its topic plan and suitability for downstream decisions. The acceptance authority and date are recorded in the report, and aggregate acceptance coverage is recorded in progress tracking.
 10. Every completed-topic handoff shall state the next two actions when another topic remains: plan-owner acceptance of the completed report, followed by authorization to execute exactly one next eligible topic. The handoff shall provide a single combined response pattern that performs both actions in one message. The handoff wording alone neither records acceptance nor begins the next topic; only the plan owner's combined instruction does so.
+11. The shared OGC API - Connected Systems upstream-history register is a required supporting evidence source for topics whose conclusions can be affected by official repository issues, pull requests, commits, releases, or recorded design rationale. Each such topic shall consult and date-check only its relevant entries, follow linked resolution artifacts, and add or update entries when material evidence has changed.
+12. The upstream-history register does not alter the authority hierarchy. Approved standards and normatively incorporated artifacts control. Pre-publication history may explain the published result; post-publication changes may show maintenance direction; open issues, comments, and unmerged pull requests remain unresolved informative evidence. No register entry creates a Glaux requirement by itself.
 
 ---
 
@@ -67,6 +69,8 @@ Research lifecycle:
 6. Execute `IDR-SRV-057` last and produce the final overall IDR research report, which also serves as the `IDR-SRV-057` report, after every other topic is complete and accepted or any Rule 4 exception is explicitly accounted for.
 
 All topic-level research plans shall be drafted before topic execution begins. Topic execution shall then proceed one topic at a time, using the approved topic-level research plan to produce the corresponding topic-level research report.
+
+The shared upstream-history register is maintained across topics as supporting evidence. Maintaining or refreshing it does not constitute execution of another indexed topic, provided each update is bounded to the active topic's evidence needs and does not make decisions owned by an unstarted topic.
 
 ---
 
@@ -474,6 +478,7 @@ Each topic report must satisfy all standards below.
 - Claims are supported by direct references.
 - References are specific and reproducible (URL, section/clause, artifact path).
 - Assumptions are explicitly marked.
+- Relevant official standards-repository history is traced through the shared register, linked to its issue/PR/commit/release evidence, and authority-classified without overriding the approved standard.
 - Research involving Rust implementation, testing, CI, security tooling, framework selection, or dependency management shall use current online sources and record source dates, tool versions, and assumptions where relevant.
 
 ### Literature Review Standard
@@ -553,6 +558,7 @@ The final report must:
 | 2026-07-29 | Plan Baseline Repair | Realigned seven topic plans—IDR-SRV-019, IDR-SRV-030, IDR-SRV-031, IDR-SRV-032, IDR-SRV-033, IDR-SRV-037, and IDR-SRV-041—with the approved index, registered the controlling NATO draft package locally, and normalized report-directory and final-report targets | Ensure the research library produces the intended evidence for a Rust CSAPI reference-server implementation | Glaux Project Lead |
 | 2026-07-30 | Review Adjudication Hardening | Established the Glaux Project Lead as plan owner and acceptance/exception authority, distinguished internal completion gates from external evidence gaps, clarified research execution order and final-report boundaries, and registered targeted topic-plan corrections from two independent reviews | Freeze a clear, reproducible baseline before executing IDR-SRV-001 without broad plan churn | Glaux Project Lead |
 | 2026-07-31 | Transition Handoff Rule | Required each completed-topic handoff to state acceptance and next-topic authorization as the next two actions and provide one combined response pattern | Make one-topic research transitions predictable without weakening plan-owner acceptance or single-topic controls | Glaux Project Lead |
+| 2026-08-01 | Upstream Standards-History Evidence Control | Established a bounded shared register for relevant official CSAPI issues, pull requests, releases, commits, and design rationale; assigned topic-level refresh and authority-classification rules; repaired 89 obsolete OpenAPI source links across the topic-plan corpus | Preserve implementation-relevant standards-maintenance context and reproducible OAS access without allowing mutable GitHub history to override approved standards or become an unbounded research rabbit hole | Glaux Project Lead |
 
 ---
 
@@ -561,7 +567,7 @@ The final report must:
 | Category | Topics | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|---|
 | A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 5/5 | 5/5 | Research Complete | 2026-07-31 | IDR-SRV-001 through IDR-SRV-005 reports complete and accepted. |
-| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 2/17 | 1/17 | Research In Progress | 2026-07-31 | IDR-SRV-006 report complete and accepted; IDR-SRV-007 report complete and in review with acceptance pending; later topics remain unstarted. |
+| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 2/17 | 1/17 | Research In Progress | 2026-08-01 | IDR-SRV-006 report complete and accepted; IDR-SRV-007 report complete and in review with acceptance pending; the shared upstream-history register is established for IDR-SRV-008 and later topic use; later topics remain unstarted. |
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
 | E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
@@ -576,6 +582,7 @@ The final report must:
 
 - Normative specification interpretation may vary by clause and cross-reference depth.
 - Upstream interoperability behaviors may diverge from strict conformance language.
+- Mutable upstream issues and pull requests may be mistaken for approved obligations unless their status, release relationship, and authority class are preserved.
 - Scope expansion risk if topic boundaries are not enforced at report time.
 
 ---
@@ -588,3 +595,7 @@ The final report must:
   - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/initial-planning-guidance.md
 - OGC CSAPI planning exemplar (OS4CSAPI)
   - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/phase-9/docs/planning
+- OGC API - Connected Systems upstream-history evidence register
+  - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Research/Initial%20Designs/IDR/glaux-server/IDR%20Evidence/ogc-connected-systems-upstream-history-register.md
+- Official OGC API - Connected Systems repository
+  - https://github.com/opengeospatial/ogcapi-connected-systems

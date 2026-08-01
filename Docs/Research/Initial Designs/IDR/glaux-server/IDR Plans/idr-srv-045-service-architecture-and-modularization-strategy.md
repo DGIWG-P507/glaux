@@ -436,7 +436,7 @@ Use current official documentation and primary-source material when executing th
 - OGC API - Connected Systems - Part 1: Feature Resources: https://docs.ogc.org/is/23-001/23-001.html
 - OGC API - Connected Systems - Part 2: Dynamic Data: https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository: https://github.com/opengeospatial/ogcapi-connected-systems
-- OGC API - Connected Systems OpenAPI artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+- OGC API - Connected Systems OpenAPI artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
 - OGC API - Features Part 1: https://docs.ogc.org/is/17-069r4/17-069r4.html
 - OGC SensorML Encoding Standard 3.0: https://docs.ogc.org/is/23-000/23-000.html
 - OGC SWE Common Data Model Encoding Standard 3.0: https://docs.ogc.org/is/24-014/24-014.html

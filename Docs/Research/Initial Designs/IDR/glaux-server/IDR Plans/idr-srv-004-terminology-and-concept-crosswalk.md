@@ -188,7 +188,7 @@ The future research report must analyze these sources directly.
 - OGC API - Connected Systems public development repository:
   - https://github.com/opengeospatial/ogcapi-connected-systems
 - OGC API - Connected Systems OpenAPI artifacts:
-  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
 - OGC schemas:
   - https://schemas.opengis.net/
 - W3C Semantic Sensor Network Ontology / SOSA:

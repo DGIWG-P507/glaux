@@ -1,8 +1,8 @@
 # Section 014: OpenAPI Description and API Documentation Strategy - Research Plan
 
 **Status:** Planned  
-**Last Updated:** June 8, 2026  
-**Estimated Research Time:** 10-14 hours  
+**Last Updated:** August 1, 2026<br>
+**Estimated Research Time:** 12-16 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014-openapi-description-and-api-documentation-strategy-report.md`
 
@@ -32,6 +32,7 @@ The research must answer:
 - How should Glaux Server distinguish normative API contract material, generated documentation, human-readable developer guidance, examples, implementation notes, and future or experimental extensions?
 - How should the API documentation strategy support external clients, generated clients, conformance testing, CSAPI Explorer, DGIWG/NATO implementers, and future Glaux ecosystem components?
 - What validation, build, publishing, and maintenance implications follow from treating the OpenAPI description as a machine-readable server contract?
+- How do the published modular files, tagged source, bundled OpenAPI 3.1 release assets, and official maintenance history differ, and which artifact defects or design decisions must Glaux preserve, repair, or document?
 
 The output must be a documentation and machine-contract publication baseline with source anchors, OpenAPI strategy recommendations, downstream handoffs, and test implications.
 
@@ -67,6 +68,8 @@ This topic must precede existing implementation studies and downstream resource-
   - versioning/deprecation notices,
   - implementation-specific extensions.
 - Keep the research bounded to Glaux Server behavior and server-side contracts.
+- Compare every official artifact form used by implementers—published modular tree, `v1.0.0` tagged source, and bundled OAS 3.1 release assets—rather than assuming they are interchangeable.
+- Use official issue/PR/commit history to explain artifact decisions and known defects, but preserve the approved standard as the normative authority and label unresolved or post-publication changes accurately.
 
 ---
 
@@ -87,8 +90,10 @@ This topic must precede existing implementation studies and downstream resource-
 - What API description behavior is required or implied by OGC API - Connected Systems Part 1 and Part 2?
 - What API description behavior is inherited from OGC API - Features?
 - What OpenAPI version and artifact structure are used by the official CSAPI materials?
+- What differences exist among the published modular trees, the `v1.0.0` tagged source, and the Part 1/Part 2 bundled OAS 3.1 release assets?
 - What schema references and reusable components appear in official OpenAPI artifacts?
 - Which official OpenAPI artifacts should Glaux Server treat as reference material, source material, or implementation inspiration?
+- Which official issues, linked pull requests, commits, and release records explain OpenAPI version selection, bundling, known omissions, extra paths, schema drift, or documentation behavior, and which remain unresolved?
 
 #### OpenAPI Contract Scope
 
@@ -174,6 +179,8 @@ The future research report must analyze these sources directly.
 
 - `IDR-SRV-006` through `IDR-SRV-013` research reports, once complete:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/`
+- Shared OGC API - Connected Systems upstream-history register:
+  - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Evidence/ogc-connected-systems-upstream-history-register.md`
 
 ### Controlling OGC and Standards-Package Sources
 
@@ -181,7 +188,17 @@ The future research report must analyze these sources directly.
 - OGC API - Connected Systems - Part 1: Feature Resources: https://docs.ogc.org/is/23-001/23-001.html
 - OGC API - Connected Systems - Part 2: Dynamic Data: https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository: https://github.com/opengeospatial/ogcapi-connected-systems
-- OGC API - Connected Systems OpenAPI artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+- Published Part 1 OpenAPI/schema artifact tree: https://schemas.opengis.net/ogcapi/connected-systems/part1/1.0/
+- Published Part 2 OpenAPI/schema/AsyncAPI artifact tree: https://schemas.opengis.net/ogcapi/connected-systems/part2/1.0/
+- Tagged Part 1 modular OpenAPI source: https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api/part1/openapi
+- Tagged Part 2 modular OpenAPI source: https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api/part2/openapi
+- `v1.0.0` release and bundled OAS 3.1 assets:
+  - https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0
+  - https://github.com/opengeospatial/ogcapi-connected-systems/releases/download/v1.0.0/ogcapi-connectedsystems-1.bundled.oas31.yaml
+  - https://github.com/opengeospatial/ogcapi-connected-systems/releases/download/v1.0.0/ogcapi-connectedsystems-2.bundled.oas31.yaml
+- Official OpenAPI-related issue and pull-request history, filtered through the shared register:
+  - https://github.com/opengeospatial/ogcapi-connected-systems/issues
+  - https://github.com/opengeospatial/ogcapi-connected-systems/pulls
 - OGC schemas: https://schemas.opengis.net/
 - OGC API - Features Part 1: https://docs.ogc.org/is/17-069r4/17-069r4.html
 - OGC API standards family: https://ogcapi.ogc.org/
@@ -240,9 +257,10 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 1. Gather CSAPI, OGC API - Features, OpenAPI, schema, documentation-rendering, HTTP, media-type, and error-response sources.
 2. Gather reports from `IDR-SRV-006` through `IDR-SRV-013`, if available.
-3. Identify requirements and conventions that affect API definition exposure, OpenAPI publication, documentation links, schemas, examples, media types, errors, and security schemes.
-4. Define the OpenAPI/documentation inventory fields for the report.
-5. Define classification values: normative, inherited, recommended, conventional, implementation-specific, future candidate, unsupported/out of scope, unresolved.
+3. Consult and date-check the OpenAPI/schema/publication entries in the shared upstream-history register, following linked PRs, commits, and release assets where material.
+4. Identify requirements and conventions that affect API definition exposure, OpenAPI publication, documentation links, schemas, examples, media types, errors, and security schemes.
+5. Define the OpenAPI/documentation inventory fields for the report.
+6. Define classification values: normative, inherited, recommended, conventional, implementation-specific, future candidate, unsupported/out of scope, unresolved.
 
 **Expected Output:** Source inventory and OpenAPI/documentation extraction framework.
 
@@ -252,11 +270,12 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 **Tasks:**
 
-1. Review official CSAPI OpenAPI artifacts for structure, endpoints, components, parameters, media types, schemas, security, and examples.
-2. Identify how Part 1 and Part 2 behavior is represented.
-3. Identify gaps or ambiguities between prose standards and OpenAPI artifacts.
-4. Identify reusable patterns for Glaux Server.
-5. Identify where implementation-specific generation or composition may be needed.
+1. Review the published modular trees, `v1.0.0` tagged source, and both bundled OAS 3.1 release assets for structure, endpoints, components, parameters, media types, schemas, security, examples, and reference integrity.
+2. Record versions, hashes/digests, retrieval dates, provenance, and whether the artifact is normative, incorporated, informative, generated, or mutable.
+3. Identify how Part 1 and Part 2 behavior is represented and compare artifact variants mechanically where practical.
+4. Identify gaps or ambiguities between prose standards, schemas, modular OpenAPI, bundled OpenAPI, rendered documentation, and examples.
+5. Reconcile each material known defect or design choice with the relevant upstream issue, linked PR/commit, merge state, and release relationship.
+6. Identify reusable patterns for Glaux Server and where implementation-specific repair, generation, or composition is needed.
 
 **Expected Output:** Official CSAPI OpenAPI artifact analysis.
 
@@ -313,7 +332,8 @@ Use these sources to interpret project context, downstream dependencies, expecte
 2. Resolve conflicts and ambiguities where possible.
 3. Produce findings grouped by machine-readable contract, human documentation, schemas/examples, publishing, and testing.
 4. Produce recommendations for downstream IDR topic use.
-5. Prepare the deliverable for review using the research-report template.
+5. Update relevant shared-register entries with the verified artifact comparison, state, or downstream disposition without turning unresolved proposals into requirements.
+6. Prepare the deliverable for review using the research-report template.
 
 **Expected Output:** Completed topic research report at the target deliverable path.
 
@@ -323,7 +343,8 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] Official CSAPI OpenAPI artifacts are reviewed with source anchors.
+- [ ] Published modular, tagged-source, and bundled OAS 3.1 artifacts are reviewed and compared with reproducible source anchors, versions, and digests where available.
+- [ ] Relevant official issue/PR/commit/release history is reconciled to each material artifact decision or defect and authority-classified.
 - [ ] OpenAPI requirements and conventions are identified.
 - [ ] The relationship between OpenAPI contract, live server behavior, schemas, examples, and human-readable documentation is documented.
 - [ ] Schema reference and component reuse implications are identified.
@@ -345,20 +366,21 @@ This topic research is complete when:
 1. Executive summary
 2. Scope and plan alignment
 3. Evidence base and authority classification
-4. Official CSAPI OpenAPI artifact analysis
-5. Glaux Server OpenAPI contract scope and structure findings
-6. Schema and component strategy findings
-7. Human-readable documentation and examples strategy findings
-8. Publishing and discovery findings
-9. Security and policy documentation findings
-10. Validation, contract-drift, and generated-client implications
-11. Interoperability and existing-implementation implications
-12. Test-strategy implications
-13. Downstream topic handoff matrix
-14. Recommendations
-15. Risks, constraints, and open questions
-16. Validation against this plan's success criteria
-17. References
+4. Official CSAPI modular/tagged/bundled OpenAPI artifact comparison
+5. Upstream OpenAPI maintenance-history and known-defect disposition
+6. Glaux Server OpenAPI contract scope and structure findings
+7. Schema and component strategy findings
+8. Human-readable documentation and examples strategy findings
+9. Publishing and discovery findings
+10. Security and policy documentation findings
+11. Validation, contract-drift, and generated-client implications
+12. Interoperability and existing-implementation implications
+13. Test-strategy implications
+14. Downstream topic handoff matrix
+15. Recommendations
+16. Risks, constraints, and open questions
+17. Validation against this plan's success criteria
+18. References
 
 The OpenAPI/documentation matrix should include, at minimum:
 
@@ -367,6 +389,8 @@ The OpenAPI/documentation matrix should include, at minimum:
 - Source standard / source anchor
 - OpenAPI representation requirement or convention
 - Related schema/component/artifact
+- Artifact variant, version/digest, provenance, and authority class
+- Related upstream issue/PR/commit/release and disposition, when material
 - Human documentation need
 - Generated-client implication
 - Validation implication
@@ -384,6 +408,7 @@ The OpenAPI/documentation matrix should include, at minimum:
 - Glaux Server Goal and Definition must be available and current.
 - `IDR-SRV-006` through `IDR-SRV-013` research reports should be complete or explicitly marked unavailable/deferred.
 - Official CSAPI Part 1 and Part 2, OGC API - Features, OpenAPI, schema, HTTP, and documentation-rendering sources must be reachable or explicitly marked unavailable.
+- The shared register, official release assets, and relevant issue/PR/commit evidence must be reachable or their evidence limitations explicitly recorded.
 - Research report template must be available.
 
 ### Blocks (What This Topic Unlocks)
@@ -430,6 +455,7 @@ Update this section as work progresses.
 - This topic should define the OpenAPI/documentation strategy, not implement the documentation pipeline.
 - The OpenAPI description must not overstate capabilities not actually implemented or evidenced.
 - Existing implementation studies may later refine practical expectations for OpenAPI completeness and client compatibility.
+- The former development-branch OpenAPI plan link was obsolete; execution must use the published trees, `v1.0.0/api/part1|part2/openapi`, and the release bundles listed above.
 - Open question: Should Glaux Server generate OpenAPI from code, generate code from OpenAPI, or maintain a hybrid contract-first approach?
 - Open question: Which official CSAPI OpenAPI artifacts are directly reusable versus better treated as reference material?
 - Open question: How should Glaux Server support offline or DDIL use of documentation and schemas?
@@ -453,7 +479,8 @@ Update this section as work progresses.
 - OGC API - Connected Systems - Part 1: Feature Resources: https://docs.ogc.org/is/23-001/23-001.html
 - OGC API - Connected Systems - Part 2: Dynamic Data: https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository: https://github.com/opengeospatial/ogcapi-connected-systems
-- OGC API - Connected Systems OpenAPI artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+- OGC API - Connected Systems v1.0.0 tagged API artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
+- OGC API - Connected Systems v1.0.0 release and bundled OpenAPI 3.1 artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0
 - OGC schemas: https://schemas.opengis.net/
 - OGC API standards family: https://ogcapi.ogc.org/
 - OGC API - Features Part 1: https://docs.ogc.org/is/17-069r4/17-069r4.html

@@ -1,8 +1,8 @@
 # Section 010A: API Versioning, Backward Compatibility, and Deprecation Strategy - Research Plan
 
 **Status:** Planned  
-**Last Updated:** June 8, 2026  
-**Estimated Research Time:** 10-14 hours  
+**Last Updated:** August 1, 2026<br>
+**Estimated Research Time:** 11-15 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-010a-api-versioning-backward-compatibility-and-deprecation-strategy-report.md`
 
@@ -65,6 +65,7 @@ This topic must precede query behavior, content negotiation, error handling, Ope
   - conformance declaration status.
 - Keep the research bounded to Glaux Server behavior and server-side contracts.
 - Do not design release-management operations, product-roadmap governance, or enterprise change-management processes beyond what is needed for server API compatibility.
+- Distinguish the published `v1.0.0` baseline from pre-publication rationale, post-publication merged maintenance, and unresolved upstream proposals. Repository activity does not silently revise the standard or Glaux compatibility contract.
 
 ---
 
@@ -87,6 +88,7 @@ This topic must precede query behavior, content negotiation, error handling, Ope
 - How does OGC API - Features or common OGC API practice handle API definitions, conformance declarations, versioned standards, and evolving APIs?
 - How should Glaux Server distinguish implementation version from standards version?
 - How should AEP-4789 adoption context affect versioning and compatibility expectations?
+- What do official CSAPI releases, tags, issue resolutions, linked pull requests, and commit history establish about how the standard and its supporting artifacts have evolved, and which changes are or are not part of the published baseline?
 
 #### API Versioning Strategy
 
@@ -182,6 +184,8 @@ The future research report must analyze these sources directly.
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-009-landing-page-api-definition-and-conformance-declaration-behavior-report.md`
 - `IDR-SRV-010` research report, once complete:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-010-collections-resources-links-and-navigation-behavior-report.md`
+- Shared OGC API - Connected Systems upstream-history register:
+  - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Evidence/ogc-connected-systems-upstream-history-register.md`
 - Earlier baseline reports, if needed for scope and terminology:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-001-stanag-4789-aep-4789-server-obligation-baseline-report.md`
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-002-aep-4789-volume-i-functional-mapping-to-server-responsibilities-report.md`
@@ -199,8 +203,13 @@ The future research report must analyze these sources directly.
   - https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository:
   - https://github.com/opengeospatial/ogcapi-connected-systems
+- OGC API - Connected Systems releases, tags, issues, and pull requests:
+  - https://github.com/opengeospatial/ogcapi-connected-systems/releases
+  - https://github.com/opengeospatial/ogcapi-connected-systems/tags
+  - https://github.com/opengeospatial/ogcapi-connected-systems/issues
+  - https://github.com/opengeospatial/ogcapi-connected-systems/pulls
 - OGC API - Connected Systems OpenAPI artifacts:
-  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
 - OGC schemas:
   - https://schemas.opengis.net/
 - OGC API - Features Part 1 standard:
@@ -301,8 +310,9 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 1. Gather CSAPI, OGC API - Features, OpenAPI, HTTP, deprecation, and API-design guideline sources listed in this plan.
 2. Gather reports from `IDR-SRV-006` through `IDR-SRV-010`, if available.
-3. Identify where CSAPI, OGC API, schemas, and OpenAPI artifacts expose standards version, API version, schema version, conformance class, or implementation-version information.
-4. Define terms for the report:
+3. Consult the shared upstream-history register and refresh only entries relevant to standards releases, artifact evolution, compatibility, deprecation, or corrigenda.
+4. Identify where CSAPI, OGC API, schemas, and OpenAPI artifacts expose standards version, API version, schema version, conformance class, or implementation-version information.
+5. Define terms for the report:
    - standards version,
    - server software version,
    - API contract version,
@@ -313,7 +323,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
    - breaking change,
    - non-breaking change,
    - experimental behavior.
-5. Define the evaluation matrix fields for versioning and compatibility findings.
+6. Define the evaluation matrix fields for versioning and compatibility findings.
 
 **Expected Output:** Source inventory and versioning/compatibility vocabulary framework.
 
@@ -326,8 +336,9 @@ Use these sources to interpret project context, downstream dependencies, expecte
 1. Review CSAPI Part 1 and Part 2 for version, conformance, schema, and extension/evolution language.
 2. Review OGC API - Features for API entry-point, collections, conformance, and API definition behavior that may constrain versioning choices.
 3. Review OpenAPI artifacts for explicit version fields, server URLs, schema identifiers, descriptions, tags, and operation patterns.
-4. Identify where OGC conventions appear to prefer stable resource URLs, links, conformance classes, profiles, or alternate representations over URI path versioning.
-5. Identify ambiguity or gaps that require comparison with broader API guidance.
+4. Compare the `v1.0.0` tag/release with later official repository maintenance relevant to Glaux; trace material differences through issues, pull requests, commits, and release inclusion.
+5. Identify where OGC conventions appear to prefer stable resource URLs, links, conformance classes, profiles, or alternate representations over URI path versioning.
+6. Identify ambiguity or gaps that require comparison with broader API guidance.
 
 **Expected Output:** OGC/CSAPI versioning constraint and gap inventory.
 
@@ -411,7 +422,8 @@ Use these sources to interpret project context, downstream dependencies, expecte
 2. Resolve conflicts and ambiguities where possible.
 3. Produce findings grouped by versioning strategy, compatibility rules, deprecation communication, and test implications.
 4. Produce recommendations for Glaux Server planning and downstream IDR topic use.
-5. Prepare the deliverable for review using the research-report template.
+5. Update the shared register only where this topic establishes a newer state, release relationship, or compatibility handoff.
+6. Prepare the deliverable for review using the research-report template.
 
 **Expected Output:** Completed topic research report at the target deliverable path.
 
@@ -424,6 +436,7 @@ This topic research is complete when:
 - [ ] CSAPI, OGC API - Features, OpenAPI, HTTP, and relevant API-guideline sources have been reviewed.
 - [ ] Standards version, server version, API contract version, schema version, media/profile version, deprecation, and sunset concepts are distinguished.
 - [ ] OGC/CSAPI constraints on versioning and evolution are identified with source anchors.
+- [ ] Material official release/tag/issue/PR/commit history is reconciled to the published baseline and authority-classified.
 - [ ] API versioning approaches are compared for compatibility with OGC/CSAPI conventions.
 - [ ] Breaking, non-breaking, additive, deprecated, experimental, and uncertain change categories are defined for Glaux Server.
 - [ ] Deprecation, replacement, and retirement communication mechanisms are identified.
@@ -559,8 +572,10 @@ Update this section as work progresses.
   - https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository:
   - https://github.com/opengeospatial/ogcapi-connected-systems
-- OGC API - Connected Systems OpenAPI artifacts:
-  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+- OGC API - Connected Systems v1.0.0 tagged API artifacts:
+  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
+- OGC API - Connected Systems v1.0.0 release and bundled OpenAPI 3.1 artifacts:
+  - https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0
 - OGC schemas:
   - https://schemas.opengis.net/
 - OGC API - Features Part 1:

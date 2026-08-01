@@ -1,7 +1,7 @@
 # Research Planning Approach
 
-**Version:** 1.3<br>
-**Date:** July 31, 2026<br>
+**Version:** 1.4<br>
+**Date:** August 1, 2026<br>
 **Status:** Draft
 
 ---
@@ -78,6 +78,19 @@ It must contain:
 - Overall conclusions
 - Remaining open issues (if any)
 
+### 5) Standards-Maintenance Evidence Registers
+
+A controlling overall plan may establish a shared evidence register for relevant official standards-repository history. A register is a cross-topic supporting artifact, not an additional indexed research topic, research report, or source of normative requirements.
+
+Each register must:
+
+- identify the official repository, release/tag baseline, mutable branch snapshot, screening scope, and retrieval date;
+- record only issues, pull requests, commits, releases, or discussions that materially affect an indexed topic;
+- link each entry to the affected standard clause, requirement, artifact, design question, or downstream topic where possible;
+- distinguish published baseline evidence, pre-publication rationale, post-publication maintenance direction, documented discussion, and unresolved proposals;
+- record linked resolution artifacts and whether a change is included in an approved publication or release; and
+- define bounded refresh rules so later topics consult relevant entries without repeatedly mining unrelated repository history.
+
 ---
 
 ## Governance Rules
@@ -92,6 +105,9 @@ It must contain:
 - An external source may be unavailable. The report must identify the source and access limitation, avoid inventing its contents, narrow affected conclusions, and state what remains unresolved.
 - Normative or authoritative claims must come from the controlling source. Implementation repositories, examples, tests, discussions, and prior practice are informative evidence unless the controlling source gives them another status.
 - Mutable technical evidence must be pinned to a release, tag, commit, version, or dated retrieval sufficient to reproduce the finding.
+- When a controlling overall plan names a standards-maintenance evidence register, each affected topic must consult and refresh the entries relevant to its scope. It must not silently rely on stale issue or pull-request state.
+- Official repository issues, pull requests, comments, discussions, commits, and mutable branches are explanatory or maintenance evidence unless an approved standard or incorporated artifact gives them greater authority. Open issues and unmerged pull requests identify unresolved proposals or known defects; they do not create implementation obligations.
+- Upstream-history review must remain bounded. Do not mine every inherited or adjacent repository by default; include an item only when its answer can change a project obligation, interpretation, API behavior, model, conformance posture, validation rule, implementation decision, or test expectation.
 - Do not skip directly to a final report.
 - Final report is produced only after the applicable indexed-synthesis or unindexed-closeout gate is satisfied, with any formally approved exceptions explicitly accounted for in its completion matrix.
 - Use explicit references in every topic report.
@@ -115,5 +131,7 @@ The working model is simple and strict:
   - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/tree/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing
 - Testing strategy research anchor document at the same snapshot:
   - https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/research/testing/testing-strategy-research.md
+- Glaux Server OGC API - Connected Systems upstream-history register:
+  - https://github.com/DGIWG-P507/glaux/blob/main/Docs/Research/Initial%20Designs/IDR/glaux-server/IDR%20Evidence/ogc-connected-systems-upstream-history-register.md
 
 Mutable `phase-9` links retained in older topic plans are convenience links only. This audited snapshot controls exemplar structure and style unless a later snapshot is deliberately reviewed and registered here.

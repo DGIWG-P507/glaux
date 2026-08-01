@@ -1,8 +1,8 @@
 # Section 035: Streaming and Event Publication Strategy - Research Plan
 
 **Status:** Planned  
-**Last Updated:** June 11, 2026  
-**Estimated Research Time:** 14-18 hours  
+**Last Updated:** August 1, 2026<br>
+**Estimated Research Time:** 16-20 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-035-streaming-and-event-publication-strategy-report.md`
 
@@ -64,6 +64,8 @@ This topic follows:
 - Do not finalize command lifecycle semantics here. Identify publication needs and hand detailed command behavior to `IDR-SRV-036` through `IDR-SRV-038`.
 - Do not finalize DDIL behavior here. Identify replay, backfill, cache, reconnect, and conflict requirements and hand detailed work to `IDR-SRV-042` and `IDR-SRV-043`.
 - Do not finalize security/policy architecture here. Identify streaming-specific security and releasability implications and hand detailed policy work to Category G.
+- Approved CSAPI Part 2 assigns publish/subscribe bindings to Part 3 and does not make its packaged AsyncAPI file normative. Analyze the Part 2 AsyncAPI and Part 3 working material as informative/draft evidence only unless a later approved publication changes their status.
+- Trace material Part 3 and AsyncAPI interpretations through the shared upstream-history register, preserving open/unmerged status and never treating a recorded proposal as an approved binding.
 - Keep the research bounded to Glaux Server behavior and server-side publication contracts.
 
 ---
@@ -88,6 +90,7 @@ This topic follows:
 - What AEP-4789 server responsibilities imply streaming, event publication, status dissemination, operational alerts, command-status dissemination, or DDIL replay?
 - Which publication behaviors are standards-driven, profile-driven, implementation-defined, or interoperability-driven?
 - Which draft/development OGC CSAPI pub/sub work should be tracked as a source for future alignment?
+- What do the packaged Part 2 AsyncAPI, current Part 3 working material, and related official issues/PRs actually define for channels, envelopes, protocol bindings, encodings, identifiers, payloads, and abstract tests—and what remains missing or unresolved?
 
 #### Event and Stream Taxonomy
 
@@ -354,6 +357,8 @@ The future research report must analyze these sources directly.
 
 - `IDR-SRV-001` through `IDR-SRV-034` research reports, once complete:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/`
+- Shared OGC API - Connected Systems upstream-history register:
+  - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Evidence/ogc-connected-systems-upstream-history-register.md`
 
 ### Controlling Standards and API Sources
 
@@ -361,7 +366,11 @@ The future research report must analyze these sources directly.
 - OGC API - Connected Systems - Part 1: Feature Resources: https://docs.ogc.org/is/23-001/23-001.html
 - OGC API - Connected Systems - Part 2: Dynamic Data: https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository: https://github.com/opengeospatial/ogcapi-connected-systems
-- OGC API - Connected Systems OpenAPI artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+- Part 2 AsyncAPI support artifact at the published release tag: https://github.com/opengeospatial/ogcapi-connected-systems/blob/v1.0.0/api/part2/asyncapi/asyncapi-connectedsystems-2.yaml
+- Part 3 working material at the pinned `part3-working-draft` snapshot: https://github.com/opengeospatial/ogcapi-connected-systems/tree/a1f1f03b71f5f645486b23ec8b5fae1f9ba334bc/api/part3
+- Official Part 3/AsyncAPI issue and pull-request history, filtered through the shared register:
+  - https://github.com/opengeospatial/ogcapi-connected-systems/issues
+  - https://github.com/opengeospatial/ogcapi-connected-systems/pulls
 - OGC API - Features Part 1: https://docs.ogc.org/is/17-069r4/17-069r4.html
 - OGC SensorML Encoding Standard 3.0: https://docs.ogc.org/is/23-000/23-000.html
 - OGC SWE Common Data Model Encoding Standard 3.0: https://docs.ogc.org/is/24-014/24-014.html
@@ -376,6 +385,7 @@ Use current official documentation and primary-source technical material when ex
 - NATS documentation: https://docs.nats.io/
 - Apache Kafka documentation: https://kafka.apache.org/documentation/
 - CloudEvents specification: https://cloudevents.io/
+- AsyncAPI Specification: https://www.asyncapi.com/docs/reference/specification/latest
 - Server-Sent Events specification: https://html.spec.whatwg.org/multipage/server-sent-events.html
 - WebSocket RFC 6455: https://www.rfc-editor.org/rfc/rfc6455
 - RFC 9110 - HTTP Semantics: https://www.rfc-editor.org/rfc/rfc9110
@@ -444,8 +454,9 @@ Use these sources to interpret project context, downstream dependencies, expecte
 **Tasks:**
 
 1. Gather prior IDR reports, standards sources, implementation studies, messaging/streaming documentation, dynamic-data semantics findings, and project architecture sources.
-2. Extract streaming/event requirements from prior topics and classify them by event type, trigger, publication audience, persistence need, delivery guarantee, policy sensitivity, and downstream dependency.
-3. Define inventory fields:
+2. Inspect the packaged Part 2 AsyncAPI, pinned Part 3 working tree, and relevant shared-register entries; record versions, commit/state, linked issues/PRs, missing clauses/tests, and evidence authority.
+3. Extract streaming/event requirements from prior topics and classify them by event type, trigger, publication audience, persistence need, delivery guarantee, policy sensitivity, and downstream dependency.
+4. Define inventory fields:
    - event/stream category,
    - trigger,
    - source record/resource,
@@ -456,7 +467,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
    - authorization/policy need,
    - payload shape,
    - downstream handoff.
-4. Define evaluation criteria:
+5. Define evaluation criteria:
    - standards alignment,
    - client interoperability,
    - browser/mobile support,
@@ -467,7 +478,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
    - security/policy suitability,
    - testability,
    - operational complexity.
-5. Establish evidence hierarchy for standards, AEP material, prior reports, implementation evidence, and technology documentation.
+6. Establish evidence hierarchy for approved standards, draft Part 3 material, packaged AsyncAPI, upstream maintenance records, AEP material, prior reports, implementation evidence, and technology documentation.
 
 **Expected Output:** Streaming/event publication extraction framework and evaluation rubric.
 
@@ -495,7 +506,8 @@ Use these sources to interpret project context, downstream dependencies, expecte
 2. Analyze event ordering, cursors, resume tokens, replay, backfill, late data, duplicate data, corrected data, and client deduplication.
 3. Analyze payload shapes, envelopes, content negotiation, links, full-resource payloads, compact messages, and CloudEvents-style patterns.
 4. Analyze retention, pruning, replay eligibility, and audit/conformance evidence.
-5. Identify unresolved questions requiring prototype validation or performance testing.
+5. Reconcile channel, envelope, identifier, encoding, and payload proposals with the pinned Part 3/AsyncAPI evidence and their issue/PR status.
+6. Identify unresolved questions requiring prototype validation or performance testing.
 
 **Expected Output:** Durable event and replay strategy matrix.
 
@@ -506,10 +518,11 @@ Use these sources to interpret project context, downstream dependencies, expecte
 **Tasks:**
 
 1. Evaluate REST polling, SSE, WebSocket, MQTT, NATS/Kafka-style broker publication, and hybrid patterns.
-2. Analyze subscription topics/channels, server-side filtering, policy-filtered delivery, authorization, long-lived connection behavior, and safe error diagnostics.
-3. Analyze delivery guarantees, slow consumers, backpressure, failures, broker outages, and retry behavior.
-4. Analyze DDIL, reconnect, bandwidth reduction, latest-state snapshots, and federated publication.
-5. Map findings to security, DDIL, deployment, and performance topics.
+2. Determine what, if anything, the current Part 3 working material actually specifies for each transport and identify normative stubs or missing abstract tests rather than filling them by assumption.
+3. Analyze subscription topics/channels, server-side filtering, policy-filtered delivery, authorization, long-lived connection behavior, and safe error diagnostics.
+4. Analyze delivery guarantees, slow consumers, backpressure, failures, broker outages, and retry behavior.
+5. Analyze DDIL, reconnect, bandwidth reduction, latest-state snapshots, and federated publication.
+6. Map findings to security, DDIL, deployment, and performance topics.
 
 **Expected Output:** Publication protocol and subscription strategy matrix.
 
@@ -538,7 +551,8 @@ Use these sources to interpret project context, downstream dependencies, expecte
 2. Produce recommended streaming and event publication strategy with rationale and unresolved questions.
 3. Identify sequencing for command, DDIL, security, deployment, observability, fixture, conformance, and performance topics.
 4. Produce downstream handoff matrix.
-5. Prepare the deliverable for review using the research-report template.
+5. Update relevant shared-register entries with verified Part 3/AsyncAPI state and handoffs without converting draft proposals into requirements.
+6. Prepare the deliverable for review using the research-report template.
 
 **Expected Output:** Completed topic research report at the target deliverable path.
 
@@ -549,6 +563,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 This topic research is complete when:
 
 - [ ] Event and stream categories are identified and distinguished with source anchors.
+- [ ] The packaged Part 2 AsyncAPI, pinned Part 3 working material, and relevant official issue/PR history are reviewed with versions, state, authority, and unresolved normative gaps explicit.
 - [ ] Publication triggers, durable event records, outbox/inbox implications, payload shapes, ordering, cursor, replay, and backfill semantics are documented.
 - [ ] Publication protocols and patterns are evaluated against explicit criteria.
 - [ ] Delivery guarantees, duplicate handling, slow consumers, backpressure, broker failure, reconnect, and DDIL implications are documented.
@@ -690,7 +705,8 @@ Update this section as work progresses.
 - OGC API - Connected Systems - Part 1: Feature Resources: https://docs.ogc.org/is/23-001/23-001.html
 - OGC API - Connected Systems - Part 2: Dynamic Data: https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository: https://github.com/opengeospatial/ogcapi-connected-systems
-- OGC API - Connected Systems OpenAPI artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+- OGC API - Connected Systems v1.0.0 tagged API artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
+- OGC API - Connected Systems v1.0.0 release and bundled OpenAPI 3.1 artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0
 - OGC API - Features Part 1: https://docs.ogc.org/is/17-069r4/17-069r4.html
 - OGC SensorML Encoding Standard 3.0: https://docs.ogc.org/is/23-000/23-000.html
 - OGC SWE Common Data Model Encoding Standard 3.0: https://docs.ogc.org/is/24-014/24-014.html

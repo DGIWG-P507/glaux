@@ -72,6 +72,7 @@ Use explicit subcategories when helpful (for example: structure, behavior, valid
 List authoritative source material that must be analyzed directly.
 
 - [Specification, standard, canonical codebase, authoritative repository]
+- [Controlling standards-maintenance evidence register and topic-relevant official issues/PRs/releases, when applicable]
 - [URL]
 - [URL]
 
@@ -101,6 +102,8 @@ Break work into explicit phases with objective, tasks, and expected output.
 2. [Task]
 3. [Task]
 4. [Task]
+
+When the controlling overall plan names a standards-maintenance evidence register, include a bounded task to consult and refresh only entries relevant to this topic. Classify issue/PR evidence as informative and preserve the approved standard as the normative authority.
 
 **Expected Output:** [Artifact or decision baseline]
 
@@ -150,6 +153,7 @@ This topic research is complete when:
 - [ ] Findings are decision-usable (not just descriptive)
 - [ ] References are explicit and reproducible
 - [ ] Open issues are documented
+- [ ] Relevant official repository history is consulted and authority-classified when a controlling register applies
 
 ---
 
