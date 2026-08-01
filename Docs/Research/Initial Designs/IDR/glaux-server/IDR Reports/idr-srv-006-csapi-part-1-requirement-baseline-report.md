@@ -1,7 +1,7 @@
 # Section 006: CSAPI Part 1 Requirement Baseline - Research Report
 
 **Topic ID:** IDR-SRV-006<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-006 CSAPI Part 1 Requirement Baseline](../IDR%20Plans/idr-srv-006-csapi-part-1-requirement-baseline.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 31 detailed questions; all six methodology phases, eleven success criteria, fifteen deliverable requirements, and eleven minimum inventory fields are mapped<br>
@@ -17,8 +17,8 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-005 reports, the Glaux Server Goal and Definition, the project governance corpus, OGC API - Features Part 4 development evidence, and official OGC development artifacts<br>
 **Document Purpose:** Establish the traceable OGC API - Connected Systems Part 1 server-requirement baseline that later Glaux design, implementation, validation, conformance, and testing work must use<br>
 **Author:** OpenAI Codex, with independent read-only requirement and artifact audits<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD pending acceptance<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** July 31, 2026<br>
 **Date:** July 31, 2026<br>
 **Last Updated:** July 31, 2026
 
@@ -1009,18 +1009,18 @@ After drafting, the report was checked against all 36 questions, six phases, ele
 
 ### 16.1 Current Status
 
-Research, extraction, synthesis, validation, and repository review for `IDR-SRV-006` are complete. This report is **In Review**. It becomes an accepted downstream baseline only when the Glaux Project Lead records acceptance. No immediate technical choice is required for acceptance; every unresolved standards interpretation has a named later owner and none blocks Part 2 research.
+Research, extraction, synthesis, validation, and repository review for `IDR-SRV-006` are complete. The Glaux Project Lead accepted this report on July 31, 2026, so it is **Final** and available as the controlling Part 1 baseline for downstream research.
 
-`IDR-SRV-007` and every later research topic remain unstarted by this report.
+The same combined plan-owner instruction authorized execution of exactly one next topic, `IDR-SRV-007`. No later topic was authorized by that transition.
 
-### 16.2 Required Two-Action Transition
+### 16.2 Completed Two-Action Transition
 
-The next workflow transition has exactly two actions:
+The required workflow transition had exactly two actions:
 
 1. The Glaux Project Lead accepts `IDR-SRV-006`.
 2. The Glaux Project Lead authorizes execution of exactly one next eligible topic, `IDR-SRV-007`.
 
-Both actions may be given in one instruction. Copyable combined instruction:
+Both actions were given in the plan owner's combined instruction that authorized IDR-SRV-007. The historical combined instruction was:
 
 > Approve IDR-SRV-006 and execute exactly one Glaux Server research plan: IDR-SRV-007, using the standing single-topic execution instructions.
 
@@ -1094,6 +1094,6 @@ Part 1 Requirements 6, 15, 26, and 30 explicitly incorporate Features §§7.15.2
 - [x] Test/traceability implications and ATS gaps are documented
 - [x] Standards ambiguities and evidence limitations are recorded honestly
 - [x] Independent requirement, artifact, technical, and completeness reviews were performed
-- [x] IDR-SRV-007 and later topics were not begun
-- [ ] Plan-owner acceptance and acceptance date recorded
+- [x] IDR-SRV-007 was not begun before the plan-owner transition authorized it
+- [x] Plan-owner acceptance and acceptance date recorded
 ---
