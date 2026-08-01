@@ -1,7 +1,7 @@
 # Section 007: CSAPI Part 2 Requirement Baseline - Research Report
 
 **Topic ID:** IDR-SRV-007<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-007 CSAPI Part 2 Requirement Baseline](../IDR%20Plans/idr-srv-007-csapi-part-2-requirement-baseline.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 41 detailed questions; all six methodology phases, eleven success criteria, fifteen deliverable requirements, and twelve minimum inventory fields are mapped<br>
@@ -17,10 +17,10 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-006 reports, the Glaux Server Goal and Definition, project governance, OGC API - Features Part 4 development evidence, and official OGC development artifacts<br>
 **Document Purpose:** Establish the traceable OGC API - Connected Systems Part 2 server-requirement baseline that later Glaux design, implementation, validation, conformance, and testing work must use<br>
 **Author:** OpenAI Codex, with independent read-only requirement, conformance, and artifact audits<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 1, 2026<br>
 **Date:** July 31, 2026<br>
-**Last Updated:** July 31, 2026
+**Last Updated:** August 1, 2026
 
 ---
 
@@ -943,20 +943,20 @@ The audits agreed on 12 classes, 130 contiguous requirements, zero formal recomm
 
 ### 16.1 Current Status
 
-This report is complete and **In Review**. IDR-SRV-006 is accepted. IDR-SRV-007 plan-owner acceptance remains pending, exactly as required. No work on IDR-SRV-008 has begun.
+Research, extraction, synthesis, validation, and repository review for `IDR-SRV-007` are complete. The Glaux Project Lead accepted this report on August 1, 2026, so it is **Final** and available as the controlling Part 2 baseline for downstream research.
 
-### 16.2 Required Two-Action Transition
+The same combined plan-owner instruction authorized execution of exactly one next topic, `IDR-SRV-008`. No later topic was authorized by that transition.
 
-The next two actions are:
+### 16.2 Completed Two-Action Transition
+
+The required workflow transition had exactly two actions:
 
 1. The Glaux Project Lead approves IDR-SRV-007.
 2. In the same instruction, the project lead authorizes execution of exactly one next plan: IDR-SRV-008.
 
-Copyable transition instruction:
+Both actions were given in the plan owner's combined instruction that authorized IDR-SRV-008. The historical combined instruction was:
 
 > **Approve IDR-SRV-007 and execute exactly one Glaux Server research plan: IDR-SRV-008, using the standing single-topic research, validation, status-update, commit, pull-request, review, merge, and synchronization instructions.**
-
-Until that instruction is given, IDR-SRV-007 remains pending acceptance and IDR-SRV-008 remains unstarted.
 
 ---
 
@@ -1077,4 +1077,4 @@ Pins/checksums:
 - [x] Independent normative, conformance, and artifact audits reconciled
 - [x] Downstream and test handoffs recorded
 - [x] Markdown, links, counts, placeholders, and status records validated before publication
-- [ ] Plan-owner acceptance (pending Glaux Project Lead review)
+- [x] Plan-owner acceptance and acceptance date recorded

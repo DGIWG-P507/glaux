@@ -1,6 +1,6 @@
 # OGC API - Connected Systems Upstream Standards-History Evidence Register
 
-**Version:** 1.0<br>
+**Version:** 1.1<br>
 **Status:** Active supporting evidence<br>
 **Initial screening completed:** August 1, 2026<br>
 **Register owner:** Glaux Project Lead<br>
@@ -155,7 +155,7 @@ Retain an item when it can materially affect one or more of these areas:
 | [#149](https://github.com/opengeospatial/ogcapi-connected-systems/issues/149) | Open | History resources were removed as too complex and `datetime` was the interim design, but Part 2 OAS still contains `/history`; future versioning alignment is unresolved. | Mixed | 018 |
 | [#150](https://github.com/opengeospatial/ogcapi-connected-systems/issues/150) | Open | `/rec/system/location` is intentionally a recommendation; changing it to `/req` would incorrectly strengthen the obligation. | UP | 008 |
 | [#151](https://github.com/opengeospatial/ogcapi-connected-systems/issues/151) | Closed | Confirms Part 1 publication tasks and the `v1.0.0` package; [PR #161](https://github.com/opengeospatial/ogcapi-connected-systems/pull/161). | PB | 006, 057 |
-| [#152](https://github.com/opengeospatial/ogcapi-connected-systems/issues/152) | Open | Part 2 is published, but detailed requirement/conformance PURL mappings reportedly remain incomplete or return 404. | Mixed | 009, 057 |
+| [#152](https://github.com/opengeospatial/ogcapi-connected-systems/issues/152) | Open | Part 2 is published; August 1 checks confirm that all 12 requirement-class and 12 conformance-class PURLs plus sampled detailed identifiers return 404. The NamingAuthority tree contains `23-001.csv` but no `23-002.csv`; exact Part 2 identifiers remain normative despite the resolver gap. | Mixed | 008, 009, 057 |
 | [#153](https://github.com/opengeospatial/ogcapi-connected-systems/issues/153) | Closed | Confirms SensorML 3.0 and its JSON-schema package were published; #183 records that the intended `timeInstantOrNow.json` file was nevertheless omitted from publication. | Mixed | 021, 023 |
 | [#154](https://github.com/opengeospatial/ogcapi-connected-systems/issues/154) | Closed | Confirms SWE Common 3.0 and schemas were published with case-sensitive naming. | PB | 022 |
 | [#162](https://github.com/opengeospatial/ogcapi-connected-systems/issues/162) | Open | `qualifiers` is available through inherited SensorML `DerivedProperty` but omitted from Part 1 conceptual/mapping tables. | PCD | 021 |
@@ -299,4 +299,5 @@ Two general traps apply everywhere: issue closure can disagree with the released
 
 | Date | Version | Change | Owner |
 |---|---|---|---|
+| August 1, 2026 | 1.1 | Confirmed the Part 2 class-level and sampled detailed PURL failure during IDR-SRV-008, linked it to the absent NamingAuthority `23-002.csv` mapping, and added IDR-SRV-008 as a direct cross-cutting owner without changing the normative identifier baseline. | Glaux research workflow |
 | August 1, 2026 | 1.0 | Initial complete screen of 141 issues and 58 pull requests; retained 118 material issues and nine standalone PRs, dispositioned the other PRs through issue rows or explicit exclusions, pinned the v1.0.0 and Part 3 source snapshots, classified evidence, and routed entries to owning IDR topics. | Glaux research workflow |
