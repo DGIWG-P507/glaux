@@ -2,8 +2,8 @@
 
 **Topic ID:** IDR-SRV-057<br>
 **Status:** Planned  
-**Last Updated:** July 30, 2026<br>
-**Estimated Research Time:** 29-37 hours<br>
+**Last Updated:** August 1, 2026<br>
+**Estimated Research Time:** 30-38 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/final-idr-research-report.md`
 
@@ -321,6 +321,7 @@ The final synthesis report must analyze and integrate all completed prior IDR re
 - Research Report Template: https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/research-report-template.md
 - Overall Research Report Template: https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/overall-research-report-template.md
 - Research Planning Approach: https://github.com/DGIWG-P507/glaux/blob/main/Docs/Governance/research-planning-approach.md
+- OGC API - Connected Systems Upstream Standards-History Evidence Register: https://github.com/DGIWG-P507/glaux/blob/main/Docs/Research/Initial%20Designs/IDR/glaux-server/IDR%20Evidence/ogc-connected-systems-upstream-history-register.md
 
 ### Required Prior IDR Reports
 
@@ -337,7 +338,10 @@ Use the standards cited by prior reports and revisit primary sources only where 
 - OGC API - Connected Systems - Part 1: Feature Resources: https://docs.ogc.org/is/23-001/23-001.html
 - OGC API - Connected Systems - Part 2: Dynamic Data: https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository: https://github.com/opengeospatial/ogcapi-connected-systems
-- OGC API - Connected Systems OpenAPI artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+- OGC API - Connected Systems v1.0.0 tagged source artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
+- OGC API - Connected Systems v1.0.0 release and bundled OpenAPI 3.1 artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0
+- OGC API - Connected Systems official issues: https://github.com/opengeospatial/ogcapi-connected-systems/issues
+- OGC API - Connected Systems official pull requests: https://github.com/opengeospatial/ogcapi-connected-systems/pulls
 - OGC API - Features Part 1: https://docs.ogc.org/is/17-069r4/17-069r4.html
 - OGC SensorML Encoding Standard 3.0: https://docs.ogc.org/is/23-000/23-000.html
 - OGC SWE Common Data Model Encoding Standard 3.0: https://docs.ogc.org/is/24-014/24-014.html
@@ -406,6 +410,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
    - verification/readiness.
 4. Identify findings that require reconciliation.
 5. Identify assumptions and unresolved questions carried forward.
+6. Verify that the upstream standards-history register is current enough for synthesis, and map every material unresolved or post-publication item to an owning report, explicit project decision, monitoring action, or documented deferral.
 
 **Expected Output:** Evidence readiness inventory and synthesis evidence map.
 
@@ -475,6 +480,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 4. Confirm first-implementation scope does not overclaim deferred capabilities.
 5. Confirm final synthesis aligns with the overall IDR research plan.
 6. Confirm final report includes appropriate caveats and non-goals.
+7. Recheck material upstream issue, pull-request, tag, and release changes since each owning report was completed. Record deltas and route genuine contradictions for project-lead decision rather than silently rewriting completed or accepted reports or treating mutable development history as normative text.
 
 **Expected Output:** Synthesis validation matrix.
 
@@ -506,6 +512,7 @@ This topic research is complete when:
 - [ ] First implementation scope is clearly distinguished from follow-on and deferred full-scope capabilities.
 - [ ] Evidence-backed implementation-sequencing inputs, proof-of-concept candidates, candidate issue/work-package groupings, and governance/documentation recommendations are documented without replacing the later Implementation Guide or Roadmap.
 - [ ] Final recommendations are traced back to topic reports.
+- [ ] Material official standards-maintenance evidence has been refreshed and dispositioned, with published obligations, explanatory history, post-publication changes, and unresolved proposals kept distinct.
 - [ ] Risk register and unresolved decision register are documented.
 - [ ] Report avoids overclaiming operational accreditation, production hardening, cross-domain readiness, or official certification.
 - [ ] Final synthesis report is complete, reviewable, and decision-usable.
@@ -636,7 +643,8 @@ Update this section as work progresses.
 - OGC API - Connected Systems - Part 1: Feature Resources: https://docs.ogc.org/is/23-001/23-001.html
 - OGC API - Connected Systems - Part 2: Dynamic Data: https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository: https://github.com/opengeospatial/ogcapi-connected-systems
-- OGC API - Connected Systems OpenAPI artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+- OGC API - Connected Systems v1.0.0 tagged API artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
+- OGC API - Connected Systems v1.0.0 release and bundled OpenAPI 3.1 artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0
 - OGC API - Features Part 1: https://docs.ogc.org/is/17-069r4/17-069r4.html
 - OGC SensorML Encoding Standard 3.0: https://docs.ogc.org/is/23-000/23-000.html
 - OGC SWE Common Data Model Encoding Standard 3.0: https://docs.ogc.org/is/24-014/24-014.html

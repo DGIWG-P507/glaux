@@ -2,8 +2,8 @@
 
 **Topic ID:** IDR-SRV-037<br>
 **Status:** Planned<br>
-**Last Updated:** July 30, 2026<br>
-**Estimated Research Time:** 18-24 hours<br>
+**Last Updated:** August 1, 2026<br>
+**Estimated Research Time:** 19-25 hours<br>
 **Actual Research Time:** TBD until complete<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-037-feasibility-and-asynchronous-tasking-strategy-report.md`
 
@@ -194,6 +194,7 @@ Also inspect the exact versions of JSON Schema, HTTP, Web Linking, OGC API - Fea
 
 At minimum, reconcile the report with:
 
+- the Glaux OGC API - Connected Systems Upstream Standards-History Evidence Register at `Docs/Research/Initial Designs/IDR/glaux-server/IDR Evidence/ogc-connected-systems-upstream-history-register.md`, consulting and refreshing only entries material to commands, status, results, feasibility, tasking, and transaction behavior;
 - IDR-SRV-007 and IDR-SRV-008 for CSAPI Part 2 requirements and conformance mapping;
 - IDR-SRV-013 for HTTP error/failure semantics;
 - IDR-SRV-015 through IDR-SRV-020 for resource, lifecycle, temporal, and status foundations;
@@ -209,6 +210,7 @@ If the project lead has formally approved a prerequisite exception under the ove
 - Use official Rust, async-runtime, database, and selected library documentation for implementation claims.
 - Compare existing CSAPI implementations and client findings already assigned to IDR-SRV-014A through IDR-SRV-014G.
 - Use issue discussions and examples only as informative evidence. Record implementation/version/date and distinguish observed behavior from normative behavior.
+- Date-check relevant register entries and linked issues, pull requests, commits, tags, and releases. A merged pre-publication change can explain the published text; a post-publication change or unresolved proposal cannot silently amend the published CSAPI 1.0 contract.
 - Prefer a small prototype or executable transition model when documentation alone cannot resolve a concurrency or recovery question.
 
 ### Evidence Discipline
@@ -230,9 +232,10 @@ Short quotations may be used when exact wording matters, but the report should p
 ### Phase 1: Build the Standards and Gap Matrix (3-4 hours)
 
 1. Extract applicable CSAPI Part 2 requirements from Clauses 10, 11, and 14 and their Annex A tests.
-2. Record resource paths, operations, representations, status rules, result rules, and conformance-class dependencies.
-3. Map each normative item to an existing Glaux IDR decision, an open decision, or a downstream handoff.
-4. Flag path, cardinality, response, or lifecycle ambiguities for explicit resolution.
+2. Consult and refresh the tasking-related entries in the upstream standards-history register, tracing any material issue to its linked disposition, pull request, commit, and release status.
+3. Record resource paths, operations, representations, status rules, result rules, and conformance-class dependencies.
+4. Map each normative item to an existing Glaux IDR decision, an open decision, or a downstream handoff.
+5. Flag path, cardinality, response, or lifecycle ambiguities for explicit resolution without turning unresolved upstream proposals into requirements.
 
 Output: a compact standards-to-server matrix with exact anchors and no invented requirements.
 
@@ -326,6 +329,7 @@ Each recommendation must state the decision, rationale, implementation consequen
 The research is complete when the report:
 
 - traces every applicable CSAPI Part 2 command, feasibility, status, result, and transaction requirement to a concrete server behavior and test;
+- accounts for material official issue and pull-request history affecting those behaviors, with the published baseline, later maintenance, and unresolved proposals kept visibly distinct;
 - explains the required `ControlStream.async` semantics without inventing a second public job model;
 - defines valid, client-visible synchronous and asynchronous status/result flows, including terminal states and recovery-visible behavior;
 - preserves a precise validation pipeline and keeps feasibility separate from authorization, safety, acceptance, dispatch, and execution;

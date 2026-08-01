@@ -189,7 +189,7 @@ The future research report must analyze these sources directly.
   - https://github.com/opengeospatial/ogcapi-connected-systems
 - OGC API - Connected Systems schemas and OpenAPI artifacts:
   - https://schemas.opengis.net/
-  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
 - OGC API standards family landing page:
   - https://ogcapi.ogc.org/
 - OGC API - Features landing page, for inherited API behavior context:

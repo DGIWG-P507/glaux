@@ -97,7 +97,7 @@ The research plan must guide the future researcher/LLM toward the right informat
 
 Use authoritative, current, and directly relevant sources. Depending on the topic, include appropriate resources such as:
 
-- Official OGC API - Connected Systems pages, specification documents, schemas, OpenAPI files, and GitHub repositories.
+- Official OGC API - Connected Systems pages, specification documents, schemas, OpenAPI/AsyncAPI files, GitHub releases/tags, and—when they materially clarify the topic—official repository issues, linked pull requests, commits, and recorded design rationale.
 - Official SensorML and SWE Common materials.
 - STANAG 4789 / AEP-4789 project materials available in the repository or provided context.
 - Existing implementation repositories and documentation, where relevant.
@@ -118,6 +118,7 @@ The plan should:
 - Identify the topic’s critical constraints.
 - Provide clear core and detailed research questions.
 - Identify primary resources that must be reviewed directly.
+- Identify any controlling standards-maintenance evidence register and define a bounded, topic-relevant upstream-history review instead of indiscriminate repository archaeology.
 - Identify supporting resources and related prior work.
 - Break the research into clear phases with tasks and expected outputs.
 - Define success criteria that make the future report measurable.

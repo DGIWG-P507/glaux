@@ -184,7 +184,7 @@ The future research report must analyze these sources directly.
 - OGC API - Connected Systems public development repository:
   - https://github.com/opengeospatial/ogcapi-connected-systems
 - OGC API - Connected Systems Part 2 OpenAPI and schema artifacts:
-  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
   - https://schemas.opengis.net/
 - OGC API - Connected Systems - Part 1: Feature Resources, for Part 2 dependency context:
   - https://docs.ogc.org/is/23-001/23-001.html
@@ -497,7 +497,7 @@ Update this section as work progresses.
 - OGC API - Connected Systems public development repository:
   - https://github.com/opengeospatial/ogcapi-connected-systems
 - OGC API - Connected Systems OpenAPI artifacts:
-  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
 - OGC schemas:
   - https://schemas.opengis.net/
 - OGC API standards family:

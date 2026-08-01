@@ -2,8 +2,8 @@
 
 **Topic ID:** IDR-SRV-023<br>
 **Status:** Planned  
-**Last Updated:** July 30, 2026<br>
-**Estimated Research Time:** 14-18.5 hours<br>
+**Last Updated:** August 1, 2026<br>
+**Estimated Research Time:** 15-19.5 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-023-schema-and-encoding-validation-strategy-report.md`
 
@@ -82,6 +82,7 @@ SensorML and SWE Common define key representation and data-component structures.
 - Which SWE Common validation expectations apply to data components, result structures, encodings, units, nil values, constraints, observation values, and command parameters?
 - Which AEP-4789 profile or standards-package expectations modify or constrain base OGC validation behavior?
 - Which source should be treated as controlling when schemas, standards text, examples, OpenAPI artifacts, or implementation behavior conflict?
+- Which official issue/PR/commit records confirm a schema or OpenAPI defect, explain a design decision, or propose a post-publication repair, and is that repair actually included in an approved release?
 
 #### Validation Type Taxonomy
 
@@ -241,6 +242,8 @@ The future research report must analyze these sources directly.
 
 - `IDR-SRV-001` through `IDR-SRV-022` research reports, once complete:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/`
+- Shared OGC API - Connected Systems upstream-history register:
+  - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Evidence/ogc-connected-systems-upstream-history-register.md`
 
 ### Controlling Standards Sources
 
@@ -248,7 +251,10 @@ The future research report must analyze these sources directly.
 - OGC API - Connected Systems - Part 1: Feature Resources: https://docs.ogc.org/is/23-001/23-001.html
 - OGC API - Connected Systems - Part 2: Dynamic Data: https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository: https://github.com/opengeospatial/ogcapi-connected-systems
-- OGC API - Connected Systems OpenAPI artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+- OGC API - Connected Systems tagged Part 1/Part 2 API artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
+- Official schema/OpenAPI issue and pull-request history, filtered through the shared register:
+  - https://github.com/opengeospatial/ogcapi-connected-systems/issues
+  - https://github.com/opengeospatial/ogcapi-connected-systems/pulls
 - OGC schemas: https://schemas.opengis.net/
 - OGC API - Features Part 1: https://docs.ogc.org/is/17-069r4/17-069r4.html
 - OGC SensorML Encoding Standard 3.0: https://docs.ogc.org/is/23-000/23-000.html
@@ -318,7 +324,8 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 1. Gather CSAPI, OGC API - Features, SensorML, SWE Common, OpenAPI, JSON Schema, GeoJSON, media type, HTTP, AEP-4789, prior IDR, implementation-study, smoke-test, interoperability, and discussion sources.
 2. Extract schemas, OpenAPI artifacts, examples, media types, encodings, validation notes, validation failures, and validator/tooling references.
-3. Define inventory fields:
+3. Consult and date-check shared-register entries relevant to schemas, `$ref` resolution, OpenAPI completeness, examples, media types, encoding rules, and validation behavior; follow linked PRs/commits and record release inclusion.
+4. Define inventory fields:
    - resource family,
    - payload/representation type,
    - schema or encoding source,
@@ -330,8 +337,8 @@ Use these sources to interpret project context, downstream dependencies, expecte
    - security/policy implication,
    - test implication,
    - downstream handoff.
-4. Define classification values: normative, inherited, standards-package-specific, profile-specific, implementation-quality, interoperability-driven, implementation-specific, optional, deferred, and unresolved.
-5. Establish evidence hierarchy for standards, AEP material, official schemas/OpenAPI artifacts, prior reports, implementation observations, and community discussion.
+5. Define classification values: normative, inherited, standards-package-specific, profile-specific, implementation-quality, interoperability-driven, implementation-specific, optional, deferred, and unresolved.
+6. Establish evidence hierarchy for standards, AEP material, official schemas/OpenAPI artifacts, prior reports, upstream maintenance evidence, implementation observations, and community discussion.
 
 **Expected Output:** Source inventory and validation extraction framework.
 
@@ -348,6 +355,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 5. Inventory media type, content negotiation, HTTP, JSON Schema, and OpenAPI validation sources.
 6. Inventory AEP-4789 profile or standards-package validation expectations from project-available material.
 7. Identify conflicts, gaps, versioning issues, unresolved schema references, stale artifacts, or ambiguity.
+8. Reconcile each material known defect or proposed repair with its upstream issue/PR/commit state and the published release baseline.
 
 **Expected Output:** Schema/OpenAPI/encoding authority matrix.
 
@@ -417,6 +425,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 This topic research is complete when:
 
 - [ ] Authoritative schemas, OpenAPI artifacts, media types, encodings, and validation sources are identified with source anchors.
+- [ ] Relevant official schema/OpenAPI issue and repair history is reconciled to release inclusion and authority-classified.
 - [ ] Structural, semantic, profile, operational, security/policy, conformance, and interoperability validation types are distinguished.
 - [ ] Resource-family and interaction-stage validation responsibilities are mapped.
 - [ ] CSAPI, OGC API - Features, SensorML, SWE Common, GeoJSON, JSON Schema, OpenAPI, media type, and encoding validation implications are documented.
@@ -558,7 +567,8 @@ Update this section as work progresses.
 - OGC API - Connected Systems - Part 1: Feature Resources: https://docs.ogc.org/is/23-001/23-001.html
 - OGC API - Connected Systems - Part 2: Dynamic Data: https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository: https://github.com/opengeospatial/ogcapi-connected-systems
-- OGC API - Connected Systems OpenAPI artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+- OGC API - Connected Systems v1.0.0 tagged API artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
+- OGC API - Connected Systems v1.0.0 release and bundled OpenAPI 3.1 artifacts: https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0
 - OGC schemas: https://schemas.opengis.net/
 - OGC API - Features Part 1: https://docs.ogc.org/is/17-069r4/17-069r4.html
 - OGC SensorML Encoding Standard 3.0: https://docs.ogc.org/is/23-000/23-000.html

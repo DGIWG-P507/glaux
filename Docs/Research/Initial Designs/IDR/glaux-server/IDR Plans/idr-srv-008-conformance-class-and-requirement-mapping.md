@@ -1,8 +1,8 @@
 # Section 008: Conformance Class and Requirement Mapping - Research Plan
 
 **Status:** Planned  
-**Last Updated:** June 7, 2026  
-**Estimated Research Time:** 12-16 hours  
+**Last Updated:** August 1, 2026<br>
+**Estimated Research Time:** 13-17 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-008-conformance-class-and-requirement-mapping-report.md`
 
@@ -68,6 +68,7 @@ This topic must precede detailed behavior topics such as landing page behavior, 
   - implementation choices,
   - downstream design and test implications.
 - Preserve traceability to exact requirement identifiers, conformance class identifiers, clauses, tables, schemas, and OpenAPI artifacts wherever possible.
+- Consult the shared upstream-history register for official issues, linked pull requests, commits, and releases that materially clarify or challenge a mapping. Preserve these as informative maintenance context; do not let an open issue or unmerged change override the approved standard.
 
 ---
 
@@ -99,6 +100,12 @@ This topic must precede detailed behavior topics such as landing page behavior, 
 - Which requirements are shared, reused, inherited, or cross-referenced across parts?
 - Which requirements have no obvious conformance-class mapping and require interpretation?
 - Which requirements depend on SensorML, SWE Common, schemas, OpenAPI, or implementation profiles?
+
+#### Upstream Standards-Maintenance Context
+
+- Which official CSAPI issues, linked pull requests, commits, or release records materially clarify a requirement-to-class mapping, conformance declaration, prerequisite, or known publication defect?
+- Is each relevant upstream record reflected in the published `v1.0.0` baseline, merged only after publication, documented as discussion or rationale, or still unresolved?
+- Which unresolved upstream records must remain explicit compatibility or interpretation risks rather than silently changing the Glaux conformance profile?
 
 #### Applicability to Glaux Server
 
@@ -161,6 +168,8 @@ The future research report must analyze these sources directly.
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-006-csapi-part-1-requirement-baseline-report.md`
 - `IDR-SRV-007` research report, once complete:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-007-csapi-part-2-requirement-baseline-report.md`
+- Shared OGC API - Connected Systems upstream-history register:
+  - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Evidence/ogc-connected-systems-upstream-history-register.md`
 - Earlier baseline reports, if needed for scope and terminology:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-001-stanag-4789-aep-4789-server-obligation-baseline-report.md`
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-002-aep-4789-volume-i-functional-mapping-to-server-responsibilities-report.md`
@@ -178,8 +187,12 @@ The future research report must analyze these sources directly.
   - https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository:
   - https://github.com/opengeospatial/ogcapi-connected-systems
+- Official issue, pull-request, and release history, filtered through the shared register:
+  - https://github.com/opengeospatial/ogcapi-connected-systems/issues
+  - https://github.com/opengeospatial/ogcapi-connected-systems/pulls
+  - https://github.com/opengeospatial/ogcapi-connected-systems/releases
 - OGC API - Connected Systems OpenAPI and schema artifacts:
-  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
   - https://schemas.opengis.net/
 - OGC API - Features Part 1 standard, for inherited conformance behavior:
   - https://docs.ogc.org/is/17-069r4/17-069r4.html
@@ -250,9 +263,10 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 1. Gather the official CSAPI Part 1 and Part 2 standards, schemas, OpenAPI artifacts, and inherited OGC API sources.
 2. Gather `IDR-SRV-006` and `IDR-SRV-007` research reports, if available.
-3. Identify the conformance class and requirement class structures used in Part 1 and Part 2.
-4. Define the conformance mapping fields to be used in the report.
-5. Define classification values for conformance classes:
+3. Consult the shared upstream-history register; refresh the state and linked resolution evidence only for entries that can affect Part 1/Part 2 requirement, class, prerequisite, declaration, or profile mapping.
+4. Identify the conformance class and requirement class structures used in Part 1 and Part 2.
+5. Define the conformance mapping fields to be used in the report.
+6. Define classification values for conformance classes:
    - mandatory,
    - optional,
    - conditional,
@@ -289,6 +303,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 4. Identify shared, inherited, cross-referenced, or duplicated requirements.
 5. Identify requirements that lack clear mapping or require interpretation.
 6. Identify schema, OpenAPI, encoding, or validation artifacts associated with each mapping.
+7. Link materially relevant upstream-history records to the affected mapping and state whether they explain the published baseline, document post-publication direction, or remain unresolved.
 
 **Expected Output:** Requirement-to-conformance mapping matrix.
 
@@ -303,6 +318,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 3. Identify what implementation evidence would be required before Glaux Server can declare each conformance class.
 4. Identify dependencies on resource modeling, dynamic data, tasking, streaming, validation, persistence, security, or deployment topics.
 5. Identify conformance classes that require project decision or implementation sequencing guidance.
+6. Prevent unresolved upstream proposals from being promoted into the Glaux profile without an explicit project decision and compatibility rationale.
 
 **Expected Output:** Glaux Server conformance posture table with dependencies and evidence needs.
 
@@ -340,7 +356,8 @@ Use these sources to interpret project context, downstream dependencies, expecte
 2. Resolve conflicts and ambiguities where possible.
 3. Produce findings grouped by Part 1, Part 2, inherited behavior, and cross-cutting conformance concerns.
 4. Produce recommendations for downstream IDR topic use.
-5. Prepare the deliverable for review using the research-report template.
+5. Update the shared register only where this topic establishes a newer retrieval state, linked resolution, authority classification, or downstream handoff.
+6. Prepare the deliverable for review using the research-report template.
 
 **Expected Output:** Completed topic research report at the target deliverable path.
 
@@ -357,6 +374,7 @@ This topic research is complete when:
 - [ ] Inherited OGC API behavior is identified where relevant.
 - [ ] Each conformance class is classified for Glaux Server applicability.
 - [ ] Dependencies and evidence needs for conformance claims are identified.
+- [ ] Relevant official issue/PR/release history is date-checked, linked to affected mappings, and authority-classified without changing the normative baseline.
 - [ ] Downstream handoffs to behavior, validation, testing, conformance harness, and requirement-to-test topics are documented.
 - [ ] Unresolved mapping or applicability issues are explicitly listed.
 - [ ] References are explicit and reproducible.
@@ -379,13 +397,14 @@ This topic research is complete when:
 7. Inherited OGC API conformance/dependency inventory
 8. Requirement-to-conformance mapping matrix
 9. Glaux Server conformance posture table
-10. Conformance declaration implications
-11. Verification and test-strategy implications
-12. Downstream topic handoff matrix
-13. Recommendations
-14. Risks, constraints, and open questions
-15. Validation against this plan's success criteria
-16. References
+10. Upstream standards-maintenance context and disposition
+11. Conformance declaration implications
+12. Verification and test-strategy implications
+13. Downstream topic handoff matrix
+14. Recommendations
+15. Risks, constraints, and open questions
+16. Validation against this plan's success criteria
+17. References
 
 The mapping matrix should include, at minimum:
 
@@ -398,6 +417,8 @@ The mapping matrix should include, at minimum:
 - Mandatory / optional / conditional / inherited status
 - Glaux Server applicability
 - Related schema/OpenAPI/encoding artifact
+- Related upstream-history record and authority class, when material
+- Publication/release relationship of any upstream resolution
 - Implementation dependency
 - Evidence required to claim conformance
 - Test implication
@@ -414,6 +435,7 @@ The mapping matrix should include, at minimum:
 - Glaux Server Goal and Definition must be available and current.
 - `IDR-SRV-006` and `IDR-SRV-007` research reports should be complete or explicitly marked unavailable/deferred.
 - Official CSAPI Part 1 and Part 2 standards and related schema/OpenAPI sources must be reachable or explicitly marked unavailable.
+- The shared upstream-history register and relevant official issue/PR/release records must be reachable or their evidence limitations explicitly recorded.
 - Research report template must be available.
 
 ### Blocks (What This Topic Unlocks)
@@ -462,6 +484,7 @@ Update this section as work progresses.
 - This topic should consolidate conformance mapping; it should not duplicate full Part 1 and Part 2 requirement extraction.
 - Some conformance classes may be technically optional but practically necessary for the intended Glaux Server baseline. The report should distinguish standards obligation from project intent.
 - Conformance declaration must be evidence-based. The report should identify evidence needed before future implementation claims conformance.
+- The upstream register is a navigation and rationale aid, not a replacement source of requirements; every material entry must be reconciled to the approved standard and its release relationship.
 - Open question: Does AEP-4789 Volume II imply a specific subset or profile of CSAPI conformance classes for Glaux Server?
 - Open question: Are there official CSAPI conformance test resources available, or must Glaux Server create its own conformance evidence model?
 - Open question: How should Glaux Server handle staged conformance during implementation without reducing the full intended capability model?
@@ -495,8 +518,10 @@ Update this section as work progresses.
   - https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository:
   - https://github.com/opengeospatial/ogcapi-connected-systems
-- OGC API - Connected Systems OpenAPI artifacts:
-  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/master/core/openapi
+- OGC API - Connected Systems v1.0.0 tagged API artifacts:
+  - https://github.com/opengeospatial/ogcapi-connected-systems/tree/v1.0.0/api
+- OGC API - Connected Systems v1.0.0 release and bundled OpenAPI 3.1 artifacts:
+  - https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0
 - OGC schemas:
   - https://schemas.opengis.net/
 - OGC API standards family:
