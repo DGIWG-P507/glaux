@@ -1,7 +1,7 @@
 # Section 010: Collections, Resources, Links, and Navigation Behavior - Research Report
 
 **Topic ID:** IDR-SRV-010<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-010 Collections, Resources, Links, and Navigation Behavior](../IDR%20Plans/idr-srv-010-collections-resources-links-and-navigation-behavior.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 41 detailed questions; all six methodology phases, ten success criteria, fifteen required content areas, and thirteen minimum behavior-matrix fields are validated<br>
@@ -17,8 +17,8 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-009 reports; official CSAPI tag `v1.0.0`; versioned OGC schemas; tagged modular OAS and examples; bounded official maintenance history; official Features executable tests; CSAPI Explorer; and pinned implementation evidence<br>
 **Document Purpose:** Establish the server-visible collection, endpoint, link, canonical-identity, and traversal contract that the Rust Glaux reference server and its downstream resource, URI, relationship, validation, persistence, and test designs must implement<br>
 **Author:** OpenAI Codex, with independent read-only Part 1, Part 2, and artifact/history/interoperability audits<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD pending acceptance<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 1, 2026<br>
 **Date:** August 1, 2026<br>
 **Last Updated:** August 1, 2026
 
@@ -932,23 +932,11 @@ Acceptance does not choose alias lifetime, final project extension-relation name
 
 ### 18.2 Current Status
 
-- Research and independent evidence audits: complete.
-- All five core and 41 detailed questions: answered.
-- All six methodology phases: complete.
-- All ten success criteria and fifteen deliverable areas: satisfied.
-- Deliverable: complete and internally reviewed.
-- Plan-owner acceptance: **pending**.
+Research, drafting, source pinning, three independent evidence audits, reconciliation, plan validation, and plan-owner acceptance are complete. The report is **Final**. The Glaux Project Lead accepted it on August 1, 2026.
 
-No downstream topic was executed.
+### 18.3 Transition Completed
 
-### 18.3 Next Controlled Transition
-
-The next two actions are:
-
-1. the Glaux Project Lead accepts or returns IDR-SRV-010; then
-2. after acceptance, execute exactly one next plan: IDR-SRV-010A.
-
-A combined instruction may approve this report and authorize exactly IDR-SRV-010A in one action. Until that instruction is received, this report remains `In Review` and IDR-SRV-010A remains unstarted.
+On August 1, 2026, the Glaux Project Lead supplied the combined instruction that accepted IDR-SRV-010 and authorized execution of exactly one next eligible topic: **IDR-SRV-010A, API Versioning, Backward Compatibility, and Deprecation Strategy**. No later topic was authorized by that instruction.
 
 ---
 
@@ -1210,4 +1198,4 @@ Appendix B includes all thirteen required fields as explicit columns:
 
 ### E.4 Methodology and Review Gate
 
-All six phases are complete as recorded in §4.1. The report was reconciled against the accepted prerequisite reports and three independent read-only evidence audits. Automated document checks and the final independent completeness/accuracy review were completed before publication. Plan-owner acceptance remains intentionally pending.
+All six phases are complete as recorded in §4.1. The report was reconciled against the accepted prerequisite reports and three independent read-only evidence audits. Automated document checks and the final independent completeness/accuracy review were completed before publication. Plan-owner acceptance was recorded on August 1, 2026.
