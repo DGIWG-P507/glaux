@@ -1,6 +1,6 @@
 # OGC API - Connected Systems Upstream Standards-History Evidence Register
 
-**Version:** 1.4<br>
+**Version:** 1.5<br>
 **Status:** Active supporting evidence<br>
 **Initial screening completed:** August 1, 2026<br>
 **Register owner:** Glaux Project Lead<br>
@@ -164,7 +164,7 @@ Retain an item when it can materially affect one or more of these areas:
 | [#164](https://github.com/opengeospatial/ogcapi-connected-systems/issues/164) | Open | Standard does not clearly distinguish client-receivable association links from server-generated links during writes. | UP | 010, 017 |
 | [#165](https://github.com/opengeospatial/ogcapi-connected-systems/issues/165) | Open | External/local sampled-feature matching, `foi` filtering, sampling chains, derived filters, and a misplaced Part 4 example remain ambiguous. | UP | 010, 017, 011, 024 |
 | [#166](https://github.com/opengeospatial/ogcapi-connected-systems/issues/166) | Open | Complete-replacement PUT across encodings can lose representation-specific content; retain/delete/reject behavior is unspecified. | UP | 029 |
-| [#169](https://github.com/opengeospatial/ogcapi-connected-systems/issues/169) | Open | Part 1 requires `recursive` on deployment queries but OAS omits it; [PR #196](https://github.com/opengeospatial/ogcapi-connected-systems/pull/196) is approved but unmerged. | PCD | 010, 010A, 014 |
+| [#169](https://github.com/opengeospatial/ogcapi-connected-systems/issues/169) | Open | Part 1 requires `recursive` on deployment queries but OAS omits it; [PR #196](https://github.com/opengeospatial/ogcapi-connected-systems/pull/196) is approved but unmerged. | PCD | 010, 010A, 011, 014 |
 | [#170](https://github.com/opengeospatial/ogcapi-connected-systems/issues/170) | Open | Optional Update classes require PATCH but Parts 1/2 OAS omit it; patch document, arrays, nulls, atomicity, and errors remain unresolved. | UP | 010A, 014, 029 |
 | [#171](https://github.com/opengeospatial/ogcapi-connected-systems/issues/171) | Open | Maintainers favor rejecting Deployment deletion without cascade and recursively deleting with cascade, without reparenting; not adopted. | PCD | 030 |
 | [#172](https://github.com/opengeospatial/ogcapi-connected-systems/issues/172) | Open | Alleged missing `systemType` requirement is not an actual schema defect because composed schema inherits/narrows required `featureType`. | UP | 023 |
@@ -248,7 +248,7 @@ The owner column is the controlling routing device. The following summary highli
 | IDR-SRV-008 | Conformance/encoding combinations, corrected identifier relationships, Sampling Feature Part 4 boundary, draft CRUD dependency, and recommendation-versus-requirement wording: #23, #28, #82, #141, #150. |
 | IDR-SRV-010 | Canonical and collection identity, link/association semantics, route and OAS deltas, generated-versus-writable links, local/external references, the draft Features Part 4 dependency, and post-release maintenance: #2, #4, #22, #30, #47, #62, #91, #141, #149, #164, #165, #169, #173, #177. |
 | IDR-SRV-010A | Published and implementation version identifiers; OAS and schema dialect/artifact evolution; conformance granularity; draft dependency; history-versus-version distinctions; and post-publication corrections or omissions: #23, #48, #77, #87, #141, #149, #169-#170, #173-#174, #177, #186. |
-| IDR-SRV-011 | Query time tokens, sorting, property filtering, and sampling-feature filtering ambiguity: #64, #165, #175, #179. |
+| IDR-SRV-011 | Query time tokens, sorting, property filtering, sampling-feature filtering ambiguity, and the Deployment `recursive` OAS omission: #64, #165, #169, #175, #179. Resource-validity issue #182 was checked as a contextual boundary and remains routed to 018/023. |
 | IDR-SRV-014 | Modular and bundled OAS provenance, dependency closure, tool behavior, examples, omitted or contradictory operations/parameters/endpoints, and later corrections: #12, #13, #48, #57, #77-#79, #81, #114, #137, #146, #148, #169-#170, #177, #185-#186. |
 | IDR-SRV-017 | Link and association design, Deployment/System relationships, canonical links, and write-time link ambiguity: #2, #4, #22, #30, #47, #51, #62, #91, #164, #165. |
 | IDR-SRV-018 | History-resource removal, remaining OAS path, and valid-time/open-bound ambiguity: #149, #182. |
@@ -301,6 +301,7 @@ Two general traps apply everywhere: issue closure can disagree with the released
 
 | Date | Version | Change | Owner |
 |---|---|---|---|
+| August 1, 2026 | 1.5 | Refreshed query/filter/sort/pagination/selection evidence for IDR-SRV-011; reconfirmed the states and dispositions of #64/#165/#169/#175/#179/#182 and PRs #88/#196; mechanically compared every tagged Part 1/2 query binding, relevant schema/ATS source, and current `master`; recorded that `master` contains no query-contract repair beyond the previously registered example-only delta; and added direct IDR-SRV-011 routing for #169. | Glaux research workflow |
 | August 1, 2026 | 1.4 | Refreshed API-versioning and compatibility evidence for IDR-SRV-010A; confirmed no material upstream state change from Version 1.3; recorded the tagged OAS version fields, the 69 tagged schemas' Draft 2020-12 dialect and absent `$id`, and direct routing for standards/OAS/schema evolution, draft dependencies, and post-publication corrections. | Glaux research workflow |
 | August 1, 2026 | 1.3 | Refreshed collection/link/navigation evidence for IDR-SRV-010; recorded the 20/23 tagged OAS path inventories and material omissions/extras; confirmed PR #176 is the only Part 1/2 API-tree delta from the tag and only partially repairs example relations; clarified #22 anchor limits; and added direct Topic 010 routing for the relevant identity, association, history, write-link, local/external, recursion, and omitted-path issues. | Glaux research workflow |
 | August 1, 2026 | 1.2 | Refreshed the entry-point/OAS history for IDR-SRV-009; confirmed no post-tag landing, API-definition, or conformance correction on `master`; recorded 32 and 51 residual relative references in the released Part 1 and Part 2 bundles; and added IDR-SRV-009 routing for #23 and #186. | Glaux research workflow |
