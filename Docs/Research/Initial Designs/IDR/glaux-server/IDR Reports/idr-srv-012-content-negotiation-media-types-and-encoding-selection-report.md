@@ -1,7 +1,7 @@
 # Section 012: Content Negotiation, Media Types, and Encoding Selection - Research Report
 
 **Topic ID:** IDR-SRV-012<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-012 Content Negotiation, Media Types, and Encoding Selection](../IDR%20Plans/idr-srv-012-content-negotiation-media-types-and-encoding-selection.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 28 detailed questions; all six methodology phases, ten success criteria, eighteen required content areas, and thirteen minimum representation-matrix fields are validated<br>
@@ -11,8 +11,8 @@
 **Supporting Resources:** Accepted IDR-SRV-006 through IDR-SRV-011 reports; official CSAPI tag `v1.0.0`; tagged modular OAS, JSON Schema, examples, and ATS source; the shared upstream-history register; current official issue state; and pinned connected-systems-go, OpenSensorHub, OS4CSAPI client, and CSAPI Explorer source<br>
 **Document Purpose:** Establish a plain-language, implementation-usable representation contract for the Rust Glaux reference server without treating an example OpenAPI file, an unregistered token, an implementation shortcut, or a future Pub/Sub idea as a standards obligation<br>
 **Author:** OpenAI Codex, with independent read-only Part 1/Features, Part 2/dynamic-data, and HTTP/interoperability audits<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 2, 2026<br>
 **Date:** August 2, 2026<br>
 **Last Updated:** August 2, 2026
 
@@ -608,7 +608,7 @@ A conformance class is not advertised until every applicable route passes its re
 
 ## 15. Recommendations
 
-Subject to plan-owner acceptance, the implementation plan should adopt these decisions:
+The Glaux Project Lead accepted these decisions on August 2, 2026; the implementation plan should carry them forward:
 
 1. Build a typed, versioned `RepresentationRegistry`; derive runtime, operation-level OpenAPI unions, links, server-generated canonical `formats`, conformance evidence, and tests from it; and enforce the symmetric read/write rule for every listed dynamic format.
 2. Implement the explicit Part 1 family map: GeoJSON for System/Deployment/Procedure/Sampling Feature and SensorML for System/Deployment/Procedure/Property, gated by complete conformance-class support.
@@ -824,27 +824,27 @@ Official tests remain useful and must run; supplemental Glaux tests close these 
 
 ## Appendix C. Proposed Decision Register
 
-Every entry remains pending until the Glaux Project Lead accepts this report.
+The Glaux Project Lead accepted every entry on August 2, 2026.
 
 | Decision | Proposed disposition | Acceptance state |
 |---|---|---|
-| P-012-01 | One typed representation registry is the source of truth; dynamic canonical `formats` are server-derived and obey symmetric read/write support | Pending |
-| P-012-02 | Use the explicit Part 1 family/media map and gate claims by complete operation coverage | Pending |
-| P-012-03 | Implement full RFC-aware `Accept` ranking and strict 406 | Pending |
-| P-012-04 | Use stable resource-family defaults from §7.3 | Pending |
-| P-012-05 | Support bounded `f` with precedence, closed vocabulary and 400 behavior | Pending |
-| P-012-06 | Emit exact media labels; UTF-8 JSON without BOM/charset; never sniff typed bodies | Pending |
-| P-012-07 | Use 415 for unsupported request media/coding and representation-specific validation pipelines | Pending |
-| P-012-08 | Keep schema payload selector and schema-document negotiation separate; constrain omitted `cmdFormat` | Pending |
-| P-012-09 | Canonical CSAPI SWE tokens plus exact SWE Common transport aliases, with aliases excluded from standard stream `formats`/selectors | Pending |
-| P-012-10 | Keep SWE CSV, XML, suffixes, arbitrary profiles and future protocols outside baseline | Pending |
-| P-012-11 | Provide typed complete alternates and profile/schema link semantics | Pending |
-| P-012-12 | Use deterministic `Accept-Encoding`, correct `Vary`, coding separation, variant-specific validators and conservative protected-response cache controls | Pending |
-| P-012-13 | Do not claim partial Features HTML conformance | Pending |
-| P-012-14 | Generate/validate operation-level OpenAPI unions and runtime stream-capability subsets from the registry | Pending |
-| P-012-15 | Require all variants to expose the same authorized resource identity/state | Pending |
-| P-012-16 | Build the cross-product and golden/negative fixture program | Pending |
-| P-012-17 | Maintain the upstream compatibility/defect ledger and downstream handoffs | Pending |
+| P-012-01 | One typed representation registry is the source of truth; dynamic canonical `formats` are server-derived and obey symmetric read/write support | Accepted |
+| P-012-02 | Use the explicit Part 1 family/media map and gate claims by complete operation coverage | Accepted |
+| P-012-03 | Implement full RFC-aware `Accept` ranking and strict 406 | Accepted |
+| P-012-04 | Use stable resource-family defaults from §7.3 | Accepted |
+| P-012-05 | Support bounded `f` with precedence, closed vocabulary and 400 behavior | Accepted |
+| P-012-06 | Emit exact media labels; UTF-8 JSON without BOM/charset; never sniff typed bodies | Accepted |
+| P-012-07 | Use 415 for unsupported request media/coding and representation-specific validation pipelines | Accepted |
+| P-012-08 | Keep schema payload selector and schema-document negotiation separate; constrain omitted `cmdFormat` | Accepted |
+| P-012-09 | Canonical CSAPI SWE tokens plus exact SWE Common transport aliases, with aliases excluded from standard stream `formats`/selectors | Accepted |
+| P-012-10 | Keep SWE CSV, XML, suffixes, arbitrary profiles and future protocols outside baseline | Accepted |
+| P-012-11 | Provide typed complete alternates and profile/schema link semantics | Accepted |
+| P-012-12 | Use deterministic `Accept-Encoding`, correct `Vary`, coding separation, variant-specific validators and conservative protected-response cache controls | Accepted |
+| P-012-13 | Do not claim partial Features HTML conformance | Accepted |
+| P-012-14 | Generate/validate operation-level OpenAPI unions and runtime stream-capability subsets from the registry | Accepted |
+| P-012-15 | Require all variants to expose the same authorized resource identity/state | Accepted |
+| P-012-16 | Build the cross-product and golden/negative fixture program | Accepted |
+| P-012-17 | Maintain the upstream compatibility/defect ledger and downstream handoffs | Accepted |
 
 ---
 
@@ -859,13 +859,8 @@ Every entry remains pending until the Glaux Project Lead accepts this report.
 - [x] Normative, inherited, artifact, history, project, and unresolved findings are distinguished.
 - [x] Evidence limitations and upstream conflicts are recorded honestly.
 - [x] The report was internally reviewed against its controlling plan.
-- [ ] Plan-owner acceptance of IDR-SRV-012 — pending Glaux Project Lead review.
+- [x] Plan-owner acceptance of IDR-SRV-012 — accepted by the Glaux Project Lead on August 2, 2026.
 
 ### D.2 Required Next Transition
 
-The next two workflow actions are:
-
-1. the Glaux Project Lead accepts or returns IDR-SRV-012; and
-2. after acceptance, execute exactly one next research topic: IDR-SRV-013, Error Model, HTTP Status Codes, and Failure Semantics.
-
-Those actions can be authorized together with: **“Approve IDR-SRV-012 and execute exactly one Glaux Server research plan: IDR-SRV-013.”** No IDR-SRV-013 research was begun in producing this report.
+The Glaux Project Lead accepted IDR-SRV-012 and authorized execution of exactly one next research topic, IDR-SRV-013, on August 2, 2026. This records the completed transition; IDR-SRV-013 remains governed by its own report and acceptance gate.
