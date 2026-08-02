@@ -1,9 +1,9 @@
 # Section 010: Collections, Resources, Links, and Navigation Behavior - Research Plan
 
-**Status:** Planned  
-**Last Updated:** June 8, 2026  
+**Status:** In Progress<br>
+**Last Updated:** August 1, 2026<br>
 **Estimated Research Time:** 12-16 hours  
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 5 hours of AI-assisted elapsed execution time, including three parallel independent read-only audits, on August 1, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-010-collections-resources-links-and-navigation-behavior-report.md`
 
 ---
@@ -353,16 +353,16 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] Collection and item behavior requirements are identified with source anchors.
-- [ ] CSAPI-specific resources and inherited OGC API - Features behaviors are distinguished.
-- [ ] Required, recommended, conventional, and implementation-specific links are identified.
-- [ ] Navigation patterns from root to collections, collections to items, and items to related resources are documented.
-- [ ] Part 1 and Part 2 resource relationships are identified.
-- [ ] URI, identifier, lifecycle, and relationship-model implications are handed to downstream topics.
-- [ ] Validation, interoperability, and test implications are documented.
-- [ ] Risks of broken navigation, stale links, inconsistent resource relationships, or incomplete discovery are identified.
-- [ ] Recommendations are decision-usable and bounded to Glaux Server.
-- [ ] References are explicit and reproducible.
+- [x] Collection and item behavior requirements are identified with source anchors.
+- [x] CSAPI-specific resources and inherited OGC API - Features behaviors are distinguished.
+- [x] Required, recommended, conventional, and implementation-specific links are identified.
+- [x] Navigation patterns from root to collections, collections to items, and items to related resources are documented.
+- [x] Part 1 and Part 2 resource relationships are identified.
+- [x] URI, identifier, lifecycle, and relationship-model implications are handed to downstream topics.
+- [x] Validation, interoperability, and test implications are documented.
+- [x] Risks of broken navigation, stale links, inconsistent resource relationships, or incomplete discovery are identified.
+- [x] Recommendations are decision-usable and bounded to Glaux Server.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -443,18 +443,19 @@ The behavior matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 5 hours of AI-assisted elapsed execution time, including three parallel independent read-only audits, on August 1, 2026<br>
+**Research Execution Completed:** August 1, 2026<br>
+**Completion Date:** TBD until plan-owner acceptance
 
 ---
 
@@ -463,10 +464,10 @@ Update this section as work progresses.
 - This topic should define navigation behavior expectations, not finalize the canonical resource model or database schema.
 - Existing implementation studies may later refine practical expectations for link relations and traversal behavior.
 - Link and navigation behavior should support both human-developer understanding and machine-client traversal.
-- Open question: Which CSAPI resources must be first-class collections versus subordinate or linked resources?
-- Open question: Which reverse links are required, recommended, or useful for interoperability?
-- Open question: How should Glaux Server represent inaccessible, stale, deleted, moved, or externally hosted related resources?
-- Open question: Which link patterns are necessary for compatibility with CSAPI Explorer and other clients?
+- Research outcome: Part 1 requires typed collections; Part 2 typed collections are conditional, while Glaux should advertise a default collection for each top-level Part 2 family. CommandStatus, CommandResult, and stream schemas remain subordinate.
+- Research outcome: Reverse links are enforced where both directions are required or locally authoritative; the complete stored/derived/reverse-link policy is handed to `IDR-SRV-017`.
+- Research outcome: Missing, inaccessible, stale, deleted, moved, and external-target implications are defined, with final response and lifecycle policies handed to `IDR-SRV-013`, `IDR-SRV-016`, `IDR-SRV-039`, and `IDR-SRV-040`.
+- Research outcome: Glaux should expose standards-strict links and routes first, then isolate CSAPI Explorer or other legacy accommodations in explicit interoperability/compatibility test lanes.
 - Risk: Incomplete or inconsistent linking could make the server technically populated but practically unusable by clients.
 - Risk: Overly nested resource structures could make implementation brittle and client traversal difficult.
 - Risk: Under-modeling relationships could weaken tasking, status, event, and observation traceability.
