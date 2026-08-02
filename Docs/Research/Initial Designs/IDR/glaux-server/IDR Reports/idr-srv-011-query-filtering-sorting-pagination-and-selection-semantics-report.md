@@ -1,7 +1,7 @@
 # Section 011: Query, Filtering, Sorting, Pagination, and Selection Semantics - Research Report
 
 **Topic ID:** IDR-SRV-011<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-011 Query, Filtering, Sorting, Pagination, and Selection Semantics](../IDR%20Plans/idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 55 top-level detailed questions; all six methodology phases, ten success criteria, nineteen required content areas, and fourteen minimum query-matrix fields are validated<br>
@@ -11,10 +11,10 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-010A reports; the shared upstream-history register; tagged OpenAPI, JSON Schema, and ATS source; current official issue/PR state; Unicode 17.0.0 text algorithms; OWASP API Security 2023 guidance; pinned connected-systems-go, OpenSensorHub, OS4CSAPI client, and CSAPI Explorer source; and bounded non-reproducible live implementation illustrations<br>
 **Document Purpose:** Establish a human-readable and implementation-usable query contract baseline for the Rust Glaux reference server without confusing standards obligations, official artifact defects, implementation precedent, or future extensions<br>
 **Author:** OpenAI Codex, with independent read-only Part 1/Features, Part 2/dynamic-data, and optional-extension/interoperability audits<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 2, 2026<br>
 **Date:** August 1, 2026<br>
-**Last Updated:** August 1, 2026
+**Last Updated:** August 2, 2026
 
 ---
 
@@ -1096,27 +1096,27 @@ This ledger accounts for every top-level detailed question in the topic plan. �
 
 ## Appendix C. Proposed Decision and Evidence Register
 
-These are project recommendations, not OGC requirements. Each remains pending Glaux Project Lead acceptance.
+These are project recommendations, not OGC requirements. The Glaux Project Lead accepted them with the report on August 2, 2026.
 
 | Decision | Proposed Glaux policy | Main evidence | Acceptance |
 |---|---|---|---|
-| P-011-01 | Implement both CSAPI Advanced Filtering classes completely before claiming them. | Accepted IDR-SRV-008 target; CSAPI Parts 1/2 | Pending |
-| P-011-02 | Publish `limit` minimum 1, default 10, maximum 10,000; clamp a larger valid integer and reject malformed/below-minimum values. | Tagged parameter plus inherited Features rule | Pending |
-| P-011-03 | Use approved RFC 3339/slash interval grammar; permit `latest` only for Observation `resultTime`, selecting the visible endpoint-wide maximum after other filters and retaining ties. | CSAPI requirements; #64/PR #88 disposition | Pending |
-| P-011-04 | Apply Unicode 17.0.0 `toNFKC_Casefold` to field and term, then locale-independent code-point substring containment over at least `name`/`description`; OR terms; version the Unicode data; no fuzzy or linguistic expansion. | Part 1 Requirement 40; Unicode Chapter 3/UAX #15; artifact wording conflict | Pending |
-| P-011-05 | Treat explicit root `parent` as a direct-child query independent of the root `recursive` default; keep all graph traversal cycle-safe and bounded. | Part 1 hierarchy requirements; tagged parameter intent | Pending |
-| P-011-06 | Adopt §8.2's ascending total orders as provisional pre-release planning defaults—UTC-instant comparison, null after non-null, immutable RID tie-break—and expose no baseline client sort; IDR-SRV-014A–014G may recommend a change before stable release. | Paging determinism; DDIL/replay analysis; absence of CSAPI sorting; #175 | Pending |
-| P-011-07 | Use random server-side references or authenticated-encrypted keyset continuations; permit MAC-only tokens only for non-sensitive/pseudonymous state; bind snapshot/watermark wherever repeatability is promised. | Features mutation caveat; confidentiality, integrity and consistency analysis | Pending |
-| P-011-08 | Treat authorization as the prior logical relation for predicates, order, counts, extents and pages; always include exact `numberReturned` in supported JSON envelopes and include exact visible `numberMatched` only when safe/affordable, otherwise omit it. | Security analysis; Features optional-count contract | Pending |
-| P-011-09 | Return complete resources and expose no baseline projection, expansion or summary parameter. | CSAPI/OAS inventory; schema/interoperability analysis | Pending |
-| P-011-10 | Defer client sorting and CQL2; if adopted later, align with OGC `sortby`/Sortables and explicit Features Filtering/CQL2 profiles. | Records, Common Part 3/Features Part 5, Features Part 3, CQL2; #175 | Pending |
-| P-011-11 | Generate runtime/OAD/tests from QReg and maintain an explicit overlay for tagged OAS omissions, extras and aliases. | Mechanical OAS/ATS/schema review; IDR-SRV-010A policy | Pending |
-| P-011-12 | Enforce typed query budgets for lists, text, WKT, time, recursion, work, memory, bytes, concurrency and rate without silently changing predicate meaning. | Security/performance analysis; RFC 6585 | Pending |
-| P-011-13 | Accept one occurrence of each QReg-declared parameter; return 400 for duplicates, malformed lists, undeclared names, and properties outside an IDR-SRV-015-approved simple-equality allowlist. | Features unknown-parameter behavior; tagged `form`/`explode=false`; parser/security analysis | Pending |
-| P-011-14 | Evaluate `bbox` and `geom` against every representation-independent geometry designated query-relevant in QReg, preserving their opposite no-geometry behavior; IDR-SRV-015/026 approve the set. | Features multi-geometry implementation choice; CSAPI `geom` | Pending |
-| P-011-15 | Provisionally bind CommandStatus `datetime`→`reportTime`, SystemEvent `datetime`→JSON `time`, and `eventType`→JSON `definition`; use bounded local-ID/UID/stored-href, cycle-safe FOI, normalized capability, and Deployment-validity relationship facts; track #165/#179. | Approved prose/schema conflicts; ATS; open issues #165/#179 | Pending |
-| P-011-16 | Keep `datetime` the sole canonical CommandStatus time query. `reportTime` is not baseline; if separately accepted later, make it a read-only, mutually exclusive, OAD-declared adapter excluded from CSAPI conformance claims. | Tagged OAS versus Part 2 Requirement 31; compatibility policy | Pending |
-| P-011-17 | Apply the normative Command query contract to the accepted Glaux root `/feasibility` list so it behaves consistently with nested and advertised typed Feasibility resources endpoints; document this as a project adapter, not an OGC obligation. | Accepted IDR-SRV-010 root route; Part 2 Requirements 36/39C; route-consistency analysis | Pending |
+| P-011-01 | Implement both CSAPI Advanced Filtering classes completely before claiming them. | Accepted IDR-SRV-008 target; CSAPI Parts 1/2 | Accepted August 2, 2026 |
+| P-011-02 | Publish `limit` minimum 1, default 10, maximum 10,000; clamp a larger valid integer and reject malformed/below-minimum values. | Tagged parameter plus inherited Features rule | Accepted August 2, 2026 |
+| P-011-03 | Use approved RFC 3339/slash interval grammar; permit `latest` only for Observation `resultTime`, selecting the visible endpoint-wide maximum after other filters and retaining ties. | CSAPI requirements; #64/PR #88 disposition | Accepted August 2, 2026 |
+| P-011-04 | Apply Unicode 17.0.0 `toNFKC_Casefold` to field and term, then locale-independent code-point substring containment over at least `name`/`description`; OR terms; version the Unicode data; no fuzzy or linguistic expansion. | Part 1 Requirement 40; Unicode Chapter 3/UAX #15; artifact wording conflict | Accepted August 2, 2026 |
+| P-011-05 | Treat explicit root `parent` as a direct-child query independent of the root `recursive` default; keep all graph traversal cycle-safe and bounded. | Part 1 hierarchy requirements; tagged parameter intent | Accepted August 2, 2026 |
+| P-011-06 | Adopt §8.2's ascending total orders as provisional pre-release planning defaults—UTC-instant comparison, null after non-null, immutable RID tie-break—and expose no baseline client sort; IDR-SRV-014A–014G may recommend a change before stable release. | Paging determinism; DDIL/replay analysis; absence of CSAPI sorting; #175 | Accepted August 2, 2026 |
+| P-011-07 | Use random server-side references or authenticated-encrypted keyset continuations; permit MAC-only tokens only for non-sensitive/pseudonymous state; bind snapshot/watermark wherever repeatability is promised. | Features mutation caveat; confidentiality, integrity and consistency analysis | Accepted August 2, 2026 |
+| P-011-08 | Treat authorization as the prior logical relation for predicates, order, counts, extents and pages; always include exact `numberReturned` in supported JSON envelopes and include exact visible `numberMatched` only when safe/affordable, otherwise omit it. | Security analysis; Features optional-count contract | Accepted August 2, 2026 |
+| P-011-09 | Return complete resources and expose no baseline projection, expansion or summary parameter. | CSAPI/OAS inventory; schema/interoperability analysis | Accepted August 2, 2026 |
+| P-011-10 | Defer client sorting and CQL2; if adopted later, align with OGC `sortby`/Sortables and explicit Features Filtering/CQL2 profiles. | Records, Common Part 3/Features Part 5, Features Part 3, CQL2; #175 | Accepted August 2, 2026 |
+| P-011-11 | Generate runtime/OAD/tests from QReg and maintain an explicit overlay for tagged OAS omissions, extras and aliases. | Mechanical OAS/ATS/schema review; IDR-SRV-010A policy | Accepted August 2, 2026 |
+| P-011-12 | Enforce typed query budgets for lists, text, WKT, time, recursion, work, memory, bytes, concurrency and rate without silently changing predicate meaning. | Security/performance analysis; RFC 6585 | Accepted August 2, 2026 |
+| P-011-13 | Accept one occurrence of each QReg-declared parameter; return 400 for duplicates, malformed lists, undeclared names, and properties outside an IDR-SRV-015-approved simple-equality allowlist. | Features unknown-parameter behavior; tagged `form`/`explode=false`; parser/security analysis | Accepted August 2, 2026 |
+| P-011-14 | Evaluate `bbox` and `geom` against every representation-independent geometry designated query-relevant in QReg, preserving their opposite no-geometry behavior; IDR-SRV-015/026 approve the set. | Features multi-geometry implementation choice; CSAPI `geom` | Accepted August 2, 2026 |
+| P-011-15 | Provisionally bind CommandStatus `datetime`→`reportTime`, SystemEvent `datetime`→JSON `time`, and `eventType`→JSON `definition`; use bounded local-ID/UID/stored-href, cycle-safe FOI, normalized capability, and Deployment-validity relationship facts; track #165/#179. | Approved prose/schema conflicts; ATS; open issues #165/#179 | Accepted August 2, 2026 |
+| P-011-16 | Keep `datetime` the sole canonical CommandStatus time query. `reportTime` is not baseline; if separately accepted later, make it a read-only, mutually exclusive, OAD-declared adapter excluded from CSAPI conformance claims. | Tagged OAS versus Part 2 Requirement 31; compatibility policy | Accepted August 2, 2026 |
+| P-011-17 | Apply the normative Command query contract to the accepted Glaux root `/feasibility` list so it behaves consistently with nested and advertised typed Feasibility resources endpoints; document this as a project adapter, not an OGC obligation. | Accepted IDR-SRV-010 root route; Part 2 Requirements 36/39C; route-consistency analysis | Accepted August 2, 2026 |
 
 ---
 
@@ -1134,11 +1134,8 @@ These are project recommendations, not OGC requirements. Each remains pending Gl
 - [x] Standards obligations, artifact observations, history, analysis and Glaux recommendations are visibly distinguished.
 - [x] Evidence limitations and unresolved issues are recorded.
 - [x] The deliverable was reviewed for coverage, traceability, consistency and Markdown integrity.
-- [ ] Proposed decisions P-011-01 through P-011-17 and the report are accepted by the Glaux Project Lead.
+- [x] Proposed decisions P-011-01 through P-011-17 and the report were accepted by the Glaux Project Lead on August 2, 2026.
 
-### D.2 Required Next Two Actions
+### D.2 Recorded Transition
 
-1. The Glaux Project Lead reviews and accepts IDR-SRV-011, or identifies a focused correction.
-2. Only after that acceptance, the project lead authorizes execution of exactly IDR-SRV-012. No IDR-SRV-012 research was begun here.
-
-The two actions can be authorized together with: **“Approve IDR-SRV-011 and execute exactly one Glaux Server research plan: IDR-SRV-012.”**
+The Glaux Project Lead's August 2, 2026 combined instruction accepted IDR-SRV-011 and authorized execution of exactly IDR-SRV-012. This acceptance record does not authorize IDR-SRV-013 or any later topic.
