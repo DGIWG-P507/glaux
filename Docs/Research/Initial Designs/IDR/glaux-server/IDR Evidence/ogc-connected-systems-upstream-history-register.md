@@ -1,12 +1,12 @@
 # OGC API - Connected Systems Upstream Standards-History Evidence Register
 
-**Version:** 1.5<br>
+**Version:** 1.6<br>
 **Status:** Active supporting evidence<br>
 **Initial screening completed:** August 1, 2026<br>
 **Register owner:** Glaux Project Lead<br>
 **Official repository:** https://github.com/opengeospatial/ogcapi-connected-systems<br>
 **Published-source tag checked:** [`v1.0.0`](https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0), commit [`8e03b236`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2)<br>
-**Mutable `master` snapshot checked:** August 1, 2026, commit [`3fd86c73`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f)<br>
+**Mutable `master` snapshot checked:** August 2, 2026, commit [`3fd86c73`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f)<br>
 **Mutable `part3-working-draft` snapshot checked:** August 1, 2026, commit [`a1f1f03b`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/a1f1f03b71f5f645486b23ec8b5fae1f9ba334bc)
 
 ---
@@ -28,7 +28,7 @@ This is a supporting evidence artifact, not an additional IDR topic or research 
 | **UP** | Unresolved proposal, interpretation, defect, or discussion without an adopted and published disposition. Closed-without-rationale items can also fall here. | Record the ambiguity and make a deliberate Glaux decision when necessary; never present the proposal as required by the standard. |
 | **Mixed** | More than one class applies, usually because a published baseline exists but residual or future work remains. | State separately what is published, what changed later, and what remains unresolved. |
 
-`Open` and `Closed` below are only the states observed on August 1, 2026. A closed issue is not proof that its proposed change was implemented; issue [#64](https://github.com/opengeospatial/ogcapi-connected-systems/issues/64) is a concrete counterexample.
+`Open` and `Closed` below are only the states observed on August 2, 2026. A closed issue is not proof that its proposed change was implemented; issue [#64](https://github.com/opengeospatial/ogcapi-connected-systems/issues/64) is a concrete counterexample.
 
 ## 3. Controlling Baseline and Artifact Provenance
 
@@ -80,7 +80,7 @@ Retain an item when it can materially affect one or more of these areas:
 | [#20](https://github.com/opengeospatial/ogcapi-connected-systems/issues/20) | Closed | Early compact-only approach was rejected; final object/array switches came through #71/PR #118. | PB | 022 |
 | [#21](https://github.com/opengeospatial/ogcapi-connected-systems/issues/21) | Closed | Media-type discussion has no clear disposition; use published tokens and do not infer registration from the thread. | Mixed | 012 |
 | [#22](https://github.com/opengeospatial/ogcapi-connected-systems/issues/22) | Closed | Explains `describedby`, anchored HTTP links for binary data, the real `/collections/{id}/items` resource path, and canonical-versus-collection identity. The tagged JSON Link schema does not define an `anchor` member, so the anchor discussion is rationale rather than a JSON obligation. | PB | 010, 012, 014 |
-| [#23](https://github.com/opengeospatial/ogcapi-connected-systems/issues/23) | Open | Encoding conformance classes may overstate write support; per-method/media/schema advertisement remains unresolved. | UP | 008, 009, 010A |
+| [#23](https://github.com/opengeospatial/ogcapi-connected-systems/issues/23) | Open | Encoding conformance classes may overstate write support; per-method/media/schema advertisement remains unresolved. | UP | 008, 009, 010A, 012 |
 | [#24](https://github.com/opengeospatial/ogcapi-connected-systems/issues/24) | Closed | Non-CRS84 geometry direction relies on OGC API Features Part 2; GeoJSON defaults remain CRS84/CRS84h. | PB | 026 |
 | [#28](https://github.com/opengeospatial/ogcapi-connected-systems/issues/28) | Closed | Requirement/conformance URI structures were corrected; [PR #29](https://github.com/opengeospatial/ogcapi-connected-systems/pull/29) added relationship metadata. | PB | 008 |
 | [#30](https://github.com/opengeospatial/ogcapi-connected-systems/issues/30) | Closed | Separate `DeployedSystem` resource was rejected; embedded system links and subdeployments became the published model. | PB | 010, 017 |
@@ -90,12 +90,12 @@ Retain an item when it can materially affect one or more of these areas:
 | [#40](https://github.com/opengeospatial/ogcapi-connected-systems/issues/40) | Closed | Early mutual-exclusivity rationale for UOM code/URI was superseded before publication; #74/PR #94 records the published outcome that both may coexist when they identify the same unit. | Mixed | 024 |
 | [#43](https://github.com/opengeospatial/ogcapi-connected-systems/issues/43) | Open | Published UML says complete quaternion while `Pose.json` uses intended `UnitQuaternion`; no correction is merged. | UP | 023 |
 | [#45](https://github.com/opengeospatial/ogcapi-connected-systems/issues/45) | Open | `DataInterface` remained in the model but was lost from split JSON schema choices; restoration remains unapproved. | UP | 021 |
-| [#46](https://github.com/opengeospatial/ogcapi-connected-systems/issues/46) | Closed | Records migration to SensorML/SWE Common 3.0 and removal of XML encoding from the main standards. | PB | 021, 022 |
+| [#46](https://github.com/opengeospatial/ogcapi-connected-systems/issues/46) | Closed | Records migration to SensorML/SWE Common 3.0 and removal of XML encoding from the main standards. | PB | 012, 021, 022 |
 | [#47](https://github.com/opengeospatial/ogcapi-connected-systems/issues/47) | Closed | [Commit `da6ce68`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/da6ce68f4838260d1a86bbf6a9502b7edb10833b) added the published link-relation table. | PB | 010, 017 |
 | [#48](https://github.com/opengeospatial/ogcapi-connected-systems/issues/48) | Open | Published artifacts use OAS 3.1 so SensorML schemas can be reused; the original downgrade request is superseded, while optional OAS 3.0 compatibility remains unresolved under #77. | Mixed | 010A, 014 |
 | [#51](https://github.com/opengeospatial/ogcapi-connected-systems/issues/51) | Closed | Ultimate sampled-feature association maps to `sosa:hasSampledFeature`; [commit `aa52ecc`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/aa52ecc2aaad71fbba606c56354f37093be9aadb) fixed it. | PB | 017 |
 | [#52](https://github.com/opengeospatial/ogcapi-connected-systems/issues/52) | Closed | A CSAPI System may be both SOSA Platform and System; a non-system Platform remains an ordinary Feature. [Commit `620d561`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/620d561709b6b58763dfc171e33501f97b6f1db5) added the explanation. | PB | 015 |
-| [#55](https://github.com/opengeospatial/ogcapi-connected-systems/issues/55) | Closed | SWE Common encoding rules stayed in the main document because Part 2 normatively depends on them. | PB | 022 |
+| [#55](https://github.com/opengeospatial/ogcapi-connected-systems/issues/55) | Closed | SWE Common encoding rules stayed in the main document because Part 2 normatively depends on them. | PB | 012, 022 |
 | [#57](https://github.com/opengeospatial/ogcapi-connected-systems/issues/57) | Closed | [Commit `0e79f9b`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/0e79f9be8e786e490bba97262f49f654bc21c30a) corrected remaining Part 1 OAS path-parameter defects. | PB | 014 |
 | [#58](https://github.com/opengeospatial/ogcapi-connected-systems/issues/58) | Open | Transfer of control remains undefined: request/seizure, timeout, partition recovery, preemption, and rejoining controllers are open. | UP | 038 |
 | [#59](https://github.com/opengeospatial/ogcapi-connected-systems/issues/59) | Open | Reservation/confirmation has no discoverable link, expiry, or lifecycle in Part 2 and would require optional new behavior. | UP | 037 |
@@ -149,7 +149,7 @@ Retain an item when it can materially affect one or more of these areas:
 |---|---|---|---|---|
 | [#141](https://github.com/opengeospatial/ogcapi-connected-systems/issues/141) | Open | Parts 1/2 depend on draft OGC API Features Part 4 CRUD/update behavior; eventual publication requires a delta review. | UP | 008, 010A |
 | [#142](https://github.com/opengeospatial/ogcapi-connected-systems/issues/142) | Open | Part 1 intentionally publishes seven literal `assetType` values; only the requested `cs:AssetType` classifier-definition URI remains unresolved. | UP | 024 |
-| [#144](https://github.com/opengeospatial/ogcapi-connected-systems/issues/144) | Open | Maintainer rationale keeps logical structure separate from encoding, which belongs to a containing DataArray/DataStream or CSAPI wrapper. | PCD | 022 |
+| [#144](https://github.com/opengeospatial/ogcapi-connected-systems/issues/144) | Open | Maintainer rationale keeps logical structure separate from encoding, which belongs to a containing DataArray/DataStream or CSAPI wrapper. | PCD | 012, 022 |
 | [#146](https://github.com/opengeospatial/ogcapi-connected-systems/issues/146) | Closed | Pre-publication HTML lagged source/PDF until the external OGC build process was corrected; mutable renderings need provenance checks. | PB | 014 |
 | [#147](https://github.com/opengeospatial/ogcapi-connected-systems/issues/147) | Open | Intended top-level DataStream `outputName` and analogous ControlStream `inputName` remain inconsistent across schemas, tables, and examples. | Mixed | 021 |
 | [#148](https://github.com/opengeospatial/ogcapi-connected-systems/issues/148) | Open | Published clause numbering appears shifted by build treatment of abbreviated terms; correction versus stable anchors is unresolved. | UP | 014 |
@@ -163,19 +163,19 @@ Retain an item when it can materially affect one or more of these areas:
 | [#163](https://github.com/opengeospatial/ogcapi-connected-systems/issues/163) | Open | Early use cases mix obsolete SensorML and GeoJSON conventions and are unsafe as fixtures without reconciliation. | UP | 053 |
 | [#164](https://github.com/opengeospatial/ogcapi-connected-systems/issues/164) | Open | Standard does not clearly distinguish client-receivable association links from server-generated links during writes. | UP | 010, 017 |
 | [#165](https://github.com/opengeospatial/ogcapi-connected-systems/issues/165) | Open | External/local sampled-feature matching, `foi` filtering, sampling chains, derived filters, and a misplaced Part 4 example remain ambiguous. | UP | 010, 017, 011, 024 |
-| [#166](https://github.com/opengeospatial/ogcapi-connected-systems/issues/166) | Open | Complete-replacement PUT across encodings can lose representation-specific content; retain/delete/reject behavior is unspecified. | UP | 029 |
+| [#166](https://github.com/opengeospatial/ogcapi-connected-systems/issues/166) | Open | Complete-replacement PUT across encodings can lose representation-specific content; retain/delete/reject behavior is unspecified. | UP | 012, 029 |
 | [#169](https://github.com/opengeospatial/ogcapi-connected-systems/issues/169) | Open | Part 1 requires `recursive` on deployment queries but OAS omits it; [PR #196](https://github.com/opengeospatial/ogcapi-connected-systems/pull/196) is approved but unmerged. | PCD | 010, 010A, 011, 014 |
-| [#170](https://github.com/opengeospatial/ogcapi-connected-systems/issues/170) | Open | Optional Update classes require PATCH but Parts 1/2 OAS omit it; patch document, arrays, nulls, atomicity, and errors remain unresolved. | UP | 010A, 014, 029 |
+| [#170](https://github.com/opengeospatial/ogcapi-connected-systems/issues/170) | Open | Optional Update classes require PATCH but Parts 1/2 OAS omit it; patch document, arrays, nulls, atomicity, and errors remain unresolved. | UP | 010A, 012, 014, 029 |
 | [#171](https://github.com/opengeospatial/ogcapi-connected-systems/issues/171) | Open | Maintainers favor rejecting Deployment deletion without cascade and recursively deleting with cascade, without reparenting; not adopted. | PCD | 030 |
 | [#172](https://github.com/opengeospatial/ogcapi-connected-systems/issues/172) | Open | Alleged missing `systemType` requirement is not an actual schema defect because composed schema inherits/narrows required `featureType`. | UP | 023 |
 | [#173](https://github.com/opengeospatial/ogcapi-connected-systems/issues/173) | Closed | Published mapping intent requires `ogc-rel:` prefixes; [PR #176](https://github.com/opengeospatial/ogcapi-connected-systems/pull/176) changes only three relation values in one example on post-release `master`, not Version 1.0. Other current examples still contain bare values, including eight `parentSystem` occurrences. | PCD | 010, 010A |
 | [#174](https://github.com/opengeospatial/ogcapi-connected-systems/issues/174) | Open | Procedure model permits `validTime` but `procedure.json` omits it; [PR #199](https://github.com/opengeospatial/ogcapi-connected-systems/pull/199) is approved but unmerged. | PCD | 010A, 023 |
 | [#175](https://github.com/opengeospatial/ogcapi-connected-systems/issues/175) | Open | CSAPI defines no sorting; alignment with OGC `sortby`/Sortables is proposed but endpoint binding remains undecided. | UP | 011 |
 | [#177](https://github.com/opengeospatial/ogcapi-connected-systems/issues/177) | Open | Part 2 formally requires deployment-scoped DataStream and ControlStream endpoints that its OAS omits. | UP | 010, 010A, 014 |
-| [#178](https://github.com/opengeospatial/ogcapi-connected-systems/issues/178) | Open | Server-returned and client-receivable DataStream fields intentionally differ, but descriptions and singular schema-per-format behavior need clarification. | UP | 015 |
+| [#178](https://github.com/opengeospatial/ogcapi-connected-systems/issues/178) | Open | Server-returned and client-receivable DataStream fields intentionally differ, but descriptions and singular schema-per-format behavior need clarification. | UP | 012, 015 |
 | [#179](https://github.com/opengeospatial/ogcapi-connected-systems/issues/179) | Open | Property filters are partly inferable from ATS, but capability derivation and several OAS-advertised filters lack clear requirements. | UP | 011 |
 | [#180](https://github.com/opengeospatial/ogcapi-connected-systems/issues/180) | Closed | Real SWE naming/serialization question was closed without comment, rationale, PR, or commit; closure supplies no dependable disposition. | UP | 022 |
-| [#181](https://github.com/opengeospatial/ogcapi-connected-systems/issues/181) | Open | Ordinary Observation JSON Schema differs from a stream’s SWE logical `resultSchema`; custom `+json` does not automatically imply JSON Schema. | UP | 023 |
+| [#181](https://github.com/opengeospatial/ogcapi-connected-systems/issues/181) | Open | Ordinary Observation JSON Schema differs from a stream’s SWE logical `resultSchema`; custom `+json` does not automatically imply JSON Schema. | UP | 012, 023 |
 | [#182](https://github.com/opengeospatial/ogcapi-connected-systems/issues/182) | Open | Valid-time prose/schema differ over `now`; open intervals are absent and a common published schema target reportedly returns 404. | UP | 018, 023 |
 | [#183](https://github.com/opengeospatial/ogcapi-connected-systems/issues/183) | Open | Publication omitted intended `timeInstantOrNow.json`; redirecting to `timeInstant.json` would remove intended `now` support. | UP | 023 |
 | [#185](https://github.com/opengeospatial/ogcapi-connected-systems/issues/185) | Open | Published transactions are individual-only while OAS contains contradictory array/batch artifacts; common bulk semantics remain draft work. | UP | 014, 029 |
@@ -183,12 +183,12 @@ Retain an item when it can materially affect one or more of these areas:
 | [#187](https://github.com/opengeospatial/ogcapi-connected-systems/issues/187) | Open | Recorded direction uses CloudEvents for resource lifecycle envelopes while leaving native data messages unwrapped for constrained/DDIL efficiency. | PCD | 035 |
 | [#188](https://github.com/opengeospatial/ogcapi-connected-systems/issues/188) | Open | Status of MQTT/NATS/Kafka/AMQP/DDS bindings as classes, profiles, extensions, or separate publications is unresolved. | UP | 035 |
 | [#189](https://github.com/opengeospatial/ogcapi-connected-systems/issues/189) | Open | Part 3 MQTT clause is an unwired stub lacking normative version, topics, operations, QoS/session, retained-message, event, and ATS behavior. | UP | 035 |
-| [#190](https://github.com/opengeospatial/ogcapi-connected-systems/issues/190) | Open | Multiple-encoding direction favors advertised channel selection through AsyncAPI, but the final model is unresolved. | UP | 035 |
+| [#190](https://github.com/opengeospatial/ogcapi-connected-systems/issues/190) | Open | Multiple-encoding direction favors advertised channel selection through AsyncAPI, but the final model is unresolved. | UP | 012, 035 |
 | [#191](https://github.com/opengeospatial/ogcapi-connected-systems/issues/191) | Open | Recorded proposal renames legacy `consys` CloudEvent types to `csapi`; no adopted draft change. | PCD | 035 |
 | [#192](https://github.com/opengeospatial/ogcapi-connected-systems/issues/192) | Open | SWG accepted CloudEvents `source`+`id` uniqueness instead of UUID-only values; [PR #198](https://github.com/opengeospatial/ogcapi-connected-systems/pull/198) remains approved and unmerged on a Part 3 branch. | PCD | 035 |
 | [#193](https://github.com/opengeospatial/ogcapi-connected-systems/issues/193) | Open | Aggregate collection-summary events are distinct from HTTP bulk and CloudEvents batch format; semantics remain undecided. | UP | 035 |
 | [#194](https://github.com/opengeospatial/ogcapi-connected-systems/issues/194) | Open | `parentID` purpose, scope, naming, requirement level, and URL-versus-local-ID representation remain unresolved. | UP | 035 |
-| [#195](https://github.com/opengeospatial/ogcapi-connected-systems/issues/195) | Open | Event payload options and boundary from native Resource Data Messages remain unresolved. | UP | 035 |
+| [#195](https://github.com/opengeospatial/ogcapi-connected-systems/issues/195) | Open | Event payload options and boundary from native Resource Data Messages remain unresolved. | UP | 012, 035 |
 
 ## 5. Pull-Request Dispositions
 
@@ -301,6 +301,7 @@ Two general traps apply everywhere: issue closure can disagree with the released
 
 | Date | Version | Change | Owner |
 |---|---|---|---|
+| August 2, 2026 | 1.6 | Refreshed content-negotiation, media-type, encoding, schema-selector, and alternate-link evidence for IDR-SRV-012; reconfirmed the relevant issue states, tagged OpenAPI/schema/ATS findings, IANA registration snapshot, and unchanged current `master`; recorded the unresolved CSAPI/SWE Common token collision and added direct IDR-SRV-012 routing for operation advertisement, SensorML/SWE dependencies, schema separation, cross-encoding updates, and future-format boundaries. | Glaux research workflow |
 | August 1, 2026 | 1.5 | Refreshed query/filter/sort/pagination/selection evidence for IDR-SRV-011; reconfirmed the states and dispositions of #64/#165/#169/#175/#179/#182 and PRs #88/#196; mechanically compared every tagged Part 1/2 query binding, relevant schema/ATS source, and current `master`; recorded that `master` contains no query-contract repair beyond the previously registered example-only delta; and added direct IDR-SRV-011 routing for #169. | Glaux research workflow |
 | August 1, 2026 | 1.4 | Refreshed API-versioning and compatibility evidence for IDR-SRV-010A; confirmed no material upstream state change from Version 1.3; recorded the tagged OAS version fields, the 69 tagged schemas' Draft 2020-12 dialect and absent `$id`, and direct routing for standards/OAS/schema evolution, draft dependencies, and post-publication corrections. | Glaux research workflow |
 | August 1, 2026 | 1.3 | Refreshed collection/link/navigation evidence for IDR-SRV-010; recorded the 20/23 tagged OAS path inventories and material omissions/extras; confirmed PR #176 is the only Part 1/2 API-tree delta from the tag and only partially repairs example relations; clarified #22 anchor limits; and added direct Topic 010 routing for the relevant identity, association, history, write-link, local/external, recursion, and omitted-path issues. | Glaux research workflow |
