@@ -1,7 +1,7 @@
 # Section 009: Landing Page, API Definition, and Conformance Declaration Behavior - Research Report
 
 **Topic ID:** IDR-SRV-009<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-009 Landing Page, API Definition, and Conformance Declaration Behavior](../IDR%20Plans/idr-srv-009-landing-page-api-definition-and-conformance-declaration-behavior.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 31 detailed questions; all six methodology phases, ten success criteria, fifteen required content areas, and ten minimum behavior-matrix fields are validated<br>
@@ -17,8 +17,8 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-008 reports; official CSAPI tag `v1.0.0`; released OAS 3.1 bundles; the bounded upstream-history register; official Features ETS; CSAPI Explorer; pinned OpenSensorHub, connected-systems-go, pygeoapi, and SECD evidence; and the OS4CSAPI exemplar corpus<br>
 **Document Purpose:** Establish the decision-usable external contract for the first resources clients encounter on a complete Rust Glaux Server, while reserving detailed navigation, negotiation, error-model, and OpenAPI construction decisions for their owning topics<br>
 **Author:** OpenAI Codex, with independent read-only normative, OpenAPI/history, and implementation/test audits<br>
-**Accepted By:** TBD - Glaux Project Lead review pending<br>
-**Acceptance Date:** TBD until accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 1, 2026<br>
 **Date:** August 1, 2026<br>
 **Last Updated:** August 1, 2026
 
@@ -903,20 +903,11 @@ Three independent read-only audits covered: (1) exact normative requirements, AT
 
 ### 19.1 Current Status
 
-Research, drafting, source pinning, three independent technical audits, reconciliation, and plan validation are complete. The report is **In Review**. Plan-owner acceptance remains pending and is intentionally not recorded by the author.
+Research, drafting, source pinning, three independent technical audits, reconciliation, plan validation, and plan-owner acceptance are complete. The report is **Final**. The Glaux Project Lead accepted it on August 1, 2026.
 
-### 19.2 The Next Two Actions
+### 19.2 Transition Completed
 
-If the plan owner finds this report decision-usable, the next two actions are:
-
-1. approve IDR-SRV-009, which records acceptance and makes its baseline available downstream; then
-2. authorize execution of exactly one next eligible topic, IDR-SRV-010, *Collections, Resources, Links, and Navigation Behavior*.
-
-The combined response may be:
-
-> Approve IDR-SRV-009. Then execute exactly one Glaux Server research plan: the next one, using the standing single-topic execution instructions.
-
-This report does not record its own acceptance and does not begin IDR-SRV-010.
+On August 1, 2026, the Glaux Project Lead supplied the combined instruction that accepted IDR-SRV-009 and authorized execution of exactly one next eligible topic: **IDR-SRV-010, Collections, Resources, Links, and Navigation Behavior**. No later topic was authorized by that instruction.
 
 ---
 
@@ -1058,4 +1049,4 @@ The CSAPI requirements in the last two lanes govern runtime media behavior. Elev
 - [x] Three independent read-only audits are reconciled
 - [x] Executive summary and recommendations are independently decision-usable
 - [x] No other research topic was begun
-- [ ] Plan-owner acceptance recorded; pending Glaux Project Lead review
+- [x] Plan-owner acceptance recorded
