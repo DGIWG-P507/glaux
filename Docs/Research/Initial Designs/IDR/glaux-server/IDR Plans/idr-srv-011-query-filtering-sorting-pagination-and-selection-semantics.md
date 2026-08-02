@@ -1,9 +1,9 @@
 # Section 011: Query, Filtering, Sorting, Pagination, and Selection Semantics - Research Plan
 
-**Status:** Planned  
-**Last Updated:** June 8, 2026  
-**Estimated Research Time:** 12-16 hours  
-**Actual Research Time:** TBD until complete  
+**Status:** In Progress<br>
+**Last Updated:** August 1, 2026<br>
+**Estimated Research Time:** 12-16 hours<br>
+**Actual Research Time:** Approximately 6 hours of AI-assisted elapsed execution time on August 1, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md`
 
 ---
@@ -414,16 +414,16 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] Query, filtering, sorting, pagination, and selection requirements are identified with source anchors.
-- [ ] CSAPI-specific behavior and inherited OGC API behavior are distinguished.
-- [ ] Query behavior is mapped to relevant Glaux Server resource families.
-- [ ] Geospatial, temporal, identifier, relationship, status, dynamic-data, and tasking query implications are assessed.
-- [ ] Sorting and pagination consistency implications are documented.
-- [ ] Selection/projection behavior is classified as required, optional, implementation-specific, future candidate, or out of scope.
-- [ ] Security, authorization, resource-consumption, and information-leakage implications are identified.
-- [ ] Persistence, indexing, OpenAPI, error-handling, validation, performance, and testing handoffs are documented.
-- [ ] Recommendations are decision-usable and bounded to Glaux Server.
-- [ ] References are explicit and reproducible.
+- [x] Query, filtering, sorting, pagination, and selection requirements are identified with source anchors.
+- [x] CSAPI-specific behavior and inherited OGC API behavior are distinguished.
+- [x] Query behavior is mapped to relevant Glaux Server resource families.
+- [x] Geospatial, temporal, identifier, relationship, status, dynamic-data, and tasking query implications are assessed.
+- [x] Sorting and pagination consistency implications are documented.
+- [x] Selection/projection behavior is classified as required, optional, implementation-specific, future candidate, or out of scope.
+- [x] Security, authorization, resource-consumption, and information-leakage implications are identified.
+- [x] Persistence, indexing, OpenAPI, error-handling, validation, performance, and testing handoffs are documented.
+- [x] Recommendations are decision-usable and bounded to Glaux Server.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -515,18 +515,19 @@ The query behavior matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 6 hours of AI-assisted elapsed execution time on August 1, 2026<br>
+**Research Execution Completed:** August 1, 2026<br>
+**Completion Date:** Pending plan-owner acceptance
 
 ---
 

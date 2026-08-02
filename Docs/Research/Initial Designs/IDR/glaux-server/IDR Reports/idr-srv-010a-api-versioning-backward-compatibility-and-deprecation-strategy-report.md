@@ -1,7 +1,7 @@
 # Section 010A: API Versioning, Backward Compatibility, and Deprecation Strategy - Research Report
 
 **Topic ID:** IDR-SRV-010A<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-010A API Versioning, Backward Compatibility, and Deprecation Strategy](../IDR%20Plans/idr-srv-010a-api-versioning-backward-compatibility-and-deprecation-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 36 top-level detailed questions, including all 11 enumerated compatibility subareas; all six methodology phases, eleven success criteria, fourteen required content areas, and eleven minimum compatibility-matrix fields are validated<br>
@@ -19,8 +19,8 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-010 reports; official CSAPI tag `v1.0.0`; versioned OGC schema package; pinned official issue/PR history; RFCs 9110, 9111, 8288, 6906, and 5829; IANA registries; pinned Microsoft, Google, Zalando, and Heroku guidance; and pinned CSAPI Explorer evidence<br>
 **Document Purpose:** Establish a decision-usable evolution policy for the Rust Glaux reference server so that standards conformance, stable resource identity, client compatibility, deprecation, extensions, generated documentation, and release testing remain coherent over time<br>
 **Author:** OpenAI Codex, with independent read-only OGC/OAS/history, HTTP/guidance, and compatibility/client/test audits<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD pending acceptance<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 1, 2026<br>
 **Date:** August 1, 2026<br>
 **Last Updated:** August 1, 2026
 
@@ -904,29 +904,13 @@ The report was reconciled against accepted prerequisite findings and three indep
 
 ## 17. Status and Controlled Transition
 
-### 17.1 Current Status
+### 17.1 Final Status
 
-- Research, source pinning, and three independent evidence audits: complete.
-- All five core and 36 top-level detailed questions, including all 11 compatibility subareas: answered.
-- All six methodology phases and eleven success criteria: complete.
-- All fourteen required content areas and eleven matrix fields: complete.
-- Deliverable: complete and internally reviewed.
-- Plan-owner acceptance: **pending**.
+Research, drafting, source pinning, three independent evidence audits, plan validation, and plan-owner acceptance are complete. The report is **Final**. The Glaux Project Lead accepted it on August 1, 2026.
 
-The report remains **In Review**. No downstream topic was executed.
+### 17.2 Transition Completed
 
-### 17.2 Next Two Actions
-
-The next two controlled actions are:
-
-1. the Glaux Project Lead accepts or returns IDR-SRV-010A; then
-2. after acceptance, authorize execution of exactly one next eligible plan: **IDR-SRV-011, Query, Filtering, Sorting, Pagination, and Selection Semantics**.
-
-The combined response pattern is:
-
-> Approve IDR-SRV-010A and execute exactly one Glaux Server research plan: IDR-SRV-011.
-
-That wording alone records nothing until the project lead sends it. Until then, IDR-SRV-010A remains in review and IDR-SRV-011 remains unstarted.
+On August 1, 2026, the Glaux Project Lead supplied the combined instruction that accepted IDR-SRV-010A and authorized execution of exactly one next eligible topic: **IDR-SRV-011, Query, Filtering, Sorting, Pagination, and Selection Semantics**. No later topic was authorized by that instruction.
 
 ---
 
@@ -1135,7 +1119,7 @@ That wording alone records nothing until the project lead sends it. Until then, 
 - [x] Standards obligation, artifact/source finding, analysis, and project recommendation are distinguished.
 - [x] All plan questions, phases, success criteria, required content areas, and matrix fields are validated.
 - [x] Evidence limitations and downstream uncertainties are explicit.
-- [x] No later research topic was begun.
-- [ ] Plan-owner acceptance and date remain pending review.
+- [x] The acceptance transition authorized only IDR-SRV-011; no topic beyond IDR-SRV-011 was authorized or begun.
+- [x] Plan-owner acceptance and date were recorded on August 1, 2026.
 
 ---
