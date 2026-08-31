@@ -1,7 +1,7 @@
 # Section 014E: OS4CSAPI Client Smoke Test Findings Study - Research Report
 
 **Topic ID:** IDR-SRV-014E<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-014E OS4CSAPI Client Smoke Test Findings Study](../IDR%20Plans/idr-srv-014e-os4csapi-client-smoke-test-findings-study.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 29 detailed questions; all six methodology phases, nine success criteria, seventeen required content areas, and fifteen minimum findings-matrix fields are validated<br>
@@ -11,8 +11,8 @@
 **Supporting Resources:** 28 live-server smoke reports, 31 demo-app finding records, 21 phase-9 pygeoapi wire-capture artifacts, issue #188, client source and integration fixtures, and accepted Glaux reports IDR-SRV-006 through IDR-SRV-014D<br>
 **Document Purpose:** Establish a source-pinned, ownership-classified client smoke-test findings baseline for Glaux API behavior, validation, conformance, fixtures, and external-client testing without promoting client assumptions or implementation quirks into server requirements<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 31, 2026<br>
 **Date:** August 31, 2026<br>
 **Last Updated:** August 31, 2026
 
