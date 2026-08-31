@@ -1,10 +1,10 @@
 # Section 014F: SECD Interoperability Findings Study - Research Plan
 
 **Topic ID:** IDR-SRV-014F<br>
-**Status:** Planned  
-**Last Updated:** July 30, 2026<br>
+**Status:** In Review<br>
+**Last Updated:** August 31, 2026<br>
 **Estimated Research Time:** 11.5-15 hours<br>
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 5 hours of AI-assisted elapsed execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014f-secd-interoperability-findings-study-report.md`
 
 ---
@@ -305,15 +305,15 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] SECD interoperability sources are identified with exact URLs, branches, commits, dates, tested servers, and test conditions where available.
-- [ ] Findings are distinguished from SECD implementation behavior, client-library behavior, fixture issues, documentation gaps, and standards ambiguities.
-- [ ] Findings are grouped by API behavior area and evidence strength.
-- [ ] Reproducible, stale, inferred, and unresolved findings are distinguished.
-- [ ] Cross-implementation recurring issues and SECD-specific quirks are identified.
-- [ ] Schema/model, dynamic-data, tasking, documentation, validation, conformance, and interoperability implications are documented.
-- [ ] Test and fixture recommendations are explicit.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] SECD interoperability sources are identified with exact URLs, branches, commits, dates, tested servers, and test conditions where available.
+- [x] Findings are distinguished from SECD implementation behavior, client-library behavior, fixture issues, documentation gaps, and standards ambiguities.
+- [x] Findings are grouped by API behavior area and evidence strength.
+- [x] Reproducible, stale, inferred, and unresolved findings are distinguished.
+- [x] Cross-implementation recurring issues and SECD-specific quirks are identified.
+- [x] Schema/model, dynamic-data, tasking, documentation, validation, conformance, and interoperability implications are documented.
+- [x] Test and fixture recommendations are explicit.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -392,18 +392,18 @@ The interoperability findings matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 5 hours of AI-assisted elapsed execution<br>
+**Completion Date:** August 31, 2026
 
 ---
 
@@ -413,10 +413,10 @@ Update this section as work progresses.
 - The pinned interoperability repository is test/findings evidence, not SECD server source.
 - This topic should not repeat the SECD implementation study except where needed to explain interoperability findings.
 - Some findings may have been fixed or superseded; the report must record freshness and current relevance.
-- Open question: Which SECD interoperability artifacts best represent the current baseline?
-- Open question: Which findings can be reproduced against current server deployments?
-- Open question: Which findings reveal genuine standards ambiguity versus implementation defects?
-- Open question: Which SECD interoperability tests should become Glaux Server CI tests?
+- Resolved: The locked register, supersession crosswalk, targeted-validation artifacts, raw captures, current read-only probes, and pinned client source jointly form the most reliable baseline; no single report or score is sufficient.
+- Resolved: Current read-only reproduction confirmed the silent filter, negotiation, wrapper, discovery-composition, semantic-loss, and error-split findings; `/collections` and top-level Observations are resolved, top-level Commands are present, and historical write findings remain current-unverified.
+- Resolved: Generic `rel=data` and `DataChoice` presence require narrowed, standards-aware treatment; the reproducible issues are discovery ambiguity, schema location/structure, and integrated client behavior rather than those tokens alone.
+- Resolved: Metadata parity, filter metamorphic tests, negotiation matrices, canonical envelope/schema goldens, semantic parser preservation, uniform errors, and isolated lifecycle round trips are the strongest Glaux CI candidates.
 - Risk: Treating SECD-specific behavior as a standards obligation could distort the Glaux Server baseline.
 - Risk: Ignoring SECD interoperability findings could cause avoidable client compatibility failures.
 - Risk: Mixing stale findings with current findings without classification could produce misleading recommendations.
