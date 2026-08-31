@@ -1,9 +1,9 @@
 # Section 014E: OS4CSAPI Client Smoke Test Findings Study - Research Plan
 
-**Status:** Planned  
-**Last Updated:** June 8, 2026  
+**Status:** In Review<br>
+**Last Updated:** August 31, 2026<br>
 **Estimated Research Time:** 10-14 hours  
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 4.5 hours of AI-assisted elapsed execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014e-os4csapi-client-smoke-test-findings-study-report.md`
 
 ---
@@ -291,15 +291,15 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] OS4CSAPI smoke-test sources are identified with exact URLs, branches, commits, dates, tested servers, and test conditions where available.
-- [ ] Smoke-test findings are distinguished from client-library limitations, server behavior, fixture issues, documentation gaps, and standards ambiguities.
-- [ ] Findings are grouped by API behavior area and tested implementation.
-- [ ] Reproducible, stale, inferred, and unresolved findings are distinguished.
-- [ ] Cross-server recurring issues and server-specific quirks are identified.
-- [ ] Schema/model, dynamic-data, tasking, documentation, validation, conformance, and interoperability implications are documented.
-- [ ] Test and fixture recommendations are explicit.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] OS4CSAPI smoke-test sources are identified with exact URLs, branches, commits, dates, tested servers, and test conditions where available.
+- [x] Smoke-test findings are distinguished from client-library limitations, server behavior, fixture issues, documentation gaps, and standards ambiguities.
+- [x] Findings are grouped by API behavior area and tested implementation.
+- [x] Reproducible, stale, inferred, and unresolved findings are distinguished.
+- [x] Cross-server recurring issues and server-specific quirks are identified.
+- [x] Schema/model, dynamic-data, tasking, documentation, validation, conformance, and interoperability implications are documented.
+- [x] Test and fixture recommendations are explicit.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -380,18 +380,18 @@ The smoke-test findings matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 4.5 hours of AI-assisted elapsed execution<br>
+**Completion Date:** August 31, 2026
 
 ---
 
@@ -400,10 +400,10 @@ Update this section as work progresses.
 - Smoke-test findings are evidence, not normative sources.
 - The report must explicitly distinguish server behavior from client-library behavior.
 - Some findings may have been fixed or superseded; the report must record freshness and current relevance.
-- Open question: Which OS4CSAPI client branch and test artifacts best represent the smoke-test baseline?
-- Open question: Which findings can be reproduced against current server deployments?
-- Open question: Which findings reveal genuine standards ambiguity versus implementation defects?
-- Open question: Which smoke tests should become Glaux Server CI tests?
+- Resolved: `phase-9` commit `754411897173c2ec4debaa9bcf4ed9e0f8a9e230` is the controlling historical baseline because it matches this plan's source target and preserves the cumulative smoke reports, Phase 9 synthesis, and raw captures; later `main` and `phase-10` heads are disclosed as freshness context rather than silently substituted.
+- Resolved: The pinned deterministic client integration workflows and type check were reproduced; mutable historical live-server observations remain explicitly historical rather than being promoted to current deployment claims.
+- Resolved: Accepted Glaux standards reports control normative interpretation; ownership and unresolved downstream design questions are explicitly separated in the report.
+- Resolved: Raw-wire golden, semantic-query, round-trip, lifecycle, runtime/documentation parity, conformance-traceability, and pinned external-client tests are the primary CI candidates; public-server tests remain scheduled canaries.
 - Risk: Treating client assumptions as server obligations could distort the Glaux Server baseline.
 - Risk: Ignoring smoke-test findings could cause avoidable interoperability failures.
 - Risk: Mixing stale findings with current findings without classification could produce misleading recommendations.
