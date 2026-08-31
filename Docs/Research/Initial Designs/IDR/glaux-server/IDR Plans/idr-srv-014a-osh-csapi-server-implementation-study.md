@@ -1,9 +1,9 @@
 # Section 014A: OSH CSAPI Server Implementation Study - Research Plan
 
-**Status:** Planned  
-**Last Updated:** June 8, 2026  
-**Estimated Research Time:** 12-16 hours  
-**Actual Research Time:** TBD until complete  
+**Status:** Complete<br>
+**Last Updated:** August 31, 2026<br>
+**Estimated Research Time:** 12-16 hours<br>
+**Actual Research Time:** Approximately 4.5 hours of AI-assisted elapsed execution on August 31, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014a-osh-csapi-server-implementation-study-report.md`
 
 ---
@@ -408,18 +408,19 @@ The implementation findings matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 4.5 hours of AI-assisted elapsed execution on August 31, 2026<br>
+**Research Execution Completion Date:** August 31, 2026<br>
+**Plan-Owner Acceptance Date:** August 31, 2026
 
 ---
 
@@ -428,10 +429,10 @@ Update this section as work progresses.
 - OSH is an implementation study source, not a normative source.
 - The report must explicitly identify evidence level for each observed behavior.
 - Some OSH examples may be client-side or documentation examples rather than server behavior; the report must distinguish them.
-- Open question: Which OSH branch, release, or commit best represents current CSAPI server behavior?
-- Open question: Are there public OSH demo endpoints suitable for live API observation during the research report phase?
-- Open question: Which OSH behaviors are deliberate CSAPI interpretation choices versus legacy architecture outcomes?
-- Open question: Which OSH patterns are useful for Glaux Server despite the different implementation language and architecture?
+- Resolved for this study: OSH Core lightweight tag `v2.0.2` at commit `235c0eabf24b6d6137b499b4402943d2794b70e6` is the pinned current implementation baseline.
+- Resolved with limitation: the documented public demo was probed, but root, conformance, and systems requests returned HTTP 502 on August 31, 2026; no positive live behavior was inferred.
+- Resolved at study scope: deliberate intent, code-supported behavior, documented behavior, historical issue evidence, and bounded inference are classified separately; maintainer intent remains unstated where no source establishes it.
+- Resolved for handoff: typed store/handler/binding boundaries and historical/live streaming separation are reusable patterns; Java/OSGi lifecycle, fixed declarations, identifiers, and federated-write assumptions are not Glaux requirements.
 - Risk: Treating OSH implementation choices as standards obligations could distort the Glaux Server baseline.
 - Risk: Ignoring practical OSH lessons could cause avoidable interoperability or implementation issues.
 - Risk: Studying stale documentation without code or API evidence could produce incorrect conclusions.
