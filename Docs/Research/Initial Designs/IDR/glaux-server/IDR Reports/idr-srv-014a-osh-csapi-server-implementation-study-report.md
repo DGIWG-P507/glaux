@@ -1,7 +1,7 @@
 # Section 014A: OSH CSAPI Server Implementation Study - Research Report
 
 **Topic ID:** IDR-SRV-014A<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-014A OSH CSAPI Server Implementation Study](../IDR%20Plans/idr-srv-014a-osh-csapi-server-implementation-study.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 42 detailed questions; all six methodology phases, ten success criteria, nineteen required content areas, and twelve minimum implementation-findings fields are validated<br>
@@ -11,8 +11,8 @@
 **Supporting Resources:** OSH upstream issues and build evidence current through August 31, 2026; OS4CSAPI `phase-9` exemplars at `754411897173c2ec4debaa9bcf4ed9e0f8a9e230`; and the shared CSAPI upstream-history register<br>
 **Document Purpose:** Establish a reproducible OSH implementation findings baseline that Glaux can use for architecture, behavior, validation, interoperability, and test design without treating OSH as standards authority or copying its Java-specific structure<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 31, 2026<br>
 **Date:** August 31, 2026<br>
 **Last Updated:** August 31, 2026
 
@@ -691,10 +691,10 @@ The reproducible pins permit later code comparison even if upstream changes. The
 - [x] All nineteen required content areas and twelve matrix fields present.
 - [x] Commit-pinned code/docs/test study, bounded issue review, demo probes, and upstream-build verification completed.
 - [x] Findings reviewed for authority, scope, reproducibility, applicability, and downstream ownership.
-- [ ] Plan-owner acceptance of IDR-SRV-014A — pending Glaux Project Lead review.
+- [x] Plan-owner acceptance of IDR-SRV-014A — accepted by the Glaux Project Lead on August 31, 2026.
 
 **Research execution completed:** August 31, 2026<br>
-**Plan-owner acceptance:** Pending<br>
-**Next eligible topic after acceptance:** IDR-SRV-014B — Connected Systems Go CSAPI Server Implementation Study
+**Plan-owner acceptance:** August 31, 2026<br>
+**Next authorized topic:** IDR-SRV-014B — Connected Systems Go CSAPI Server Implementation Study
 
-The next two actions are plan-owner acceptance of this report, followed by authorization to execute exactly one next eligible topic. Under the established workflow, the Glaux Project Lead can perform both actions by replying `proceed`. That response will accept IDR-SRV-014A, finalize and merge its review branch, and begin exactly IDR-SRV-014B; it will not authorize IDR-SRV-014C or later work.
+The Glaux Project Lead accepted IDR-SRV-014A and authorized execution of exactly one next research topic, IDR-SRV-014B, on August 31, 2026. This records the completed transition; IDR-SRV-014B remains governed by its own report and acceptance gate.
