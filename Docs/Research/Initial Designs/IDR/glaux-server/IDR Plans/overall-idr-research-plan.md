@@ -1,6 +1,6 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 2.1<br>
+**Version:** 2.2<br>
 **Date:** August 31, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
@@ -562,6 +562,7 @@ The final report must:
 | 2026-08-31 | IDR-SRV-014B Research Completion | Completed the Connected Systems Go implementation study at upstream release `v1.0.4`, distinguished the OS4CSAPI audit fork and historical comparison fork, and placed the report in review | Provide a second evidence-rich CSAPI server implementation baseline for architecture, validation, conformance, interoperability, persistence, and test design | Pending Glaux Project Lead review |
 | 2026-08-31 | IDR-SRV-014B Acceptance and IDR-SRV-014C Authorization | Accepted the Connected Systems Go implementation study and authorized the bounded pygeoapi implementation-study iteration | Preserve the single-topic review boundary while continuing the implementation comparison sequence | Glaux Project Lead |
 | 2026-08-31 | IDR-SRV-014C Research Completion | Completed the pygeoapi/52°North CSAPI proof-of-concept study, distinguished core framework, dependency, standalone PoC, generated artifacts, and live deployments, and placed the report in review | Capture provider/configuration lessons and representation, consistency, validation, OpenAPI, security, and testing risks before Glaux model and persistence decisions | Pending Glaux Project Lead review |
+| 2026-08-31 | IDR-SRV-014C Acceptance and IDR-SRV-014D Authorization | Accepted the pygeoapi/52°North CSAPI proof-of-concept implementation study and authorized the bounded SECD implementation-study iteration | Preserve the single-topic review boundary while continuing the implementation comparison sequence | Glaux Project Lead |
 
 ---
 
@@ -570,7 +571,7 @@ The final report must:
 | Category | Topics | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|---|
 | A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 5/5 | 5/5 | Research Complete | 2026-07-31 | IDR-SRV-001 through IDR-SRV-005 reports complete and accepted. |
-| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 13/17 | 12/17 | Research In Progress | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014B reports are complete and accepted; the shared upstream-history register is Version 1.8; the IDR-SRV-014C report is complete and in review; IDR-SRV-014D through IDR-SRV-014G remain unstarted. |
+| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 13/17 | 13/17 | Research In Progress | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014C reports are complete and accepted; the shared upstream-history register is Version 1.8; IDR-SRV-014D is authorized and in progress; IDR-SRV-014E through IDR-SRV-014G remain unstarted. |
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
 | E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |

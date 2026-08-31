@@ -1,7 +1,7 @@
 # Section 014C: pygeoapi CSAPI Server Implementation Study - Research Report
 
 **Topic ID:** IDR-SRV-014C<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-014C pygeoapi CSAPI Server Implementation Study](../IDR%20Plans/idr-srv-014c-pygeoapi-csapi-server-implementation-study.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 41 detailed questions; all six methodology phases, ten success criteria, nineteen required content areas, and twelve minimum implementation-findings fields are validated<br>
@@ -11,8 +11,8 @@
 **Supporting Resources:** PoC tag `v0.6` at `835cacb36145da0f46eab4b689157e00d820191c`; OGC schema submodule commit `636277919d96d2274844ccb981b22119d01e2f9e`; repository issues, pull requests, workflows, and two dated deployment probes current through August 31, 2026<br>
 **Document Purpose:** Establish a reproducible pygeoapi/52°North CSAPI implementation findings baseline for Glaux architecture, configuration, persistence, representation, validation, conformance, interoperability, and test design without treating the framework or proof-of-concept as standards authority<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 31, 2026<br>
 **Date:** August 31, 2026<br>
 **Last Updated:** August 31, 2026
 
@@ -682,5 +682,5 @@ Oracle deployment, retrieved 2026-08-31:
 - [x] Recommendations are explicit and actionable
 - [x] Risks and open questions are documented
 - [x] Success criteria validation is complete
-- [ ] Plan-owner acceptance and acceptance date are recorded
+- [x] Plan-owner acceptance and acceptance date are recorded
 - [x] Next handoff is explicit
