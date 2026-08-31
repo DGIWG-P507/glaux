@@ -1,10 +1,10 @@
 # Section 014D: SECD CSAPI Server Implementation Study - Research Plan
 
 **Topic ID:** IDR-SRV-014D<br>
-**Status:** Planned  
-**Last Updated:** July 30, 2026<br>
+**Status:** Accepted<br>
+**Last Updated:** August 31, 2026<br>
 **Estimated Research Time:** 12-16.5 hours<br>
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 4.5 hours of AI-assisted elapsed execution on August 31, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014d-secd-csapi-server-implementation-study-report.md`
 
 ---
@@ -312,17 +312,17 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] SECD sources relevant to CSAPI behavior are identified with exact URLs, branches, commits, deployments, or dates.
-- [ ] Actual server source, server-authored live artifacts, maintainer statements, interoperability artifacts, historical snapshots, and inference are distinguished.
-- [ ] Observable API structure and explicitly declared architecture are summarized with source anchors and capture dates.
-- [ ] Internal modules, persistence, and implementation mechanisms are reported only where actual server source or maintainer documentation supports them; unavailable areas are marked `not verifiable`.
-- [ ] SECD Part 1 and Part 2 behavior is compared to the Glaux Server CSAPI baseline.
-- [ ] SECD conformance posture is assessed without assuming conformance beyond evidence.
-- [ ] SECD entry-point, navigation, query, representation, error, OpenAPI, dynamic-data, status, and tasking behavior are assessed where evidence exists.
-- [ ] Strengths, gaps, risks, and implementation-specific assumptions are identified.
-- [ ] Lessons for Glaux Server design, validation, testing, and interoperability are documented.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] SECD sources relevant to CSAPI behavior are identified with exact URLs, branches, commits, deployments, or dates.
+- [x] Actual server source, server-authored live artifacts, maintainer statements, interoperability artifacts, historical snapshots, and inference are distinguished.
+- [x] Observable API structure and explicitly declared architecture are summarized with source anchors and capture dates.
+- [x] Internal modules, persistence, and implementation mechanisms are reported only where actual server source or maintainer documentation supports them; unavailable areas are marked `not verifiable`.
+- [x] SECD Part 1 and Part 2 behavior is compared to the Glaux Server CSAPI baseline.
+- [x] SECD conformance posture is assessed without assuming conformance beyond evidence.
+- [x] SECD entry-point, navigation, query, representation, error, OpenAPI, dynamic-data, status, and tasking behavior are assessed where evidence exists.
+- [x] Strengths, gaps, risks, and implementation-specific assumptions are identified.
+- [x] Lessons for Glaux Server design, validation, testing, and interoperability are documented.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -402,18 +402,19 @@ The implementation findings matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 4.5 hours of AI-assisted elapsed execution on August 31, 2026<br>
+**Research Completion Date:** August 31, 2026<br>
+**Acceptance Date:** August 31, 2026
 
 ---
 
@@ -422,10 +423,11 @@ Update this section as work progresses.
 - SECD is an implementation study source, not a normative source.
 - The report must explicitly identify evidence level for each observed behavior.
 - This topic should focus on observable SECD server behavior and explicitly declared architecture; broader interoperability findings should be reserved for `IDR-SRV-014F`.
-- Open question: Is actual SECD server source or a maintainer-provided architecture artifact available when research starts? If not, record the limitation and proceed with the black-box scope without waiting or inferring.
-- Open question: What dated live API/OpenAPI capture best represents the deployment when this research executes?
-- Open question: Which behaviors are explicitly documented as deliberate, scaffold, fixture, or prototype behavior, and which remain `not verifiable`?
-- Open question: Which SECD fixtures or examples are useful for Glaux Server test-data strategy?
+- Resolved source boundary: no actual SECD server source, software release, license, test suite, or maintainer architecture artifact was found; the study therefore used the approved black-box scope and marked internal mechanisms not verifiable.
+- Resolved live baseline: read-only probes of the live API and OpenAPI on August 31, 2026 are the current deployment evidence; the evidence repository remains pinned at commit `f018fd129bf0d0d1ce75e68198e3ab4d99d937a0`.
+- Resolved intent boundary: the maintainer describes a starting drone/IPT prototype and open-source intent; intent for individual routes, schemas, divergences, persistence, and deployment mechanisms remains not verifiable.
+- Resolved fixture question: independently authored drone/sensor hierarchies, flight/bridge deployments, scalar/record/choice schemas, high-volume observations, history, commands, and deliberate link/query/negotiation divergences are recommended.
+- Resolved drift boundary: `/collections` and top-level Observation/Command reads now work despite contrary May captures; historical write and interoperability findings remain historical until IDR-SRV-014F reproduces them.
 - Risk: Treating SECD implementation choices as standards obligations could distort the Glaux Server baseline.
 - Risk: Ignoring practical SECD implementation lessons could cause avoidable API or test-design issues.
 - Risk: Studying interoperability notes as if they were implementation behavior could blur the boundary between this topic and `IDR-SRV-014F`.
