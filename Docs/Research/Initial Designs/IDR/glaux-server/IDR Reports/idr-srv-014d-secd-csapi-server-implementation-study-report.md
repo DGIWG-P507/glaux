@@ -1,7 +1,7 @@
 # Section 014D: SECD CSAPI Server Implementation Study - Research Report
 
 **Topic ID:** IDR-SRV-014D<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-014D SECD CSAPI Server Implementation Study](../IDR%20Plans/idr-srv-014d-secd-csapi-server-implementation-study.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 41 detailed questions; all six methodology phases, eleven success criteria, nineteen required content areas, and twelve minimum implementation-findings fields are validated<br>
@@ -11,8 +11,8 @@
 **Supporting Resources:** Accepted Glaux reports IDR-SRV-006 through IDR-SRV-014C; private SECD interoperability evidence repository metadata and captures; official OGC schema artifacts<br>
 **Document Purpose:** Establish an evidence-bounded SECD implementation-behavior baseline for Glaux architecture, resource modeling, discovery, navigation, representations, dynamic data, tasking, validation, documentation, and test design without inferring unavailable server internals or preempting IDR-SRV-014F interoperability adjudication<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 31, 2026<br>
 **Date:** August 31, 2026<br>
 **Last Updated:** August 31, 2026
 
@@ -801,9 +801,9 @@ The May snapshot and report card are immutable historical evidence. The August o
 ## Appendix C. Completion and Handoff
 
 - Research execution: complete.
-- Report state: In Review.
-- Plan-owner acceptance: pending.
-- Immediate review action: accept IDR-SRV-014D or request corrections.
+- Report state: Final.
+- Plan-owner acceptance: Glaux Project Lead, August 31, 2026.
+- Immediate next action: execute the authorized IDR-SRV-014E iteration.
 - Workflow boundary: the next plain proceed accepts/finalizes/merges IDR-SRV-014D and executes exactly IDR-SRV-014E; it does not authorize IDR-SRV-014F.
 - IDR-SRV-014E has not started.
 
@@ -824,5 +824,5 @@ The May snapshot and report card are immutable historical evidence. The August o
 - [x] Recommendations are explicit and actionable
 - [x] Risks and open questions are documented
 - [x] Success criteria validation is complete
-- [ ] Plan-owner acceptance and acceptance date are recorded
+- [x] Plan-owner acceptance and acceptance date are recorded
 - [x] Next handoff is explicit
