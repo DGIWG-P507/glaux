@@ -1,7 +1,7 @@
 # Section 014: OpenAPI Description and API Documentation Strategy - Research Report
 
 **Topic ID:** IDR-SRV-014<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-014 OpenAPI Description and API Documentation Strategy](../IDR%20Plans/idr-srv-014-openapi-description-and-api-documentation-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 36 detailed questions; all six methodology phases, ten success criteria, eighteen required content areas, and thirteen minimum OpenAPI/documentation-matrix fields are validated<br>
@@ -11,8 +11,8 @@
 **Supporting Resources:** Accepted IDR-SRV-006 through IDR-SRV-013 reports; official CSAPI tag `v1.0.0`; published modular packages and release bundles; the shared upstream-history register; current official issue/PR/release state; and official Redocly, Swagger UI, Scalar, Stoplight Elements, and OpenAPI Generator documentation<br>
 **Document Purpose:** Establish an implementation-usable machine-contract and human-documentation baseline for the Rust Glaux reference server without copying an incomplete example, overstating conformance, or binding the contract to one renderer or framework<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 31, 2026<br>
 **Date:** August 31, 2026<br>
 **Last Updated:** August 31, 2026
 
@@ -803,35 +803,45 @@ As of August 31, 2026:
 
 ## Appendix C. Proposed Decision Register
 
-| ID | Proposed decision | Status pending plan-owner review |
-|---|---|---|
-| P-014-001 | Canonical Glaux OAD uses OpenAPI 3.1.2. | Proposed |
-| P-014-002 | OAS 3.2 is monitored and adopted only through release-gated tool/runtime/client evidence. | Proposed |
-| P-014-003 | Glaux initially makes no Common/Features OAS 3.0 conformance claim. | Proposed |
-| P-014-004 | Any OAS 3.0.4 view is generated, consumer-driven, parity-tested, and non-authoritative. | Proposed |
-| P-014-005 | Each API root publishes one complete capability-filtered deployment OAD; modularity is internal/source organization. | Proposed |
-| P-014-006 | A typed contract registry drives or verifies routes, OAD, conformance, docs, and tests. | Proposed |
-| P-014-007 | Canonical release OAD output is generated and not independently hand-edited. | Proposed |
-| P-014-008 | Publish JSON `service-desc`, YAML alternate, HTML `service-doc`, immutable releases, and an offline package from one manifest. | Proposed |
-| P-014-009 | Distribution bundles close required dependencies while preserving cycles as references. | Proposed |
-| P-014-010 | Approved external schemas are vendored byte-for-byte with provenance/hashes; Glaux schemas use stable `$id`. | Proposed |
-| P-014-011 | Tools are pinned, network-allowlisted, resource-bounded, and independently cross-checked. | Proposed |
-| P-014-012 | Every operation has a stable unique `operationId` and complete operation-specific contract metadata. | Proposed |
-| P-014-013 | Baseline custom extensions are limited to `x-glaux-requirements` and `x-glaux-maturity`. | Proposed |
-| P-014-014 | Future/unimplemented behavior is absent; experimental and deprecated behavior follows explicit marking/profile rules. | Proposed |
-| P-014-015 | Production docs provisionally use pinned self-hosted Redoc CE 3.x after corpus acceptance; Swagger UI is the independent test/dev renderer; Scalar is fallback. | Proposed |
-| P-014-016 | Production interactive mutation is disabled by default and subject to later security authorization. | Proposed |
-| P-014-017 | Strict parsing, reference closure, bidirectional runtime parity, semantic diff, schema/examples, render/link, clients, and ATS are layered release gates. | Proposed |
-| P-014-018 | No ordinary per-user OAD is generated; materially different visibility uses a small set of named policy profiles. | Proposed |
-| P-014-019 | Official CSAPI artifacts and #200 are retained as provenance and negative/regression fixtures, not copied as Glaux contracts. | Proposed |
-| P-014-020 | IDR-SRV-014A begins only after explicit plan-owner acceptance of this report. | Proposed |
+The Glaux Project Lead accepted every entry on August 31, 2026.
+
+| ID | Decision | Status | Acceptance owner |
+|---|---|---|---|
+| P-014-001 | Canonical Glaux OAD uses OpenAPI 3.1.2. | Accepted | Glaux Project Lead |
+| P-014-002 | OAS 3.2 is monitored and adopted only through release-gated tool/runtime/client evidence. | Accepted | Glaux Project Lead |
+| P-014-003 | Glaux initially makes no Common/Features OAS 3.0 conformance claim. | Accepted | Glaux Project Lead |
+| P-014-004 | Any OAS 3.0.4 view is generated, consumer-driven, parity-tested, and non-authoritative. | Accepted | Glaux Project Lead |
+| P-014-005 | Each API root publishes one complete capability-filtered deployment OAD; modularity is internal/source organization. | Accepted | Glaux Project Lead |
+| P-014-006 | A typed contract registry drives or verifies routes, OAD, conformance, docs, and tests. | Accepted | Glaux Project Lead |
+| P-014-007 | Canonical release OAD output is generated and not independently hand-edited. | Accepted | Glaux Project Lead |
+| P-014-008 | Publish JSON `service-desc`, YAML alternate, HTML `service-doc`, immutable releases, and an offline package from one manifest. | Accepted | Glaux Project Lead |
+| P-014-009 | Distribution bundles close required dependencies while preserving cycles as references. | Accepted | Glaux Project Lead |
+| P-014-010 | Approved external schemas are vendored byte-for-byte with provenance/hashes; Glaux schemas use stable `$id`. | Accepted | Glaux Project Lead |
+| P-014-011 | Tools are pinned, network-allowlisted, resource-bounded, and independently cross-checked. | Accepted | Glaux Project Lead |
+| P-014-012 | Every operation has a stable unique `operationId` and complete operation-specific contract metadata. | Accepted | Glaux Project Lead |
+| P-014-013 | Baseline custom extensions are limited to `x-glaux-requirements` and `x-glaux-maturity`. | Accepted | Glaux Project Lead |
+| P-014-014 | Future/unimplemented behavior is absent; experimental and deprecated behavior follows explicit marking/profile rules. | Accepted | Glaux Project Lead |
+| P-014-015 | Production docs provisionally use pinned self-hosted Redoc CE 3.x after corpus acceptance; Swagger UI is the independent test/dev renderer; Scalar is fallback. | Accepted | Glaux Project Lead |
+| P-014-016 | Production interactive mutation is disabled by default and subject to later security authorization. | Accepted | Glaux Project Lead |
+| P-014-017 | Strict parsing, reference closure, bidirectional runtime parity, semantic diff, schema/examples, render/link, clients, and ATS are layered release gates. | Accepted | Glaux Project Lead |
+| P-014-018 | No ordinary per-user OAD is generated; materially different visibility uses a small set of named policy profiles. | Accepted | Glaux Project Lead |
+| P-014-019 | Official CSAPI artifacts and #200 are retained as provenance and negative/regression fixtures, not copied as Glaux contracts. | Accepted | Glaux Project Lead |
+| P-014-020 | IDR-SRV-014A begins only after explicit plan-owner acceptance of this report. | Accepted | Glaux Project Lead |
+
+The acceptance recorded here authorizes these recommendations as the Glaux planning baseline while preserving every downstream ownership boundary and unresolved item stated in this report.
 
 ## Appendix D. Completion and Handoff
 
-All six research phases, all ten success criteria, all required content areas, all five core questions, all thirty-six detailed questions, and all thirteen matrix fields are complete. The report, plan checklist, overall progress table, and upstream-history register have been prepared for project-lead review.
+- [x] Exactly one research topic executed: IDR-SRV-014.
+- [x] All five core and thirty-six detailed questions answered.
+- [x] All six methodology phases and ten success criteria satisfied.
+- [x] All eighteen required content areas and thirteen matrix fields present.
+- [x] Immutable artifact comparison, bounded history refresh, and tool probes completed.
+- [x] Report reviewed for scope, authority, security, reproducibility, and downstream ownership.
+- [x] Plan-owner acceptance of IDR-SRV-014 — accepted by the Glaux Project Lead on August 31, 2026.
 
-**Acceptance state:** Pending Glaux Project Lead review.
+**Research execution completed:** August 31, 2026<br>
+**Plan-owner acceptance:** August 31, 2026<br>
+**Next authorized topic:** IDR-SRV-014A — OSH CSAPI Server Implementation Study
 
-**Next authorized topic after acceptance:** `IDR-SRV-014A — OSH CSAPI Server Implementation Study`.
-
-**Iteration boundary:** Do not begin IDR-SRV-014A until the Glaux Project Lead explicitly accepts IDR-SRV-014 and says `proceed`.
+The Glaux Project Lead accepted IDR-SRV-014 and authorized execution of exactly one next research topic, IDR-SRV-014A, on August 31, 2026. This records the completed transition; IDR-SRV-014A remains governed by its own report and acceptance gate.
