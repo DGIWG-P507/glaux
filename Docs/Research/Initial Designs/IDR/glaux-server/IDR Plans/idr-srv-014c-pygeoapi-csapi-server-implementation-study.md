@@ -1,9 +1,9 @@
 # Section 014C: pygeoapi CSAPI Server Implementation Study - Research Plan
 
-**Status:** Planned  
-**Last Updated:** June 8, 2026  
+**Status:** Accepted<br>
+**Last Updated:** August 31, 2026<br>
 **Estimated Research Time:** 12-16 hours  
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 4.5 hours of AI-assisted elapsed execution on August 31, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014c-pygeoapi-csapi-server-implementation-study-report.md`
 
 ---
@@ -306,16 +306,16 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] pygeoapi sources relevant to CSAPI behavior are identified with exact URLs, branches, tags, commits, deployments, or dates.
-- [ ] Core framework behavior, CSAPI-specific behavior, providers, plugins, configurations, tests, demos, documentation-only material, and inferred behavior are distinguished.
-- [ ] pygeoapi architecture, provider model, configuration model, and documentation behavior are summarized.
-- [ ] pygeoapi Part 1 and Part 2 behavior is compared to the Glaux Server CSAPI baseline.
-- [ ] pygeoapi conformance posture is assessed without assuming conformance beyond evidence.
-- [ ] pygeoapi entry-point, navigation, query, representation, error, OpenAPI, dynamic-data, status, and tasking behavior are assessed where evidence exists.
-- [ ] Strengths, gaps, risks, and implementation-specific assumptions are identified.
-- [ ] Lessons for Glaux Server design, validation, testing, and interoperability are documented.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] pygeoapi sources relevant to CSAPI behavior are identified with exact URLs, branches, tags, commits, deployments, or dates.
+- [x] Core framework behavior, CSAPI-specific behavior, providers, plugins, configurations, tests, demos, documentation-only material, and inferred behavior are distinguished.
+- [x] pygeoapi architecture, provider model, configuration model, and documentation behavior are summarized.
+- [x] pygeoapi Part 1 and Part 2 behavior is compared to the Glaux Server CSAPI baseline.
+- [x] pygeoapi conformance posture is assessed without assuming conformance beyond evidence.
+- [x] pygeoapi entry-point, navigation, query, representation, error, OpenAPI, dynamic-data, status, and tasking behavior are assessed where evidence exists.
+- [x] Strengths, gaps, risks, and implementation-specific assumptions are identified.
+- [x] Lessons for Glaux Server design, validation, testing, and interoperability are documented.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -397,18 +397,19 @@ The implementation findings matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 4.5 hours of AI-assisted elapsed execution on August 31, 2026<br>
+**Research Completion Date:** August 31, 2026<br>
+**Acceptance Date:** August 31, 2026
 
 ---
 
@@ -417,10 +418,10 @@ Update this section as work progresses.
 - pygeoapi is an implementation study source, not a normative source.
 - The report must explicitly identify evidence level for each observed behavior.
 - pygeoapi core behavior and any CSAPI-specific extension, fork, branch, plugin, configuration, or demo behavior must be distinguished.
-- Open question: Which pygeoapi branch, fork, plugin, or configuration best represents current CSAPI server behavior?
-- Open question: Are there public pygeoapi CSAPI demo endpoints suitable for live API observation during the research report phase?
-- Open question: Which pygeoapi behavior is deliberate CSAPI interpretation versus general OGC API framework behavior?
-- Open question: Which pygeoapi provider/configuration patterns are useful for Glaux Server fixtures, demos, and integration scenarios?
+- Resolved baseline: geopython pygeoapi `0.24.0` is the current core-framework comparison; 52°North PoC main commit `6ad75aa7fbfc76517c8a24c21446471845007855` is the current CSAPI code baseline; `v0.6` is the last immutable tag; and the actual framework dependency is upstream-history commit `ec1eb38d9a64d93ec9a2e1b9db6fea6dc05f194a` (`0.22.dev0`).
+- Resolved deployment question: the Oracle-hosted endpoint was available for bounded GET observations but reports stale/unknown `0.16.dev0` metadata; the 52°North demo failed TLS validation. Neither deployment is treated as current-main proof.
+- Resolved boundary: core framework, dependency pin, custom standalone PoC service, configuration, generated artifacts, and live deployment behavior are classified separately.
+- Resolved pattern question: typed provider boundaries, pinned schema bundles, deterministic fixtures, and separate static/live integration layers are useful; representation-specific truth, untyped configuration, and demo-dependent testing are not.
 - Risk: Treating pygeoapi implementation choices as standards obligations could distort the Glaux Server baseline.
 - Risk: Ignoring pygeoapi provider/configuration lessons could cause avoidable implementation or interoperability issues.
 - Risk: Studying stale branches, demos, or documentation without evidence classification could produce incorrect conclusions.
