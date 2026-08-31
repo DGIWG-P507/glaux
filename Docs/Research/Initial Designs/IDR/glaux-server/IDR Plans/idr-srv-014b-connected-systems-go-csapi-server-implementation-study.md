@@ -1,9 +1,9 @@
 # Section 014B: Connected Systems Go CSAPI Server Implementation Study - Research Plan
 
-**Status:** Planned  
-**Last Updated:** June 8, 2026  
+**Status:** Accepted<br>
+**Last Updated:** August 31, 2026<br>
 **Estimated Research Time:** 12-16 hours  
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 4.5 hours of AI-assisted elapsed execution on August 31, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014b-connected-systems-go-csapi-server-implementation-study-report.md`
 
 ---
@@ -294,16 +294,16 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] CS-GO sources relevant to CSAPI behavior are identified with exact URLs, branches, tags, commits, or dates.
-- [ ] Server code, generated code, fixtures, documentation, tests, demos, and inferred behavior are distinguished.
-- [ ] CS-GO architecture and module boundaries are summarized.
-- [ ] CS-GO Part 1 and Part 2 behavior is compared to the Glaux Server CSAPI baseline.
-- [ ] CS-GO conformance posture is assessed without assuming conformance beyond evidence.
-- [ ] CS-GO entry-point, navigation, query, representation, error, OpenAPI, dynamic-data, status, and tasking behavior are assessed where evidence exists.
-- [ ] Strengths, gaps, risks, and implementation-specific assumptions are identified.
-- [ ] Lessons for Glaux Server design, validation, testing, and interoperability are documented.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] CS-GO sources relevant to CSAPI behavior are identified with exact URLs, branches, tags, commits, or dates.
+- [x] Server code, generated code, fixtures, documentation, tests, demos, and inferred behavior are distinguished.
+- [x] CS-GO architecture and module boundaries are summarized.
+- [x] CS-GO Part 1 and Part 2 behavior is compared to the Glaux Server CSAPI baseline.
+- [x] CS-GO conformance posture is assessed without assuming conformance beyond evidence.
+- [x] CS-GO entry-point, navigation, query, representation, error, OpenAPI, dynamic-data, status, and tasking behavior are assessed where evidence exists.
+- [x] Strengths, gaps, risks, and implementation-specific assumptions are identified.
+- [x] Lessons for Glaux Server design, validation, testing, and interoperability are documented.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -385,18 +385,19 @@ The implementation findings matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 4.5 hours of AI-assisted elapsed execution on August 31, 2026<br>
+**Research Completion Date:** August 31, 2026<br>
+**Acceptance Date:** August 31, 2026
 
 ---
 
@@ -406,10 +407,10 @@ Update this section as work progresses.
 - The report must explicitly identify evidence level for each observed behavior.
 - The OS4CSAPI fork and upstream/personal forks should be distinguished carefully.
 - Some repository behavior may be sample/demo behavior rather than general server behavior.
-- Open question: Which branch or commit best represents the current CS-GO server baseline?
-- Open question: Are there public CS-GO demo endpoints suitable for live API observation during the research report phase?
-- Open question: Which CS-GO behavior is deliberate standards interpretation versus scaffold or prototype behavior?
-- Open question: Which CS-GO fixtures or examples are useful for Glaux Server test-data strategy?
+- Resolved baseline: upstream release `v1.0.4` at `244f4dd586da685d4d9b75e43f73001028b5bd0e` is the current runtime baseline; OS4CSAPI commit `e900da88738cca92872038b703c4ad537fc0c8fd` is audit evidence; mvanhorn commit `6665c737f1857b24741237a37779aee03cf3d694` is historical provenance only.
+- Resolved demo question: repository-referenced endpoint candidates returned HTTP 404 on August 31, 2026, so no positive live behavior was established.
+- Resolved classification approach: code, tests, documentation, generated artifacts, history, live observations, and analyst inference are classified separately in the report; deliberate-versus-prototype intent remains open only where sources do not decide it.
+- Resolved fixture question: schema, example, and historical-defect fixtures are useful only after commit, license, approved-schema, validity, and expected-outcome provenance is recorded.
 - Risk: Treating CS-GO implementation choices as standards obligations could distort the Glaux Server baseline.
 - Risk: Ignoring practical CS-GO lessons could cause avoidable API or test-design issues.
 - Risk: Studying stale forks or unreviewed branches without evidence classification could produce incorrect conclusions.
