@@ -1,7 +1,7 @@
 # Section 013: Error Model, HTTP Status Codes, and Failure Semantics - Research Report
 
 **Topic ID:** IDR-SRV-013<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-013 Error Model, HTTP Status Codes, and Failure Semantics](../IDR%20Plans/idr-srv-013-error-model-http-status-codes-and-failure-semantics.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 47 detailed questions; all six methodology phases, nine success criteria, eighteen required content areas, and thirteen minimum error-matrix fields are validated<br>
@@ -11,10 +11,10 @@
 **Supporting Resources:** Accepted IDR-SRV-006 through IDR-SRV-012 reports; official CSAPI tag `v1.0.0`; tagged modular OAS, schemas, and ATS; a pinned current Features Part 4 draft; the shared upstream-history register; and current official issue/PR state<br>
 **Document Purpose:** Establish a plain-language, implementation-usable failure contract for the Rust Glaux reference server without turning an example artifact, draft convention, or security-sensitive detail into a standards obligation<br>
 **Author:** OpenAI Codex, with independent read-only Part 1/Features, Part 2/dynamic-data, and HTTP/security/interoperability audits<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 31, 2026<br>
 **Date:** August 2, 2026<br>
-**Last Updated:** August 2, 2026
+**Last Updated:** August 31, 2026
 
 ---
 
@@ -1078,28 +1078,30 @@ Issue and pull-request discussion is H evidence. It becomes controlling only thr
 
 ## Appendix C. Proposed Decision Register
 
+The Glaux Project Lead accepted every entry on August 31, 2026.
+
 | Decision | Short label | Status | Acceptance owner |
 |---|---|---|---|
-| P-013-01 | RFC 9457 response baseline | Pending | Glaux Project Lead |
-| P-013-02 | Stable problem-type registry | Pending | Glaux Project Lead |
-| P-013-03 | Deterministic authority/selection order | Pending | Glaux Project Lead |
-| P-013-04 | Direct CSAPI `400`/`409` mapping | Pending | Glaux Project Lead |
-| P-013-05 | `400`/`415`/`422` boundary | Pending | Glaux Project Lead |
-| P-013-06 | `401`/`403`/concealed `404` boundary | Pending | Glaux Project Lead |
-| P-013-07 | Empty query is successful | Pending | Glaux Project Lead |
-| P-013-08 | Headers and conservative caching | Pending | Glaux Project Lead |
-| P-013-09 | HTTP/domain-task two-plane rule | Pending | Glaux Project Lead |
-| P-013-10 | Origin/gateway dependency mapping | Pending | Glaux Project Lead |
-| P-013-11 | Retry never implies unsafe replay | Pending | Glaux Project Lead |
-| P-013-12 | `429`/`503` limit boundary | Pending | Glaux Project Lead |
-| P-013-13 | Single operation-level error catalog | Pending | Glaux Project Lead |
-| P-013-14 | Rebuild tagged OAS error material | Pending | Glaux Project Lead |
-| P-013-15 | Fixtures and negative/fault tests | Pending | Glaux Project Lead |
-| P-013-16 | Bounded upstream-history monitoring | Pending | Glaux Project Lead |
-| P-013-17 | No invented generic partial-failure codes | Pending | Glaux Project Lead |
-| P-013-18 | Sanitized public detail and opaque correlation | Pending | Glaux Project Lead |
+| P-013-01 | RFC 9457 response baseline | Accepted | Glaux Project Lead |
+| P-013-02 | Stable problem-type registry | Accepted | Glaux Project Lead |
+| P-013-03 | Deterministic authority/selection order | Accepted | Glaux Project Lead |
+| P-013-04 | Direct CSAPI `400`/`409` mapping | Accepted | Glaux Project Lead |
+| P-013-05 | `400`/`415`/`422` boundary | Accepted | Glaux Project Lead |
+| P-013-06 | `401`/`403`/concealed `404` boundary | Accepted | Glaux Project Lead |
+| P-013-07 | Empty query is successful | Accepted | Glaux Project Lead |
+| P-013-08 | Headers and conservative caching | Accepted | Glaux Project Lead |
+| P-013-09 | HTTP/domain-task two-plane rule | Accepted | Glaux Project Lead |
+| P-013-10 | Origin/gateway dependency mapping | Accepted | Glaux Project Lead |
+| P-013-11 | Retry never implies unsafe replay | Accepted | Glaux Project Lead |
+| P-013-12 | `429`/`503` limit boundary | Accepted | Glaux Project Lead |
+| P-013-13 | Single operation-level error catalog | Accepted | Glaux Project Lead |
+| P-013-14 | Rebuild tagged OAS error material | Accepted | Glaux Project Lead |
+| P-013-15 | Fixtures and negative/fault tests | Accepted | Glaux Project Lead |
+| P-013-16 | Bounded upstream-history monitoring | Accepted | Glaux Project Lead |
+| P-013-17 | No invented generic partial-failure codes | Accepted | Glaux Project Lead |
+| P-013-18 | Sanitized public detail and opaque correlation | Accepted | Glaux Project Lead |
 
-No acceptance box is checked by the researcher. The project lead may accept the report as a whole, return a specific decision for revision, or record an explicit exception.
+The acceptance recorded here authorizes these recommendations as the Glaux planning baseline while preserving every downstream ownership boundary and unresolved item stated in this report.
 
 ---
 
@@ -1116,15 +1118,10 @@ No acceptance box is checked by the researcher. The project lead may accept the 
 - [x] Official tagged OAS, schema/reference integrity, normative ATS, current draft dependency, and bounded issue/PR history reviewed.
 - [x] Three independent read-only evidence reviews reconciled.
 - [x] Report reviewed for scope, coverage, source authority, disclosure risk, and downstream ownership.
-- [ ] Plan-owner acceptance of IDR-SRV-013.
+- [x] Plan-owner acceptance of IDR-SRV-013 — accepted by the Glaux Project Lead on August 31, 2026.
 
 **Research execution completed:** August 2, 2026
-**Plan-owner acceptance:** Pending Glaux Project Lead review
-**Next topic not started:** IDR-SRV-014 — OpenAPI Description and API Documentation Strategy
+**Plan-owner acceptance:** August 31, 2026
+**Next authorized topic:** IDR-SRV-014 — OpenAPI Description and API Documentation Strategy
 
-Under the project's transition rule, the next two actions are:
-
-1. the Glaux Project Lead accepts or returns IDR-SRV-013; and
-2. after acceptance, the Glaux Project Lead authorizes execution of exactly one next topic, IDR-SRV-014.
-
-The combined transition instruction is: **“Approve IDR-SRV-013 and execute exactly one Glaux Server research plan: IDR-SRV-014.”**
+The Glaux Project Lead accepted IDR-SRV-013 and authorized execution of exactly one next research topic, IDR-SRV-014, on August 31, 2026. This records the completed transition; IDR-SRV-014 remains governed by its own report and acceptance gate.

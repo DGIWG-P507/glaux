@@ -1,7 +1,7 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 1.4<br>
-**Date:** August 2, 2026<br>
+**Version:** 1.5<br>
+**Date:** August 31, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
@@ -567,7 +567,7 @@ The final report must:
 | Category | Topics | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|---|
 | A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 5/5 | 5/5 | Research Complete | 2026-07-31 | IDR-SRV-001 through IDR-SRV-005 reports complete and accepted. |
-| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 9/17 | 8/17 | Research In Progress | 2026-08-02 | IDR-SRV-006 through IDR-SRV-012 reports are complete and accepted; IDR-SRV-013 research is complete and its report is in review with plan-owner acceptance pending; the shared upstream-history register is refreshed to Version 1.7; later topics remain unstarted. |
+| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 10/17 | 9/17 | Research In Progress | 2026-08-31 | IDR-SRV-006 through IDR-SRV-013 reports are complete and accepted; IDR-SRV-014 research is complete and its report is in review with plan-owner acceptance pending; the shared upstream-history register is refreshed to Version 1.8; IDR-SRV-014A through IDR-SRV-014G remain unstarted. |
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
 | E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
