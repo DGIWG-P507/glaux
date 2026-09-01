@@ -1,7 +1,7 @@
 # Section 014F: SECD Interoperability Findings Study - Research Report
 
 **Topic ID:** IDR-SRV-014F<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-014F SECD Interoperability Findings Study](../IDR%20Plans/idr-srv-014f-secd-interoperability-findings-study.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 27 detailed questions; all six methodology phases, nine success criteria, seventeen required content areas, and thirteen minimum findings-matrix fields are validated<br>
@@ -12,8 +12,8 @@
 **Client Baseline:** `OS4CSAPI/ogc-client-CSAPI_2`, branch `phase-9`, commit `754411897173c2ec4debaa9bcf4ed9e0f8a9e230`, package `@camptocamp/ogc-client` `1.3.1-dev`<br>
 **Document Purpose:** Convert the SECD interoperability corpus into freshness-qualified Glaux requirements, risks, validation cases, fixture needs, and downstream handoffs without treating an implementation, client, report-card grade, or test harness as normative authority<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 31, 2026<br>
 **Date:** August 31, 2026<br>
 **Last Updated:** August 31, 2026
 
@@ -737,11 +737,6 @@ top-level /observations and /commands: declared and present
 
 ## Appendix C. Completion and Handoff
 
-IDR-SRV-014F is complete and submitted for plan-owner review. The report is evidence-bounded, drift-qualified, standards-aligned, and ready to inform later model, validation, lifecycle, fixture, conformance, and interoperability topics.
+IDR-SRV-014F is complete and accepted by the plan owner. The report is evidence-bounded, drift-qualified, standards-aligned, and ready to inform later model, validation, lifecycle, fixture, conformance, and interoperability topics.
 
-The next two actions are:
-
-1. Plan-owner acceptance of IDR-SRV-014F.
-2. Authorization to execute exactly one next eligible topic, IDR-SRV-014G.
-
-Per the established iterative workflow, the project lead may perform both actions by replying **`proceed`**. That acceptance instruction has not yet been given; IDR-SRV-014G remains unstarted.
+The plan owner accepted IDR-SRV-014F and authorized execution of exactly one next eligible topic, IDR-SRV-014G, on August 31, 2026. This acceptance does not authorize IDR-SRV-015 or any later topic.
