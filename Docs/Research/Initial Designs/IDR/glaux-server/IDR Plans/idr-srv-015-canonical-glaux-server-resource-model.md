@@ -42,7 +42,7 @@ This topic follows the standards baseline and implementation-observation block:
 
 - `IDR-SRV-001` through `IDR-SRV-005`: STANAG 4789 / AEP-4789 and standards-package baseline
 - `IDR-SRV-006` through `IDR-SRV-014`: CSAPI, API behavior, conformance, query, representation, error, and OpenAPI baseline
-- `IDR-SRV-014A` through `IDR-SRV-014G`: implementation studies, smoke-test findings, interoperability findings, and community lessons
+- `IDR-SRV-014A` through `IDR-SRV-014H`: implementation studies, smoke-test findings, interoperability findings, community lessons, and the draft Part 3 adoption-readiness baseline
 
 Those topics establish what must be implemented, how the API behaves, and what practical implementation lessons should be considered. This topic starts Category C: Server Resource and Domain Model. It synthesizes prior findings into the canonical Glaux Server resource model that later topics will refine into identifier strategy, relationships, temporal semantics, registration/update behavior, status/events, persistence, validation, and tests.
 
@@ -185,7 +185,7 @@ The future research report must analyze these sources directly.
 
 ### Prior IDR Topic Sources
 
-- `IDR-SRV-001` through `IDR-SRV-014G` research reports, once complete:
+- Accepted `IDR-SRV-001` through `IDR-SRV-014H` research reports:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/`
 
 ### Controlling Standards Sources
@@ -221,6 +221,7 @@ Use the implementation-study outputs and source repositories to inform non-norma
 - OS4CSAPI Client Smoke Test Findings and `IDR-SRV-014E`
 - SECD Interoperability Findings and `IDR-SRV-014F`
 - OS4CSAPI Discussions Lessons-Learned and `IDR-SRV-014G`
+- Draft CSAPI Part 3 Publish/Subscribe and Implementation Study and `IDR-SRV-014H`
 - OS4CSAPI organization: https://github.com/OS4CSAPI
 - OS4CSAPI client work: https://github.com/OS4CSAPI/ogc-client-CSAPI_2
 - SECD interoperability repository: https://github.com/Sam-Bolling/csapi-server-interop-secd
@@ -326,7 +327,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 **Tasks:**
 
-1. Review `IDR-SRV-014A` through `IDR-SRV-014G` findings for resource-model lessons.
+1. Review `IDR-SRV-014A` through `IDR-SRV-014H` findings for resource-model lessons, including Part 3 resource-reference, lifecycle-event, envelope, and implementation-divergence constraints without adopting an external topic binding.
 2. Identify implementation patterns to adopt, avoid, or further investigate.
 3. Identify persistence and indexing implications without designing the database.
 4. Identify schema validation and resource-shape implications.
@@ -419,7 +420,7 @@ The canonical resource-model matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` through `IDR-SRV-014G` research reports should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-001` through `IDR-SRV-014H` research reports must be complete and accepted before this topic starts.
 - Official CSAPI Part 1 and Part 2, OGC API - Features, SensorML, SWE Common, OGC schemas, OpenAPI artifacts, and project-available AEP-4789 material must be reachable or explicitly marked unavailable.
 - Research report template must be available.
 

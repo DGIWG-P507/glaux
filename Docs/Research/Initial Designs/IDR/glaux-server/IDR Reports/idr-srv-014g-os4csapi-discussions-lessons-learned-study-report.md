@@ -1,7 +1,7 @@
 # Section 014G: OS4CSAPI Discussions Lessons-Learned Study - Research Report
 
 **Topic ID:** IDR-SRV-014G<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-014G OS4CSAPI Discussions Lessons-Learned Study](../IDR%20Plans/idr-srv-014g-os4csapi-discussions-lessons-learned-study.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core and 34 detailed questions; all six methodology phases, nine success criteria, sixteen required content areas, and twelve minimum lessons-matrix fields are validated<br>
@@ -11,8 +11,8 @@
 **Supporting Baseline:** Accepted Glaux reports IDR-SRV-006 through IDR-SRV-014F; OS4CSAPI phase-9 client at `754411897173c2ec4debaa9bcf4ed9e0f8a9e230`; official CSAPI `v1.0.0`; upstream-history register version 1.8<br>
 **Document Purpose:** Convert informal OS4CSAPI experience into evidence-qualified Glaux design, validation, documentation, fixture, conformance, and interoperability handoffs without treating discussion, popularity, prototype claims, or proposed architecture as normative or implemented fact<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 31, 2026<br>
 **Date:** August 31, 2026<br>
 **Last Updated:** August 31, 2026
 
@@ -657,11 +657,11 @@ Discussions #41–#43 total approximately 268,000 characters and explicitly use 
 
 ## Appendix C. Completion and Handoff
 
-IDR-SRV-014G is complete and submitted for plan-owner review. This closes the Category B implementation-and-lessons evidence block at report level while preserving acceptance as a separate governance action.
+IDR-SRV-014G is complete and was accepted by the Glaux Project Lead on August 31, 2026. Its evidence remains authoritative for downstream Glaux planning within the source and scope limits stated in this report.
 
 The next two actions are:
 
-1. Plan-owner acceptance of IDR-SRV-014G.
-2. Authorization to execute exactly one next eligible topic, IDR-SRV-015.
+1. Plan-owner acceptance of the planning amendment that inserts `IDR-SRV-014H` and revises the later Part 3 decision boundary.
+2. Authorization to execute exactly one next eligible topic, `IDR-SRV-014H`.
 
-Per the established iterative workflow, the project lead may perform both actions by replying **`proceed`**. That instruction has not yet been given; IDR-SRV-015 remains unstarted.
+Per the established iterative workflow, the project lead may perform both actions by replying **`proceed`** after the planning amendment is placed in review. Part 3 research and `IDR-SRV-015` both remain unstarted.

@@ -1,7 +1,7 @@
 # Section 035: Streaming and Event Publication Strategy - Research Plan
 
 **Status:** Planned  
-**Last Updated:** August 1, 2026<br>
+**Last Updated:** August 31, 2026<br>
 **Estimated Research Time:** 16-20 hours<br>
 **Actual Research Time:** TBD until complete  
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-035-streaming-and-event-publication-strategy-report.md`
@@ -42,18 +42,21 @@ The research must answer:
 - How should Glaux Server handle durable persistence before publication, event ordering, delivery guarantees, duplicate prevention, subscription resume, replay, backpressure, fanout, filtering, authorization, and policy/releasability?
 - How should streaming interact with ingestion normalization, time-series storage, latest-value views, system events, command/control lifecycle, DDIL caching/synchronization, source trust, observability, performance testing, conformance testing, and external clients?
 
-The output must be a streaming and event publication strategy baseline with source anchors, event taxonomy, publication-pattern evaluation, durable-event/outbox guidance, subscription and replay semantics, delivery and ordering guidance, policy/security implications, downstream handoffs, and recommendations for Glaux Server.
+The research must also make the final Glaux planning decision to **adopt, experimentally profile, monitor, defer, or reject** draft CSAPI Part 3 support based on the accepted `IDR-SRV-014H` baseline and any material upstream delta. If support is carried forward, the report must define the exact draft/version pin, compatibility or capability declaration, feature-gating posture, conformance-claim boundary, adapter boundary, generated-contract expectation, migration policy, and implementation sequencing needed to keep mutable draft behavior isolated from approved Parts 1 and 2.
+
+The output must be a streaming and event publication strategy baseline with source anchors, event taxonomy, publication-pattern evaluation, durable-event/outbox guidance, subscription and replay semantics, delivery and ordering guidance, policy/security implications, an explicit Part 3 adoption/profile decision, downstream handoffs, and recommendations for Glaux Server.
 
 ### Why This Topic Order
 
 This topic follows:
 
+- `IDR-SRV-014H: Draft CSAPI Part 3 Publish/Subscribe and Implementation Study`
 - `IDR-SRV-031: Server Write and Ingestion Model`
 - `IDR-SRV-032: Publisher-to-Server Contract Boundary`
 - `IDR-SRV-033: Simulator-to-Server Contract Boundary`
 - `IDR-SRV-034: Datastream, Observation, and Status Update Semantics`
 
-`IDR-SRV-031` defines how dynamic records are received, validated, normalized, and persisted; `IDR-SRV-032` and `IDR-SRV-033` specialize publisher and simulator traffic. `IDR-SRV-034` defines what datastreams, observations, status updates, latest values, and dynamic records mean after ingestion. This topic defines when and how those persisted or state-changing records should be published as live events or streams. It must precede command lifecycle, feasibility, command authorization/safety/audit, DDIL synchronization, observability, performance testing, and interoperability testing because all of those depend on clear event and publication semantics.
+`IDR-SRV-014H` establishes the early authority, completeness, implementation-divergence, interoperability, and adoption-readiness evidence for the mutable Part 3 draft without selecting the Glaux architecture. `IDR-SRV-031` defines how dynamic records are received, validated, normalized, and persisted; `IDR-SRV-032` and `IDR-SRV-033` specialize publisher and simulator traffic. `IDR-SRV-034` defines what datastreams, observations, status updates, latest values, and dynamic records mean after ingestion. This topic can therefore decide when and how those persisted or state-changing records should be published and whether a pinned Part 3 profile fits that architecture. It must precede command lifecycle, feasibility, command authorization/safety/audit, DDIL synchronization, observability, performance testing, and interoperability testing because all of those depend on clear event and publication semantics.
 
 ### Critical Constraints
 
@@ -66,6 +69,9 @@ This topic follows:
 - Do not finalize security/policy architecture here. Identify streaming-specific security and releasability implications and hand detailed policy work to Category G.
 - Approved CSAPI Part 2 assigns publish/subscribe bindings to Part 3 and does not make its packaged AsyncAPI file normative. Analyze the Part 2 AsyncAPI and Part 3 working material as informative/draft evidence only unless a later approved publication changes their status.
 - Trace material Part 3 and AsyncAPI interpretations through the shared upstream-history register, preserving open/unmerged status and never treating a recorded proposal as an approved binding.
+- Use the accepted `IDR-SRV-014H` report as the starting Part 3 and implementation baseline. Refresh only material deltas in the official draft, CS-Go, OSH, and linked issue/PR state rather than repeating the entire early study.
+- Do not claim OGC Part 3 conformance from draft compatibility. A conformance claim requires an applicable approved publication, complete relevant conformance classes/ATS, and passing evidence; any earlier support must identify its exact experimental profile and snapshot.
+- Keep any draft-specific topic hierarchy, envelope rule, or broker binding behind an explicit adapter/version boundary so it cannot silently redefine the approved Part 1/2 HTTP contract or the durable internal event model.
 - Keep the research bounded to Glaux Server behavior and server-side publication contracts.
 
 ---
@@ -79,6 +85,7 @@ This topic follows:
 3. Which publication patterns and protocols should Glaux Server support or prepare for?
 4. How should durable event records, outbox processing, subscription delivery, replay, backfill, ordering, deduplication, filtering, and authorization work?
 5. What downstream implications follow for command/control, DDIL, security, observability, fixtures, performance, conformance, and interoperability?
+6. Should Glaux adopt, experimentally profile, monitor, defer, or reject Part 3 support, and what versioning, feature-gating, conformance, migration, and interoperability conditions govern that choice?
 
 ### Detailed Questions
 
@@ -89,8 +96,10 @@ This topic follows:
 - What SensorML and SWE Common structures affect streamed observation, status, or command-status payloads?
 - What AEP-4789 server responsibilities imply streaming, event publication, status dissemination, operational alerts, command-status dissemination, or DDIL replay?
 - Which publication behaviors are standards-driven, profile-driven, implementation-defined, or interoperability-driven?
-- Which draft/development OGC CSAPI pub/sub work should be tracked as a source for future alignment?
-- What do the packaged Part 2 AsyncAPI, current Part 3 working material, and related official issues/PRs actually define for channels, envelopes, protocol bindings, encodings, identifiers, payloads, and abstract tests—and what remains missing or unresolved?
+- What did accepted `IDR-SRV-014H` establish about the pinned Part 3 draft, CS-Go, OSH, and cross-implementation divergence, and what material evidence changed after its snapshot?
+- What do the packaged Part 2 AsyncAPI, current Part 3 working material, and related official issues/PRs actually define for channels, envelopes, protocol bindings, encodings, identifiers, payloads, and abstract tests—and what remains missing or unresolved at execution?
+- Which Part 3 constructs can map cleanly onto the Glaux resource, event, transaction, ingestion, storage, authorization, DDIL, and test baselines completed after `IDR-SRV-014H`?
+- What exact experimental profile or later conformance posture can Glaux truthfully declare, and what changes would trigger migration, compatibility handling, or re-evaluation?
 
 #### Event and Stream Taxonomy
 
@@ -355,7 +364,7 @@ The future research report must analyze these sources directly.
 
 ### Prior IDR Topic Sources
 
-- `IDR-SRV-001` through `IDR-SRV-034` research reports, once complete:
+- Accepted `IDR-SRV-001` through `IDR-SRV-034` research reports, including the early `IDR-SRV-014H` Part 3 baseline:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/`
 - Shared OGC API - Connected Systems upstream-history register:
   - `Docs/Research/Initial Designs/IDR/glaux-server/IDR Evidence/ogc-connected-systems-upstream-history-register.md`
@@ -367,7 +376,8 @@ The future research report must analyze these sources directly.
 - OGC API - Connected Systems - Part 2: Dynamic Data: https://docs.ogc.org/is/23-002/23-002.html
 - OGC API - Connected Systems public development repository: https://github.com/opengeospatial/ogcapi-connected-systems
 - Part 2 AsyncAPI support artifact at the published release tag: https://github.com/opengeospatial/ogcapi-connected-systems/blob/v1.0.0/api/part2/asyncapi/asyncapi-connectedsystems-2.yaml
-- Part 3 working material at the pinned `part3-working-draft` snapshot: https://github.com/opengeospatial/ogcapi-connected-systems/tree/a1f1f03b71f5f645486b23ec8b5fae1f9ba334bc/api/part3
+- Part 3 planning material at the `IDR-SRV-014H` planning snapshot `c95c1d6003359d0883c4dc759d7a148ab115fdb1`, to be replaced by the accepted 014H research pin and refreshed for material deltas at execution: https://github.com/opengeospatial/ogcapi-connected-systems/tree/c95c1d6003359d0883c4dc759d7a148ab115fdb1/api/part3
+- Draft OGC API - Publish-Subscribe Workflow - Part 1: Core (OGC 25-030): https://docs.ogc.org/DRAFTS/25-030.html
 - Official Part 3/AsyncAPI issue and pull-request history, filtered through the shared register:
   - https://github.com/opengeospatial/ogcapi-connected-systems/issues
   - https://github.com/opengeospatial/ogcapi-connected-systems/pulls
@@ -417,6 +427,9 @@ Use implementation-study outputs and source repositories as non-normative eviden
 - OS4CSAPI Client Smoke Test Findings and `IDR-SRV-014E`
 - SECD Interoperability Findings and `IDR-SRV-014F`
 - OS4CSAPI Discussions Lessons-Learned and `IDR-SRV-014G`
+- Draft CSAPI Part 3 Publish/Subscribe and Implementation Study and `IDR-SRV-014H`
+- Connected Systems Go Part 3 implementation source pinned by `IDR-SRV-014H`
+- OpenSensorHub `osh-addons` Part 3 PR source pinned by `IDR-SRV-014H`
 - Category C findings from `IDR-SRV-015` through `IDR-SRV-020`
 - Category D findings from `IDR-SRV-021` through `IDR-SRV-024`
 - Category E findings from `IDR-SRV-025` through `IDR-SRV-030`
@@ -454,7 +467,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 **Tasks:**
 
 1. Gather prior IDR reports, standards sources, implementation studies, messaging/streaming documentation, dynamic-data semantics findings, and project architecture sources.
-2. Inspect the packaged Part 2 AsyncAPI, pinned Part 3 working tree, and relevant shared-register entries; record versions, commit/state, linked issues/PRs, missing clauses/tests, and evidence authority.
+2. Start from the accepted `IDR-SRV-014H` Part 3 authority, completeness, CS-Go, OSH, and interoperability baseline; refresh the packaged Part 2 AsyncAPI, official Part 3 branch, implementation heads, and relevant shared-register entries only for material deltas, recording versions, commit/state, linked issues/PRs, missing clauses/tests, and evidence authority.
 3. Extract streaming/event requirements from prior topics and classify them by event type, trigger, publication audience, persistence need, delivery guarantee, policy sensitivity, and downstream dependency.
 4. Define inventory fields:
    - event/stream category,
@@ -506,7 +519,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 2. Analyze event ordering, cursors, resume tokens, replay, backfill, late data, duplicate data, corrected data, and client deduplication.
 3. Analyze payload shapes, envelopes, content negotiation, links, full-resource payloads, compact messages, and CloudEvents-style patterns.
 4. Analyze retention, pruning, replay eligibility, and audit/conformance evidence.
-5. Reconcile channel, envelope, identifier, encoding, and payload proposals with the pinned Part 3/AsyncAPI evidence and their issue/PR status.
+5. Reconcile channel, envelope, identifier, encoding, and payload proposals with the accepted `IDR-SRV-014H` baseline, the execution-time Part 3/AsyncAPI delta, and the completed Glaux model/transaction/ingestion findings.
 6. Identify unresolved questions requiring prototype validation or performance testing.
 
 **Expected Output:** Durable event and replay strategy matrix.
@@ -523,8 +536,9 @@ Use these sources to interpret project context, downstream dependencies, expecte
 4. Analyze delivery guarantees, slow consumers, backpressure, failures, broker outages, and retry behavior.
 5. Analyze DDIL, reconnect, bandwidth reduction, latest-state snapshots, and federated publication.
 6. Map findings to security, DDIL, deployment, and performance topics.
+7. Compare Part 3 adoption/profile options against the selected Glaux internal event and transport architecture, including draft pin, adapter boundary, feature gate, capability declaration, generated AsyncAPI, conformance boundary, interoperability evidence, and migration trigger.
 
-**Expected Output:** Publication protocol and subscription strategy matrix.
+**Expected Output:** Publication protocol, subscription, and Part 3 adoption/profile strategy matrix.
 
 ### Phase 5: Command, Observability, Fixtures, Performance, Conformance, and Interoperability Analysis (3-4 hours)
 
@@ -548,7 +562,7 @@ Use these sources to interpret project context, downstream dependencies, expecte
 **Tasks:**
 
 1. Consolidate event taxonomy, trigger rules, durable event/outbox guidance, protocol evaluation, subscription guidance, replay/backfill guidance, security/policy findings, and downstream implications.
-2. Produce recommended streaming and event publication strategy with rationale and unresolved questions.
+2. Produce the recommended streaming and event publication strategy plus an explicit `adopt / experimental profile / monitor / defer / reject` Part 3 decision with rationale, safeguards, evidence gates, and unresolved questions.
 3. Identify sequencing for command, DDIL, security, deployment, observability, fixture, conformance, and performance topics.
 4. Produce downstream handoff matrix.
 5. Update relevant shared-register entries with verified Part 3/AsyncAPI state and handoffs without converting draft proposals into requirements.
@@ -569,6 +583,8 @@ This topic research is complete when:
 - [ ] Delivery guarantees, duplicate handling, slow consumers, backpressure, broker failure, reconnect, and DDIL implications are documented.
 - [ ] Security, authorization, policy/releasability, command-event, observability, fixture, conformance, performance, and interoperability implications are documented.
 - [ ] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
+- [ ] The accepted `IDR-SRV-014H` baseline is consumed, material upstream and implementation deltas are refreshed, and the final Part 3 adoption/profile decision is explicit.
+- [ ] Any experimental Part 3 support has an exact snapshot/profile identifier, feature gate, adapter boundary, generated-contract expectation, truthful capability/conformance wording, migration policy, and interoperability test gate.
 - [ ] Recommendations are decision-usable and bounded to Glaux Server.
 - [ ] Downstream handoffs are explicit.
 - [ ] References are explicit and reproducible.
@@ -597,11 +613,12 @@ This topic research is complete when:
 13. DDIL, reconnect, latest-state snapshot, and federation implications
 14. Command, control stream, feasibility, and command-status publication implications
 15. Observability, fixture, conformance, performance, and interoperability test implications
-16. Downstream topic handoff matrix
-17. Recommendations
-18. Risks, constraints, and open questions
-19. Validation against this plan's success criteria
-20. References
+16. Part 3 adoption, experimental-profile, compatibility, conformance, and migration decision
+17. Downstream topic handoff matrix
+18. Recommendations
+19. Risks, constraints, and open questions
+20. Validation against this plan's success criteria
+21. References
 
 The streaming/event publication matrix should include, at minimum:
 
@@ -617,6 +634,8 @@ The streaming/event publication matrix should include, at minimum:
 - Delivery guarantee
 - DDIL implication
 - Test/conformance implication
+- Part 3 requirement/profile mapping and draft-version status
+- Experimental/approved capability and migration implication
 - Downstream topic handoff
 - Notes / unresolved issues
 
@@ -628,9 +647,10 @@ The streaming/event publication matrix should include, at minimum:
 
 - Overall Glaux Server IDR Research Plan must be available and current.
 - Glaux Server Goal and Definition must be available and current.
-- `IDR-SRV-001` through `IDR-SRV-034` research reports should be complete or explicitly marked unavailable/deferred.
+- `IDR-SRV-001` through `IDR-SRV-034` research reports, including `IDR-SRV-014H`, must be complete and accepted before this topic starts.
 - Official CSAPI Part 1 and Part 2, OGC API - Features, SensorML, SWE Common, relevant OGC schemas/OpenAPI artifacts, streaming/messaging sources, and project-available AEP-4789 material must be reachable or explicitly marked unavailable.
 - Implementation-study and interoperability findings must be reachable or explicitly marked unavailable.
+- The accepted `IDR-SRV-014H` report and its pinned Part 3, CS-Go, OSH, issue/PR, test, and divergence evidence must be reachable; any later source delta must be recorded explicitly.
 - Research report template must be available.
 
 ### Blocks (What This Topic Unlocks)
@@ -680,11 +700,14 @@ Update this section as work progresses.
 - Streaming must complement durable persistence rather than replace it.
 - Publication semantics should distinguish client-visible streams from internal operational diagnostics and audit records.
 - Implementation-study findings are useful but must not override standards-derived server responsibilities.
+- `IDR-SRV-014H` establishes adoption readiness and early constraints; this topic owns the final Part 3 adoption/profile and streaming architecture decision.
+- Any draft Part 3 support must remain distinguishable from approved Parts 1/2 conformance and must advertise the exact implemented snapshot/profile.
 - Open question: Which publication protocol should be first implementation versus full-scope readiness?
 - Open question: Which event categories require durable replay?
 - Open question: How should cursor/resume behavior be represented across protocols?
 - Open question: How should policy filtering handle topic names, event gaps, counts, and replay?
 - Open question: Which streaming fixtures should become canonical conformance/interoperability test data?
+- Open question: Has Part 3 matured enough by execution for a stable experimental profile or an approved conformance claim, and what changed since `IDR-SRV-014H`?
 - Risk: Publishing before durable persistence could create unrecoverable client-visible state.
 - Risk: Underdefined replay and duplicate handling could break DDIL and reconnect behavior.
 - Risk: Overexposing topics or event metadata could leak sensitive operational information.
