@@ -1,7 +1,7 @@
 # Section 014H: Draft CSAPI Part 3 Publish/Subscribe and Implementation Study - Research Report
 
 **Topic ID:** IDR-SRV-014H<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-014H Draft CSAPI Part 3 Publish/Subscribe and Implementation Study](../IDR%20Plans/idr-srv-014h-draft-csapi-part-3-publish-subscribe-and-implementation-study.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core question groups, all detailed question groups, all 6 methodology phases, and all 12 success criteria<br>
@@ -13,6 +13,8 @@
 **Shared Register Baseline:** OGC API - Connected Systems upstream-history register version 1.9<br>
 **Document Purpose:** Establish whether draft Part 3 is ready to influence Glaux design, distinguish draft requirements from implementation precedent, expose interoperability and operational gaps, and hand a bounded decision backlog to IDR-SRV-035 without selecting the final streaming architecture<br>
 **Author:** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** August 31, 2026<br>
 **Date:** August 31, 2026<br>
 **Last Updated:** August 31, 2026
 
@@ -950,4 +952,4 @@ The fixture records observed incompatibility; it does not define Glaux's future 
 | Questions retained for IDR-SRV-035 | §13.2 | Complete |
 | Upstream monitoring and local decision boundary | §15 | Complete |
 
-**Completion state:** Research and report review complete; report in review; plan-owner acceptance and authorization of the next topic remain separate future actions.
+**Completion state:** Research, report review, and plan-owner acceptance complete; IDR-SRV-015 is authorized as the next single-topic research iteration.
