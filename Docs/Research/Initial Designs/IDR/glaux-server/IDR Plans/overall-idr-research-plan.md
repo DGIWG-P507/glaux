@@ -1,6 +1,6 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.0<br>
+**Version:** 3.2<br>
 **Date:** August 31, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
@@ -576,7 +576,10 @@ The final report must:
 | 2026-08-31 | IDR-SRV-014F Acceptance and IDR-SRV-014G Authorization | Accepted the freshness-qualified SECD interoperability findings study and authorized the bounded OS4CSAPI discussions lessons-learned iteration | Preserve the single-topic review boundary while moving from dedicated SECD test evidence into community discussion evidence | Glaux Project Lead |
 | 2026-08-31 | IDR-SRV-014G Research Completion | Completed the full OS4CSAPI discussion inventory, separated independently supported lessons from bounded opinion and unimplemented proposals, reconciled linked artifact state with the accepted implementation studies, and placed the report in review | Close the Category B evidence block with responsible community-evidence handoffs for model, validation, documentation, security, conformance, fixtures, and interoperability | Pending Glaux Project Lead review |
 | 2026-08-31 | IDR-SRV-014G Acceptance and Draft Part 3 Planning Authorization | Accepted the OS4CSAPI discussions lessons-learned report and authorized one planning-only iteration to insert a bounded draft Part 3 and implementation study before IDR-SRV-015, revise the later IDR-SRV-035 decision boundary, and refresh the Part 3 evidence pin | Active CS-Go and OSH Part 3 work makes early evidence review valuable, while the incomplete draft binding requires separation between adoption readiness now and final architecture selection later | Glaux Project Lead |
-| 2026-08-31 | Draft Part 3 Planning Amendment | Added IDR-SRV-014H, revised IDR-SRV-015 and IDR-SRV-035 dependencies and handoffs, refreshed the official Part 3 snapshot to `c95c1d60`, and kept Part 3 research and implementation unstarted pending review | Preserve the full-plan-before-execution workflow and expose mutable-draft, implementation-divergence, conformance, migration, and interoperability risks before resource-model decisions | Pending Glaux Project Lead review |
+| 2026-08-31 | Draft Part 3 Planning Amendment | Added IDR-SRV-014H, revised IDR-SRV-015 and IDR-SRV-035 dependencies and handoffs, refreshed the official Part 3 snapshot to `c95c1d60`, and kept Part 3 research and implementation unstarted pending review | Preserve the full-plan-before-execution workflow and expose mutable-draft, implementation-divergence, conformance, migration, and interoperability risks before resource-model decisions | Glaux Project Lead |
+| 2026-08-31 | Draft Part 3 Planning Acceptance and IDR-SRV-014H Authorization | Accepted the Part 3 planning amendment and authorized the bounded draft-authority and implementation-study iteration only | Preserve the single-topic review boundary while obtaining early Part 3 constraints before canonical resource-model research | Glaux Project Lead |
+| 2026-08-31 | IDR-SRV-014H Research Completion | Completed the pinned Part 3 authority/completeness review, reproduced 44 focused CS-Go tests, bounded OSH PR evidence, demonstrated topic and field incompatibilities, and classified Part 3 as an experimental candidate pending the final IDR-SRV-035 architecture/profile decision | Carry useful event, transaction, security, and fixture constraints into later topics without freezing the missing MQTT binding or overstating draft conformance | Pending Glaux Project Lead review |
+| 2026-08-31 | IDR-SRV-014H Acceptance and IDR-SRV-015 Authorization | Accepted the authority-qualified draft Part 3 and implementation study and authorized the bounded canonical Glaux Server resource-model iteration | Close Category B while carrying transport-neutral identity, lifecycle, relationship, event, validation, and compatibility constraints into the first Category C topic without authorizing Part 3 implementation | Glaux Project Lead |
 
 ---
 
@@ -585,7 +588,7 @@ The final report must:
 | Category | Topics | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|---|
 | A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 5/5 | 5/5 | Research Complete | 2026-07-31 | IDR-SRV-001 through IDR-SRV-005 reports complete and accepted. |
-| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014H | Complete (18/18) | 17/18 | 17/18 | Research In Progress | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014G reports are complete and accepted; IDR-SRV-014H is planned but not started; the shared upstream-history register is Version 1.9; IDR-SRV-015 remains unstarted. |
+| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014H | Complete (18/18) | 18/18 | 18/18 | Research Complete | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014H reports are complete and accepted; the shared upstream-history register remains Version 1.9 because no tracked Part 3 state changed during execution; IDR-SRV-015 is authorized as the next single-topic iteration. |
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
 | E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
