@@ -1,6 +1,6 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 2.9<br>
+**Version:** 3.0<br>
 **Date:** August 31, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
@@ -74,9 +74,9 @@ The shared upstream-history register is maintained across topics as supporting e
 
 ---
 
-**Total Topics:** 66
+**Total Topics:** 67
 
-Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014G`, and `IDR-SRV-039A`.
+Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
 Scope rule for topic admission:
 
@@ -195,6 +195,11 @@ Scope rule for topic admission:
 
 - Focus: Review the discussions at https://github.com/orgs/OS4CSAPI/discussions to identify lessons learned, implementation concerns, interoperability issues, developer pain points, standards interpretation questions, testing implications, and community recommendations relevant to Glaux Server.
 - Output target: OS4CSAPI discussions lessons-learned baseline.
+
+#### IDR-SRV-014H: Draft CSAPI Part 3 Publish/Subscribe and Implementation Study
+
+- Focus: Research the exact authority, maturity, requirements, gaps, dependencies, and conformance posture of the current draft OGC API - Connected Systems Part 3 Publish/Subscribe material; compare the active CS-Go and OpenSensorHub implementations; identify cross-implementation divergence, interoperability and security implications, and early constraints for Glaux resource, event, schema, persistence, ingestion, policy, and test design without selecting the final streaming architecture.
+- Output target: Draft Part 3 authority, implementation, interoperability, downstream-handoff, and adoption-readiness baseline.
 
 ### Category C: Server Resource and Domain Model
 
@@ -438,7 +443,7 @@ Default research execution follows category dependencies in sequence:
 
 1. Category A (IDR-SRV-001 through IDR-SRV-005)
 2. Category B core behavior topics (IDR-SRV-006 through IDR-SRV-014, plus IDR-SRV-010A)
-3. Existing implementation, smoke-test, interoperability, and lessons-learned studies (IDR-SRV-014A through IDR-SRV-014G)
+3. Existing implementation, smoke-test, interoperability, lessons-learned, and draft Part 3 studies (IDR-SRV-014A through IDR-SRV-014H)
 4. Category C (IDR-SRV-015 through IDR-SRV-020)
 5. Category D (IDR-SRV-021 through IDR-SRV-024)
 6. Category E (IDR-SRV-025 through IDR-SRV-030)
@@ -453,7 +458,7 @@ Dependency rationale:
 
 - A establishes obligation boundaries before implementation semantics.
 - B defines externally visible server behavior before internal modeling/storage decisions.
-- IDR-SRV-014A through IDR-SRV-014G capture existing implementation, smoke-test, interoperability, and community lessons early to inform model, behavior, conformance, validation, and test-strategy decisions.
+- IDR-SRV-014A through IDR-SRV-014G capture existing implementation, smoke-test, interoperability, and community lessons; IDR-SRV-014H adds an early authority-qualified study of the active draft Part 3 message model and independent MQTT implementations so later model, event, transaction, policy, and test topics can avoid binding prematurely to one mutable implementation contract.
 - IDR-SRV-044 and IDR-SRV-052 were drafted early as planning inputs, but their research executes in Categories H and I after their stated prerequisites.
 - C and D stabilize domain and representation semantics before persistence/dynamic-data strategy.
 - E, F, and G define storage, runtime interaction, and policy constraints before full deployment-shape finalization.
@@ -570,6 +575,8 @@ The final report must:
 | 2026-08-31 | IDR-SRV-014F Research Completion | Completed the pinned SECD interoperability findings study, reconciled the adjudicated May evidence with August deployment drift, directly exercised the pinned OS4CSAPI client, and placed the report in review | Convert silent-result, discovery, representation, lifecycle, tasking, fixture, and client-composition failures into freshness-qualified Glaux handoffs without treating the implementation or historical score as normative | Pending Glaux Project Lead review |
 | 2026-08-31 | IDR-SRV-014F Acceptance and IDR-SRV-014G Authorization | Accepted the freshness-qualified SECD interoperability findings study and authorized the bounded OS4CSAPI discussions lessons-learned iteration | Preserve the single-topic review boundary while moving from dedicated SECD test evidence into community discussion evidence | Glaux Project Lead |
 | 2026-08-31 | IDR-SRV-014G Research Completion | Completed the full OS4CSAPI discussion inventory, separated independently supported lessons from bounded opinion and unimplemented proposals, reconciled linked artifact state with the accepted implementation studies, and placed the report in review | Close the Category B evidence block with responsible community-evidence handoffs for model, validation, documentation, security, conformance, fixtures, and interoperability | Pending Glaux Project Lead review |
+| 2026-08-31 | IDR-SRV-014G Acceptance and Draft Part 3 Planning Authorization | Accepted the OS4CSAPI discussions lessons-learned report and authorized one planning-only iteration to insert a bounded draft Part 3 and implementation study before IDR-SRV-015, revise the later IDR-SRV-035 decision boundary, and refresh the Part 3 evidence pin | Active CS-Go and OSH Part 3 work makes early evidence review valuable, while the incomplete draft binding requires separation between adoption readiness now and final architecture selection later | Glaux Project Lead |
+| 2026-08-31 | Draft Part 3 Planning Amendment | Added IDR-SRV-014H, revised IDR-SRV-015 and IDR-SRV-035 dependencies and handoffs, refreshed the official Part 3 snapshot to `c95c1d60`, and kept Part 3 research and implementation unstarted pending review | Preserve the full-plan-before-execution workflow and expose mutable-draft, implementation-divergence, conformance, migration, and interoperability risks before resource-model decisions | Pending Glaux Project Lead review |
 
 ---
 
@@ -578,7 +585,7 @@ The final report must:
 | Category | Topics | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|---|
 | A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 5/5 | 5/5 | Research Complete | 2026-07-31 | IDR-SRV-001 through IDR-SRV-005 reports complete and accepted. |
-| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 17/17 | 16/17 | Research In Progress | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014F reports are complete and accepted; the shared upstream-history register is Version 1.8; IDR-SRV-014G is complete and in review; IDR-SRV-015 remains unstarted. |
+| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014H | Complete (18/18) | 17/18 | 17/18 | Research In Progress | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014G reports are complete and accepted; IDR-SRV-014H is planned but not started; the shared upstream-history register is Version 1.9; IDR-SRV-015 remains unstarted. |
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
 | E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
