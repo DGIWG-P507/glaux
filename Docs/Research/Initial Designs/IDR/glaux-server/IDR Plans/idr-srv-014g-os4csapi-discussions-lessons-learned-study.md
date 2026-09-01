@@ -1,9 +1,9 @@
 # Section 014G: OS4CSAPI Discussions Lessons-Learned Study - Research Plan
 
-**Status:** Planned  
-**Last Updated:** June 8, 2026  
+**Status:** In Review<br>
+**Last Updated:** August 31, 2026<br>
 **Estimated Research Time:** 10-14 hours  
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 5 hours of AI-assisted elapsed execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014g-os4csapi-discussions-lessons-learned-study-report.md`
 
 ---
@@ -306,15 +306,15 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] Relevant OS4CSAPI discussions and linked artifacts are identified with exact URLs and dates where available.
-- [ ] Discussion evidence is distinguished from code, tests, documentation, implementation behavior, and informal opinion.
-- [ ] Standards interpretation issues and ambiguity lessons are classified.
-- [ ] Implementation and interoperability lessons are mapped to Glaux Server relevance.
-- [ ] Lessons from `IDR-SRV-014A` through `IDR-SRV-014F` are compared against discussion evidence.
-- [ ] Testing, validation, fixture, documentation, and developer-experience implications are documented.
-- [ ] High-risk areas and unresolved questions are identified.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] Relevant OS4CSAPI discussions and linked artifacts are identified with exact URLs and dates where available.
+- [x] Discussion evidence is distinguished from code, tests, documentation, implementation behavior, and informal opinion.
+- [x] Standards interpretation issues and ambiguity lessons are classified.
+- [x] Implementation and interoperability lessons are mapped to Glaux Server relevance.
+- [x] Lessons from `IDR-SRV-014A` through `IDR-SRV-014F` are compared against discussion evidence.
+- [x] Testing, validation, fixture, documentation, and developer-experience implications are documented.
+- [x] High-risk areas and unresolved questions are identified.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -394,18 +394,18 @@ The lessons-learned matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 5 hours of AI-assisted elapsed execution<br>
+**Completion Date:** August 31, 2026
 
 ---
 
@@ -414,10 +414,10 @@ Update this section as work progresses.
 - OS4CSAPI discussions are community evidence, not normative sources.
 - The report must explicitly identify evidence level for each lesson.
 - Some discussion content may be stale, superseded, or resolved by later implementation work; the report must record freshness and current relevance.
-- Open question: Which discussions represent broad community lessons versus one-off implementation issues?
-- Open question: Which standards interpretation questions require formal CSAPI SWG follow-up?
-- Open question: Which developer-experience pain points should Glaux Server address through documentation versus implementation behavior?
-- Open question: Which discussion-derived tests should become Glaux Server CI tests?
+- Resolved: OpenAPI closure, negotiation, public-link correctness, fixture pinning, and semantic parsing recur across independent artifacts; the perceived value of `q`, copy/paste ease, and specific UI preferences remain bounded opinions.
+- Resolved: Existing issue #186 and upstream-history entries cover current formal OpenAPI and future Part 3 questions; no new SWG escalation blocks Glaux.
+- Resolved: Artifact discovery, tutorials, exact demo steps, and known-client limitations are documentation concerns; canonical links, representation equality, schema validity, errors, and public-origin identity are implementation behavior.
+- Resolved: Artifact closure, recursive-schema, discovery-graph, negotiation-semantic, reverse-proxy, semantic-field-preservation, and immutable-fixture tests belong in CI; third-party live availability does not.
 - Risk: Treating informal discussion as normative could distort the Glaux Server baseline.
 - Risk: Ignoring community lessons could cause avoidable implementation, documentation, or interoperability issues.
 - Risk: Mixing stale and current discussion findings without classification could produce misleading recommendations.
