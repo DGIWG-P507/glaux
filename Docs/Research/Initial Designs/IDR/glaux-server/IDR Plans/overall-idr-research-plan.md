@@ -1,6 +1,6 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 2.8<br>
+**Version:** 2.9<br>
 **Date:** August 31, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
@@ -569,6 +569,7 @@ The final report must:
 | 2026-08-31 | IDR-SRV-014E Acceptance and IDR-SRV-014F Authorization | Accepted the ownership-classified OS4CSAPI client smoke-test findings study and authorized the bounded SECD interoperability findings iteration | Preserve the single-topic review boundary while moving from the general client smoke corpus into the SECD-specific interoperability corpus | Glaux Project Lead |
 | 2026-08-31 | IDR-SRV-014F Research Completion | Completed the pinned SECD interoperability findings study, reconciled the adjudicated May evidence with August deployment drift, directly exercised the pinned OS4CSAPI client, and placed the report in review | Convert silent-result, discovery, representation, lifecycle, tasking, fixture, and client-composition failures into freshness-qualified Glaux handoffs without treating the implementation or historical score as normative | Pending Glaux Project Lead review |
 | 2026-08-31 | IDR-SRV-014F Acceptance and IDR-SRV-014G Authorization | Accepted the freshness-qualified SECD interoperability findings study and authorized the bounded OS4CSAPI discussions lessons-learned iteration | Preserve the single-topic review boundary while moving from dedicated SECD test evidence into community discussion evidence | Glaux Project Lead |
+| 2026-08-31 | IDR-SRV-014G Research Completion | Completed the full OS4CSAPI discussion inventory, separated independently supported lessons from bounded opinion and unimplemented proposals, reconciled linked artifact state with the accepted implementation studies, and placed the report in review | Close the Category B evidence block with responsible community-evidence handoffs for model, validation, documentation, security, conformance, fixtures, and interoperability | Pending Glaux Project Lead review |
 
 ---
 
@@ -577,7 +578,7 @@ The final report must:
 | Category | Topics | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|---|
 | A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 5/5 | 5/5 | Research Complete | 2026-07-31 | IDR-SRV-001 through IDR-SRV-005 reports complete and accepted. |
-| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 16/17 | 16/17 | Research In Progress | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014F reports are complete and accepted; the shared upstream-history register is Version 1.8; IDR-SRV-014G is authorized and in progress. |
+| B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014G | Complete (17/17) | 17/17 | 16/17 | Research In Progress | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014F reports are complete and accepted; the shared upstream-history register is Version 1.8; IDR-SRV-014G is complete and in review; IDR-SRV-015 remains unstarted. |
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
 | E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
