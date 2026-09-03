@@ -1,6 +1,6 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.4<br>
+**Version:** 3.5<br>
 **Date:** September 3, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
@@ -582,6 +582,7 @@ The final report must:
 | 2026-08-31 | IDR-SRV-014H Acceptance and IDR-SRV-015 Authorization | Accepted the authority-qualified draft Part 3 and implementation study and authorized the bounded canonical Glaux Server resource-model iteration | Close Category B while carrying transport-neutral identity, lifecycle, relationship, event, validation, and compatibility constraints into the first Category C topic without authorizing Part 3 implementation | Glaux Project Lead |
 | 2026-08-31 | IDR-SRV-015 Research Completion | Defined the canonical encoding-neutral Glaux resource graph; distinguished API resources, aggregate entities, association facts, append-oriented records, projections, schemas, and support concepts; mapped lifecycle, relationship, temporal, status, event, SensorML/SWE, persistence, validation, fixture, and downstream constraints; and placed the report in review | Give later identity, relationship, temporal, metadata, status, representation, persistence, validation, and test research one standards-traceable resource-model baseline without selecting their mechanisms prematurely | Pending Glaux Project Lead review |
 | 2026-09-03 | IDR-SRV-015 Acceptance and IDR-SRV-016 Authorization | Accepted the canonical encoding-neutral resource-model baseline and authorized the bounded identifier, URI, and resource-lifecycle strategy iteration | Preserve the single-topic review boundary while moving from canonical entity distinctions into stable identity, aliasing, revision, deletion, and tombstone decisions | Glaux Project Lead |
+| 2026-09-03 | IDR-SRV-016 Research Completion | Defined typed local-ID, UID, canonical-URL, external-identifier, alias, revision, event, message, and persistence identities; selected service-wide UUIDv7 resource IDs; fixed canonical route, collision, replacement, revision, lifecycle, deletion, and tombstone rules; and placed the report in review | Give relationship, temporal, provenance, persistence, transaction, lifecycle, security, fixture, conformance, and interoperability work a stable identity baseline without starting IDR-SRV-017 or Part 3 implementation | Pending Glaux Project Lead review |
 
 ---
 
@@ -591,7 +592,7 @@ The final report must:
 |---|---|---|---|---|---|---|---|
 | A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 5/5 | 5/5 | Research Complete | 2026-07-31 | IDR-SRV-001 through IDR-SRV-005 reports complete and accepted. |
 | B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014H | Complete (18/18) | 18/18 | 18/18 | Research Complete | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014H reports are complete and accepted; the shared upstream-history register remains Version 1.9 because no tracked Part 3 state changed during execution. |
-| C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 1/6 | 1/6 | Research In Progress | 2026-09-03 | IDR-SRV-015 is complete and accepted; IDR-SRV-016 is authorized as the next single-topic iteration; IDR-SRV-017 through IDR-SRV-020 remain unstarted. |
+| C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 2/6 | 1/6 | Research In Progress | 2026-09-03 | IDR-SRV-015 is complete and accepted; IDR-SRV-016 research is complete and its report is in review; IDR-SRV-017 through IDR-SRV-020 remain unstarted. |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
 | E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | F | IDR-SRV-031 to IDR-SRV-038 | Complete (8/8) | 0/8 | 0/8 | Research Not Started | 2026-07-30 | |
