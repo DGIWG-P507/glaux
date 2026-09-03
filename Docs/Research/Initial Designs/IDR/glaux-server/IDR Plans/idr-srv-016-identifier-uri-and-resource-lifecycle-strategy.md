@@ -1,9 +1,10 @@
 # Section 016: Identifier, URI, and Resource Lifecycle Strategy - Research Plan
 
-**Status:** Planned  
-**Last Updated:** June 8, 2026  
+**Topic ID:** IDR-SRV-016<br>
+**Status:** In Review<br>
+**Last Updated:** September 3, 2026<br>
 **Estimated Research Time:** 12-16 hours  
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 5 hours of AI-assisted execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-016-identifier-uri-and-resource-lifecycle-strategy-report.md`
 
 ---
@@ -366,16 +367,16 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] Identifier classes are identified and distinguished.
-- [ ] URI patterns and canonical addressing needs are mapped by resource family.
-- [ ] Resource identifiers, URI paths, external identifiers, alternate identifiers, SensorML identifiers, database keys, and links are distinguished.
-- [ ] Lifecycle states and transitions are identified by resource family.
-- [ ] Stability, collision, alias, replacement, deprecation, archival, and deletion implications are documented.
-- [ ] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
-- [ ] Persistence, validation, security, conformance, fixture, and interoperability implications are documented.
-- [ ] Recommendations are decision-usable and bounded to Glaux Server.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] Identifier classes are identified and distinguished.
+- [x] URI patterns and canonical addressing needs are mapped by resource family.
+- [x] Resource identifiers, URI paths, external identifiers, alternate identifiers, SensorML identifiers, database keys, and links are distinguished.
+- [x] Lifecycle states and transitions are identified by resource family.
+- [x] Stability, collision, alias, replacement, deprecation, archival, and deletion implications are documented.
+- [x] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
+- [x] Persistence, validation, security, conformance, fixture, and interoperability implications are documented.
+- [x] Recommendations are decision-usable and bounded to Glaux Server.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -465,18 +466,18 @@ The identifier/lifecycle matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 5 hours of AI-assisted execution<br>
+**Completion Date:** September 3, 2026 (research and review complete; acceptance pending)
 
 ---
 
