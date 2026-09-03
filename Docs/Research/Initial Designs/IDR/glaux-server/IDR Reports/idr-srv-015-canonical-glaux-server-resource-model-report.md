@@ -1,7 +1,7 @@
 # Section 015: Canonical Glaux Server Resource Model - Research Report
 
 **Topic ID:** IDR-SRV-015<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-015 Canonical Glaux Server Resource Model](../IDR%20Plans/idr-srv-015-canonical-glaux-server-resource-model.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all 8 detailed-question groups, all 6 methodology phases, and all 9 success criteria<br>
@@ -11,10 +11,10 @@
 **Shared Register Baseline:** OGC API - Connected Systems upstream-history register version 1.9<br>
 **Document Purpose:** Establish the Rust-independent, encoding-neutral canonical Glaux Server resource/domain model that downstream identity, relationship, temporal, provenance, status/event, representation, persistence, validation, and test research can refine without rediscovering or collapsing standards concepts<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD pending acceptance<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 3, 2026<br>
 **Date:** August 31, 2026<br>
-**Last Updated:** August 31, 2026
+**Last Updated:** September 3, 2026
 
 ---
 
@@ -974,4 +974,4 @@ IDR-SRV-016 must begin with:
 
 ### Appendix C. Completion State
 
-**Completion state:** Research, synthesis, report drafting, and internal review complete; report is in review. Plan-owner acceptance and authorization of IDR-SRV-016 remain separate future actions.
+**Completion state:** Research, synthesis, report drafting, review, and plan-owner acceptance complete; IDR-SRV-016 is authorized as the next single-topic research iteration.
