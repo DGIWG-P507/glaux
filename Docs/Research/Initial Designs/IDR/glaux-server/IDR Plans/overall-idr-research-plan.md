@@ -1,6 +1,6 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.8<br>
+**Version:** 3.9<br>
 **Date:** September 13, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
@@ -586,6 +586,7 @@ The final report must:
 | 2026-09-13 | IDR-SRV-016 Acceptance and IDR-SRV-017 Authorization | Accepted the typed identifier, canonical-addressing, alias, revision, replacement, lifecycle, deletion, and tombstone baseline and authorized the bounded relationship and linkage model iteration | Preserve the single-topic review boundary while moving from stable resource identity into standards-traceable relationship facts, direction, cardinality, link generation, traversal, and integrity | Glaux Project Lead |
 | 2026-09-13 | IDR-SRV-017 Research Completion | Defined the typed canonical relationship graph, authoritative/derived direction rules, 28-row resource-family matrix, CSAPI and project link-relation strategy, bounded traversal, external/DDIL resolution states, integrity constraints, policy seams, and downstream validation/test handoffs; placed the report in review | Give temporal, provenance, status/event, representation, persistence, transaction, security, fixture, conformance, and interoperability work one standards-traceable relationship baseline without starting IDR-SRV-018, Part 3 implementation, or server implementation | Pending Glaux Project Lead review |
 | 2026-09-13 | IDR-SRV-017 Acceptance and IDR-SRV-018 Authorization | Accepted the typed canonical relationship graph, authoritative/derived direction, link-relation, traversal, external/DDIL resolution, integrity, policy-seam, and test baseline and authorized the bounded temporal, validity, and freshness model iteration | Preserve the single-topic review boundary while moving from stable resource relationships into explicit time dimensions, interval semantics, current/as-of evaluation, freshness, uncertainty, and retention handoffs | Glaux Project Lead |
+| 2026-09-13 | IDR-SRV-018 Research Completion | Defined the multi-axis temporal taxonomy, 21-row resource-family temporal matrix, bitemporal revision seam, request-scoped current/as-of/latest rules, conservative open-bound adapter policy, domain-versus-HTTP freshness separation, DDIL context, persistence implications, and temporal regression corpus; placed the report in review | Give provenance, status/event, representation, persistence, transaction, dynamic-data, streaming, tasking, security, DDIL, conformance, fixture, and interoperability work one standards-traceable temporal baseline without starting IDR-SRV-019, Part 3 implementation, or server implementation | Pending Glaux Project Lead review |
 
 ---
 
@@ -595,7 +596,7 @@ The final report must:
 |---|---|---|---|---|---|---|---|
 | A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 5/5 | 5/5 | Research Complete | 2026-07-31 | IDR-SRV-001 through IDR-SRV-005 reports complete and accepted. |
 | B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014H | Complete (18/18) | 18/18 | 18/18 | Research Complete | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014H reports are complete and accepted; the shared upstream-history register remains Version 1.9 because no tracked Part 3 state changed during execution. |
-| C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 3/6 | 3/6 | Research In Progress | 2026-09-13 | IDR-SRV-015 through IDR-SRV-017 are complete and accepted; IDR-SRV-018 is authorized as the next single-topic iteration; IDR-SRV-019 and IDR-SRV-020 remain unstarted. |
+| C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 4/6 | 3/6 | Research In Progress | 2026-09-13 | IDR-SRV-015 through IDR-SRV-017 are complete and accepted; IDR-SRV-018 research is complete and its report is in review; IDR-SRV-019 and IDR-SRV-020 remain unstarted. |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
 | E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | F | IDR-SRV-031 to IDR-SRV-038 | Complete (8/8) | 0/8 | 0/8 | Research Not Started | 2026-07-30 | |
