@@ -1,7 +1,7 @@
 # Section 019: Provenance, Lineage, Quality, and Trust Metadata Model - Research Report
 
 **Topic ID:** IDR-SRV-019<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-019 Provenance, Lineage, Quality, and Trust Metadata Model](../IDR%20Plans/idr-srv-019-provenance-lineage-quality-and-trust-metadata-model.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed-question groups, all 6 methodology phases, and all success criteria<br>
@@ -11,6 +11,8 @@
 **Shared Register Baseline:** OGC API - Connected Systems upstream-history register version 1.9; no tracked approved-standard or draft Part 3 state required a register change during this topic<br>
 **Document Purpose:** Establish the encoding-neutral provenance, lineage, source-fidelity, quality-assertion, uncertainty, trust-evidence, exposure, persistence, and validation baseline that the Rust Glaux reference server must preserve<br>
 **Author:** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 13, 2026<br>
 **Date:** September 13, 2026<br>
 **Last Updated:** September 13, 2026
 
@@ -938,7 +940,14 @@ Revisit this report when:
 
 ### 18.2 Acceptance Boundary
 
-This report is complete and in review. Acceptance will establish the provenance, lineage, fidelity, quality, uncertainty, trust-evidence, exposure, persistence, and testing baseline and authorize only IDR-SRV-020. Until the Glaux Project Lead accepts it, it is not controlling downstream work.
+The Glaux Project Lead accepted this report on September 13, 2026. The accepted baseline establishes the provenance, lineage, fidelity, quality, uncertainty, trust-evidence, exposure, persistence, and testing model and authorizes only IDR-SRV-020. Acceptance specifically confirms:
+
+1. the PROV-compatible Entity–Activity–Agent model and qualified relation semantics;
+2. atomic authoritative-revision and essential-provenance persistence;
+3. risk-based raw-byte retention and reproducible transformation records;
+4. scoped quality assertions and multidimensional trust evidence without a scalar trust score;
+5. controlled, inference-resistant provenance projections; and
+6. the downstream ownership boundaries in §14.
 
 ---
 
