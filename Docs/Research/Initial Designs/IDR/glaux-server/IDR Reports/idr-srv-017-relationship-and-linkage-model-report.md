@@ -1,7 +1,7 @@
 # Section 017: Relationship and Linkage Model - Research Report
 
 **Topic ID:** IDR-SRV-017<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-017 Relationship and Linkage Model](../IDR%20Plans/idr-srv-017-relationship-and-linkage-model.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed-question groups, all 6 methodology phases, and all success criteria<br>
@@ -11,8 +11,8 @@
 **Shared Register Baseline:** OGC API - Connected Systems upstream-history register version 1.9; stable master remained `3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f` at the September 13 check<br>
 **Document Purpose:** Establish the typed, encoding-neutral relationship facts, linkage projections, traversal rules, external-reference states, integrity constraints, and downstream handoffs that the Rust Glaux reference server must implement<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 13, 2026<br>
 **Date:** September 13, 2026<br>
 **Last Updated:** September 13, 2026
 
@@ -24,7 +24,7 @@
 |---|---|
 | **N** | Normative or standards-derived finding from an approved applicable source or incorporated artifact |
 | **A** | Project-controlling AEP/STANAG adoption or operational-context finding carried from an accepted report |
-| **P** | Accepted Glaux project decision or recommendation proposed here for acceptance |
+| **P** | Accepted Glaux project decision or project recommendation |
 | **I** | Informative implementation, test, interoperability, or community evidence |
 | **D** | Official draft evidence useful for seam design but not an approved requirement |
 | **X** | Published inconsistency, ambiguity, or evidence limitation that must remain visible |
@@ -79,7 +79,7 @@ The Part 1 `ogc-rel:` vocabulary remains controlling for its published applicabi
 
 Security is graph-wide. Authorization to view a source does not imply permission to reveal a target, edge, reverse count, stale cache, tombstone, or external origin. Optional links may be omitted after policy evaluation. If a standards-required association cannot be exposed safely, the server must apply a profile-defined whole-resource or error policy rather than return a structurally misleading half-truth. Exact policy behavior remains with IDR-SRV-039/040.
 
-Acceptance of this report would establish a decision-usable relationship baseline and unlock IDR-SRV-018. It would not finalize temporal interval algebra, database tables, registration/update APIs, event vocabulary, policy rules, retention, federation protocols, or Part 3 adoption.
+Acceptance of this report establishes a decision-usable relationship baseline and authorizes IDR-SRV-018 as the next single-topic iteration. It does not finalize temporal interval algebra, database tables, registration/update APIs, event vocabulary, policy rules, retention, federation protocols, or Part 3 adoption.
 
 ---
 
@@ -746,7 +746,7 @@ A 201/204 response is not evidence of relationship correctness. Release requires
 
 ### 15.1 Immediate Controlled Transition
 
-If accepted, this report authorizes IDR-SRV-018 as the next single-topic iteration. It does not authorize implementation, database selection, relation-namespace publication, or Part 3 adoption. Until acceptance, downstream work may inspect this report but must not treat its project recommendations as settled baseline.
+This accepted report authorizes IDR-SRV-018 as the next single-topic iteration. It does not authorize implementation, database selection, relation-namespace publication, or Part 3 adoption.
 
 ---
 
@@ -905,9 +905,9 @@ The combined tables in §§6–7 include every required field: relationship ID; 
 - [x] Phase 6 synthesis complete
 - [x] Deliverable draft complete
 - [x] Deliverable self-reviewed against plan
-- [ ] Deliverable accepted by Glaux Project Lead
+- [x] Deliverable accepted by Glaux Project Lead
 
-The report is complete and in review. No next topic or implementation work begins until the project lead accepts it.
+The report is complete and accepted. IDR-SRV-018 is authorized as the next single-topic iteration; no implementation work is authorized.
 
 ---
 
@@ -979,5 +979,5 @@ The report is complete and in review. No next topic or implementation work begin
 - [x] Recommendations are bounded and actionable
 - [x] Risks and open questions are assigned
 - [x] Success criteria and required content are validated
-- [ ] Plan-owner acceptance and acceptance date are recorded
+- [x] Plan-owner acceptance and acceptance date are recorded
 - [x] Next step is bounded to review/acceptance, with no later topic started
