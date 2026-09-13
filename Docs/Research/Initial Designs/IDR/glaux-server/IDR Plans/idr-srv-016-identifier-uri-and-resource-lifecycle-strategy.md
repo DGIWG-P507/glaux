@@ -1,8 +1,8 @@
 # Section 016: Identifier, URI, and Resource Lifecycle Strategy - Research Plan
 
 **Topic ID:** IDR-SRV-016<br>
-**Status:** In Review<br>
-**Last Updated:** September 3, 2026<br>
+**Status:** Complete<br>
+**Last Updated:** September 13, 2026<br>
 **Estimated Research Time:** 12-16 hours  
 **Actual Research Time:** Approximately 5 hours of AI-assisted execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-016-identifier-uri-and-resource-lifecycle-strategy-report.md`
@@ -474,10 +474,10 @@ Update this section as work progresses.
 - [x] Phase 6 synthesis complete
 - [x] Deliverable draft complete
 - [x] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Deliverable accepted
 
 **Actual Research Time:** Approximately 5 hours of AI-assisted execution<br>
-**Completion Date:** September 3, 2026 (research and review complete; acceptance pending)
+**Completion Date:** September 13, 2026 (accepted by Glaux Project Lead)
 
 ---
 

@@ -1,7 +1,7 @@
 # Section 016: Identifier, URI, and Resource Lifecycle Strategy - Research Report
 
 **Topic ID:** IDR-SRV-016<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-016 Identifier, URI, and Resource Lifecycle Strategy](../IDR%20Plans/idr-srv-016-identifier-uri-and-resource-lifecycle-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed-question groups, all 6 methodology phases, and all success criteria<br>
@@ -11,10 +11,10 @@
 **Shared Register Baseline:** OGC API - Connected Systems upstream-history register version 1.9; stable master remained `3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f` at the September 3 refresh<br>
 **Document Purpose:** Establish the canonical identifier classes, URI construction rules, alias and collision policy, entity identity guarantees, lifecycle vocabulary, deletion/tombstone behavior, and downstream implementation handoffs for the Rust Glaux reference server<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD until Glaux Project Lead acceptance<br>
-**Acceptance Date:** TBD until accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 13, 2026<br>
 **Date:** September 3, 2026<br>
-**Last Updated:** September 3, 2026
+**Last Updated:** September 13, 2026
 
 ---
 
@@ -872,9 +872,9 @@ The combined matrices in §§6–7, 9–11, and 14 provide every required field:
 
 ### 17.6 Review Gate and Controlled Transition
 
-**Final status:** Research execution, synthesis, drafting, and self-review complete. Report is **In Review**.
+**Final status:** Research execution, synthesis, review, and plan-owner acceptance complete. Report is **Final**.
 
-No IDR-SRV-017 research or Part 3 implementation was started. If the Glaux Project Lead accepts this report, the next permitted iteration is exactly `IDR-SRV-017: Relationship and Linkage Model`.
+The Glaux Project Lead accepted this report on September 13, 2026 and authorized exactly one next research iteration: `IDR-SRV-017: Relationship and Linkage Model`. Part 3 implementation remains unstarted.
 
 ---
 
@@ -928,4 +928,4 @@ No IDR-SRV-017 research or Part 3 implementation was started. If the Glaux Proje
 
 ---
 
-**Completion state:** Research, synthesis, report drafting, and self-review complete; the report awaits Glaux Project Lead acceptance. IDR-SRV-017 and Part 3 implementation remain unstarted.
+**Completion state:** Research, synthesis, report drafting, review, and plan-owner acceptance complete; IDR-SRV-017 is authorized as the next single-topic research iteration. Part 3 implementation remains unstarted.
