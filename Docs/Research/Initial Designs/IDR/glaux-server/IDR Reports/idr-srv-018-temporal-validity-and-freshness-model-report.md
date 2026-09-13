@@ -1,7 +1,7 @@
 # Section 018: Temporal, Validity, and Freshness Model - Research Report
 
 **Topic ID:** IDR-SRV-018<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-018 Temporal, Validity, and Freshness Model](../IDR%20Plans/idr-srv-018-temporal-validity-and-freshness-model.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed-question groups, all 6 methodology phases, and all success criteria<br>
@@ -11,6 +11,8 @@
 **Shared Register Baseline:** OGC API - Connected Systems upstream-history register version 1.9; no tracked standard state required a register change during this topic<br>
 **Document Purpose:** Establish the encoding-neutral time axes, validity and current/as-of rules, freshness assessment, temporal query contract, persistence implications, and downstream handoffs that the Rust Glaux reference server must implement<br>
 **Author:** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 13, 2026<br>
 **Date:** September 13, 2026<br>
 **Last Updated:** September 13, 2026
 
@@ -79,7 +81,7 @@ Open-ended resource validity remains a published defect. The approved prose call
 
 Freshness has two distinct forms. HTTP freshness answers whether a cached representation can be reused without origin validation. Domain freshness answers whether evidence is recent enough for an operational purpose. `Age`, `Expires`, and `Cache-Control` must never be presented as sensor/status freshness. A cached response can be HTTP-fresh while containing stale status, or HTTP-stale while containing valid immutable history.
 
-Acceptance of this report will establish a decision-usable temporal baseline and authorize IDR-SRV-019 as the next single-topic iteration. It does not select database products or tables; finalize provenance, quality, status vocabularies, ingestion APIs, retention policy, task state machines, streaming, synchronization, security policy, or a draft Part 3 transport.
+Acceptance of this report establishes a decision-usable temporal baseline and authorizes IDR-SRV-019 as the next single-topic iteration. It does not select database products or tables; finalize provenance, quality, status vocabularies, ingestion APIs, retention policy, task state machines, streaming, synchronization, security policy, or a draft Part 3 transport.
 
 ---
 
@@ -849,15 +851,15 @@ None of these questions prevents acceptance of the temporal domain baseline; eac
 | 5. Query/persistence/test analysis | mappings, algorithms, logical requirements, fixture corpus | Complete |
 | 6. Synthesis | recommendations, risks, handoffs, success validation | Complete |
 
-### 17.2 Review Decision Requested
+### 17.2 Acceptance and Next Authorization
 
-The report is ready for Glaux Project Lead review. Acceptance would establish the temporal, validity, current/as-of, freshness, and persistence/test handoff baseline and authorize only IDR-SRV-019. Requested review attention:
+The Glaux Project Lead accepted this report on September 13, 2026. The accepted baseline establishes the temporal, validity, current/as-of, freshness, and persistence/test handoffs and authorizes only IDR-SRV-019. Acceptance specifically confirms:
 
-1. approve the bitemporal valid-time/transaction-time seam;
-2. approve the conservative #182 adapter policy pending OGC resolution;
-3. approve request-scoped evaluation time and cursor snapshot binding;
-4. approve strict separation of domain freshness from HTTP freshness and availability; and
-5. approve the downstream ownership boundaries in §14.
+1. the bitemporal valid-time/transaction-time seam;
+2. the conservative #182 adapter policy pending OGC resolution;
+3. request-scoped evaluation time and cursor snapshot binding;
+4. strict separation of domain freshness from HTTP freshness and availability; and
+5. the downstream ownership boundaries in §14.
 
 ---
 
