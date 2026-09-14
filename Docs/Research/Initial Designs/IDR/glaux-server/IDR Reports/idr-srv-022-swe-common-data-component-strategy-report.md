@@ -1,7 +1,7 @@
 # Section 022: SWE Common Data Component Strategy - Research Report
 
 **Topic ID:** IDR-SRV-022<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-022 SWE Common Data Component Strategy](../IDR%20Plans/idr-srv-022-swe-common-data-component-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed-question groups, all 6 methodology phases, and all 11 success criteria<br>
@@ -12,6 +12,8 @@
 **Shared Register Baseline:** OGC API - Connected Systems upstream-history register Version 1.9; SWE-owned entries, published schemas, and official `master` rechecked September 14, 2026 with no material register change required<br>
 **Document Purpose:** Establish the server-side SWE Common component, contract, encoding, normalization, validation, security, fixture, and downstream-design baseline for the Rust Glaux reference server<br>
 **Author:** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 14, 2026<br>
 **Date:** September 14, 2026<br>
 **Last Updated:** September 14, 2026
 
@@ -757,7 +759,7 @@ None blocks this planning baseline. Each is intentionally assigned to its owning
 - [x] Conflicts with accepted reports are reconciled.
 - [x] Recommendations, risks, fixtures, and downstream owners are explicit.
 - [x] Report is ready for project-lead review.
-- [ ] Project-lead acceptance and date recorded.
+- [x] Project-lead acceptance and date recorded.
 
 ### 18.4 Next Two Actions
 
