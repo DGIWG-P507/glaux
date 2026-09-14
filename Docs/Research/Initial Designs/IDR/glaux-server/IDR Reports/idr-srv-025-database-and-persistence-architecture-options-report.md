@@ -1,7 +1,7 @@
 # Section 025: Database and Persistence Architecture Options - Research Report
 
 **Topic ID:** IDR-SRV-025<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-025 Database and Persistence Architecture Options](../IDR%20Plans/idr-srv-025-database-and-persistence-architecture-options.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed-question groups, all 6 methodology phases, and all 9 success criteria<br>
@@ -13,8 +13,8 @@
 **Controlled AEP Source:** `AC/224(JCGISR)D(2026)0005`, April 27, 2026, SHA-256 `56dc757b6e677b3584e3152a957849f21a24b22854f562613ff283a8b599da8c`; used only through accepted project findings and not redistributed<br>
 **Document Purpose:** Select a bounded persistence architecture direction and option gates for later detailed research without designing schemas, choosing all products, implementing the server, or starting IDR-SRV-026<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD until Glaux Project Lead acceptance<br>
-**Acceptance Date:** TBD until accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 14, 2026<br>
 **Date:** September 14, 2026<br>
 **Last Updated:** September 14, 2026
 
@@ -731,4 +731,4 @@ These questions do not block the architecture direction. Each optional dependenc
 
 ---
 
-**Review gate:** This report is complete and in review. It becomes an accepted downstream baseline only after the Glaux Project Lead records acceptance in this report, the topic plan, and the overall plan.
+**Acceptance record:** Accepted by the Glaux Project Lead on September 14, 2026. IDR-SRV-026 was authorized as the next bounded single-topic iteration; no later topic or server implementation was authorized.
