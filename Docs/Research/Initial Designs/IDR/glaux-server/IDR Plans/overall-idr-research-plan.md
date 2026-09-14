@@ -1,6 +1,6 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.22<br>
+**Version:** 3.23<br>
 **Date:** September 14, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
@@ -600,6 +600,7 @@ The final report must:
 | 2026-09-14 | IDR-SRV-023 Acceptance and IDR-SRV-024 Authorization | Accepted the versioned validation pipeline, provenance-bearing contract registry, trusted contract-selection rules, seven-type validation taxonomy, immutable parent-contract binding, strict-write/quarantine split, offline `$ref` posture, safe diagnostics, capability-gated codec strategy, and multi-lane test baseline and authorized the bounded units, observed-properties, and semantic-binding strategy iteration | Close the validation architecture decision and preserve the single-topic review boundary while moving into semantic identifiers, units, observed/controlled properties, vocabulary binding, query, and interoperability behavior | Glaux Project Lead |
 | 2026-09-14 | IDR-SRV-024 Research Completion | Defined a five-view source/parsed/canonical/materialized/generated semantic architecture; contextual property-role bindings; a UCUM-centered, AEP-profiled, no-silent-command-conversion unit strategy; immutable offline vocabulary packages; conservative explainable query and mapping behavior; Version 1.0 adapters for property-summary conflicts; explicit #178/#179 compatibility seams; and security, fixture, conformance, interoperability, and downstream handoffs; placed the report in review | Close Category D research execution with a standards-traceable semantic and unit baseline without accepting the report, starting Category E, implementing draft Part 3, or implementing the server | Pending Glaux Project Lead review |
 | 2026-09-14 | IDR-SRV-024 Acceptance and IDR-SRV-025 Authorization | Accepted the five-view semantic architecture, contextual property-role bindings, UCUM-centered and AEP-profiled unit strategy, prohibition on silent Command conversion, immutable offline vocabulary packages, conservative explainable query model, Version 1.0 property-summary adapters, #178/#179 compatibility seams, and security/test handoffs; authorized the bounded database and persistence architecture-options iteration | Close Category D and preserve the single-topic review boundary while moving into persistence workload, consistency, storage-family, source-fidelity, portability, DDIL, and operational tradeoff research | Glaux Project Lead |
+| 2026-09-14 | IDR-SRV-025 Research Completion | Selected a PostgreSQL/PostGIS relational-hybrid authoritative-core direction; classified 26 data categories; separated authoritative state, append evidence, exact content-addressed artifacts, derived projections, caches, and broker delivery; defined a native PostgreSQL time-series baseline and measured TimescaleDB gate; rejected unproven polyglot/graph/broker-as-truth defaults; and established DDIL, transaction, migration, security, Rust, deployment, test, risk, and downstream handoffs; placed the report in review | Give specialized persistence topics one coherent, open-source, transaction-centered baseline without accepting the report, starting IDR-SRV-026, choosing detailed schemas or all products, implementing draft Part 3, or implementing the server | Pending Glaux Project Lead review |
 
 ---
 
@@ -611,7 +612,7 @@ The final report must:
 | B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014H | Complete (18/18) | 18/18 | 18/18 | Research Complete | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014H reports are complete and accepted; no tracked Part 3 state changed during their execution. Later topic refreshes govern the current shared-register version. |
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 6/6 | 6/6 | Research Complete | 2026-09-13 | IDR-SRV-015 through IDR-SRV-020 reports are complete and accepted. |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 4/4 | 4/4 | Research Complete | 2026-09-14 | IDR-SRV-021 through IDR-SRV-024 reports are complete and accepted. The shared upstream-history register is Version 1.10. |
-| E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research In Progress | 2026-09-14 | IDR-SRV-025 is authorized as the next bounded single-topic iteration; later Category E topics remain unauthorized. |
+| E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 1/6 | 0/6 | Research In Review | 2026-09-14 | IDR-SRV-025 research is complete and its report is in review; IDR-SRV-026 and later Category E topics remain unauthorized. |
 | F | IDR-SRV-031 to IDR-SRV-038 | Complete (8/8) | 0/8 | 0/8 | Research Not Started | 2026-07-30 | |
 | G | IDR-SRV-039, IDR-SRV-039A, IDR-SRV-040 to IDR-SRV-043 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | H | IDR-SRV-044 to IDR-SRV-049 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
