@@ -1,6 +1,6 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.12<br>
+**Version:** 3.14<br>
 **Date:** September 13, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
@@ -590,6 +590,8 @@ The final report must:
 | 2026-09-13 | IDR-SRV-018 Acceptance and IDR-SRV-019 Authorization | Accepted the multi-axis temporal, bitemporal revision, current/as-of/latest, open-bound containment, freshness separation, DDIL, persistence-handoff, and test baseline and authorized the bounded provenance, lineage, quality, and trust metadata model iteration | Preserve the single-topic review boundary while moving from explicit temporal evidence into source identity, derivation, authority, quality, trust, uncertainty, and disclosure semantics | Glaux Project Lead |
 | 2026-09-13 | IDR-SRV-019 Research Completion | Defined a PROV-compatible canonical evidence graph, complete resource/artifact and activity coverage, risk-based source-fidelity rules, reproducible transformation records, scoped quality/uncertainty assertions, multidimensional trust evidence, state-change lineage, controlled exposure, persistence/synchronization handoffs, graph invariants, and a fixture corpus; placed the report in review | Give status/event, representation, persistence, ingestion, tasking, security, DDIL, conformance, fixture, and interoperability work one standards-traceable evidence model without starting IDR-SRV-020, a public provenance extension, Part 3 implementation, or server implementation | Pending Glaux Project Lead review |
 | 2026-09-13 | IDR-SRV-019 Acceptance and IDR-SRV-020 Authorization | Accepted the PROV-compatible evidence graph, atomic provenance boundary, source-fidelity and transformation rules, scoped quality/uncertainty assertions, multidimensional trust evidence, controlled exposure, persistence/synchronization handoffs, invariants, and fixture baseline and authorized the bounded status, availability, and System Event model iteration | Preserve the single-topic review boundary while moving from traceable evidence into operational status, availability, event vocabulary, current-state projection, and stale/unknown behavior | Glaux Project Lead |
+| 2026-09-13 | IDR-SRV-020 Research Completion | Defined the non-collapsing status taxonomy, capability-specific five-state availability assessment, observation-derived current-status projection, narrow DataStream/ControlStream `live` semantics, durable System Event boundary and generation matrix, command-status/feasibility separation, degraded/DDIL behavior, published event-artifact gap handling, and downstream persistence/security/test handoffs; placed the report in review | Close Category C with one standards-traceable operational-state and event baseline without starting IDR-SRV-021, choosing a public status profile, implementing draft Part 3, or implementing the server | Pending Glaux Project Lead review |
+| 2026-09-13 | IDR-SRV-020 Acceptance and IDR-SRV-021 Authorization | Accepted the non-collapsing status taxonomy, capability-specific availability algebra, observation-derived current-state rules, System Event boundary, command-status separation, stale/unknown behavior, published-gap handling, and downstream handoffs and authorized the bounded SensorML representation-strategy iteration | Close Category C and preserve the single-topic review boundary while moving into SensorML representation, normalization, preservation, validation, and interoperability decisions | Glaux Project Lead |
 
 ---
 
@@ -599,8 +601,8 @@ The final report must:
 |---|---|---|---|---|---|---|---|
 | A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 5/5 | 5/5 | Research Complete | 2026-07-31 | IDR-SRV-001 through IDR-SRV-005 reports complete and accepted. |
 | B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014H | Complete (18/18) | 18/18 | 18/18 | Research Complete | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014H reports are complete and accepted; the shared upstream-history register remains Version 1.9 because no tracked Part 3 state changed during execution. |
-| C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 5/6 | 5/6 | Research In Progress | 2026-09-13 | IDR-SRV-015 through IDR-SRV-019 are complete and accepted; IDR-SRV-020 is authorized as the next single-topic iteration. |
-| D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research Not Started | 2026-07-30 | |
+| C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 6/6 | 6/6 | Research Complete | 2026-09-13 | IDR-SRV-015 through IDR-SRV-020 reports are complete and accepted. |
+| D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 0/4 | 0/4 | Research In Progress | 2026-09-13 | IDR-SRV-021 is authorized as the next single-topic iteration; IDR-SRV-022 through IDR-SRV-024 remain unstarted and unauthorized. |
 | E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | F | IDR-SRV-031 to IDR-SRV-038 | Complete (8/8) | 0/8 | 0/8 | Research Not Started | 2026-07-30 | |
 | G | IDR-SRV-039, IDR-SRV-039A, IDR-SRV-040 to IDR-SRV-043 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
