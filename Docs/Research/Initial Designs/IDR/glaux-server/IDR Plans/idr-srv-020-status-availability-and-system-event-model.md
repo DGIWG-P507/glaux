@@ -1,9 +1,9 @@
 # Section 020: Status, Availability, and System Event Model - Research Plan
 
-**Status:** Planned  
-**Last Updated:** June 8, 2026  
+**Status:** In Review<br>
+**Last Updated:** September 13, 2026<br>
 **Estimated Research Time:** 12-16 hours  
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 8 hours of AI-assisted execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-020-status-availability-and-system-event-model-report.md`
 
 ---
@@ -516,18 +516,18 @@ The status/event matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 8 hours of AI-assisted execution<br>
+**Completion Date:** September 13, 2026
 
 ---
 
@@ -545,6 +545,10 @@ Update this section as work progresses.
 - Risk: Exposing status/events without policy controls could reveal sensitive operational state.
 - Risk: Missing event history could weaken auditability and troubleshooting.
 - Risk: Treating one implementation's event/status vocabulary as canonical could distort Glaux Server design.
+
+### Research Completion Note
+
+Research completed September 13, 2026. The report defines a non-collapsing status taxonomy, capability-specific five-state availability assessment, observation-derived current-status projection, narrow `live` semantics, durable System Event boundary and generation matrix, command-status/feasibility separation, degraded and DDIL behavior, and downstream persistence, security, validation, fixture, conformance, and interoperability requirements. It preserves the published System Event prose/schema conflict and placeholder event-type URIs as explicit downstream adapter/profile decisions. The deliverable is in review; acceptance and authorization of IDR-SRV-021 remain pending Glaux Project Lead action.
 
 ---
 
