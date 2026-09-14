@@ -1,7 +1,7 @@
 # Section 026: Geospatial Storage and Query Strategy - Research Report
 
 **Topic ID:** IDR-SRV-026<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-026 Geospatial Storage and Query Strategy](../IDR%20Plans/idr-srv-026-geospatial-storage-and-query-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 7 objective questions, all 6 methodology phases, all 10 success criteria, and the required 14-field geospatial matrix<br>
@@ -13,8 +13,8 @@
 **Controlled AEP Source:** `AC/224(JCGISR)D(2026)0005`, April 27, 2026, SHA-256 `56dc757b6e677b3584e3152a957849f21a24b22854f562613ff283a8b599da8c`; used only through accepted project findings and not redistributed<br>
 **Document Purpose:** Establish the Glaux Server geospatial authority, storage, CRS, query, indexing, policy, dynamic-location, DDIL, and test baseline without defining physical schemas, preempting time-series research, or implementing the server<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD pending acceptance<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 14, 2026<br>
 **Date:** September 14, 2026<br>
 **Last Updated:** September 14, 2026
 
@@ -724,4 +724,4 @@ This report is complete for review, but it is not an accepted downstream baselin
 
 ---
 
-**Review-state record:** IDR-SRV-026 research is complete and placed in review on September 14, 2026. The report is not accepted, IDR-SRV-027 is not authorized or started, and neither draft Part 3 nor server implementation is authorized by this iteration.
+**Acceptance record:** Accepted by the Glaux Project Lead on September 14, 2026. IDR-SRV-027 was authorized as the next bounded single-topic iteration; no later topic, draft Part 3 implementation, or server implementation was authorized.
