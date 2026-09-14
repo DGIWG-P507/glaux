@@ -1,10 +1,10 @@
 # Section 024: Units, Observed Properties, and Semantic Binding Strategy - Research Plan
 
 **Topic ID:** IDR-SRV-024<br>
-**Status:** Planned  
-**Last Updated:** July 30, 2026<br>
+**Status:** In Review<br>
+**Last Updated:** September 14, 2026<br>
 **Estimated Research Time:** 13.5-17.5 hours<br>
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 13 hours of AI-assisted execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-024-units-observed-properties-and-semantic-binding-strategy-report.md`
 
 ---
@@ -467,18 +467,20 @@ The semantic binding matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 13 hours of AI-assisted execution<br>
+**Completion Date:** September 14, 2026
+
+**Completion Note:** Research execution is complete and the report was accepted by the Glaux Project Lead on September 14, 2026. The accepted baseline establishes a source-preserving semantic graph, contextual property-role bindings, a UCUM-centered and AEP-profiled unit strategy, immutable offline vocabulary packages, conservative explainable query behavior, explicit handling for published property-summary conflicts and unresolved upstream issues #178/#179, security/test implications, and downstream handoffs. IDR-SRV-025 was authorized as the next bounded single-topic iteration; no later topic, draft Part 3 implementation, or server implementation was authorized.
 
 ---
 
