@@ -1,7 +1,7 @@
 # Section 023: Schema and Encoding Validation Strategy - Research Report
 
 **Topic ID:** IDR-SRV-023<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-023 Schema and Encoding Validation Strategy](../IDR%20Plans/idr-srv-023-schema-and-encoding-validation-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed-question groups, all 6 methodology phases, and all 11 success criteria<br>
@@ -13,8 +13,8 @@
 **Controlled AEP Source:** `AC/224(JCGISR)D(2026)0005`, April 27, 2026, SHA-256 `56dc757b6e677b3584e3152a957849f21a24b22854f562613ff283a8b599da8c`; used only through accepted project findings and not redistributed<br>
 **Document Purpose:** Establish the reusable validation architecture for the Rust Glaux reference server without selecting final crates, persistence products, authorization policy, semantic registries, command lifecycle, or conformance-harness implementation<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD until Glaux Project Lead acceptance<br>
-**Acceptance Date:** TBD until accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 14, 2026<br>
 **Date:** September 14, 2026<br>
 **Last Updated:** September 14, 2026
 
@@ -884,7 +884,7 @@ No open question blocks acceptance of the architecture baseline.
 - [x] Executive summary is independently readable
 - [x] Recommendations, risks, open questions, and handoffs are explicit
 - [x] All plan success criteria are mapped
-- [ ] Plan-owner acceptance and date recorded
+- [x] Plan-owner acceptance and date recorded
 
 ---
 
