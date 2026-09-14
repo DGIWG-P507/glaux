@@ -1,7 +1,7 @@
 # Section 021: SensorML Representation Strategy - Research Report
 
 **Topic ID:** IDR-SRV-021<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-021 SensorML Representation Strategy](../IDR%20Plans/idr-srv-021-sensorml-representation-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed-question groups, all 6 methodology phases, and all 10 success criteria<br>
@@ -12,8 +12,8 @@
 **Shared Register Baseline:** OGC API - Connected Systems upstream-history register version 1.9; SensorML-owned entries and official `master` rechecked September 13, 2026 with no material register change required<br>
 **Document Purpose:** Establish the server-side SensorML representation, normalization, source-preservation, transformation, validation, security, fixture, and downstream-design baseline for the Rust Glaux reference server<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD pending acceptance<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 14, 2026<br>
 **Date:** September 14, 2026<br>
 **Last Updated:** September 14, 2026
 
@@ -826,7 +826,7 @@ None prevents this planning baseline. They are mechanism/profile decisions inten
 - [x] Conflicts with accepted reports are reconciled.
 - [x] Recommendations, risks, fixtures, and downstream owners are explicit.
 - [x] Report is ready for plan-owner review.
-- [ ] Plan-owner acceptance and date recorded.
+- [x] Plan-owner acceptance and date recorded.
 
 ### 18.4 Next Two Actions
 
