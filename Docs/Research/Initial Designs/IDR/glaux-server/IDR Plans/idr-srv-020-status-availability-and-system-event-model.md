@@ -1,6 +1,6 @@
 # Section 020: Status, Availability, and System Event Model - Research Plan
 
-**Status:** In Review<br>
+**Status:** Complete<br>
 **Last Updated:** September 13, 2026<br>
 **Estimated Research Time:** 12-16 hours  
 **Actual Research Time:** Approximately 8 hours of AI-assisted execution<br>
@@ -524,7 +524,7 @@ Update this section as work progresses.
 - [x] Phase 6 synthesis complete
 - [x] Deliverable draft complete
 - [x] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Deliverable accepted
 
 **Actual Research Time:** Approximately 8 hours of AI-assisted execution<br>
 **Completion Date:** September 13, 2026
@@ -548,7 +548,9 @@ Update this section as work progresses.
 
 ### Research Completion Note
 
-Research completed September 13, 2026. The report defines a non-collapsing status taxonomy, capability-specific five-state availability assessment, observation-derived current-status projection, narrow `live` semantics, durable System Event boundary and generation matrix, command-status/feasibility separation, degraded and DDIL behavior, and downstream persistence, security, validation, fixture, conformance, and interoperability requirements. It preserves the published System Event prose/schema conflict and placeholder event-type URIs as explicit downstream adapter/profile decisions. The deliverable is in review; acceptance and authorization of IDR-SRV-021 remain pending Glaux Project Lead action.
+Research completed September 13, 2026. The report defines a non-collapsing status taxonomy, capability-specific five-state availability assessment, observation-derived current-status projection, narrow `live` semantics, durable System Event boundary and generation matrix, command-status/feasibility separation, degraded and DDIL behavior, and downstream persistence, security, validation, fixture, conformance, and interoperability requirements. It preserves the published System Event prose/schema conflict and placeholder event-type URIs as explicit downstream adapter/profile decisions. The deliverable was subsequently accepted and IDR-SRV-021 authorized.
+
+**Acceptance:** Accepted by the Glaux Project Lead on September 13, 2026. IDR-SRV-021 is authorized as the next single-topic iteration.
 
 ---
 

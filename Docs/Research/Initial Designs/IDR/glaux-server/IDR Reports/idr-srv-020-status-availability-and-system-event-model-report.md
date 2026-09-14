@@ -1,7 +1,7 @@
 # Section 020: Status, Availability, and System Event Model - Research Report
 
 **Topic ID:** IDR-SRV-020<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-020 Status, Availability, and System Event Model](../IDR%20Plans/idr-srv-020-status-availability-and-system-event-model.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed-question groups, all 6 methodology phases, and all 10 success criteria<br>
@@ -11,8 +11,8 @@
 **Shared Register Baseline:** OGC API - Connected Systems upstream-history register version 1.9; no tracked approved-standard or draft Part 3 state required a register change during this topic<br>
 **Document Purpose:** Establish the encoding-neutral operational-status, capability-specific availability, current-state projection, System Event, degraded-operation, persistence, exposure, and validation baseline for the Rust Glaux reference server<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 13, 2026<br>
 **Date:** September 13, 2026<br>
 **Last Updated:** September 13, 2026
 
@@ -841,7 +841,7 @@ Reopen affected decisions when:
 
 ### 18.3 Acceptance Boundary
 
-This report is complete and in review. Acceptance would establish the status/availability taxonomy, current-state projection, five-state capability-specific availability assessment, System Event boundary, command-status separation, degraded/DDIL rules, and downstream handoffs. It would authorize only IDR-SRV-021. It would not approve server implementation, a database, a broker, a public Glaux status extension, retention periods, a final command lifecycle, or draft Part 3 conformance.
+The Glaux Project Lead accepted this report on September 13, 2026. The accepted baseline establishes the status/availability taxonomy, current-state projection, five-state capability-specific availability assessment, System Event boundary, command-status separation, degraded/DDIL rules, and downstream handoffs and authorizes only IDR-SRV-021. Acceptance does not approve server implementation, a database, a broker, a public Glaux status extension, retention periods, a final command lifecycle, or draft Part 3 conformance.
 
 ---
 
