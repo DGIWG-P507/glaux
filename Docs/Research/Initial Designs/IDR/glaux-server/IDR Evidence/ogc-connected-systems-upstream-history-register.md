@@ -1,12 +1,12 @@
 # OGC API - Connected Systems Upstream Standards-History Evidence Register
 
-**Version:** 1.9<br>
+**Version:** 1.10<br>
 **Status:** Active supporting evidence<br>
 **Initial screening completed:** August 1, 2026<br>
 **Register owner:** Glaux Project Lead<br>
 **Official repository:** https://github.com/opengeospatial/ogcapi-connected-systems<br>
 **Published-source tag checked:** [`v1.0.0`](https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0), commit [`8e03b236`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2)<br>
-**Mutable `master` snapshot checked:** August 31, 2026, commit [`3fd86c73`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f)<br>
+**Mutable `master` snapshot checked:** September 14, 2026, commit [`3fd86c73`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f)<br>
 **Mutable `part3-working-draft` snapshot checked:** August 31, 2026, commit [`c95c1d60`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/c95c1d6003359d0883c4dc759d7a148ab115fdb1)
 
 ---
@@ -160,7 +160,7 @@ Retain an item when it can materially affect one or more of these areas:
 | [#152](https://github.com/opengeospatial/ogcapi-connected-systems/issues/152) | Open | Part 2 is published; August 1 checks confirm that all 12 requirement-class and 12 conformance-class PURLs plus sampled detailed identifiers return 404. The NamingAuthority tree contains `23-001.csv` but no `23-002.csv`; exact Part 2 identifiers remain normative despite the resolver gap. | Mixed | 008, 009, 057 |
 | [#153](https://github.com/opengeospatial/ogcapi-connected-systems/issues/153) | Closed | Confirms SensorML 3.0 and its JSON-schema package were published; #183 records that the intended `timeInstantOrNow.json` file was nevertheless omitted from publication. | Mixed | 021, 023 |
 | [#154](https://github.com/opengeospatial/ogcapi-connected-systems/issues/154) | Closed | Confirms SWE Common 3.0 and schemas were published with case-sensitive naming. | PB | 022 |
-| [#162](https://github.com/opengeospatial/ogcapi-connected-systems/issues/162) | Open | `qualifiers` is available through inherited SensorML `DerivedProperty` but omitted from Part 1 conceptual/mapping tables. | PCD | 021 |
+| [#162](https://github.com/opengeospatial/ogcapi-connected-systems/issues/162) | Open | `qualifiers` is available through inherited SensorML `DerivedProperty` but omitted from Part 1 conceptual/mapping tables. | PCD | 021, 024 |
 | [#163](https://github.com/opengeospatial/ogcapi-connected-systems/issues/163) | Open | Early use cases mix obsolete SensorML and GeoJSON conventions and are unsafe as fixtures without reconciliation. | UP | 053 |
 | [#164](https://github.com/opengeospatial/ogcapi-connected-systems/issues/164) | Open | Standard does not clearly distinguish client-receivable association links from server-generated links during writes. | UP | 010, 013, 017 |
 | [#165](https://github.com/opengeospatial/ogcapi-connected-systems/issues/165) | Open | External/local sampled-feature matching, `foi` filtering, sampling chains, derived filters, and a misplaced Part 4 example remain ambiguous. | UP | 010, 017, 011, 024 |
@@ -173,8 +173,8 @@ Retain an item when it can materially affect one or more of these areas:
 | [#174](https://github.com/opengeospatial/ogcapi-connected-systems/issues/174) | Open | Procedure model permits `validTime` but `procedure.json` omits it; [PR #199](https://github.com/opengeospatial/ogcapi-connected-systems/pull/199) is approved but unmerged. | PCD | 010A, 023 |
 | [#175](https://github.com/opengeospatial/ogcapi-connected-systems/issues/175) | Open | CSAPI defines no sorting; alignment with OGC `sortby`/Sortables is proposed but endpoint binding remains undecided. | UP | 011 |
 | [#177](https://github.com/opengeospatial/ogcapi-connected-systems/issues/177) | Open | Part 2 formally requires deployment-scoped DataStream and ControlStream endpoints that its OAS omits. | UP | 010, 010A, 014 |
-| [#178](https://github.com/opengeospatial/ogcapi-connected-systems/issues/178) | Open | Server-returned and client-receivable DataStream fields intentionally differ, but descriptions and singular schema-per-format behavior need clarification. | UP | 012, 013, 015 |
-| [#179](https://github.com/opengeospatial/ogcapi-connected-systems/issues/179) | Open | Property filters are partly inferable from ATS, but capability derivation and several OAS-advertised filters lack clear requirements. | UP | 011 |
+| [#178](https://github.com/opengeospatial/ogcapi-connected-systems/issues/178) | Open | Server-returned and client-receivable DataStream fields intentionally differ, but descriptions, singular schema-per-format behavior, and the source of generated observation-property/result-field summaries remain unresolved. | UP | 012, 013, 015, 024, 034 |
+| [#179](https://github.com/opengeospatial/ogcapi-connected-systems/issues/179) | Open | Property filters are partly inferable from ATS, but resource-specific capability derivation and several OAS-advertised filters lack clear requirements; September 3, 2026 recheck found discussion but no approved Version 1.0 disposition. | UP | 011, 024, 034, 050, 056 |
 | [#180](https://github.com/opengeospatial/ogcapi-connected-systems/issues/180) | Closed | Real SWE naming/serialization question was closed without comment, rationale, PR, or commit; closure supplies no dependable disposition. | UP | 022 |
 | [#181](https://github.com/opengeospatial/ogcapi-connected-systems/issues/181) | Open | Ordinary Observation JSON Schema differs from a stream’s SWE logical `resultSchema`; custom `+json` does not automatically imply JSON Schema. | UP | 012, 013, 023 |
 | [#182](https://github.com/opengeospatial/ogcapi-connected-systems/issues/182) | Open | Valid-time prose/schema differ over `now`; open intervals are absent and a common published schema target reportedly returns 404. | UP | 018, 023 |
@@ -258,7 +258,7 @@ The owner column is the controlling routing device. The following summary highli
 | IDR-SRV-021 | SensorML model refactoring, GeoJSON boundary, missing/inconsistent fields, and current terminology/schema maintenance: #39, #45-#46, #76, #109-#113, #125-#126, #147, #153, #162. |
 | IDR-SRV-022 | SWE Common JSON structures/encodings, values, UOMs, XML removal, and the reversed `recordsAsArrays`/`vectorsAsArrays` prose: #5-#6, #11, #15-#20, #40, #46, #55, #71, #73-#74, #98, #100, #105-#106, #144, #154, #180. |
 | IDR-SRV-023 | Schema dialect and validation contradictions/defects, including quaternion typing, reversed booleans, temporal files, and Procedure validity: #18, #43, #71, #87, #172, #174, #181-#183. |
-| IDR-SRV-024 | Semantic identifiers, UOMs, evolving vocabularies, asset types, and sampling-feature handoffs: #9, #40, #73-#76, #142, #165. |
+| IDR-SRV-024 | Semantic identifiers, UOMs, evolving vocabularies, derived-property qualifiers, asset types, generated stream-property summaries, resource-specific property-filter derivation, and sampling-feature handoffs: #9, #40, #73-#76, #142, #162, #165, #178-#179. |
 | IDR-SRV-029/030 | Cross-encoding replacement, PATCH, bulk artifacts, cascade behavior, and Deployment deletion: #61, #66, #166, #170-#171, #185. |
 | IDR-SRV-034 | Linked/inline results and server-generated dynamic fields: #65, #83, #101. |
 | IDR-SRV-014H | Establish the early authority, completeness, dependency, implementation, and interoperability baseline for draft Part 3 and active CS-Go/OSH work: #14, #68, #104, #187-#195 and PR #198. |
@@ -306,6 +306,7 @@ Two general traps apply everywhere: issue closure can disagree with the released
 
 | Date | Version | Change | Owner |
 |---|---|---|---|
+| September 14, 2026 | 1.10 | Refreshed units, property, and semantic-binding history for IDR-SRV-024; confirmed unchanged published and `master` source pins; routed inherited `DerivedProperty.qualifiers` issue #162 and generated-field issue #178 to the semantic/dynamic-data work; reconfirmed issue #179 remained unresolved after its September 3 update; and routed its resource-specific property-filter derivation seam to semantic strategy, dynamic-data, conformance, and interoperability topics. | Glaux research workflow |
 | August 31, 2026 | 1.9 | Refreshed the Part 3 branch from `a1f1f03b` to `c95c1d60`; recorded the three draft message classes, absent AsyncAPI/ATS, unwired MQTT stub, and remaining annex gaps; updated issue #192 and merged PR #198 disposition; and split Part 3 routing between the early IDR-SRV-014H authority/implementation study and the later IDR-SRV-035 architecture/adoption-profile decision. | Glaux research workflow |
 | August 31, 2026 | 1.8 | Refreshed OpenAPI and documentation evidence for IDR-SRV-014; proved normalized equality between the tagged and published modular OAS files; recorded both published ZIP hashes; reproduced residual bundle references, lint findings, Part 2 stack/alias exhaustion, and static-generation failures with pinned tools; reconfirmed routed issue/PR/release state and unchanged `master`; updated the complete public counts to 142 issues/58 pull requests; and added direct routing for new broken-ReDoc-link issue #200. | Glaux research workflow |
 | August 2, 2026 | 1.7 | Refreshed error-model, HTTP-status, failure-semantics, OpenAPI-response, normative-ATS, and draft Features Part 4 evidence for IDR-SRV-013; mechanically audited all 87 root-reachable tagged Part 1/2 operations plus one unreferenced method block and the broken unused server-error component; reconfirmed 141 issues, 58 pull requests, relevant issue states, and unchanged current `master`; and added direct IDR-SRV-013 routing for cascade, PATCH, query/OAS, validation/encoding, draft dependency, and bulk/partial-failure context. | Glaux research workflow |
