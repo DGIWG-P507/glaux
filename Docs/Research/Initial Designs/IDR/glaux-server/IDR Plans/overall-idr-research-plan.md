@@ -1,6 +1,6 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.18<br>
+**Version:** 3.19<br>
 **Date:** September 14, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
@@ -596,6 +596,7 @@ The final report must:
 | 2026-09-14 | IDR-SRV-021 Acceptance and IDR-SRV-022 Authorization | Accepted the five-layer SensorML representation architecture, canonical normalization and source-preservation boundary, strict-write/quarantine-import split, deterministic generation, inheritance-resolution controls, non-collapse rules, published-gap handling, security posture, validation ladder, fixture baseline, and downstream handoffs and authorized the bounded SWE Common data-component strategy iteration | Preserve the single-topic review boundary while moving from SensorML representation into reusable SWE component, constraint, aggregate, stream, encoding, validation, and interoperability decisions | Glaux Project Lead |
 | 2026-09-14 | IDR-SRV-022 Research Completion | Defined an immutable versioned SWE data-contract subsystem; mapped all published SWE Common 3.0 component families to SensorML and CSAPI dynamic resources; selected full model/preservation coverage with staged capability-gated JSON, Text, and Binary codecs; established nil, optional, constraint, quality, component-path, ordering, schema-revision, security, validation, fixture, and interoperability rules; and placed the report in review | Give validation, semantic binding, persistence, ingestion, dynamic-data, command, security, conformance, fixture, and interoperability work one standards-traceable SWE Common baseline without starting IDR-SRV-023, implementing draft Part 3, or implementing the server | Pending Glaux Project Lead review |
 | 2026-09-14 | IDR-SRV-022 Acceptance and IDR-SRV-023 Authorization | Accepted the immutable SWE contract architecture, full component-model preservation, capability-gated codec strategy, exact value-state and component-path rules, CSAPI schema bindings, validation ladder, security posture, fixture matrix, and downstream handoffs and authorized the bounded schema and encoding validation-strategy iteration | Preserve the single-topic review boundary while moving from the SWE component contract into reusable structural, semantic, profile, encoding, compatibility, diagnostic, and evidence validation decisions | Glaux Project Lead |
+| 2026-09-14 | IDR-SRV-023 Research Completion | Defined a versioned evidence-producing validation pipeline and contract registry; mapped schema, OpenAPI, media, encoding, resource-family, and interaction-stage responsibilities; established strict-write/quarantine, immutable stream-contract binding, offline `$ref`, safe diagnostics, capability-gated codecs, security, and multi-lane test rules; reconciled material published artifact conflicts; and placed the report in review | Give semantic binding, persistence, ingestion, dynamic-data, command, security, DDIL, tooling, conformance, fixture, and interoperability work one standards-traceable validation baseline without starting IDR-SRV-024, implementing draft Part 3, or implementing the server | Pending Glaux Project Lead review |
 
 ---
 
@@ -606,7 +607,7 @@ The final report must:
 | A | IDR-SRV-001 to IDR-SRV-005 | Complete (5/5) | 5/5 | 5/5 | Research Complete | 2026-07-31 | IDR-SRV-001 through IDR-SRV-005 reports complete and accepted. |
 | B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014H | Complete (18/18) | 18/18 | 18/18 | Research Complete | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014H reports are complete and accepted; the shared upstream-history register remains Version 1.9 because no tracked Part 3 state changed during execution. |
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 6/6 | 6/6 | Research Complete | 2026-09-13 | IDR-SRV-015 through IDR-SRV-020 reports are complete and accepted. |
-| D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 2/4 | 2/4 | Research In Progress | 2026-09-14 | IDR-SRV-021 and IDR-SRV-022 reports are complete and accepted; IDR-SRV-023 is authorized as the next single-topic iteration; IDR-SRV-024 remains unstarted and unauthorized. |
+| D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 3/4 | 2/4 | Research In Progress | 2026-09-14 | IDR-SRV-021 and IDR-SRV-022 reports are complete and accepted; IDR-SRV-023 research is complete and in review; IDR-SRV-024 remains unstarted and unauthorized. |
 | E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | F | IDR-SRV-031 to IDR-SRV-038 | Complete (8/8) | 0/8 | 0/8 | Research Not Started | 2026-07-30 | |
 | G | IDR-SRV-039, IDR-SRV-039A, IDR-SRV-040 to IDR-SRV-043 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
