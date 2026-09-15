@@ -1,9 +1,9 @@
 # Section 036: Control Stream and Command Lifecycle Model - Research Plan
 
-**Status:** Planned  
-**Last Updated:** June 11, 2026  
+**Status:** Complete<br>
+**Last Updated:** September 15, 2026<br>
 **Estimated Research Time:** 14-18 hours  
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 17 hours of AI-assisted execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-036-control-stream-and-command-lifecycle-model-report.md`
 
 ---
@@ -395,15 +395,15 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] Control stream, command definition, command request, command resource, command execution, command status, command result, feasibility result, command event, and audit record concepts are identified and distinguished with source anchors.
-- [ ] Control stream relationships to systems, controlled properties, SensorML, SWE Common, command gateways, feasibility, authorization/safety, and event streams are documented.
-- [ ] Command lifecycle states, allowed transitions, terminal states, asynchronous states, cancellation, timeout, failure, and unknown-outcome behavior are documented.
-- [ ] Command payload, parameter validation, dispatch, status reporting, persistence, query, event publication, DDIL, and provenance implications are documented.
-- [ ] Authorization, safety, audit, policy/releasability, fixture, conformance, performance, and interoperability implications are documented.
-- [ ] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
-- [ ] Recommendations are decision-usable and bounded to Glaux Server.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] Control stream, command definition, command request, command resource, command execution, command status, command result, feasibility result, command event, and audit record concepts are identified and distinguished with source anchors.
+- [x] Control stream relationships to systems, controlled properties, SensorML, SWE Common, command gateways, feasibility, authorization/safety, and event streams are documented.
+- [x] Command lifecycle states, allowed transitions, terminal states, asynchronous states, cancellation, timeout, failure, and unknown-outcome behavior are documented.
+- [x] Command payload, parameter validation, dispatch, status reporting, persistence, query, event publication, DDIL, and provenance implications are documented.
+- [x] Authorization, safety, audit, policy/releasability, fixture, conformance, performance, and interoperability implications are documented.
+- [x] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
+- [x] Recommendations are decision-usable and bounded to Glaux Server.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -492,18 +492,20 @@ The command lifecycle matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 17 hours of AI-assisted execution<br>
+**Completion Date:** September 15, 2026
+
+**Completion Note:** Research execution and plan-owner acceptance are complete. The report defines the standards-facing nine-code CommandStatus lifecycle and a separate private orchestration model; versioned ControlStream and Command contracts; authoritative status/result projection; direct, gateway, brokered, simulated, and manual dispatch; cancellation, expiration, timeout, failure, and unknown-outcome handling; SWE Common/SensorML payload rules; persistence, query, event, DDIL, security, audit, fixture, conformance, performance, and interoperability implications; and explicit downstream handoffs. IDR-SRV-037 is authorized as the next bounded single-topic iteration.
 
 ---
 
