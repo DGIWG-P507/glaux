@@ -1,7 +1,7 @@
 # Section 036: Control Stream and Command Lifecycle Model - Research Report
 
 **Topic ID:** IDR-SRV-036<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-036 Control Stream and Command Lifecycle Model](../IDR%20Plans/idr-srv-036-control-stream-and-command-lifecycle-model.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions and detailed questions concerning ControlStream and Command meaning, payloads, lifecycle, feasibility, authorization/safety hooks, dispatch, status/result reporting, cancellation, timeout, DDIL, persistence, events, and verification<br>
@@ -13,8 +13,8 @@
 **Supporting Resources:** Accepted IDR-SRV-014A/B/E/F/G, IDR-SRV-016 through 035, controlled-AEP findings, and the upstream-history register Version 1.12<br>
 **Document Purpose:** Establish a standards-aligned, safety-ready server planning baseline for ControlStreams, Commands, status/results, orchestration, dispatch, and client-visible lifecycle without implementing the server or preempting feasibility and command-safety topics<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 15, 2026<br>
 **Date:** September 15, 2026<br>
 **Last Updated:** September 15, 2026
 
@@ -776,4 +776,4 @@ git diff --check
 - [x] Recommendations are decision-usable and bounded to Glaux Server
 - [x] References and evidence checks are reproducible
 - [x] Report is ready for plan-owner review
-- [ ] Report accepted by plan owner
+- [x] Report accepted by plan owner

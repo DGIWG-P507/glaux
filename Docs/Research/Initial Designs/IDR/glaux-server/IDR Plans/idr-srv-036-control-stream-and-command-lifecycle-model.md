@@ -1,6 +1,6 @@
 # Section 036: Control Stream and Command Lifecycle Model - Research Plan
 
-**Status:** In Review<br>
+**Status:** Complete<br>
 **Last Updated:** September 15, 2026<br>
 **Estimated Research Time:** 14-18 hours  
 **Actual Research Time:** Approximately 17 hours of AI-assisted execution<br>
@@ -500,12 +500,12 @@ Update this section as work progresses.
 - [x] Phase 6 synthesis complete
 - [x] Deliverable draft complete
 - [x] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Deliverable accepted
 
 **Actual Research Time:** Approximately 17 hours of AI-assisted execution<br>
 **Completion Date:** September 15, 2026
 
-**Completion Note:** Research execution is complete. The report defines the standards-facing nine-code CommandStatus lifecycle and a separate private orchestration model; versioned ControlStream and Command contracts; authoritative status/result projection; direct, gateway, brokered, simulated, and manual dispatch; cancellation, expiration, timeout, failure, and unknown-outcome handling; SWE Common/SensorML payload rules; persistence, query, event, DDIL, security, audit, fixture, conformance, performance, and interoperability implications; and explicit downstream handoffs. The report is in review. Plan-owner acceptance remains unchecked, and IDR-SRV-037 is not authorized.
+**Completion Note:** Research execution and plan-owner acceptance are complete. The report defines the standards-facing nine-code CommandStatus lifecycle and a separate private orchestration model; versioned ControlStream and Command contracts; authoritative status/result projection; direct, gateway, brokered, simulated, and manual dispatch; cancellation, expiration, timeout, failure, and unknown-outcome handling; SWE Common/SensorML payload rules; persistence, query, event, DDIL, security, audit, fixture, conformance, performance, and interoperability implications; and explicit downstream handoffs. IDR-SRV-037 is authorized as the next bounded single-topic iteration.
 
 ---
 
