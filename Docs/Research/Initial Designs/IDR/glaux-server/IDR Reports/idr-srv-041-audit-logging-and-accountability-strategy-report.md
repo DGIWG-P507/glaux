@@ -1,7 +1,7 @@
 # Section 041: Audit Logging and Accountability Strategy - Research Report
 
 **Topic ID:** IDR-SRV-041<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-041 Audit Logging and Accountability Strategy](../IDR%20Plans/idr-srv-041-audit-logging-and-accountability-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All questions concerning auditable events, deployment-profile selection, actor/delegation/authority representation, audit schema, phases/outcomes/reasons, time/order/correlation, minimization, integrity, transaction coupling, buffering, failure, storage, access, review, export, retention, DDIL, synchronization, observability, scenarios, and verification<br>
@@ -13,8 +13,8 @@
 **Supporting Resources:** Accepted transaction, provenance, lifecycle, ingestion, streaming, command, security, ZTA, and policy reports; upstream-history register Version 1.12<br>
 **Document Purpose:** Define a deployable, policy-aware and falsifiable Glaux audit/accountability baseline without conflating telemetry with authoritative evidence or claiming legal sufficiency, non-repudiation, perfect completeness, identity truth, or tamper-proof storage<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD until controlling-plan owner acceptance<br>
-**Acceptance Date:** TBD until accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 15, 2026<br>
 **Date:** September 15, 2026<br>
 **Last Updated:** September 15, 2026
 
