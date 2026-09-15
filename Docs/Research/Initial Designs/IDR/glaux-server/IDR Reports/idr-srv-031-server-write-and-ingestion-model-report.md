@@ -1,7 +1,7 @@
 # Section 031: Server Write and Ingestion Model - Research Report
 
 **Topic ID:** IDR-SRV-031<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-031 Server Write and Ingestion Model](../IDR%20Plans/idr-srv-031-server-write-and-ingestion-model.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Five core questions and all detailed questions concerning write surfaces, entry points, acceptance, processing, validation, source authority, transactions, persistence, errors, operations, verification, and handoff<br>
@@ -18,8 +18,8 @@
 - [IDR-SRV-030 Data Lifecycle, Retention, Archival, and Deletion Strategy](idr-srv-030-data-lifecycle-retention-archival-and-deletion-strategy-report.md)
 **Document Purpose:** Establish the decision-ready authoritative Glaux Server mutation and ingestion boundary before publisher, simulator, dynamic-data, security, DDIL, conformance, and implementation specialization<br>
 **Author(s):** OpenAI Codex, for the Glaux Project<br>
-**Accepted By:** TBD until controlling-plan owner acceptance<br>
-**Acceptance Date:** TBD until accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 14, 2026<br>
 **Date:** September 14, 2026<br>
 **Last Updated:** September 14, 2026
 
