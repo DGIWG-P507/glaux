@@ -1,6 +1,6 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.37<br>
+**Version:** 3.38<br>
 **Date:** September 14, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
@@ -615,6 +615,7 @@ The final report must:
 | 2026-09-14 | IDR-SRV-031 Research Completion | Defined a single authoritative write boundary and registry-driven capability model; inventoried every standards-facing resource mutation and private/admin entry point; established the 16-field accept/delegate/reject matrix, strict POST/PUT/PATCH/DELETE profile, common processing/state pipeline, validation/normalization and source-authority allocation, transaction/idempotency/replay and item-atomic batch rules, persistence/current-state/outbox/audit boundary, error/backpressure behavior, and verification/handoff suite; placed the report in review | Open Category F research execution with one coherent server ingestion baseline without accepting the report, authorizing IDR-SRV-032, implementing draft Part 3, or implementing the server | Pending Glaux Project Lead review |
 | 2026-09-14 | IDR-SRV-031 Acceptance and IDR-SRV-032 Authorization | Accepted the single authoritative write boundary, registry-driven capability model, strict mutation profile, 16-field write-surface disposition matrix, common processing and state pipeline, validation/normalization and source-authority allocation, transaction/idempotency/replay and item-atomic batch rules, persistence/current-state/outbox/audit boundary, error/backpressure behavior, and verification/handoff suite; authorized the bounded publisher-to-server contract iteration | Preserve the single-topic review boundary while moving from the common server mutation authority into publisher-specific submission, identity, authentication context, delivery, retry, backpressure, error, and evidence decisions | Glaux Project Lead |
 | 2026-09-14 | IDR-SRV-032 Research Completion | Defined standards-facing CSAPI writes plus a supplemental Glaux Publisher Contract and narrow status/import/health surfaces; separated principal, publisher instance, represented source, authority, validation, policy, and trust; established the 21-field contract matrix, registration lifecycle, responsibility allocation, payload/envelope rules, delivery and acknowledgement states, item-atomic batching, idempotency/ordering/retry/replay/backpressure behavior, safe diagnostics, DDIL/evolution constraints, and verification/handoff suites; placed the report in review | Specialize the common server mutation boundary for publisher integration without accepting the report, authorizing IDR-SRV-033, selecting or implementing draft Part 3, or implementing the server | Pending Glaux Project Lead review |
+| 2026-09-14 | IDR-SRV-032 Acceptance and IDR-SRV-033 Authorization | Accepted the standards-facing CSAPI plus supplemental GPC-v1 publisher boundary, principal/publisher/source/authority distinctions, registration lifecycle, responsibility allocation, 21-field contract matrix, narrow status/import/health surfaces, validation/custody rules, delivery/idempotency/batch/retry/DDIL/error/evolution behavior, fixture suite, and downstream handoffs; authorized the bounded simulator-to-server contract iteration | Preserve the single-topic review boundary while specializing publisher admission for deterministic simulator identity, fixture, time, replay, reset, fault, isolation, evidence, and safety behavior | Glaux Project Lead |
 
 ---
 
@@ -627,7 +628,7 @@ The final report must:
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 6/6 | 6/6 | Research Complete | 2026-09-13 | IDR-SRV-015 through IDR-SRV-020 reports are complete and accepted. |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 4/4 | 4/4 | Research Complete | 2026-09-14 | IDR-SRV-021 through IDR-SRV-024 reports are complete and accepted. The shared upstream-history register is Version 1.10. |
 | E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 6/6 | 6/6 | Research Complete | 2026-09-14 | IDR-SRV-025 through IDR-SRV-030 reports are complete and accepted. |
-| F | IDR-SRV-031 to IDR-SRV-038 | Complete (8/8) | 2/8 | 1/8 | Research In Review | 2026-09-14 | IDR-SRV-031 is complete and accepted; IDR-SRV-032 is complete and in review; IDR-SRV-033 remains unauthorized. The shared upstream-history register is Version 1.11. |
+| F | IDR-SRV-031 to IDR-SRV-038 | Complete (8/8) | 2/8 | 2/8 | Research In Progress | 2026-09-14 | IDR-SRV-031 and IDR-SRV-032 are complete and accepted; IDR-SRV-033 is authorized as the next bounded single-topic iteration. The shared upstream-history register is Version 1.11. |
 | G | IDR-SRV-039, IDR-SRV-039A, IDR-SRV-040 to IDR-SRV-043 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | H | IDR-SRV-044 to IDR-SRV-049 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | I | IDR-SRV-050 to IDR-SRV-057 | Complete (8/8) | 0/8 | 0/8 | Research Not Started | 2026-07-30 | |

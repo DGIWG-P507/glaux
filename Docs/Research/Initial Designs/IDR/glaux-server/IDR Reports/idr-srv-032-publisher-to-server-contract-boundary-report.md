@@ -1,7 +1,7 @@
 # Section 032: Publisher-to-Server Contract Boundary - Research Report
 
 **Topic ID:** IDR-SRV-032<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-032 Publisher-to-Server Contract Boundary](../IDR%20Plans/idr-srv-032-publisher-to-server-contract-boundary.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Five core questions and all detailed questions concerning publisher/source roles, identity, registration, authority, contract surfaces, payloads, delivery, validation, errors, security inputs, DDIL, evolution, fixtures, and handoffs<br>
@@ -19,8 +19,8 @@
 - [IDR-SRV-031 Server Write and Ingestion Model](idr-srv-031-server-write-and-ingestion-model-report.md)
 **Document Purpose:** Establish the implementable external publisher contract that specializes the accepted common server write boundary without creating a second canonical ingestion model<br>
 **Author(s):** OpenAI Codex, for the Glaux Project<br>
-**Accepted By:** TBD until controlling-plan owner acceptance<br>
-**Acceptance Date:** TBD until accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 14, 2026<br>
 **Date:** September 14, 2026<br>
 **Last Updated:** September 14, 2026
 
