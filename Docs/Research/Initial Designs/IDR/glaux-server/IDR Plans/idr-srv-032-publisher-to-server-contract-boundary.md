@@ -1,9 +1,9 @@
 # Section 032: Publisher-to-Server Contract Boundary - Research Plan
 
-**Status:** Planned
-**Last Updated:** July 29, 2026
+**Status:** In Review
+**Last Updated:** September 14, 2026
 **Estimated Research Time:** 14-18 hours
-**Actual Research Time:** TBD until complete
+**Actual Research Time:** Approximately 17 hours of AI-assisted research and synthesis
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-032-publisher-to-server-contract-boundary-report.md`
 
 ---
@@ -384,18 +384,20 @@ The contract matrix must include at minimum: publisher class, represented source
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 17 hours of AI-assisted research and synthesis
+**Completion Date:** September 14, 2026
+
+**Completion Note:** Research execution is complete and the publisher-to-server contract boundary report is in review. It recommends standards-facing CSAPI writes plus a versioned supplemental Glaux Publisher Contract and narrow status/import/health surfaces; separates principal, publisher, source, and authority; fixes validation, delivery, idempotency, batching, retry, DDIL, error, evidence, evolution, fixture, and handoff rules; and neither accepts this deliverable nor authorizes IDR-SRV-033.
 
 ---
 
