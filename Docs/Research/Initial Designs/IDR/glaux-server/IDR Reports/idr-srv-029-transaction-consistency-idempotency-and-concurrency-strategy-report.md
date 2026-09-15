@@ -1,7 +1,7 @@
 # Section 029: Transaction, Consistency, Idempotency, and Concurrency Strategy - Research Report
 
 **Topic ID:** IDR-SRV-029<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-029 Transaction, Consistency, Idempotency, and Concurrency Strategy](../IDR%20Plans/idr-srv-029-transaction-consistency-idempotency-and-concurrency-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed question groups, all 6 methodology phases, all 10 success criteria, and the required 15-field operation-family transaction matrix<br>
@@ -13,8 +13,8 @@
 **Controlled AEP Source:** `AC/224(JCGISR)D(2026)0005`, April 27, 2026, SHA-256 `56dc757b6e677b3584e3152a957849f21a24b22854f562613ff283a8b599da8c`; used only through accepted project findings and not redistributed<br>
 **Document Purpose:** Establish the Glaux Server atomicity, consistency, idempotency, concurrency, conflict, retry, replay, outbox/inbox, command-safety, DDIL, and verification baseline without defining final DDL, implementing draft Part 3, or implementing the server<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD pending acceptance<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 14, 2026<br>
 **Date:** September 14, 2026<br>
 **Last Updated:** September 14, 2026
 
@@ -604,5 +604,9 @@ The research is complete and **In Review**. It is not accepted for downstream us
 - [x] Recommendations are explicit and actionable
 - [x] Risks and open questions are documented
 - [x] Success criteria validation is complete
-- [ ] Plan-owner acceptance and acceptance date are recorded
+- [x] Plan-owner acceptance and acceptance date are recorded
 - [x] Next steps and owners are identified
+
+---
+
+**Acceptance record:** Accepted by the Glaux Project Lead on September 14, 2026. IDR-SRV-030 was authorized as the next bounded single-topic iteration; no later topic, draft Part 3 implementation, or server implementation was authorized.
