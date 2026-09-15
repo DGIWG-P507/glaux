@@ -1,10 +1,10 @@
 # Section 039A: Zero-Trust Architecture Alignment and Enforcement Model - Research Plan
 
 **Topic ID:** IDR-SRV-039A<br>
-**Status:** Planned / Supplemental  
-**Last Updated:** July 30, 2026<br>
+**Status:** Complete / Supplemental<br>
+**Last Updated:** September 15, 2026<br>
 **Estimated Research Time:** 22-28 hours<br>
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 30 hours of AI-assisted research and synthesis<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-039a-zero-trust-architecture-alignment-and-enforcement-model-report.md`
 
 ---
@@ -737,18 +737,18 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] ZTA authority baseline is documented using authoritative sources.
-- [ ] ZTA concepts are crosswalked to Glaux Server responsibilities and non-goals.
-- [ ] Trust boundaries, subject/resource/action model, and profile-specific assumptions are documented.
-- [ ] PEP/PDP/PIP model and enforcement locations are documented.
-- [ ] Authentication, authorization, source trust, data-centric access, policy/releasability, streaming, command/control, diagnostics, and audit implications are documented.
-- [ ] DDIL/tactical-edge ZTA behavior and cached/stale policy assumptions are documented.
-- [ ] Public demo, CI, conformance, interoperability, and operational-reference profile recommendations are documented.
-- [ ] ZTA-specific tests, evidence artifacts, and redaction requirements are documented.
-- [ ] Downstream handoffs to related IDR topics are explicit.
-- [ ] Recommendations are decision-usable and bounded to Glaux Server.
-- [ ] Risks, assumptions, and open decisions are clearly documented.
-- [ ] References are explicit and reproducible.
+- [x] ZTA authority baseline is documented using authoritative sources.
+- [x] ZTA concepts are crosswalked to Glaux Server responsibilities and non-goals.
+- [x] Trust boundaries, subject/resource/action model, and profile-specific assumptions are documented.
+- [x] PEP/PDP/PIP model and enforcement locations are documented.
+- [x] Authentication, authorization, source trust, data-centric access, policy/releasability, streaming, command/control, diagnostics, and audit implications are documented.
+- [x] DDIL/tactical-edge ZTA behavior and cached/stale policy assumptions are documented.
+- [x] Public demo, CI, conformance, interoperability, and operational-reference profile recommendations are documented.
+- [x] ZTA-specific tests, evidence artifacts, and redaction requirements are documented.
+- [x] Downstream handoffs to related IDR topics are explicit.
+- [x] Recommendations are decision-usable and bounded to Glaux Server.
+- [x] Risks, assumptions, and open decisions are clearly documented.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -836,19 +836,21 @@ Because this supplemental topic executes after IDR-SRV-039, its findings must be
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
-- [ ] Downstream update/addendum recommendations captured
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
+- [x] Downstream update/addendum recommendations captured
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 30 hours of AI-assisted research and synthesis<br>
+**Completion Date:** September 15, 2026
+
+**Acceptance Note:** Accepted by the Glaux Project Lead on September 15, 2026. This acceptance authorizes IDR-SRV-040 as the next bounded single-topic iteration; IDR-SRV-041 and later topics remain unauthorized.
 
 ---
 
