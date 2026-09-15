@@ -1,7 +1,7 @@
 # Section 028: Metadata and Document Storage Strategy - Research Report
 
 **Topic ID:** IDR-SRV-028<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-028 Metadata and Document Storage Strategy](../IDR%20Plans/idr-srv-028-metadata-and-document-storage-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed question groups, all 6 methodology phases, all 10 success criteria, and the required 14-field metadata/document category matrix<br>
@@ -13,8 +13,8 @@
 **Controlled AEP Source:** `AC/224(JCGISR)D(2026)0005`, April 27, 2026, SHA-256 `56dc757b6e677b3584e3152a957849f21a24b22854f562613ff283a8b599da8c`; used only through accepted project findings and not redistributed<br>
 **Document Purpose:** Establish the Glaux Server source-document, normalized-metadata, immutable-artifact, validation-evidence, offline-package, indexing, lifecycle, policy, DDIL, and test baseline without defining final DDL, implementing draft Part 3, or implementing the server<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD pending acceptance<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 14, 2026<br>
 **Date:** September 14, 2026<br>
 **Last Updated:** September 14, 2026
 
@@ -598,5 +598,9 @@ The report is complete as research and is **In Review**. It is not accepted for 
 - [x] Recommendations are explicit and actionable
 - [x] Risks and open questions are documented
 - [x] Success criteria validation is complete
-- [ ] Plan-owner acceptance and acceptance date are recorded
+- [x] Plan-owner acceptance and acceptance date are recorded
 - [x] Next steps and owners are identified
+
+---
+
+**Acceptance record:** Accepted by the Glaux Project Lead on September 14, 2026. IDR-SRV-029 was authorized as the next bounded single-topic iteration; no later topic, draft Part 3 implementation, or server implementation was authorized.
