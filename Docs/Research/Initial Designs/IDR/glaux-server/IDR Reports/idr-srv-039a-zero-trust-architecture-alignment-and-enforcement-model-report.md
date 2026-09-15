@@ -1,7 +1,7 @@
 # Section 039A: Zero-Trust Architecture Alignment and Enforcement Model - Research Report
 
 **Topic ID:** IDR-SRV-039A<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-039A Zero-Trust Architecture Alignment and Enforcement Model](../IDR%20Plans/idr-srv-039a-zero-trust-architecture-alignment-and-enforcement-model.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All questions concerning ZTA authority, terminology, scope, enterprise/server responsibility, trust boundaries, subject/resource/action modeling, PE/PA/PEP/PIP/PAP placement, identity integration, least privilege, data-centric access, source and workload trust, streaming, command/control, DDIL, telemetry, deployment profiles, clients, testing, evidence, and downstream handoffs<br>
@@ -13,6 +13,8 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-039, controlled-AEP findings, and upstream-history register Version 1.12<br>
 **Document Purpose:** Define the Glaux Server ZTA-alignment claim, logical enforcement architecture, first-implementation baseline, operational-reference integration seams, profile behavior, evidence model, and downstream obligations without claiming enterprise deployment, maturity, accreditation, or authorization to operate<br>
 **Author:** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 15, 2026<br>
 **Date:** September 15, 2026<br>
 **Last Updated:** September 15, 2026
 
@@ -82,7 +84,7 @@ DDIL does not waive zero-trust principles. It changes where fresh evidence can c
 
 The first implementation baseline is deliberately achievable: one capability/action registry; immutable security context; embedded deterministic PE/PA interfaces; versioned local policy bundles; application PEPs at every semantic boundary; authorized-query and serializer obligations; source/workload mapping; stream re-evaluation hooks; command profiles disabled until their accepted gates pass; safe telemetry/audit decisions; fail-fast deployment profiles; and deterministic negative tests. Enterprise IdP/PDP/PAP, service mesh, device posture, automated threat/risk scoring, cross-domain release policy, operational PKI, SIEM/SOAR, and accreditation remain operational-reference or downstream responsibilities. **[E/P]**
 
-This supplemental report identifies no contradiction requiring modification of accepted IDR-SRV-039. It adds a named ZTA logical-component model, smaller trust-zone rule, decision-envelope contract, continuous-evaluation triggers, first-versus-operational scope, profile maturity/evidence model, and detailed PEP matrix for downstream consumption. It authorizes no implementation and no subsequent research topic. IDR-SRV-040 remains unauthorized until this report is accepted. **[A]**
+This supplemental report identifies no contradiction requiring modification of accepted IDR-SRV-039. It adds a named ZTA logical-component model, smaller trust-zone rule, decision-envelope contract, continuous-evaluation triggers, first-versus-operational scope, profile maturity/evidence model, and detailed PEP matrix for downstream consumption. It authorizes no implementation. Project-lead acceptance authorizes IDR-SRV-040 as the next bounded research topic. **[A]**
 
 ### 1.1 Recommended baseline at a glance
 
@@ -655,7 +657,7 @@ Before implementation architecture is finalized, prototype: policy-language-inde
 | IDR-SRV-057 | Bounded claim language, first/deferred baseline, matrices, unresolved decisions and evidence manifest | Integrate ZTA alignment without claiming enterprise maturity or accreditation | Final synthesis cannot authorize operation |
 | Enterprise/deployment/accreditation owner | Required IdP/ICAM, PKI, device posture, PDP/PAP, segmentation, SIEM/SOAR, policy owners and risk decisions | Tailor, deploy, assess and authorize the whole enterprise system | Outside Glaux Server project authority |
 
-No handoff authorizes a downstream topic. IDR-SRV-040 remains unauthorized until this report is reviewed and accepted under project governance.
+No handoff independently authorizes a downstream topic. Project-lead acceptance authorizes only IDR-SRV-040 as the next bounded research topic.
 
 ## 22. Recommendations
 
@@ -725,7 +727,7 @@ Open organizational decisions include required identity/device assurance, operat
 | Risks, assumptions and open decisions clear | Section 23 | Met |
 | References explicit and reproducible | Metadata, Section 3 and Section 25 | Met |
 
-Structural validation confirms all 25 required numbered sections and all 14 mandated enforcement-matrix columns. Scope validation confirms that Glaux is characterized only as a ZTA-aligned server component; no enterprise maturity, certification, accreditation or ATO is claimed; no vendor, IdP, policy engine, service mesh or topology is selected; no real credential, mission data, source relationship, policy label or command target is present; accepted IDR-SRV-032/038/039 decisions are preserved; and neither implementation nor IDR-SRV-040 is authorized.
+Structural validation confirms all 25 required numbered sections and all 14 mandated enforcement-matrix columns. Scope validation confirms that Glaux is characterized only as a ZTA-aligned server component; no enterprise maturity, certification, accreditation or ATO is claimed; no vendor, IdP, policy engine, service mesh or topology is selected; no real credential, mission data, source relationship, policy label or command target is present; accepted IDR-SRV-032/038/039 decisions are preserved; and no implementation is authorized. Project-lead acceptance authorizes only IDR-SRV-040 as the next bounded research topic.
 
 ## 25. References
 
