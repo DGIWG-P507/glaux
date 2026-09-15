@@ -1,13 +1,14 @@
 # OGC API - Connected Systems Upstream Standards-History Evidence Register
 
-**Version:** 1.10<br>
+**Version:** 1.11<br>
 **Status:** Active supporting evidence<br>
 **Initial screening completed:** August 1, 2026<br>
 **Register owner:** Glaux Project Lead<br>
 **Official repository:** https://github.com/opengeospatial/ogcapi-connected-systems<br>
 **Published-source tag checked:** [`v1.0.0`](https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0), commit [`8e03b236`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2)<br>
 **Mutable `master` snapshot checked:** September 14, 2026, commit [`3fd86c73`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f)<br>
-**Mutable `part3-working-draft` snapshot checked:** August 31, 2026, commit [`c95c1d60`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/c95c1d6003359d0883c4dc759d7a148ab115fdb1)
+**Mutable `part3-working-draft` snapshot checked:** August 31, 2026, commit [`c95c1d60`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/c95c1d6003359d0883c4dc759d7a148ab115fdb1)<br>
+**Mutable OGC API - Features CRUD dependency snapshot checked:** September 14, 2026, commit [`4e30324a`](https://github.com/opengeospatial/ogcapi-features/commit/4e30324a14b682ff4a26ee43aad1eb6428c846a3), document `20-002r2`, `1.0.0-SNAPSHOT`, Draft<br>
 
 ---
 
@@ -148,7 +149,7 @@ Retain an item when it can materially affect one or more of these areas:
 
 | Issue | State | Material evidence and present meaning | Class | Owning IDR topic(s) |
 |---|---|---|---|---|
-| [#141](https://github.com/opengeospatial/ogcapi-connected-systems/issues/141) | Open | Parts 1/2 depend on draft OGC API Features Part 4 CRUD/update behavior; eventual publication requires a delta review. | UP | 008, 010A, 013 |
+| [#141](https://github.com/opengeospatial/ogcapi-connected-systems/issues/141) | Open | Parts 1/2 depend on draft OGC API Features Part 4 CRUD/update behavior. The IDR-SRV-031 review pinned Features commit `4e30324a`, where `20-002r2` remains `1.0.0-SNAPSHOT` Draft; eventual publication requires a delta review. | UP | 008, 010A, 013, 031 |
 | [#142](https://github.com/opengeospatial/ogcapi-connected-systems/issues/142) | Open | Part 1 intentionally publishes seven literal `assetType` values; only the requested `cs:AssetType` classifier-definition URI remains unresolved. | UP | 024 |
 | [#144](https://github.com/opengeospatial/ogcapi-connected-systems/issues/144) | Open | Maintainer rationale keeps logical structure separate from encoding, which belongs to a containing DataArray/DataStream or CSAPI wrapper. | PCD | 012, 022 |
 | [#146](https://github.com/opengeospatial/ogcapi-connected-systems/issues/146) | Closed | Pre-publication HTML lagged source/PDF until the external OGC build process was corrected; mutable renderings need provenance checks. | PB | 014 |
@@ -166,7 +167,7 @@ Retain an item when it can materially affect one or more of these areas:
 | [#165](https://github.com/opengeospatial/ogcapi-connected-systems/issues/165) | Open | External/local sampled-feature matching, `foi` filtering, sampling chains, derived filters, and a misplaced Part 4 example remain ambiguous. | UP | 010, 017, 011, 024 |
 | [#166](https://github.com/opengeospatial/ogcapi-connected-systems/issues/166) | Open | Complete-replacement PUT across encodings can lose representation-specific content; retain/delete/reject behavior is unspecified. | UP | 012, 013, 029 |
 | [#169](https://github.com/opengeospatial/ogcapi-connected-systems/issues/169) | Open | Part 1 requires `recursive` on deployment queries but OAS omits it; [PR #196](https://github.com/opengeospatial/ogcapi-connected-systems/pull/196) is approved but unmerged. | PCD | 010, 010A, 011, 013, 014 |
-| [#170](https://github.com/opengeospatial/ogcapi-connected-systems/issues/170) | Open | Optional Update classes require PATCH but Parts 1/2 OAS omit it; patch document, arrays, nulls, atomicity, and errors remain unresolved. | UP | 010A, 012, 013, 014, 029 |
+| [#170](https://github.com/opengeospatial/ogcapi-connected-systems/issues/170) | Open | Optional Update classes require PATCH but Parts 1/2 OAS omit it; patch document, arrays, nulls, atomicity, and errors remain unresolved. | UP | 010A, 012, 013, 014, 029, 031 |
 | [#171](https://github.com/opengeospatial/ogcapi-connected-systems/issues/171) | Open | Maintainers favor rejecting Deployment deletion without cascade and recursively deleting with cascade, without reparenting; not adopted. | PCD | 013, 030 |
 | [#172](https://github.com/opengeospatial/ogcapi-connected-systems/issues/172) | Open | Alleged missing `systemType` requirement is not an actual schema defect because composed schema inherits/narrows required `featureType`. | UP | 023 |
 | [#173](https://github.com/opengeospatial/ogcapi-connected-systems/issues/173) | Closed | Published mapping intent requires `ogc-rel:` prefixes; [PR #176](https://github.com/opengeospatial/ogcapi-connected-systems/pull/176) changes only three relation values in one example on post-release `master`, not Version 1.0. Other current examples still contain bare values, including eight `parentSystem` occurrences. | PCD | 010, 010A |
@@ -179,7 +180,7 @@ Retain an item when it can materially affect one or more of these areas:
 | [#181](https://github.com/opengeospatial/ogcapi-connected-systems/issues/181) | Open | Ordinary Observation JSON Schema differs from a stream’s SWE logical `resultSchema`; custom `+json` does not automatically imply JSON Schema. | UP | 012, 013, 023 |
 | [#182](https://github.com/opengeospatial/ogcapi-connected-systems/issues/182) | Open | Valid-time prose/schema differ over `now`; open intervals are absent and a common published schema target reportedly returns 404. | UP | 018, 023 |
 | [#183](https://github.com/opengeospatial/ogcapi-connected-systems/issues/183) | Open | Publication omitted intended `timeInstantOrNow.json`; redirecting to `timeInstant.json` would remove intended `now` support. | UP | 023 |
-| [#185](https://github.com/opengeospatial/ogcapi-connected-systems/issues/185) | Open | Published transactions are individual-only while OAS contains contradictory array/batch artifacts; common bulk semantics remain draft work. | UP | 013, 014, 029 |
+| [#185](https://github.com/opengeospatial/ogcapi-connected-systems/issues/185) | Open | Published transactions are individual-only while OAS contains contradictory array/batch artifacts; common bulk semantics remain draft work. | UP | 013, 014, 029, 031 |
 | [#186](https://github.com/opengeospatial/ogcapi-connected-systems/issues/186) | Open | Proposes using versioned v1.0 bundled OAS for ReDoc rendering/download instead of fragile modular entry files; the release assets' residual relative references currently contradict the proposal's standalone-consumption acceptance criterion. | UP | 009, 010A, 014 |
 | [#187](https://github.com/opengeospatial/ogcapi-connected-systems/issues/187) | Open | Recorded direction uses CloudEvents for resource lifecycle envelopes while leaving native data messages unwrapped for constrained/DDIL efficiency. | PCD | 014H, 035 |
 | [#188](https://github.com/opengeospatial/ogcapi-connected-systems/issues/188) | Open | Status of MQTT/NATS/Kafka/AMQP/DDS bindings as classes, profiles, extensions, or separate publications is unresolved. | UP | 014H, 035 |
@@ -260,6 +261,7 @@ The owner column is the controlling routing device. The following summary highli
 | IDR-SRV-023 | Schema dialect and validation contradictions/defects, including quaternion typing, reversed booleans, temporal files, and Procedure validity: #18, #43, #71, #87, #172, #174, #181-#183. |
 | IDR-SRV-024 | Semantic identifiers, UOMs, evolving vocabularies, derived-property qualifiers, asset types, generated stream-property summaries, resource-specific property-filter derivation, and sampling-feature handoffs: #9, #40, #73-#76, #142, #162, #165, #178-#179. |
 | IDR-SRV-029/030 | Cross-encoding replacement, PATCH, bulk artifacts, cascade behavior, and Deployment deletion: #61, #66, #166, #170-#171, #185. |
+| IDR-SRV-031 | Write admission and mutation boundaries, draft CRUD method/status/OPTIONS/PATCH dependency, exact JSON Merge Patch profile, individual-versus-batch atomicity, cascade behavior, and artifact/OAS gaps: #61, #141, #164, #166, #170-#171, #178, #181, #185. |
 | IDR-SRV-034 | Linked/inline results and server-generated dynamic fields: #65, #83, #101. |
 | IDR-SRV-014H | Establish the early authority, completeness, dependency, implementation, and interoperability baseline for draft Part 3 and active CS-Go/OSH work: #14, #68, #104, #187-#195 and PR #198. |
 | IDR-SRV-035 | Consume accepted IDR-SRV-014H, refresh material deltas, and make the final Glaux streaming architecture and Part 3 adoption/profile decision across AsyncAPI, common Pub/Sub alignment, CloudEvents, transports, encodings, migration, and event payloads: #14, #68, #104, #187-#195. |
@@ -306,6 +308,7 @@ Two general traps apply everywhere: issue closure can disagree with the released
 
 | Date | Version | Change | Owner |
 |---|---|---|---|
+| September 14, 2026 | 1.11 | Refreshed the write and ingestion boundary evidence for IDR-SRV-031; pinned the mutable OGC API - Features CRUD dependency at `4e30324a` with its Draft `20-002r2` / `1.0.0-SNAPSHOT` status; reconfirmed the CSAPI Version 1.0 and current `master` pins; and routed the draft dependency, PATCH-media/atomicity, cross-encoding, association, cascade, dynamic-field, schema, and individual-versus-batch gaps to the server write model. | Glaux research workflow |
 | September 14, 2026 | 1.10 | Refreshed units, property, and semantic-binding history for IDR-SRV-024; confirmed unchanged published and `master` source pins; routed inherited `DerivedProperty.qualifiers` issue #162 and generated-field issue #178 to the semantic/dynamic-data work; reconfirmed issue #179 remained unresolved after its September 3 update; and routed its resource-specific property-filter derivation seam to semantic strategy, dynamic-data, conformance, and interoperability topics. | Glaux research workflow |
 | August 31, 2026 | 1.9 | Refreshed the Part 3 branch from `a1f1f03b` to `c95c1d60`; recorded the three draft message classes, absent AsyncAPI/ATS, unwired MQTT stub, and remaining annex gaps; updated issue #192 and merged PR #198 disposition; and split Part 3 routing between the early IDR-SRV-014H authority/implementation study and the later IDR-SRV-035 architecture/adoption-profile decision. | Glaux research workflow |
 | August 31, 2026 | 1.8 | Refreshed OpenAPI and documentation evidence for IDR-SRV-014; proved normalized equality between the tagged and published modular OAS files; recorded both published ZIP hashes; reproduced residual bundle references, lint findings, Part 2 stack/alias exhaustion, and static-generation failures with pinned tools; reconfirmed routed issue/PR/release state and unchanged `master`; updated the complete public counts to 142 issues/58 pull requests; and added direct routing for new broken-ReDoc-link issue #200. | Glaux research workflow |
