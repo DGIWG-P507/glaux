@@ -1,6 +1,6 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.27<br>
+**Version:** 3.28<br>
 **Date:** September 14, 2026<br>
 **Status:** Draft<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
@@ -605,6 +605,7 @@ The final report must:
 | 2026-09-14 | IDR-SRV-026 Research Completion | Selected PostGIS as full-profile spatial authority; defined exact-source, canonical-assertion, query-projection, generated-view, derived-product, and cache layers; classified 26 spatial categories across resource families; established CRS84, safe-transform, vertical, antimeridian, bbox/geom, indexing, dynamic-location, policy, DDIL, fixture, performance, and interoperability rules; and placed the report in review | Give later persistence, ingestion, dynamic-data, tasking, security, DDIL, API, fixture, performance, conformance, and interoperability topics one coherent geospatial baseline without accepting the report, authorizing IDR-SRV-027, or implementing the server | Pending Glaux Project Lead review |
 | 2026-09-14 | IDR-SRV-026 Acceptance and IDR-SRV-027 Authorization | Accepted the PostGIS full-profile spatial authority, 26-category spatial inventory, exact/canonical/query/generated/derived/cache layering, CRS84 and transform rules, vertical and antimeridian boundaries, bbox/geom semantics, index strategy, dynamic-location model, policy/DDIL controls, test corpus, and downstream handoffs; authorized the bounded time-series observation-storage iteration | Preserve the single-topic review boundary while moving from spatial assertions and spatial-temporal requirements into observation/status sample persistence, partitioning, retention, compression, late data, and workload decisions | Glaux Project Lead |
 | 2026-09-14 | IDR-SRV-027 Research Completion | Defined typed family-specific temporal stores; selected native PostgreSQL as the authoritative time-series baseline; advanced result-time Observation partitioning with a commit-time benchmark alternative and atomic identity/admission-ledger seam; established multi-clock, latest/tie, indexing, replay/backfill, retention/archive/summary, DDIL, policy, fixture, performance, and interoperability rules; retained TimescaleDB behind a measured adoption gate; and placed the report in review | Give later persistence, ingestion, dynamic-data, streaming, tasking, security, DDIL, deployment, fixture, performance, conformance, and interoperability topics one coherent time-series baseline without accepting the report, authorizing IDR-SRV-028, implementing draft Part 3, or implementing the server | Pending Glaux Project Lead review |
+| 2026-09-14 | IDR-SRV-027 Acceptance and IDR-SRV-028 Authorization | Accepted the typed family-specific temporal-store model, native PostgreSQL authority, result-time partition candidate and commit-time benchmark alternative, identity/admission-ledger seam, multi-clock/latest/tie/index/replay/retention/archive/summary rules, conditional TimescaleDB gate, and DDIL/policy/test handoffs; authorized the bounded metadata and document storage iteration | Preserve the single-topic review boundary while moving from high-volume temporal facts and derived projections into exact-source, canonical metadata, document, indexing, revision, artifact, and retrieval boundaries | Glaux Project Lead |
 
 ---
 
@@ -616,7 +617,7 @@ The final report must:
 | B | IDR-SRV-006 to IDR-SRV-014, IDR-SRV-010A, IDR-SRV-014A to IDR-SRV-014H | Complete (18/18) | 18/18 | 18/18 | Research Complete | 2026-08-31 | IDR-SRV-006 through IDR-SRV-014H reports are complete and accepted; no tracked Part 3 state changed during their execution. Later topic refreshes govern the current shared-register version. |
 | C | IDR-SRV-015 to IDR-SRV-020 | Complete (6/6) | 6/6 | 6/6 | Research Complete | 2026-09-13 | IDR-SRV-015 through IDR-SRV-020 reports are complete and accepted. |
 | D | IDR-SRV-021 to IDR-SRV-024 | Complete (4/4) | 4/4 | 4/4 | Research Complete | 2026-09-14 | IDR-SRV-021 through IDR-SRV-024 reports are complete and accepted. The shared upstream-history register is Version 1.10. |
-| E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 3/6 | 2/6 | Research In Review | 2026-09-14 | IDR-SRV-025 and IDR-SRV-026 are complete and accepted; IDR-SRV-027 research is complete and in review; IDR-SRV-028 and later Category E topics remain unauthorized. |
+| E | IDR-SRV-025 to IDR-SRV-030 | Complete (6/6) | 3/6 | 3/6 | Research In Progress | 2026-09-14 | IDR-SRV-025 through IDR-SRV-027 are complete and accepted; IDR-SRV-028 is authorized as the next bounded single-topic iteration, and later Category E topics remain unauthorized. |
 | F | IDR-SRV-031 to IDR-SRV-038 | Complete (8/8) | 0/8 | 0/8 | Research Not Started | 2026-07-30 | |
 | G | IDR-SRV-039, IDR-SRV-039A, IDR-SRV-040 to IDR-SRV-043 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |
 | H | IDR-SRV-044 to IDR-SRV-049 | Complete (6/6) | 0/6 | 0/6 | Research Not Started | 2026-07-30 | |

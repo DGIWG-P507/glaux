@@ -1,7 +1,7 @@
 # Section 027: Time-Series Observation Storage Strategy - Research Report
 
 **Topic ID:** IDR-SRV-027<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-027 Time-Series Observation Storage Strategy](../IDR%20Plans/idr-srv-027-time-series-observation-storage-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 5 core questions, all detailed question groups, all 6 methodology phases, all 10 success criteria, and the required 15-field time-series matrix<br>
@@ -13,8 +13,8 @@
 **Controlled AEP Source:** `AC/224(JCGISR)D(2026)0005`, April 27, 2026, SHA-256 `56dc757b6e677b3584e3152a957849f21a24b22854f562613ff283a8b599da8c`; used only through accepted project findings and not redistributed<br>
 **Document Purpose:** Establish the Glaux Server time-series authority, temporal-record, query/index, partition, latest-value, retention, replay, DDIL, policy, and test baseline without defining final DDL, implementing draft Part 3, or implementing the server<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 14, 2026<br>
 **Date:** September 14, 2026<br>
 **Last Updated:** September 14, 2026
 
@@ -763,4 +763,4 @@ The required fifteen matrix fields appear verbatim in §5.2. All planned categor
 
 ---
 
-**Report status:** In Review. Research is complete; acceptance and all downstream work remain subject to Glaux Project Lead action.
+**Acceptance record:** Accepted by the Glaux Project Lead on September 14, 2026. IDR-SRV-028 was authorized as the next bounded single-topic iteration; no later topic, draft Part 3 implementation, or server implementation was authorized.
