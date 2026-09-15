@@ -1,7 +1,7 @@
 # Section 038: Command Authorization, Safety, and Audit Strategy - Research Report
 
 **Topic ID:** IDR-SRV-038<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-038 Command Authorization, Safety, and Audit Strategy](../IDR%20Plans/idr-srv-038-command-authorization-safety-and-audit-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All five core questions and all detailed question groups concerning standards, decision taxonomy, command authority, safety rules, lifecycle integration, feasibility/validation, source and gateway trust, policy and disclosure, audit, diagnostics, DDIL, events, persistence, and verification<br>
@@ -13,6 +13,8 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-037, controlled-AEP findings, and upstream-history register Version 1.12<br>
 **Document Purpose:** Establish a bounded, implementable command-specific authorization, safety/interlock, approval, dispatch-authorization, disclosure, and accountability baseline without selecting the full enterprise identity architecture or implementing the server<br>
 **Author:** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 15, 2026<br>
 **Date:** September 15, 2026<br>
 **Last Updated:** September 15, 2026
 
@@ -624,7 +626,7 @@ None prevents acceptance of this command-specific architecture. They prohibit en
 | Make downstream handoffs explicit | Met | §15 |
 | Provide explicit reproducible references | Met | §19; Appendix C |
 
-Research phases 1 through 6, deliverable drafting, and author review are complete. Plan-owner acceptance remains deliberately unchecked while this report is **In Review**. IDR-SRV-039 is not authorized by this report.
+Research phases 1 through 6, deliverable drafting, author review, and plan-owner acceptance are complete. Acceptance authorizes IDR-SRV-039 as the next bounded single-topic iteration; IDR-SRV-039A and later topics remain unauthorized.
 
 ## 19. References
 
@@ -771,4 +773,4 @@ git diff --check
 - [x] Recommendations are decision-usable and bounded to Glaux Server
 - [x] References and evidence checks are reproducible
 - [x] Report is ready for plan-owner review
-- [ ] Report accepted by plan owner
+- [x] Report accepted by plan owner
