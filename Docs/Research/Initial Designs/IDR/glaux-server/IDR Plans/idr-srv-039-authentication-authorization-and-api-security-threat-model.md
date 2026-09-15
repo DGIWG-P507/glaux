@@ -1,10 +1,10 @@
 # Section 039: Authentication, Authorization, and API Security Threat Model - Research Plan
 
 **Topic ID:** IDR-SRV-039<br>
-**Status:** Planned  
-**Last Updated:** July 30, 2026<br>
+**Status:** Complete<br>
+**Last Updated:** September 15, 2026<br>
 **Estimated Research Time:** 17.5-22.5 hours<br>
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 31 hours of AI-assisted research and synthesis<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-039-authentication-authorization-and-api-security-threat-model-report.md`
 
 ---
@@ -585,15 +585,15 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] Protected assets, actor classes, identity concepts, API surfaces, and trust boundaries are identified with source anchors.
-- [ ] Authentication options and authorization models are evaluated for local, CI, demo, operational, source-ingestion, service-to-service, federation, command-gateway, and DDIL contexts.
-- [ ] API security threats and candidate controls are documented across CSAPI resources, ingestion, streaming, source registration, command/control, admin, documentation, observability, and DDIL surfaces.
-- [ ] Object-level authorization, function-level authorization, safe diagnostics, redaction, audit linkage, and command/source-specific security implications are documented.
-- [ ] Deployment, configuration, secrets, TLS, proxy, CORS, observability, fixture, conformance, security testing, performance, and interoperability implications are documented.
-- [ ] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
-- [ ] Recommendations are decision-usable and bounded to Glaux Server.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] Protected assets, actor classes, identity concepts, API surfaces, and trust boundaries are identified with source anchors.
+- [x] Authentication options and authorization models are evaluated for local, CI, demo, operational, source-ingestion, service-to-service, federation, command-gateway, and DDIL contexts.
+- [x] API security threats and candidate controls are documented across CSAPI resources, ingestion, streaming, source registration, command/control, admin, documentation, observability, and DDIL surfaces.
+- [x] Object-level authorization, function-level authorization, safe diagnostics, redaction, audit linkage, and command/source-specific security implications are documented.
+- [x] Deployment, configuration, secrets, TLS, proxy, CORS, observability, fixture, conformance, security testing, performance, and interoperability implications are documented.
+- [x] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
+- [x] Recommendations are decision-usable and bounded to Glaux Server.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -681,18 +681,20 @@ The security threat model matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 31 hours of AI-assisted research and synthesis<br>
+**Completion Date:** September 15, 2026
+
+**Acceptance Note:** Accepted by the Glaux Project Lead on September 15, 2026. This acceptance authorizes IDR-SRV-039A as the next bounded single-topic iteration; IDR-SRV-040 and later topics remain unauthorized.
 
 ---
 
