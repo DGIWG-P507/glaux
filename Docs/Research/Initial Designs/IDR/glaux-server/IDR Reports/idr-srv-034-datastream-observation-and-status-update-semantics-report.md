@@ -1,7 +1,7 @@
 # Section 034: Datastream, Observation, and Status Update Semantics - Research Report
 
 **Topic ID:** IDR-SRV-034<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-034 Datastream, Observation, and Status Update Semantics](../IDR%20Plans/idr-srv-034-datastream-observation-and-status-update-semantics.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Five core questions and all detailed questions concerning dynamic-resource taxonomy, DataStream contracts, Observation facts/results, status and dynamic properties, events, latest/history, temporal/spatial/semantic behavior, validation, provenance, query, persistence, streaming, DDIL, policy, commands, fixtures, performance, and interoperability<br>
@@ -16,10 +16,10 @@
 **Supporting Resources:** [IDR-SRV-018](idr-srv-018-temporal-validity-and-freshness-model-report.md), [019](idr-srv-019-provenance-lineage-quality-and-trust-metadata-model-report.md), [022](idr-srv-022-swe-common-data-component-strategy-report.md), [024](idr-srv-024-units-observed-properties-and-semantic-binding-strategy-report.md), [027](idr-srv-027-time-series-observation-storage-strategy-report.md), [029](idr-srv-029-transaction-consistency-idempotency-and-concurrency-strategy-report.md), [031](idr-srv-031-server-write-and-ingestion-model-report.md), [032](idr-srv-032-publisher-to-server-contract-boundary-report.md), and [033](idr-srv-033-simulator-to-server-contract-boundary-report.md)<br>
 **Document Purpose:** Establish the standards-aligned meaning, admission, persistence, selection, and client-query contract for DataStreams, Observations, status updates, dynamic properties, and their derived current/latest views<br>
 **Author(s):** OpenAI Codex, for the Glaux Project<br>
-**Accepted By:** TBD until controlling-plan owner acceptance<br>
-**Acceptance Date:** TBD until accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 15, 2026<br>
 **Date:** September 14, 2026<br>
-**Last Updated:** September 14, 2026
+**Last Updated:** September 15, 2026
 
 ---
 
@@ -664,7 +664,7 @@ None blocks this baseline or IDR-SRV-035 research.
 | Explicit handoffs | Met | §15 |
 | Reproducible references | Met | §§3,19 |
 
-All six research phases, drafting, and internal review are complete. Plan-owner acceptance remains unchecked while In Review.
+All six research phases, drafting, internal review, and plan-owner acceptance are complete.
 
 ## 19. References
 
@@ -725,4 +725,4 @@ All six research phases, drafting, and internal review are complete. Plan-owner 
 - [x] Prior-report conflicts are reconciled
 - [x] Executive summary and recommendations are decision-usable
 - [x] Risks, success criteria, handoffs, and owners are documented
-- [ ] Plan-owner acceptance and date remain pending
+- [x] Plan-owner acceptance and date are recorded
