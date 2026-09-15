@@ -1,9 +1,9 @@
 # Section 032: Publisher-to-Server Contract Boundary - Research Plan
 
-**Status:** Planned
-**Last Updated:** July 29, 2026
+**Status:** In Review
+**Last Updated:** September 14, 2026
 **Estimated Research Time:** 14-18 hours
-**Actual Research Time:** TBD until complete
+**Actual Research Time:** Approximately 17 hours of AI-assisted research and synthesis
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-032-publisher-to-server-contract-boundary-report.md`
 
 ---
@@ -384,18 +384,20 @@ The contract matrix must include at minimum: publisher class, represented source
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
-**Actual Research Time:** TBD until complete
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 17 hours of AI-assisted research and synthesis
+**Completion Date:** September 14, 2026
+
+**Completion Note:** All six phases, the publisher/source/principal/authority model, registration lifecycle, responsibility allocation, standards-facing CSAPI plus GPC-v1 surface decision, required 21-field contract matrix, payload/envelope rules, validation and custody behavior, delivery/idempotency/batch/retry/DDIL/error/evolution rules, fixture suite, all 11 success criteria, and the governed report were completed and accepted by the Glaux Project Lead on September 14, 2026. Acceptance authorizes IDR-SRV-033 as the next bounded single-topic iteration; no later topic, draft Part 3 implementation, or server implementation was authorized.
 
 ---
 
