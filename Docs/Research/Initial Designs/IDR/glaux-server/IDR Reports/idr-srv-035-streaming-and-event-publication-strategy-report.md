@@ -1,7 +1,7 @@
 # Section 035: Streaming and Event Publication Strategy - Research Report
 
 **Topic ID:** IDR-SRV-035<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-035 Streaming and Event Publication Strategy](../IDR%20Plans/idr-srv-035-streaming-and-event-publication-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All 6 core questions and detailed questions concerning taxonomy, triggers, durability, ordering, replay, protocols, subscription policy, DDIL, tasking, testing, interoperability, and draft Part 3 disposition<br>
@@ -14,8 +14,8 @@
 **Supporting Resources:** Accepted IDR-SRV-014H, IDR-SRV-025, IDR-SRV-027, IDR-SRV-029, IDR-SRV-031 through IDR-SRV-034, and upstream-history register Version 1.12<br>
 **Document Purpose:** Establish the server-side durable streaming/publication architecture, protocol sequence, subscription/replay contract, and final draft Part 3 experimental-profile decision without implementing the server or claiming unapproved conformance<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD pending Glaux Project Lead review<br>
-**Acceptance Date:** TBD pending acceptance<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 15, 2026<br>
 **Date:** September 15, 2026<br>
 **Last Updated:** September 15, 2026
 
@@ -759,5 +759,5 @@ git diff --check
 - [x] Recommendations and implementation sequence are explicit
 - [x] Risks and open questions are documented and routed
 - [x] Plan success criteria are validated
-- [ ] Plan-owner acceptance and acceptance date recorded
+- [x] Plan-owner acceptance and acceptance date recorded
 - [x] Next-topic handoff is defined without authorizing IDR-SRV-036

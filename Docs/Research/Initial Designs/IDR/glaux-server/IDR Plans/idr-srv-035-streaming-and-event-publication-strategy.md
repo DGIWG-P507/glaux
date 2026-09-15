@@ -1,6 +1,6 @@
 # Section 035: Streaming and Event Publication Strategy - Research Plan
 
-**Status:** In Review<br>
+**Status:** Complete<br>
 **Last Updated:** September 15, 2026<br>
 **Estimated Research Time:** 16-20 hours<br>
 **Actual Research Time:** Approximately 19 hours of AI-assisted execution on September 15, 2026<br>
@@ -687,12 +687,12 @@ Update this section as work progresses.
 - [x] Phase 6 synthesis complete
 - [x] Deliverable draft complete
 - [x] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Deliverable accepted
 
 **Actual Research Time:** Approximately 19 hours of AI-assisted execution<br>
 **Completion Date:** September 15, 2026
 
-**Completion Note:** Research execution is complete and the [IDR-SRV-035 report](../IDR%20Reports/idr-srv-035-streaming-and-event-publication-strategy-report.md) is in review. It selects a durable transport-neutral publication core, HTTP snapshot/change-feed plus SSE as the first live slice, and a disabled-by-default MQTT 5 experimental profile pinned to draft Part 3 commit `6f529a15`; it does not claim approved Part 3 conformance or implement the server. The shared upstream-history register is Version 1.12. Plan-owner acceptance remains pending, and IDR-SRV-036 is not authorized.
+**Completion Note:** Research execution and plan-owner review are complete, and the [IDR-SRV-035 report](../IDR%20Reports/idr-srv-035-streaming-and-event-publication-strategy-report.md) was accepted on September 15, 2026. It selects a durable transport-neutral publication core, HTTP snapshot/change-feed plus SSE as the first live slice, and a disabled-by-default MQTT 5 experimental profile pinned to draft Part 3 commit `6f529a15`; it does not claim approved Part 3 conformance or implement the server. The shared upstream-history register is Version 1.12. IDR-SRV-036 is authorized as the next bounded research topic.
 
 ---
 
