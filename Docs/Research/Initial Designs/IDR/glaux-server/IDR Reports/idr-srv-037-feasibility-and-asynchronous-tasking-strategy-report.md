@@ -1,7 +1,7 @@
 # Section 037: Feasibility and Asynchronous Tasking Strategy - Research Report
 
 **Topic ID:** IDR-SRV-037<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-037 Feasibility and Asynchronous Tasking Strategy](../IDR%20Plans/idr-srv-037-feasibility-and-asynchronous-tasking-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All seven question groups and 37 detailed questions concerning the normative baseline, public resource/API contract, task state model, validation and feasibility, durable Rust implementation, security/DDIL, and conformance/interoperability<br>
@@ -13,8 +13,8 @@
 **Supporting Resources:** Accepted IDR-SRV-007/008/013/015-024/029/031-036, controlled-AEP findings, and upstream-history register Version 1.12<br>
 **Document Purpose:** Establish a standards-aligned and implementable feasibility and synchronous/asynchronous tasking baseline without implementing the server, inventing a jobs API, defining final command authorization/safety policy, or treating feasibility as a reservation<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 15, 2026<br>
 **Date:** September 15, 2026<br>
 **Last Updated:** September 15, 2026
 
@@ -814,8 +814,8 @@ This compact ledger makes the grouped table in §3.2 mechanically complete. “O
 - [x] Phased implementation, risks, alternatives, confidence, and downstream owners stated
 - [x] Sources are primary/pinned where available and limitations are explicit
 - [x] Report edited and ready for plan-owner review
-- [ ] Report accepted by plan owner
+- [x] Report accepted by plan owner
 
 **Research execution completed:** September 15, 2026<br>
-**Current disposition:** In Review<br>
-**Next authorized topic:** None. IDR-SRV-038 remains unauthorized pending explicit acceptance of IDR-SRV-037 by the Glaux Project Lead.
+**Current disposition:** Final and accepted by the Glaux Project Lead<br>
+**Next authorized topic:** IDR-SRV-038 — Command Authorization, Safety, and Audit Strategy. No later topic is authorized.
