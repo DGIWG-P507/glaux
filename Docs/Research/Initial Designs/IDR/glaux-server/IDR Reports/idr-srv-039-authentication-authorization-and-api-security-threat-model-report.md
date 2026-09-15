@@ -1,7 +1,7 @@
 # Section 039: Authentication, Authorization, and API Security Threat Model - Research Report
 
 **Topic ID:** IDR-SRV-039<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-039 Authentication, Authorization, and API Security Threat Model](../IDR%20Plans/idr-srv-039-authentication-authorization-and-api-security-threat-model.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All whole-server questions concerning protected assets, actors, identities, credentials, API surfaces, trust boundaries, authentication, authorization, threats, controls, deployment profiles, ingestion, streaming, command/control, documentation, DDIL, federation, observability, and verification<br>
@@ -13,6 +13,8 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-038, controlled-AEP findings, and upstream-history register Version 1.12<br>
 **Document Purpose:** Establish a decision-usable, secure-by-default whole-server authentication, authorization, and API threat-model baseline without selecting a final identity provider, deployment topology, enterprise policy system, or implementation library<br>
 **Author:** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 15, 2026<br>
 **Date:** September 15, 2026<br>
 **Last Updated:** September 15, 2026
 
@@ -78,7 +80,7 @@ DDIL operation should use locally verifiable signed credentials and security bun
 
 OpenAPI and conformance metadata are capability disclosure surfaces, not automatically public documentation. Glaux's accepted canonical OpenAPI version remains 3.1.2. OpenAPI 3.2.1, published September 10, 2026, is a monitored target and does not silently replace the accepted baseline. Generated descriptions must come from the enabled capability/security registry, omit secrets and internal topology, declare security truthfully, avoid untrusted request-time external references, and be protected or policy-filtered where deployment capability itself is sensitive. **[A/E/P]**
 
-This report completes the first Category G research topic but authorizes no implementation and no next topic. IDR-SRV-039A remains unauthorized pending project-lead acceptance of this report. It will own detailed zero-trust component placement, enforcement topology, trust zones, and continuous-decision architecture; IDR-SRV-040 owns detailed policy and releasability; IDR-SRV-041 owns general audit architecture; and IDR-SRV-042/043 own final DDIL and synchronization behavior. **[A]**
+This report completes the first Category G research topic but authorizes no implementation. Project-lead acceptance authorizes IDR-SRV-039A as the next bounded research iteration. It owns detailed zero-trust component placement, enforcement topology, trust zones, and continuous-decision architecture; IDR-SRV-040 owns detailed policy and releasability; IDR-SRV-041 owns general audit architecture; and IDR-SRV-042/043 own final DDIL and synchronization behavior. **[A]**
 
 ### 1.1 Recommended baseline at a glance
 
@@ -634,7 +636,7 @@ Residual risk remains until the selected identity, policy, transport, storage, d
 | Downstream handoffs explicit | Section 18 | Met |
 | References explicit and reproducible | Metadata, Section 3.4 and Section 22 | Met |
 
-Structural validation confirmed all 22 required numbered sections and all 15 mandated threat-matrix columns. Scope validation confirmed that the report selects neither a production identity provider nor a deployment topology, exposes no controlled AEP content or real credential, preserves accepted CSAPI/OpenAPI and command decisions, and does not authorize implementation or IDR-SRV-039A.
+Structural validation confirmed all 22 required numbered sections and all 15 mandated threat-matrix columns. Scope validation confirmed that the report selects neither a production identity provider nor a deployment topology, exposes no controlled AEP content or real credential, preserves accepted CSAPI/OpenAPI and command decisions, and authorizes no implementation. Project-lead acceptance authorizes only IDR-SRV-039A as the next bounded research topic.
 
 ## 22. References
 
