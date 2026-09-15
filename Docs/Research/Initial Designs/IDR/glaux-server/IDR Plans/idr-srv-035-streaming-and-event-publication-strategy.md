@@ -1,9 +1,9 @@
 # Section 035: Streaming and Event Publication Strategy - Research Plan
 
-**Status:** Planned  
-**Last Updated:** August 31, 2026<br>
+**Status:** In Review<br>
+**Last Updated:** September 15, 2026<br>
 **Estimated Research Time:** 16-20 hours<br>
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 19 hours of AI-assisted execution on September 15, 2026<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-035-streaming-and-event-publication-strategy-report.md`
 
 ---
@@ -576,18 +576,18 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] Event and stream categories are identified and distinguished with source anchors.
-- [ ] The packaged Part 2 AsyncAPI, pinned Part 3 working material, and relevant official issue/PR history are reviewed with versions, state, authority, and unresolved normative gaps explicit.
-- [ ] Publication triggers, durable event records, outbox/inbox implications, payload shapes, ordering, cursor, replay, and backfill semantics are documented.
-- [ ] Publication protocols and patterns are evaluated against explicit criteria.
-- [ ] Delivery guarantees, duplicate handling, slow consumers, backpressure, broker failure, reconnect, and DDIL implications are documented.
-- [ ] Security, authorization, policy/releasability, command-event, observability, fixture, conformance, performance, and interoperability implications are documented.
-- [ ] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
-- [ ] The accepted `IDR-SRV-014H` baseline is consumed, material upstream and implementation deltas are refreshed, and the final Part 3 adoption/profile decision is explicit.
-- [ ] Any experimental Part 3 support has an exact snapshot/profile identifier, feature gate, adapter boundary, generated-contract expectation, truthful capability/conformance wording, migration policy, and interoperability test gate.
-- [ ] Recommendations are decision-usable and bounded to Glaux Server.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] Event and stream categories are identified and distinguished with source anchors.
+- [x] The packaged Part 2 AsyncAPI, pinned Part 3 working material, and relevant official issue/PR history are reviewed with versions, state, authority, and unresolved normative gaps explicit.
+- [x] Publication triggers, durable event records, outbox/inbox implications, payload shapes, ordering, cursor, replay, and backfill semantics are documented.
+- [x] Publication protocols and patterns are evaluated against explicit criteria.
+- [x] Delivery guarantees, duplicate handling, slow consumers, backpressure, broker failure, reconnect, and DDIL implications are documented.
+- [x] Security, authorization, policy/releasability, command-event, observability, fixture, conformance, performance, and interoperability implications are documented.
+- [x] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
+- [x] The accepted `IDR-SRV-014H` baseline is consumed, material upstream and implementation deltas are refreshed, and the final Part 3 adoption/profile decision is explicit.
+- [x] Any experimental Part 3 support has an exact snapshot/profile identifier, feature gate, adapter boundary, generated-contract expectation, truthful capability/conformance wording, migration policy, and interoperability test gate.
+- [x] Recommendations are decision-usable and bounded to Glaux Server.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -679,18 +679,20 @@ The streaming/event publication matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 19 hours of AI-assisted execution<br>
+**Completion Date:** September 15, 2026
+
+**Completion Note:** Research execution is complete and the [IDR-SRV-035 report](../IDR%20Reports/idr-srv-035-streaming-and-event-publication-strategy-report.md) is in review. It selects a durable transport-neutral publication core, HTTP snapshot/change-feed plus SSE as the first live slice, and a disabled-by-default MQTT 5 experimental profile pinned to draft Part 3 commit `6f529a15`; it does not claim approved Part 3 conformance or implement the server. The shared upstream-history register is Version 1.12. Plan-owner acceptance remains pending, and IDR-SRV-036 is not authorized.
 
 ---
 
