@@ -1,7 +1,7 @@
 # Section 040: Policy, Releasability, and Cross-Boundary Access Constraints - Research Report
 
 **Topic ID:** IDR-SRV-040<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-040 Policy, Releasability, and Cross-Boundary Access Constraints](../IDR%20Plans/idr-srv-040-policy-releasability-and-cross-boundary-access-constraints.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All questions concerning policy authority, releasability, classification/handling metadata, communities and purposes, controlled data, inference, resource existence, filtering, generalization, delay, aggregation, suppression, source caveats, dynamic data, streaming, command affordances, federation, DDIL, cross-boundary exchange, documentation, observability, and verification<br>
@@ -13,6 +13,8 @@
 **Supporting Resources:** Accepted IDR-SRV-001 through IDR-SRV-039A, controlled-AEP findings, and upstream-history register Version 1.12<br>
 **Document Purpose:** Define a policy-regime-neutral, data-centric Glaux disclosure and cross-boundary enforcement baseline without encoding real markings, selecting a policy engine, approving release, or claiming cross-domain-solution status<br>
 **Author:** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 15, 2026<br>
 **Date:** September 15, 2026<br>
 **Last Updated:** September 15, 2026
 
