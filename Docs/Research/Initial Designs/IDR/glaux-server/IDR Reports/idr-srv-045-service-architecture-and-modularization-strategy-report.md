@@ -1,7 +1,7 @@
 # Section 045: Service Architecture and Modularization Strategy - Research Report
 
 **Topic ID:** IDR-SRV-045<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-045 Service Architecture and Modularization Strategy](../IDR%20Plans/idr-srv-045-service-architecture-and-modularization-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All questions concerning architecture style, crate/module boundaries, dependency direction, API/domain/standards separation, validation, persistence and transaction ownership, ingestion, publication, commands, security/policy/audit, DDIL/synchronization, configuration, observability, internal ports, extension/extraction points, repository layout, testability, implementation phasing, proof gates, and downstream handoffs<br>
@@ -13,8 +13,8 @@
 **Implementation Evidence:** Accepted OSH, Connected Systems Go, pygeoapi, SECD, client/interoperability/community, and Part 3 studies used only as non-normative lessons<br>
 **Document Purpose:** Define a practical internal architecture and dependency contract without selecting deployment topology, creating implementation code, or authorizing later Category H work<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 15, 2026<br>
 **Date:** September 15, 2026<br>
 **Last Updated:** September 15, 2026
 
@@ -704,7 +704,7 @@ IDR-SRV-046 and all later topics remain unauthorized pending acceptance of this 
 | downstream handoffs explicit | Section 17 | Met |
 | references explicit and reproducible | Section 21 | Met |
 
-The report defines internal architecture without choosing deployment topology or creating code. It remains **In Review** until project-lead acceptance. **[P]**
+The report defines internal architecture without choosing deployment topology or creating code. It is accepted as the planning baseline for IDR-SRV-046 and later implementation-platform research. **[P]**
 
 ---
 
