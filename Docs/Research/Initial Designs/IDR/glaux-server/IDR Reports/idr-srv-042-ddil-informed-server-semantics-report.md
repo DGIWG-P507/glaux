@@ -1,7 +1,7 @@
 # Section 042: DDIL-Informed Server Semantics - Research Report
 
 **Topic ID:** IDR-SRV-042<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-042 DDIL-Informed Server Semantics](../IDR%20Plans/idr-srv-042-ddil-informed-server-semantics.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All questions concerning DDIL modes, dependency and service posture, freshness/validity/last-known/cached/tentative/delayed/unknown/unavailable state, resource and operation behavior, dynamic data, streams, commands, identity/policy/source trust, schemas, responses, audit, client expectations, synchronization handoff, and verification<br>
@@ -13,8 +13,8 @@
 **Supporting Resources:** Accepted temporal, status, validation, persistence, transaction, lifecycle, ingestion, dynamic-data, streaming, command, security, ZTA, policy, and audit reports; upstream-history register Version 1.12<br>
 **Document Purpose:** Define a safe, interoperable and falsifiable server contract for connected, constrained, intermittent, disconnected, local-only and recovering conditions without designing synchronization/conflict mechanics, deployment topology, or numeric operational policy<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** TBD until controlling-plan owner acceptance<br>
-**Acceptance Date:** TBD until accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 15, 2026<br>
 **Date:** September 15, 2026<br>
 **Last Updated:** September 15, 2026
 
