@@ -1,7 +1,7 @@
 # Section 047: Configuration, Secrets, and Environment Strategy - Research Report
 
 **Topic ID:** IDR-SRV-047<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-047 Configuration, Secrets, and Environment Strategy](../IDR%20Plans/idr-srv-047-configuration-secrets-and-environment-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Runtime profiles; configuration classes, schema, sources and precedence; startup validation; immutable and reloadable settings; effective-configuration evidence; secret inventory, loading, redaction, rotation and test safety; feature-specific configuration; unsafe combinations; samples, tooling and downstream handoffs<br>
@@ -12,6 +12,8 @@
 **Standards Baseline:** OGC API - Connected Systems Parts 1 and 2 Version 1.0; SensorML 3.0; SWE Common 3.0; accepted Glaux IDR-SRV-001 through IDR-SRV-046
 **Document Purpose:** Define a safe, repeatable and testable server configuration contract without implementing it, selecting an enterprise secret manager, or authorizing later Category H work
 **Author:** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 16, 2026<br>
 **Date:** September 16, 2026<br>
 **Last Updated:** September 16, 2026
 
@@ -815,4 +817,4 @@ Official web and crate documentation was checked on September 16, 2026. Version 
 - [x] Downstream handoffs and implementation proofs complete
 - [x] Plan success criteria validated
 - [x] References and evidence limits explicit
-- [ ] Accepted by Glaux Project Lead
+- [x] Accepted by Glaux Project Lead
