@@ -1,7 +1,7 @@
 # Section 046: Reference Deployment Strategy - Research Report
 
 **Topic ID:** IDR-SRV-046<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-046 Reference Deployment Strategy](../IDR%20Plans/idr-srv-046-reference-deployment-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** All questions concerning deployment profiles, supporting services, images, Compose, local development, CI, conformance, demonstrations, DDIL simulation, proxy/TLS/origin, configuration/secrets, database bootstrap/migrations/backup/restore, observability/health, Glaux and external integrations, streaming, commands, synchronization, packaging, release evidence, operational caveats, and downstream handoffs<br>
@@ -12,8 +12,8 @@
 **Standards Baseline:** OGC API - Connected Systems Parts 1 and 2 Version 1.0; SensorML 3.0; SWE Common 3.0; OGC API - Features; RFC 9110, 9457 and 7239; accepted Glaux IDR-SRV-001 through IDR-SRV-045<br>
 **Document Purpose:** Define repeatable reference deployment shapes and runtime contracts without claiming accredited production hosting, selecting an enterprise platform, implementing infrastructure, or authorizing later Category H work<br>
 **Author:** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 16, 2026<br>
 **Date:** September 16, 2026<br>
 **Last Updated:** September 16, 2026
 
@@ -813,7 +813,7 @@ None prevents the recommended base implementation. **[P]**
 | downstream handoffs explicit | Section 18 | Met |
 | references explicit and reproducible | Section 22 | Met |
 
-The report defines deployment strategy and proof gates without creating infrastructure or claiming that any profile has passed them. It remains **In Review** until project-lead acceptance. **[P]**
+The report defines deployment strategy and proof gates without creating infrastructure or claiming that any profile has passed them. It is accepted as the planning baseline for IDR-SRV-047 and later deployment research. **[P]**
 
 ---
 
