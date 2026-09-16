@@ -1,7 +1,7 @@
 # Section 053: Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy - Research Report
 
 **Topic ID:** IDR-SRV-053<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-053 Test Data, Fixtures, Golden Files, and Scenario Corpus Strategy](../IDR%20Plans/idr-srv-053-test-data-fixtures-golden-files-and-scenario-corpus-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** corpus scope and taxonomy; source acquisition, licensing, provenance and sensitivity; manifest, identity, layout and lifecycle; CSAPI, SensorML, SWE Common, observation, status, query, error, ingestion, event, command, policy, DDIL and synchronization data; public demonstration; generated and large data; golden and semantic assertions; CI, review, drift and downstream handoffs<br>
