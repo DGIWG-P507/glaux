@@ -1,7 +1,7 @@
 # Section 055: Security, Authorization, and Command-Control Test Strategy - Research Report
 
 **Topic ID:** IDR-SRV-055<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-055 Security, Authorization, and Command-Control Test Strategy](../IDR%20Plans/idr-srv-055-security-authorization-and-command-control-test-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** security-test architecture and taxonomy; synthetic identity, source, policy and command fixtures; authentication and authorization; object/property/function access; disclosure and non-interference; ingestion and source trust; configuration, secrets and DDIL; command discovery, gates, safety, lifecycle and effects; streaming and abuse; tools, CI, evidence and downstream handoffs<br>
