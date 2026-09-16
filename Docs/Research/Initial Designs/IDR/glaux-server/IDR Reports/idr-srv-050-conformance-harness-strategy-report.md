@@ -1,7 +1,7 @@
 # Section 050: Conformance Harness Strategy - Research Report
 
 **Topic ID:** IDR-SRV-050<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-050 Conformance Harness Strategy](../IDR%20Plans/idr-srv-050-conformance-harness-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Conformance scope; test taxonomy; harness architecture and targets; requirement/test/evidence model; fixtures and profiles; API, schema, negative, security, dynamic-data, streaming, tasking, DDIL and synchronization coverage; CI/local workflow; official OGC and external-tool integration; downstream handoffs<br>
@@ -12,6 +12,8 @@
 **Accepted Project Baseline:** Twenty-five direct CSAPI conformance classes, 233 numbered requirements, five Part 1 recommendations and 240 normative abstract tests; evidence-gated build-specific declarations; one capability/contract registry; one canonical resource model; eleven deployment profiles; deterministic fixtures and explicit lifecycle administration<br>
 **Document Purpose:** Define a repeatable, claim-safe conformance harness and evidence architecture without implementing it, certifying Glaux, or absorbing detailed traceability, TDD, fixture, performance, security or interoperability work owned by later topics<br>
 **Author:** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 16, 2026<br>
 **Date:** September 16, 2026<br>
 **Last Updated:** September 16, 2026
 
@@ -870,4 +872,4 @@ Official standards, validator inventory and tool documentation were checked Sept
 - [x] Official OGC tooling state and future integration are bounded
 - [x] Twelve implementation proofs and downstream handoffs are explicit
 - [x] All 11 success criteria validate as Met
-- [ ] Accepted by Glaux Project Lead
+- [x] Accepted by Glaux Project Lead
