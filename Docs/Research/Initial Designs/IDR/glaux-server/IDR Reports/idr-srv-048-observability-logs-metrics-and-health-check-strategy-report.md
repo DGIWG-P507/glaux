@@ -1,7 +1,7 @@
 # Section 048: Observability, Logs, Metrics, and Health Check Strategy - Research Report
 
 **Topic ID:** IDR-SRV-048<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-048 Observability, Logs, Metrics, and Health Check Strategy](../IDR%20Plans/idr-srv-048-observability-logs-metrics-and-health-check-strategy.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Signal taxonomy; structured logging; metrics, labels and cardinality; traces, context and correlation; startup/liveness/readiness/dependency/degraded checks; administrative diagnostics; functional-area instrumentation; redaction and disclosure; Rust tooling; profile behavior; test evidence and downstream handoffs<br>
@@ -12,6 +12,8 @@
 **Standards Baseline:** OGC API - Connected Systems Parts 1 and 2 Version 1.0; SensorML 3.0; SWE Common 3.0; RFC 9110 and 9457; W3C Trace Context; accepted Glaux IDR-SRV-001 through IDR-SRV-047
 **Document Purpose:** Define portable, safe and testable telemetry and health contracts without implementing them, selecting a production backend, setting operational SLOs, or authorizing later work
 **Author:** OpenAI Codex<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 16, 2026<br>
 **Date:** September 16, 2026<br>
 **Last Updated:** September 16, 2026
 
@@ -771,4 +773,4 @@ Official specifications, product documentation and crate documentation were chec
 - [x] Redaction, cardinality, debug and exposure controls are explicit
 - [x] Rust/stack options, verification and downstream handoffs are complete
 - [x] All 11 success criteria validate as Met
-- [ ] Accepted by Glaux Project Lead
+- [x] Accepted by Glaux Project Lead
