@@ -1,9 +1,9 @@
 # Section 054: Performance, Load, Stress, and Streaming Test Strategy - Research Plan
 
-**Status:** Planned  
-**Last Updated:** June 12, 2026  
+**Status:** Complete<br>
+**Last Updated:** September 16, 2026<br>
 **Estimated Research Time:** 16-20 hours  
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 46 hours of AI-assisted execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-054-performance-load-stress-and-streaming-test-strategy-report.md`
 
 ---
@@ -648,17 +648,17 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] Performance, load, stress, soak, and streaming test scope is defined with source anchors and prior-topic traceability.
-- [ ] Test taxonomy, metrics, threshold tiers, evidence artifacts, and gate categories are documented.
-- [ ] Tooling options are evaluated and recommended for first implementation and full-scope readiness.
-- [ ] Workload scenarios, data set requirements, deterministic generation, deployment profiles, and reset/teardown needs are documented.
-- [ ] API/query/geospatial/time-series, ingestion/validation, streaming/event, command/control, security/policy, DDIL, and synchronization performance tests are documented.
-- [ ] CI, nightly, manual, release-candidate, and future operational-reference test tiers are documented.
-- [ ] Observability integration and reporting needs are documented.
-- [ ] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
-- [ ] Recommendations are decision-usable and bounded to Glaux Server.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] Performance, load, stress, soak, and streaming test scope is defined with source anchors and prior-topic traceability.
+- [x] Test taxonomy, metrics, threshold tiers, evidence artifacts, and gate categories are documented.
+- [x] Tooling options are evaluated and recommended for first implementation and full-scope readiness.
+- [x] Workload scenarios, data set requirements, deterministic generation, deployment profiles, and reset/teardown needs are documented.
+- [x] API/query/geospatial/time-series, ingestion/validation, streaming/event, command/control, security/policy, DDIL, and synchronization performance tests are documented.
+- [x] CI, nightly, manual, release-candidate, and future operational-reference test tiers are documented.
+- [x] Observability integration and reporting needs are documented.
+- [x] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
+- [x] Recommendations are decision-usable and bounded to Glaux Server.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -733,18 +733,18 @@ The performance test strategy matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 46 hours of AI-assisted execution<br>
+**Completion Date:** September 16, 2026
 
 ---
 
@@ -753,11 +753,11 @@ Update this section as work progresses.
 - This topic defines performance test strategy, not operational performance guarantees.
 - Performance thresholds should be tiered by profile and maturity, not overclaimed for first implementation.
 - Streaming tests must be deterministic enough for CI or clearly assigned to nightly/manual execution.
-- Open question: Which load testing tool best balances simplicity, streaming support, and CI evidence?
-- Open question: Which performance tests should block pull requests?
-- Open question: What initial public demo readiness thresholds are realistic?
-- Open question: How should event replay and reconnect behavior be tested without flakiness?
-- Open question: Which large data sets should be generated on demand rather than committed?
+- Resolved: Use pinned k6 for HTTP/open-arrival orchestration, an independent Rust SSE probe for authoritative streaming correctness/timing, Criterion on a dedicated runner, and PostgreSQL native plan/runtime evidence.
+- Resolved: Pull requests block on correctness, safety, dropped work, bounded queues/resources and generous sanity limits; statistical latency/capacity regression gates run on fixed reference hardware.
+- Resolved: Use the report's provisional 4-vCPU/8-GiB, 30-minute public-demo clone envelope and explicit HTTP/SSE/error/backlog/resource budgets, without presenting them as operational SLOs.
+- Resolved: Orchestrate replay/reconnect through subscription-ready, named-sequence disconnect, resume and terminal-watermark barriers with monotonic clocks, not sleeps.
+- Resolved: Commit micro fixtures only; generate/cache S, generate or content-address M/L, and never use an opaque committed database dump as corpus truth.
 - Risk: Environment variability may produce noisy performance results.
 - Risk: Overly aggressive thresholds may slow early implementation.
 - Risk: Underdefined streaming tests may hide backpressure and reconnect problems.
