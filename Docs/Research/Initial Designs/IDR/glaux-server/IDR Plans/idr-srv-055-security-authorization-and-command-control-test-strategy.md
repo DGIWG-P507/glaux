@@ -1,10 +1,10 @@
 # Section 055: Security, Authorization, and Command-Control Test Strategy - Research Plan
 
 **Topic ID:** IDR-SRV-055<br>
-**Status:** Planned  
-**Last Updated:** July 30, 2026<br>
+**Status:** Complete - Deliverable Accepted<br>
+**Last Updated:** September 16, 2026<br>
 **Estimated Research Time:** 18.5-24 hours<br>
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 48 hours of AI-assisted execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-055-security-authorization-and-command-control-test-strategy-report.md`
 
 ---
@@ -725,16 +725,16 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] Security, authorization, and command-control test scope is defined with source anchors and prior-topic traceability.
-- [ ] Test taxonomy, identity fixtures, policy fixtures, source-trust fixtures, command fixtures, redaction checks, and audit evidence needs are documented.
-- [ ] Authentication, authorization, object-level access, policy/releasability, source trust, ingestion security, configuration/profile safety, secret handling, DDIL, and error-leakage tests are documented.
-- [ ] Command discovery, authorization, feasibility, safety, lifecycle, cancellation, timeout, unknown outcome, audit, and simulated gateway tests are documented.
-- [ ] CI, nightly, manual, release-candidate, and future assessment tiers are documented.
-- [ ] Tooling options, evidence artifacts, redaction requirements, and secret/sensitive-data safeguards are documented.
-- [ ] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
-- [ ] Recommendations are decision-usable and bounded to Glaux Server.
-- [ ] Downstream handoffs are explicit.
-- [ ] References are explicit and reproducible.
+- [x] Security, authorization, and command-control test scope is defined with source anchors and prior-topic traceability.
+- [x] Test taxonomy, identity fixtures, policy fixtures, source-trust fixtures, command fixtures, redaction checks, and audit evidence needs are documented.
+- [x] Authentication, authorization, object-level access, policy/releasability, source trust, ingestion security, configuration/profile safety, secret handling, DDIL, and error-leakage tests are documented.
+- [x] Command discovery, authorization, feasibility, safety, lifecycle, cancellation, timeout, unknown outcome, audit, and simulated gateway tests are documented.
+- [x] CI, nightly, manual, release-candidate, and future assessment tiers are documented.
+- [x] Tooling options, evidence artifacts, redaction requirements, and secret/sensitive-data safeguards are documented.
+- [x] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
+- [x] Recommendations are decision-usable and bounded to Glaux Server.
+- [x] Downstream handoffs are explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -807,18 +807,18 @@ The security/command test matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 48 hours of AI-assisted execution<br>
+**Completion Date:** September 16, 2026
 
 ---
 
@@ -827,11 +827,11 @@ Update this section as work progresses.
 - This topic defines implementation security and command-control test strategy, not production accreditation or full penetration testing.
 - Command tests must use simulated command gateways and must not enable real-world command dispatch.
 - Public demo profile must be treated as command-disabled or simulated-only unless explicitly justified later.
-- Open question: Which fake identity provider approach is simplest and sufficient for CI?
-- Open question: How should policy-hidden resources be asserted without creating side-channel fixtures?
-- Open question: Which security tests should block every PR?
-- Open question: Should OWASP ZAP baseline scans be included in first implementation CI or later release-candidate testing?
-- Open question: How should command safety rules be represented as testable fixtures?
+- Resolved: Pure policy tests inject an immutable synthetic security context; real HTTP-boundary tests use a minimal deterministic local issuer/JWKS service with ephemeral per-run keys. A future release tier may add one pinned external standards-compliant identity-provider adapter.
+- Resolved: Policy-hidden behavior uses twin-world non-interference, a separately protected oracle, public expected facts and synthetic canary absence checks; hidden values never enter public golden files.
+- Resolved: PR-blocking scope includes route/action/enforcement inventory, deterministic authentication/authorization/disclosure/configuration/secret/core source/command/audit tests, regression corpus, cargo-audit, cargo-deny and secret scanning.
+- Resolved: ZAP passive baseline scanning begins nightly; active API/full scans run only in authorized disposable manual/release-candidate environments. Neither is a semantic authorization oracle.
+- Resolved: Command safety uses versioned synthetic rule fixtures containing applicability, severity, overrideability, required evidence/freshness and expected outcome, bound to exact command revisions and dispatch tickets.
 - Risk: Security tests may become too brittle if tied to implementation internals instead of observable behavior.
 - Risk: Command-control tests may be under-scoped because command dispatch is sensitive.
 - Risk: Test artifacts may leak tokens, policy details, command parameters, or source identifiers if redaction is weak.
