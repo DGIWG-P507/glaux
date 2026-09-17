@@ -1,6 +1,6 @@
 # Final Glaux Server Initial Design Research Synthesis Report
 
-**Overall Report Status:** In Review<br>
+**Overall Report Status:** Final<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Final Report Model:** Indexed synthesis topic<br>
 **Synthesis Topic ID:** IDR-SRV-057<br>
@@ -9,11 +9,11 @@
 **Reporting Period:** June 7 – September 16, 2026<br>
 **Total Topic Plans in Index:** 67<br>
 **Total Topic Reports Completed:** 67<br>
-**Total Topic Reports Accepted:** 66<br>
+**Total Topic Reports Accepted:** 67<br>
 **Program Owner:** Glaux Project Lead<br>
 **Report Author:** OpenAI Codex<br>
-**Accepted By:** TBD until controlling-plan owner acceptance<br>
-**Acceptance Date:** TBD until accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 16, 2026<br>
 **Date:** September 16, 2026<br>
 **Last Updated:** September 16, 2026
 
@@ -63,7 +63,7 @@ The central architectural principle is that no transport, document format, cache
 
 The primary remaining risks are breadth, standards artifact inconsistencies, semantic preservation across SensorML/SWE encodings, policy-correct querying, command safety, event replay and backpressure, temporal/spatial scale, synchronization conflict governance, and mistaking a successful public demonstration for operational readiness. Each is assigned a proof, verification lane, or governance decision below. None blocks drafting downstream artifacts. They do block unqualified implementation-readiness, production-capacity, certification, accreditation, and physical-command claims.
 
-**Readiness decision:** research baseline complete; downstream design and planning artifacts ready to draft after acceptance of this report; implementation claims remain evidence-gated.
+**Readiness decision:** research baseline complete and accepted; downstream design and planning artifacts are ready to draft; implementation claims remain evidence-gated.
 
 ---
 
@@ -119,7 +119,7 @@ Several older topic plans retain legacy status wording such as In Review or Comp
 
 ### 3.2 Topic completion and coverage matrix
 
-Links below are to the controlling topic plans and reports. “Accepted” means accepted by the Glaux Project Lead in the overall-plan ledger. IDR-SRV-057 is complete as a draft but remains In Review until the owner accepts this report.
+Links below are to the controlling topic plans and reports. “Accepted” means accepted by the Glaux Project Lead in the overall-plan ledger. IDR-SRV-057 and this final overall report were accepted on September 16, 2026.
 
 | Topic ID | Topic title | Plan | Report | Completion | Acceptance / exception | Conclusion summary |
 |---|---|---|---|---|---|---|
@@ -189,7 +189,7 @@ Links below are to the controlling topic plans and reports. “Accepted” means
 | IDR-SRV-054 | Performance, Load, Stress, and Streaming Tests | [plan](../IDR%20Plans/idr-srv-054-performance-load-stress-and-streaming-test-strategy.md) | [report](idr-srv-054-performance-load-stress-and-streaming-test-strategy-report.md) | Complete | Accepted | Correctness-gated, envelope-bound k6/Rust/PG evidence replaces unqualified throughput claims. |
 | IDR-SRV-055 | Security and Command-Control Tests | [plan](../IDR%20Plans/idr-srv-055-security-authorization-and-command-control-test-strategy.md) | [report](idr-srv-055-security-authorization-and-command-control-test-strategy-report.md) | Complete | Accepted | Deny-default, twin-world disclosure, canary, gate, ticket, simulator, and reconciliation tests are required. |
 | IDR-SRV-056 | External-Client Interoperability Matrix | [plan](../IDR%20Plans/idr-srv-056-interoperability-test-matrix-for-external-csapi-clients.md) | [report](idr-srv-056-interoperability-test-matrix-for-external-csapi-clients-report.md) | Complete | Accepted | Pinned TypeScript and Python clients provide mandatory independent semantic interoperability evidence. |
-| IDR-SRV-057 | Final Glaux Server IDR Synthesis | [plan](../IDR%20Plans/idr-srv-057-final-glaux-server-idr-synthesis-report.md) | [this report](final-idr-research-report.md) | Complete | In Review; no exception | The accepted corpus supports a coherent, incremental, evidence-gated server baseline. |
+| IDR-SRV-057 | Final Glaux Server IDR Synthesis | [plan](../IDR%20Plans/idr-srv-057-final-glaux-server-idr-synthesis-report.md) | [this report](final-idr-research-report.md) | Complete | Accepted | The accepted corpus supports a coherent, incremental, evidence-gated server baseline. |
 
 ### 3.3 Approved prerequisite exceptions
 
@@ -198,7 +198,7 @@ None.
 ### 3.4 Coverage summary
 
 - Topics complete: 67 of 67.
-- Topic reports accepted: 66 of 67; this final synthesis awaits owner acceptance.
+- Topic reports accepted: 67 of 67.
 - Approved prerequisite exceptions: 0.
 - Partial topics: 0.
 - Coverage confidence: High for research conclusions and downstream planning readiness; no implementation evidence is implied.
@@ -867,7 +867,7 @@ Public-facing documentation must state which profile, build, standards revision,
 | REC-031 | Security tests | Require route inventory, twin worlds, canaries, command faults, and supplemental scanners | First | 038–041, 047–049, 055 | Security/policy implementation | R-04, R-05, R-09, R-13 | SecurityTestResult evidence | WP-09/13 | Adopted baseline | Assessment depth expands later |
 | REC-032 | Interoperability | Require pinned OS4CSAPI TS and OWSLib Python semantic workflows; keep peers advisory | First read slice onward | 014A–G, 050–053, 056 | Working APIs and corpus | R-10, R-17 | InteropRun evidence and attribution | WP-14 | Adopted baseline | Target versions repin per run |
 | REC-033 | Public demo | Publish only TLS, synthetic, policy-tested, command-disabled profile with non-claims | Follow-on to read slice | 039–041, 046–049, 053–056 | WP-05/09/12–14 | R-09, R-15, R-18 | POC-15 | WP-15 | Adopted boundary | OD-06 public-principal policy |
-| REC-034 | Planning | Turn these recommendations into ADRs, Implementation Guide, then dependency-aware Roadmap | Immediate after acceptance | 001–057 | Owner acceptance | R-01, R-15, R-16 | Governance review and link audit | WP-00 | Pending acceptance | No schedule is set here |
+| REC-034 | Planning | Turn these recommendations into ADRs, Implementation Guide, then dependency-aware Roadmap | Immediate after acceptance | 001–057 | Owner acceptance | R-01, R-15, R-16 | Governance review and link audit | WP-00 | Accepted for downstream planning | No schedule is set here |
 
 ### 25.3 Priority summary
 
@@ -895,18 +895,18 @@ Public-facing documentation must state which profile, build, standards revision,
 | Official maintenance evidence refreshed and authority classes separated | Met | Section 3.5 records the September 16 refresh and published/history/proposal/draft distinction. |
 | Risk and unresolved decision registers documented | Met | Sections 21 and 22. |
 | No readiness, accreditation, certification, or operational overclaim | Met | Sections 1, 2.3, 6, 18.5, 19, 21, and 25 state evidence gates and non-claims. |
-| Final synthesis complete, reviewable, and decision-usable | Met for draft; acceptance pending | All 27 required sections are present; plan and overall-plan updates accompany review. |
+| Final synthesis complete, reviewable, and decision-usable | Met | All 27 required sections are present, and the synthesis is accepted. |
 
 ### 26.1 Overall-plan completion validation
 
 | Overall-plan completion criterion | Validation status | Evidence |
 |---|---|---|
-| All planned topic research executed under governance | Met | 67/67 reports complete; acceptance ledger controls the 66 prerequisites. |
+| All planned topic research executed under governance | Met | 67/67 reports are complete and accepted. |
 | Every prerequisite to the indexed final synthesis accepted or formally excepted | Met | Section 3; 66 accepted and zero exceptions. |
 | Topic reports meet evidence, literature, decision-usefulness, and completeness standards | Met at accepted-report level | Individual reports and acceptance entries; synthesis authority method in Sections 3–4. |
 | Final report responds to overall objective and accounts for every topic | Met for review | Sections 1–4 and full completion matrix. |
 | Implementation-usable priorities, risks, decisions, and handoff provided | Met | Sections 18–25. |
-| Final overall report accepted and IDR-SRV-057 closed | Pending | This report remains In Review with Accepted By and Acceptance Date TBD. |
+| Final overall report accepted and IDR-SRV-057 closed | Met | This report records Final status, Glaux Project Lead acceptance, and the acceptance date. |
 
 ### 26.2 Completion checklist
 
@@ -918,9 +918,9 @@ Public-facing documentation must state which profile, build, standards revision,
 - [x] Unresolved issues and risks are documented.
 - [x] Overall completion criteria are validated.
 - [x] Immediate handoff actions and accountable roles are identified.
-- [ ] Plan-owner acceptance and acceptance date are recorded.
+- [x] Plan-owner acceptance and acceptance date are recorded.
 
-**Synthesis conclusion:** The research program is complete and reviewable. Formal closure of IDR-SRV-057 and the overall Glaux Server IDR remains contingent only on acceptance of this final report.
+**Synthesis conclusion:** The research program, IDR-SRV-057, and the overall Glaux Server IDR are complete and accepted. Downstream implementation claims remain subject to the evidence gates in this report.
 
 ---
 
@@ -978,13 +978,12 @@ The complete row-level links are in Section 3.2. This index shows where each acc
 
 ### 27.4 Final handoff
 
-Immediately after acceptance:
+Following acceptance:
 
-1. **Project Lead:** record final acceptance in this report, the topic plan, and the overall plan; close IDR-SRV-057.
-2. **Project Lead and Architecture Lead:** authorize WP-00 and the Implementation Guide, beginning with decisions OD-01, OD-02, and OD-16.
-3. **Standards/Conformance Lead:** instantiate the requirements and traceability registries from the accepted baseline without renumbering source IDs.
-4. **Architecture and Security Leads:** draft the first ADR set and the safe public/demo claim policy.
-5. **Roadmap Owner:** convert Sections 19, 20, and 23 into prioritized milestones, estimates, staffing, and releases after the guide establishes exact acceptance criteria.
+1. **Project Lead and Architecture Lead:** authorize WP-00 and the Implementation Guide, beginning with decisions OD-01, OD-02, and OD-16.
+2. **Standards/Conformance Lead:** instantiate the requirements and traceability registries from the accepted baseline without renumbering source IDs.
+3. **Architecture and Security Leads:** draft the first ADR set and the safe public/demo claim policy.
+4. **Roadmap Owner:** convert Sections 19, 20, and 23 into prioritized milestones, estimates, staffing, and releases after the guide establishes exact acceptance criteria.
 
 No calendar commitments are assigned by this research report. Owners and dates become authoritative only through the project’s downstream planning process.
 
@@ -1000,7 +999,7 @@ No calendar commitments are assigned by this research report. Owners and dates b
 - [x] Unresolved cross-topic issues and risks are documented.
 - [x] Overall completion criteria are validated.
 - [x] Final handoff actions are assigned to accountable roles.
-- [ ] Plan-owner acceptance and acceptance date are recorded.
+- [x] Plan-owner acceptance and acceptance date are recorded.
 
 **Actual Research Time:** Approximately 62 hours of AI-assisted execution<br>
 **Completion Date:** September 16, 2026
