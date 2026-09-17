@@ -1,10 +1,10 @@
 # Section 057: Final Glaux Server IDR Synthesis Report - Research Plan
 
 **Topic ID:** IDR-SRV-057<br>
-**Status:** Planned  
-**Last Updated:** August 1, 2026<br>
+**Status:** Complete - Deliverable In Review<br>
+**Last Updated:** September 16, 2026<br>
 **Estimated Research Time:** 30-38 hours<br>
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 62 hours of AI-assisted execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/final-idr-research-report.md`
 
 ---
@@ -598,18 +598,18 @@ The synthesis recommendation matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 final report complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 final report complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 62 hours of AI-assisted execution<br>
+**Completion Date:** September 16, 2026
 
 ---
 
@@ -619,10 +619,12 @@ Update this section as work progresses.
 - This topic produces the final overall IDR report; its planning recommendations are inputs to, and do not replace, the later Implementation Guide and Roadmap.
 - The synthesis must reconcile the entire IDR corpus and convert it into implementation-ready recommendations.
 - The final report should be clear enough to inform subsequent Implementation Guide and Roadmap authoring, architecture-decision work, repository scaffolding, and issue planning.
-- Open question: Should the final synthesis include a separate executive briefing appendix?
-- Open question: Should recommendations be exported to machine-readable YAML/JSON for issue generation?
-- Open question: Which unresolved decisions require DGIWG project-level approval?
-- Open question: Which deferred capabilities should be included in first implementation scaffolding even if not implemented?
+- Decision: Do not duplicate the synthesis in a separate executive appendix now. Section 1 is the decision brief; a stakeholder briefing may be derived after acceptance.
+- Decision: Defer machine-readable recommendation export until the requirements/traceability schema and issue-generation workflow exist. The report matrices are the curated source.
+- Decision: The final report's open-decision register identifies which choices require project, technical, deployment, data, security, or operational authority.
+- Decision: First-implementation scaffolding preserves typed ports, contracts, and disabled profiles for material deferred capabilities, but does not provide fake implementations or placeholder-success behavior.
+- Completion note: All 66 prerequisite reports were present, Final, and accepted in the governing ledger; no prerequisite exception was required.
+- Completion note: The September 16, 2026 upstream refresh found no material delta from the shared Version 1.12 standards-history register.
 - Risk: The synthesis may become a summary rather than a decision baseline unless recommendations are explicit.
 - Risk: Overclaiming full operational readiness could create false expectations.
 - Risk: Conflicting topic-level recommendations may require additional reconciliation before implementation.
