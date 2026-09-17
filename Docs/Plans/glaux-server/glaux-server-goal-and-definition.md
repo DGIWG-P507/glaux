@@ -1,7 +1,7 @@
 # Glaux Server Goal and Definition
 **Version:** 1.6<br>
 **Date:** 17 September 2026<br>
-**Status:** In Review
+**Status:** Approved
 
 **Revision summary:** Applies the completed initial design research to clarify the reference-implementation goal, full standards scope, experimental Part 3 intent, server responsibilities, and verification expectations within the existing ten-section structure.
 
