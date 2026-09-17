@@ -1,10 +1,10 @@
 # Section 056: Interoperability Test Matrix for External CSAPI Clients - Research Plan
 
 **Topic ID:** IDR-SRV-056<br>
-**Status:** Planned  
-**Last Updated:** July 30, 2026<br>
+**Status:** Complete - Deliverable Accepted<br>
+**Last Updated:** September 16, 2026<br>
 **Estimated Research Time:** 18.5-24 hours<br>
-**Actual Research Time:** TBD until complete  
+**Actual Research Time:** Approximately 46 hours of AI-assisted execution<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-056-interoperability-test-matrix-for-external-csapi-clients-report.md`
 
 ---
@@ -660,17 +660,17 @@ Use these sources to interpret project context, downstream dependencies, expecte
 
 This topic research is complete when:
 
-- [ ] External client, tool, ecosystem component, and peer implementation inventory is documented with source anchors and prior-topic traceability.
-- [ ] Interoperability scenario taxonomy and matrix model are documented.
-- [ ] Client/tool capability profiles and test strategy are documented.
-- [ ] Discovery, navigation, OpenAPI, resource, query, content negotiation, SensorML/SWE, dynamic data, streaming, command/control, security/policy, error, DDIL, and public demo interoperability tests are documented.
-- [ ] Result classifications distinguish server defects, client defects, standards ambiguity, unsupported capabilities, profile limitations, fixture defects, and test issues.
-- [ ] Automated, semi-automated, manual, CI, nightly, public-demo, and release-candidate tiers are documented.
-- [ ] Evidence capture, redaction, issue feedback, and retest workflow are documented.
-- [ ] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
-- [ ] Recommendations are decision-usable and bounded to Glaux Server.
-- [ ] Final synthesis handoff is explicit.
-- [ ] References are explicit and reproducible.
+- [x] External client, tool, ecosystem component, and peer implementation inventory is documented with source anchors and prior-topic traceability.
+- [x] Interoperability scenario taxonomy and matrix model are documented.
+- [x] Client/tool capability profiles and test strategy are documented.
+- [x] Discovery, navigation, OpenAPI, resource, query, content negotiation, SensorML/SWE, dynamic data, streaming, command/control, security/policy, error, DDIL, and public demo interoperability tests are documented.
+- [x] Result classifications distinguish server defects, client defects, standards ambiguity, unsupported capabilities, profile limitations, fixture defects, and test issues.
+- [x] Automated, semi-automated, manual, CI, nightly, public-demo, and release-candidate tiers are documented.
+- [x] Evidence capture, redaction, issue feedback, and retest workflow are documented.
+- [x] Implementation-study and community-lesson findings are incorporated as non-normative evidence.
+- [x] Recommendations are decision-usable and bounded to Glaux Server.
+- [x] Final synthesis handoff is explicit.
+- [x] References are explicit and reproducible.
 
 ---
 
@@ -744,18 +744,18 @@ The interoperability test matrix should include, at minimum:
 
 Update this section as work progresses.
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 complete
-- [ ] Phase 5 complete
-- [ ] Phase 6 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 complete
+- [x] Phase 5 complete
+- [x] Phase 6 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
-**Actual Research Time:** TBD until complete  
-**Completion Date:** TBD until complete
+**Actual Research Time:** Approximately 46 hours of AI-assisted execution<br>
+**Completion Date:** September 16, 2026
 
 ---
 
@@ -764,11 +764,11 @@ Update this section as work progresses.
 - This topic defines interoperability test strategy and matrix design, not final execution results.
 - Interoperability pass/fail must distinguish server issues from client capability gaps and standards ambiguity.
 - Public demo tests must be safe, command-disabled or simulated, and free of sensitive data.
-- Open question: Which clients should be first-implementation mandatory targets?
-- Open question: Can CSAPI Explorer testing be automated sufficiently for CI or only semi-automated/manual?
-- Open question: Which peer server comparisons are practical and current?
-- Open question: How should OpenAPI-generated clients be incorporated without creating excessive matrix size?
-- Open question: What evidence artifacts are useful without leaking sensitive diagnostics or tokens?
+- Resolved: The first mandatory semantic families are pinned OS4CSAPI TypeScript and OWSLib Python. CSAPI Explorer/browser and two bounded generated clients supplement them; QGIS covers only the inherited OGC API - Features subset at manual/release-candidate tier.
+- Resolved: CSAPI Explorer read-only flows become nightly Playwright tests after stable semantic selectors and deterministic scenario controls exist. Its current one-click CRUD flow remains semi-automated/manual on disposable targets because it uses dynamic identifiers and has no demo E2E runner.
+- Resolved: Pinned local CS-Go and OpenSensorHub are the primary comparative peers; 52North Connected Systems pygeoapi and the historical SECD corpus are advisory. Peer behavior and public uptime never control Glaux correctness or release gates.
+- Resolved: OpenAPI Generator is bounded to TypeScript Fetch and Python generation/compile plus representative runtime calls. More languages require a named consumer need or a distinct generator failure boundary.
+- Resolved: Each failure preserves sanitized raw request, raw response, parsed result/exception and semantic assertion. Browser traces/screenshots and server logs are supporting evidence; credentials, cookies, hidden policy facts and sensitive payloads are prohibited or separately restricted.
 - Risk: External client versions may change and make results stale.
 - Risk: Client capability gaps may be misinterpreted as server defects.
 - Risk: Manual visual interoperability tests may be hard to reproduce.
