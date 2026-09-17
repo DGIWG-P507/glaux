@@ -23,6 +23,24 @@ Before drafting content, review the references listed at the end of this templat
 
 ---
 
+## Drafting Notes: Research and Requirements
+
+Apply these instructions as part of drafting the guide within the established planning workflow.
+
+1. **Use the approved Goal and Definition as the scope baseline.** Use completed research to inform the technical design. Research recommendations do not automatically add capabilities, mechanisms, or required documents to the project. Explain and justify the choices adopted in the guide.
+
+2. **Review research as it is used.** When drafting a capability, examine the relevant reports, verify consequential standards claims against the original specifications, and check the evidence supporting important design choices. Challenge recommendations that add complexity and resolve contradictions that affect the proposed implementation. A complete re-audit of the research collection is not a prerequisite to drafting. Concentrate review on findings that become implementation decisions.
+
+3. **Keep requirements in the Implementation Guide.** A requirement describes what the implementation must do; the design explains how it will do it. Record both, clearly distinguished, in the existing capability, contract, and verification sections. A separate requirements document is not required. Use standards identifiers, versions, and source links to connect requirements to their authority without reproducing the specifications or maintaining duplicate descriptions.
+
+4. **Connect behavior, source, implementation, and verification.** For each capability, explain the required behavior, identify the applicable standards requirements or approved project objective, describe how it will be implemented, and state how it will be tested. Make these connections explicit enough for a developer to follow and for a reviewer to assess.
+
+5. **Distinguish requirements from design choices and proposals.** Label standards obligations, project requirements, selected implementation approaches, and unresolved recommendations accurately. For example, a database choice is an engineering decision, not a requirement imposed by an API standard. If a source conflict or evidence gap remains unresolved, record the uncertainty and its effect on the relevant design rather than presenting an assumption as established fact.
+
+6. **Preserve the established document roles.** Governance defines the working rules; the Goal and Definition establishes the intended outcome and scope; this guide explains the implementation; the Roadmap organizes delivery. Use the practical reference examples below to keep the guide understandable and useful. Supporting tables may live in the guide or its appendices; additional documents or review processes are not prerequisites merely because a research report proposed them.
+
+---
+
 ## Executive Summary
 
 Provide a concise technical summary of what is being implemented in this effort.
