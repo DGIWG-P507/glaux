@@ -1,7 +1,7 @@
 # Section 056: Interoperability Test Matrix for External CSAPI Clients - Research Report
 
 **Topic ID:** IDR-SRV-056<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-056 Interoperability Test Matrix for External CSAPI Clients](../IDR%20Plans/idr-srv-056-interoperability-test-matrix-for-external-csapi-clients.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** target qualification and capability inventory; client, browser, generated-client, GIS, ecosystem and peer-server roles; discovery/navigation/OpenAPI/schema; resource/query/representation/SensorML/SWE; dynamic data, streams, experimental Part 3, simulated tasking, security/policy/errors/DDIL; public demo; result attribution; automation, evidence, issue and retest workflows; final synthesis handoff<br>
