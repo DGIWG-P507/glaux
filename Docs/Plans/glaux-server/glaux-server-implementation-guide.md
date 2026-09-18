@@ -1,16 +1,16 @@
 # Glaux Server Implementation Guide
 
-**Version:** 0.1<br>
+**Version:** 0.2<br>
 **Date:** 17 September 2026<br>
 **Effort:** Glaux Server<br>
-**Status:** Draft — iteration 1 of 3<br>
-**Depends On:** [Glaux Server Goal and Definition v1.6](glaux-server-goal-and-definition.md), Approved
+**Status:** Draft — targeted scope update after iteration 1; iteration 2 pending<br>
+**Depends On:** [Glaux Server Goal and Definition v1.7](glaux-server-goal-and-definition.md), Approved
 
-**Revision summary:** Complete first draft covering the intended server, its implementation approach, verification, and unresolved design questions. This is a proposed design, not a claim that the software exists or that these choices have been approved. Iteration 2 will resolve gaps and incorporate feedback; iteration 3 will check the whole guide and finish it for Roadmap development.
+**Revision summary:** Incorporates the September 17 approved additions of experimental static Part 4 points/curves/surfaces and bounded Features Part 3/CQL2 JSON observation filtering, with implementation contracts, interpretation choices and verification. This targeted scope update does not complete the broader second drafting pass or claim implemented software. Iteration 2 will resolve the remaining design gaps; iteration 3 will check the whole guide and finish it for Roadmap development.
 
 ## Executive Summary
 
-Build a full-scope Rust reference implementation of OGC API - Connected Systems Parts 1 and 2, with their applicable SensorML 3.0 and SWE Common 3.0 requirements, and a separately identified experimental Part 3 implementation. Preserve the approved Goal and Definition's security, status, tasking, ecosystem-integration, and interrupted-connectivity responsibilities without turning the server into an enterprise infrastructure project.
+Build a full-scope Rust reference implementation of OGC API - Connected Systems Parts 1 and 2, with their applicable SensorML 3.0 and SWE Common 3.0 requirements, experimental Part 3 publication, the selected experimental static Part 4 sampling types, and bounded Features Part 3/CQL2 observation filtering. Preserve the approved Goal and Definition's security, status, tasking, ecosystem-integration, and interrupted-connectivity responsibilities without turning the server into an enterprise infrastructure project.
 
 The proposed implementation is one deployable Rust service backed by PostgreSQL/PostGIS. The HTTP interface, background publication, command handling, and controlled synchronization use the same validated resource model and transactional write functions. GeoJSON, SensorML, ordinary JSON, and SWE encodings are representations of those resources, not separate databases. Applications use the published CSAPI interfaces; an additional interface must have a specific purpose and be identified as a Glaux extension.
 
@@ -22,8 +22,10 @@ The main engineering choices proposed here are:
 - Strict validation of public writes, authorized reads and writes, transactionally recorded publication events, and explicit command outcomes.
 - Standards-derived tests plus real requests from independent clients. The implementation's own serializers are not the sole judge of correctness.
 - Optional authenticated Server-Sent Events (SSE) as a Glaux interface and outbound MQTT 5 as the experimental Part 3 binding. Neither is represented as an approved Part 3 standard.
+- Experimental static sampling Point/Curve/Surface types through existing SamplingFeature routes; no whole-Part-4 or derived-volume promise.
+- Discoverable CQL2 JSON filters over direct sampling geometry and per-datastream scalar results, without changing native CSAPI query semantics or reconstructing missing history.
 
-The completion target remains all 25 direct CSAPI conformance classes and applicable prerequisites. Incremental releases may implement fewer classes, but must say exactly what works. JSON-only operation, read-only operation, partial command/feasibility APIs, or SSE-only streaming are not substitutes for the complete intended server. A simulated device is valid test equipment for the full tasking interface; selecting operational hardware is not a new server-completion prerequisite.
+The core completion target remains all 25 direct CSAPI conformance classes and applicable prerequisites. The selected experimental capabilities and six additional filtering classes are also planned implementation deliverables, tracked separately from that count. Incremental releases may implement fewer classes, but must say exactly what works. JSON-only result support, read-only operation, partial command/feasibility APIs, or SSE-only streaming are not substitutes for the complete intended server; JSON-only CQL2 expression encoding does not restrict SWE result formats. A simulated device is valid test equipment for the full tasking interface; selecting operational hardware is not a new server-completion prerequisite.
 
 This guide defines technical design and verification. The Roadmap will assign implementation order and tasks. Governance defines the working rules. The approved Goal and Definition controls scope. No separate requirements document, decision-record system, or new approval process is introduced.
 
@@ -61,6 +63,8 @@ Implement the capabilities in Goal and Definition §§5–7. The table makes the
 | DDIL-informed operation (§5.8) | §4.11 | Offline operation, retries, conflict detection, and safe recovery |
 | Validation and verification (§5.9) | §4.3, §§7–8 | Standards tests, independent clients, and accurate release claims |
 | Ecosystem integration and independent use (§§6–7) | §5, §4.12 | Build/run/test from documented dependencies without other Glaux products |
+| Experimental static Part 4 (§4, §5.2) | §1.4, §4.2.1, §13 | Typed Point/Curve/Surface round trips, shape/association validation and query results |
+| Enhanced observation filtering (§4, §5.3) | §4.4.1, §6.3.1, §7.4 | Six-class/dependency coverage, discovered queryables and independently expected spatial/value results |
 
 Implementation-complete means the entire target is implemented and verified, documented examples work, known limitations are explicit, and no unresolved issue invalidates a claimed capability. Passing a partial release's tests does not establish full completion. A successful command-adapter test establishes that adapter's behavior, not universal device safety or accreditation.
 
@@ -86,11 +90,19 @@ The research conformance baseline pinned Features Part 4 at `9ca25f56a58ed822ea8
 
 Conformance URI bases are exactly `http://www.opengis.net/spec/ogcapi-connectedsystems-1/1.0` and `http://www.opengis.net/spec/ogcapi-connectedsystems-2/1.0`. Requirement identifiers use `/req/`; declarations use `/conf/`. The repository name contains `connected-systems`, but these identifiers use `connectedsystems`. Section 7 lists every direct target class.
 
-References do not import every independent capability of every related standard. In particular, XML import, general CQL2 queries, an arbitrary SensorML process-execution engine, and separate OGC service families are not added by this guide. Apply SensorML/SWE requirements where the selected CSAPI classes and mappings invoke them.
+References do not import every independent capability of every related standard. XML import, unrestricted CQL2/joins, an arbitrary SensorML process-execution engine, and separate OGC service families are not added by this guide. The bounded filtering addition in §1.4 is an explicit project choice, not an inherited CSAPI obligation. Apply SensorML/SWE requirements where the selected CSAPI classes and mappings invoke them.
 
 ### 1.3 Experimental Part 3 boundary
 
 Use the official Part 3 branch snapshot [`6f529a15bfa63259febc3620378d3e5a06305333`][P3] as the research-backed experimental baseline. The checked draft contains incomplete MQTT-binding material. Its resource-event and resource-data concepts inform §4.8, but Glaux must define and label its own concrete topic, security, discovery, and delivery choices where the draft does not. No approved Part 3 conformance claim is authorized. [IDR-014H][R014h], [IDR-035][R035]
+
+### 1.4 Selected Part 4 experiment and additional filtering
+
+Goal v1.7 adopts the static Point/Curve/Surface implementation alternative from [IDR-058][R058], based on official `part4-working-draft` commit [`05a3c62d198ee52d0cf81a734b700967b7d864a1`][P4]. Implement the specialized contracts in §4.2.1, not merely generic GeoJSON storage. No approved Part 4 conformance URI is introduced. Dedicated Solid, Specimen, StatisticalSample, FeaturePart, relative/parametric types, mobile snapshot behavior and derived-volume computation are outside this experiment; their descriptions are not all equally costly, but none is an implicit commitment. Existing generic Part 1 and dynamic-data requirements remain intact.
+
+The separately adopted querying capability uses [Features Part 3 v1.0, OGC 19-079r2][F3] and [CQL2 v1.0.0, OGC 21-065r2][CQL2], with the six complete classes in §7.4 and JSON expression encoding. It supports approved generic SamplingFeatures as well as the selected experimental types. The CSAPI endpoint/queryable mapping is a documented Glaux choice, not a claim that these standards define observation relationships. Broader CQL2 classes, Text expressions, arbitrary joins, unrelated related-property searches and reconstruction of missing geometry are not selected. This does not narrow native CSAPI filtering or SWE value support. [IDR-059][R059]
+
+The scope is approved; the Guide remains a technical draft. Optional deployment enablement does not make these deliverables optional for full project completion. Advertise only implemented, enabled, tested behavior.
 
 ## 2. Architecture Context
 
@@ -190,6 +202,26 @@ Collections store metadata and either explicit membership or a documented server
 
 **Verification.** Register a System with a Procedure, subsystem, Deployment, Sampling Feature, and Property; reach the same IDs through direct, nested, and collection routes. Round-trip GeoJSON/SensorML where both apply, test duplicate UIDs, invalid cycles, optional/external references, and authorized deletion effects. A resource must not disappear merely because a different representation was requested.
 
+#### 4.2.1 Experimental static Part 4 sampling types
+
+**Required behavior and source.** Implement static sampling points, curves and surfaces using the existing SamplingFeature identity, associations, GeoJSON routes and applicable transaction operations. The project requirement is Goal §4; draft `/req/sampling-spatial/{type,om,shapes,location}` supplies the selected semantics. The conditional mobile `location-time` behavior is not selected. [P4Types], [IDR-058 §§4.2–4.3, 5–7][R058]
+
+**Implementation.** Use `application/geo+json`, with the type in `properties.featureType` and the conceptual shape in top-level `geometry`, not a second `properties.shape` object. Bind the following specialized types to their explicit geometry. The URI column appends its suffix to `http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/`:
+
+| Accepted type alias | Canonical type URI suffix | Required non-null GeoJSON geometry |
+|---|---|---|
+| `om:SamplingPoint` | `SF_SamplingPoint` | `Point` |
+| `om:SamplingCurve` | `SF_SamplingCurve` | `LineString` |
+| `om:SamplingSurface` | `SF_SamplingSurface` | `Polygon` |
+
+Accept those exact aliases and full URIs; expand aliases for validation and emit the full URI consistently, retaining the submitted form where original-source preservation applies. This reconciles the draft prose's URI/CURIE permission with its full-URI schema constants as a documented experimental encoding choice. Do not accept arbitrary prefixes as equivalent types. Require explicit geometry of the matching kind; reject missing/null geometry and mismatched shape for these advertised specializations rather than falling through to a generic schema. Preserve valid coordinate precision/height and common sampling associations. The generic Part 1 rules for other/non-spatial features remain unchanged.
+
+Package a versioned local validator for the selected subset, composing the approved generic SamplingFeature contract and the pinned subtype constraints. Repair only references needed by that subset; retain the upstream artifacts and describe adaptations in §13. The draft's incomplete `anySamplingFeature` bundle, generic fallback and pose-only alternatives do not define support. No request-time schema fetching, new resource family, or geometry-derivation engine is needed.
+
+Create, replace and patch must validate the complete resulting specialized resource through the ordinary write boundary; reads and list filters must preserve its type, geometry and relationships. Use explicit geometry for the existing `bbox`/`geom` operations. Keeping a static description does not establish its applicability to every historical observation; §4.4.1 governs that additional query meaning.
+
+**Verification.** Independently test all three types, both accepted identifier forms and canonical output, required associations, wrong/missing/null geometries, coordinate order, permitted height, CRUD/PATCH round trips, ordinary spatial results and access controls. Prove that unsupported specialized fields are not silently lost or advertised as typed support. These are exact selected-draft/project tests, not approved Part 4 certification.
+
 ### 4.3 SensorML, SWE Common, validation, and semantic bindings
 
 **Required behavior and source.** Implement the SensorML mappings and SWE component/encoding rules invoked by the selected classes, not merely JSON syntax validation. Observation and command values must match the relevant parent stream's schema. [SML], [SWE], [IDR-021–024][R021]
@@ -218,7 +250,7 @@ Preserve unit declarations and property URIs. Validate UCUM codes where supplied
 
 Parse query parameters into typed predicates. Apply route/collection scope and caller access restrictions before filters, aggregation, paging, and encoding. Parameters combine with AND; alternatives within a list combine with OR according to their specified grammar. Reject malformed or unsupported parameters rather than ignoring them. A well-formed identifier matching nothing produces an empty result, not a syntax error.
 
-Implement both Advanced Filtering classes fully, including hierarchy, relationship, property, spatial, temporal, command, and event filters on their applicable routes. Do not add generic CQL2, client sorting, field selection, or expansion to satisfy them. Section 6.3 summarizes the query families; the exact endpoint applicability comes from each requirement, not the upstream OpenAPI omissions.
+Implement both Advanced Filtering classes fully, including hierarchy, relationship, property, spatial, temporal, command, and event filters on their applicable routes. The separately selected Features Part 3/CQL2 capability adds the bounded observation filters below; it does not introduce client sorting, field selection, expansion or arbitrary joins. Section 6.3 summarizes the query families; the exact endpoint applicability comes from each requirement, not the upstream OpenAPI omissions.
 
 Use RFC 3339 instants and slash intervals, including the inherited open-end forms. For `resultTime=latest`, first apply all other predicates within the endpoint scope, then select the greatest visible result time and retain ties. The canonical observation endpoint and a single-stream nested endpoint have different scopes. Do not generalize `latest` or `now` to every temporal parameter based on an example.
 
@@ -227,6 +259,20 @@ Use PostGIS for spatial predicates. Preserve source geometry/reference informati
 Use deterministic ordering with a unique ID tie-breaker: result time then ID for observations; stable ID order for ordinary resource lists unless a family requires a different rule. Return server-generated opaque `next` links, not a promised public offset API. Reauthorize continuations. For ordinary lists, document keyset paging as a changing view rather than claiming a cross-request snapshot; use an explicit snapshot/export mechanism for synchronization (§4.11). Omit optional totals when they cannot be calculated correctly and affordably.
 
 **Verification.** Seed distinguishable records and assert exact selected IDs and order, not just response shape. Exercise filter combinations, latest-time ties, delayed ingestion, shared Systems, recursive hierarchies, empty matches, authorized counts, paging under inserts/deletes, and indexed spatial/temporal queries. Compare stored/retrieved value semantics across all supported formats.
+
+#### 4.4.1 Enhanced observation filtering
+
+**Required behavior and source.** Support the selected Features Part 3/CQL2 classes and Goal §5.3 through the observation-list contract in §6.3.1. Named queryables describe a filtering view; they need not be extra fields in returned observations. Preserve existing recursive `foi` association matching as a different operation from testing direct sampling geometry. [F3], [CQL2], [IDR-059 §§4.1–4.3][R059]
+
+**Implementation.** Resolve `samplingGeometry` from the observation's direct SamplingFeature association and retained, authorized explicit geometry applicable at its phenomenon time. Never substitute an ancestor, System position, measured position result, implicit footprint, latest description or result time. For an instant, require an unambiguous applicable geometry assertion; for a phenomenon-time interval, require one unambiguous explicit geometry applicable throughout that interval. Otherwise the value is unavailable. These are Glaux mapping rules, not Part 4 mobile reconstruction. Missing validity, no movement event or a currently static-looking point is not evidence of past location. Do not interpolate, carry positions forward across unknown gaps or dereference external links during filtering.
+
+On a single datastream, bind selected scalar queryables to immutable SWE contract/component paths, property identity, scalar type, unit and nil rules. Evaluate decoded logical values independently of response encoding. A numeric literal uses the advertised component unit; no implicit cross-unit conversion or text-to-number cast is performed. Do not flatten arrays or infer any/all semantics. The selective query view does not restrict which otherwise valid SWE data can be stored or returned.
+
+Resolve authorized queryable use and the eligible observation/property/relationship view before evaluating predicates. Legitimately unavailable geometry, missing scalar content and declared nil map to CQL2 NULL for that queryable, with source distinctions retained internally. Protected information must not simply be substituted with NULL: apply §4.10's denial/concealment policy to prevent membership, null tests, errors or counts revealing it. Only TRUE selects a record. Combine native filters and CQL2 with AND, then apply `resultTime=latest` within the resulting scope, ordering, counts and paging. Distinct relationship paths cannot duplicate an observation.
+
+Translate a bounded, typed expression tree to allowlisted, parameterized database operations; neither property names nor literals become raw SQL. Use exact PostGIS predicates after any index prefilter. Bind next-page cursors to normalized native/CQL2 filters, endpoint scope and queryable-mapping version, and reauthorize every continuation. Reject a mismatched/retired mapping; retain §4.4's changing-view paging contract rather than promising cross-request snapshots.
+
+**Verification.** Use the independently specified cases in IDR-059 and §8.2: direct versus ancestor geometry, historical versus current position, absent history, scalar thresholds versus nil, mixed types/units, native-filter combinations and exact selected IDs. Check disclosure, errors, class coverage and continuation, not merely expression parsing.
 
 ### 4.5 Status, availability, dynamic properties, and System Events
 
@@ -269,6 +315,8 @@ Apply the specified deletion and dependent-resource behavior with authorization 
 Begin with ordinary indexed observation tables. Choose native time partitioning only after measuring the representative workloads in §8; do not make TimescaleDB a prerequisite. If partitioning is adopted, preserve global ID uniqueness explicitly because a partitioned unique constraint normally includes the partition key. Time-series scale must not silently change resource identity or URL stability.
 
 Indexes cover canonical/UID lookups, parent and relationship traversal, stream plus result/phenomenon time, and relevant PostGIS geometry. Add indexes from demonstrated query plans, not every field. Apply a precise spatial predicate after bounding-box index selection. Assigning an SRID is not coordinate transformation.
+
+Enhanced filters reuse those associations, retained geometry/resource revisions and selective scalar projections. Retain each projection's observation, contract and component mapping; do not expand every SWE leaf into an index. Geometry lookup uses documented semantic applicability rather than the latest stored row. Recompute affected projections after an authorized correction and invalidate incompatible mapping cursors; never fabricate history removed by retention or never supplied.
 
 Keep timestamp meaning and source precision. Use normalized instants for indexed comparisons and retain the source lexical value/precision where necessary. For precision beyond PostgreSQL timestamp resolution, store a checked remainder or exact normalized numeric value and use it in ordering/comparison; do not silently round a boundary match. The exact Rust/time storage type is a remaining implementation proof (§9).
 
@@ -454,10 +502,46 @@ The schema routes are `/datastreams/{id}/schema?obsFormat=...` and `/controlstre
 | `phenomenonTime`, `resultTime` | Observation values or stream extents according to endpoint; special `resultTime=latest` only where specified |
 | `issueTime`, `executionTime`, `statusCode`, `sender` | Command/ControlStream and applicable feasibility/status predicates; `currentStatus` is not the query parameter name |
 | `eventType` and status/event `datetime` | Event type and relevant occurrence/report time, with published ambiguities documented in §13 |
+| `filter`, `filter-lang`, `filter-crs` | Additional observation-only Features Part 3/CQL2 contract in §6.3.1; combine with native predicates rather than replacing them |
 
 Keep a typed parameter definition per applicable route with its syntax, default, predicate, and source requirement. Public examples and OpenAPI must use that definition. Bound list sizes, hierarchy traversal, WKT/parser work, total response bytes, database execution time, and concurrent work independently of `limit`. A query that exceeds a documented resource budget fails explicitly; it does not silently drop predicates or truncate a record. A smaller valid page can carry a continuation.
 
 Use a documented Unicode case-insensitive matching rule for `q` that satisfies the published requirement; pin its library/data behavior and test non-ASCII text. The exact normalization implementation is not yet verified. No arbitrary relevance ranking, client sort contract, or synonym ontology is implied.
+
+#### 6.3.1 Enhanced observation filter contract
+
+Support GET filtering on `/observations` and `/datastreams/{id}/observations`. Equivalent observation collection views may advertise the same capability only with matching scope and queryable mappings. Do not silently enable the language on every metadata, command or event endpoint. The following paths and property names are Glaux's CSAPI mapping, not standardized CSAPI additions:
+
+| Filter scope | Linked queryables document | Declared searchable values |
+|---|---|---|
+| All authorized observations | `/observations/queryables` | `id`: observation local-ID string; `samplingGeometry`: §4.4.1's direct, time-applicable geometry |
+| One authorized datastream | `/datastreams/{id}/observations/queryables` | The common values above plus selected `result.<name>` scalar aliases bound to that stream's contract |
+
+Each `result.<name>` is a complete advertised property identifier mapped explicitly to one scalar component path, not a dotted join/traversal syntax. Record its type, property definition, unit, missing/nil mapping and applicable contract revisions in the queryables description and API examples. Keep mappings stable across compatible revisions; do not reinterpret historical values after schema changes or expose a universal cross-stream `resultValue`. Unsupported scalar mappings remain absent from discovery, without making otherwise valid observations unstoreable.
+
+Return queryables as JSON Schema Draft 2020-12 with `application/schema+json` and `additionalProperties:false`. Use the prescribed spatial `format` representation without imposing a JSON `type` or `$ref` on the geometry property. Provide the `http://www.opengis.net/def/rel/ogc/1.0/queryables` link, including the required HTTP `Link` header, on the applicable filterable resource responses. Protect per-stream schemas and queryables like the data contracts they disclose. Do not confuse this document with the stream's SWE `resultSchema`.
+
+Accept a URL-encoded CQL2 JSON expression in `filter`; advertise `cql2-json` as both the only initial language and its default. `filter-lang=cql2-text` is unsupported. Accept the standard CRS84/CRS84h filter-coordinate behavior and corresponding identifiers; reject other requested CRSs in this initial binding. Validate operators, argument counts, types, calendar values and geometry beyond generic JSON-schema acceptance. CQL2 timestamp literals use UTC `Z`; native CSAPI time parameters keep their own grammar. Unknown names, unsupported language/CRS/operators and malformed expressions return `400` through §6.4, not an ignored or partly evaluated filter. Authorization denials retain §4.10's independent policy behavior.
+
+Example decoded expression for a stream advertising `result.temperature` in Cel; the real GET request URL-encodes the expression and sets `filter-lang=cql2-json`:
+
+```json
+{
+  "op": "and",
+  "args": [
+    {
+      "op": "s_intersects",
+      "args": [
+        { "property": "samplingGeometry" },
+        { "type": "Polygon", "coordinates": [[[0,0],[2,0],[2,2],[0,2],[0,0]]] }
+      ]
+    },
+    { "op": ">", "args": [{ "property": "result.temperature" }, 25] }
+  ]
+}
+```
+
+No POST search route is introduced. Ordinary native `foi`/time filters can accompany this expression, with AND semantics and the evaluation order in §4.4.1. Publish finite expression-byte/depth, geometry-complexity and database-work limits, independently of page size. Exhaustion fails safely without partial-success claims; a page limit or outer SQL LIMIT is not a traversal-work safeguard. Exact tested limit values remain implementation measurements rather than invented performance guarantees. [F3 §§6, 8][F3], [CQL2 §§6–8][CQL2], [IDR-059][R059]
 
 ### 6.4 Success, error, and command response contracts
 
@@ -483,7 +567,7 @@ For synchronous work, retain a private durable admission/attempt record before d
 
 ### 6.5 Versioning and compatibility
 
-Version server software independently of standards versions, schema-contract revisions, API documentation, database migrations, and the Part 3 experiment. Keep ordinary canonical URLs stable. Track breaking changes to request syntax, default behavior, query meaning, representations, and errors as well as Rust types. [IDR-010A][R010a]
+Version server software independently of standards versions, schema-contract revisions, API documentation, database migrations, the Part 3/4 experiments and queryable mappings. Keep ordinary canonical URLs stable. Track breaking changes to request syntax, default behavior, query meaning, representations, and errors as well as Rust types. [IDR-010A][R010a]
 
 Before a stable contract changes incompatibly, document the affected behavior, reason, migration path, and any required overlap period. Do not adopt the research's proposed calendar deprecation duration as a new project obligation without an actual release-support decision. Preserve supported older client behavior through regression tests. Unknown draft aliases are not accepted automatically, particularly for writes or tasking.
 
@@ -537,7 +621,26 @@ Declare a class only when the enabled implementation satisfies all its applicabl
 
 Normal CI artifacts should identify the server commit/build, configuration used, database/migration version, standards/schema pins, fixture version, executed cases and outcomes, and known deviations. Use existing test output formats plus a small summary; no dedicated evidence platform is required. Do not label local conformance tests as OGC certification or organizational accreditation.
 
-Experimental Part 3, SSE, retry headers, synchronization exchange, and other Glaux extensions have separate tests and documentation. Passing those tests does not add an approved CSAPI conformance URI.
+Experimental Parts 3/4, SSE, retry headers, synchronization exchange, and other Glaux extensions have separate tests and documentation. Passing those tests does not add an approved CSAPI conformance URI. The published Features/CQL2 classes below can be declared separately only when their full obligations and dependencies pass; their declaration does not standardize Glaux's observation-property mapping.
+
+### 7.4 Additional filtering targets and experimental Part 4 evidence
+
+The selected filtering classes are additional project targets, not six more CSAPI classes. Append each suffix to its stated `/conf/` prefix:
+
+| Standard prefix | Class suffix | Implementation and proof |
+|---|---|---|
+| `http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/` | `queryables` | Scoped schema/discovery links, actual available property names/types and access behavior |
+| Same Features prefix | `filter` | Language/CRS selection, errors, AND with native filters and correct selection |
+| `http://www.opengis.net/spec/cql2/1.0/conf/` | `basic-cql2` | Complete basic comparisons, Boolean and NULL semantics, including valid typed temporal literals |
+| Same CQL2 prefix | `basic-spatial-functions` | Correct intersection predicates, including missing values and boundaries |
+| Same CQL2 prefix | `basic-spatial-functions-plus` | All required spatial literal types, not merely polygons |
+| Same CQL2 prefix | `cql2-json` | Complete JSON encoding obligations for the selected language classes |
+
+Use [Features Part 3 Annex A][F3] and [CQL2 Annex A][CQL2] plus the mapping-specific tests below. Filter depends on Queryables; the Queryables ATS also requires Common Part 1 JSON and its Core/Landing Page dependencies. Spatial-plus depends on basic-spatial and Basic CQL2; JSON depends on Basic CQL2 and conditionally on the selected spatial classes/GeoJSON geometry rules. Basic CQL2 also incorporates SFA Architecture, Time Ontology, RFC 3339, JSON Schema and Unicode as specified. Verify applicable dependencies rather than adding unrelated APIs.
+
+Support the complete spatial-plus literal set, including multi-geometries and GeometryCollection, and required 2D/3D coordinate inputs. SFA intersection is horizontal, not an implied volumetric operation; preserve height information without advertising 3D volume evaluation. These literal requirements do not expand the Part 4 specialization set. Features Filter's feature-specific class, CQL2 Text, full Spatial/Temporal Functions, arrays, arithmetic and general joins are not selected. No claim to the separate broader OGC CQL2 Reference Implementation qualification follows.
+
+For Part 4, keep the pinned draft clauses, adapted-schema checks, project interpretations and independent expected results distinct from approved Part 1 tests. Complete Point/Curve/Surface evidence must include specialized type/shape validation and round trips, not just generic feature parsing. Disabled experimental support must not remove approved generic SamplingFeature behavior or advertise unimplemented specialization.
 
 ## 8. Testing Strategy
 
@@ -563,6 +666,8 @@ Code formatting, linting, compilation, ordinary `cargo test`, dependency checks,
 4. **Live delivery and recovery.** Subscribe, publish changes, interrupt delivery, reconnect, and recover without losing committed changes. Exercise duplicate messages, deletion events, expired history, and revoked access. Repeat through the optional MQTT binding.
 5. **Feasibility and command execution.** Run an infeasible analysis, a feasible analysis, an authorized command, and a denied command. Verify distinct outcomes, standard statuses/results, required time fields, synchronous/asynchronous behavior, and safe interruption during dispatch.
 6. **Synchronization and restore.** Export state and a replay position, add concurrent changes, import/catch up, and inject a conflicting revision. Restore a backup and verify resource meaning, identity, deletion handling, and held command work.
+7. **Experimental sampling descriptions.** Create/read/replace/patch all three selected Part 4 types with full URI and CURIE inputs. Check canonical type output, preserved associations/coordinates, ordinary spatial matches and rejection of wrong/null geometry. Confirm that generic or unsupported types are not mislabeled as specialized support.
+8. **Enhanced observation selection.** Seed inside/boundary/outside direct sampling points and an intersecting ancestor whose child point is outside; assert different direct-geometry and recursive `foi` results. Use explicit retained geometry at phenomenon time that differs from current geometry, plus an unknown-history case and an interval not covered by one unambiguous geometry. Assert no current fallback. Combine spatial and scalar predicates with native time, `foi` and latest selection; check exact IDs before paging. Include declared nil, absent values, number/text and Celsius/Fahrenheit distinctions, equivalent SWE response encodings, discovery, invalid names/operators/CRS, NULL/negation, stale mapping cursors and multiple relationship paths. Repeat with protected related facts changed but the permitted view unchanged; membership, counts and errors must not reveal those facts. Specimen-property examples from research remain outside the adopted scope.
 
 These scenarios connect the sections of the guide; they do not replace the complete class tests. They will also be used in drafting iteration 3 to check the design itself before Roadmap development.
 
@@ -587,10 +692,12 @@ Include regressions from independent-client research: missing discovery links, d
 | Full-scope delivery becomes a collection of permanently deferred features | Keep the 25-class map visible; Roadmap tasks must cover outstanding behavior, including Text/Binary, writes, and tasking |
 | Research recommendations grow into unnecessary infrastructure | Adopt only mechanisms justified in this guide; keep the ordinary reference deployment small |
 | Dependency or performance assumptions prove wrong | Compile the actual pinned dependency set and measure representative workloads before claiming support or scale |
+| Experimental static types are confused with generic storage or whole-Part-4 support | Test exact specialized contracts; label the pinned interpretation and excluded types/behaviors |
+| A plausible filter selects the wrong sampling location or leaks hidden related data | Test direct/ancestor and historical/current differences, unavailable history, unit/nil semantics and authorization before evaluation |
 
 ### 9.2 Specific questions to resolve in the next drafting pass
 
-These are design work items, not requests for the project lead to invent technical answers or approve a new research program. No additional scope choice is required to have produced this first draft.
+These are design work items, not requests for the project lead to invent technical answers or approve a new research program. The targeted additions in v0.2 do not imply that the other first-draft questions below have been resolved.
 
 | Open item | Current proposed position | What remains to settle |
 |---|---|---|
@@ -601,6 +708,7 @@ These are design work items, not requests for the project lead to invent technic
 | Dependency/schema/time implementation | Axum/Tokio/SQLx and offline schema validation; exact temporal comparison | Select buildable versions/features and demonstrate recursive schema handling and timestamp precision with focused code tests during implementation |
 | Optional transport details | SSE plus outbound experimental MQTT 5, separate from approved conformance | Finalize MQTT client/broker test choice, path/format token encoding, authentication enforcement, exact SSE filter/cursor contract, and AsyncAPI examples |
 | Recovery/exchange details and resource limits | Administrative snapshot/import and ordered catch-up; bounded queues and explicit expiry | Define the exchange JSON shape, source revision ordering, recipient/scope reconciliation, conflict-resolution commands, and measured safe example limits/retention |
+| Enhanced-query mappings and unavailable values | Fixed endpoint/property contract in §6.3.1; conservative geometry/time rule and NULL mapping in §4.4.1 | Complete queryables schema examples and compatible SWE scalar/revision mappings, including non-finite values; specify correction/conflict handling and verify literal validation before claiming the classes |
 
 Do not block guide drafting on a production workload, operational identity provider, sensor procurement, or federation agreement. Those are deployment-specific. Implementation prototypes should answer bounded library/encoding questions, not become new project deliverables in their own right.
 
@@ -610,14 +718,14 @@ These are checks on implementation and release claims, not additional drafting a
 
 - **For an implemented capability:** required operations and representations exist; relevant standards and negative tests run; access/error behavior is covered; API documentation matches the implementation; any interpretation is explicit.
 - **For a partial reference release:** build/run/test instructions and examples work on documented prerequisites; included capabilities pass their tests; disabled/deferred behavior is listed; no unsupported conformance class is advertised.
-- **For full server completion:** all 25 direct classes and applicable prerequisites are implemented and verified; all approved goal capabilities have evidence; experimental Part 3 behavior is implemented and accurately labeled; independent client workflows, recovery/security tests, and developer examples pass; no unresolved issue invalidates the stated conformance or safety boundaries.
+- **For full server completion:** all 25 direct CSAPI classes and applicable prerequisites are implemented and verified; all approved goal capabilities have evidence; experimental Part 3 and the selected static Part 4 types are implemented and accurately labeled; all six selected Features/CQL2 classes and their applicable dependencies pass with the agreed observation mapping; independent client workflows, recovery/security tests, and developer examples pass; no unresolved issue invalidates the stated conformance or safety boundaries. Deployment disablement is not a substitute for implementing an adopted capability.
 - **For guide finalization before the Roadmap:** architecture, contracts, verification, and scope agree; consequential open design questions have a defensible disposition; remaining implementation-time choices are bounded and do not conceal missing capability design. This does not assert that the software has been completed.
 
 No numeric performance target, production accreditation, or unrelated Glaux product completion is added to those conditions.
 
 ## 11. Change Control
 
-This guide begins at v0.1 Draft. The next two drafting iterations update this same document with a revision summary. Push completed drafting changes and summarize the important choices/questions; wait for the project lead's `proceed` before the next iteration. Do not start the Roadmap until the guide is baselined under the existing planning guidance.
+Version 0.1 was drafting iteration 1. Version 0.2 is the user-authorized scope update following supplemental research and the combined scope discussion; it incorporates Goal v1.7 without claiming the broader second drafting pass is complete. The next `proceed` resumes iteration 2 on this same guide to resolve the remaining design gaps, followed by iteration 3's whole-guide check. Push completed changes and summarize concrete outcomes; no new document or approval process is required. Do not start the Roadmap until the guide is baselined under the existing planning guidance.
 
 Record material technical changes here with their reason and affected behavior/tests. A change that expands the approved goal must first be addressed in the Goal and Definition; an internal implementation improvement need not reopen mission scope. Update standards interpretations when authoritative corrections arrive and test compatibility before changing a published contract.
 
@@ -649,8 +757,12 @@ The OS4CSAPI examples inform the use of concrete component boundaries, input/out
 | [039–043, including 039A: security and interrupted operation][R039] | Server-enforced access, accountability, honest freshness, replay and conflict handling |
 | [044–049: Rust, architecture, deployment, configuration, operations][R044] | Small workspace, one server, explicit dependencies, runnable reference, migration/restore |
 | [050–056: verification and interoperability][R050] | Standards-to-test connections, real database/HTTP tests, independent clients, bounded workload measurements |
+| [058: draft Part 4][R058] | The project lead selected the report's bounded implementation alternative, not blanket draft adoption: §§1.4, 4.2.1, 7.4 and 13 |
+| [059: enhanced querying][R059] | Adopted six-class JSON filtering and explicit direct-geometry/scalar mappings: §§4.4.1, 6.3.1, 7.4 and 8.2; qualifies the earlier CQL2 deferral |
 
 Consequential source checks during this drafting pass included the published CSAPI resource/encoding clauses, the exact conformance identifiers, Features transaction draft pins and conditional-request permissions, SWE optional/array behavior, command/feasibility semantics, and the current pinned Part 3 source. This is targeted checking of findings used in the design, not a claim that every research paragraph has been re-audited.
+
+The v0.2 scope update additionally checked the pinned Part 4 spatial clauses/schemas and published Features Part 3/CQL2 clauses against the accepted supplements. Their reports and synthesis addenda remain the historical research record; the later scope approval is recorded in Goal v1.7 and this revision, not by rewriting their recommendations as past adoption decisions.
 
 The draft deliberately does not adopt every proposed research mechanism: no compulsory private Publisher envelope, simulator management API, eight-package skeleton, graph/evidence database, universal policy or trust engine, mandatory conditional-write header, or separate requirements/decision-document set. The capability remains required where the approved goal requires it; these particular mechanisms do not.
 
@@ -676,8 +788,12 @@ This table records known consequential seams in one place. An interpretation is 
 | Observed/controlled-property conceptual URI lists differ from JSON object summaries | Store property identities explicitly; generate the selected published JSON object form and document derivation of summaries | [024][R024]; do not infer identities from labels or units |
 | SensorML DataInterface, qualifiers, and input/output binding gaps | Preserve valid source constructs; implement only mappings supported by the chosen schema/interpretation and surface unsupported executable bindings explicitly | [021][R021], [024][R024]; do not silently discard richer source meaning |
 | Part 3 MQTT/discovery incomplete; `parentId` conflicts with CloudEvents attribute spelling | Publish a versioned Glaux MQTT/AsyncAPI experiment with explicit topics/discovery; use `parentid` as a listed deviation. SSE stays separate | [014H][R014h], [035][R035], [pinned Part 3 source][P3] |
+| Part 4 static prose permits URI/CURIE while subtype schemas use full-URI constants | Accept only the three explicit alias/full-URI pairs in §4.2.1; dispatch by expanded URI and serialize the full URI, preserving source spelling | [058][R058], [pinned spatial clauses][P4Types]; experimental encoding choice, not an amended standard |
+| Part 4's spatial schema references missing `samplingFeature.json` and stale inherited requirement names | Compose the selected validator with the pinned approved Part 1 SamplingFeature contract/dependencies; use current Part 1 `/req/sf` inheritance; retain originals and adapted-schema provenance | [058][R058], [spatial schema][P4Spatial], [approved common schema][SFSchema]; do not import the unfinished all-types bundle |
+| Part 4 schemas allow null/pose alternatives while spatial prose requires shape/location | Require non-null matching top-level GeoJSON geometry for the selected static types; no pose-only fallback. Generic Part 1 geometry-less handling is unchanged | [058][R058], [P4Types]; O&M spatial metadata's Clause 9 citation is reconciled to O&M 2.0 Clause 10, not a new dependency scope |
+| Features Part 3/CQL2 does not standardize CSAPI observation queryables | Use the scoped paths/names in §6.3.1 and direct phenomenon-time geometry rule in §4.4.1; absence maps to NULL only in the authorized view | [059][R059], [F3], [CQL2]; Glaux mapping, no ancestor/current fallback, arbitrary joins or implied Part 4 mobile support |
 
-All entries above are proposed dispositions in a first draft. Finishing the guide requires resolving their implementation consequences, not necessarily waiting for every upstream editorial issue to close. Where the available evidence cannot support an unqualified claim, retain the qualification rather than presenting a guess as settled fact.
+The scope additions are approved; technical treatments above remain part of this draft Guide. Finishing the guide requires resolving their implementation consequences, not necessarily waiting for every upstream editorial issue to close. Where the available evidence cannot support an unqualified claim, retain the qualification rather than presenting a guess as settled fact.
 
 [R001]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-001-stanag-4789-aep-4789-server-obligation-baseline-report.md
 [R006]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-006-csapi-part-1-requirement-baseline-report.md
@@ -718,12 +834,20 @@ All entries above are proposed dispositions in a first draft. Finishing the guid
 [R053]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-053-test-data-fixtures-golden-files-and-scenario-corpus-strategy-report.md
 [R054]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-054-performance-load-stress-and-streaming-test-strategy-report.md
 [R056]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-056-interoperability-test-matrix-for-external-csapi-clients-report.md
+[R058]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md
+[R059]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md
 [RSynthesis]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/final-idr-research-report.md
 [S1]: https://docs.ogc.org/is/23-001/23-001.html
 [S2]: https://docs.ogc.org/is/23-002/23-002.html
 [SML]: https://docs.ogc.org/is/23-000/23-000.html
 [SWE]: https://docs.ogc.org/is/24-014/24-014.html
 [P3]: https://github.com/opengeospatial/ogcapi-connected-systems/tree/6f529a15bfa63259febc3620378d3e5a06305333/api/part3
+[P4]: https://github.com/opengeospatial/ogcapi-connected-systems/tree/05a3c62d198ee52d0cf81a734b700967b7d864a1/api/part4
+[P4Types]: https://github.com/opengeospatial/ogcapi-connected-systems/blob/05a3c62d198ee52d0cf81a734b700967b7d864a1/api/part4/sections/clause_13_sampling_feature_types.adoc
+[P4Spatial]: https://github.com/opengeospatial/ogcapi-connected-systems/blob/05a3c62d198ee52d0cf81a734b700967b7d864a1/api/part4/openapi/schemas/samplingSpatial.json
+[SFSchema]: https://github.com/opengeospatial/ogcapi-connected-systems/blob/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2/api/part1/openapi/schemas/geojson/samplingFeature.json
+[F3]: https://docs.ogc.org/is/19-079r2/19-079r2.html
+[CQL2]: https://docs.ogc.org/is/21-065r2/21-065r2.html
 [F4]: https://github.com/opengeospatial/ogcapi-features/tree/9ca25f56a58ed822ea8a685a7a41afa7181aaa8b/extensions/transactions
 [F4Later]: https://github.com/opengeospatial/ogcapi-features/blob/4e30324a14b682ff4a26ee43aad1eb6428c846a3/extensions/transactions/create-replace-update-delete/standard/20-002.adoc
 [ExampleMain]: https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/planning/csapi-implementation-guide.md

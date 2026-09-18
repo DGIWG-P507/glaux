@@ -1,9 +1,9 @@
 # Glaux Server Goal and Definition
-**Version:** 1.6<br>
+**Version:** 1.7<br>
 **Date:** 17 September 2026<br>
 **Status:** Approved
 
-**Revision summary:** Applies the completed initial design research to clarify the reference-implementation goal, full standards scope, experimental Part 3 intent, server responsibilities, and verification expectations within the existing ten-section structure.
+**Revision summary:** Records the project lead's approved scope additions of experimental static CSAPI Part 4 points, curves and surfaces, and bounded Features Part 3/CQL2 observation filtering. These are implementation deliverables, not compatibility placeholders. The full Parts 1 and 2 target, experimental Part 3 intent and existing ten-section structure are unchanged.
 
 ---
 
@@ -54,6 +54,12 @@ Authoritative technical requirements, schemas, conformance classes, and encoding
 
 Glaux Server is also planned to include experimental support for OGC API - Connected Systems Part 3 Publish/Subscribe, with the implemented draft revision and supported behavior clearly documented. This work is distinct from the adopted Parts 1 and 2 standards package and shall not be presented as conformance to an approved Part 3 standard. Protocol choices and implementation sequencing belong in the Implementation Guide and Roadmap.
 
+Glaux Server shall also implement an explicitly bounded experimental subset of draft OGC API - Connected Systems Part 4 Sampling Features: **static sampling points, curves and surfaces**. The implemented draft revision, specialized type/geometry rules, encoding interpretations and tests shall be documented. This is not a commitment to the entire draft or a claim of approved Part 4 conformance. Dedicated support for its other specialized types, mobile behavior and implicit/derived volumes is outside this selected experiment; the existing approved generic SamplingFeature and dynamic-data obligations remain intact. [Part 4 research](../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md)
+
+Glaux Server shall implement bounded enhanced observation filtering using OGC API - Features Part 3: Filtering and CQL2. The scope is spatial selection through the direct associated sampling feature's explicit geometry applicable at observation phenomenon time where that can be established, and typed scalar measured-value comparisons within individual datastreams, combined with existing applicable filters. The Guide shall define the selected complete filtering classes, searchable properties, time/absence behavior and verification. These are additional project capabilities, not automatically inherited CSAPI obligations; they do not require Part 4 adoption or add arbitrary joins, missing-history reconstruction or a general analytics service. [Querying research](../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md)
+
+The project lead approved these two additions through the September 17, 2026 `proceed` following the combined scope discussion. Their bounded implementation and verification are part of server completion, even though a deployment may disable optional capabilities. Acceptance of the earlier research alone was not that scope decision.
+
 ---
 
 ## 5. Core Capability Scope
@@ -69,10 +75,14 @@ Descriptions shall be sufficient to support persistent identification, capabilit
 
 Alternate representations of a resource shall preserve consistent identity, relationships, and descriptive meaning according to the applicable standards mappings.
 
+The selected experimental Part 4 specializations shall be managed through the existing SamplingFeature resource, with explicit type validation and preservation of their sampling meaning. Generic JSON acceptance alone does not establish specialized support.
+
 ### 5.3 Access and Exchange
 Glaux Server shall support standards-aligned access to connected-system information and related data, including structured resource retrieval, observation access, metadata access, historical query behavior, exchange of sensor-derived information, and preservation of contextual binding between data, producing systems, observed properties, features of interest, time, location, provenance, and validity.
 
 Storage, retrieval, and supported conversions shall preserve the applicable schema bindings, units, and temporal meaning. Any limitations of a supported conversion shall be documented; conversion shall not silently change the meaning of the data.
+
+Enhanced observation filtering shall distinguish direct sampling geometry from an intersecting sampling ancestor, current geometry from geometry applicable at observation time, and measured values from property identifiers or serialized text. Missing historical evidence shall not silently be replaced with present-day location. Result filtering shall preserve type, unit and nil-value meaning and shall not disclose protected related information.
 
 ### 5.4 Streaming and Dynamic Data
 Glaux Server shall support dynamic data workflows associated with connected systems, including datastreams, observations, status information, event-driven updates, time-varying information, and streaming or near-real-time exchange patterns where applicable.
@@ -191,7 +201,7 @@ These exclusions do not prevent Glaux Server from supporting integration pattern
 ## 10. Summary Statement
 Glaux Server is intended to be a full-scope, open-source, standards-correct Rust reference implementation of OGC API - Connected Systems and its applicable SensorML and SWE Common requirements, serving the Glaux ecosystem and the STANAG 4789 / AEP-4789 core APIs and encodings package.
 
-Its resources and APIs shall support connected-system discovery, description, access, exchange, streaming, status, events, and tasking across NATO, national, coalition, federated, tactical, and DDIL-informed environments. Planned experimental Part 3 support extends the publish/subscribe work with an explicit draft status.
+Its resources and APIs shall support connected-system discovery, description, access, exchange, streaming, status, events, and tasking across NATO, national, coalition, federated, tactical, and DDIL-informed environments. Experimental Part 3 publish/subscribe and the selected static Part 4 sampling specializations retain explicit draft status. Bounded Features Part 3/CQL2 observation filtering adds the agreed spatial and measured-value query capability without changing the approved CSAPI baseline.
 
 The resulting server shall be understandable, maintainable, independently usable with documented dependencies, and verifiable through standards-based tests and external clients. The full intended capability remains the goal throughout incremental implementation.
 

@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.96<br>
+**Version:** 3.97<br>
 **Date:** September 17, 2026<br>
-**Status:** Original IDR and supplemental research complete and accepted; Part 4 and querying synthesis addenda prepared for review<br>
+**Status:** Original IDR and supplemental research complete and accepted; selected Part 4 and querying scope recorded in Goal v1.7 and draft Guide v0.2<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -444,21 +444,21 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 
 #### IDR-SRV-058: Draft CSAPI Part 4 Sampling Features Study
 
-- Status: Complete; the Glaux Project Lead accepted the [report](../IDR%20Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md) through the next `proceed` after its publication, September 17, 2026. The separately authorized [synthesis addendum](../IDR%20Reports/final-idr-research-report.md#addendum-a-draft-csapi-part-4-sampling-features) is prepared for review; no implementation option has been selected.
+- Status: Complete; the Glaux Project Lead accepted the [report](../IDR%20Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md) through the next `proceed` after its publication, September 17, 2026. The separately authorized [synthesis addendum](../IDR%20Reports/final-idr-research-report.md#addendum-a-draft-csapi-part-4-sampling-features) records the research-stage options. The later `proceed` following combined scope discussion approved experimental static points, curves and surfaces, now recorded in [Goal v1.7](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md) and [draft Guide v0.2](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md).
 - Focus: Assess the official Part 4 working draft against the approved Parts 1 and 2 baseline, including feature types, requirements and schemas, maturity gaps, bounded implementation evidence, and implications for Glaux's existing research and server design. Recommend whether and how to consider experimental support without adopting it through the research itself.
 - Plan: [idr-srv-058-draft-csapi-part-4-sampling-features-study.md](idr-srv-058-draft-csapi-part-4-sampling-features-study.md).
 - Output target: `IDR Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md`.
 - Sequence: Plan/publication first; separately authorized research/report next; then an accepted-findings addendum to the final synthesis in a later iteration; then discussion of any Goal and Definition or Implementation Guide changes. The user's established `proceed` workflow applies; no special acceptance phrase is required.
-- Boundary: Preserve the original accepted synthesis and approved server scope. Research acceptance and addendum preparation are complete steps; combined discussion of Part 4 and querying implications for the Goal/Guide is next. No Part 4 option is adopted by that sequence.
+- Boundary: Preserve the original accepted synthesis and research findings as historical decision material. The subsequent scope decision adopts only the selected static implementation subset, not whole-Part-4 support or approved-standard conformance. The Goal controls scope and the Guide remains a technical draft; no server implementation has occurred through this documentation update.
 
 #### IDR-SRV-059: Enhanced CSAPI Querying and Spatial Observation Retrieval Study
 
-- Status: Complete; the Glaux Project Lead accepted the [report](../IDR%20Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md) through the next `proceed` after publication, September 17, 2026. The separately authorized [synthesis addendum](../IDR%20Reports/final-idr-research-report.md#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval) is prepared for review; no implementation option has been selected.
+- Status: Complete; the Glaux Project Lead accepted the [report](../IDR%20Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md) through the next `proceed` after publication, September 17, 2026. The separately authorized [synthesis addendum](../IDR%20Reports/final-idr-research-report.md#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval) records the research-stage recommendation. The later combined scope decision approved bounded Features Part 3/CQL2 JSON observation filtering through direct sampling geometry and per-datastream scalar results, now recorded in Goal v1.7 and draft Guide v0.2.
 - Focus: Assess existing CSAPI query capabilities and practical limitations, primarily spatial observation retrieval through sampling-feature relationships, with measured-value and related-property filtering. Evaluate Features Part 3/CQL2, Part 4 touchpoints, and bounded CS-Go/OSH evidence without preselecting an extension or changing approved scope.
 - Plan: [idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study.md](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study.md).
 - Output target: `IDR Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md`.
 - Sequence: Plan/publication first; research/report on the next `proceed`; a later authorized accepted-findings synthesis addendum; then discussion of querying and Part 4 implications for the Goal and Definition or Implementation Guide.
-- Boundary: Distinguish existing multi-request and recursive association behavior from additional geometric/value filtering. Preserve the original 67-topic completion record and IDR-SRV-058 acceptance. The report and separate synthesis addendum carry a bounded optional Features Part 3/CQL2 recommendation for discussion; neither adopts it or changes the Goal/Guide.
+- Boundary: Distinguish existing multi-request and recursive association behavior from additional geometric/value filtering. Preserve the original 67-topic completion record and IDR-SRV-058 acceptance. Research acceptance did not adopt the extension; the subsequent scope decision did. The selected six-class implementation is a completion deliverable, without arbitrary joins or missing-history reconstruction; broader Guide drafting pass 2 remains next.
 
 ---
 
@@ -703,6 +703,7 @@ The final report must:
 | 2026-09-17 | IDR-SRV-059 Research Execution | Produced the report with four spatial/value cases, a bounded Features Part 3/CQL2 recommendation, pinned peer-source findings, incremental design and verification implications, and a relevant upstream-history refresh | Report in review; next `proceed` can accept the research and authorize a separate synthesis addendum; no implementation option adopted or runtime conformance claimed | Pending Glaux Project Lead report review |
 | 2026-09-17 | IDR-SRV-059 Acceptance and Synthesis Addendum Authorization | The user's next `proceed` accepted the supplemental report and authorized integration through a separate addendum to the final synthesis | Accept research as decision material without adopting optional filtering or Part 4 support, or changing the Goal/Guide | Glaux Project Lead |
 | 2026-09-17 | Querying Synthesis Addendum Prepared | Added Addendum B with consolidated findings, qualifications to previous research, the bounded filtering recommendation and combined querying/Part 4 planning handoff; preserved the original synthesis and Addendum A | Next step is Goal/Guide discussion; no implementation option, milestone or new governance process introduced | Addendum prepared for Glaux Project Lead review |
+| 2026-09-17 | Combined Scope Decision and Planning Update | The user's `proceed` following scope discussion approved experimental static Part 4 points/curves/surfaces and bounded six-class Features Part 3/CQL2 JSON observation filtering; recorded in Goal v1.7 and draft Guide v0.2 | Both are planned completion deliverables; original research and synthesis remain unchanged. This targeted update does not complete Guide drafting pass 2 or begin server implementation | Glaux Project Lead |
 
 ---
 
@@ -726,8 +727,8 @@ Supplemental progress is tracked separately from the completed category totals a
 
 | Topic | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated |
 |---|---|---|---|---|---|
-| IDR-SRV-058 | Complete (1/1) | 1/1 | 1/1 | Research complete and accepted; synthesis addendum prepared for review | 2026-09-17 |
-| IDR-SRV-059 | Complete (1/1) | 1/1 | 1/1 | Research complete and accepted; synthesis addendum prepared for review | 2026-09-17 |
+| IDR-SRV-058 | Complete (1/1) | 1/1 | 1/1 | Research accepted; selected static experiment recorded in Goal/Guide | 2026-09-17 |
+| IDR-SRV-059 | Complete (1/1) | 1/1 | 1/1 | Research accepted; bounded filtering scope recorded in Goal/Guide | 2026-09-17 |
 
 ---
 
