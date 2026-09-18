@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.103<br>
+**Version:** 3.104<br>
 **Date:** September 18, 2026<br>
-**Status:** Original IDR and supplements 058/059/060/061 complete and accepted; Part 5 and provenance synthesis addenda prepared, Goal/Guide discussion next<br>
+**Status:** Original IDR and supplements 058/059/060/061 complete and accepted; agreed Part 5/provenance dispositions incorporated in Guide v0.3; drafting pass 3 next<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -468,7 +468,7 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 - Report: [idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md](../IDR%20Reports/idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md), accepted. Recommends preserving existing codec/schema compatibility points and deferring Part 5 binding selection; identifies a pinned OSH-compatible experiment as a conditional alternative, not adopted scope.
 - Context: The project lead reported that Protobuf was the room favorite at the September 17 CSAPI SWG meeting and may be the only encoding in the first Part 5 publication because of time, resources and prioritization. Treat this as attributed direction, not a finalized OGC decision. Other proposed encodings receive a brief status/boundary check only.
 - Synthesis: [Addendum C](../IDR%20Reports/final-idr-research-report.md#addendum-c-csapi-part-5-protobuf-first-implementation) prepared for review September 18, 2026; the original synthesis and Addenda A/B remain intact.
-- Sequence: Plan/publication, research/report and accepted-findings synthesis iterations are complete. Goal/Guide discussion is next alongside the completed provenance supplement below; neither that supplement nor its acceptance selects a Part 5 implementation option. No special acceptance phrase or additional planning framework is introduced.
+- Sequence: Plan/publication, research/report, synthesis and the combined Goal/Guide discussion are complete. The subsequent `proceed` selected deferral of Part 5 implementation with existing logical-model/codec separation retained; Guide v0.3 records that disposition without a new dependency or completion condition. Goal v1.7 remains unchanged. No special acceptance phrase or additional planning framework is introduced.
 - Boundary: Preserve the original 67-topic completion record, supplements 058/059 and Goal v1.7's approved scope. Distinguish incomplete official artifacts from substantive unmerged OSH work; neither replaces required SWE Binary or authorizes an invented OGC binding, gRPC or other encodings. Acceptance and addendum publication do not select a Part 5 implementation option or reopen previously adopted scope.
 
 #### IDR-SRV-061: Provenance and Related Metadata Interoperability Study
@@ -478,7 +478,7 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 - Plan: [idr-srv-061-provenance-and-related-metadata-interoperability-study.md](idr-srv-061-provenance-and-related-metadata-interoperability-study.md).
 - Report: [idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md](../IDR%20Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md), accepted. Recommends existing-standard use and focused Guide/test clarifications; exact public lineage exchange and policy-specific adapters remain conditional. Includes a reproduced SWE quality-schema gap, pinned peer paths and bounded history refresh.
 - Synthesis: [Addendum D](../IDR%20Reports/final-idr-research-report.md#addendum-d-provenance-and-related-metadata-interoperability) prepared for review September 18, 2026; the original synthesis and Addenda A–C remain intact.
-- Sequence: Plan/publication, research/report and accepted-findings synthesis iterations are complete. Next is discussion of provenance and the pending Part 5 implications for the Goal/Guide, then only agreed changes and resumption of Guide drafting pass 2. No implementation option is selected by this sequence.
+- Sequence: Plan/publication, research/report, synthesis and combined Goal/Guide discussion are complete. The subsequent `proceed` authorized focused provenance/quality/disclosure clarifications in existing Guide sections and resumption of drafting pass 2. Guide v0.3 completes that pass; whole-guide review in pass 3 is next. Goal v1.7 remains unchanged; no public provenance platform or policy-specific adapter is adopted.
 - Boundary: Reuse IDR-SRV-019 and relevant representation/security research; preserve all completed-topic counts and approved scope. No preselected schema, graph service, universal confidence calculation, report resource, field-by-field marking mandate or national/NATO security-regime implementation. Preserve stakeholder input only as generalized, unattributed-to-application use cases, not verbatim requirements. Acceptance and addendum publication do not change the Goal/Guide, Roadmap or server code.
 
 ---
@@ -735,6 +735,7 @@ The final report must:
 | 2026-09-18 | IDR-SRV-061 Research Execution | Produced the provenance and related metadata study with standards-role analysis, exact-input/role/quality/grouping/disclosure cases, pinned peer/source evidence, a reproduced quality-schema probe and bounded history refresh | Report in review. Next `proceed` can accept it and authorize the separate synthesis addendum; focused Guide clarifications and conditional optional integrations remain recommendations, not scope adoption | Pending Glaux Project Lead report review |
 | 2026-09-18 | IDR-SRV-061 Acceptance and Synthesis Addendum Authorization | The user's next `proceed` accepted the published provenance/related-metadata report and authorized its separate synthesis addendum | Accept research for downstream use without adopting a public provenance profile, policy adapter, new implementation mechanism or Goal/Guide change | Glaux Project Lead |
 | 2026-09-18 | Provenance Synthesis Addendum Prepared | Added Addendum D with existing-support findings, exact-input/role/quality/grouping/disclosure qualifications, bounded recommendations and Guide/test touchpoints; preserved the original synthesis and Addenda A–C | Next is the combined provenance and Part 5 Goal/Guide discussion, followed by agreed changes and Guide drafting pass 2. No new research topic, dependency, milestone or governance process introduced | Addendum prepared for Glaux Project Lead review |
+| 2026-09-18 | Guide Drafting Pass 2 and Supplemental Dispositions | The project lead's `proceed` following the combined discussion authorized focused provenance clarifications, Part 5 implementation deferral and continuation of the existing Guide. Version 0.3 specifies remaining write, command, filtering, delivery and exchange contracts with explicit interpretations and implementation tests | Goal v1.7 and accepted research remain unchanged. Next is Guide pass 3, not a new research program or server implementation; no additional requirements document or governance process | Glaux Project Lead (direction and iteration authorization) |
 
 ---
 
@@ -760,8 +761,8 @@ Supplemental progress is tracked separately from the completed category totals a
 |---|---|---|---|---|---|
 | IDR-SRV-058 | Complete (1/1) | 1/1 | 1/1 | Research accepted; selected static experiment recorded in Goal/Guide | 2026-09-17 |
 | IDR-SRV-059 | Complete (1/1) | 1/1 | 1/1 | Research accepted; bounded filtering scope recorded in Goal/Guide | 2026-09-17 |
-| IDR-SRV-060 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum C prepared; Goal/Guide discussion next alongside 061 | 2026-09-18 |
-| IDR-SRV-061 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum D prepared; Goal/Guide discussion next alongside Part 5 | 2026-09-18 |
+| IDR-SRV-060 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum C retained; Guide v0.3 records Part 5 deferral and existing codec separation | 2026-09-18 |
+| IDR-SRV-061 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum D retained; focused clarifications incorporated in Guide v0.3; pass 3 next | 2026-09-18 |
 
 ---
 
