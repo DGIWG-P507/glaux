@@ -17,7 +17,7 @@
 **Date:** September 16, 2026<br>
 **Last Updated:** September 16, 2026
 
-**Supplemental material:** [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features) and [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval), prepared September 17, 2026 from accepted IDR-SRV-058/059 research; [Addendum C: CSAPI Part 5 Protobuf-First Implementation](#addendum-c-csapi-part-5-protobuf-first-implementation), prepared September 18, 2026 from accepted IDR-SRV-060 research. The metadata, counts and acceptance above describe the original report; each addendum records its own status and does not change the original completion record.
+**Supplemental material:** [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features) and [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval), prepared September 17, 2026 from accepted IDR-SRV-058/059 research; [Addendum C: CSAPI Part 5 Protobuf-First Implementation](#addendum-c-csapi-part-5-protobuf-first-implementation), prepared September 18, 2026 from accepted IDR-SRV-060 research; [Addendum D: Provenance and Related Metadata Interoperability](#addendum-d-provenance-and-related-metadata-interoperability), prepared September 18, 2026 from accepted IDR-SRV-061 research. The metadata, counts and acceptance above describe the original report; each addendum records its own status and does not change the original completion record.
 
 ---
 
@@ -51,7 +51,7 @@
 26. [Validation Against Success Criteria](#26-validation-against-success-criteria)
 27. [References and Topic Traceability Index](#27-references-and-topic-traceability-index)
 
-Supplements: [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features); [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval); [Addendum C: CSAPI Part 5 Protobuf-First Implementation](#addendum-c-csapi-part-5-protobuf-first-implementation)
+Supplements: [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features); [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval); [Addendum C: CSAPI Part 5 Protobuf-First Implementation](#addendum-c-csapi-part-5-protobuf-first-implementation); [Addendum D: Provenance and Related Metadata Interoperability](#addendum-d-provenance-and-related-metadata-interoperability)
 
 ---
 
@@ -1239,3 +1239,88 @@ The accepted study provides enough evidence for the agreed **Goal/Guide discussi
 **Next step:** the Glaux Project Lead and Codex discuss whether any Goal/Guide change is warranted. The next `proceed` starts that discussion; it does not automatically edit either document or authorize implementation. After that discussion and any agreed update, resume Guide drafting pass 2. A later draft reference would be helpful evidence, not a prerequisite the user must supply now.
 
 **Addendum validation:** IDR-SRV-060 is accounted for as accepted research; findings and qualifications trace to its report; existing approved scope and original completion records are preserved; remaining choices and the next action are explicit. Publication of Addendum C is distinct from its review and from any implementation-scope decision.
+
+---
+
+## Addendum D: Provenance and Related Metadata Interoperability
+
+**Date:** September 18, 2026<br>
+**Status:** Prepared for review; source research accepted, Goal/Guide discussion pending<br>
+**Source:** [IDR-SRV-061 Research Report](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md), accepted by the Glaux Project Lead on September 18, 2026 through the established `proceed` workflow<br>
+**Purpose:** Integrate the provenance and related metadata findings before discussing their implications alongside the pending Part 5 choices
+
+### D.1 Scope, Evidence and Completion Record
+
+**The research supports using the existing standards first, with focused clarification of provenance handling and verification in the Implementation Guide.** It identifies a narrower unresolved question about interoperable exchange of exact production inputs, executions, revisions and responsible roles. It does not recommend replacing the observation model or making a new provenance platform a prerequisite for Glaux.
+
+| Supplemental topic | Plan | Report | Completion and acceptance | Synthesis conclusion |
+|---|---|---|---|---|
+| IDR-SRV-061: Provenance and Related Metadata Interoperability Study | [Research plan](../IDR%20Plans/idr-srv-061-provenance-and-related-metadata-interoperability-study.md) | [Research report](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md) | Research complete; accepted September 18, 2026; no prerequisite exception | Existing CSAPI/SensorML/SWE capabilities cover substantial context; exact-input exchange, quality interpretation and protected disclosure need explicit treatment without assuming another schema or security regime. |
+
+Coverage is now **67 original accepted topics plus four accepted supplemental topics**, 058–061. Original metadata, counts and acceptance remain historical; Addenda A–C retain their text. Acceptance of IDR-SRV-061 makes its findings available for downstream planning, not automatic implementation adoption or acceptance of this newly prepared addendum.
+
+The [approved Goal v1.7](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md) and [draft Guide v0.2](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) remain the planning context: the full Parts 1/2 and applicable SensorML/SWE target, experimental Part 3, selected static Part 4 types and bounded enhanced observation filtering are unchanged. Part 5 remains a separate pending choice. Preliminary stakeholder concerns remain generalized use cases, not an adopted requirements catalog.
+
+This is synthesis of the report published in commit `3283efd24a0005c13d1b3ff193546bee858cfd9f`, not a new external survey. Its [evidence base](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#3-evidence-base) and [references](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#11-references) control the detailed claims and limits. Source checks were dated September 18, 2026: published CSAPI source `8e03b236a049849f2ccc24b4fd9fdce5ff69bed2`, master `3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f`, CS-Go `b1fd2e0e9bd69e222d05258d659a842ca24502cb`, and OSH `9a43f9ec42315e5a22e5e5d90a4ba79eef9cea08`. The report distinguishes CSAPI's dated SOSA/SSN Recommendation from the newer Working Draft, informative alignments from requirements, and security overviews/historical binding examples from deployment authority.
+
+No standards-history refresh, new schema experiment, peer-service execution or benchmark was performed for this addendum. The report's recorded probe is evidence; its proposed Glaux tests remain future work. Inaccessible IC release packages and unselected deployment policies remain explicit limitations, not invented obligations.
+
+### D.2 Consolidated Findings
+
+**There is substantial existing support, not a missing observation foundation.** CSAPI associations, SensorML process/context descriptions and SWE value-quality concepts provide useful provenance building blocks. OMS supplies abstract concepts; SOSA/SSN already has an informative PROV alignment. That semantic relationship does not prescribe another JSON model, RDF service or database. OGC demonstrations and sponsored research establish practical interest and useful lessons, not new CSAPI obligations. [IDR-SRV-061 §4.1](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#41-q1--existing-support-and-standards-roles)
+
+**A process description is not the same as evidence of a particular production run.** Current system/procedure links do not by themselves identify exact antecedent results, the method/configuration revision used, or accountable roles. Preserve supplied evidence and its limits; distinguish production from server receipt/correction history, and asserted responsibility from authenticated submitter identity. Sampling relationships can have derivation meaning, but alone do not enumerate processing inputs. [IDR-SRV-061 §4.2](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#42-q2--origin-derivation-and-responsibility)
+
+**Quality needs both meaning and a supported representation.** Identity/class assessments, numerical measurement uncertainty, statistical likelihood, confidence/coverage and analytic confidence cannot all be normalized into an unlabeled percentage. Unknown uncertainty is not zero, and shared inputs can defeat assumptions of independent evidence. The report reproduced the existing SWE JSON Quantity validation gap: an undeclared arbitrary `quality` string passed the inspected schema, while the invalid-unit control failed. This is permissiveness, not proof of valid quality support; it corroborates IDR-SRV-022/023's separate semantic-validation treatment. [IDR-SRV-061 §4.3](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#43-q3--quality-and-uncertainty), [Appendix A](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#appendix-a--executed-schema-inspection-and-probe)
+
+**Shared packaging does not establish shared lineage.** Datastream context, compound results, observation collections and transport batches have different roles. Use shared references only for facts genuinely common to their members, retaining per-item identity and exceptions. References reduce repetition but introduce availability, version, authorization and retention dependencies. No new report resource, mandatory UUID scheme, recursive lineage query or unlimited raw-data retention follows. [IDR-SRV-061 §4.4](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#44-q4--grouping-and-scalable-exchange)
+
+**Provenance can be more sensitive than the result.** A visible output does not automatically authorize disclosure of its inputs, method or responsible people. Policy applicability, label syntax, binding and access enforcement are separate. Inspected IC/NATO sources establish neither a universal per-JSON-field marking obligation nor permission to remove/coarsen required markings. Keep the Guide's complete-resource, valid permitted projection, or deny/conceal boundary; do not imply full history when only a permitted subset is disclosed. [IDR-SRV-061 §4.5](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#45-q5--protection-and-disclosure-boundaries)
+
+**Implementation names and internal fields are not interoperability proof.** The report's pinned CS-Go and OSH paths show useful associations and descriptive/quality support alongside concrete binding limitations. These are static, path-specific findings, not whole-product judgments. Semantic preservation needs independent expected results across reads, writes, conversion and publication; a successful schema parse or same-implementation round trip alone cannot establish it. [IDR-SRV-061 §§3.2, 4.2–4.5 and 7](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#7-implementation-implications-and-estimates)
+
+### D.3 Effect on the Original Synthesis
+
+These qualifications reconcile the accepted supplement with earlier research without rewriting the historical report or reinstating every earlier proposed mechanism. The current Goal controls scope; the Guide remains a draft.
+
+| Original section / related material | What remains useful | Qualification supplied by IDR-SRV-061 |
+|---|---|---|
+| §3.2 IDR-SRV-019 row, §8.3 and §25.2 REC-009 | Preserve origin, transformations, quality and distinct trust dimensions | The historical “PROV-compatible evidence graph” wording is not a mandatory graph database, public PROV service or adoption of every earlier graph/assertion-envelope proposal. Guide §4.10's practical records remain the starting point. |
+| §§8.2–8.3 and 11.2: Identity, time and observation evidence | Stable identities and distinct temporal meanings | Current references do not automatically identify exact historical inputs/method revisions. Separate descriptions, actual production and server mutations; preserve what is supplied without inventing missing facts. |
+| §§9.1–9.4: Representations, validation and semantics | Source preservation, typed meaning and explicit interpretation of artifact gaps | Conceptual quality capability and permissive JSON validation are not a complete exchange contract. Test the supported quality form and preserve subject, scale/units, method and uncertainty interpretation. |
+| §§10 and 11.2–11.4: Storage, dynamic data and publication | Shared logical meaning, revision handling and durable publication | Shared references must retain per-item exceptions and honest availability limits. HTTP and selected Part 3 publication must not silently lose supported provenance or quality. No general graph store or indefinite retention requirement is added. |
+| §13: Policy, trust and accountability | Protect direct/indirect disclosure and separate assertions from verified identity | Property-level protection is not a blanket field-labeling requirement. Applicable policy/profile determines granularity and binding; access to a result does not authorize its lineage. Source verification does not automatically verify transformed output. |
+| §17: Verification | Independent expected values, negative tests and bounded capability claims | Add semantic, revision, mixed-batch and paired-access cases when implementing the supported contract. Peer fixtures and the research schema probe do not demonstrate Glaux interoperability or security. |
+| Addenda A–C and selected filtering | Existing sampling, querying and encoding boundaries | Sampling is not an exact-input inventory; provenance does not expand CQL2 scope. A later Part 5 choice must preserve supported metadata meaning, but this addendum neither selects Protobuf nor changes prior selected experiments. |
+
+The report's [§4.6 reconciliation](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#46-q6--gap-classification-reconciliation-and-verification) links the relevant IDR-SRV-019/021/022/023/024/034/040/041 findings and supplements. No original topic needs reopening simply to record these qualifications. No new conformance class, Rust dependency, API endpoint or work package is selected.
+
+### D.4 Recommendation and Remaining Choices
+
+**Carry forward the recommendation to retain the existing server goal and discuss focused Guide clarifications.** The Goal already includes provenance context. Useful clarification is about what information is preserved, where it is available, and how its meaning and disclosure are tested—not declaring a generic “provenance platform.” [IDR-SRV-061 §§5–7](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#5-decision-analysis)
+
+For the next planning discussion, prioritize:
+
+1. Existing associations and supplied exact source/method/version evidence, with production history separate from ingestion/correction history and responsibility assertions separate from authentication.
+2. Quality interpretation and the known JSON validation gap, without a universal score, confidence conversion or fusion algorithm.
+3. Shared/per-item context and cross-representation preservation, including selected Part 3 publication and access-controlled lineage.
+
+The prospective verification cases are concrete: changing a procedure must not silently reattribute earlier results; a mixed-context batch must preserve individual differences; unknown quality must not become certainty; and a consumer permitted to see an output must not learn protected inputs through links, filters, counts, schemas, errors or events. If a transformation changes bound/signed content, verification of the source cannot be advertised as verification of the output. These are inputs to Guide drafting, not claims of executed tests. [IDR-SRV-061 §7.1](idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md#71-implications)
+
+A narrowly specified public PROV-compatible exchange or external provenance integration remains a **conditional alternative** if an identified consumer needs exact input/run/role exchange beyond the existing contract. It would need agreed discovery, identities/revisions, serialization, completeness/disclosure and lifecycle behavior. A policy-specific label/binding adapter similarly needs an applicable authoritative profile and concrete deployment need. Neither is adopted here; no new schema, endpoint, report entity or national/NATO security regime is presumed.
+
+Remaining questions are the supported concrete quality interpretation, whether a consumer actually needs an additional public lineage contract, and whether a deployment requires a particular policy/binding profile. Part 5 remains the separate choice recorded in Addendum C. These are bounded planning inputs, not a requirement for another broad research cycle, an indefinite monitoring task or a new document framework. No implementation hours or release promises are inferred.
+
+### D.5 Downstream Readiness and Handoff
+
+The accepted research and this synthesis are sufficient to return to the agreed planning discussion:
+
+| Document | Next consideration | Change made in this iteration |
+|---|---|---|
+| [Goal and Definition v1.7](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md) | Discuss the recommendation that existing provenance scope needs no expansion; separately decide whether Part 5 warrants a bounded experiment | None; no new provenance platform, Part 5 deliverable or security-profile commitment. |
+| [Implementation Guide v0.2](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) | Discuss concise clarification in §§4.3–4.4, 4.7–4.8, 4.10–4.11, 6.1 and 8, alongside the pending Part 5 compatibility/experiment choice | None; no representation or dependency selected. |
+| Roadmap | Sequence only subsequently agreed scope after the Guide is completed | No milestone, estimate or work package created. |
+
+**Next step:** the Glaux Project Lead and Codex discuss the provenance and Part 5 Goal/Guide implications together. The next `proceed` starts that discussion; it does not automatically edit either document or authorize implementation. Make only subsequently agreed changes, then resume Guide drafting pass 2. No additional material is required from the project lead to begin that discussion.
+
+**Addendum validation:** IDR-SRV-061 is accounted for as accepted research; conclusions, qualifications and limitations trace to its report; the original synthesis and Addenda A–C are preserved; current approved scope is unchanged; and the remaining choices and next action are explicit. Addendum D is prepared for review, distinct from the recorded acceptance of its source report.

@@ -1,7 +1,7 @@
 # Section 061: Provenance and Related Metadata Interoperability Study - Research Report
 
 **Topic ID:** IDR-SRV-061<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-061][plan]<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan][overall]<br>
 **Research Questions Covered:** Six; existing support, origin and responsibility, quality, grouping/exchange, protection, and recommendations/verification<br>
@@ -16,14 +16,16 @@
 **Supporting Resources:** [Goal v1.7][goal], [draft Guide v0.2][guide], accepted IDR-SRV-019/021/022/023/024/034/040/041/058/059/060, and the [upstream-history register][history]<br>
 **Document Purpose:** Determine what the existing CSAPI package can convey, where practical provenance exchange remains incomplete, and which bounded planning clarifications or optional integrations deserve discussion<br>
 **Author(s):** Glaux research workflow, AI-assisted<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 18, 2026<br>
 **Date:** September 18, 2026<br>
 **Last Updated:** September 18, 2026
 
 ## Usage Rules
 
-This report follows the [Research Report Template](../../../../../Governance/research-report-template.md). Findings identify their evidence; interpretations and recommendations are project analysis, not additional standards requirements. The current `proceed` authorized execution of the published plan and publication of this report for review. It did not authorize acceptance, a synthesis addendum, implementation, or changes to the Goal/Guide. Preliminary stakeholder concerns inform the cases without becoming a requirements catalog.
+This report follows the [Research Report Template](../../../../../Governance/research-report-template.md). Findings identify their evidence; interpretations and recommendations are project analysis, not additional standards requirements. The research/report iteration authorized execution of the published plan and publication of this report for review, not automatic acceptance or implementation. Preliminary stakeholder concerns inform the cases without becoming a requirements catalog.
+
+The report was published in commit `3283efd`. The user's subsequent `proceed` accepted it on September 18, 2026 and authorized the separate synthesis addendum. Acceptance records the research as suitable for downstream use; it does not adopt a public provenance profile, security adapter, or other implementation option, or change the Goal/Guide.
 
 ## Table of Contents
 
@@ -340,11 +342,11 @@ Expected outcomes derive from meaning and visibility, not merely round-tripping 
 
 ## 10. Next Steps and Handoff
 
-1. **Review this report for acceptance.** Owner: Glaux Project Lead. Due: next user-directed iteration. It is not yet accepted for downstream synthesis.
-2. **On the next `proceed`, record acceptance and prepare the separate synthesis addendum.** Owner: Glaux research workflow under project-lead authorization. Preserve the original synthesis and Addenda A–C; do not automatically adopt recommendations.
-3. **Then discuss provenance and the pending Part 5 implications for the Goal/Guide and resume Guide drafting pass 2.** Owners: project lead and drafting workflow. Due: subsequent agreed iteration. Proposed clarifications can use the existing documents; no separate requirements framework or new approval phrase is needed.
+1. **Report accepted September 18, 2026.** Owner: Glaux Project Lead. The `proceed` following publication records acceptance for downstream use, not implementation adoption.
+2. **Separate synthesis addendum prepared.** Owner: Glaux research workflow under that authorization. [Addendum D](final-idr-research-report.md#addendum-d-provenance-and-related-metadata-interoperability) integrates the findings while preserving the original synthesis and Addenda A–C; the new addendum is prepared for review, not recorded as already accepted.
+3. **Next, discuss provenance and the pending Part 5 implications for the Goal/Guide, then resume Guide drafting pass 2 after any agreed changes.** Owners: project lead and drafting workflow. Due: next user-directed discussion. Proposed clarifications can use the existing documents; no separate requirements framework or new approval phrase is needed.
 
-No Goal, Guide, Roadmap, final-synthesis or server-code edits are part of this report iteration.
+The original research/report iteration did not edit the Goal, Guide, Roadmap, final synthesis or server code. The acceptance iteration adds the separate synthesis addendum and updates research tracking only; the Goal, Guide, Roadmap and server code remain unchanged.
 
 ## 11. References
 
@@ -429,7 +431,7 @@ Executed: primary-source retrieval, pinned file inspection, official-history/ref
 - [x] Recommendations are explicit and actionable
 - [x] Risks and open questions are documented
 - [x] Success criteria validation is complete
-- [ ] Plan-owner acceptance and acceptance date are recorded before the topic is treated as complete downstream
+- [x] Plan-owner acceptance and acceptance date are recorded before the topic is treated as complete downstream
 - [x] Next steps are assigned
 
 [plan]: ../IDR%20Plans/idr-srv-061-provenance-and-related-metadata-interoperability-study.md

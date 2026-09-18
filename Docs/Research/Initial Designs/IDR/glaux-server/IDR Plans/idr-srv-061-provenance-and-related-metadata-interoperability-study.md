@@ -1,7 +1,7 @@
 # Section 061: Provenance and Related Metadata Interoperability Study - Research Plan
 
 **Topic ID:** IDR-SRV-061<br>
-**Status:** In Progress — research/report complete; project-lead acceptance pending<br>
+**Status:** Complete and accepted<br>
 **Last Updated:** September 18, 2026<br>
 **Estimated Research Time:** Not yet estimated; one focused research/report iteration is planned, subject to source availability.<br>
 **Actual Research Time:** One AI-assisted research/report iteration, September 18, 2026; no human-hours estimate inferred<br>
@@ -13,7 +13,7 @@
 
 Follow the [Research Plan Template](../../../../../Governance/research-plan-template.md) for this document and the [Research Report Template](../../../../../Governance/research-report-template.md) for the later report, preserving each template's applicable section order. Use the pinned OS4CSAPI exemplars for question-led analysis, direct evidence, concrete examples and usable recommendations, not their client-specific implementation scope or effort estimates.
 
-The project lead's first September 18, 2026 `proceed` authorized this plan and its minimal supplemental index registration, published in commit `2458771`. The subsequent `proceed` authorized the research/report iteration. The [report](../IDR%20Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md) is now complete and in review; acceptance remains pending. The next `proceed` can accept the report and authorize the separate synthesis addendum. No special approval phrase, implementation adoption, or Goal/Guide change follows automatically.
+The project lead's first September 18, 2026 `proceed` authorized this plan and its minimal supplemental index registration, published in commit `2458771`. The subsequent `proceed` authorized the research/report iteration. The [report](../IDR%20Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md), published in `3283efd`, was accepted by the next `proceed` on September 18, 2026, which also authorized its separate synthesis addendum. [Addendum D](../IDR%20Reports/final-idr-research-report.md#addendum-d-provenance-and-related-metadata-interoperability) is prepared for review; Goal/Guide discussion alongside Part 5 is next. No special approval phrase, implementation adoption, or Goal/Guide change follows automatically.
 
 ---
 
@@ -256,12 +256,12 @@ For inaccessible material, record the source, access attempt, affected question 
 - [x] Phase 4 synthesis complete
 - [x] Deliverable draft complete
 - [x] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Deliverable accepted
 
 **Actual Research Time:** One AI-assisted research/report iteration, September 18, 2026; source investigation began at 14:12 UTC; no human-hours estimate inferred<br>
-**Completion Date:** Research/report completed September 18, 2026; topic acceptance pending
+**Completion Date:** Research/report completed and accepted September 18, 2026
 
-This iteration produced the report, topic/overall status updates and a bounded upstream-history refresh. The report includes direct artifact/peer evidence, a reproduced quality-schema probe, qualitative alternatives and prospective verification cases. It recommends existing-standard use with focused Guide clarifications and conditional deferral of public provenance/policy integrations. Research completion is not project-lead acceptance or implementation adoption; the final synthesis, Goal, Guide, Roadmap and server code remain unchanged.
+The research/report iteration produced the report, topic/overall status updates and a bounded upstream-history refresh. The report includes direct artifact/peer evidence, a reproduced quality-schema probe, qualitative alternatives and prospective verification cases. It recommends existing-standard use with focused Guide clarifications and conditional deferral of public provenance/policy integrations. The subsequent `proceed` accepted the report and authorized the separate synthesis addendum, now prepared for review. The original synthesis and Addenda A–C are preserved; the Goal, Guide, Roadmap and server code remain unchanged. Acceptance of research does not adopt its implementation recommendations.
 
 ---
 
