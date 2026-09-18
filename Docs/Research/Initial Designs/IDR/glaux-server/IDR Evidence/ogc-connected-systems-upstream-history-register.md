@@ -1,12 +1,12 @@
 # OGC API - Connected Systems Upstream Standards-History Evidence Register
 
-**Version:** 1.15<br>
+**Version:** 1.16<br>
 **Status:** Active supporting evidence<br>
 **Initial screening completed:** August 1, 2026<br>
 **Register owner:** Glaux Project Lead<br>
 **Official repository:** https://github.com/opengeospatial/ogcapi-connected-systems<br>
 **Published-source tag checked:** [`v1.0.0`](https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0), commit [`8e03b236`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2)<br>
-**Mutable `master` snapshot checked:** September 17, 2026, commit [`3fd86c73`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f)<br>
+**Mutable `master` snapshot checked:** September 18, 2026, commit [`3fd86c73`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f); unchanged in bounded IDR-SRV-061 review<br>
 **Mutable `part3-working-draft` snapshot checked:** September 17, 2026, commit [`6f529a15`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/6f529a15bfa63259febc3620378d3e5a06305333); unchanged in bounded IDR-SRV-060 review<br>
 **Mutable `part4-working-draft` snapshot checked:** September 17, 2026, commit [`05a3c62d`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/05a3c62d198ee52d0cf81a734b700967b7d864a1); unchanged across bounded IDR-SRV-058/059 reviews, not approved adoption<br>
 **Mutable OGC API - Features CRUD dependency snapshot checked:** September 14, 2026, commit [`4e30324a`](https://github.com/opengeospatial/ogcapi-features/commit/4e30324a14b682ff4a26ee43aad1eb6428c846a3), document `20-002r2`, `1.0.0-SNAPSHOT`, Draft<br>
@@ -72,6 +72,19 @@ Issues [#34](https://github.com/opengeospatial/ogcapi-connected-systems/issues/3
 - The report separately identifies substantive unmerged OSH Protobuf work (add-ons PR 224 and core PR 354). Its author's reference to an in-progress Part 5 draft qualifies any simplistic claim that no draft work exists. Peer implementation details remain informative evidence, not official standards disposition.
 
 No unrelated full-history refresh was performed; historical screening totals remain unchanged. The report is in review and has not adopted a Part 5 implementation or changed the Goal/Guide.
+
+### Provenance and Related Metadata Supplemental Evidence — September 18, 2026
+
+[IDR-SRV-061](../IDR%20Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md) reconfirmed the published tag and master pins. The tag-to-master comparison remains one example-link commit, not a new provenance contract. This review covered relevant registered issues, linked resolutions, the latest 30 issues/PRs and repository-scoped provenance/lineage/quality/confidence searches; it was not a full recensus. Part 3/4 branch checks retain their earlier dates. Report recommendations remain in review and do not change project scope.
+
+- **Historical identity and description validity:** [#149](https://github.com/opengeospatial/ogcapi-connected-systems/issues/149), [#174](https://github.com/opengeospatial/ogcapi-connected-systems/issues/174), [#182](https://github.com/opengeospatial/ogcapi-connected-systems/issues/182) and [PR #199](https://github.com/opengeospatial/ogcapi-connected-systems/pull/199) remain open; PR #199 is unmerged at head `753116ceaa0ca7b898b4e8d3fee8ec74bb5797f8`. Do not infer an immutable historical revision or adopted schema repair from a current description link or proposed change.
+- **Quality/description/query context:** [#162](https://github.com/opengeospatial/ogcapi-connected-systems/issues/162), [#178](https://github.com/opengeospatial/ogcapi-connected-systems/issues/178) and [#179](https://github.com/opengeospatial/ogcapi-connected-systems/issues/179) remain open. No new adopted qualifier, schema-summary or property-filter disposition was found. The report separately reproduces the existing SWE quality JSON validation gap with pinned artifacts; no upstream issue was published by Glaux.
+- **Batch boundary:** [#185](https://github.com/opengeospatial/ogcapi-connected-systems/issues/185) remains open. Its [September 3 comment](https://github.com/opengeospatial/ogcapi-connected-systems/issues/185#issuecomment-5526169337) anticipates informative guidance about repeated requests over persistent connections, not an adopted atomic bulk transaction or report model.
+- **Ontology direction:** the [September 2 comment on #9](https://github.com/opengeospatial/ogcapi-connected-systems/issues/9#issuecomment-5507022757) describes ongoing SOSA revision/alignment work. Treat it as informative direction; it does not replace CSAPI's dated SOSA/SSN reference or define a public PROV binding.
+- **New relevant unresolved mapping:** [#201](https://github.com/opengeospatial/ogcapi-connected-systems/issues/201), created September 15, remains open with no comments. It concerns the JSON mapping of SystemEvent message/system association. Route this to description/history/event implementation and verification; do not invent a standard mapping to support provenance cases. Evidence class: **UP**.
+- **Published-result provenance:** #46/#65/#83/#101 remain closed. PRs #93, #97 and #127 remain merged, and compare responses establish their merge commits as ancestors of `v1.0.0`; use the published artifacts for requirements, not closure alone.
+
+The bounded searches did not establish an additional public exact-input provenance contract. That is not a claim of global absence or an audit of unpublished work. Peer implementation paths and tests are recorded separately in the report and are not official standards dispositions. Historical full-screen totals below remain unchanged.
 
 ## 4. Screening Coverage and Selection Rules
 
@@ -299,6 +312,7 @@ The owner column is the controlling routing device. The following summary highli
 | IDR-SRV-057 | Refresh the complete register, reconcile material changes since topic completion, and ensure every unresolved/post-publication item has an explicit disposition. |
 | IDR-SRV-059 | Bounded supplemental query study: #165/#179 for association and property-filter ambiguities; #175 only to distinguish sorting discussion from the anticipated new querying issue. Preserve published requirements, Part 4's draft status, and report/adoption separation. |
 | IDR-SRV-060 | Protobuf-first Part 5 feasibility: #21/#144 for media and logical-schema separation; #190 and its separate branch for representation selection. Distinguish official examples, unincorporated proposals, OSH implementation evidence and attributed meeting direction; preserve required SWE Binary and the current Part 3 pin. |
+| IDR-SRV-061 | Provenance/quality/grouping/disclosure supplement: #149/#174/#182 and PR #199 for historical-description identity; #162/#178/#179 for description/quality/query seams; #185 for batching; #9 for informative ontology direction; new #201 for SystemEvent mapping. Reuse published outcomes, preserve edition authority, and do not infer a public lineage API or deployment-policy mandate. |
 
 ## 8. Required Use During Research
 
@@ -338,6 +352,7 @@ Two general traps apply everywhere: issue closure can disagree with the released
 
 | Date | Version | Change | Owner |
 |---|---|---|---|
+| September 18, 2026 | 1.16 | Recorded IDR-SRV-061's bounded provenance/quality/history refresh, unchanged tag/master pins, open description/validity/qualifier/query/bulk issues and PR #199, ontology-alignment direction, and new SystemEvent mapping issue #201. Linked the in-review report and reproduced SWE quality artifact seam; no global recensus, branch-pin advancement, implementation adoption or Goal/Guide changes. | Glaux research workflow |
 | September 18, 2026 | 1.15 | Recorded IDR-SRV-060's September 17 source checks: unchanged official pins, bounded Part 5 artifact inventory and absence finding, #21/#144/#190 context, separate unincorporated representation-selection branch, and unverified meeting-prioritization status. Linked the in-review report's distinct OSH candidate evidence; no full-screen count changes, implementation adoption or Goal/Guide edits. | Glaux research workflow |
 | September 17, 2026 | 1.14 | Refreshed the unchanged tag/master/Part 4 pins and #165/#179 for IDR-SRV-059; distinguished the new #175 sorting comment from the anticipated query issue; recorded the bounded latest-30 search and its limitation; retained historical full-screen counts and the in-review recommendation's non-adoption status. | Glaux research workflow |
 | September 17, 2026 | 1.13 | Added the pinned Part 4 working-draft baseline for supplemental IDR-SRV-058; recorded incomplete encoding/conformance packaging, committed review artifacts and the report's artifact findings; reconfirmed sampling-feature separation and association context through issues #34/#51/#82/#165 and PR #96. No Part 4 adoption or unrelated history refresh. | Glaux research workflow |

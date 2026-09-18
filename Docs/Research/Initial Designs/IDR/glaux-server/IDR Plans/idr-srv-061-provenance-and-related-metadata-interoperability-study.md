@@ -1,10 +1,10 @@
 # Section 061: Provenance and Related Metadata Interoperability Study - Research Plan
 
 **Topic ID:** IDR-SRV-061<br>
-**Status:** Planned<br>
+**Status:** In Progress — research/report complete; project-lead acceptance pending<br>
 **Last Updated:** September 18, 2026<br>
 **Estimated Research Time:** Not yet estimated; one focused research/report iteration is planned, subject to source availability.<br>
-**Actual Research Time:** Not started<br>
+**Actual Research Time:** One AI-assisted research/report iteration, September 18, 2026; no human-hours estimate inferred<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md`
 
 ---
@@ -13,7 +13,7 @@
 
 Follow the [Research Plan Template](../../../../../Governance/research-plan-template.md) for this document and the [Research Report Template](../../../../../Governance/research-report-template.md) for the later report, preserving each template's applicable section order. Use the pinned OS4CSAPI exemplars for question-led analysis, direct evidence, concrete examples and usable recommendations, not their client-specific implementation scope or effort estimates.
 
-The project lead's September 18, 2026 `proceed` authorizes this plan and its minimal supplemental index registration to be drafted and pushed. It does not authorize research execution, a report, a synthesis addendum, implementation or Goal/Guide changes in this iteration. The next `proceed` authorizes the research/report iteration under the established workflow; no special approval phrase is required.
+The project lead's first September 18, 2026 `proceed` authorized this plan and its minimal supplemental index registration, published in commit `2458771`. The subsequent `proceed` authorized the research/report iteration. The [report](../IDR%20Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md) is now complete and in review; acceptance remains pending. The next `proceed` can accept the report and authorize the separate synthesis addendum. No special approval phrase, implementation adoption, or Goal/Guide change follows automatically.
 
 ---
 
@@ -198,16 +198,16 @@ Use four phases within one focused research/report iteration. Do not infer human
 
 This topic research is complete when:
 
-- [ ] Q1-Q6 are answered with evidence or explicit limitations and their decision consequences.
-- [ ] Standards roles, editions and existing alignments are clear; conceptual lineage, drafts, stakeholder preferences and implementation precedent are not promoted into CSAPI obligations.
-- [ ] The broader use cases are covered without reproducing stakeholder wording or identifying the originating application; none is treated as an approved requirement merely because it was supplied.
-- [ ] Concrete cases distinguish production lineage, server history, responsibility assertions, verified identity and unavailable evidence.
-- [ ] Quality terminology and representation preserve meaningful distinctions; no universal probability, confidence conversion or fusion algorithm is assumed.
-- [ ] Grouping, shared references, revisions and large-volume exchange are assessed without presupposing a report resource, new catalog or database design.
-- [ ] IC and NATO label/binding roles, policy applicability, granularity and safe disclosure are assessed within the bounded scope, with no blanket per-field marking or whole-regime adoption inferred.
-- [ ] Existing standard support, Glaux design omissions, actual interoperability gaps and unresolved questions are distinguishable; relevant peer evidence and upstream-history checks are reproducible.
-- [ ] Alternatives, incremental implementation/test implications and prospective Goal/Guide changes are practical and explicit. No-change or deferral remains a valid outcome.
-- [ ] The report follows its template, reconciles relevant prior research and supplies inputs for a later synthesis addendum and planning discussion only.
+- [x] Q1-Q6 are answered with evidence or explicit limitations and their decision consequences.
+- [x] Standards roles, editions and existing alignments are clear; conceptual lineage, drafts, stakeholder preferences and implementation precedent are not promoted into CSAPI obligations.
+- [x] The broader use cases are covered without reproducing stakeholder wording or identifying the originating application; none is treated as an approved requirement merely because it was supplied.
+- [x] Concrete cases distinguish production lineage, server history, responsibility assertions, verified identity and unavailable evidence.
+- [x] Quality terminology and representation preserve meaningful distinctions; no universal probability, confidence conversion or fusion algorithm is assumed.
+- [x] Grouping, shared references, revisions and large-volume exchange are assessed without presupposing a report resource, new catalog or database design.
+- [x] IC and NATO label/binding roles, policy applicability, granularity and safe disclosure are assessed within the bounded scope, with no blanket per-field marking or whole-regime adoption inferred.
+- [x] Existing standard support, Glaux design omissions, actual interoperability gaps and unresolved questions are distinguishable; relevant peer evidence and upstream-history checks are reproducible.
+- [x] Alternatives, incremental implementation/test implications and prospective Goal/Guide changes are practical and explicit. No-change or deferral remains a valid outcome.
+- [x] The report follows its template, reconciles relevant prior research and supplies inputs for a later synthesis addendum and planning discussion only.
 
 Report completion, project-lead acceptance and implementation adoption are separate. Evidence limitations do not justify pretending a missing contract or policy has been established.
 
@@ -250,18 +250,18 @@ For inaccessible material, record the source, access attempt, affected question 
 
 ## 9. Research Status Checklist
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** Not started<br>
-**Completion Date:** Not completed
+**Actual Research Time:** One AI-assisted research/report iteration, September 18, 2026; source investigation began at 14:12 UTC; no human-hours estimate inferred<br>
+**Completion Date:** Research/report completed September 18, 2026; topic acceptance pending
 
-This iteration produces the plan and index registration only. Preliminary discussion and source checks are planning context, not completion of the study or acceptance of its future findings.
+This iteration produced the report, topic/overall status updates and a bounded upstream-history refresh. The report includes direct artifact/peer evidence, a reproduced quality-schema probe, qualitative alternatives and prospective verification cases. It recommends existing-standard use with focused Guide clarifications and conditional deferral of public provenance/policy integrations. Research completion is not project-lead acceptance or implementation adoption; the final synthesis, Goal, Guide, Roadmap and server code remain unchanged.
 
 ---
 

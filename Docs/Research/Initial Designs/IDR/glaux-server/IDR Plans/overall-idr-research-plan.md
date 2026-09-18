@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.101<br>
+**Version:** 3.102<br>
 **Date:** September 18, 2026<br>
-**Status:** Original IDR and supplements 058/059/060 complete and accepted; provenance/related-metadata supplement 061 planned, with research/report next<br>
+**Status:** Original IDR and supplements 058/059/060 complete and accepted; provenance/related-metadata supplement 061 report complete and in review, acceptance and separate synthesis addendum next<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -75,7 +75,7 @@ The shared upstream-history register is maintained across topics as supporting e
 ---
 
 **Original IDR Topics:** 67 (complete and accepted)<br>
-**Post-Synthesis Supplemental Topics:** 4 (IDR-SRV-058, IDR-SRV-059 and IDR-SRV-060 complete and accepted; IDR-SRV-061 planned)
+**Post-Synthesis Supplemental Topics:** 4 (IDR-SRV-058, IDR-SRV-059 and IDR-SRV-060 complete and accepted; IDR-SRV-061 report complete, acceptance pending)
 
 Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
@@ -473,12 +473,12 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 
 #### IDR-SRV-061: Provenance and Related Metadata Interoperability Study
 
-- Status: Planned. The project lead's September 18, 2026 `proceed` authorizes plan/publication only; research/report execution is the next iteration.
+- Status: Research/report complete and in review. The project lead's subsequent September 18, 2026 `proceed` authorized execution of the published plan; report acceptance remains pending.
 - Focus: Assess existing CSAPI/SensorML/SWE provenance capabilities and relevant OMS/SOSA/SSN/PROV relationships, practical OGC/peer evidence, origin/derivation and responsibility, quality terminology, grouping/scalable exchange and bounded security-label interoperability. Generalized stakeholder examples inform the broader study without prescribing its solution or becoming requirements.
 - Plan: [idr-srv-061-provenance-and-related-metadata-interoperability-study.md](idr-srv-061-provenance-and-related-metadata-interoperability-study.md).
-- Output target: `IDR Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md`.
-- Sequence: Publish the plan first; the next `proceed` authorizes one research/report iteration. After report acceptance, a separately authorized synthesis addendum precedes discussion of any Goal/Guide changes. The pending Part 5 discussion remains open; no implementation option is selected by this sequence.
-- Boundary: Reuse IDR-SRV-019 and relevant representation/security research; preserve all completed-topic counts and approved scope. No preselected schema, graph service, universal confidence calculation, report resource, field-by-field marking mandate or national/NATO security-regime implementation. Preserve stakeholder input only as generalized, unattributed-to-application use cases, not verbatim requirements. No report, synthesis or Goal/Guide edits in the plan iteration.
+- Report: [idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md](../IDR%20Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md), in review. Recommends existing-standard use and focused Guide/test clarifications; exact public lineage exchange and policy-specific adapters remain conditional. Includes a reproduced SWE quality-schema gap, pinned peer paths and bounded history refresh.
+- Sequence: Plan/publication and research/report iterations are complete. The next `proceed` can accept the report and authorize its separate synthesis addendum, followed by discussion of any Goal/Guide changes. The pending Part 5 discussion remains open; no implementation option is selected by this sequence.
+- Boundary: Reuse IDR-SRV-019 and relevant representation/security research; preserve all completed-topic counts and approved scope. No preselected schema, graph service, universal confidence calculation, report resource, field-by-field marking mandate or national/NATO security-regime implementation. Preserve stakeholder input only as generalized, unattributed-to-application use cases, not verbatim requirements. No final-synthesis, Goal/Guide, Roadmap or server-code edits in the research/report iteration.
 
 ---
 
@@ -730,6 +730,8 @@ The final report must:
 | 2026-09-18 | IDR-SRV-060 Acceptance and Synthesis Addendum Authorization | The user's next `proceed` accepted the supplemental report and authorized integration through a separate addendum to the final synthesis | Accept research for downstream use without selecting a Part 5 implementation option or changing the Goal/Guide | Glaux Project Lead |
 | 2026-09-18 | Part 5 Synthesis Addendum Prepared | Added Addendum C with consolidated Protobuf findings, qualifications to previous research, the compatibility-only recommendation and conditional OSH-compatible alternative; preserved the original synthesis and Addenda A/B | Next step is Goal/Guide discussion; no implementation option, dependency, milestone or new governance process introduced | Addendum prepared for Glaux Project Lead review |
 | 2026-09-18 | Provenance and Related Metadata Research Planning | Registered IDR-SRV-061 and drafted its plan following the project lead's `proceed`; generalized stakeholder examples sit within a broader CSAPI-centered provenance/interoperability assessment, including uncertainty terminology and bounded label/binding questions | Plan/publication only. Reuse existing research; no prescribed OMS/PROV schema, universal score, per-field marking requirement or security-regime adoption. Research/report, synthesis addendum and Goal/Guide discussion remain separate iterations; pending Part 5 discussion is preserved | Glaux Project Lead (planning authorization) |
+| 2026-09-18 | IDR-SRV-061 Plan Acceptance and Research Authorization | The user's subsequent `proceed` accepted the published plan for execution and authorized its research/report iteration | Execute the bounded study without accepting its future report, adopting an implementation, or changing the synthesis/Goal/Guide | Glaux Project Lead |
+| 2026-09-18 | IDR-SRV-061 Research Execution | Produced the provenance and related metadata study with standards-role analysis, exact-input/role/quality/grouping/disclosure cases, pinned peer/source evidence, a reproduced quality-schema probe and bounded history refresh | Report in review. Next `proceed` can accept it and authorize the separate synthesis addendum; focused Guide clarifications and conditional optional integrations remain recommendations, not scope adoption | Pending Glaux Project Lead report review |
 
 ---
 
@@ -756,7 +758,7 @@ Supplemental progress is tracked separately from the completed category totals a
 | IDR-SRV-058 | Complete (1/1) | 1/1 | 1/1 | Research accepted; selected static experiment recorded in Goal/Guide | 2026-09-17 |
 | IDR-SRV-059 | Complete (1/1) | 1/1 | 1/1 | Research accepted; bounded filtering scope recorded in Goal/Guide | 2026-09-17 |
 | IDR-SRV-060 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum C prepared; Goal/Guide discussion pending after 061 | 2026-09-18 |
-| IDR-SRV-061 | Complete (1/1) | 0/1 | 0/1 | Plan prepared; research/report on next `proceed` | 2026-09-18 |
+| IDR-SRV-061 | Complete (1/1) | 1/1 | 0/1 | Report in review; acceptance and separate synthesis addendum next | 2026-09-18 |
 
 ---
 
