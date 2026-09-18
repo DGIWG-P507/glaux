@@ -1,0 +1,730 @@
+# Glaux Server Implementation Guide
+
+**Version:** 0.1<br>
+**Date:** 17 September 2026<br>
+**Effort:** Glaux Server<br>
+**Status:** Draft — iteration 1 of 3<br>
+**Depends On:** [Glaux Server Goal and Definition v1.6](glaux-server-goal-and-definition.md), Approved
+
+**Revision summary:** Complete first draft covering the intended server, its implementation approach, verification, and unresolved design questions. This is a proposed design, not a claim that the software exists or that these choices have been approved. Iteration 2 will resolve gaps and incorporate feedback; iteration 3 will check the whole guide and finish it for Roadmap development.
+
+## Executive Summary
+
+Build a full-scope Rust reference implementation of OGC API - Connected Systems Parts 1 and 2, with their applicable SensorML 3.0 and SWE Common 3.0 requirements, and a separately identified experimental Part 3 implementation. Preserve the approved Goal and Definition's security, status, tasking, ecosystem-integration, and interrupted-connectivity responsibilities without turning the server into an enterprise infrastructure project.
+
+The proposed implementation is one deployable Rust service backed by PostgreSQL/PostGIS. The HTTP interface, background publication, command handling, and controlled synchronization use the same validated resource model and transactional write functions. GeoJSON, SensorML, ordinary JSON, and SWE encodings are representations of those resources, not separate databases. Applications use the published CSAPI interfaces; an additional interface must have a specific purpose and be identified as a Glaux extension.
+
+The main engineering choices proposed here are:
+
+- Axum/Tokio for HTTP and asynchronous work; SQLx for explicit PostgreSQL transactions.
+- Relational storage for identity, relationships, timestamps, and lifecycle; JSONB for validated structured content; database storage for bounded original documents.
+- Small, typed Rust modules with separate domain and encoding packages; no required microservices, graph database, message broker, or enterprise identity installation to exercise the basic reference server.
+- Strict validation of public writes, authorized reads and writes, transactionally recorded publication events, and explicit command outcomes.
+- Standards-derived tests plus real requests from independent clients. The implementation's own serializers are not the sole judge of correctness.
+- Optional authenticated Server-Sent Events (SSE) as a Glaux interface and outbound MQTT 5 as the experimental Part 3 binding. Neither is represented as an approved Part 3 standard.
+
+The completion target remains all 25 direct CSAPI conformance classes and applicable prerequisites. Incremental releases may implement fewer classes, but must say exactly what works. JSON-only operation, read-only operation, partial command/feasibility APIs, or SSE-only streaming are not substitutes for the complete intended server. A simulated device is valid test equipment for the full tasking interface; selecting operational hardware is not a new server-completion prerequisite.
+
+This guide defines technical design and verification. The Roadmap will assign implementation order and tasks. Governance defines the working rules. The approved Goal and Definition controls scope. No separate requirements document, decision-record system, or new approval process is introduced.
+
+## Table of Contents
+
+1. [Purpose and Scope Baseline](#1-purpose-and-scope-baseline)
+2. [Architecture Context](#2-architecture-context)
+3. [Design Principles and Constraints](#3-design-principles-and-constraints)
+4. [Implementation Specifications](#4-implementation-specifications)
+5. [Integration Points](#5-integration-points)
+6. [Data and API Contracts](#6-data-and-api-contracts)
+7. [Conformance and Verification Strategy](#7-conformance-and-verification-strategy)
+8. [Testing Strategy](#8-testing-strategy)
+9. [Risks and Unresolved Decisions](#9-risks-and-unresolved-decisions)
+10. [Quality Gates and Exit Criteria](#10-quality-gates-and-exit-criteria)
+11. [Change Control](#11-change-control)
+12. [References and Research Use](#12-references-and-research-use)
+13. [Appendix: Standards Interpretations and Project Choices](#13-appendix-standards-interpretations-and-project-choices)
+
+## 1. Purpose and Scope Baseline
+
+### 1.1 Scope and acceptance boundary
+
+Implement the capabilities in Goal and Definition §§5–7. The table makes their implementation and verification locations explicit; it does not add objectives.
+
+| Approved capability | Design in this guide | Main verification |
+|---|---|---|
+| Discovery and navigation (§5.1) | §4.1, §6.2 | Follow links from root; check collections, schemas, API description, and declarations |
+| Registration and description (§5.2) | §§4.2–4.3, §4.6 | Create, replace, patch, and delete; verify identity and equivalent representations |
+| Access and exchange (§5.3) | §§4.3–4.4, §4.7 | Compare exact query results, timestamps, relationships, units, and encoding meaning |
+| Streaming and dynamic data (§5.4) | §§4.4–4.5, §4.8 | Live delivery, duplicate delivery, interruption, replay, and experimental MQTT tests |
+| Tasking and control (§5.5) | §4.9 | Feasibility, acceptance, execution, status, results, and failure scenarios |
+| Status and availability (§5.6) | §4.5 | Stale and delayed evidence must not become false current status |
+| Security, authorization, and trust (§5.7) | §4.10 | Positive and negative access tests, including lists, links, streams, and commands |
+| DDIL-informed operation (§5.8) | §4.11 | Offline operation, retries, conflict detection, and safe recovery |
+| Validation and verification (§5.9) | §4.3, §§7–8 | Standards tests, independent clients, and accurate release claims |
+| Ecosystem integration and independent use (§§6–7) | §5, §4.12 | Build/run/test from documented dependencies without other Glaux products |
+
+Implementation-complete means the entire target is implemented and verified, documented examples work, known limitations are explicit, and no unresolved issue invalidates a claimed capability. Passing a partial release's tests does not establish full completion. A successful command-adapter test establishes that adapter's behavior, not universal device safety or accreditation.
+
+Goal §8 exclusions remain in force. Identity administration, organizational release authority, cross-domain guards, networking infrastructure, federation agreements, and production operations belong to deployments. The server enforces configured rules and supplies integration contracts; it does not supply those organizations or infrastructure.
+
+### 1.2 Standards baseline and exact dependencies
+
+The controlling published package is [CSAPI Part 1 v1.0][S1], [CSAPI Part 2 v1.0][S2], [SensorML v3.0][SML], and [SWE Common v3.0][SWE]. Use the published requirements and normative tests, with official artifacts pinned to their source revisions. The CSAPI publication source is tag `v1.0.0`, commit `8e03b236a049849f2ccc24b4fd9fdce5ff69bed2`. A moving upstream branch is not a replacement baseline.
+
+The direct inherited dependencies identified in [IDR-008][R008] are:
+
+| Dependency | Version and scope incorporated |
+|---|---|
+| [OGC API - Common Part 1](https://docs.ogc.org/is/19-072/19-072.html) | OGC 19-072, v1.0.0: Core, Landing Page, JSON |
+| [OGC API - Features Part 1](https://docs.ogc.org/is/17-069r4/17-069r4.html) | OGC 17-069r4, v1.0.1 (Core Corrigendum): Core and GeoJSON, with CSAPI's resource adaptations; class URI version remains `/1.0/` |
+| OGC API - Features Part 4 | OGC 20-002r1, `1.0.0-draft.2`: Create/Replace/Delete and Update. Unapproved inherited draft; see the pin and reconciliation note below |
+| SensorML 3.0 | `json-simple-process`, `json-physical-system`, `json-deployment`, `json-derived-property`, including their applicable dependencies and CSAPI mappings |
+| SWE Common 3.0 | `json-record-components`, `json-encoding-rules`, `text-encoding-rules`, `binary-encoding-rules`, including the underlying applicable component and encoding rules |
+| Simple Feature Access Part 1 | OGC 06-103r4, v1.2.1: the WKT grammar used by spatial filtering, not a new server API |
+| Web formats and protocols | HTTP semantics/caching (RFC 9110/9111), JSON (RFC 8259), GeoJSON (RFC 7946), web linking (RFC 8288), and the date/time and schema rules incorporated by the above standards |
+
+The research conformance baseline pinned Features Part 4 at `9ca25f56a58ed822ea8a685a7a41afa7181aaa8b`; later write research examined `4e30324a14b682ff4a26ee43aad1eb6428c846a3`. Retain the earlier pin as this draft's baseline and compare the later text before finalizing transaction details. Do not silently mix revisions. This is a specific remaining design check, not a reason to omit the four CSAPI transaction classes. See §9 and §13.
+
+Conformance URI bases are exactly `http://www.opengis.net/spec/ogcapi-connectedsystems-1/1.0` and `http://www.opengis.net/spec/ogcapi-connectedsystems-2/1.0`. Requirement identifiers use `/req/`; declarations use `/conf/`. The repository name contains `connected-systems`, but these identifiers use `connectedsystems`. Section 7 lists every direct target class.
+
+References do not import every independent capability of every related standard. In particular, XML import, general CQL2 queries, an arbitrary SensorML process-execution engine, and separate OGC service families are not added by this guide. Apply SensorML/SWE requirements where the selected CSAPI classes and mappings invoke them.
+
+### 1.3 Experimental Part 3 boundary
+
+Use the official Part 3 branch snapshot [`6f529a15bfa63259febc3620378d3e5a06305333`][P3] as the research-backed experimental baseline. The checked draft contains incomplete MQTT-binding material. Its resource-event and resource-data concepts inform §4.8, but Glaux must define and label its own concrete topic, security, discovery, and delivery choices where the draft does not. No approved Part 3 conformance claim is authorized. [IDR-014H][R014h], [IDR-035][R035]
+
+## 2. Architecture Context
+
+### 2.1 Existing work and repository boundaries
+
+This `glaux` repository is the planning and ecosystem documentation repository. Server implementation belongs in [`DGIWG-P507/glaux-server`](https://github.com/DGIWG-P507/glaux-server). Inspection for this draft found no Rust implementation in the meta-repository and only a README on the server repository's main branch. The design below is work to build, not an assessment of existing runtime behavior.
+
+- **Build new:** server packages, database schema/migrations, codecs, HTTP handlers, validation, access checks, publication and command workers, tests, examples, and reference deployment files.
+- **Extend:** the existing server README and build/run documentation when implementation starts; this guide as design details are resolved.
+- **Reuse as inputs:** approved scope, completed research, official standards and permitted schema artifacts, and established Rust/PostgreSQL libraries. Peer server code is comparative evidence, not an assumed reusable Glaux implementation.
+- **Remain separate:** Publisher, Simulator, Web App, and Mobile applications. A small server test client or fake device adapter is not an implementation of those products.
+
+### 2.2 Component boundaries
+
+Use a Cargo workspace with three initial production packages: `glaux-domain`, `glaux-standards`, and `glaux-server`. This retains a compile-time boundary around domain types and wire encodings without creating every package suggested in [IDR-045][R045] before it contains useful code. Application, persistence, HTTP, security, publication, and adapter modules initially live inside `glaux-server`; split them later only for a demonstrated dependency, reuse, or build need.
+
+| Component | Owns | Must not own |
+|---|---|---|
+| Domain | Resource identities, typed relationships, times, schema bindings, invariants, command state rules | HTTP extraction, SQL rows, MQTT topics |
+| Standards | CSAPI wire types and mappings, SensorML/SWE parsing and encoding, structural/semantic validation | Database writes, authorization decisions, arbitrary remote fetching |
+| Application functions | Read/write use cases, orchestration of access checks, validation, transactions, and effects | Independent copies of transport-specific business rules |
+| PostgreSQL module | SQL queries, transaction boundaries, constraints, revisions, audit/outbox records | Public wire schemas or device actuation |
+| HTTP module | Routing, query parsing, negotiation, headers, response/error mapping, API description | Bypassing application validation or writing tables directly |
+| Security module | Verified caller context, configured access rules, query restrictions, safe denial | Issuing enterprise identities or deciding organizational release authority |
+| Publication module | Reading committed events, bounded replay, delivery attempts, SSE/MQTT encoding | Creating authoritative data from a notification alone |
+| Command adapters | Device-specific validation, dispatch, cancellation, and status/result translation | Inventing successful physical outcomes or bypassing authorization |
+| Runtime | Configuration, dependency wiring, startup/shutdown, supervised workers, telemetry | Domain decisions hidden in global state |
+
+Dependency direction is toward domain types. Standards code may depend on the domain package; the domain package does not depend on standards, Axum, SQLx, or a broker. Repository/adapter interfaces should describe useful operations, such as committing an observation or reporting a command result, rather than a generic abstraction for every SQL operation.
+
+### 2.3 Interaction model
+
+```text
+Glaux applications and independent clients
+                  |
+             CSAPI HTTP
+                  |
+      authentication / query / codecs
+                  |
+      application functions + access rules
+                  |
+       PostgreSQL/PostGIS transaction
+       resources + revisions + audit + outbox
+                  |
+          committed background work
+           /                    \
+   event publication       command adapter
+    SSE / MQTT            device or test double
+```
+
+Reads run through authorized queries and the selected encoder. Writes validate before committing; external delivery begins only after commit. Adapter reports return through the application write boundary. A failed broker or device connection must not undo a committed observation or cause a command to be blindly submitted again.
+
+### 2.4 Platform choices
+
+Propose Rust stable, Axum with Tokio/Tower, Serde for wire serialization, SQLx with PostgreSQL/PostGIS, and `tracing` for structured telemetry. Use explicit SQL for temporal, spatial, and relationship queries. These are engineering choices supported by [IDR-025][R025] and [IDR-044–045][R044], not OGC requirements.
+
+Pin an exact Rust toolchain, crate lockfile, PostgreSQL/PostGIS image, and enabled library features when the first build is established. Do not copy research-time patch versions into a claim of a tested build. The first implementation must prove the chosen JSON Schema validator against the actual recursive SensorML/SWE corpus, with HTTP/filesystem reference resolution disabled by default. A validator accepting simple JSON examples is insufficient. Primary implementation references include [Axum](https://docs.rs/axum/latest/axum/), [SQLx](https://docs.rs/sqlx/latest/sqlx/), and the [jsonschema reference-resolution controls](https://docs.rs/jsonschema/latest/jsonschema/#external-references); pin version-specific documentation with the eventual dependency lock.
+
+## 3. Design Principles and Constraints
+
+1. **One resource, one identity.** Nested routes, collection membership, and alternate encodings resolve to the same resource; they do not create competing copies.
+2. **Standards behavior before convenience.** A library default, upstream example, or peer implementation cannot override a published requirement silently.
+3. **Keep meaning intact.** Preserve schema versions, property definitions, units, time meaning, and source evidence. Do not treat all JSON objects or timestamps alike.
+4. **One write boundary.** Public clients, test tools, device reports, and synchronization cannot bypass validation, authorization, or transaction rules.
+5. **Commit before external effects.** A database change and its queued publication/dispatch work commit together; external acknowledgements describe delivery, not domain truth.
+6. **State uncertainty honestly.** Accepted is not executed; last-known is not current; transport success is not proof of a physical effect.
+7. **Keep the reference server usable.** Supply small examples, a runnable local deployment, and clear errors. Require additional infrastructure only for the capability using it.
+8. **No unearned claims.** Disabled routes, incomplete encodings, drafts, and known deviations remain visible in release documentation.
+
+Each capability below separates required behavior, proposed implementation, and verification. Sections 9 and 13 hold unresolved questions and interpretations in this guide. They are not instructions to create a separate decisions program. Library choices, table layouts, default limits, and custom endpoints remain project design choices unless a cited standard requires them.
+
+## 4. Implementation Specifications
+
+### 4.1 Discovery, navigation, and API description
+
+**Required behavior and source.** Serve a linked landing page, conformance declaration, API description, collections, and each implemented resource family using CSAPI/Common/Features rules. Links must allow a client to discover the supported API from the root. Collections are views over canonical resources. [S1], [S2], [IDR-009–010][R009]
+
+**Implementation.** Keep a small typed definition of each route's methods, resource family, parameters, representations, and conformance dependencies beside its handler. Use it to assemble the router, links, and deployment API description. This is ordinary shared metadata, not a new registry service. Curated descriptions/examples remain versioned code assets. Tests check the metadata against actual requests independently.
+
+Generate one implementation-specific OpenAPI 3.1 description covering enabled Parts 1 and 2 and clearly labeled extensions. Serve JSON plus a locally hosted human-readable documentation page; provide downloadable schemas/examples for offline use. Select and pin the documentation renderer during implementation. Do not deploy the upstream example OpenAPI bundle unchanged, and do not claim OGC's separate OAS 3.0 class merely because a 3.1 document is available. [IDR-014][R014]
+
+Build absolute links from a configured public API root. Trust forwarded origin headers only from configured reverse proxies. Keep canonical URLs stable across routine software releases. An API-root path prefix is deployment configuration, not a version of a resource or SensorML schema. Use canonical links on alternate/nested views and preserve applicable media type and query context in paging links.
+
+**Verification.** Begin with only the root URL; discover and exercise every advertised family, collection, schema, and representation. Test a path-prefixed reverse proxy, forged forwarding headers, empty collections, disabled capabilities, and a missing resource. Compare documented methods/media types with actual responses in both directions.
+
+### 4.2 Descriptions, identity, relationships, and collections
+
+**Required behavior and source.** Implement Systems, Subsystems, Deployments, Subdeployments, Procedures, Sampling Features, and Property Definitions with their specified associations and formats. Preserve persistent identifiers and cross-representation meaning. A Procedure is not a positioned System; a Property Definition is not a GeoJSON Feature. [S1], [IDR-015–017][R015], Goal §§5.2–5.3
+
+**Implementation.** Use typed IDs internally. Mint UUIDv7 local resource IDs, while treating them as opaque locators, not authorization tokens or authoritative occurrence times. Preserve URI-form UIDs and separately store source-specific identifiers with their source authority. Enforce uniqueness and report conflicts rather than automatically merging resources that happen to share a label or source identifier.
+
+Store Systems and Deployments once. Parent/child membership, deployment participation, procedure references, and sampling relationships are typed associations. Enforce endpoint types, required cardinalities, and hierarchy-cycle prevention. Derive reverse links and nested queries from those associations. Inline SensorML components do not automatically become separately addressable Systems.
+
+Store description revisions with valid time and receipt/commit time separately. Internal revisions support concurrency, provenance, and reproducible representations; they do not create a published CSAPI System History class or justify advertising removed draft `/history` routes. Keep external feature/result references without assuming Glaux owns their lifecycle or can fetch them safely.
+
+Collections store metadata and either explicit membership or a documented server-managed view. Collection membership does not change canonical identity. Custom-collection membership operations and deletion semantics must follow the selected transaction requirements, including distinguishing removal from a collection from deletion of the resource itself.
+
+**Verification.** Register a System with a Procedure, subsystem, Deployment, Sampling Feature, and Property; reach the same IDs through direct, nested, and collection routes. Round-trip GeoJSON/SensorML where both apply, test duplicate UIDs, invalid cycles, optional/external references, and authorized deletion effects. A resource must not disappear merely because a different representation was requested.
+
+### 4.3 SensorML, SWE Common, validation, and semantic bindings
+
+**Required behavior and source.** Implement the SensorML mappings and SWE component/encoding rules invoked by the selected classes, not merely JSON syntax validation. Observation and command values must match the relevant parent stream's schema. [SML], [SWE], [IDR-021–024][R021]
+
+**Implementation.** Keep three distinct things: the received source document where preservation is needed, the typed meaning used by the server, and the generated wire representation. Store exact original SensorML/schema bytes with media type and digest; do not serve unfiltered original bytes as a shortcut around access checks. Preserve permitted extensions without allowing them to replace reserved identities or validated relationships.
+
+The SWE component model covers scalars, ranges, records, vectors, choices, arrays, matrices, and geometry, together with names/order, definitions, units, constraints, nil values, quality, and reference frames. Compile an immutable component/encoding description into a bounded validation/codec plan. Bind observations and commands to its revision. A stream-schema edit must never reinterpret historical values; enforce the published schema-change restrictions and use a new stream when an incompatible contract cannot be changed legally.
+
+Ordinary CSAPI JSON schema resources wrap SWE descriptions such as `resultSchema` or `parametersSchema`. These are not themselves JSON Schema documents. SWE payload formats use `recordSchema` plus an encoding definition. The schema query selectors are `obsFormat` and `cmdFormat`; `commandFormat` is a response member, not the command-schema query parameter.
+
+Validate in this order: request limits and media type; safe parsing; structural schema; typed resource/component semantics; relationships and units/time; authorization and source authority; state/concurrency constraints; transaction. Authenticate and perform inexpensive admission checks before costly parsing, then perform object-specific authorization once the target is known. Return safe paths and reasons without exposing protected schema details.
+
+Install required schema references locally and resolve them from an allowlist. Do not fetch arbitrary `$ref`, SensorML links, data URLs, or result URLs during a public request. Bound recursion, array sizes, regex work, binary allocation, decompression, and total request cost. Fail explicitly on unsupported encoding features; do not advertise them as complete.
+
+Implement JSON, Text, and Binary codecs for the full applicable target, with field order, choice discriminators, optional values, nil representations, byte order, sizes, and framing tested. Receiving a BinaryEncoding descriptor is not proof that its values can be decoded. XML/legacy import is not necessary to claim these CSAPI JSON-based classes and is not added as a separate implementation objective.
+
+Preserve unit declarations and property URIs. Validate UCUM codes where supplied against the incorporated UCUM basis; a semantic unit URI is not invalid simply because it is not a UCUM code. No implicit unit conversion is performed on command input. Any supported observation conversion must specify dimensional compatibility, precision, and original values. Labels and matching dimensions alone do not establish property identity.
+
+**Verification.** Use valid and invalid examples for every component family and format, recursive references, nil versus missing, exact numeric boundaries, variable arrays, binary lengths, text delimiters, and geometry. Compare independently defined expected values after round-trip conversion. Test that schema changes cannot reinterpret old observations or queued commands and that malformed input cannot trigger external network/file reads.
+
+### 4.4 Datastreams, observations, querying, and spatial behavior
+
+**Required behavior and source.** Expose DataStreams, Observations, their schemas, links, filters, and prescribed temporal/spatial behavior. Preserve source and feature context, phenomenon time, result time, units, and quality. [S2], [IDR-011][R011], [IDR-018][R018], [IDR-027][R027]
+
+**Implementation.** A datastream belongs to its producing System and binds a particular output and immutable value contract. Each observation stores the stream and schema revision, relevant feature reference, value, phenomenon/result times, and receipt metadata. Store typed query columns separately from a validated extensible payload. Derive stream summaries from supported contracts and authorized data rather than accepting client-written summaries as fact.
+
+Parse query parameters into typed predicates. Apply route/collection scope and caller access restrictions before filters, aggregation, paging, and encoding. Parameters combine with AND; alternatives within a list combine with OR according to their specified grammar. Reject malformed or unsupported parameters rather than ignoring them. A well-formed identifier matching nothing produces an empty result, not a syntax error.
+
+Implement both Advanced Filtering classes fully, including hierarchy, relationship, property, spatial, temporal, command, and event filters on their applicable routes. Do not add generic CQL2, client sorting, field selection, or expansion to satisfy them. Section 6.3 summarizes the query families; the exact endpoint applicability comes from each requirement, not the upstream OpenAPI omissions.
+
+Use RFC 3339 instants and slash intervals, including the inherited open-end forms. For `resultTime=latest`, first apply all other predicates within the endpoint scope, then select the greatest visible result time and retain ties. The canonical observation endpoint and a single-stream nested endpoint have different scopes. Do not generalize `latest` or `now` to every temporal parameter based on an example.
+
+Use PostGIS for spatial predicates. Preserve source geometry/reference information and generate the required CRS84 GeoJSON order. Treat `bbox` and WKT `geom` according to their different rules, including geometry-less features. Use fixtures for antimeridian crossing, 3D inputs, empty geometries, and invalid coordinates. Never silently discard vertical or moving-position information while claiming an equivalent rich representation.
+
+Use deterministic ordering with a unique ID tie-breaker: result time then ID for observations; stable ID order for ordinary resource lists unless a family requires a different rule. Return server-generated opaque `next` links, not a promised public offset API. Reauthorize continuations. For ordinary lists, document keyset paging as a changing view rather than claiming a cross-request snapshot; use an explicit snapshot/export mechanism for synchronization (§4.11). Omit optional totals when they cannot be calculated correctly and affordably.
+
+**Verification.** Seed distinguishable records and assert exact selected IDs and order, not just response shape. Exercise filter combinations, latest-time ties, delayed ingestion, shared Systems, recursive hierarchies, empty matches, authorized counts, paging under inserts/deletes, and indexed spatial/temporal queries. Compare stored/retrieved value semantics across all supported formats.
+
+### 4.5 Status, availability, dynamic properties, and System Events
+
+**Required behavior and source.** Support status information and System Events while distinguishing evidence time, last-known state, and operational availability. Dynamic Sampling Feature properties retain observation context. [S1], [S2], [IDR-020][R020], [IDR-034][R034], Goal §§5.4 and 5.6
+
+**Implementation.** A status datastream uses the standard datastream/observation machinery and a typed SWE contract. A current-status view selects relevant evidence by its meaningful time, not merely the last received row. Preserve delayed samples as history without replacing newer evidence accidentally. Where freshness is assessed, document the configured age/source rule and evaluation time; absence of fresh evidence is unknown or stale, not proof of a failed device.
+
+Keep System operational status, stream delivery state, command-channel availability, server health, and authorization separate. Do not invent a universal readiness score or a new mandatory status API. Use standard fields and observations first; expose additional assessment metadata only through a documented extension where needed.
+
+System Events record actual events such as calibration, relocation, or configuration change. They are not aliases for HTTP access logs, resource-update notifications, or every observation arrival. Store event identity, parent System, event time, type/definition, descriptive content, and source. The event conceptual model and published JSON schema differ; §13 records the proposed explicit mapping and vocabulary limitation.
+
+**Verification.** Exercise fresh, old, delayed, equal-time, missing, and conflicting status observations; demonstrate that API uptime does not imply a System is available. Verify historical dynamic properties and System Event query results, and distinguish a metadata edit from evidence of a real-world event.
+
+### 4.6 Writes, ingestion, concurrency, and deletion
+
+**Required behavior and source.** Implement the selected Create/Replace/Delete and Update classes, including subordinate resources and collection membership. Validate Observation/Command bodies against their parent schemas. Preserve atomicity and correct error semantics. [S1], [S2], [IDR-029][R029], [IDR-031][R031]
+
+**Implementation.** Public creation uses POST; PUT replaces an existing resource, not an undocumented create-by-PUT operation. PATCH uses advertised JSON Merge Patch over a defined writable JSON representation, followed by validation of the complete resulting resource. Publish `Accept-Patch` and method support where applicable. Do not interpret a Text/Binary body as a JSON patch. Section 13 records the remaining cross-representation replacement/patch details.
+
+Implement required mutation operations for observations, commands, command status/results, feasibility requests and their status/results, and System Events as well as descriptions and streams. Internally retaining revisions does not make the public resource immutable. Authorization, parent-schema invariants, and current command state can restrict a particular change; these checks must not become a blanket removal of an entire required operation.
+
+Each accepted operation commits resource state, required revisions, relationships, audit information, any retry record, and outgoing event/work records in one transaction. Use database constraints, short transactions, and row locks where coordinated changes require them. Do not hold a database transaction open while contacting a device, broker, or identity service.
+
+Emit strong representation-specific ETags where HTTP permits and honor supplied conditional requests accurately. After a PUT that transforms submitted content, omit validators from that success response and expose the current validator on a subsequent GET, as required by [RFC 9110 §9.3.4](https://www.rfc-editor.org/rfc/rfc9110.html#section-9.3.4). The proposed baseline permits ordinary standards writes without a mandatory `If-Match` header. This deliberately does not adopt IDR-029/031's stronger mandatory-header policy. Supplied stale conditions fail with `412`; internal locking protects server invariants, but cannot detect a stale client's unconditional overwrite. Document this tradeoff and encourage conditional updates in examples.
+
+Provide an optional, documented `Idempotency-Key` extension for creation and command submission. Scope the key to verified caller/source, operation, and target; retain its request digest and outcome atomically. The same key and same intent return the same resource/outcome, while different intent under the same key returns a conflict. The response must reflect the documented replay contract, not an accidentally fresh second creation. Record a configurable retention period and explain that reuse after expiry does not guarantee deduplication. Do not require this header for all CSAPI clients or deduplicate distinct measurements merely because their values match.
+
+For a supported multi-record request, choose a bounded all-or-nothing transaction in this draft: validate all items before acceptance and return a specified standard response where one exists. This is a Glaux atomicity choice, not a new OGC batch claim. Larger Publisher jobs send bounded requests and track their outcomes; there is no mandatory private ingestion envelope. Verify resource-specific array/framing rules before enabling each bulk operation.
+
+Apply the specified deletion and dependent-resource behavior with authorization across the affected set. Keep restricted internal revision/tombstone evidence where needed for audit and synchronization, but remove the public resource as required. Never use an internal retention preference to pretend a failed deletion succeeded. Do not reuse a deleted ID. Deleting a Command is not a request to cancel device execution.
+
+**Verification.** Test partial-invalid batches, parent/schema mismatch, concurrent updates, stale preconditions, retry-key collision and expiry, transaction rollback, relationship cleanup, duplicate POST delivery, and restart after commit but before response. Assert that a rejected write leaves no canonical resource or outgoing event behind.
+
+### 4.7 Persistence, spatial indexes, and data lifecycle
+
+**Required behavior and source.** Preserve coherent resources, context, history needed for meaning, and durable accepted data. The database product and layout are design choices. [IDR-025–030][R025], [IDR-049][R049], Goal §§5.2–5.3 and 5.8
+
+**Implementation.** PostgreSQL/PostGIS is the single authoritative store. Section 6.1 defines the logical tables and invariants. Use typed relational columns and foreign keys for identities/parents, schema references, times, and lifecycle. Use JSONB for validated extensible structures, not as a substitute for relationships or query constraints. Preserve exact bounded document bytes in `bytea` with digests because JSONB does not preserve a source document byte-for-byte.
+
+Begin with ordinary indexed observation tables. Choose native time partitioning only after measuring the representative workloads in §8; do not make TimescaleDB a prerequisite. If partitioning is adopted, preserve global ID uniqueness explicitly because a partitioned unique constraint normally includes the partition key. Time-series scale must not silently change resource identity or URL stability.
+
+Indexes cover canonical/UID lookups, parent and relationship traversal, stream plus result/phenomenon time, and relevant PostGIS geometry. Add indexes from demonstrated query plans, not every field. Apply a precise spatial predicate after bounding-box index selection. Assigning an SRID is not coordinate transformation.
+
+Keep timestamp meaning and source precision. Use normalized instants for indexed comparisons and retain the source lexical value/precision where necessary. For precision beyond PostgreSQL timestamp resolution, store a checked remainder or exact normalized numeric value and use it in ordering/comparison; do not silently round a boundary match. The exact Rust/time storage type is a remaining implementation proof (§9).
+
+Do not enable automatic retention/purge by default. An explicitly configured policy may remove old records only while preserving the required visible deletion behavior and dependencies among values, schemas, source documents, pending work, and synchronization tombstones. Derived summaries can be rebuilt; accepted observations and command evidence cannot be reconstructed from sampled logs.
+
+Migrations are immutable SQL files packaged with the server and run by an explicit administrative command. Normal startup checks compatibility rather than applying destructive upgrades silently. Test backup and restore into a separate database, including artifacts, schema bindings, IDs, tombstones, and pending work. Restored command work remains held until reconciled; a restore must not automatically repeat physical actions.
+
+**Verification.** Use real PostgreSQL/PostGIS tests for constraints, precise time boundaries, query plans, migrations, rollback, and backup/restore. Confirm that restore produces the same authorized API resources and no unintended command dispatch. Test deletion with retained internal evidence and with subsequent stale synchronization input.
+
+### 4.8 Publication, live delivery, and experimental Part 3
+
+**Required behavior and source.** Support dynamic exchange and the planned experimental Part 3 work, preserving timing, identity, and honest recovery behavior. Particular transports and recovery interfaces below are Glaux choices. [IDR-035][R035], [P3], Goal §5.4
+
+**Implementation.** A database outbox stores committed changes with stable event ID, resource ID/revision, kind, relevant time, and a reference to the immutable payload/revision. A worker copies or projects them into a retained publication log and records that handoff transactionally. Serialize allocation of replay position, log insertion, and outbox handoff through transaction commit so a visible replay position cannot skip an earlier uncommitted entry. Do not use an unconstrained database sequence as proof of commit order.
+
+The worker publishes from committed log records with bounded concurrency, retry/backoff, and a finite retention policy. Delivery is at least once: a crash after send but before recording acknowledgement can repeat a message. Consumers need stable identity and revision information. A resource deletion is an event, not a normal native data record with invented null contents. Public lifecycle notifications, native observations, System Events, command status, and private diagnostics remain distinct categories.
+
+**SSE extension.** Propose `GET /extensions/glaux/events`, disabled unless configured, with explicitly documented resource/stream filters and `text/event-stream` output. Authenticate like ordinary HTTP; authorize the selected resources and each emitted event, using retained resource/access context for deletion notifications. Use named event types and opaque `id` values accepted through `Last-Event-ID`. Bind continuation state to the filter and caller context without exposing global sequence values. Preserve replay-position order within each subscriber; parallelism across subscribers must not permit a later cursor to skip an earlier undelivered event. An expired cursor returns `410` Problem Details before opening the stream, with a resnapshot instruction; a malformed cursor returns `400`. Without a cursor, start at a documented current-log boundary and send an initial checkpoint, not a claim of complete prior state. Bound each subscriber's buffer and disconnect slow consumers with documented recovery instructions. SSE is a Glaux interface, not a CSAPI Part 3 binding.
+
+**MQTT experiment.** Adopt an optional, disabled-by-default outbound MQTT 5 adapter called `glaux-csapi-part3-exp/0.1`, based on the pinned draft. Cover Resource Events and native Observation/status-observation and System Event data first; describe any additional supported resource data precisely. Initial choices are QoS 1, non-retained messages, and these topic families:
+
+```text
+{prefix}/glaux-csapi-part3-exp/0.1/events/{canonical-relative-resource-path}
+{prefix}/glaux-csapi-part3-exp/0.1/data/{canonical-relative-collection-path}/{format-name}
+```
+
+The names, path encoding, token vocabulary, and delivery rules are Glaux's experimental binding. Document supported event tokens and generate an AsyncAPI 3.0 description with exact enabled channels, message schemas, broker address, and authentication. Advertise that description through a clearly identified extension link, not an invented standard discovery relation. Use the draft's Resource Event model with the explicitly documented lowercase `parentid` correction needed by CloudEvents; keep the deviation in §13.
+
+An MQTT topic is a disclosure boundary. Enable it only when broker permissions and topic partitioning can enforce the intended recipient access; do not publish a broadly visible topic and rely on consumers to filter protected data. Wildcards, credential expiry, policy changes, queued delivery, and topic metadata require tests. Broker acceptance never establishes recipient processing. MQTT retained messages or persistent sessions alone do not provide synchronization completeness.
+
+Batch Resource Events, inbound broker resource writes, and inbound command submission are not part of this initial experimental binding. They are not removed from a published Part 3 completion target—there is no approved Part 3 target yet—but require a revised experimental design if adopted. A broker is required only when running this adapter; it is not required for ordinary CSAPI HTTP or SSE.
+
+**Verification.** Interrupt the broker and worker before/after send; verify no lost committed event and tolerable duplicates. Test payload/schema consistency, deletion events, ordering within the documented scope, cursor expiry, snapshot/catch-up, slow consumers, authorization changes, and agreement between AsyncAPI and actual topics. Do not claim global device-event order or exactly-once delivery.
+
+### 4.9 Commands, feasibility, status, and results
+
+**Required behavior and source.** Implement ControlStreams and their schemas, Command resources, synchronous/asynchronous processing, status/result resources, and Feasibility requests with their own status/results. Feasibility assesses an action; it does not authorize or execute it. [S2], [IDR-036–038][R036]
+
+**Implementation.** Persist immutable command intent/revisions and an adapter-work record before dispatch. Validate parameters against the selected ControlStream schema, derive the submitting identity from authenticated context, authorize the action and target, and record which contract/configuration applies. A submitter cannot impersonate another sender by writing a field. Keep submission permission separate from permission to report device status/results.
+
+Support exactly these public command status codes: `PENDING`, `ACCEPTED`, `REJECTED`, `SCHEDULED`, `UPDATED`, `CANCELED`, `EXECUTING`, `COMPLETED`, `FAILED`. Apply the standard's status-specific progress/execution-time rules. Keep delivery timeout and uncertain physical outcome as internal delivery evidence or clearly identified metadata; do not invent an additional standard status value.
+
+For synchronous processing, return one terminal status report (`COMPLETED`, `REJECTED`, or `FAILED`) after the adapter finishes within a configured bound. Asynchronous processing exposes durable status reports and results. Section 6.4 records the proposed POST response interpretation and its standards ambiguity. A lost connection or elapsed timeout does not justify a fabricated `FAILED` physical outcome or an automatic switch of a synchronous contract to asynchronous behavior.
+
+The adapter interface covers capability/availability, command submission, supported cancellation/update, feasibility evaluation, and reporting status/results. Each attempt carries a stable command/attempt identity. Recheck relevant policy, configuration/schema, and deadlines immediately before dispatch. If a crash makes the external effect uncertain, reconcile with the adapter/device; do not resend a non-idempotent action merely to obtain certainty. A deterministic fake device adapter supplies reproducible reference examples and tests; production device adapters implement their own protocols and interlocks behind the same boundary.
+
+Cancellation follows the command-status behavior, not HTTP DELETE. A `CANCELED` report must reflect authorized, effective cancellation under the adapter contract; merely requesting cancellation is insufficient evidence that actuation stopped. Similarly, deleting a status/result resource does not erase an already executed physical effect. Required public CRUD/PATCH operations use internal revision history so corrections remain accountable. Late reports must not blindly overwrite a newer terminal state; apply the adapter's sequence and permitted-transition rules and retain unresolved contradictory evidence privately.
+
+Feasibility reuses the command parameter schema and has its own result schema and status/result resources. Do not use `SCHEDULED` or `UPDATED` for feasibility. A `COMPLETED` feasibility analysis can report that an action is infeasible; analysis success and action feasibility are different facts. Any validity window or conditions are represented according to that ControlStream's result contract, not a mandatory invented universal feasibility object.
+
+**Verification.** Exercise synchronous and asynchronous success/rejection/failure, feasibility-negative results, required time fields, forbidden feasibility statuses, unauthorized reporters, duplicate submission, competing changes, late reports, cancellation versus deletion, and all required status/result write operations. Crash at each dispatch boundary and demonstrate that neither HTTP nor MQTT acknowledgement is treated as execution proof.
+
+### 4.10 Authentication, authorization, trust, and audit
+
+**Required behavior and source.** Enforce configured access rules, protect writes and tasking, support identity/policy integration, preserve accountability, and avoid protected-data disclosure. Organizations retain identity administration, policy ownership, release authority, and accreditation. [IDR-039][R039], [IDR-039A][R039a], [IDR-040–041][R040], Goal §5.7
+
+**Implementation.** Define an authenticator producing a verified caller context and an access-policy interface deciding actions on resources. Propose externally issued OAuth access tokens from a configured identity provider, including providers supporting OpenID Connect. For the proposed JWT access-token adapter, check token type, signature and allowed algorithm, issuer, audience, validity, and applicable scopes; never treat decoding a token as authentication. Cache trusted issuer keys with a bounded refresh policy and fail safely when verification is unavailable. Do not use an ID token as an API access token. Use [RFC 9068](https://www.rfc-editor.org/rfc/rfc9068.html#section-4) for a provider using that access-token profile and [RFC 8725](https://www.rfc-editor.org/rfc/rfc8725.html) for JWT validation practices; other provider/token formats need an explicit adapter contract.
+
+Provide explicit development identities for loopback-only examples and automated tests, clearly labeled and rejected by normal network-facing configuration. A read-only anonymous deployment is an explicit policy option, not a way to enable unauthenticated writes. Support TLS at the service or a documented trusted reverse proxy. Publish only configured browser origins; do not confuse CORS with access control.
+
+Start with configured caller/group/source permissions and resource relationships. Authorize the action and scope before queries, counts, extents, links, schema disclosure, latest selection, or streaming delivery can reveal data. Restrict publishers to assigned Systems/streams, command submitters to permitted targets, and status reporters to the adapter/source authority they represent. Where a richer external policy service is integrated, document its input, result, timeout, and unavailable behavior; no network-facing operation defaults to allow on policy-service failure.
+
+Prefer authorizing complete conformant resources over arbitrary field redaction. A protected field cannot simply be removed if that makes the advertised schema false. If partial disclosure is required, define a valid projection/profile or deny that representation. Schema documents, command capabilities, relationship links, original artifacts, error details, and replay history receive the same protection as ordinary data.
+
+Record durable audit information for meaningful mutations and command attempts: verified actor/source, operation, target/revision, time, outcome, and correlation identifier. Record relevant denials safely without turning every denied request into unbounded database load. Do not log secrets, bearer tokens, raw sensitive payloads, or protected policy reasons. Diagnostic logs may be sampled; committed write/command accountability cannot depend on them. A mandatory tamper-proof ledger, enterprise security platform, or universal trust score is not proposed.
+
+Preserve provenance needed to understand origin and transformations: source identity, submitted versus server-observed times, schema/version, input artifact reference when applicable, and revision/operation linkage. Keep asserted quality separate from authenticated source identity; authentication does not prove a measurement is true. A general-purpose provenance graph database is unnecessary for these records.
+
+**Verification.** Use an access matrix over resource families and actions, including indirect links, collections, schemas, errors, status/results, and events. Test expired/wrong-audience tokens, revoked permissions, malicious references, SQL injection, parser exhaustion, cross-source writes, prohibited tasking, and identity/policy outages. Review supported authentication dependencies against current primary security guidance when pinned.
+
+### 4.11 Interrupted connectivity, replay, synchronization, and conflicts
+
+**Required behavior and source.** Preserve source identity and time, keep useful local behavior during interruption, handle repeat/delayed input consistently, detect conflicts, and distinguish last-known evidence. Do not assume continuous network connectivity or supply deployment federation infrastructure. [IDR-042–043][R042], Goal §5.8
+
+**Implementation.** Keep schemas, configuration, permitted vocabulary data, and stored resources locally usable. Local authorized reads remain possible when a remote publisher/broker is disconnected. Credential/policy validity still bounds access; offline operation does not extend expired authority indefinitely. A missing remote source affects freshness/availability, not the truth of already retained historical records.
+
+For controlled exchange, begin with an administrative export/import adapter for configured peers or authorized files, not a universal federation API. Export canonical identities/source IDs, resource revisions, source and semantic times, schema references, relevant relationships, and deletion markers. Include a source-scoped exchange identity and digest so the receiver can distinguish an exact replay from different content under the same identity. This envelope is a Glaux integration format, not a new CSAPI representation.
+
+Exports include only records authorized for their recipient; imports re-evaluate local access and source authority rather than inheriting the sender's permission decision. A receiver validates the same resource semantics as HTTP, maps remote to local identities explicitly, and commits accepted changes with the exchange receipt in one transaction. Identical accepted input is a no-op returning the recorded outcome. Unknown dependencies stay in a restricted staging area or are rejected with a clear reason; they do not become partially valid public resources. A conflicting revision, UID collision, or attempted resurrection of a deleted resource is retained/reported without silently overwriting accepted state. Resolution is an authorized new operation with a recorded explanation.
+
+For consistent export plus catch-up, read resource state and a committed publication-log position in one repeatable-read database snapshot and materialize a bounded export. Replay subsequent log records after import. Changes already present in the snapshot but still awaiting publication-log insertion may reappear. Include source-scoped revision ordering/ancestry, including deletion revisions, so replayed known predecessors are ignored rather than rolling back the imported state or creating false conflicts. This ordering must be tested so no post-snapshot change can be skipped. Do not pretend independent ordinary paginated HTTP reads form this snapshot. Limit export duration/size and expire exports explicitly.
+
+Retain tombstones and exchange receipts for the configured recovery window; if a peer is older than that window, require a new snapshot rather than guessing missing history. A replacement snapshot must reconcile the agreed peer-owned scope, including absent/deleted members, or initialize a fresh replica; simply adding the currently present rows cannot remove stale replicas. Preserve locally changed contenders as conflicts. Never infer conflict resolution from arrival order, largest UUID, or unsynchronized node clocks. Do not synchronize queued command intent into automatic dispatch. Imported command history is evidence; new physical action requires the local authorization and dispatch process.
+
+**Verification.** Disconnect sources, send delayed observations, replay identical input, change the input under a reused identity, conflict two revisions, and attempt resurrection after deletion. Interrupt import/export and log handoff at transaction boundaries. Test a peer beyond retention and a command whose external effect is unknown. Demonstrate correct recovery without automatic unsafe actuation.
+
+### 4.12 Configuration, deployment, observability, and developer use
+
+**Required behavior and source.** A developer can build, configure, run, test, and exercise the server without completing other Glaux applications. Supply operational reference behavior, not managed production operations. [IDR-046–049][R046], Goal §§6–8
+
+**Implementation.** Deliver native Rust development instructions with PostgreSQL/PostGIS as a documented dependency and a Compose example for the complete local reference deployment. Use an explicit optional service group for the experimental broker. Do not install software on a user's machine as an implicit part of guide preparation or testing; document prerequisites and respect organizational installation policy.
+
+Proposed server commands are `serve`, `migrate`, `check-config`, and administrative sample-data/export/import operations. Their final flags belong in executable help and the server README when implemented. Document build, migration, sample loading, serving, tests, backup/restore, and disposal separately; no automatic reset of a persistent database. Sample loads use the validated application path.
+
+Use typed configuration with unknown-key rejection and startup validation. Configure public origin, listeners, database, identity/policy integration, limits, optional adapters, and retention explicitly. Read secrets from protected files/environment references or deployment secret providers, not checked-in examples. Redact effective configuration diagnostics. Reject unsafe combinations such as public listeners with development authentication.
+
+Expose liveness and readiness separately. Liveness reports whether the process can respond; readiness reports whether required storage/schema/configuration permits serving its declared capability. Optional broker failure can degrade publication without stopping valid historical reads. Report that condition through protected diagnostics, not false global readiness or a false System status.
+
+Use structured logs and bounded-cardinality metrics for request latency/errors, database work, validation failures, queue depth/age, dropped/disconnected consumers, and command attempts. Avoid resource IDs or arbitrary query strings as metric labels. Supply a simple way to inspect them; an external dashboard or telemetry backend is optional.
+
+Graceful shutdown stops new work, drains bounded in-flight operations, and leaves undelivered/uncertain work in a recoverable durable state. A restarted worker resumes only work whose retry semantics permit it. Pin build dependencies and container images, document licenses, and run dependency/security checks as normal implementation maintenance.
+
+**Verification.** Follow the README from a clean supported environment with only documented prerequisites. Build and run, load a small synthetic dataset, exercise discovery/read/write/stream/tasking examples, restart, migrate, and restore. Test malformed config, missing secrets, unavailable database, broker outage, and clean shutdown without hidden data deletion.
+
+## 5. Integration Points
+
+| Consumer or dependency | Contract and boundary | Integration proof |
+|---|---|---|
+| Glaux Web App and Mobile | Same discoverable CSAPI HTTP interfaces as external clients; optional documented SSE extension | Root-to-observation/status workflow with ordinary credentials, including interrupted connection |
+| Glaux Publisher | Standard description/stream/observation writes; configured source permissions; optional retry keys | Register source resources, publish schema-bound values, retry without duplicate effect when a key is supplied |
+| Glaux Simulator | Standard APIs and isolated synthetic data; no privileged direct database mutation | Deterministic fixtures and command adapter tests work without the Simulator product |
+| External CSAPI clients | Published routes, links, filters, schemas, formats, errors, and accurate declarations | OS4CSAPI and an independent Python client exercise the same known dataset |
+| Identity and policy services | Verified access-token/caller contract and explicit access-decision adapter | Allowed/denied/expired/unavailable cases, including disconnected operation |
+| Device/tasking adapters | Typed command, attempt, schema, deadline, cancellation, and report interfaces (§4.9) | Fake adapter plus documented adapter contract; real device acceptance remains adapter-specific |
+| MQTT broker | Optional outbound experimental binding and broker access policy (§4.8) | Reconnection, duplicate delivery, topic authorization, and message/schema checks |
+| Configured peers/import tools | Restricted Glaux export/import format, source mapping, replay/conflict rules (§4.11) | Snapshot plus replay and explicit conflicts without bypassing the write boundary |
+| PostgreSQL/PostGIS | Versioned schema, transactions, migrations, backup/restore | Real-database integration and continuity tests |
+
+No Glaux application receives a hidden bypass around the CSAPI contract for an operation the standard covers. A later specialized integration must state what the standard interface cannot supply and document the additional contract here before relying on it. Deployments select and operate peer networks, brokers, identity providers, and devices; the reference server supplies tested boundaries.
+
+## 6. Data and API Contracts
+
+### 6.1 Logical data model and storage ownership
+
+These are proposed logical table groups, not claims that migration SQL has been written. Final columns and indexes will be verified during implementation; the identities and invariants below are design commitments proposed by this draft.
+
+| Logical group | Key data and relationships | Integrity and update rules |
+|---|---|---|
+| Resource identity | Local ID, family, UID where required, lifecycle, current revision | Unique local identity; unique required UID; IDs are not reused |
+| Descriptions and revisions | Family-specific validated content, valid time, source artifact, commit/receipt metadata | Changes create accountable revisions; one selected current representation per defined context |
+| Associations | Typed System/Deployment hierarchy, procedure, sampling, feature, and membership links | Foreign keys for local targets; checked external references; cardinality/cycle rules |
+| Collections | Metadata, resource type, explicit membership or named server-managed query | Same member identity across routes; authorized membership and counts |
+| Stream descriptions | Producing/receiving System, output/input binding, schema references, supported formats | Schema capabilities determine value validation; clients cannot invent supported codecs |
+| Schema contracts | Immutable source bytes/digest, typed component tree, encoding, version | Values bind a specific contract; no mutation of the meaning of stored values |
+| Observations | ID, stream/contract, phenomenon/result times, feature context, typed result, quality/source | Validated values; correction/replacement retains needed internal evidence |
+| System Events | ID, one parent System, occurrence time, type, content/source | Distinct from resource changes and transport notifications |
+| Commands and feasibility | ID, ControlStream/contract, caller, submitted intent, processing mode | Accepted intent/attempts and public resource revisions are distinguishable |
+| Status and results | Parent command/feasibility, local item ID, report/execution times, status or result content | Public CRUD/PATCH with authorized corrections; preserved internal revision/audit evidence |
+| Source artifacts | Digest, media type, exact bounded bytes, source metadata | No assumption that JSONB equals original bytes; access and retention follow content |
+| Audit and provenance | Actor/source, operation, target/revision, times, outcome, artifact/transform references | Written with meaningful mutations; no raw secrets or unbounded generic graph requirement |
+| Outbox, publication log, work | Stable event/attempt IDs, committed payload/revision, replay position, delivery state | Commit before send; idempotent handoff; no automatic duplicate physical action |
+| Retry/exchange records and tombstones | Scoped identity/digest, saved outcome, source/revision, deletion marker | Duplicate versus conflict distinction; bounded retention and explicit recovery expiry |
+
+Do not use a single untyped resource table as the entire model. Shared identity/revision storage may be common, while family-specific tables and Rust types enforce different relationships and mutation rules. Public extension fields belong only in allowed/advertised representations; internal policy, audit, and retry records are not new CSAPI families.
+
+### 6.2 Endpoint and representation baseline
+
+Paths below are relative to the configured API root. They summarize the full intended contract, not a declaration that routes are already implemented. Implement applicable GET/list and transaction operations from the relevant classes; do not mechanically enable every HTTP method on every row. [IDR-010][R010], [IDR-012][R012]
+
+| Surface | Canonical paths and related operations | Representation |
+|---|---|---|
+| Service documents | `/`, `/conformance`, linked API definition/documentation | JSON service documents; OpenAPI JSON and documentation |
+| Collections | `/collections`, `/collections/{id}`, `/collections/{id}/items`, `/collections/{id}/items/{resourceId}` | Family-appropriate collection/item encoding |
+| Systems | `/systems`, `/systems/{id}`; `/systems/{id}/subsystems` | GeoJSON and SensorML JSON |
+| Deployments | `/deployments`, `/deployments/{id}`; `/deployments/{id}/subdeployments`; System deployment association where provided | GeoJSON and SensorML JSON |
+| Procedures | `/procedures`, `/procedures/{id}` | GeoJSON without position geometry; SensorML JSON |
+| Sampling Features | `/samplingFeatures`, `/samplingFeatures/{id}`; `/systems/{id}/samplingFeatures` | GeoJSON |
+| Property Definitions | `/properties`, `/properties/{id}` | SensorML JSON; not a GeoJSON Feature |
+| DataStreams | `/datastreams`, `/datastreams/{id}`; applicable System/Deployment lists; schema and sampling-feature/feature-of-interest associations | Ordinary JSON; schema wrappers in JSON |
+| Observations | `/observations`, `/observations/{id}`; `/datastreams/{id}/observations` and transaction-qualified nested items | Ordinary JSON or supported SWE JSON/Text/Binary |
+| ControlStreams | `/controlstreams`, `/controlstreams/{id}`; applicable System/Deployment lists; schema and sampling-feature/feature-of-interest associations | Ordinary JSON; schema wrappers in JSON |
+| Commands | `/commands`, `/commands/{id}`; `/controlstreams/{id}/commands`; `/commands/{id}/status` and `/result`, with subordinate items | Ordinary JSON or applicable SWE command encoding; JSON status/results |
+| Feasibility | `/feasibility`, `/feasibility/{id}`; `/controlstreams/{id}/feasibility`; `/feasibility/{id}/status` and `/result`, with subordinate items | Command-shaped parameters and schema-defined feasibility result |
+| System Events | `/systemEvents`, `/systemEvents/{id}`; `/systems/{id}/events`, with transaction-qualified nested items | Published JSON schema with the documented mapping (§13) |
+
+Subsystems and subdeployments have canonical System/Deployment identities. Root lists use the standard top-level/default-recursion behavior; nested lists default to direct children. Required recursive associations also aggregate applicable descendants' streams/features, not only the immediate parent's own records. Do not invent nested item routes merely by appending an ID where the standard instead supplies a canonical link.
+
+Media types are `application/geo+json`, `application/sml+json`, `application/json`, `application/swe+json`, `application/swe+text`, and `application/swe+binary` for their applicable resource/operation combinations. Text is not silently renamed CSV. The SWE vendor-prefixed conflict and proposed aliases are in §13.
+
+`Accept` negotiates the returned representation; request `Content-Type` identifies the submitted body. Honor quality values, exclusions, parameters, and wildcards. Missing `Accept` uses a documented family default: GeoJSON for the applicable Part 1 features, SensorML JSON for Properties, and ordinary JSON for Part 2 where supported. A parent stream's actual formats constrain value responses. Use appropriate `Vary` headers and representation-specific ETags. Return `406` or `415` when negotiation/request format is unsupported; do not return a different explicit format silently.
+
+The schema routes are `/datastreams/{id}/schema?obsFormat=...` and `/controlstreams/{id}/schema?cmdFormat=...`; media-type query values must be URL encoded. The selected payload format and the JSON schema-wrapper response are different concepts. A bounded optional `f` selector may be supported for client interoperability as a documented Glaux extension with a closed per-route mapping; it is not a new conformance requirement. Its precedence over `Accept`, supported aliases, and invalid-value response must be covered by contract tests.
+
+### 6.3 Query rules and limits
+
+| Query family | Required treatment |
+|---|---|
+| `limit` and next links | Publish minimum/default/maximum. Propose `1/10/10000` from IDR-011, clamp a valid above-maximum integer, reject malformed/below-minimum values, and return no more than the effective limit |
+| `id`, `q` | Implement the specified local-ID/UID/list/prefix and keyword grammar on applicable routes. Do not invent a separate standard `uid` parameter. Preserve source identifiers |
+| `bbox`, `geom`, `datetime` | Preserve the spatial/temporal and geometry-less-feature rules; use the correct family-specific temporal field |
+| `recursive`, `parent`, `system`, `procedure`, `foi` | Apply where the resource class requires them; preserve direct-parent versus descendant and relationship semantics |
+| `observedProperty`, `controlledProperty`, `baseProperty`, `objectType` | Use explicit property/object-type identity and required derivation/association traversal, not label/unit similarity; include the Property Definition `objectType` filter required by Part 1 requirement 58 |
+| `phenomenonTime`, `resultTime` | Observation values or stream extents according to endpoint; special `resultTime=latest` only where specified |
+| `issueTime`, `executionTime`, `statusCode`, `sender` | Command/ControlStream and applicable feasibility/status predicates; `currentStatus` is not the query parameter name |
+| `eventType` and status/event `datetime` | Event type and relevant occurrence/report time, with published ambiguities documented in §13 |
+
+Keep a typed parameter definition per applicable route with its syntax, default, predicate, and source requirement. Public examples and OpenAPI must use that definition. Bound list sizes, hierarchy traversal, WKT/parser work, total response bytes, database execution time, and concurrent work independently of `limit`. A query that exceeds a documented resource budget fails explicitly; it does not silently drop predicates or truncate a record. A smaller valid page can carry a continuation.
+
+Use a documented Unicode case-insensitive matching rule for `q` that satisfies the published requirement; pin its library/data behavior and test non-ASCII text. The exact normalization implementation is not yet verified. No arbitrary relevance ranking, client sort contract, or synonym ontology is implied.
+
+### 6.4 Success, error, and command response contracts
+
+Use RFC 9457 Problem Details (`application/problem+json`) for ordinary HTTP errors where compatible with the applicable standard. Give problems stable documented type identifiers, safe detail, and a request correlation value. HTTP failures remain separate from an otherwise successful command-status response reporting domain rejection/failure. [IDR-013][R013]
+
+| Condition | Proposed response behavior |
+|---|---|
+| Resource creation committed | `201` and `Location` identifying the created canonical resource; body per operation contract |
+| Replace/patch/delete completed | `200` with the specified representation or `204` without a body, according to the documented operation |
+| Malformed request/query or prescribed parent-schema failure | `400`; no mutation |
+| Missing/invalid credentials; authenticated denial | `401` with applicable challenge; `403`, or consistent non-disclosure `404` where policy requires |
+| Absent resource; method unsupported on existing route | `404`; `405` with `Allow` respectively |
+| Unsatisfied response media preference; unsupported request media/coding | `406`; `415` respectively |
+| Conflicting identity, state, or reused retry key | `409`, without protected competing values |
+| Failed supplied HTTP precondition | `412`; missing `If-Match` is not an automatic error in this baseline |
+| Request too large; semantically invalid body not governed by a specific `400`/`409` | `413`; `422` only for the latter bounded case |
+| Rate/capacity limit; temporary dependency failure | `429` or `503` as applicable, with safe retry guidance |
+| Unexpected server/serialization failure | `500`; no stack trace, SQL, secrets, or falsely successful response |
+
+**Command/feasibility POST interpretation.** Propose the IDR-037 combination: `201` plus `Location` for the new Command/Feasibility, a status-report body, and `Content-Location` identifying that status report. An asynchronous stream initially returns its recorded `PENDING` report; a synchronous stream returns its single terminal report. This reconciles creation and status-report behavior, but the exact combination is a documented interpretation, not an unambiguous quoted standard rule. Test it with independent clients before finalizing the guide.
+
+For synchronous work, retain a private durable admission/attempt record before dispatch, then publish the command/feasibility and its one terminal status atomically when the result is known. Do not expose temporary `PENDING` history as if the synchronous channel were asynchronous. A timeout/disconnect leaves recoverable private work and explicit uncertainty; a supplied retry key can rejoin/retrieve the existing attempt. `202` is not returned merely because a ControlStream is asynchronous. Do not introduce a generic jobs API to avoid the standard's status model.
+
+### 6.5 Versioning and compatibility
+
+Version server software independently of standards versions, schema-contract revisions, API documentation, database migrations, and the Part 3 experiment. Keep ordinary canonical URLs stable. Track breaking changes to request syntax, default behavior, query meaning, representations, and errors as well as Rust types. [IDR-010A][R010a]
+
+Before a stable contract changes incompatibly, document the affected behavior, reason, migration path, and any required overlap period. Do not adopt the research's proposed calendar deprecation duration as a new project obligation without an actual release-support decision. Preserve supported older client behavior through regression tests. Unknown draft aliases are not accepted automatically, particularly for writes or tasking.
+
+## 7. Conformance and Verification Strategy
+
+### 7.1 Full direct class coverage
+
+Each suffix below is appended to the appropriate Part 1 or Part 2 `/conf/` base in §1.2. Source requirement ranges are from [IDR-006][R006], [IDR-007][R007], and [IDR-008][R008]; the published text remains authoritative. This table connects the entire target to implementation and proof without duplicating the standards' requirement text.
+
+| Part | Class suffix | Direct requirements | Implementation and primary proof |
+|---|---|---|---|
+| 1 | `api-common` | 1–3 | §§4.1–4.2, §6; identity, documents, inherited HTTP/time behavior |
+| 1 | `system` | 4–8 | §4.2; System routes, links, collections, representations |
+| 1 | `subsystem` | 9–13 | §4.2, §6.2; hierarchy, recursion, descendant associations |
+| 1 | `deployment` | 14–18 | §4.2; Deployment identity, context, and System relationships |
+| 1 | `subdeployment` | 19–23 | §4.2, §6.2; nested/recursive deployment behavior |
+| 1 | `procedure` | 24–28 | §§4.2–4.3; procedure identity and non-positioned descriptions |
+| 1 | `sf` | 29–33 | §§4.2, 4.5; Sampling Features, parent links, dynamic context |
+| 1 | `property` | 34–37 | §§4.2–4.3; Property Definitions and semantic relationships |
+| 1 | `advanced-filtering` | 38–59 | §4.4, §6.3; exact result-set tests across applicable routes |
+| 1 | `create-replace-delete` | 60–71 | §4.6; transactions, hierarchy deletion, collection membership |
+| 1 | `update` | 72–76 | §4.6; patch result validation, atomicity, and restrictions |
+| 1 | `geojson` | 77–88 | §4.3, §6.2; applicable GeoJSON reads/writes and mappings |
+| 1 | `sensorml` | 89–103 | §4.3, §6.2; applicable SensorML reads/writes and inherited rules |
+| 2 | `api-common` | 1–2 | §4.1, §6; inherited feature-to-resource adaptations |
+| 2 | `datastream` | 3–16 | §§4.3–4.4; DataStreams, Observations, schemas, and associations |
+| 2 | `controlstream` | 17–34 | §4.9; ControlStreams, Commands, status/results, schemas |
+| 2 | `feasibility` | 35–39 | §4.9; parameters, execution modes, status/result and discovery |
+| 2 | `system-event` | 40–44 | §4.5; event identity, System association, and representations |
+| 2 | `advanced-filtering` | 45–62 | §4.4, §6.3; dynamic/command/event filters plus Part 1 dependency |
+| 2 | `create-replace-delete` | 63–78 | §§4.6, 4.9; all triggered resource and subordinate operations |
+| 2 | `update` | 79–92 | §§4.6, 4.9; all triggered patch operations and schema protection |
+| 2 | `json` | 93–106 | §4.3, §6.2; ordinary JSON and SWE component/schema bindings |
+| 2 | `swecommon-json` | 107–114 | §4.3; observation/command schemas and JSON value encoding |
+| 2 | `swecommon-text` | 115–122 | §4.3; observation/command schemas and Text value encoding |
+| 2 | `swecommon-binary` | 123–130 | §4.3; observation/command schemas and Binary value encoding |
+
+The 25 direct classes contain 233 requirements and five recommendations; the accepted research identifies 240 direct abstract tests. These counts exclude inherited obligations. There are no separate approved `observation`, `command`, or `system-history` classes to add. Applicable inherited classes in §1.2 must also be tested; a direct class is not complete while a prerequisite is unimplemented. Recommendations remain recommendations unless explicitly selected as Glaux behavior.
+
+### 7.2 Requirement-to-test connections
+
+Keep the class/capability mapping here and add exact requirement/test identifiers beside executable cases in the server repository. A compact test inventory may be generated from those annotations: source version and identifier, implementation module/operation, test case, result, and any interpretation from §13. Do not maintain a second prose requirements specification containing copied standard text. [IDR-050–052][R050]
+
+Implement the published abstract tests as independent HTTP checks where possible. Extend them with negative and semantic tests when an abstract test is weak, ambiguous, or copied incorrectly. Preserve both the source procedure and the documented correction; never silently turn a server defect into a passed standard test. Distinguish unimplemented, not run, failed, harness error, and genuinely inapplicable cases. A skip or warning is not conformance evidence.
+
+The conformance runner must not import server selection logic, serializers, or fixture-derived expected responses as its sole oracle. It may use ordinary HTTP/format libraries and pinned schemas, but expected resource relationships, query answers, and value meaning must be independently authored or calculated.
+
+### 7.3 Release declarations and evidence
+
+Declare a class only when the enabled implementation satisfies all its applicable requirements and prerequisites with adequate tests. Keep the declared class list, OpenAPI, actual routes, representations, and runtime configuration consistent. A release may accurately be a partial implementation while the project still targets the complete set.
+
+Normal CI artifacts should identify the server commit/build, configuration used, database/migration version, standards/schema pins, fixture version, executed cases and outcomes, and known deviations. Use existing test output formats plus a small summary; no dedicated evidence platform is required. Do not label local conformance tests as OGC certification or organizational accreditation.
+
+Experimental Part 3, SSE, retry headers, synchronization exchange, and other Glaux extensions have separate tests and documentation. Passing those tests does not add an approved CSAPI conformance URI.
+
+## 8. Testing Strategy
+
+### 8.1 Test layers and fixtures
+
+| Layer | What it establishes | Tooling approach |
+|---|---|---|
+| Domain/codec unit tests | Resource invariants, time/units, status rules, exact encoding behavior, invalid input | Rust unit/property tests with deterministic clocks and inputs |
+| Database integration | Constraints, relationships, PostGIS queries, concurrency, transactions, migrations, restore | Real pinned PostgreSQL/PostGIS; isolated test databases |
+| HTTP contract/conformance | Routes, discovery, queries, representations, errors, writes, standards tests | Independent HTTP runner against a running server |
+| External-client interoperability | Actual client navigation, parsing, query/use workflows and meaning | Pinned OS4CSAPI TypeScript client plus an independently implemented Python client such as supported OWSLib CSAPI functionality |
+| Recovery/security/performance | Access isolation, resource limits, interruption, replay, uncertain effects, representative cost | Fault injection, controlled synthetic workloads, documented measurements |
+
+Use a small synthetic dataset rich enough to distinguish behaviors: two permitted/denied source groups, a parent and child System, a Procedure, nested Deployments, multiple Sampling Features, property derivation, two observation streams with out-of-order/tied times, a status stream, and synchronous/asynchronous ControlStreams. Include positive and negative SensorML/SWE documents and independently specified expected values. Keep fixtures source-attributed and versioned; do not depend on live operational information or external servers for routine tests. [IDR-053][R053]
+
+Code formatting, linting, compilation, ordinary `cargo test`, dependency checks, and deterministic fixture validation run in CI. Add suite-management tools when needed; a large named test taxonomy is not a prerequisite. Test instructions must distinguish routine offline tests from optional external-client/broker runs and disclose what was not run.
+
+### 8.2 Representative end-to-end scenarios
+
+1. **Register and discover.** Create a Procedure, System, subsystem, Deployment, and Sampling Feature through the public interface. Start a separate client at the root, follow links, and recover the same identities and associations in each supported representation.
+2. **Publish and retrieve.** Register a schema and DataStream; submit distinguishable observations; retrieve exact expected values with feature/time/property filters and paging. Send an invalid value and prove that neither data nor publication changed.
+3. **Status under delay.** Publish current and delayed older status values; query history and current evidence. Disconnect the source and verify that last-known state remains timestamped and does not become false current availability.
+4. **Live delivery and recovery.** Subscribe, publish changes, interrupt delivery, reconnect, and recover without losing committed changes. Exercise duplicate messages, deletion events, expired history, and revoked access. Repeat through the optional MQTT binding.
+5. **Feasibility and command execution.** Run an infeasible analysis, a feasible analysis, an authorized command, and a denied command. Verify distinct outcomes, standard statuses/results, required time fields, synchronous/asynchronous behavior, and safe interruption during dispatch.
+6. **Synchronization and restore.** Export state and a replay position, add concurrent changes, import/catch up, and inject a conflicting revision. Restore a backup and verify resource meaning, identity, deletion handling, and held command work.
+
+These scenarios connect the sections of the guide; they do not replace the complete class tests. They will also be used in drafting iteration 3 to check the design itself before Roadmap development.
+
+### 8.3 Performance and regression expectations
+
+Measure ingestion throughput/latency, concurrent filtered reads, latest-value queries, hierarchy/spatial searches, codec costs, bounded streaming, and replay recovery on a stated dataset and machine. Record correctness alongside latency, memory, and queue growth. Do not adopt invented production service levels or claim scale from a microbenchmark. [IDR-054][R054]
+
+Include regressions from independent-client research: missing discovery links, different identities across formats, wrong envelopes, ignored query parameters, defective nested paths, incomplete feasibility descriptions, schema/value mismatch, stale latest selection, and overstated conformance. Pin client versions and record their supported subsets. A client workaround is evidence of interoperability behavior, not permission to change the standard contract. [IDR-014E–014G][R014e], [IDR-056][R056]
+
+## 9. Risks and Unresolved Decisions
+
+### 9.1 Principal risks and mitigations
+
+| Risk | Concrete mitigation |
+|---|---|
+| Published prose, schema, examples, and tests disagree | Keep the specific interpretation in §13, retain both source fixtures, and qualify affected claims until resolved |
+| A rich SensorML/SWE model passes simple examples but fails real component combinations | Test recursive and composite schemas and all required codecs independently before advertising their classes |
+| Data loses precision or meaning during storage/conversion | Preserve source/schema binding; test units, time precision, field order, nil/optional values, and cross-format equivalence |
+| Resource/query authorization leaks through links, schemas, counts, latest selection, or events | Apply one access model before selection and test indirect disclosures and policy changes |
+| Database and transport/device effects diverge under failure | Transactional outbox/work records, ordered replay, stable identities, and explicit uncertain-command reconciliation |
+| Synchronization overwrites correct local state or resurrects deletions | Source-scoped revisions, receipt deduplication, retained tombstones, scoped snapshot reconciliation, and explicit conflicts |
+| Full-scope delivery becomes a collection of permanently deferred features | Keep the 25-class map visible; Roadmap tasks must cover outstanding behavior, including Text/Binary, writes, and tasking |
+| Research recommendations grow into unnecessary infrastructure | Adopt only mechanisms justified in this guide; keep the ordinary reference deployment small |
+| Dependency or performance assumptions prove wrong | Compile the actual pinned dependency set and measure representative workloads before claiming support or scale |
+
+### 9.2 Specific questions to resolve in the next drafting pass
+
+These are design work items, not requests for the project lead to invent technical answers or approve a new research program. No additional scope choice is required to have produced this first draft.
+
+| Open item | Current proposed position | What remains to settle |
+|---|---|---|
+| Inherited transaction draft revision | Preserve the IDR-008 pin and published CSAPI dependency identities | Compare the later research pin, whose source now refers to Features Part 4/Common Part 5; select one explicit behavior baseline and resolve affected operations |
+| Cross-format PUT/PATCH and omitted schema selector | JSON Merge Patch on a defined writable projection; no silent loss of richer content | Specify retained/removed fields, protected schema mutations, and the `cmdFormat`-omitted response per applicable requirement; verify with full operation/media fixtures |
+| Command POST and synchronous timeout | Status-report body with `201`, `Location`, and `Content-Location`; private durable synchronous admission | Confirm exact client behavior and how a timed-out attempt is retrieved/reconciled without violating the single-terminal-status contract |
+| Source contradictions in §13 | Explicit mappings rather than silent corrections | Recheck authoritative updates and validate the proposed mappings; do not mark a disputed requirement satisfied solely because the mapping is convenient |
+| Dependency/schema/time implementation | Axum/Tokio/SQLx and offline schema validation; exact temporal comparison | Select buildable versions/features and demonstrate recursive schema handling and timestamp precision with focused code tests during implementation |
+| Optional transport details | SSE plus outbound experimental MQTT 5, separate from approved conformance | Finalize MQTT client/broker test choice, path/format token encoding, authentication enforcement, exact SSE filter/cursor contract, and AsyncAPI examples |
+| Recovery/exchange details and resource limits | Administrative snapshot/import and ordered catch-up; bounded queues and explicit expiry | Define the exchange JSON shape, source revision ordering, recipient/scope reconciliation, conflict-resolution commands, and measured safe example limits/retention |
+
+Do not block guide drafting on a production workload, operational identity provider, sensor procurement, or federation agreement. Those are deployment-specific. Implementation prototypes should answer bounded library/encoding questions, not become new project deliverables in their own right.
+
+## 10. Quality Gates and Exit Criteria
+
+These are checks on implementation and release claims, not additional drafting approval stages.
+
+- **For an implemented capability:** required operations and representations exist; relevant standards and negative tests run; access/error behavior is covered; API documentation matches the implementation; any interpretation is explicit.
+- **For a partial reference release:** build/run/test instructions and examples work on documented prerequisites; included capabilities pass their tests; disabled/deferred behavior is listed; no unsupported conformance class is advertised.
+- **For full server completion:** all 25 direct classes and applicable prerequisites are implemented and verified; all approved goal capabilities have evidence; experimental Part 3 behavior is implemented and accurately labeled; independent client workflows, recovery/security tests, and developer examples pass; no unresolved issue invalidates the stated conformance or safety boundaries.
+- **For guide finalization before the Roadmap:** architecture, contracts, verification, and scope agree; consequential open design questions have a defensible disposition; remaining implementation-time choices are bounded and do not conceal missing capability design. This does not assert that the software has been completed.
+
+No numeric performance target, production accreditation, or unrelated Glaux product completion is added to those conditions.
+
+## 11. Change Control
+
+This guide begins at v0.1 Draft. The next two drafting iterations update this same document with a revision summary. Push completed drafting changes and summarize the important choices/questions; wait for the project lead's `proceed` before the next iteration. Do not start the Roadmap until the guide is baselined under the existing planning guidance.
+
+Record material technical changes here with their reason and affected behavior/tests. A change that expands the approved goal must first be addressed in the Goal and Definition; an internal implementation improvement need not reopen mission scope. Update standards interpretations when authoritative corrections arrive and test compatibility before changing a published contract.
+
+Keep requirement-to-test references near the code and this guide's capability/class tables current. Research remains supporting evidence. A report's acceptance, recommendation number, or confidence statement does not override the approved goal or prove a code path correct.
+
+## 12. References and Research Use
+
+### 12.1 Controlling planning documents and practical examples
+
+- [Approved Goal and Definition](glaux-server-goal-and-definition.md)
+- [Initial Planning Guidance](../../Governance/initial-planning-guidance.md)
+- [Implementation Guide template and drafting instructions](../../Governance/implementation-guide-template.md)
+- [Final initial-design research synthesis][RSynthesis] and its linked topic reports
+- [OS4CSAPI main implementation guide][ExampleMain] and [parser-completion guide][ExampleParser]
+
+The OS4CSAPI examples inform the use of concrete component boundaries, input/output contracts, implementation notes, and representative workflows. Their client architecture, historical API examples, estimates, and testing restrictions are not imported as server requirements. In particular, this server must be tested with real HTTP/database behavior and semantic expected results.
+
+### 12.2 How the research informed this draft
+
+| Research area | Applied here |
+|---|---|
+| [001–005: framework, responsibilities, standards, terminology, boundaries][R001] | §1 and the approved goal; no unrelated NATO service family or enterprise infrastructure added |
+| [006–008: requirement and class baseline][R008] | Exact all-class target, inherited scope, and §7 coverage |
+| [009–014: discovery, HTTP, queries, representations, API descriptions][R010] | §§4.1–4.4 and §6, including source-conflict handling |
+| [014A–014H: implementations, clients, and Part 3][R014h] | Interoperability regressions and the bounded experimental design; peers are not normative authority |
+| [015–024: models, identity, time, status, SensorML/SWE, semantics][R015] | Typed shared resources, precise time/schema meaning, validation, and preservation |
+| [025–030: persistence and lifecycle][R025] | PostgreSQL/PostGIS, transactions, measured partitioning, deletion/retention distinctions |
+| [031–038: writes, Publisher/Simulator, dynamic data, streaming, commands][R031] | One write boundary, ordinary ecosystem APIs, durable publication, full tasking/feasibility |
+| [039–043, including 039A: security and interrupted operation][R039] | Server-enforced access, accountability, honest freshness, replay and conflict handling |
+| [044–049: Rust, architecture, deployment, configuration, operations][R044] | Small workspace, one server, explicit dependencies, runnable reference, migration/restore |
+| [050–056: verification and interoperability][R050] | Standards-to-test connections, real database/HTTP tests, independent clients, bounded workload measurements |
+
+Consequential source checks during this drafting pass included the published CSAPI resource/encoding clauses, the exact conformance identifiers, Features transaction draft pins and conditional-request permissions, SWE optional/array behavior, command/feasibility semantics, and the current pinned Part 3 source. This is targeted checking of findings used in the design, not a claim that every research paragraph has been re-audited.
+
+The draft deliberately does not adopt every proposed research mechanism: no compulsory private Publisher envelope, simulator management API, eight-package skeleton, graph/evidence database, universal policy or trust engine, mandatory conditional-write header, or separate requirements/decision-document set. The capability remains required where the approved goal requires it; these particular mechanisms do not.
+
+## 13. Appendix: Standards Interpretations and Project Choices
+
+This table records known consequential seams in one place. An interpretation is not an amendment to an OGC standard. It needs focused tests, transparent release documentation, and reconsideration when authoritative corrections become available. A materially unresolved contradiction can prevent an unqualified affected conformance claim.
+
+| Source issue | Proposed implementation treatment | Source and remaining qualification |
+|---|---|---|
+| CSAPI transaction dependency cites Features Part 4, while later research uses a renamed/newer draft | Keep the earlier explicit pin and original CSAPI dependency identifiers until the draft delta is reconciled; do not substitute Common Part 5 URIs silently | [008][R008], [031][R031], [earlier transaction source][F4], [later source][F4Later] |
+| Mandatory `If-Match` in research 029/031 is a project choice | Honor supplied conditions; permit unconditional standard writes with the lost-update tradeoff documented | [029][R029], [031][R031]; both reviewed draft revisions permit a missing-header success path |
+| Singular `/controlstream`, `/command`, isolated `/controls/{id}`, and inconsistent System Event paths | Use `/controlstreams`, `/commands`, and `/systems/{id}/events` consistently; no automatic unsafe-method aliases | [010][R010]; competing published/ATS/artifact templates remain documented |
+| Nested feasibility replace/delete template omits the item ID; tagged OpenAPI omits feasibility | Implement explicit canonical `/feasibility/{id}` and qualified nested item operations with the ID; describe and test feasibility in Glaux's API contract | [007][R007], [010][R010], [037][R037] |
+| Exact command/feasibility POST header/body combination is not stated consistently | Proposed `201` + canonical `Location` + status body + status `Content-Location`, with synchronous/asynchronous handling in §6.4 | [036][R036], [037][R037]; independent-client verification remains open |
+| SensorML/CSAPI Property and System Event media/schema differences | Properties use the CSAPI SensorML representation; System Event fields map internal event type/name/time to published JSON `definition`/`label`/`time`. Do not silently accept ambiguous mixed shapes | [012][R012], [020][R020], [021][R021]; settle exact event item media contract against the published JSON class |
+| System Event type examples contain `x-OGC/TBD` identifiers | Preserve submitted valid identifiers; use explicitly Glaux/example vocabulary where a stable demonstration definition is needed, without claiming it is an approved OGC term | [020][R020]; no invented definitive OGC vocabulary |
+| SWE media types differ between CSAPI and SWE Common | Use CSAPI `application/swe+json`, `+text`, `+binary`; support vendor-prefixed equivalents only as declared aliases over the same codecs, returning the negotiated token | [012][R012], [S2], [SWE]; aliases do not erase the source conflict |
+| `cmdFormat` query name versus `commandFormat` response property | Use `cmdFormat` on the schema endpoint and the specified response wrapper member. Correct the research shorthand in implementation, not the standard | [012][R012], [022][R022], Part 2 requirement 25 |
+| SWE array-flag requirements conflict with model/schema/examples | Use `recordsAsArrays`/`vectorsAsArrays` with true meaning arrays, recording the contradictory requirement text and both fixture shapes | [022][R022], SWE §8.7.1 and §10.2.3; needs explicit conformance interpretation |
+| Optional SWE fields and nil sentinels can be confused | Permit absent or null optional object fields and required positional null placeholders as specified; do not treat every JSON null as a declared nil-reason value | [022][R022], SWE JSON encoding rules |
+| Open resource `validTime` bounds are less clear than query bounds | Accept `..` in query intervals; do not emit it as a core resource bound. Use finite bounds or the published ongoing-period `now` shape only where valid, without treating `now` as infinity | [018][R018]; a genuinely unrepresentable bound remains an explicit limitation/interpretation |
+| System Event/status `datetime` inheritance lacks a clear family field mapping | Use event occurrence time and status `reportTime`, respectively, with explicit tests and API documentation | [011][R011], [018][R018], [020][R020] |
+| Observed/controlled-property conceptual URI lists differ from JSON object summaries | Store property identities explicitly; generate the selected published JSON object form and document derivation of summaries | [024][R024]; do not infer identities from labels or units |
+| SensorML DataInterface, qualifiers, and input/output binding gaps | Preserve valid source constructs; implement only mappings supported by the chosen schema/interpretation and surface unsupported executable bindings explicitly | [021][R021], [024][R024]; do not silently discard richer source meaning |
+| Part 3 MQTT/discovery incomplete; `parentId` conflicts with CloudEvents attribute spelling | Publish a versioned Glaux MQTT/AsyncAPI experiment with explicit topics/discovery; use `parentid` as a listed deviation. SSE stays separate | [014H][R014h], [035][R035], [pinned Part 3 source][P3] |
+
+All entries above are proposed dispositions in a first draft. Finishing the guide requires resolving their implementation consequences, not necessarily waiting for every upstream editorial issue to close. Where the available evidence cannot support an unqualified claim, retain the qualification rather than presenting a guess as settled fact.
+
+[R001]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-001-stanag-4789-aep-4789-server-obligation-baseline-report.md
+[R006]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-006-csapi-part-1-requirement-baseline-report.md
+[R007]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-007-csapi-part-2-requirement-baseline-report.md
+[R008]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-008-conformance-class-and-requirement-mapping-report.md
+[R009]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-009-landing-page-api-definition-and-conformance-declaration-behavior-report.md
+[R010]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-010-collections-resources-links-and-navigation-behavior-report.md
+[R010a]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-010a-api-versioning-backward-compatibility-and-deprecation-strategy-report.md
+[R011]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md
+[R012]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-012-content-negotiation-media-types-and-encoding-selection-report.md
+[R013]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-013-error-model-http-status-codes-and-failure-semantics-report.md
+[R014]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-014-openapi-description-and-api-documentation-strategy-report.md
+[R014e]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-014e-os4csapi-client-smoke-test-findings-study-report.md
+[R014h]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-014h-draft-csapi-part-3-publish-subscribe-and-implementation-study-report.md
+[R015]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-015-canonical-glaux-server-resource-model-report.md
+[R018]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-018-temporal-validity-and-freshness-model-report.md
+[R020]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-020-status-availability-and-system-event-model-report.md
+[R021]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-021-sensorml-representation-strategy-report.md
+[R022]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-022-swe-common-data-component-strategy-report.md
+[R024]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-024-units-observed-properties-and-semantic-binding-strategy-report.md
+[R025]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-025-database-and-persistence-architecture-options-report.md
+[R027]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-027-time-series-observation-storage-strategy-report.md
+[R029]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-029-transaction-consistency-idempotency-and-concurrency-strategy-report.md
+[R031]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-031-server-write-and-ingestion-model-report.md
+[R034]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-034-datastream-observation-and-status-update-semantics-report.md
+[R035]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-035-streaming-and-event-publication-strategy-report.md
+[R036]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-036-control-stream-and-command-lifecycle-model-report.md
+[R037]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-037-feasibility-and-asynchronous-tasking-strategy-report.md
+[R039]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-039-authentication-authorization-and-api-security-threat-model-report.md
+[R039a]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-039a-zero-trust-architecture-alignment-and-enforcement-model-report.md
+[R040]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-040-policy-releasability-and-cross-boundary-access-constraints-report.md
+[R042]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-042-ddil-informed-server-semantics-report.md
+[R044]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-044-rust-implementation-language-and-framework-strategy-report.md
+[R045]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-045-service-architecture-and-modularization-strategy-report.md
+[R046]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-046-reference-deployment-strategy-report.md
+[R049]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-049-migration-upgrade-backup-and-restore-strategy-report.md
+[R050]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-050-conformance-harness-strategy-report.md
+[R053]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-053-test-data-fixtures-golden-files-and-scenario-corpus-strategy-report.md
+[R054]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-054-performance-load-stress-and-streaming-test-strategy-report.md
+[R056]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-056-interoperability-test-matrix-for-external-csapi-clients-report.md
+[RSynthesis]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/final-idr-research-report.md
+[S1]: https://docs.ogc.org/is/23-001/23-001.html
+[S2]: https://docs.ogc.org/is/23-002/23-002.html
+[SML]: https://docs.ogc.org/is/23-000/23-000.html
+[SWE]: https://docs.ogc.org/is/24-014/24-014.html
+[P3]: https://github.com/opengeospatial/ogcapi-connected-systems/tree/6f529a15bfa63259febc3620378d3e5a06305333/api/part3
+[F4]: https://github.com/opengeospatial/ogcapi-features/tree/9ca25f56a58ed822ea8a685a7a41afa7181aaa8b/extensions/transactions
+[F4Later]: https://github.com/opengeospatial/ogcapi-features/blob/4e30324a14b682ff4a26ee43aad1eb6428c846a3/extensions/transactions/create-replace-update-delete/standard/20-002.adoc
+[ExampleMain]: https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/planning/csapi-implementation-guide.md
+[ExampleParser]: https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/phase-9/docs/planning/phase-5/P5-parser-completion-implementation-guide.md
