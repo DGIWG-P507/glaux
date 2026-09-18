@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.90<br>
-**Date:** September 16, 2026<br>
-**Status:** Complete<br>
+**Version:** 3.91<br>
+**Date:** September 17, 2026<br>
+**Status:** Original IDR complete; supplemental IDR-SRV-058 planned<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -48,7 +48,7 @@ The research has two equal purposes:
 4. Before a topic starts, every indexed-topic report named as its prerequisite must be complete and accepted by the plan owner. This rule supersedes softer wording retained in any topic plan, including `should`, `when available`, `unavailable`, `deferred`, or `provisional`. An exception requires the plan owner's explicit approval and a recorded rationale, scope impact, and downstream handling before execution. A project-produced report is not "unavailable" merely because it is incomplete.
 5. External-source unavailability is an evidence limitation, not completion of an indexed topic. Record the source, access limitation, affected questions, and resulting limits without inventing or silently substituting content.
 6. Each completed topic produces exactly one research report. For `IDR-SRV-057`, the final overall IDR report is that topic's report; no separate topic report is created.
-7. Execution of `IDR-SRV-057`, including drafting the final overall IDR report, begins only after every other indexed topic report is complete and accepted, except for an exception approved and recorded under Rule 4.
+7. Execution of `IDR-SRV-057`, including drafting the final overall IDR report, begins only after every preceding indexed topic report (`IDR-SRV-001` through `IDR-SRV-056`, including letter-suffixed topics) is complete and accepted, except for an exception approved and recorded under Rule 4. Later supplemental topics do not invalidate that historical completion and acceptance.
 8. All reports must include explicit, reproducible references and evidence.
 9. `Accepted` means the plan owner has reviewed a completed report for alignment with its topic plan and suitability for downstream decisions. The acceptance authority and date are recorded in the report, and aggregate acceptance coverage is recorded in progress tracking.
 10. Every completed-topic handoff shall state the next two actions when another topic remains: plan-owner acceptance of the completed report, followed by authorization to execute exactly one next eligible topic. The handoff shall provide a single combined response pattern that performs both actions in one message. The handoff wording alone neither records acceptance nor begins the next topic; only the plan owner's combined instruction does so.
@@ -74,7 +74,8 @@ The shared upstream-history register is maintained across topics as supporting e
 
 ---
 
-**Total Topics:** 67
+**Original IDR Topics:** 67 (complete and accepted)<br>
+**Post-Synthesis Supplemental Topics:** 1 (IDR-SRV-058, planned)
 
 Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
@@ -437,9 +438,24 @@ Scope rule for topic admission:
 
 ---
 
+## Supplemental Research After Initial IDR Closeout
+
+The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted on September 16, 2026. The following supplement is tracked separately; it does not reopen those topics or change their completion counts.
+
+#### IDR-SRV-058: Draft CSAPI Part 4 Sampling Features Study
+
+- Status: Planned; preparation and publication of the research plan authorized September 17, 2026. Research/report execution has not started.
+- Focus: Assess the official Part 4 working draft against the approved Parts 1 and 2 baseline, including feature types, requirements and schemas, maturity gaps, bounded implementation evidence, and implications for Glaux's existing research and server design. Recommend whether and how to consider experimental support without adopting it through the research itself.
+- Plan: [idr-srv-058-draft-csapi-part-4-sampling-features-study.md](idr-srv-058-draft-csapi-part-4-sampling-features-study.md).
+- Output target: `IDR Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md`.
+- Sequence: Plan/publication first; separately authorized research/report next; then an accepted-findings addendum to the final synthesis in a later iteration; then discussion of any Goal and Definition or Implementation Guide changes. The user's established `proceed` workflow applies; no special acceptance phrase is required.
+- Boundary: Preserve the original accepted synthesis and approved server scope. No report, synthesis addendum, planning-document scope change, or implementation is authorized by this plan-only iteration.
+
+---
+
 ## Topic Execution Order
 
-Default research execution follows category dependencies in sequence:
+The original IDR execution followed category dependencies in sequence; later supplemental work follows the separate sequence above:
 
 1. Category A (IDR-SRV-001 through IDR-SRV-005)
 2. Category B core behavior topics (IDR-SRV-006 through IDR-SRV-014, plus IDR-SRV-010A)
@@ -668,10 +684,13 @@ The final report must:
 | 2026-09-16 | IDR-SRV-056 Acceptance and IDR-SRV-057 Authorization | Accepted the capability-qualified semantic-depth interoperability program; pinned OS4CSAPI TypeScript and OWSLib Python mandatory families; CSAPI Explorer/browser, bounded generated-client and QGIS subset lanes; future Glaux component entry criteria; advisory peer comparisons; separate execution/depth/attribution semantics; full functional/profile coverage, 15-column matrix, InteropTargetV1/InteropCaseResultV1/InteropRunV1, twelve implementation proofs and feedback/retest workflow; authorized the final Glaux Server IDR synthesis iteration | Preserve the final-topic boundary while consolidating all accepted findings into one implementation-ready research synthesis without reopening accepted decisions, creating implementation code or roadmap commitments, authorizing physical command effects or inbound Part 3, setting operational guarantees, or claiming conformance/certification/accreditation/readiness | Glaux Project Lead |
 | 2026-09-16 | IDR-SRV-057 Research Completion | Completed the 67-topic final Glaux Server IDR synthesis; audited all 66 accepted prerequisites with no exceptions; refreshed official standards-maintenance evidence; consolidated the standards, API, model, representation, persistence, dynamic-data, tasking, security, DDIL, Rust, deployment, continuity and verification baselines; reconciled material cross-topic conflicts; separated first, follow-on and deferred scope; and produced 34 traced recommendations, 15 proof candidates, risk and decision registers, 17 candidate work packages and downstream-document handoffs; placed the final overall report in review | Complete research execution and provide an acceptance-ready initial design baseline without accepting or closing the final report, creating implementation code, substituting for the Implementation Guide or Roadmap, authorizing physical command effects or inbound Part 3, fixing operational products/guarantees, or claiming conformance, certification, accreditation or operational readiness | Pending Glaux Project Lead review |
 | 2026-09-16 | IDR-SRV-057 and Overall IDR Acceptance | Accepted the final synthesis, its complete 67-topic inventory, consolidated design baseline, scope classifications, conflict resolutions, proof candidates, risk and decision registers, candidate work packages, traced recommendations, downstream-artifact readiness assessment and explicit non-claims; completed IDR-SRV-057 and closed the Glaux Server Initial Design Research effort | Establish the accepted research baseline for subsequent Goal and Definition refresh, Implementation Guide, requirements/traceability registry, ADR and Roadmap work without itself authorizing implementation, physical command effects, inbound Part 3, operational products/guarantees, conformance, certification, accreditation or operational readiness | Glaux Project Lead |
+| 2026-09-17 | Supplemental Part 4 Research Planning | Registered IDR-SRV-058 and prepared its focused research plan; preserved the completed 67-topic baseline and IDR-SRV-057 acceptance | User authorized plan/publication first, followed by separate research/report, synthesis-addendum, and planning-discussion iterations; no research execution or Part 4 implementation commitment in this iteration | Glaux Project Lead (planning authorization) |
 
 ---
 
 ## Progress Tracking
+
+Original IDR baseline (unchanged by supplemental registration):
 
 | Category | Topics | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated | Notes |
 |---|---|---|---|---|---|---|---|
@@ -684,6 +703,12 @@ The final report must:
 | G | IDR-SRV-039, IDR-SRV-039A, IDR-SRV-040 to IDR-SRV-043 | Complete (6/6) | 6/6 | 6/6 | Research Complete | 2026-09-15 | IDR-SRV-039 through IDR-SRV-043 are complete and accepted. Category H progress and authorization are recorded in the following row. The shared upstream-history register remains Version 1.12. |
 | H | IDR-SRV-044 to IDR-SRV-049 | Complete (6/6) | 6/6 | 6/6 | Research Complete | 2026-09-16 | IDR-SRV-044 through IDR-SRV-049 are complete and accepted. Category I progress and authorization are recorded in the following row. |
 | I | IDR-SRV-050 to IDR-SRV-057 | Complete (8/8) | 8/8 | 8/8 | Research Complete | 2026-09-16 | IDR-SRV-050 through IDR-SRV-057 and the final overall report are complete and accepted. The Glaux Server Initial Design Research effort is closed. |
+
+Supplemental progress is tracked separately from the completed category totals above:
+
+| Topic | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated |
+|---|---|---|---|---|---|
+| IDR-SRV-058 | Draft plan prepared | 0/1 | 0/1 | Planned; awaiting next research iteration | 2026-09-17 |
 
 ---
 
