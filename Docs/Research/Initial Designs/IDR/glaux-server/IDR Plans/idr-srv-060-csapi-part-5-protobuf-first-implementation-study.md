@@ -1,7 +1,7 @@
 # Section 060: CSAPI Part 5 Protobuf-First Implementation Study - Research Plan
 
 **Topic ID:** IDR-SRV-060<br>
-**Status:** In Progress<br>
+**Status:** Complete<br>
 **Last Updated:** September 18, 2026<br>
 **Estimated Research Time:** Not yet estimated; one focused research/report iteration is planned, subject to source availability.<br>
 **Actual Research Time:** One AI-assisted research/report iteration, September 17–18, 2026, America/New_York, including an overnight pause; no human-effort estimate inferred<br>
@@ -14,6 +14,8 @@
 Follow the existing [Research Plan Template](../../../../../Governance/research-plan-template.md) structure and use the [Research Report Template](../../../../../Governance/research-report-template.md) for the later report. The pinned OS4CSAPI exemplars inform concrete questions, source inventories, meaningful verification and practical recommendations; their client-specific scope, metrics and estimates are not Glaux requirements.
 
 The plan and its supplemental index entry were published in commit `488b9ba`. The user's next `proceed` on September 17, 2026 accepted the plan for execution and authorized the research/report iteration. A later synthesis addendum and any Goal/Guide changes remain separate iterations under the established `proceed` workflow. No Part 5 implementation is adopted by this plan or research authorization.
+
+The [report](../IDR%20Reports/idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md) was published in `d5ef3b8`. The user's subsequent `proceed` accepted the report on September 18, 2026 and authorized the separately prepared [synthesis addendum](../IDR%20Reports/final-idr-research-report.md#addendum-c-csapi-part-5-protobuf-first-implementation). Research acceptance does not select an implementation option or change the Goal/Guide.
 
 ---
 
@@ -246,12 +248,12 @@ If a source cannot be accessed, identify it, the attempt, affected question and 
 - [x] Phase 4 synthesis complete
 - [x] Deliverable draft complete
 - [x] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Deliverable accepted
 
 **Actual Research Time:** One AI-assisted iteration across September 17–18, 2026; source review, small checks, drafting and technical review, with an overnight pause. No human-hours estimate inferred.<br>
-**Completion Date:** Research/report completed September 18, 2026; topic acceptance pending
+**Completion Date:** Research/report completed and accepted September 18, 2026
 
-The [report](../IDR%20Reports/idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md) is in review. Technical review does not record project-lead acceptance. The next `proceed` accepts the research for downstream use and authorizes the separate synthesis addendum, not a Part 5 implementation or Goal/Guide change. The plan remains In Progress until report acceptance.
+Research execution, technical review and project-lead acceptance are complete. The separately authorized synthesis addendum is prepared for review. The recommendation preserves existing compatibility points while deferring selection of a Part 5 binding; an OSH-compatible experiment remains an alternative for discussion, not adopted scope. The next `proceed` begins the Goal/Guide discussion, without automatically editing those documents or authorizing implementation.
 
 ---
 

@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.99<br>
+**Version:** 3.100<br>
 **Date:** September 18, 2026<br>
-**Status:** Original IDR and supplements 058/059 complete and accepted; Protobuf-first Part 5 supplement 060 report in review before resuming Guide drafting<br>
+**Status:** Original IDR and supplements 058/059/060 complete and accepted; Part 5 synthesis addendum prepared for review, with Goal/Guide discussion next<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -75,7 +75,7 @@ The shared upstream-history register is maintained across topics as supporting e
 ---
 
 **Original IDR Topics:** 67 (complete and accepted)<br>
-**Post-Synthesis Supplemental Topics:** 3 (IDR-SRV-058 and IDR-SRV-059 complete and accepted; IDR-SRV-060 research/report complete, acceptance pending)
+**Post-Synthesis Supplemental Topics:** 3 (IDR-SRV-058, IDR-SRV-059 and IDR-SRV-060 complete and accepted)
 
 Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
@@ -462,13 +462,14 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 
 #### IDR-SRV-060: CSAPI Part 5 Protobuf-First Implementation Study
 
-- Status: Research/report complete and in review September 18, 2026. The user's `proceed` after plan publication in `488b9ba` accepted the plan for execution and authorized research/report production, not implementation adoption.
+- Status: Complete and accepted September 18, 2026. The user's `proceed` after report publication in `d5ef3b8` accepted the research and authorized its separate synthesis addendum, not implementation adoption.
 - Focus: Establish the available Part 5 specification and implementation evidence, prioritize Protobuf, compare it with existing SWE Binary commitments, and assess a bounded Rust experiment's schema/wire contracts, semantic preservation, compatibility, security, verification and incremental cost. Recommend implementation, compatibility-only preparation or deferral without preselecting the outcome.
 - Plan: [idr-srv-060-csapi-part-5-protobuf-first-implementation-study.md](idr-srv-060-csapi-part-5-protobuf-first-implementation-study.md).
-- Report: [idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md](../IDR%20Reports/idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md), in review. Recommends preserving existing codec/schema compatibility points and deferring Part 5 binding selection; identifies a pinned OSH-compatible experiment as a conditional alternative, not adopted scope.
+- Report: [idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md](../IDR%20Reports/idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md), accepted. Recommends preserving existing codec/schema compatibility points and deferring Part 5 binding selection; identifies a pinned OSH-compatible experiment as a conditional alternative, not adopted scope.
 - Context: The project lead reported that Protobuf was the room favorite at the September 17 CSAPI SWG meeting and may be the only encoding in the first Part 5 publication because of time, resources and prioritization. Treat this as attributed direction, not a finalized OGC decision. Other proposed encodings receive a brief status/boundary check only.
-- Sequence: Plan/publication and research/report iterations are complete. Next `proceed` accepts the report and authorizes its separate final-synthesis addendum; discussion of any Goal/Guide changes follows before returning to Guide drafting pass 2. No special acceptance phrase or additional planning framework is introduced.
-- Boundary: Preserve the original 67-topic completion record, supplements 058/059 and Goal v1.7's approved scope. Distinguish incomplete official artifacts from substantive unmerged OSH work; neither replaces required SWE Binary or authorizes an invented OGC binding, gRPC or other encodings. This iteration changes the report, topic plan, index and relevant upstream-history evidence only.
+- Synthesis: [Addendum C](../IDR%20Reports/final-idr-research-report.md#addendum-c-csapi-part-5-protobuf-first-implementation) prepared for review September 18, 2026; the original synthesis and Addenda A/B remain intact.
+- Sequence: Plan/publication, research/report and accepted-findings synthesis iterations are complete. Next `proceed` begins discussion of any Goal/Guide implications before returning to Guide drafting pass 2; it does not automatically edit those documents. No special acceptance phrase or additional planning framework is introduced.
+- Boundary: Preserve the original 67-topic completion record, supplements 058/059 and Goal v1.7's approved scope. Distinguish incomplete official artifacts from substantive unmerged OSH work; neither replaces required SWE Binary or authorizes an invented OGC binding, gRPC or other encodings. Acceptance and addendum publication do not select a Part 5 implementation option or reopen previously adopted scope.
 
 ---
 
@@ -717,6 +718,8 @@ The final report must:
 | 2026-09-17 | Protobuf-First Part 5 Research Planning | Registered IDR-SRV-060 and drafted its plan following the user's `proceed` and report that the SWG favored Protobuf, possibly alone for Part 5's first publication | Assess the remaining Part 5 evidence gap before resuming Guide drafting; preserve separate plan, research/report, synthesis-addendum and Goal/Guide discussion iterations. No research execution, encoding adoption or finalized SWG scope claim in this iteration | Glaux Project Lead (planning authorization) |
 | 2026-09-17 | IDR-SRV-060 Plan Acceptance and Research Authorization | The user's next `proceed` accepted the published plan for execution and authorized its research/report iteration | Continue the staged supplement without adopting Protobuf or changing the final synthesis, Goal or Guide | Glaux Project Lead |
 | 2026-09-18 | IDR-SRV-060 Research Execution | Produced the Protobuf-first study report with pinned official artifacts, OSH proposal and CS-Go schema/JSON evidence, Rust feasibility, semantic/security cases and a bounded history refresh; recommends preserving compatibility points while deferring binding selection, with an OSH-compatible experiment as an explicit alternative | Report in review; next `proceed` can accept the research and authorize the separate synthesis addendum. No implementation, benchmark, conformance claim or planning scope change | Pending Glaux Project Lead report review |
+| 2026-09-18 | IDR-SRV-060 Acceptance and Synthesis Addendum Authorization | The user's next `proceed` accepted the supplemental report and authorized integration through a separate addendum to the final synthesis | Accept research for downstream use without selecting a Part 5 implementation option or changing the Goal/Guide | Glaux Project Lead |
+| 2026-09-18 | Part 5 Synthesis Addendum Prepared | Added Addendum C with consolidated Protobuf findings, qualifications to previous research, the compatibility-only recommendation and conditional OSH-compatible alternative; preserved the original synthesis and Addenda A/B | Next step is Goal/Guide discussion; no implementation option, dependency, milestone or new governance process introduced | Addendum prepared for Glaux Project Lead review |
 
 ---
 
@@ -742,7 +745,7 @@ Supplemental progress is tracked separately from the completed category totals a
 |---|---|---|---|---|---|
 | IDR-SRV-058 | Complete (1/1) | 1/1 | 1/1 | Research accepted; selected static experiment recorded in Goal/Guide | 2026-09-17 |
 | IDR-SRV-059 | Complete (1/1) | 1/1 | 1/1 | Research accepted; bounded filtering scope recorded in Goal/Guide | 2026-09-17 |
-| IDR-SRV-060 | Complete (1/1) | 1/1 | 0/1 | Research/report complete; report in review | 2026-09-18 |
+| IDR-SRV-060 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum C prepared; Goal/Guide discussion next | 2026-09-18 |
 
 ---
 

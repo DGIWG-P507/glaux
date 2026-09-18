@@ -1,7 +1,7 @@
 # Section 060: CSAPI Part 5 Protobuf-First Implementation Study - Research Report
 
 **Topic ID:** IDR-SRV-060<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-060](../IDR%20Plans/idr-srv-060-csapi-part-5-protobuf-first-implementation-study.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Five; specification maturity, interoperable binding, semantic preservation and safety, implementation and verification, recommendation<br>
@@ -15,8 +15,8 @@
 **Supporting Resources:** [Goal v1.7][goal], [draft Guide v0.2][guide], accepted IDR-SRV-007/012/014G/022/023/035/059, and the [upstream-history register][history]<br>
 **Document Purpose:** Decide whether to plan an experimental Protobuf implementation now, preserve compatibility points, or defer selection pending a usable Part 5 binding<br>
 **Author(s):** Glaux research workflow, AI-assisted<br>
-**Accepted By:** Pending Glaux Project Lead<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 18, 2026<br>
 **Date:** September 18, 2026<br>
 **Last Updated:** September 18, 2026
 
@@ -25,6 +25,8 @@
 ## Usage Rules
 
 This report follows the [Research Report Template](../../../../../Governance/research-report-template.md). Published standards establish obligations; repository examples, unmerged proposals and observed peer behavior do not. Findings, interpretation and recommendations are distinguished below. Research completion does not mean project-lead acceptance, adoption of an implementation, or demonstrated conformance.
+
+The report was published in commit `d5ef3b8`. The user's subsequent `proceed` accepted it on September 18, 2026 and authorized the separate synthesis addendum. This acceptance records the research as suitable for downstream use; it does not adopt a Protobuf implementation, select an alternative, or change the Goal/Guide.
 
 ## Table of Contents
 
@@ -59,7 +61,7 @@ The project lead's September 17 SWG account—that Protobuf was favored and may 
 
 ## 2. Scope and Plan Alignment
 
-IDR-SRV-060 was authorized for execution by the user's `proceed` after publication of its plan in `488b9ba`. This iteration assesses available evidence and produces one report. It does not amend the Goal, Guide, final synthesis or Roadmap, or implement any feature.
+IDR-SRV-060 was authorized for execution by the user's `proceed` after publication of its plan in `488b9ba`. That research/report iteration assessed available evidence and produced one report. It did not amend the Goal, Guide, final synthesis or Roadmap, or implement any feature. The later acceptance and synthesis handoff are recorded in §10.
 
 Completed scope includes the official artifact inventory; comparison with SWE Binary; observation, command and publication contracts; semantic/security analysis; relevant OSH and CS-Go source; Rust feasibility; representative verification cases; and implications for the existing design. FlatBuffers, FlatGeobuf and video were checked only as overview proposals. Their implementation, gRPC, new transports, performance benchmarking and a schema-registry service are outside scope.
 
@@ -304,7 +306,7 @@ No option replaces SWE Binary, automatically adds every draft encoding, requires
 1. **Keep Part 5 implementation out of the completion target for now.** High priority. The missing element is a complete selected binding, not proof that Protobuf is useful. Reconsider when a versioned proposal settles the affected semantics and interactions; final OGC publication need not be a prerequisite for an explicitly experimental choice.
 2. **Preserve the existing logical-model/codec separation and immutable stream revisions.** High priority. If later reflected in the Guide, this is a clarification of existing design, not authorization for a schema service, new persistence system or runtime code generation.
 3. **Keep the OSH-compatible option explicit.** Medium priority, conditional on the project lead preferring early implementation. Pin both proposal commits; state resource/operation/structure coverage, media/query differences, schema identity, framing and rejection behavior; require independent verification before advertising support.
-4. **Do not conflate research acceptance with adoption.** High priority. The next step is an accepted-findings synthesis addendum. Any Goal/Guide change follows the agreed discussion step.
+4. **Do not conflate research acceptance with adoption.** High priority. The accepted-findings synthesis addendum is now prepared (§10). Any Goal/Guide change follows the agreed discussion step.
 
 ## 7. Implementation Implications and Estimates
 
@@ -371,20 +373,20 @@ These are bounded implementation-decision inputs, not an indefinite monitoring t
 | Decision-usable alternatives and qualitative costs | Met | §§5–8 |
 | Template, reproducible references, history refresh and later handoff | Met | This report; history register v1.15; §10 |
 
-“Met” assesses the research deliverable, not implementation readiness or completion of future tests. Project-lead acceptance remains pending.
+“Met” assesses the research deliverable, not implementation readiness or completion of future tests. Project-lead acceptance was recorded September 18, 2026 through the established `proceed` workflow.
 
 ## 10. Next Steps and Handoff
 
-1. **Review this report.** Owner: Glaux Project Lead. Timing: next iteration. A plain `proceed` accepts the research for downstream use and authorizes its separate final-synthesis addendum under the established workflow.
-2. **Prepare that addendum only after authorization.** Owner: Glaux research workflow. Preserve the original synthesis and existing addenda; summarize the evidence, recommended deferral of binding selection, and conditional OSH-compatible option.
-3. **Discuss any Goal/Guide decision next.** Owner: Glaux Project Lead with drafting assistance. Research acceptance does not adopt an experiment. No extra approval vocabulary is required.
+1. **Report acceptance recorded.** Owner: Glaux Project Lead, September 18, 2026, through the `proceed` following publication in `d5ef3b8`.
+2. **Separate synthesis addendum prepared.** Owner: Glaux research workflow, September 18, 2026: [Addendum C](final-idr-research-report.md#addendum-c-csapi-part-5-protobuf-first-implementation). The original synthesis and Addenda A/B are preserved. The new addendum is prepared for review, not recorded as already accepted.
+3. **Discuss any Goal/Guide decision next.** Owner: Glaux Project Lead with drafting assistance. The next `proceed` starts that discussion, not automatic edits or implementation adoption. No extra approval vocabulary is required.
 4. **Resume Guide drafting pass 2 after that discussion/any agreed update.** No new implementation, research topic, publication schedule or other encoding is authorized by this report.
 
 No further input is needed to complete this research/report iteration. A later draft link or author-supplied reference would be helpful, not mandatory.
 
 ## 11. References
 
-All external code references below use the inspected commit; standards and documentation references use the dated retrieval in §3. Issues and PR states are point-in-time observations. Local research links refer to accepted inputs; this report itself remains in review.
+All external code references below use the inspected commit; standards and documentation references use the dated retrieval in §3. Issues and PR states are point-in-time observations. Local research links refer to accepted inputs; this report was accepted September 18, 2026. The synthesis iteration did not refresh the external evidence or execute runtime tests.
 
 - Approved comparison: [CSAPI Part 2][part2], [SWE Common 3.0][swe], [published source][ogc-tag].
 - Official artifacts: [README][ogc-readme], [examples][ogc-examples], [experiments][ogc-experiments], [observation schema wrapper][obs-wrapper], [command schema wrapper][cmd-wrapper], [scalar][scalar-example], [GeoPose reference variant][geopose-ref], [PTZ][ptz-example], [SWE options][swe-options], [request][obs-request], [response][obs-response].
@@ -421,7 +423,7 @@ All external code references below use the inspected commit; standards and docum
 - [x] Recommendations explicit and bounded
 - [x] Risks and open questions documented
 - [x] Success criteria assessed
-- [ ] Plan-owner acceptance and date recorded before downstream completion
+- [x] Plan-owner acceptance and date recorded before downstream completion
 - [x] Next steps assigned
 
 [part2]: https://docs.ogc.org/is/23-002/23-002.html

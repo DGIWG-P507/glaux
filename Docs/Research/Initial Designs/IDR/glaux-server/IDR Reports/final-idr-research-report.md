@@ -17,7 +17,7 @@
 **Date:** September 16, 2026<br>
 **Last Updated:** September 16, 2026
 
-**Supplemental material:** [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features) and [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval), prepared September 17, 2026 from accepted IDR-SRV-058/059 research. The metadata, counts and acceptance above describe the original report; each addendum records its own status and does not change the original completion record.
+**Supplemental material:** [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features) and [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval), prepared September 17, 2026 from accepted IDR-SRV-058/059 research; [Addendum C: CSAPI Part 5 Protobuf-First Implementation](#addendum-c-csapi-part-5-protobuf-first-implementation), prepared September 18, 2026 from accepted IDR-SRV-060 research. The metadata, counts and acceptance above describe the original report; each addendum records its own status and does not change the original completion record.
 
 ---
 
@@ -51,7 +51,7 @@
 26. [Validation Against Success Criteria](#26-validation-against-success-criteria)
 27. [References and Topic Traceability Index](#27-references-and-topic-traceability-index)
 
-Supplements: [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features); [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval)
+Supplements: [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features); [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval); [Addendum C: CSAPI Part 5 Protobuf-First Implementation](#addendum-c-csapi-part-5-protobuf-first-implementation)
 
 ---
 
@@ -1160,3 +1160,82 @@ The two supplements now provide enough evidence for the planned combined **discu
 **Next step:** the Glaux Project Lead and Codex discuss the querying recommendation alongside Addendum A's Part 4 options. The next `proceed` starts that discussion; it does not automatically edit the Goal/Guide or authorize implementation. The established Governance, Goal and Definition, Implementation Guide and Roadmap workflow remains in place; no additional document type or approval process is introduced.
 
 **Addendum validation:** IDR-SRV-059 is accounted for as accepted research; conclusions and qualifications link to its report; both supplemental scope decisions remain explicit; original completion metadata, the 67-topic body and Addendum A are preserved. Publication of this addendum is distinct from its later review and from adopting an implementation option.
+
+---
+
+## Addendum C: CSAPI Part 5 Protobuf-First Implementation
+
+**Date:** September 18, 2026<br>
+**Status:** Prepared for review; source research accepted, Part 5 project-scope decision pending<br>
+**Source:** [IDR-SRV-060 Research Report](idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md), accepted by the Glaux Project Lead on September 18, 2026 through the established `proceed` workflow<br>
+**Purpose:** Integrate the Protobuf-first study before discussing any Goal and Definition or Implementation Guide implications
+
+### C.1 Scope, Evidence and Completion Record
+
+**The research supports keeping the existing design ready for Protobuf, while deferring selection of a Part 5 implementation contract.** A specifically bounded OSH-compatible experiment remains an alternative for discussion. Acceptance of the research does not select either option or authorize implementation.
+
+| Supplemental topic | Plan | Report | Completion and acceptance | Synthesis conclusion |
+|---|---|---|---|---|
+| IDR-SRV-060: CSAPI Part 5 Protobuf-First Implementation Study | [Research plan](../IDR%20Plans/idr-srv-060-csapi-part-5-protobuf-first-implementation-study.md) | [Research report](idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md) | Research complete; accepted September 18, 2026; no prerequisite exception | Substantive Protobuf implementation work exists, but the inspected official material does not yet provide a complete shared Part 5 contract to implement exactly. |
+
+Coverage is now **67 original accepted topics plus three accepted supplemental topics**, 058, 059 and 060. The original report's metadata, counts and acceptance remain unchanged; Addenda A/B retain their historical text. This addendum is prepared for review, not recorded as already accepted.
+
+The scope choices described as pending in Addenda A/B were subsequently addressed in [approved Goal v1.7](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md) and [draft Guide v0.2](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md). Selected static Part 4 points, curves and surfaces and bounded enhanced observation filtering are already completion deliverables, alongside the existing experimental Part 3 intent. This addendum does not reopen those choices or reduce the full Parts 1/2 and applicable SensorML/SWE target.
+
+This is synthesis of the report published in `d5ef3b8`, not new external research. Its [evidence base](idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md#3-evidence-base) and [references](idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md#11-references) control the detailed source status and limitations. Principal pins are:
+
+- Official CSAPI master: `3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f`; published-source tag: `8e03b236a049849f2ccc24b4fd9fdce5ff69bed2`.
+- OSH add-on PR 224 proposal: `22d98d16c77e1e224365fd458dfc3ba77205f78e`; supporting core PR 354: `6988ded63679fc55b8741f92408a4d883e245d1e`.
+- CS-Go: `b1fd2e0e9bd69e222d05258d659a842ca24502cb`.
+- Selected Part 3 working baseline: `6f529a15bfa63259febc3620378d3e5a06305333`; separate representation-selection proposal: `6f5987673dd11a8e27a2b6093e2dc5cbd0d16612`.
+
+The source investigation occurred September 17 local time and the report was completed September 18. No upstream refresh, new benchmark or runtime interoperability test was performed for this addendum. The project lead's September 17 meeting account—Protobuf favored and possibly the sole first-release encoding—remains attributed planning context, not an independently confirmed OGC publication decision or new NATO obligation.
+
+### C.2 Consolidated Findings
+
+**There is meaningful work to assess, but not a settled official binding.** The official repository's Protobuf examples and schema wrappers leave substantive decisions unresolved and contain concrete defects. The OSH proposal is more developed: observation/command bindings, generated descriptors, schema discovery and length-delimited messages. Its author describes it as the basis of an in-progress Part 5 draft. At inspection the add-on was an open draft PR and its supporting core PR was unmerged. Thus neither “no Part 5 work exists” nor “the OGC contract is ready to copy” is supported. [IDR-SRV-060 §§4.1–4.2](idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md#4-findings-by-research-question)
+
+**Protobuf would supplement, not replace, required SWE Binary.** Its potential value is another serialization and client-tooling path. Schema discovery, root message and stream-revision identity, media types, request/response selection and framing still need a shared contract. Official examples and OSH do not expose interchangeable interfaces; their media/schema choices differ, and the peer command-schema query uses `commandFormat` rather than the published `cmdFormat`. A schema artifact or repaired `.proto` alone cannot establish interoperable data exchange. No size or CPU advantage was measured. [IDR-SRV-060 §4.2](idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md#4-findings-by-research-question)
+
+**The logical SWE contract remains essential.** A descriptor does not automatically preserve identity, distinct times, units, constraints, nil versus absence/default, fixed cardinality or historical meaning. The inspected OSH code has explicit reconstruction limitations and unfinished outbound observation ID encoding. Protobuf field-number compatibility alone cannot prove semantic compatibility after a schema change. The existing normalized model, immutable stream revisions and bounded validation remain useful; the study does not justify another data model, database or schema service. [IDR-SRV-060 §§4.3–4.5](idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md#4-findings-by-research-question)
+
+**Tooling feasibility is not demonstrated interoperability.** Rust generated-message and dynamic-descriptor options exist, with different native-build, reflection and unknown-field behavior; no dependency was selected. The inspected CS-Go paths advertise Protobuf schemas and validate JSON results, not demonstrated binary exchange. OSH's descriptor-driven Java test is useful but does not establish independent cross-language HTTP or Part 3 interoperability. The study executed small syntax/static/numerical checks, not a compiler, peer service or Rust codec. [IDR-SRV-060 §4.4 and Appendix A](idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md#12-appendices)
+
+### C.3 Effect on the Original Synthesis
+
+The following qualifications carry forward the report's reconciliation of IDR-SRV-007/012/014G/022/023/035/059. They do not rewrite those reports or replace the current approved project scope.
+
+| Original section / related supplement | What remains valid | Qualification supplied by IDR-SRV-060 |
+|---|---|---|
+| §§5–6: Standards and conformance | Full approved Parts 1/2 target and evidence-backed claims | No approved Part 5 class or complete binding is established by the inspected examples/proposals. Any later peer-compatible experiment needs a distinct claim. |
+| §7.3: Negotiation and versioning | Resource meaning is independent of representation; schema and media selection are explicit | Do not silently substitute peer media types, descriptor wrappers, query names or framing for the approved interface. Encoding selection and the representation of its schema remain separate. |
+| §§8–9: Resources, time, SWE and validation | One logical model, immutable stream contracts, semantic validation and controlled references | Bind descriptor/imports, root message and mapping to the correct revision. Explicitly preserve or reject unsupported value distinctions; a successful parse is insufficient. |
+| §9.4: Generated representations | Deterministic generation where applicable; semantic-equivalence tests | Deterministic Protobuf serialization is not canonical byte identity. Preserve original-byte evidence separately where needed; do not infer equal meaning from a re-encoded byte hash. |
+| §11.4: Experimental Part 3 | Version-pinned, explicitly experimental publication; no automatic inbound write/command authority | Protobuf is a possible native data representation, not a replacement for lifecycle-event envelopes. The separate #190 representation-selection proposal does not change the selected Part 3 pin or require every encoding to be published. |
+| §§12–13: Command safety and access | Existing validation, authorization and command lifecycle apply regardless of encoding | Bound frames/descriptors/imports and decoding work. Uploaded schema content must not trigger arbitrary retrieval or execution; unknown-field preservation is not proof of safe disclosure. |
+| §§15 and 17: Rust and verification | Bounded codec work, independent expected values and capability-qualified tests | No Rust dependency or performance result is selected here. A claimed experiment needs actual cross-implementation bytes and endpoint/publication tests, not only local round trips. |
+| Addenda A/B and selected filtering | Explicit sampling semantics and encoding-independent logical query values | Protobuf adds no spatial joins, geometry/history rules or filtering language. Encoding must not change observation membership, counts or paging. |
+
+Detailed evidence and prospective Guide touchpoints are in [IDR-SRV-060 §4.5](idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md#4-findings-by-research-question) and [§7](idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md#7-implementation-implications-and-estimates). Required SWE JSON, Text and Binary remain completion obligations, even when implementation is sequenced. This supplement does not reactivate the original synthesis's proposed additional document systems or work packages.
+
+### C.4 Recommendation and Remaining Choice
+
+**Carry forward the recommendation to preserve existing compatibility points and defer selection of a Part 5 wire contract.** This means keeping the current logical-model/schema/codec separation suitable for a later adapter, not building a placeholder or advertising unimplemented support. A sufficiently complete, versioned proposed binding could justify a later experimental implementation; waiting for final publication is not inherently necessary. The present concern is completeness and interoperable meaning, not draft status alone.
+
+The alternative remains an **explicitly named, pinned OSH-compatible Protobuf experiment**. If selected later, its supported resource/operation/structure subset, media and selector differences, schema identity, framing and rejection behavior would need to be documented and independently tested. It would not establish general Part 5 conformance or authorize inbound Pub/Sub, gRPC, other proposed encodings, a new service or a second persistence model. [IDR-SRV-060 §§5–7](idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md#5-decision-analysis)
+
+The unresolved implementation inputs are the shared versioned binding; resource and direction coverage; semantic preservation and historical revision rules; publication representation selection; and independent interoperability fixtures. They are decision inputs, not an indefinite monitoring assignment or a blocker to continued server planning. No delivery dates or implementation hours are inferred. Neither the recommended path nor the alternative is selected by this addendum.
+
+### C.5 Downstream Readiness and Handoff
+
+The accepted study provides enough evidence for the agreed **Goal/Guide discussion**, without another broad research cycle:
+
+| Document | Next consideration | Change made in this iteration |
+|---|---|---|
+| [Goal and Definition v1.7](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md) | Retain the current scope, or deliberately add a bounded Protobuf experiment; accepting research alone does not require a Goal change | None; no Part 5 deliverable added and no existing deliverable removed. |
+| [Implementation Guide v0.2](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) | If desired, clarify compatibility boundaries in §§4.3/6.2/6.5; only if an experiment is chosen, define its exact mapping, publication and verification work | None; no dependency, wire format or implementation requirement selected. |
+| Roadmap | Sequence only subsequently agreed scope | No milestone, estimate or work package created. |
+
+**Next step:** the Glaux Project Lead and Codex discuss whether any Goal/Guide change is warranted. The next `proceed` starts that discussion; it does not automatically edit either document or authorize implementation. After that discussion and any agreed update, resume Guide drafting pass 2. A later draft reference would be helpful evidence, not a prerequisite the user must supply now.
+
+**Addendum validation:** IDR-SRV-060 is accounted for as accepted research; findings and qualifications trace to its report; existing approved scope and original completion records are preserved; remaining choices and the next action are explicit. Publication of Addendum C is distinct from its review and from any implementation-scope decision.
