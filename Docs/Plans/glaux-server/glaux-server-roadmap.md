@@ -1,12 +1,14 @@
 # Glaux Server Roadmap
 
-**Version:** 0.1<br>
+**Version:** 1.0<br>
 **Date:** 18 September 2026<br>
 **Effort:** Glaux Server<br>
-**Status:** Draft — complete first drafting pass; review and finalization next<br>
+**Status:** Baselined for implementation — drafting iterations 1–2 complete<br>
 **Depends On:** [Goal and Definition v1.7](glaux-server-goal-and-definition.md), Approved<br>
 **Implements:** [Implementation Guide v1.0][Guide], Baselined<br>
-**Implementation status:** Tasks below are planned, not verified complete. This iteration creates the Roadmap, not server software.
+**Implementation status:** All 41 tasks below remain planned, not verified complete. Roadmap finalization does not establish software completion.
+
+**Revision summary:** Completes the second drafting pass against Goal v1.7 and Guide v1.0. The review confirmed full capability/class coverage, dependencies and verification ownership; clarified task-level scheduling and the first implementation slice; and retained the nine phases, 41 tasks and uncalibrated effort estimates. Goal, Guide and accepted research remain unchanged.
 
 ## 1. Purpose and Executive Summary
 
@@ -18,7 +20,7 @@ The complete target remains all 25 direct CSAPI Parts 1/2 classes and applicable
 
 ### 1.1 Phase overview
 
-The numbered order is the default execution order. The dependency column identifies actual prerequisites, so independent work need not acquire artificial dependencies on unrelated phases.
+The numbered order is the default execution order. The dependency column identifies prerequisites for completing each phase. An individual task may start once its own listed prerequisites are satisfied; closing a phase requires completion of all its tasks and prerequisite phases. This permits independent task work without treating an incomplete prerequisite phase as complete.
 
 | Phase | Main result | Prerequisites | Planned tasks | Status |
 |---|---|---|---:|---|
@@ -44,7 +46,7 @@ Provide the small three-package Rust workspace and PostgreSQL/PostGIS design alr
 
 ## 2. Planning Assumptions and Constraints
 
-- Goal v1.7 and Guide v1.0 control this draft. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
+- Goal v1.7 and Guide v1.0 control this Roadmap. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
 - Each implementation task includes its tests, safe error/access behavior, API/example updates and relevant source/test identifiers. A passing happy path alone is not task completion.
 - Preserve original standards/schema artifacts and the Guide's explicit interpretations. Do not silently adopt moving drafts or claim that a project interpretation resolved an upstream ambiguity.
 - Use a real PostgreSQL/PostGIS test instance and independent HTTP checks from the first persistent slice. Keep expected values independent of server serializers and query code.
@@ -347,7 +349,7 @@ Use the existing `proceed` workflow. Select the next dependency-ready task, or a
 
 Some tasks deliberately cover a family of closely related cases. Split them where needed into concrete slices—such as one SWE component family plus its tests, one resource's complete mutation path, or one command crash boundary. Keep the parent task open until its full scope passes. Do not create separate phase guides, execution-unit catalogs or new approval forms merely because a task is large.
 
-During Roadmap drafting, use two iterations on this same file: this complete first draft, then feedback/dependency/coverage review and finalization. The next `proceed` authorizes that second drafting pass, not Phase 1 implementation.
+The two Roadmap drafting iterations are complete. The next `proceed` begins task 1.1, not another drafting pass or all of Phase 1. First inspect the actual server repository and approved tool/database availability. Preserve existing work and, where prerequisites permit, establish the smallest buildable three-package workspace with initial build/test checks and setup instructions. Report unavailable checks and exact missing prerequisites without installing software implicitly; task 1.1 stays open until its build and real-database checks pass.
 
 ## 6. Coverage, Milestones and Deliverables
 
@@ -450,9 +452,9 @@ Replan only when a dependency/design proof fails, measured task size requires a 
 
 ## 10. Change Control and Next Iteration
 
-Version 0.1 is the complete first Roadmap draft authorized by the project lead's `proceed` after agreeing to two drafting iterations. Goal v1.7 and Guide v1.0 remain unchanged. No software installation, server implementation or production action is performed by drafting this document.
+Version 0.1 was the complete first Roadmap draft. Version 1.0 completes the second pass authorized by the project lead's subsequent `proceed`: review against the Goal/Guide, dependency and coverage checks, task-size review and finalization. All 25 direct CSAPI classes, applicable prerequisites, selected experiments, six filtering classes and remaining Guide proofs have implementation and verification owners. Task-level starts are distinguished from phase completion, and §5 identifies the bounded first implementation slice.
 
-The next `proceed` authorizes the second pass on this Roadmap: incorporate feedback, verify full coverage and dependency order, resize unclear tasks and finalize the document for implementation. Another drafting pass requires a concrete unresolved issue, not a default extension of the process. Implementation starts only after that handoff and the next authorized iteration.
+The Roadmap is now baselined for implementation under the existing planning guidance. Goal v1.7, Guide v1.0 and accepted research remain unchanged. No software installation, server implementation or production action was performed by finalizing this document, and no implementation task is marked complete. The next `proceed` begins task 1.1 as described in §5; no third drafting pass or separate approval document is required.
 
 Use version updates for material sequencing or scope changes. Technical design changes belong in the Guide; mission/scope changes belong in the Goal first. Keep task-to-Guide/test connections current without copying the standards into a separate requirement list. Historical research acceptance and findings remain unchanged.
 

@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.106<br>
+**Version:** 3.107<br>
 **Date:** September 18, 2026<br>
-**Status:** Original IDR and supplements 058/059/060/061 complete and accepted; Guide v1.0 baselined; Roadmap v0.1 drafted, review/finalization pass next<br>
+**Status:** Original IDR and supplements 058/059/060/061 complete and accepted; Guide v1.0 and Roadmap v1.0 baselined; implementation task 1.1 next<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -478,7 +478,7 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 - Plan: [idr-srv-061-provenance-and-related-metadata-interoperability-study.md](idr-srv-061-provenance-and-related-metadata-interoperability-study.md).
 - Report: [idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md](../IDR%20Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md), accepted. Recommends existing-standard use and focused Guide/test clarifications; exact public lineage exchange and policy-specific adapters remain conditional. Includes a reproduced SWE quality-schema gap, pinned peer paths and bounded history refresh.
 - Synthesis: [Addendum D](../IDR%20Reports/final-idr-research-report.md#addendum-d-provenance-and-related-metadata-interoperability) prepared for review September 18, 2026; the original synthesis and Addenda A–C remain intact.
-- Sequence: Plan/publication, research/report, synthesis and combined Goal/Guide discussion are complete. The subsequent `proceed` authorized focused provenance/quality/disclosure clarifications in existing Guide sections and resumption of drafting pass 2. Those clarifications were incorporated in v0.3 and retained in the v1.0 baseline after pass 3; Roadmap v0.1 now assigns their implementation and verification, with its review/finalization pass next. Goal v1.7 remains unchanged; no public provenance platform or policy-specific adapter is adopted.
+- Sequence: Plan/publication, research/report, synthesis and combined Goal/Guide discussion are complete. The subsequent `proceed` authorized focused provenance/quality/disclosure clarifications in existing Guide sections and resumption of drafting pass 2. Those clarifications were incorporated in v0.3 and retained in the v1.0 baseline after pass 3; the finalized Roadmap v1.0 assigns their implementation and verification. The next authorized iteration begins implementation task 1.1. Goal v1.7 remains unchanged; no public provenance platform or policy-specific adapter is adopted.
 - Boundary: Reuse IDR-SRV-019 and relevant representation/security research; preserve all completed-topic counts and approved scope. No preselected schema, graph service, universal confidence calculation, report resource, field-by-field marking mandate or national/NATO security-regime implementation. Preserve stakeholder input only as generalized, unattributed-to-application use cases, not verbatim requirements. Acceptance and addendum publication do not change the Goal/Guide, Roadmap or server code.
 
 ---
@@ -738,6 +738,7 @@ The final report must:
 | 2026-09-18 | Guide Drafting Pass 2 and Supplemental Dispositions | The project lead's `proceed` following the combined discussion authorized focused provenance clarifications, Part 5 implementation deferral and continuation of the existing Guide. Version 0.3 specifies remaining write, command, filtering, delivery and exchange contracts with explicit interpretations and implementation tests | Goal v1.7 and accepted research remain unchanged. Next is Guide pass 3, not a new research program or server implementation; no additional requirements document or governance process | Glaux Project Lead (direction and iteration authorization) |
 | 2026-09-18 | Guide Drafting Pass 3 and Baseline | The next `proceed` authorized whole-guide review and finalization. Guide v1.0 checks approved scope and end-to-end workflows, clarifies stream registration/validation, reconciles deletion with execution evidence, and closes restore-continuity gaps | Guide baselined for Roadmap development; all 25 CSAPI and six filtering targets retained. Goal, accepted research and Part 5 deferral unchanged; no server implementation or new planning process | Glaux Project Lead (iteration/finalization authorization) |
 | 2026-09-18 | Roadmap Drafting Pass 1 | The project lead's `proceed` after the two-iteration drafting discussion authorized the complete [Roadmap v0.1](../../../../../Plans/glaux-server/glaux-server-roadmap.md): nine phases, 41 tasks, explicit dependencies/tests and full-target coverage | First draft only; next is the separate review/finalization pass, not implementation. Goal v1.7, Guide v1.0 and accepted research unchanged; effort estimates remain explicitly uncalibrated | Glaux Project Lead (drafting authorization) |
+| 2026-09-18 | Roadmap Drafting Pass 2 and Baseline | The next `proceed` authorized review and finalization of [Roadmap v1.0](../../../../../Plans/glaux-server/glaux-server-roadmap.md). Checked scope/class coverage, dependency order, task size and completion evidence; clarified task-level scheduling and the first implementation slice | Roadmap baselined with nine phases and 41 planned tasks. Next `proceed` begins task 1.1; no third drafting pass, implicit software installation or server implementation in this iteration. Goal v1.7, Guide v1.0, research and uncalibrated estimates unchanged | Glaux Project Lead (iteration/finalization authorization) |
 
 ---
 
@@ -764,7 +765,7 @@ Supplemental progress is tracked separately from the completed category totals a
 | IDR-SRV-058 | Complete (1/1) | 1/1 | 1/1 | Research accepted; selected static experiment recorded in Goal/Guide | 2026-09-17 |
 | IDR-SRV-059 | Complete (1/1) | 1/1 | 1/1 | Research accepted; bounded filtering scope recorded in Goal/Guide | 2026-09-17 |
 | IDR-SRV-060 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum C retained; Guide v1.0 retains Part 5 deferral and existing codec separation | 2026-09-18 |
-| IDR-SRV-061 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum D retained; Guide v1.0 clarifications assigned in Roadmap v0.1 draft | 2026-09-18 |
+| IDR-SRV-061 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum D retained; Guide v1.0 clarifications assigned in Roadmap v1.0 baseline | 2026-09-18 |
 
 ---
 
