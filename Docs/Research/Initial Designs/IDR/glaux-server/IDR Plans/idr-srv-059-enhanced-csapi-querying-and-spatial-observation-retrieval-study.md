@@ -1,10 +1,10 @@
 # Section 059: Enhanced CSAPI Querying and Spatial Observation Retrieval Study - Research Plan
 
 **Topic ID:** IDR-SRV-059<br>
-**Status:** Planned<br>
+**Status:** In Progress - research report in review<br>
 **Last Updated:** September 17, 2026<br>
 **Estimated Research Time:** Not yet estimated; one focused research/report iteration is planned, subject to source access and unresolved questions.<br>
-**Actual Research Time:** Not started<br>
+**Actual Research Time:** AI-assisted research conducted September 17, 2026, America/New_York (September 18 UTC); no human-effort estimate inferred<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md`
 
 ---
@@ -13,7 +13,7 @@
 
 Use the existing [Research Plan Template](../../../../../Governance/research-plan-template.md) structure and the [Research Report Template](../../../../../Governance/research-report-template.md) for the later report. The pinned OS4CSAPI exemplar corpus informs question-led analysis, concrete examples, source traceability, and decision-usable recommendations; its client scope, quantities, and estimates do not transfer to this study.
 
-This is a focused post-synthesis supplement. The current authorization is to draft and push this plan and register it in the overall index, not to execute the research, write its report, adopt filtering extensions, or change the Goal and Definition or Implementation Guide. Preliminary discussion supplies research leads, not completed research findings.
+This is a focused post-synthesis supplement. The plan was published in commit `a17a88d`; the user's next `proceed` accepted it for execution and authorized the research/report iteration. The [report](../IDR%20Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md) is now in review. Report publication does not adopt filtering extensions or change the final synthesis, Goal and Definition, or Implementation Guide.
 
 ---
 
@@ -191,16 +191,16 @@ A targeted implementation feasibility question may require official documentatio
 
 This topic's research is complete when:
 
-- [ ] Q1-Q5 are answered with evidence or explicit limitations and their decision consequences.
-- [ ] All four use cases have clear meanings and illustrative expected results; spatial observation retrieval through sampling relationships is treated as a primary case.
-- [ ] Existing CSAPI behavior, multi-request limitations, implementation gaps, and genuinely additional API capabilities are distinguished.
-- [ ] Features Part 3/CQL2 options identify applicable classes, endpoint/property mappings, discovery, and unresolved interoperability rules without claiming automatic CSAPI inheritance or joins.
-- [ ] Geometry role, relationship recursion, time/history, relevant Part 4 limitations, and result schema/type/unit issues are addressed without conflating distinct spatial meanings.
-- [ ] CS-Go/OSH observations identify inspected commits and support depth; reported but unavailable work is not presented as verified implementation evidence.
-- [ ] Incremental design, access-control, query-cost, paging, and verification implications are grounded in the existing server research, with no invented runtime or performance results.
-- [ ] The recommendation identifies concrete scope, alternatives, costs, exclusions, and necessary decisions, including what earlier conclusions remain unchanged.
-- [ ] The report follows the template, contains reproducible references and coverage checks, and identifies the later synthesis-addendum/Goal/Guide discussion inputs without making those changes.
-- [ ] Relevant official maintenance evidence has been consulted and authority-classified, with only necessary shared-register updates.
+- [x] Q1-Q5 are answered with evidence or explicit limitations and their decision consequences.
+- [x] All four use cases have clear meanings and illustrative expected results; spatial observation retrieval through sampling relationships is treated as a primary case.
+- [x] Existing CSAPI behavior, multi-request limitations, implementation gaps, and genuinely additional API capabilities are distinguished.
+- [x] Features Part 3/CQL2 options identify applicable classes, endpoint/property mappings, discovery, and unresolved interoperability rules without claiming automatic CSAPI inheritance or joins.
+- [x] Geometry role, relationship recursion, time/history, relevant Part 4 limitations, and result schema/type/unit issues are addressed without conflating distinct spatial meanings.
+- [x] CS-Go/OSH observations identify inspected commits and support depth; reported but unavailable work is not presented as verified implementation evidence.
+- [x] Incremental design, access-control, query-cost, paging, and verification implications are grounded in the existing server research, with no invented runtime or performance results.
+- [x] The recommendation identifies concrete scope, alternatives, costs, exclusions, and necessary decisions, including what earlier conclusions remain unchanged.
+- [x] The report follows the template, contains reproducible references and coverage checks, and identifies the later synthesis-addendum/Goal/Guide discussion inputs without making those changes.
+- [x] Relevant official maintenance evidence has been consulted and authority-classified, with only necessary shared-register updates.
 
 Report completion and project-lead acceptance are separate; publication alone does not mark the topic accepted or adopt an implementation option.
 
@@ -232,7 +232,7 @@ Do not produce server code, a new implementation guide, a roadmap, or a standalo
 
 - The original 67-topic IDR baseline, including IDR-SRV-057, is complete and accepted. The relevant reports in Section 4 are existing inputs, not newly assigned topics.
 - IDR-SRV-058 is complete and accepted. Its Part 4 findings are an input; selecting a Part 4 implementation option is not required to conduct this study.
-- Publish this topic plan before research execution. The user's next `proceed` authorizes the research/report iteration; this planning authorization does not do so.
+- Publish this topic plan before research execution. Completed in commit `a17a88d`; the user's subsequent `proceed` authorized the research/report iteration.
 
 **External evidence prerequisites:**
 
@@ -253,18 +253,19 @@ No completed topic is reopened or made retroactively dependent on IDR-SRV-059. T
 
 ## 9. Research Status Checklist
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 synthesis complete
-- [ ] Deliverable draft complete
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 synthesis complete
+- [x] Deliverable draft complete
 - [ ] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** Not started<br>
-**Completion Date:** Not completed
+**Actual Research Time:** AI-assisted research conducted September 17, 2026, America/New_York (September 18 UTC); no human-effort estimate inferred<br>
+**Research Execution Date:** September 17, 2026<br>
+**Completion Date:** Pending project-lead acceptance
 
-Only plan drafting and publication are authorized in the current iteration. Preliminary conversation/source checks do not mark any research phase complete.
+Execution and technical review are complete; the unchecked review/acceptance items refer to the project lead's review. The report recommends a bounded optional Features Part 3/CQL2 addition for discussion, not adoption. Six fixed-data diagnostic assertions were checked; no peer server or conformance suite was executed. The next `proceed` can accept the report and authorize a separate final-synthesis addendum; Goal/Guide discussion follows afterward.
 
 ---
 

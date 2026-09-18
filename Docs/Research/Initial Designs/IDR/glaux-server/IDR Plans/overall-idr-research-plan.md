@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.94<br>
+**Version:** 3.95<br>
 **Date:** September 17, 2026<br>
-**Status:** Original IDR and IDR-SRV-058 complete; IDR-SRV-059 plan prepared for review; Part 4 synthesis addendum prepared<br>
+**Status:** Original IDR and IDR-SRV-058 complete; IDR-SRV-059 research report in review; Part 4 synthesis addendum prepared<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -75,7 +75,7 @@ The shared upstream-history register is maintained across topics as supporting e
 ---
 
 **Original IDR Topics:** 67 (complete and accepted)<br>
-**Post-Synthesis Supplemental Topics:** 2 (IDR-SRV-058 complete and accepted; IDR-SRV-059 planned)
+**Post-Synthesis Supplemental Topics:** 2 (IDR-SRV-058 complete and accepted; IDR-SRV-059 research report in review)
 
 Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
@@ -453,12 +453,12 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 
 #### IDR-SRV-059: Enhanced CSAPI Querying and Spatial Observation Retrieval Study
 
-- Status: Planned; the user authorized plan drafting and publication on September 17, 2026. Research execution and report acceptance have not occurred.
+- Status: In Progress; the user's next `proceed` accepted the published plan for execution and authorized research on September 17, 2026. The [report](../IDR%20Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md) is in review; report acceptance remains pending.
 - Focus: Assess existing CSAPI query capabilities and practical limitations, primarily spatial observation retrieval through sampling-feature relationships, with measured-value and related-property filtering. Evaluate Features Part 3/CQL2, Part 4 touchpoints, and bounded CS-Go/OSH evidence without preselecting an extension or changing approved scope.
 - Plan: [idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study.md](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study.md).
 - Output target: `IDR Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md`.
 - Sequence: Plan/publication first; research/report on the next `proceed`; a later authorized accepted-findings synthesis addendum; then discussion of querying and Part 4 implications for the Goal and Definition or Implementation Guide.
-- Boundary: Distinguish existing multi-request and recursive association behavior from additional geometric/value filtering. Preserve the original 67-topic completion record and IDR-SRV-058 acceptance; no CQL2, Part 4, or other implementation option is adopted by planning this study.
+- Boundary: Distinguish existing multi-request and recursive association behavior from additional geometric/value filtering. Preserve the original 67-topic completion record and IDR-SRV-058 acceptance. The report recommends a bounded optional Features Part 3/CQL2 addition for discussion; publication does not adopt it or change the synthesis, Goal, or Guide.
 
 ---
 
@@ -699,6 +699,8 @@ The final report must:
 | 2026-09-17 | IDR-SRV-058 Acceptance and Synthesis Addendum Authorization | The user's next `proceed` accepted the supplemental report and authorized integration through an addendum to the final synthesis | Accept research as decision material without selecting a Part 4 implementation option or changing the Goal/Guide | Glaux Project Lead |
 | 2026-09-17 | Part 4 Synthesis Addendum Prepared | Added separately identified Part 4 findings, cross-topic qualifications, options and planning handoff; preserved the original report's completion and acceptance record | Next step is Goal/Guide discussion; no scope change, implementation or extra governance process introduced | Addendum prepared for Glaux Project Lead review |
 | 2026-09-17 | Supplemental Querying Research Planning | Registered IDR-SRV-059 and prepared its research plan, with spatial observation retrieval through sampling relationships as a primary use case alongside value/related-property filtering and evaluation of Features Part 3/CQL2 | User directed the staged querying supplement before further planning changes; preserve separate plan, research/report, synthesis-addendum, and Goal/Guide discussion iterations, with no extension adoption or research execution in this iteration | Glaux Project Lead (planning authorization) |
+| 2026-09-17 | IDR-SRV-059 Plan Acceptance and Research Authorization | The user's next `proceed` accepted the published plan for execution and authorized its research/report iteration | Continue the staged querying supplement without adopting an extension or changing the final synthesis, Goal, or Guide | Glaux Project Lead |
+| 2026-09-17 | IDR-SRV-059 Research Execution | Produced the report with four spatial/value cases, a bounded Features Part 3/CQL2 recommendation, pinned peer-source findings, incremental design and verification implications, and a relevant upstream-history refresh | Report in review; next `proceed` can accept the research and authorize a separate synthesis addendum; no implementation option adopted or runtime conformance claimed | Pending Glaux Project Lead report review |
 
 ---
 
@@ -723,7 +725,7 @@ Supplemental progress is tracked separately from the completed category totals a
 | Topic | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated |
 |---|---|---|---|---|---|
 | IDR-SRV-058 | Complete (1/1) | 1/1 | 1/1 | Research complete and accepted; synthesis addendum prepared for review | 2026-09-17 |
-| IDR-SRV-059 | Complete (1/1) | 0/1 | 0/1 | Plan prepared for review; research not started | 2026-09-17 |
+| IDR-SRV-059 | Complete (1/1) | 1/1 | 0/1 | Research executed; report in review | 2026-09-17 |
 
 ---
 
