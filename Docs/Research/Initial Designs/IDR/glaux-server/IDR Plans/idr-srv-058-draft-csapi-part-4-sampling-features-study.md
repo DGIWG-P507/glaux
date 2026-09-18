@@ -1,10 +1,10 @@
 # Section 058: Draft CSAPI Part 4 Sampling Features Study - Research Plan
 
 **Topic ID:** IDR-SRV-058<br>
-**Status:** Planned<br>
+**Status:** In Progress - research execution complete; report in review<br>
 **Last Updated:** September 17, 2026<br>
 **Estimated Research Time:** Not yet estimated; one focused research/report iteration is planned, subject to source access and unresolved questions.<br>
-**Actual Research Time:** Not started<br>
+**Actual Research Time:** Conducted September 17, 2026; elapsed effort not separately logged<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md`
 
 ---
@@ -13,7 +13,7 @@
 
 Use the existing [Research Plan Template](../../../../../Governance/research-plan-template.md) structure and produce the later report using the [Research Report Template](../../../../../Governance/research-report-template.md). The pinned OS4CSAPI exemplar corpus listed under References informs question-led analysis, source inventories, explicit limitations, and useful downstream recommendations; its client-specific scope and estimates do not transfer to this study.
 
-This is a post-synthesis supplement, not a reopening of the original 67-topic IDR effort. This iteration prepares and publishes the plan and its index entry only. Research, the report, the synthesis addendum, and any planning-document changes remain separate steps.
+This is a post-synthesis supplement, not a reopening of the original 67-topic IDR effort. The plan-only iteration was published as commit `3942e6d`. The user's subsequent `proceed` accepted the plan for execution and authorized the research/report iteration on September 17, 2026. That research is now recorded in the [in-review report](../IDR%20Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md). The synthesis addendum and any planning-document changes remain separate later steps.
 
 ---
 
@@ -176,15 +176,15 @@ Relevant implementation repositories and source files become primary evidence fo
 
 This topic's research is complete when:
 
-- [ ] Q1-Q5 are answered with specific evidence or an explicit limitation and its decision consequence.
-- [ ] The execution snapshot, authority, artifact inventory, and material source/schema/example gaps are reproducible.
-- [ ] All feature families actually present in the draft are accounted for, including incomplete or excluded material; inherited approved requirements and draft additions are separated.
-- [ ] Geometry/parametric representation, relationships, frames, units, time, validation, and applicable query effects are addressed without inventing unspecified behavior.
-- [ ] The impact on relevant accepted research and current planning sections is explicit, including conclusions that remain unchanged.
-- [ ] Implementation observations are pinned, bounded, and distinguished from verified interoperability or conformance.
-- [ ] Adoption options and a justified recommendation identify concrete capability scope, incremental work, verification needs, and unresolved decisions.
-- [ ] The report follows the report template, contains an evidence-backed coverage check, and identifies later addendum/discussion actions without making them.
-- [ ] Relevant official history has been consulted and authority-classified, with only necessary shared-register refreshes.
+- [x] Q1-Q5 are answered with specific evidence or an explicit limitation and its decision consequence.
+- [x] The execution snapshot, authority, artifact inventory, and material source/schema/example gaps are reproducible.
+- [x] All feature families actually present in the draft are accounted for, including incomplete or excluded material; inherited approved requirements and draft additions are separated.
+- [x] Geometry/parametric representation, relationships, frames, units, time, validation, and applicable query effects are addressed without inventing unspecified behavior.
+- [x] The impact on relevant accepted research and current planning sections is explicit, including conclusions that remain unchanged.
+- [x] Implementation observations are pinned, bounded, and distinguished from verified interoperability or conformance.
+- [x] Adoption options and a justified recommendation identify concrete capability scope, incremental work, verification needs, and unresolved decisions.
+- [x] The report follows the report template, contains an evidence-backed coverage check, and identifies later addendum/discussion actions without making them.
+- [x] Relevant official history has been consulted and authority-classified, with only necessary shared-register refreshes.
 
 Report completion and user acceptance are separate; publication alone does not mark this topic accepted.
 
@@ -215,7 +215,7 @@ Keep inventories and comparison tables inside the report, with appendices only w
 **Internal project prerequisites (completion gates):**
 
 - The original 67-topic IDR baseline, including IDR-SRV-057, is already complete and accepted, as recorded in the overall plan on September 16, 2026. The reports named in Section 4 are therefore available accepted inputs, not new research assignments.
-- This topic plan must be available for user review before the separately authorized research iteration begins. The current authorization covers plan preparation/publication, not report execution.
+- This topic plan was published before execution. The user's subsequent `proceed` authorized research and report publication on September 17, 2026; it did not authorize a synthesis addendum or scope changes in the same iteration.
 
 **External evidence prerequisites:**
 
@@ -235,16 +235,19 @@ No completed IDR topic is reopened or made retroactively dependent on IDR-SRV-05
 
 ## 9. Research Status Checklist
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 synthesis complete
-- [ ] Deliverable draft complete
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 synthesis complete
+- [x] Deliverable draft complete
 - [ ] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** Not started<br>
-**Completion Date:** Not completed
+**Actual Research Time:** Conducted September 17, 2026; elapsed effort not separately logged<br>
+**Research Execution Date:** September 17, 2026<br>
+**Completion Date:** Pending plan-owner review and acceptance
+
+Technical review and reference checks accompany publication; the unchecked review/acceptance items above refer to the project lead's review. Report §9 maps each success criterion to evidence. No Part 4 capability has been adopted through this status update.
 
 ---
 
