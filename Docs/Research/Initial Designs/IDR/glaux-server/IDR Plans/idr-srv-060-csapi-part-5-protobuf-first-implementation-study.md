@@ -1,10 +1,10 @@
 # Section 060: CSAPI Part 5 Protobuf-First Implementation Study - Research Plan
 
 **Topic ID:** IDR-SRV-060<br>
-**Status:** Planned<br>
-**Last Updated:** September 17, 2026<br>
+**Status:** In Progress<br>
+**Last Updated:** September 18, 2026<br>
 **Estimated Research Time:** Not yet estimated; one focused research/report iteration is planned, subject to source availability.<br>
-**Actual Research Time:** Not started<br>
+**Actual Research Time:** One AI-assisted research/report iteration, September 17–18, 2026, America/New_York, including an overnight pause; no human-effort estimate inferred<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md`
 
 ---
@@ -13,7 +13,7 @@
 
 Follow the existing [Research Plan Template](../../../../../Governance/research-plan-template.md) structure and use the [Research Report Template](../../../../../Governance/research-report-template.md) for the later report. The pinned OS4CSAPI exemplars inform concrete questions, source inventories, meaningful verification and practical recommendations; their client-specific scope, metrics and estimates are not Glaux requirements.
 
-This iteration creates and publishes the plan and its supplemental index entry only. Research execution, the report, a later synthesis addendum and any Goal/Guide changes remain separate iterations under the established `proceed` workflow. No Part 5 implementation is adopted by this plan.
+The plan and its supplemental index entry were published in commit `488b9ba`. The user's next `proceed` on September 17, 2026 accepted the plan for execution and authorized the research/report iteration. A later synthesis addendum and any Goal/Guide changes remain separate iterations under the established `proceed` workflow. No Part 5 implementation is adopted by this plan or research authorization.
 
 ---
 
@@ -188,15 +188,15 @@ Phase durations are not estimated separately; execute these four phases within o
 
 This topic research is complete when:
 
-- [ ] Q1-Q5 are answered with evidence or explicit unresolved limitations and their decision consequences.
-- [ ] The actual Part 5/Protobuf source and maturity baseline is identified; meeting preference, draft artifacts and approved obligations are not conflated.
-- [ ] Protobuf is compared with existing SWE Binary commitments without replacing them or assuming performance benefits.
-- [ ] Covered resource/operation directions, schema discovery, framing, HTTP/publication behavior and substantive binding gaps are explicit.
-- [ ] Representative cases address value meaning, presence/nil/defaults, precision/time, schema evolution, safe parsing and authorization; unsupported mappings are visible.
-- [ ] Peer and Rust conclusions identify exact sources and support depth; unavailable tools or unpublished work are not presented as verified results.
-- [ ] Incremental implementation and independent verification needs are practical, bounded and grounded in the existing design, including encoding-independent observation filtering.
-- [ ] The recommendation explains what could be implemented faithfully, what would remain a Glaux experiment and what requires upstream clarification; alternatives and qualitative costs are stated.
-- [ ] The report follows the template, has reproducible references, records relevant upstream-history checks and supplies inputs for a later synthesis addendum and planning discussion only.
+- [x] Q1-Q5 are answered with evidence or explicit unresolved limitations and their decision consequences.
+- [x] The actual Part 5/Protobuf source and maturity baseline is identified; meeting preference, draft artifacts and approved obligations are not conflated.
+- [x] Protobuf is compared with existing SWE Binary commitments without replacing them or assuming performance benefits.
+- [x] Covered resource/operation directions, schema discovery, framing, HTTP/publication behavior and substantive binding gaps are explicit.
+- [x] Representative cases address value meaning, presence/nil/defaults, precision/time, schema evolution, safe parsing and authorization; unsupported mappings are visible.
+- [x] Peer and Rust conclusions identify exact sources and support depth; unavailable tools or unpublished work are not presented as verified results.
+- [x] Incremental implementation and independent verification needs are practical, bounded and grounded in the existing design, including encoding-independent observation filtering.
+- [x] The recommendation explains what could be implemented faithfully, what would remain a Glaux experiment and what requires upstream clarification; alternatives and qualitative costs are stated.
+- [x] The report follows the template, has reproducible references, records relevant upstream-history checks and supplies inputs for a later synthesis addendum and planning discussion only.
 
 Report completion and project-lead acceptance remain separate. A well-supported recommendation to defer can complete this study; it cannot establish that missing specification content has been resolved or that Part 5 has been implemented.
 
@@ -221,7 +221,7 @@ Do not produce server code, a new test framework, the synthesis addendum, a Road
 
 - The original 67-topic IDR, including IDR-SRV-057, is complete and accepted. The relevant reports in Section 4 are existing inputs, not new assignments.
 - IDR-SRV-058/059 are complete and accepted; the resulting approved scope is recorded in Goal v1.7. This study does not reopen their acceptance or selected scope.
-- Publish this plan and its matching overall-index entry first. The user's next `proceed` authorizes research/report execution; this planning authorization does not start it.
+- Publish this plan and its matching overall-index entry first. Completed in commit `488b9ba`; the user's subsequent `proceed` authorized research/report execution.
 
 **External evidence prerequisites:**
 
@@ -240,16 +240,18 @@ If a source cannot be accessed, identify it, the attempt, affected question and 
 
 ## 9. Research Status Checklist
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed
 - [ ] Deliverable accepted
 
-**Actual Research Time:** Not started<br>
-**Completion Date:** Not completed
+**Actual Research Time:** One AI-assisted iteration across September 17–18, 2026; source review, small checks, drafting and technical review, with an overnight pause. No human-hours estimate inferred.<br>
+**Completion Date:** Research/report completed September 18, 2026; topic acceptance pending
+
+The [report](../IDR%20Reports/idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md) is in review. Technical review does not record project-lead acceptance. The next `proceed` accepts the research for downstream use and authorizes the separate synthesis addendum, not a Part 5 implementation or Goal/Guide change. The plan remains In Progress until report acceptance.
 
 ---
 
