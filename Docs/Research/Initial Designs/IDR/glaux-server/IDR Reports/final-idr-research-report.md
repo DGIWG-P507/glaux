@@ -17,6 +17,8 @@
 **Date:** September 16, 2026<br>
 **Last Updated:** September 16, 2026
 
+**Supplemental material:** [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features), prepared September 17, 2026 from accepted IDR-SRV-058 research. The metadata, counts and acceptance above describe the original report; the addendum records its own status and does not change the original completion record.
+
 ---
 
 ## Table of Contents
@@ -48,6 +50,8 @@
 25. [Final Recommendation Summary](#25-final-recommendation-summary)
 26. [Validation Against Success Criteria](#26-validation-against-success-criteria)
 27. [References and Topic Traceability Index](#27-references-and-topic-traceability-index)
+
+Supplement: [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features)
 
 ---
 
@@ -1003,3 +1007,82 @@ No calendar commitments are assigned by this research report. Owners and dates b
 
 **Actual Research Time:** Approximately 62 hours of AI-assisted execution<br>
 **Completion Date:** September 16, 2026
+
+---
+
+## Addendum A: Draft CSAPI Part 4 Sampling Features
+
+**Date:** September 17, 2026<br>
+**Status:** Prepared for review; source research accepted, project-scope decision pending<br>
+**Source:** [IDR-SRV-058 Research Report](idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md), accepted by the Glaux Project Lead on September 17, 2026 through the established `proceed` workflow<br>
+**Purpose:** Integrate the supplemental findings into this synthesis before discussing any Goal and Definition or Implementation Guide changes
+
+### A.1 Scope, Evidence and Completion Record
+
+The original 67-topic synthesis above remains the historical report accepted on September 16, 2026. This addendum incorporates one later accepted research topic; it does not rewrite prior findings, reopen completed topics, adopt Part 4, or authorize implementation. Acceptance of the research means it is suitable to inform the project decision, not that its recommended option has been selected.
+
+| Supplemental topic | Plan | Report | Completion and acceptance | Synthesis conclusion |
+|---|---|---|---|---|
+| IDR-SRV-058: Draft CSAPI Part 4 Sampling Features Study | [Research plan](../IDR%20Plans/idr-srv-058-draft-csapi-part-4-sampling-features-study.md) | [Research report](idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md) | Research complete; accepted September 17, 2026; no prerequisite exception | The draft contains useful specialized sampling descriptions, but its unresolved encoding and behavior contracts do not justify treating the whole draft as a settled implementation target. |
+
+Coverage is **67 original accepted topics plus one accepted supplemental topic**. The original report's reporting period, counts, acceptance date and completion checklist remain unchanged. Preparation of this addendum has not been recorded as plan-owner acceptance of the addendum itself.
+
+This is synthesis of the accepted report, not a new standards or implementation survey. Its evidence remains pinned to:
+
+- Official `part4-working-draft`: `05a3c62d198ee52d0cf81a734b700967b7d864a1`.
+- Approved CSAPI Parts 1 and 2, with source tag `v1.0.0`: `8e03b236a049849f2ccc24b4fd9fdce5ff69bed2`.
+- OSH: `9a43f9ec42315e5a22e5e5d90a4ba79eef9cea08`; CS-Go: `b1fd2e0e9bd69e222d05258d659a842ca24502cb`.
+
+The source report's [evidence base](idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md#3-evidence-base), [references](idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md#11-references) and [artifact checks](idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md#12-appendix-reproducible-artifact-checks) control the detailed claims and limitations. No upstream refresh or runtime interoperability test was performed for this addendum.
+
+### A.2 Consolidated Findings
+
+**The existing approved resource is not missing.** Part 1 already defines generic SamplingFeatures, their relationships, navigation and GeoJSON representation. Part 4 adds specialized descriptions within that resource family: spatial sampling types, specimens, statistical samples, feature parts and parametric shapes. It does not establish a need for another Glaux service or a general 3D GIS engine. Connected Systems Part 4 is distinct from OGC API - Features Part 4 transactions and from Simple Feature Access (SFA/WKT). [IDR-SRV-058 §4.2](idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md#42-q2---what-is-already-required-and-what-part-4-adds)
+
+**The draft's limitations affect implementation, not just publication polish.** The report found unfinished encoding/conformance packaging, unresolved schema references, mismatched type identifiers and field rules, and an orientation-free relative-point rule incompatible with the referenced current Pose alternatives. A successful generic JSON parse or a repair to missing schema paths cannot establish specialized support. [IDR-SRV-058 §§4.1–4.3](idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md#41-q1---a-packaged-review-draft-not-a-finished-contract)
+
+**Existing architecture remains a useful foundation, not proof of capability.** The accepted separation of identity, relationships, source documents, temporal meaning and indexed geometry can accommodate future choices. Storing pose or shape parameters does not establish valid subtype handling, historical geometry selection or spatially correct derived extents. The research provides no reason to change the Rust/PostgreSQL/PostGIS architecture for Part 4. [IDR-SRV-058 §4.4.3](idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md#443-glaux-retain-the-architecture-add-semantics-only-deliberately)
+
+**Peers offer examples, not an authoritative answer to draft conflicts.** OSH has useful legacy parametric classes and demo code, with generic binding limitations; the inspected CS-Go path establishes generic static-feature handling rather than the additional parametric wire contract. Neither was exercised at runtime in this study. Their source behavior must not be promoted into a standards requirement or proof of exact-draft interoperability. [IDR-SRV-058 §4.4](idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md#44-q4---what-existing-implementations-and-glauxs-design-establish)
+
+### A.3 Effect on the Original Synthesis
+
+The new evidence qualifies the following conclusions without replacing their accepted foundations:
+
+| Original section | What remains valid | Qualification supplied by IDR-SRV-058 |
+|---|---|---|
+| §6: Conformance and requirements | The 25-class Parts 1 and 2 completion target and evidence-backed claims | No approved Part 4 class is added. Any later experimental checks remain separate from approved conformance claims. |
+| §8: Resource model, identity and relationships | Generic SamplingFeature identity, parent/sampled/sample-of relationships and temporal distinctions | A specialized description does not imply a new resource family or subsystem. The draft's movement/identity tension is not an instruction to mint a new ID for every position change. |
+| §9: Representation and validation | Preserve source meaning; validate structure and semantics separately; resolve dependencies safely | Typed Part 4 support would require explicit decisions on identifiers, fields, pose and inherited mappings. SensorML pose reuse does not create a SensorML SamplingFeature representation. |
+| §10.2: Spatial and temporal storage | PostgreSQL/PostGIS, explicit geometry and distinct source/query/derived representations | An anchor point is not an implicit sampling volume. Parametric storage does not imply volumetric filtering, terrain intersection or general geometry derivation. |
+| §§8.3 and 11.2: Time and dynamic values | Separate validity, observation and receipt/commit time; avoid invented currentness | If mobile draft behavior is selected, geometry selection at the latest time, an instant or interval end must coexist with validity filtering. Late evidence, missing history and frame resolution need explicit handling. |
+| §§9.2 and 13: Validation and access | Bounded parsing, controlled references and authorization of represented information | Any chosen frame traversal or derived geometry must preserve limits and access restrictions; it cannot expose protected platform position or trigger arbitrary external fetches. |
+| §17: Verification | Independent expectations, fixture provenance and capability-qualified interoperability evidence | Generic Part 1 tests, exact draft checks and local experimental interpretations are different evidence. Verify semantic round trips and query results, not just JSON acceptance or a displayed point. |
+
+The detailed links to the underlying topic reports and current guide sections are in [IDR-SRV-058 §7.1](idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md#71-implications-and-affected-existing-sections). In particular, IDR-SRV-008's generic/specialized boundary and IDR-SRV-026's treatment of Part 4 as informative remain valid. No accepted topic report requires reopening merely to incorporate this supplement.
+
+### A.4 Recommendation and Remaining Choice
+
+**Recommendation carried forward for discussion:** keep the current design compatible with Part 4 descriptions, but do not add blanket Part 4 implementation to the completion target now. Compatibility here means preserving appropriate extension/source information and keeping model and validation boundaries suitable for later specialization; it does not mean advertising specialized support that has not been implemented and verified.
+
+The report also identifies a concrete alternative: an explicitly bounded experimental implementation of **static sampling points, curves and surfaces**. That option still needs an agreed encoding interpretation and subtype tests. It does not implicitly include solids, mobile snapshots, specimens, other parametric families or derived-volume queries. Broader support remains possible, but its relevant contract conflicts must first be resolved or documented as experimental project choices. [IDR-SRV-058 §§5–7](idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md#5-decision-analysis)
+
+The remaining cross-topic uncertainties are the chosen type/field vocabulary, orientation-free pose representation, latest/as-of behavior with incomplete or delayed data, and the geometry used for implicit-shape filtering. These limit what could be promised for selected Part 4 capabilities; they do **not** prevent continued planning of the approved server or require waiting for final Part 4 publication. No implementation hours or release commitments are inferred from the research.
+
+None of these options is selected by this addendum. The Parts 1 and 2 target and the current Goal's experimental Part 3 intent remain unchanged.
+
+### A.5 Downstream Readiness and Handoff
+
+The evidence is sufficient for the next **discussion**, with no additional broad research cycle required:
+
+| Document | Next consideration | Change made by this addendum |
+|---|---|---|
+| [Goal and Definition v1.6](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md) | Whether §4 should mention Part 4 at all, and whether that would be an implementation commitment or only an explicit boundary | None. Research acceptance does not add experimental Part 4 to the goal. |
+| [Implementation Guide v0.1](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) | Whether to clarify the draft boundary and preservation expectations; if support is chosen, identify exact types, representations, validation/query behavior and tests | None. The affected sections are already identified in the source report. |
+| Roadmap | Reflect only scope subsequently agreed through the Goal/Guide discussion | No Part 4 milestone, estimate or new work package created. |
+
+**Next step:** the Glaux Project Lead and Codex discuss these Goal/Guide choices. The next `proceed` begins that discussion; it does not automatically edit either document or authorize implementation. Any agreed edits follow the user's direction.
+
+The original §27.4 handoff is historical. This supplemental iteration does not reactivate its proposed work packages, additional document types or approval processes. The current Goal, Guide and the agreed iteration workflow remain the planning context.
+
+**Addendum validation:** the supplemental topic is accounted for; conclusions trace to its accepted report; affected original conclusions and remaining uncertainties are explicit; downstream readiness and next action are stated; original completion and acceptance records are preserved. Project-scope selection and plan-owner review of this new addendum remain distinct from the already recorded acceptance of IDR-SRV-058.

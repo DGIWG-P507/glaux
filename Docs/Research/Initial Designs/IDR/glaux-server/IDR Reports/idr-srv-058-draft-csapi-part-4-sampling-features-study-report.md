@@ -1,7 +1,7 @@
 # Section 058: Draft CSAPI Part 4 Sampling Features Study - Research Report
 
 **Topic ID:** IDR-SRV-058<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-058 Research Plan](../IDR%20Plans/idr-srv-058-draft-csapi-part-4-sampling-features-study.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Five; draft maturity, differences from approved standards, type semantics, Glaux/implementation impacts, and adoption options<br>
@@ -11,8 +11,8 @@
 **Supporting Resources:** Accepted IDR reports identified below; Goal and Definition v1.6; Implementation Guide v0.1; official maintenance history; pinned OSH and CS-Go source<br>
 **Document Purpose:** Inform a later decision on whether and how draft Part 4 should enter Glaux Server's plans, without making that scope decision<br>
 **Author(s):** OpenAI Codex<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Not yet accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 17, 2026<br>
 **Date:** September 17, 2026<br>
 **Last Updated:** September 17, 2026
 
@@ -21,6 +21,8 @@
 ## Usage Rules
 
 This report is a supplement to the completed 67-topic research baseline. **Finding** means directly supported by the cited evidence; **interpretation** means the analysis of that evidence; **recommendation** means a proposed Glaux choice. Draft language and implementation precedents are not approved standards obligations. Publication of this report does not accept it, adopt Part 4, or change the Goal and Definition or Implementation Guide.
+
+**Acceptance record:** The user's September 17, 2026 `proceed`, following publication of this report at commit `74b5375`, accepts the research for downstream use and authorizes the separate synthesis-addendum iteration. It does not select an implementation option. See [Addendum A in the final synthesis](final-idr-research-report.md#addendum-a-draft-csapi-part-4-sampling-features).
 
 ## Table of Contents
 
@@ -472,4 +474,4 @@ Several inherited examples are useful negative fixtures after provenance is reta
 - [x] Executive summary and recommendations are independently understandable.
 - [x] Risks, open questions and success-criteria validation are recorded.
 - [x] Next steps and ownership are stated.
-- [ ] Plan-owner acceptance and date recorded before treating the topic as accepted downstream.
+- [x] Plan-owner acceptance and date recorded before treating the topic as accepted downstream.

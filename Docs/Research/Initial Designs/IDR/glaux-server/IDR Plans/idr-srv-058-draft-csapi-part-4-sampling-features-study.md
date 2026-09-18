@@ -1,7 +1,7 @@
 # Section 058: Draft CSAPI Part 4 Sampling Features Study - Research Plan
 
 **Topic ID:** IDR-SRV-058<br>
-**Status:** In Progress - research execution complete; report in review<br>
+**Status:** Complete<br>
 **Last Updated:** September 17, 2026<br>
 **Estimated Research Time:** Not yet estimated; one focused research/report iteration is planned, subject to source access and unresolved questions.<br>
 **Actual Research Time:** Conducted September 17, 2026; elapsed effort not separately logged<br>
@@ -13,7 +13,7 @@
 
 Use the existing [Research Plan Template](../../../../../Governance/research-plan-template.md) structure and produce the later report using the [Research Report Template](../../../../../Governance/research-report-template.md). The pinned OS4CSAPI exemplar corpus listed under References informs question-led analysis, source inventories, explicit limitations, and useful downstream recommendations; its client-specific scope and estimates do not transfer to this study.
 
-This is a post-synthesis supplement, not a reopening of the original 67-topic IDR effort. The plan-only iteration was published as commit `3942e6d`. The user's subsequent `proceed` accepted the plan for execution and authorized the research/report iteration on September 17, 2026. That research is now recorded in the [in-review report](../IDR%20Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md). The synthesis addendum and any planning-document changes remain separate later steps.
+This is a post-synthesis supplement, not a reopening of the original 67-topic IDR effort. The plan-only iteration was published as commit `3942e6d`. The user's subsequent `proceed` accepted the plan for execution and authorized the research/report iteration on September 17, 2026. The [report](../IDR%20Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md) was published at commit `74b5375`; the next `proceed` accepted it and authorized the separate [synthesis addendum](../IDR%20Reports/final-idr-research-report.md#addendum-a-draft-csapi-part-4-sampling-features). Any Goal/Guide changes remain subject to the later discussion and user direction.
 
 ---
 
@@ -240,14 +240,14 @@ No completed IDR topic is reopened or made retroactively dependent on IDR-SRV-05
 - [x] Phase 3 complete
 - [x] Phase 4 synthesis complete
 - [x] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
 **Actual Research Time:** Conducted September 17, 2026; elapsed effort not separately logged<br>
 **Research Execution Date:** September 17, 2026<br>
-**Completion Date:** Pending plan-owner review and acceptance
+**Completion Date:** September 17, 2026
 
-Technical review and reference checks accompany publication; the unchecked review/acceptance items above refer to the project lead's review. Report §9 maps each success criterion to evidence. No Part 4 capability has been adopted through this status update.
+The Glaux Project Lead accepted the report through the next `proceed` after publication. Report §9 maps each success criterion to evidence. Acceptance makes the research available for synthesis; no Part 4 capability has been adopted through this status update.
 
 ---
 

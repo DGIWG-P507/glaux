@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.92<br>
+**Version:** 3.93<br>
 **Date:** September 17, 2026<br>
-**Status:** Original IDR complete; supplemental IDR-SRV-058 report in review<br>
+**Status:** Original IDR and supplemental IDR-SRV-058 complete; synthesis addendum prepared for review<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -75,7 +75,7 @@ The shared upstream-history register is maintained across topics as supporting e
 ---
 
 **Original IDR Topics:** 67 (complete and accepted)<br>
-**Post-Synthesis Supplemental Topics:** 1 (IDR-SRV-058, research executed; report in review)
+**Post-Synthesis Supplemental Topics:** 1 (IDR-SRV-058, complete and accepted)
 
 Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
@@ -444,12 +444,12 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 
 #### IDR-SRV-058: Draft CSAPI Part 4 Sampling Features Study
 
-- Status: In Progress; plan accepted for execution through the user's `proceed` on September 17, 2026. Research execution is complete and the [report is in review](../IDR%20Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md); plan-owner acceptance is pending.
+- Status: Complete; the Glaux Project Lead accepted the [report](../IDR%20Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md) through the next `proceed` after its publication, September 17, 2026. The separately authorized [synthesis addendum](../IDR%20Reports/final-idr-research-report.md#addendum-a-draft-csapi-part-4-sampling-features) is prepared for review; no implementation option has been selected.
 - Focus: Assess the official Part 4 working draft against the approved Parts 1 and 2 baseline, including feature types, requirements and schemas, maturity gaps, bounded implementation evidence, and implications for Glaux's existing research and server design. Recommend whether and how to consider experimental support without adopting it through the research itself.
 - Plan: [idr-srv-058-draft-csapi-part-4-sampling-features-study.md](idr-srv-058-draft-csapi-part-4-sampling-features-study.md).
 - Output target: `IDR Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md`.
 - Sequence: Plan/publication first; separately authorized research/report next; then an accepted-findings addendum to the final synthesis in a later iteration; then discussion of any Goal and Definition or Implementation Guide changes. The user's established `proceed` workflow applies; no special acceptance phrase is required.
-- Boundary: Preserve the original accepted synthesis and approved server scope. The research/report iteration does not authorize report acceptance, a synthesis addendum, planning-document scope changes, or implementation in the same iteration.
+- Boundary: Preserve the original accepted synthesis and approved server scope. Research acceptance and addendum preparation are complete steps; the next iteration is discussion of any Goal/Guide implications, not automatic document edits or implementation.
 
 ---
 
@@ -687,6 +687,8 @@ The final report must:
 | 2026-09-17 | Supplemental Part 4 Research Planning | Registered IDR-SRV-058 and prepared its focused research plan; preserved the completed 67-topic baseline and IDR-SRV-057 acceptance | User authorized plan/publication first, followed by separate research/report, synthesis-addendum, and planning-discussion iterations; no research execution or Part 4 implementation commitment in this iteration | Glaux Project Lead (planning authorization) |
 | 2026-09-17 | IDR-SRV-058 Plan Acceptance and Research Authorization | The user's next `proceed` accepted the published plan for execution and authorized its research/report iteration | Continue the agreed staged supplement without changing the original accepted baseline or authorizing implementation | Glaux Project Lead |
 | 2026-09-17 | IDR-SRV-058 Research Execution | Produced the draft Part 4 study report, pinned the official draft and peer sources, checked artifact/semantic gaps, assessed affected research and adoption options, and refreshed only relevant shared-history evidence | Report in review; preserve separate report acceptance, synthesis-addendum, and Goal/Guide discussion steps; no scope option adopted | Pending Glaux Project Lead report review |
+| 2026-09-17 | IDR-SRV-058 Acceptance and Synthesis Addendum Authorization | The user's next `proceed` accepted the supplemental report and authorized integration through an addendum to the final synthesis | Accept research as decision material without selecting a Part 4 implementation option or changing the Goal/Guide | Glaux Project Lead |
+| 2026-09-17 | Part 4 Synthesis Addendum Prepared | Added separately identified Part 4 findings, cross-topic qualifications, options and planning handoff; preserved the original report's completion and acceptance record | Next step is Goal/Guide discussion; no scope change, implementation or extra governance process introduced | Addendum prepared for Glaux Project Lead review |
 
 ---
 
@@ -710,7 +712,7 @@ Supplemental progress is tracked separately from the completed category totals a
 
 | Topic | Plan Coverage | Report Coverage | Accepted Report Coverage | Status | Last Updated |
 |---|---|---|---|---|---|
-| IDR-SRV-058 | Complete (1/1) | 1/1 (in review) | 0/1 | Research executed; awaiting report acceptance | 2026-09-17 |
+| IDR-SRV-058 | Complete (1/1) | 1/1 | 1/1 | Research complete and accepted; synthesis addendum prepared for review | 2026-09-17 |
 
 ---
 
