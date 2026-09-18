@@ -1,7 +1,7 @@
 # Section 059: Enhanced CSAPI Querying and Spatial Observation Retrieval Study - Research Plan
 
 **Topic ID:** IDR-SRV-059<br>
-**Status:** In Progress - research report in review<br>
+**Status:** Complete<br>
 **Last Updated:** September 17, 2026<br>
 **Estimated Research Time:** Not yet estimated; one focused research/report iteration is planned, subject to source access and unresolved questions.<br>
 **Actual Research Time:** AI-assisted research conducted September 17, 2026, America/New_York (September 18 UTC); no human-effort estimate inferred<br>
@@ -13,7 +13,7 @@
 
 Use the existing [Research Plan Template](../../../../../Governance/research-plan-template.md) structure and the [Research Report Template](../../../../../Governance/research-report-template.md) for the later report. The pinned OS4CSAPI exemplar corpus informs question-led analysis, concrete examples, source traceability, and decision-usable recommendations; its client scope, quantities, and estimates do not transfer to this study.
 
-This is a focused post-synthesis supplement. The plan was published in commit `a17a88d`; the user's next `proceed` accepted it for execution and authorized the research/report iteration. The [report](../IDR%20Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md) is now in review. Report publication does not adopt filtering extensions or change the final synthesis, Goal and Definition, or Implementation Guide.
+This is a focused post-synthesis supplement. The plan was published in commit `a17a88d`; the authorized [report](../IDR%20Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md) was published in `a785f97`. The user's next `proceed` accepted the report on September 17, 2026 and authorized the separately prepared [synthesis addendum](../IDR%20Reports/final-idr-research-report.md#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval). Research acceptance does not adopt filtering extensions or change the Goal and Definition or Implementation Guide.
 
 ---
 
@@ -258,14 +258,14 @@ No completed topic is reopened or made retroactively dependent on IDR-SRV-059. T
 - [x] Phase 3 complete
 - [x] Phase 4 synthesis complete
 - [x] Deliverable draft complete
-- [ ] Deliverable reviewed
-- [ ] Deliverable accepted
+- [x] Deliverable reviewed
+- [x] Deliverable accepted
 
 **Actual Research Time:** AI-assisted research conducted September 17, 2026, America/New_York (September 18 UTC); no human-effort estimate inferred<br>
 **Research Execution Date:** September 17, 2026<br>
-**Completion Date:** Pending project-lead acceptance
+**Completion Date:** September 17, 2026
 
-Execution and technical review are complete; the unchecked review/acceptance items refer to the project lead's review. The report recommends a bounded optional Features Part 3/CQL2 addition for discussion, not adoption. Six fixed-data diagnostic assertions were checked; no peer server or conformance suite was executed. The next `proceed` can accept the report and authorize a separate final-synthesis addendum; Goal/Guide discussion follows afterward.
+Execution, technical review and project-lead acceptance are complete. The report recommends a bounded optional Features Part 3/CQL2 addition for discussion, not adoption. Six fixed-data diagnostic assertions were checked; no peer server or conformance suite was executed. The separately authorized synthesis addendum is prepared for review. The next `proceed` begins the combined querying/Part 4 Goal/Guide discussion; it does not automatically edit those documents or authorize implementation.
 
 ---
 

@@ -1,7 +1,7 @@
 # Section 059: Enhanced CSAPI Querying and Spatial Observation Retrieval Study - Research Report
 
 **Topic ID:** IDR-SRV-059<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-059 research plan](../IDR%20Plans/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study.md)<br>
 **Overall Research Plan:** [Glaux Server Overall IDR Research Plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Q1-Q5; all four planned use cases<br>
@@ -11,8 +11,8 @@
 **Supporting Resources:** Accepted IDR-SRV-011, 017/018, 022/024-028, 034, 039/040, 050/051/053/054/056, and 058; final synthesis; Goal v1.6; draft Guide v0.1<br>
 **Document Purpose:** Recommend whether and how to add bounded filtering capabilities, especially spatial observation retrieval through sampling relationships, without treating that recommendation as adopted server scope<br>
 **Author:** OpenAI Codex, with independent standards, implementation, and semantic/security reviews<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Not yet accepted<br>
+**Accepted By:** Glaux Project Lead<br>
+**Acceptance Date:** September 17, 2026<br>
 **Date:** September 17, 2026<br>
 **Last Updated:** September 17, 2026
 
@@ -20,7 +20,7 @@
 
 ## Usage Rules
 
-This report follows the existing research-report template. **Finding** identifies source-backed evidence; **Interpretation** identifies analysis; **Recommendation** identifies a proposed project choice. Publication does not adopt an extension, change the Goal/Guide, or accept the report. The preceding plan was published in commit `a17a88d`; the user's next `proceed` authorized this research/report iteration only.
+This report follows the existing research-report template. **Finding** identifies source-backed evidence; **Interpretation** identifies analysis; **Recommendation** identifies a proposed project choice. The plan was published in commit `a17a88d`, and the authorized research report in `a785f97`. The user's next `proceed` accepted this report on September 17, 2026 and authorized a separate synthesis addendum. Research acceptance does not adopt an extension or change the Goal/Guide.
 
 ## Table of Contents
 
@@ -440,17 +440,17 @@ These questions constrain implementation claims; they do not prevent a decision-
 | Template, references, coverage and later handoff preserved | Met | This structure; §§10-12 |
 | Bounded official-history refresh | Met | §3.2; shared register v1.14 |
 
-Research execution is complete for the planned assessment. The report remains **In Review**, and IDR-SRV-059 is not marked accepted or closed until the project lead responds.
+Research execution and project-lead acceptance are complete for the planned assessment. IDR-SRV-059 is closed as accepted research; the proposed implementation option remains undecided.
 
 ---
 
 ## 10. Next Steps and Handoff
 
-1. **Review and accept or revise this report** — Glaux Project Lead, next iteration; no calendar deadline imposed.
-2. **On the next `proceed`, record acceptance and add the findings to the final synthesis as a separate addendum** — Codex. Preserve the original accepted synthesis and existing Part 4 addendum. Do not change the Goal/Guide in that iteration.
-3. **Then discuss querying and Part 4 planning implications together** — Project Lead and Codex. Decide whether to adopt the optional filtering capability and any specialized sampling support before making agreed Goal/Guide changes.
+1. **Report acceptance recorded** — Glaux Project Lead, September 17, 2026, through the next `proceed` after publication.
+2. **Separate synthesis addendum prepared** — Codex, September 17, 2026: [Addendum B](final-idr-research-report.md#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval). The original accepted synthesis and Part 4 addendum are preserved. The new addendum is prepared for review; the Goal/Guide are unchanged.
+3. **Next, discuss querying and Part 4 planning implications together** — Project Lead and Codex. The next `proceed` starts that discussion, not automatic edits. Decide whether to adopt the optional filtering capability and any specialized sampling support before making agreed Goal/Guide changes.
 
-Publication of this report does not choose the implementation option. No external issue, email, software installation, server implementation, or live-service test was performed as part of this iteration.
+Publication and acceptance of this report do not choose the implementation option. No external issue, email, software installation, server implementation, or live-service test was performed as part of the research or synthesis iterations.
 
 ---
 
@@ -571,6 +571,6 @@ All six agreed with the independently stated expectations. This is an arithmetic
 - [x] Existing research conflicts and proposed changes are identified without rewriting accepted reports
 - [x] Incremental implementation, security, cost and test implications are stated
 - [x] Success criteria and next-step ownership are mapped
-- [ ] Plan-owner acceptance and acceptance date recorded
+- [x] Plan-owner acceptance and acceptance date recorded
 
-The unchecked acceptance item is intentional. The user's next `proceed` can accept this report and authorize only the separate synthesis-addendum iteration.
+Acceptance is recorded through the user's established `proceed` workflow. It establishes this report as decision material for the synthesis and later planning discussion, not as an adopted filtering or Part 4 implementation requirement.

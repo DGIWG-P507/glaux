@@ -17,7 +17,7 @@
 **Date:** September 16, 2026<br>
 **Last Updated:** September 16, 2026
 
-**Supplemental material:** [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features), prepared September 17, 2026 from accepted IDR-SRV-058 research. The metadata, counts and acceptance above describe the original report; the addendum records its own status and does not change the original completion record.
+**Supplemental material:** [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features) and [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval), prepared September 17, 2026 from accepted IDR-SRV-058/059 research. The metadata, counts and acceptance above describe the original report; each addendum records its own status and does not change the original completion record.
 
 ---
 
@@ -51,7 +51,7 @@
 26. [Validation Against Success Criteria](#26-validation-against-success-criteria)
 27. [References and Topic Traceability Index](#27-references-and-topic-traceability-index)
 
-Supplement: [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features)
+Supplements: [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features); [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval)
 
 ---
 
@@ -1086,3 +1086,77 @@ The evidence is sufficient for the next **discussion**, with no additional broad
 The original §27.4 handoff is historical. This supplemental iteration does not reactivate its proposed work packages, additional document types or approval processes. The current Goal, Guide and the agreed iteration workflow remain the planning context.
 
 **Addendum validation:** the supplemental topic is accounted for; conclusions trace to its accepted report; affected original conclusions and remaining uncertainties are explicit; downstream readiness and next action are stated; original completion and acceptance records are preserved. Project-scope selection and plan-owner review of this new addendum remain distinct from the already recorded acceptance of IDR-SRV-058.
+
+---
+
+## Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval
+
+**Date:** September 17, 2026<br>
+**Status:** Prepared for review; source research accepted, project-scope decision pending<br>
+**Source:** [IDR-SRV-059 Research Report](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md), accepted by the Glaux Project Lead on September 17, 2026 through the established `proceed` workflow<br>
+**Purpose:** Integrate the querying findings and their Part 4 touchpoints before discussing any Goal and Definition or Implementation Guide changes
+
+### B.1 Scope, Evidence and Completion Record
+
+The spatial use case is useful and technically feasible: select observations using the geometry of their related sampling features, even when the returned observations have no geometry of their own. The accepted research recommends considering a bounded, optional Features Part 3/CQL2 addition. **Acceptance of that research does not adopt the addition.** The original synthesis and Addendum A remain intact; this addendum does not change the approved server scope or authorize implementation.
+
+| Supplemental topic | Plan | Report | Completion and acceptance | Synthesis conclusion |
+|---|---|---|---|---|
+| IDR-SRV-059: Enhanced CSAPI Querying and Spatial Observation Retrieval Study | [Research plan](../IDR%20Plans/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study.md) | [Research report](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md) | Research complete; accepted September 17, 2026; no prerequisite exception | The concrete spatial/value cases justify reconsidering the earlier CQL2 deferral, with explicit relationship, geometry, time and result-value meanings. |
+
+Coverage is now **67 original accepted topics plus two accepted supplemental topics**, 058 and 059. Original counts and acceptance dates remain historical. This new addendum is prepared for review, not recorded as already accepted.
+
+This is synthesis of the report published in commit `a785f97`, not a new standards survey. Its [evidence base](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md#3-evidence-base) and [source checks](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md#121-source-and-scope-checks) control source versions and limitations: approved CSAPI Parts 1/2 and tag `8e03b236`, Features Part 3 v1.0 / OGC 19-079r2, CQL2 v1.0.0 / OGC 21-065r2, draft Part 4 `05a3c62d`, CS-Go `b1fd2e0`, OSH `9a43f9ec`, and unmerged OSH PR 323 head `2da298be`. Full immutable identifiers are in the source report. No upstream refresh, server execution or new benchmark was performed for this addendum.
+
+### B.2 Consolidated Findings
+
+**Existing filters are useful, but the intended spatial question matters.** Part 1 sampling-feature geometry filtering followed by Part 2 observation `foi` filtering can answer simple static cases. Recursive `sampleOf` association matching can also return an observation whose larger sampling ancestor intersects the area while its own sampling point is outside. That is a different result from direct sampling-location selection, not necessarily an implementation error. A moving feature introduces a further distinction: geometry at observation phenomenon time is not its current position or its whole trajectory. The four examples also distinguish measured-value thresholds from property identity, units and nil values, and specimen sampling time from observation time. [IDR-SRV-059 §4.1](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md#41-q1---existing-building-blocks-do-not-answer-every-spatial-question)
+
+**Features Part 3/CQL2 supplies filtering machinery, not the missing CSAPI meanings.** Queryables can describe searchable values absent from the returned representation, including a selected related geometry. Observations therefore need not become GeoJSON features to use the generic mechanism. The server must still define which relationship, geometry version and result component supplies each value; a property name does not standardize traversal or create a general join language. [IDR-SRV-059 §§4.2-4.3](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md#42-q2---a-reusable-filtering-mechanism-not-an-automatic-csapi-binding)
+
+**The peer evidence supports investigation, not copying an established solution.** At the report's inspected snapshots, CS-Go exposes named filters, direct sampling-feature matching and text searches, not demonstrated CQL2. OSH's spatial observation input targets an internal observation location; the traced predicates/storage paths do not establish consistent sampling-feature geometry evaluation. Its inspected open PR proposes simple result equality and leaves CQL2 for future work. These are bounded source findings, not runtime failures or whole-project conformance judgments. The reported CS-Go development work and anticipated SWG issue were not identified within the recorded public search. [IDR-SRV-059 §4.4](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md#44-q4---peer-implementations-show-useful-work-not-a-complete-solution)
+
+**Querying and Part 4 remain separate choices.** Generic sampling-feature geometry is already available under Part 1; specialized draft types are not a prerequisite for improved observation filtering. Conversely, adopting Part 4 would not supply a complete querying interface or resolve missing historical geometry, relative frames or implicit volumes. An anchor point must not stand in for a sampling area or volume. Both studies support retaining the existing Rust/PostgreSQL/PostGIS architecture. [IDR-SRV-059 §§4.3, 4.5](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md#43-q3---define-the-value-being-filtered-before-defining-its-syntax); [Addendum A](#addendum-a-draft-csapi-part-4-sampling-features)
+
+### B.3 Effect on the Original Synthesis
+
+| Original section / research basis | What remains valid | Qualification supplied by IDR-SRV-059 |
+|---|---|---|
+| §§5-6: Standards and conformance | Full approved Parts 1/2 target; only evidenced capability claims | Features Part 3/CQL2 is an optional addition, not an automatically inherited CSAPI obligation. No new class is adopted here. |
+| §7.2: Querying; underlying IDR-SRV-011 | Exact parameter behavior, combined filters, authorization and paging | The earlier CQL2 deferral now merits reconsideration because concrete needs have been demonstrated. Existing `foi` and time behavior must not be redefined by an extension. |
+| §§8.3, 10.2 and 11.2: Relationships, geometry and time | Typed relationships; distinct source/query geometry; separate temporal meanings | Direct sampling geometry, ancestor geometry and observation-result geometry are different values. Historical selection needs retained evidence and an explicit rule, not a current-state fallback. |
+| §§9.1, 9.3 and 11.2: SWE results and units | Contract-bound, encoding-independent measurement meaning | Begin result filtering with typed scalar queryables per datastream. Text search and universal cross-stream numeric comparisons do not preserve type, unit or nil semantics. |
+| §§7.2 and 13: Access, disclosure and paging | The authorized view precedes filtering/counting/paging | Visibility of an observation does not authorize testing hidden related attributes. Replacing a protected value with NULL can itself leak information; permitted query views and consistent policy handling remain essential. |
+| §17: Verification | Independent expected results and capability-qualified evidence | Add relationship/time/value cases, class/dependency coverage, rejection/null tests, disclosure tests and paging checks. Parsing success alone does not prove the correct observation set. |
+| Addendum A: Draft sampling features | Specialized-type, pose, history and implicit-shape limitations | Improved filtering can be considered without Part 4 adoption. Related specimen examples remain conditional, not an implicit commitment to specialized types. |
+
+The affected prior reports and guide sections are identified in [IDR-SRV-059 §4.5](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md#45-q5---reconsider-the-deferral-preserve-the-existing-architecture) and [§7](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md#7-implementation-implications-and-estimates). The original reports are not rewritten. The filtering recommendation is new decision material, while their architecture, semantic and security foundations remain useful.
+
+### B.4 Recommendation and Remaining Choices
+
+**Carry forward the bounded optional addition for discussion.** The report prefers it over indefinite deferral or custom parameters for each new condition, while retaining existing CSAPI workflows. Its initial six-class candidate is:
+
+- Features Part 3: Queryables and Filter.
+- CQL2: Basic CQL2, Basic Spatial Functions, Basic Spatial Functions Plus and JSON encoding.
+
+The [exact class identifiers and dependencies](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md#42-q2---a-reusable-filtering-mechanism-not-an-automatic-csapi-binding) remain controlling for this proposal. Selecting a class means its complete applicable obligations, not a convenient subset: the spatial-plus class is not polygon-only support, and horizontal intersection is not a volumetric claim. Initial JSON-only support is a recommendation with a client-compatibility tradeoff, not an OGC requirement.
+
+The proposed observation queryables begin with common metadata and **direct associated sampling-feature explicit geometry applicable at phenomenon time, when that can be established**; individual datastreams can expose selected typed scalar results. Related attributes require defined association, multiplicity, time and authorization rules. Unknown history is not reconstructed or replaced with current geometry. Arrays, unrestricted relationship traversal, automatic remote dereferencing, parametric-volume derivation and a general analytics service are not included. [IDR-SRV-059 §§4.2-4.3](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md#421-proposed-endpoint-and-discovery-boundary)
+
+If adopted, the addition needs discovery and parameter definitions, bounded typed parsing, safe query translation, explicit value mappings and independent tests within the existing design. Expression, geometry and traversal costs must be limited; a single request does not guarantee faster execution or stable later pages. Static explicit geometry and scalar results are narrower work than historical moving geometry. No runtime performance, calendar estimate or delivery commitment follows from this research. [IDR-SRV-059 §7](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md#7-implementation-implications-and-estimates)
+
+The remaining choices are whether to adopt the addition, its public queryable names and history boundary, and whether first clients need Text as well as JSON. Part 4 scope remains independently undecided. New SWG or implementation evidence can refine those choices when available; it is not a reason to invent missing behavior or start another broad research cycle.
+
+### B.5 Downstream Readiness and Handoff
+
+The two supplements now provide enough evidence for the planned combined **discussion**:
+
+| Document | Next consideration | Change made in this iteration |
+|---|---|---|
+| [Goal and Definition v1.6](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md) | Whether agreed optional filtering or Part 4 scope warrants a short clarification of intent and boundaries | None; the Rust CSAPI reference-implementation goal is unchanged. |
+| [Implementation Guide v0.1](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) | Whether to replace the CQL2 exclusion with the bounded addition; separately decide Part 4 support, then specify only the chosen mappings, validation and tests | None; research recommendations are not silently promoted to requirements. |
+| Roadmap | Sequence only capabilities subsequently agreed through the Goal/Guide discussion | No milestones, estimates or new work packages created. |
+
+**Next step:** the Glaux Project Lead and Codex discuss the querying recommendation alongside Addendum A's Part 4 options. The next `proceed` starts that discussion; it does not automatically edit the Goal/Guide or authorize implementation. The established Governance, Goal and Definition, Implementation Guide and Roadmap workflow remains in place; no additional document type or approval process is introduced.
+
+**Addendum validation:** IDR-SRV-059 is accounted for as accepted research; conclusions and qualifications link to its report; both supplemental scope decisions remain explicit; original completion metadata, the 67-topic body and Addendum A are preserved. Publication of this addendum is distinct from its later review and from adopting an implementation option.
