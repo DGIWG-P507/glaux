@@ -41,6 +41,24 @@ Apply these instructions as part of drafting the guide within the established pl
 
 ---
 
+## Drafting Plan: Three Iterations
+
+Draft and refine one Implementation Guide over the following three iterations. Produce a complete first draft in the first iteration, then improve that same document; do not split the iterations into separate planning documents.
+
+1. **Write the complete first draft.** Use the approved Goal and Definition, this template, the OS4CSAPI examples, and the relevant completed research to cover the full implementation scope. Include requirements, proposed architecture, capability behavior, interfaces, persistence, security, and verification. Identify unresolved decisions and evidence gaps explicitly. The result should be a coherent whole that the project lead can read and respond to, not merely an outline or a collection of finished sections surrounded by placeholders.
+
+2. **Resolve gaps and make the instructions implementable.** Incorporate feedback, resolve open design questions, and strengthen sections where a developer would still have to guess. Check that required behavior has an authoritative source or approved project objective, the design explains how it will be implemented, and verification explains how correctness will be established. Keep requirements, implementation choices, and unresolved proposals distinguishable.
+
+3. **Check the guide as a whole and finish it.** Walk through representative operations from input to result and check that the relevant sections agree. For Glaux Server, include registering a system, ingesting and retrieving observations, streaming updates, and issuing a command. Verify coverage against the approved Goal and Definition, remove duplication and unnecessary complexity, and finalize the guide for Roadmap development.
+
+Apply the research checks in the preceding drafting notes throughout all three iterations. Examine relevant findings and verify consequential standards claims as they are used; do not defer these checks to a separate research audit.
+
+At the end of each iteration, update and push the same guide and provide a short explanation of what changed and any specific questions that remain. Pause until the project lead says `proceed` before starting the next iteration. These are drafting passes, not additional approval gates or a requirement for separate review documents or pull requests.
+
+Three iterations are the starting plan. Justify any additional iteration by a concrete unresolved issue rather than extending the process by default.
+
+---
+
 ## Executive Summary
 
 Provide a concise technical summary of what is being implemented in this effort.
