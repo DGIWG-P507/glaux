@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.97<br>
+**Version:** 3.98<br>
 **Date:** September 17, 2026<br>
-**Status:** Original IDR and supplemental research complete and accepted; selected Part 4 and querying scope recorded in Goal v1.7 and draft Guide v0.2<br>
+**Status:** Original IDR and supplements 058/059 complete and accepted; Protobuf-first Part 5 supplement 060 planned before resuming Guide drafting<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -75,7 +75,7 @@ The shared upstream-history register is maintained across topics as supporting e
 ---
 
 **Original IDR Topics:** 67 (complete and accepted)<br>
-**Post-Synthesis Supplemental Topics:** 2 (IDR-SRV-058 and IDR-SRV-059 complete and accepted)
+**Post-Synthesis Supplemental Topics:** 3 (IDR-SRV-058 and IDR-SRV-059 complete and accepted; IDR-SRV-060 planned)
 
 Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
@@ -458,7 +458,17 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 - Plan: [idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study.md](idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study.md).
 - Output target: `IDR Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md`.
 - Sequence: Plan/publication first; research/report on the next `proceed`; a later authorized accepted-findings synthesis addendum; then discussion of querying and Part 4 implications for the Goal and Definition or Implementation Guide.
-- Boundary: Distinguish existing multi-request and recursive association behavior from additional geometric/value filtering. Preserve the original 67-topic completion record and IDR-SRV-058 acceptance. Research acceptance did not adopt the extension; the subsequent scope decision did. The selected six-class implementation is a completion deliverable, without arbitrary joins or missing-history reconstruction; broader Guide drafting pass 2 remains next.
+- Boundary: Distinguish existing multi-request and recursive association behavior from additional geometric/value filtering. Preserve the original 67-topic completion record and IDR-SRV-058 acceptance. Research acceptance did not adopt the extension; the subsequent scope decision did. The selected six-class implementation is a completion deliverable, without arbitrary joins or missing-history reconstruction. Broader Guide drafting pass 2 remains pending; the subsequently authorized Part 5 supplement below precedes its resumption.
+
+#### IDR-SRV-060: CSAPI Part 5 Protobuf-First Implementation Study
+
+- Status: Planned; the project lead's September 17, 2026 `proceed` authorized drafting and publishing the plan, not executing research or adopting an implementation.
+- Focus: Establish the available Part 5 specification and implementation evidence, prioritize Protobuf, compare it with existing SWE Binary commitments, and assess a bounded Rust experiment's schema/wire contracts, semantic preservation, compatibility, security, verification and incremental cost. Recommend implementation, compatibility-only preparation or deferral without preselecting the outcome.
+- Plan: [idr-srv-060-csapi-part-5-protobuf-first-implementation-study.md](idr-srv-060-csapi-part-5-protobuf-first-implementation-study.md).
+- Output target: `IDR Reports/idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md`.
+- Context: The project lead reported that Protobuf was the room favorite at the September 17 CSAPI SWG meeting and may be the only encoding in the first Part 5 publication because of time, resources and prioritization. Treat this as attributed direction, not a finalized OGC decision. Other proposed encodings receive a brief status/boundary check only.
+- Sequence: Plan/publication first; research/report on the next `proceed`; a later authorized accepted-findings synthesis addendum; then discussion of any Goal/Guide changes before returning to Guide drafting pass 2. No special acceptance phrase or additional planning framework is introduced.
+- Boundary: Preserve the original 67-topic completion record, supplements 058/059 and Goal v1.7's approved scope. Do not assume a coherent Part 5 draft exists, replace required SWE Binary, invent an OGC binding, or add gRPC/other encodings automatically. This iteration changes only the topic plan and its index registration.
 
 ---
 
@@ -704,6 +714,7 @@ The final report must:
 | 2026-09-17 | IDR-SRV-059 Acceptance and Synthesis Addendum Authorization | The user's next `proceed` accepted the supplemental report and authorized integration through a separate addendum to the final synthesis | Accept research as decision material without adopting optional filtering or Part 4 support, or changing the Goal/Guide | Glaux Project Lead |
 | 2026-09-17 | Querying Synthesis Addendum Prepared | Added Addendum B with consolidated findings, qualifications to previous research, the bounded filtering recommendation and combined querying/Part 4 planning handoff; preserved the original synthesis and Addendum A | Next step is Goal/Guide discussion; no implementation option, milestone or new governance process introduced | Addendum prepared for Glaux Project Lead review |
 | 2026-09-17 | Combined Scope Decision and Planning Update | The user's `proceed` following scope discussion approved experimental static Part 4 points/curves/surfaces and bounded six-class Features Part 3/CQL2 JSON observation filtering; recorded in Goal v1.7 and draft Guide v0.2 | Both are planned completion deliverables; original research and synthesis remain unchanged. This targeted update does not complete Guide drafting pass 2 or begin server implementation | Glaux Project Lead |
+| 2026-09-17 | Protobuf-First Part 5 Research Planning | Registered IDR-SRV-060 and drafted its plan following the user's `proceed` and report that the SWG favored Protobuf, possibly alone for Part 5's first publication | Assess the remaining Part 5 evidence gap before resuming Guide drafting; preserve separate plan, research/report, synthesis-addendum and Goal/Guide discussion iterations. No research execution, encoding adoption or finalized SWG scope claim in this iteration | Glaux Project Lead (planning authorization) |
 
 ---
 
@@ -729,6 +740,7 @@ Supplemental progress is tracked separately from the completed category totals a
 |---|---|---|---|---|---|
 | IDR-SRV-058 | Complete (1/1) | 1/1 | 1/1 | Research accepted; selected static experiment recorded in Goal/Guide | 2026-09-17 |
 | IDR-SRV-059 | Complete (1/1) | 1/1 | 1/1 | Research accepted; bounded filtering scope recorded in Goal/Guide | 2026-09-17 |
+| IDR-SRV-060 | Complete (1/1) | 0/1 | 0/1 | Planned; research execution awaits next `proceed` | 2026-09-17 |
 
 ---
 
