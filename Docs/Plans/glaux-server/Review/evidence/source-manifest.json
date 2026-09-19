@@ -194,6 +194,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "CRLF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Standards batch: standards-ats-rows and standards-part2-inheritance (Pass 3c iteration 14)"
+    },
+    {
+      "name": "20-pass-3c-15-observation-extension-policy.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-19",
+      "provider": "GitHub Copilot",
+      "model": "self-reported as Claude Fable 5.1",
+      "original_sha256": "8CE76705DE8973BA45CB81BB4BC1BB39211FA9E99AED23FAADB04F51A62E074F",
+      "original_bytes": 20288,
+      "published_sha256": "8CE76705DE8973BA45CB81BB4BC1BB39211FA9E99AED23FAADB04F51A62E074F",
+      "published_bytes": 20288,
+      "publication_change": "none_byte_identical",
+      "line_endings": "CRLF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "F-13 extension-rule check: observation-extension-policy (Pass 3c iteration 15)"
     }
   ]
 }

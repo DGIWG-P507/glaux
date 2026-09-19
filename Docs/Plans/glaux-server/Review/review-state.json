@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 14 (standards batch: IDR-011 Section 14.3 abstract-test rows and Part 2 Annex A.1 inheritance)",
+  "latest_report": "Pass 3c iteration 15 (F-13 extension-rule check: observation-extension-policy)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -3051,16 +3051,17 @@
     },
     {
       "area": "standards",
-      "status": "partial",
+      "status": "complete_for_carried_checks",
       "evidence": [
         "evidence/02-pass-2.txt",
         "evidence/03-pass-3a.txt",
         "evidence/15-pass-3c-11.txt",
         "evidence/17-pass-3c-12-standards-swe.md",
         "evidence/18-pass-3c-13-standards-cql2-sensorml.md",
-        "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md"
+        "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md",
+        "evidence/20-pass-3c-15-observation-extension-policy.md"
       ],
-      "finish_condition": "All six carried groups are closed (iterations 12-14). Close the F-13 extension-rule question (observation-extension-policy) with a supported or bounded unresolved conclusion."
+      "finish_condition": "Met for the carried checks: all six carried groups closed (iterations 12-14) and the F-13 extension-rule question resolved (iteration 15). Later passes may raise targeted standards questions; none is outstanding."
     },
     {
       "area": "research",
@@ -3167,9 +3168,12 @@
     {
       "id": "observation-extension-policy",
       "question": "F-13 permitted extensions and association-member distinction",
-      "status": "pending",
-      "evidence": [],
-      "conclusion_or_remaining_question": "F-13 permitted extensions and association-member distinction"
+      "status": "closed_resolved",
+      "closed_on": "2026-09-19",
+      "evidence": [
+        "evidence/20-pass-3c-15-observation-extension-policy.md"
+      ],
+      "conclusion_or_remaining_question": "Resolved. No published text imposes an extension-member rule for Observation JSON: OGC 23-002 Requirement 97 requires validity against observation.json, and both the tagged (8e03b236a049849f2ccc24b4fd9fdce5ff69bed2) and published copies of that schema define id, datastream@id (both required and readOnly), samplingFeature@id, procedure@link, phenomenonTime, resultTime, parameters, result and result@link with no additionalProperties or unevaluatedProperties keyword, so extra members (including the published Clause 16.1.5 example's foi@id) are schema-permitted; Requirement 98 and tests A.66/A.67/A.81/A.82/A.97/A.98 never examine them; no processing model (preserve, ignore, reject) is defined. The Standard's only stated posture for members a server does not accept as input is 'should be ignored' (Table 11 footnote for Command issueTime/currentStatus; Clause 9.2.2 DataStream live). Association-style @id/@link names are distinguishable by convention only (schema member names and Part 1 mapping Tables 41/43/47); no requirement, schema keyword or commonDefs.json patternProperties reserves the suffixes. RFC 7946 Section 6.1 (foreign members MAY be used; no normative processing model) governs GeoJSON documents only, and 23-002 Clause 7.2 places observations outside GeoJSON. 23-000 Requirements 9/10 (extensionIndependence/extensionRestrictions; tests A.9/A.10 are model inspections) govern the SensorML DescribedObject extension slot only. Consequences for F-13: the example defect is confirmed and sharpened (Table 7 gives the Observation only datastream, samplingFeature and procedure associations, so foi@id maps to no association at all); the inbound policy is a project choice to record, not a standards obligation; unknown-member rejection is not required and is not prescribed, and the earlier reviewer suggestion to reject or warn on unmapped @id/@link members is downgraded to an owner option that would be a labelled Glaux restriction. Documentation gap: Guide lines 406/432 (preserve permitted extensions; validated extensible payload), 497 (PATCH rejects changes outside the writable projection) and 713 (only advertised extension fields appear publicly) leave the outcome for members that are neither mapped nor advertised extensions unstated for POST/PUT/PATCH; one Section 4.6 sentence and one Section 13 row (foi@id example) would close it. Fixture set from evidence 06 Section 3.3 stands and belongs with #99's supplied sampling-feature context checks. Owning leaves 3.2.1 (#98), 3.2.2 (#99), 3.2.4-3.2.5 (#101-#102); issue bodies #98 and #99 read (no unknown-member statement). No new finding number."
     },
     {
       "id": "research-deep-read-remainders",
@@ -3194,27 +3198,29 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Copilot Pass 3c iteration 14 (standards batch: IDR-011 Section 14.3 abstract-test rows and Part 2 Annex A.1 inheritance)",
+    "last_substantive_checkpoint": "Copilot Pass 3c iteration 15 (F-13 extension-rule check: observation-extension-policy)",
     "provider": "GitHub Copilot",
     "model": "self-reported as Claude Fable 5.1",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 14 completed both checks and published this checkpoint. The next batch has not been started.",
+    "unfinished_step": "None. Iteration 15 completed the check and published this checkpoint. The next batch has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
       "evidence/05-pass-3c-01.txt",
       "evidence/06-pass-3c-02.txt",
+      "evidence/15-pass-3c-11.txt",
       "evidence/17-pass-3c-12-standards-swe.md",
       "evidence/18-pass-3c-13-standards-cql2-sensorml.md",
-      "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md"
+      "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md",
+      "evidence/20-pass-3c-15-observation-extension-policy.md"
     ],
     "next_batch": {
-      "title": "Resolve the F-13 controlling extension-rule check: which extra members inbound Observation JSON may carry and how association-style members are distinguished",
+      "title": "Research deep-read remainders, slice 1: the small unread remainders of reports already read in full",
       "check_ids": [
-        "observation-extension-policy"
+        "research-deep-read-remainders"
       ],
-      "source_scope": "F-13 as restated in evidence/06-pass-3c-02.txt Section 3 (schema controls; input policy undetermined). Published OGC 23-002 Clause 16 Observation JSON encoding and Requirement 97 /req/json/observation-schema; the tagged (8e03b236a049849f2ccc24b4fd9fdce5ff69bed2) and published observation.json (and any referenced common link/association schema) for additionalProperties/unevaluatedProperties and the @id/@link member pattern; 23-001 Clause 16 general JSON encoding rules and any requirement or recommendation on unknown/extension members (including whether RFC 7946 Section 6.1 foreign-member rules apply only to GeoJSON-encoded resources); OGC 23-000 SensorML 3.0 extension rules (/req/model/coreProcess/extensionIndependence and /extensionRestrictions, Requirements 9/10, tests A.9/A.10) as the nearest published extension policy; Guide Section 4 lines 406 and 410 (preserve permitted extensions; permissive acceptance is not validation) and any other Guide text on unknown members, plus Section 13; the Roadmap observation representation/transaction leaves that own inbound observation validation (identify the exact leaf; issue bodies optional); IDR-023/IDR-027/IDR-029 sections on observation JSON and inbound validation by grep only.",
-      "stop_condition": "Record whether the published texts impose or permit an extension-member rule for Observation JSON (and whether association-style @id/@link members are distinguishable by rule or only by convention) as supported, corrected or specifically unresolved; state the resulting F-13 disposition (documentation gap, project choice to record, or no action) with the owning leaf; do not prescribe unknown-member rejection unless a published rule requires it; save and publish the checkpoint.",
+      "source_scope": "Read and account for: IDR-008 Sections 16-17 (report lines 752-end: validation against the research plan; references); IDR-037 Appendices A-D (lines 693-end: lifecycle/ownership matrix, reproducibility record, requirement-by-requirement disposition, completion checklist); IDR-038 Appendices A-C (lines 675-end: authorization/safety/audit matrix, audit event catalog and decision invariants, reproducible evidence record); IDR-039 Section 7 (lines 242-end of section: API surface and trust-boundary inventory) and Sections 21-22 (lines 625-end). For each section: check its key findings, recommendations and open questions against the current Guide v1.3 text (grep first, then targeted reads), record adopted/not-adopted/departure with line references, and raise a finding only where a Guide gap is evidenced (existing findings F-03, F-15, F-18, F-19, F-20 and F-22 are the likely homes for anything command-safety, audit or security related; do not create competing numbers). Issue bodies optional.",
+      "stop_condition": "Record each listed section as read with its material points accounted for against the Guide; update the research-deep-read-remainders conclusion so that it lists exactly what remains (IDR-040 Sections 9-21; IDR-042/043 remaining sections; committed deep reads 030, 034, 039A, 055) and name the next slice; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     }
   },
@@ -3284,6 +3290,22 @@
         "Follow-up questions recorded (not scheduled): whether the Glaux ATS overlay absorbs the four additional published seams; whether Glaux exposes any Part 2 resource collections (decides vacuity of 23-002 A.2 and the Part 2 canonical-URL tests); Requirement 31 B clause-citation slip and Requirement 61 A description residue as requirement-text siblings of the ATS copy errors."
       ],
       "next_work": "observation-extension-policy (see current_work.next_batch).",
+      "review_complete": false
+    },
+    {
+      "date": "2026-09-19",
+      "provider": "GitHub Copilot",
+      "model": "self-reported as Claude Fable 5.1",
+      "activity": "Pass 3c iteration 15. Resolved the F-13 controlling extension-rule check (observation-extension-policy) against the published OGC 23-002 Clause 16.1.5 and Requirements 97/98, the tagged and published observation.json and commonDefs.json, OGC 23-001 Clause 19 and Tables 7/39-47, RFC 7946 Sections 3/6.1/7.1 and OGC 23-000 Clause 8.2.2.1 with Requirements 9/10 and tests A.9/A.10; read Guide lines 406/432/436/493-497/604/713 and IDR-023 lines 75/301/361-365/432/436; read issues #98 and #99 in full (leaf numbering 3.2.1 = #98, 3.2.2 = #99 confirmed). Result: no published rule imposes an extension-member policy for Observation JSON; extra members are permitted by schema silence with no processing model; @id/@link association names are distinguishable by convention only; RFC 7946 Section 6.1 governs GeoJSON documents only; SensorML Requirements 9/10 govern the SensorML extension slot only. F-13 re-dispositioned: example defect confirmed and sharpened (the Observation model has no feature-of-interest association at all); inbound policy is a project choice to record; unknown-member rejection is not required and not prescribed; documentation gap of one Section 4.6 sentence and one Section 13 row; owning leaves 3.2.1 (#98), 3.2.2 (#99), 3.2.4-3.2.5 (#101-#102). No new finding number. Recorded one material follow-up question without scheduling it. Added evidence/20-pass-3c-15-observation-extension-policy.md and its manifest entry.",
+      "coverage_completed": [
+        "observation-extension-policy"
+      ],
+      "material_points": [
+        "Standards area: all carried checks are now closed; no standards check is outstanding.",
+        "F-13 status changes from 'input policy unresolved' to 'project choice to record (documentation gap)'; the earlier reviewer suggestion to reject or warn on unmapped @id/@link members is downgraded to an owner option that would be a labelled Glaux restriction.",
+        "Follow-up question recorded (not scheduled): whether one unknown-member rule should cover ordinary-JSON Part 2 resources, GeoJSON properties foreign members and the SensorML extension slot together."
+      ],
+      "next_work": "research-deep-read-remainders slice 1 (see current_work.next_batch).",
       "review_complete": false
     }
   ],
@@ -3356,6 +3378,16 @@
       "status": "noted_not_scheduled",
       "evidence": [
         "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md"
+      ]
+    },
+    {
+      "id": "fq-08-unknown-member-rule-scope",
+      "raised": "2026-09-19",
+      "question": "Should the Guide adopt one unknown-member rule for every inbound representation family (ordinary-JSON Part 2 resources; GeoJSON properties foreign members, which IDR-023 line 301 treats as not automatically invalid and RFC 7946 Section 6.1 permits without a processing model; SensorML extension-slot content under 23-000 Requirements 9/10), or family-specific rules? The answer decides whether the F-13 Section 4.6 sentence is observation-specific or general, and whether PUT/PATCH (Guide line 497 'outside the writable projection') and POST treat such members identically.",
+      "relevance": "Guide Sections 4.6 and 13; leaves 3.2.1 (#98), 3.2.4-3.2.5 (#101-#102) and the corresponding Part 1 write leaves",
+      "status": "noted_not_scheduled",
+      "evidence": [
+        "evidence/20-pass-3c-15-observation-extension-policy.md"
       ]
     }
   ],

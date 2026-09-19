@@ -1,0 +1,101 @@
+# Pass 3c, iteration 15 — F-13 controlling extension-rule check (`observation-extension-policy`)
+
+**Date:** 2026-09-19
+**Provider/model:** GitHub Copilot; model self-reported as Claude Fable 5.1
+**Batch:** `observation-extension-policy` (from `current_work.next_batch` at planning commit 3fe306994af99887ad5766cf8de96f53948f2016)
+**Mode:** read-only review of planning documents, published standards, the tagged and published schemas and two issue bodies; review artifacts updated and published; no implementation, Goal/Guide/Roadmap, issue, settings or upstream changes.
+
+## 1. Sources consulted this batch
+
+| Source | Access | Used for |
+|---|---|---|
+| OGC API - Connected Systems - Part 2, OGC 23-002 v1.0 (https://docs.ogc.org/is/23-002/23-002.html, Publication Date 2025-07-16) | Full document retrieved; Clauses 1, 2, 7.2, 9.2.2, 9.6, 9.7, 10.7.1, 12.1, 14.3, 15.3, 16.1.1-16.1.5, Annex A.7 (A.66, A.67), A.8 (A.81, A.82), A.9 (A.97, A.98) read | Observation model and JSON encoding rules; every published statement about extensions |
+| Tagged `api/part2/openapi/schemas/json/observation.json` at `8e03b236a049849f2ccc24b4fd9fdce5ff69bed2` and published `https://schemas.opengis.net/ogcapi/connected-systems/part2/1.0/openapi/schemas/json/observation.json` | Both retrieved and compared | Member list, `required`, `oneOf`, absence of `additionalProperties`/`unevaluatedProperties` |
+| Tagged `api/part2/openapi/schemas/common/commonDefs.json` | Retrieved | Whether any pattern rule reserves `@id`/`@link` names |
+| OGC API - Connected Systems - Part 1, OGC 23-001 v1.0 (https://docs.ogc.org/is/23-001/23-001.html) | Clauses 7.5, 9.2.2 (Table 7), 14.3, 16.3.4, 19.1 (Requirements 77-88, Tables 39-47), 19.2.4, Annex A.13 read | GeoJSON/SensorML encoding rules; any statement on additional or foreign members |
+| IETF RFC 7946 (https://www.rfc-editor.org/rfc/rfc7946.html) | Sections 3, 3.2, 6, 6.1, 7, 7.1, Appendix B.1 read | Foreign-member rule and its scope |
+| OGC SensorML 3.0, OGC 23-000 (https://docs.ogc.org/is/23-000/23-000.html) | Clause 8.2.2.1, Requirements 9 and 10, Clause 9.1.4, Annex A.2.1 (A.9, A.10) read | The nearest published extension policy |
+| Guide v1.3 lines 15, 406, 410, 418, 432, 436, 493-497, 604, 713, 722; Section 13 table (lines 1136-1160) | Read | Existing Glaux statements on extensions, unknown members and writable projections |
+| IDR-023 lines 75, 251, 301, 361, 365, 432, 436 (grep and targeted read); IDR-027 and IDR-029 grep only (no hit on unknown/extension members) | Grep | Research position |
+| glaux-server issues #98 (`[3.2.1] Observation admission and exact persistence`) and #99 (`[3.2.2] Observation time and feature context`) | Full bodies read via the GitHub API | Owning leaves and existing fixtures |
+| Prior evidence [06-pass-3c-02.txt](06-pass-3c-02.txt) Section 3 | Read | F-13 as restated |
+
+Issue numbering check: #98 = leaf 3.2.1 and #99 = leaf 3.2.2 (confirmed from the issue titles), so 3.2.4 = #101 and 3.2.5 = #102 by the established sequence.
+
+## 2. Published facts
+
+### 2.1 OGC 23-002 (Part 2)
+
+- Clause 7.2: "Observations and Commands are purposefully not modelled as Features." Observation JSON is therefore not a GeoJSON document, and Part 2's own JSON encoding class governs it.
+- Clause 9.7.2, Table 6 (attributes): `phenomenonTime` (Required), `resultTime` (Required), `parameters` (Optional), `result` (Required). Table 7 (associations): `datastream` (Required), `samplingFeature` (Optional), `procedure` (Optional). There is no Observation-level feature-of-interest association; ultimate features of interest are a DataStream association (Table 5, `featuresOfInterest`) and the `foi` query parameter reaches them transitively (Requirement 51 C; Part 1 Recommendation 5).
+- Clause 16.1.5, Requirement 97 `/req/json/observation-schema`: a single Observation "SHALL be valid against the JSON schema observation.json". Requirement 98 `/req/json/observation-constraints` (A-D) constrains time scale and the `result`/`parameters` encodings only. Neither says anything about members not defined by the schema.
+- Clause 16.1.5, third example (published text): `{"id": "fefaig45w46v5186d6w", "datastream@id": "f44f85rrt", "foi@id": "55f48g48th", ..., "result@link": {"href": "data:image/png;base64,...", ...}}`. The `foi@id` member is confirmed in the published Standard; it names no schema member and no Table 7 association.
+- Extension statements in the Standard: Clause 1 "Additional encodings can be added by extensions"; Clause 2 "Extensions of this Standard shall themselves be conformant to the OGC Specification Model"; Clause 9.6 "Extensions to this Standard can define additional representation formats for observations. Such format extensions must clearly define the mapping..."; Clause 12.1 event types "can be extended further by extensions". All concern new encodings or vocabularies, not extra members inside the defined JSON encoding.
+- Published posture for known non-writable members on create: Clause 10.7.1 Table 11 footnote "(*) These properties [issueTime, currentStatus] are required when a command is reported by the server but not when creating or updating a command. If provided on creation, they should be ignored by the server."; Clause 9.2.2 "The property live MAY be generated by the server. In this case the server MAY ignore updates to the property." No corresponding statement exists for unknown members.
+- Tests: A.97 validates GET responses against `observation.json` and chains A.98 (result/parameters against the stream schema); A.66/A.81 execute the Features Part 4 create/replace/delete and update tests; A.67/A.82 require `400` only for a result structure incompatible with the stream schema. No abstract test exercises an unknown or extra member in either direction.
+
+### 2.2 `observation.json` (tagged and published)
+
+Both copies define the same content: `type: object`; `properties`: `id` (string, `readOnly`), `datastream@id` (string, `readOnly`), `samplingFeature@id` (string, "Local ID of the sampling feature that is the target of the observation"), `procedure@link` (`$ref` Link), `phenomenonTime` (TimeInstant; description "Defaults to the same value as `resultTime`"), `resultTime` (TimeInstant), `parameters` (object), `result` (unconstrained), `result@link` (`$ref` Link); `required: ["id", "datastream@id", "resultTime"]`; `oneOf` requiring `result` or `result@link`. **No `additionalProperties` and no `unevaluatedProperties` keyword appears at any level**, so any extra member (including `foi@id`) is schema-valid. `commonDefs.json` only redirects `Link`, `Links`, `TimeInstant` and `TimePeriod` to the shared common schemas; it contains no `patternProperties` or other rule about names ending in `@id` or `@link`.
+
+Two incidental observations: `id` and `datastream@id` are both `required` and `readOnly`, so a literal schema check of a POST body would demand server-generated members (the Guide's request/response projections at line 418 and IDR-023 line 75 already treat `readOnly`/`writeOnly` as annotations); and `phenomenonTime` is optional in the schema with a documented default although Table 6 marks it Required (issue #99 already covers "explicitly permitted default cases").
+
+### 2.3 OGC 23-001 (Part 1)
+
+- The GeoJSON class (Clause 19.1) prescribes mappings (Requirement 80 Table 39; Requirements 82/84/86/88 Tables 40-47) and link relation types (Requirement 79) and requires validity against the GeoJSON schemas; it states no rule for members outside the mappings. The `<association>@link` names in Tables 41, 43 and 47 (`systemKind@link`, `platform@link`, `deployedSystems@link`, `sampledFeature@link`) are mapping-table conventions; no requirement defines or reserves the `@link`/`@id` suffixes.
+- Clause 9.2.2 Table 7 (asset type `Other`): "In this case, an application specific property can be used to provide the type." Clause 16.3.4 Recommendation 3 tests "a custom parameter with the same name as a feature property" (A.45). Both presuppose that features may carry application-specific properties inside `properties`.
+- The SensorML class (Clause 19.2) likewise prescribes mappings (Tables 48-55) and schema validity, with no unknown-member rule.
+
+### 2.4 RFC 7946 (GeoJSON)
+
+Section 3: "A GeoJSON object MAY have other members (see Section 6)." Section 6.1: "Members not described in this specification ('foreign members') MAY be used in a GeoJSON document. Note that support for foreign members can vary across implementations, and no normative processing model for foreign members is defined." Section 7.1: "GeoJSON semantics do not apply to foreign members and their descendants, regardless of their names and values." Appendix B.1: "Extensions MAY be used, but MUST NOT change the semantics of GeoJSON members and types." These rules bind only GeoJSON documents (Part 1 System, Deployment, Procedure and Sampling Feature representations); they do not reach Part 2 Observation JSON, and even for GeoJSON they permit foreign members without defining how a receiver must treat them.
+
+### 2.5 OGC 23-000 (SensorML 3.0)
+
+Clause 8.2.2.1: "The extension property allows one to add domain or community-specific content to a DescribedObject instance... Extension properties must exist in a separate namespace and SensorML-compliant software is not required to understand or utilize the information contained within the extension property." Requirement 9 `/req/model/coreProcess/extensionIndependence`: "Models inside of the extension property must exist within a namespace other than SensorML." Requirement 10 `/req/model/coreProcess/extensionRestrictions`: "Information provided inside of the extension property must not be required for execution of the process and shall not alter the execution of the process." A.9 and A.10 are model-inspection tests ("Inspect the model or software implementation"; "Verify that the implementation of the conceptual model has a constraint that enforces the above"). This is a designated-slot policy for SensorML `DescribedObject` instances (Systems, Procedures, Deployments in `application/sml+json`); it does not apply to Part 2 ordinary JSON and it never authorises rejecting members outside the slot.
+
+## 3. Glaux position (Guide, research, issues)
+
+- Guide line 406: "Preserve permitted extensions without allowing them to replace reserved identities or validated relationships." Line 432: "Store typed query columns separately from a validated extensible payload." Line 436: "Reject malformed or unsupported parameters rather than ignoring them" (query parameters, not body members). Line 493: "ignore a supplied resource-local `id` under the selected inherited draft." Line 497 (PATCH): "Reject attempted changes outside the writable projection except the ignored resource-local `id`; preserve untouched out-of-projection content." Line 713: "Public extension fields belong only in allowed/advertised representations." Line 604: "Existing standard fields and permitted extensions carry public content."
+- The Guide therefore distinguishes *permitted* (advertised) extensions from everything else, but never states the outcome for an inbound member that is neither a mapped member nor an advertised extension, and the PATCH rule (reject changes outside the writable projection) has no stated POST/PUT counterpart. Section 13 has no row for the Clause 16.1.5 `foi@id` example.
+- IDR-023 line 301: for GeoJSON, "Foreign members are not automatically invalid" [N,P]; line 432: canonical projection "Do not discard unmapped source or infer unsupported meaning"; line 436: "Strict public SensorML/CSAPI writes must be structurally and semantically valid for the selected supported profile. Administrative import can quarantine partial, invalid, legacy, or extension-rich material" [P]; line 365 (Observations row): "Parent-schema violations = 400; no silent discard". IDR-027 and IDR-029 contain no statement on unknown or extension members (grep).
+- Issues #98 and #99 (bodies read) contain no unknown-member or `foi@id` statement. #99's verification compares "supplied sampling-feature, Procedure and parameter references against authorized typed fixtures, including an incompatible parameter and a denied local feature" and requires invalid inputs to "fail before accepted-resource and outgoing-work mutation"; it has no fixture in which the association is supplied under a wrong member name.
+
+## 4. Assessment
+
+1. **Does a published text impose or permit an extension-member rule for Observation JSON?** No published rule is imposed. Extra members are *permitted by schema silence*: `observation.json` (tagged and published) sets no `additionalProperties`/`unevaluatedProperties`, so Requirement 97 is satisfied by a document carrying `foi@id` or any other extra member, and Requirement 98 and tests A.66/A.67/A.81/A.82/A.97/A.98 never examine such members. No processing model (preserve, ignore, reject) is defined. The Standard's only stated posture for members a server does not accept as input is "should be ignored" (Command `issueTime`/`currentStatus`; DataStream `live`), and it concerns known server-owned members, not unknown ones. **Result: resolved as "no published rule; permitted; processing model is a project choice".**
+2. **Are association-style `@id`/`@link` members distinguishable by rule or only by convention?** Only by convention. The suffixes appear as member names in the Part 2 schemas (`datastream@id`, `samplingFeature@id`, `procedure@link`, `result@link`, `system@link`, `featureOfInterest@link`, `samplingFeature@link`) and in the Part 1 mapping tables (`properties/<association>@link`), but no requirement, schema keyword or `patternProperties` rule reserves them. A member such as `foi@id` is therefore indistinguishable from any other foreign member except by a Glaux naming heuristic.
+3. **Does RFC 7946 Section 6.1 govern Observation JSON?** No. It governs GeoJSON documents only (Part 1 feature representations), where foreign members MAY appear and "no normative processing model for foreign members is defined". Part 2 Clause 7.2 places observations outside GeoJSON.
+4. **Do the SensorML 3.0 extension rules help?** Only as an analogy. Requirements 9/10 define a designated `extension` slot with a separate-namespace and no-execution-effect constraint for SensorML `DescribedObject` instances; they do not reach Observation JSON and do not authorise rejection of members outside the slot.
+
+**Consequences for F-13.**
+
+- (a) *Source-example defect* — confirmed against the published Standard and sharpened: `foi@id` is not a misspelling of an existing association but maps to no Observation-level association at all (Table 7 has `datastream`, `samplingFeature`, `procedure`); a client copying the example creates an observation with no sampling-feature association and therefore no `foi` filter match. The Guide records no Section 13 row for it. Reporting upstream remains the owner's decision (not authorised here).
+- (b) *Input policy* — a **project choice to record**, not a standards obligation. Because no published rule requires rejection, the stop condition is honoured: unknown-member rejection is **not prescribed**. The earlier reviewer recommendation to reject or warn on unmapped `@id`/`@link`-suffixed members ([06-pass-3c-02.txt](06-pass-3c-02.txt) Section 3.2) is downgraded to an owner option founded on a Glaux naming heuristic; if adopted it is a Glaux restriction beyond the Standard and must be labelled so in Section 13 and the API definition. The documentation gap is precise: the Guide should state, for ordinary-JSON Part 2 writes and for POST, PUT and PATCH alike, the outcome for a member that is neither a mapped member nor an advertised extension (preserve-as-opaque, ignore, or reject with a problem detail naming the member), reconciling lines 406 and 432 (extensible payload, preserved extensions) with line 497 (PATCH rejects changes outside the writable projection) and line 713 (only advertised extension fields appear in public representations). Any of the three outcomes is conformant; "ignore" matches the Standard's own posture for known non-writable members but silently loses the client's intent, which is the F-13 hazard.
+- (c) *Test isolation* — unchanged from [06-pass-3c-02.txt](06-pass-3c-02.txt) Section 3.3: baseline with `samplingFeature@id`; variant with `foi@id` in its place asserting the documented outcome and, if rejected, a problem detail naming `foi@id`; the `data:` result URL of the same example tested separately; `foi@id` never emitted. The variant belongs with #99's "supplied sampling-feature context" fixtures; adding it does not expand the leaf.
+- (d) *Owning work* — 3.2.1 (#98) for the admission outcome; 3.2.2 (#99) for the association fixture; 3.2.4-3.2.5 (#101-#102) for PUT/PATCH consistency with the chosen rule; Guide Section 4.6 (one sentence) and Section 13 (one row) for the record.
+
+## 5. Additional observations (not findings)
+
+1. `observation.json` marks `id` and `datastream@id` as both `required` and `readOnly`: literal request-body validation would demand server-generated members. Already handled by the Guide's direction-aware projections (line 418) and IDR-023 line 75; recorded here because any conformance-runner fixture that validates POST bodies against the unmodified schema must apply the same projection.
+2. `phenomenonTime` is schema-optional with a default to `resultTime` while Table 6 lists it as Required; #99 already tests "explicitly permitted default cases".
+3. The `foi` query parameter (Requirement 51) reaches ultimate features of interest through the sampling feature's `sampledFeature` chain (Requirement 51 C; Part 1 Recommendation 5), which is consistent with the Observation model having only a `samplingFeature` association.
+
+## 6. Material follow-up question recorded, not scheduled
+
+1. Should the Guide adopt one unknown-member rule for every inbound representation family (ordinary-JSON Part 2 resources; GeoJSON `properties` foreign members, which IDR-023 line 301 treats as not automatically invalid; SensorML `extension` slot content under 23-000 Requirements 9/10), or family-specific rules? The answer decides whether the F-13 sentence in Section 4.6 is observation-specific or general. (State file `fq-08`.)
+
+## 7. Disposition summary for the checkpoint
+
+| Check id | Disposition | Guide change needed | Owning work |
+|---|---|---|---|
+| `observation-extension-policy` | Resolved: no published rule imposes an extension-member policy for Observation JSON; extra members are permitted by schema silence (tagged and published `observation.json` have no `additionalProperties`/`unevaluatedProperties`) with no processing model; `@id`/`@link` association names are distinguishable by convention only; RFC 7946 Section 6.1 governs GeoJSON documents only; SensorML 3.0 Requirements 9/10 govern the SensorML `extension` slot only. Unknown-member rejection is not required and is not prescribed. F-13 is re-dispositioned: example defect confirmed (no Observation-level `foi` association exists); input policy is a project choice to record | Documentation gap: one Section 4.6 sentence stating the outcome for members that are neither mapped nor advertised extensions on POST/PUT/PATCH, and one Section 13 row for the Clause 16.1.5 `foi@id` example | 3.2.1 (#98), 3.2.2 (#99), 3.2.4-3.2.5 (#101-#102) |
+
+Remaining standards checks after this batch: none. The standards area's carried checks are complete; later passes may raise targeted standards questions as they arise.
+
+## 8. Statement of limits
+
+- Published HTML, the tagged schema and the published schema were the witnesses; the published schema URL was inferred from the Annex B examples base and returned the schema, and its content matched the tagged file member for member.
+- `commonDefs.json` was read; the shared `link.json` it redirects to was not, because a `Link` object's own rules do not affect the Observation root.
+- No executable validation was run; "schema-valid" statements follow from the absence of `additionalProperties`/`unevaluatedProperties` keywords in the schema text.
+- Only issues #98 and #99 were read; #101/#102 are inferred from the confirmed numbering sequence.
