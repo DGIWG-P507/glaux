@@ -1,14 +1,14 @@
 # Glaux Server Roadmap
 
-**Version:** 1.4<br>
+**Version:** 1.5<br>
 **Date:** 18 September 2026<br>
 **Effort:** Glaux Server<br>
-**Status:** Issue-sized task outline prepared — complete GitHub issue publication before implementation<br>
+**Status:** GitHub issue publication in progress — Phase 1 published; implementation not started<br>
 **Depends On:** [Goal and Definition v1.7](glaux-server-goal-and-definition.md), Approved<br>
 **Implements:** [Implementation Guide v1.2][Guide], Baselined<br>
-**Implementation status:** All implementation subtasks remain planned, not verified complete. GitHub issue publication is the next step; this revision does not start server implementation.
+**Implementation status:** All implementation subtasks remain planned, not verified complete. Phase 1's 24 issues are published and linked; 262 of the 286 initial issues remain to publish. Complete issue publication and verification are required before server implementation.
 
-**Revision summary:** Applies Guide v1.2's approved test-quality safeguards through the existing workflow and capability owners. Strengthens task 1.1.4's CI discovery/failure-propagation checks and makes targeted test methods and readable evidence explicit in §§5/8. All nine phases, 41 groups, 286 task IDs/titles and dependencies remain unchanged. Complete issue publication remains next, before coding; Goal v1.7 and capability scope are unchanged.
+**Revision summary:** Records the project lead's approved batch-publication workflow and links the first 24 implementation issues, covering Phase 1. Published bodies were checked against Roadmap v1.4 / Guide v1.2 at planning commit `9df8e87127c62ed5c89df4dfead3239d096d382f` and the server template/contributor baseline `0be3f25a71b075fed6105b07697357e1af53e485`. All nine phases, 41 groups, 286 leaf definitions and dependencies are unchanged. Issue publication is not implementation completion; Goal v1.7 and Guide v1.2 remain unchanged.
 
 ## 1. Purpose and Executive Summary
 
@@ -34,7 +34,7 @@ The numbered order is the default execution order. The dependency column identif
 | 8. Exchange, interrupted operation and restore | Bounded administrative exchange, complete recovery workflows and operational examples | Phases 5–7; log/SSE from Phase 6 | 4 | 24 | Planned |
 | 9. Integrated verification and release readiness | Full-target evidence, external-client workflows and clean reference setup | Phases 1–8 | 4 | 26 | Planned |
 
-The 41 two-level IDs (for example, `2.3`) are capability groups, not individual implementation issues. Their **286 three-level children** (for example, `2.3.1`) are the complete initial issue-sized task outline. Each child is intended to include implementation, verification and relevant documentation within one AI iteration after its dependencies are ready. The issue count is derived from this breakdown, not a preset quota or a delivery-time estimate. No GitHub issues were created by this outline revision; §5 schedules publication of all 286.
+The 41 two-level IDs (for example, `2.3`) are capability groups, not individual implementation issues. Their **286 three-level children** (for example, `2.3.1`) are the complete initial issue-sized task outline. Each child is intended to include implementation, verification and relevant documentation within one AI iteration after its dependencies are ready. The issue count is derived from this breakdown, not a preset quota or a delivery-time estimate. Publication proceeds in authorized batches under §5; §5.3 records the current handoff.
 
 **Effort estimate:** Not yet calibrated. Phase/group complexity labels identify technical risk, not hours. One iteration per leaf is the sizing target, including tests and documentation, not a guarantee against an unexpected blocker. Do not infer calendar duration, staffing or lines of code from issue counts. Use actual execution to correct a demonstrably oversized leaf explicitly; do not turn a broad parent group into an issue or silently spread it across unspecified future slices.
 
@@ -96,49 +96,73 @@ All implementation subtasks are initially **planned**, with **sizing target: one
    - Dependencies: Existing repository/prerequisite inspection; no other implementation task.
    - Issue-sized subtasks:
      - **1.1.1 Inspect the server checkout and approved prerequisites.** Scope: Record the current server branch/files and availability of Rust, build tools and an approved PostgreSQL/PostGIS test service in the server setup notes. Done: Existing changes are identified without overwriting them; available checks and exact missing prerequisites are recorded without installing software or exposing credentials. Guide: §§2.1, 2.4, 4.12. Depends: none.
+       - GitHub issue: [#3](https://github.com/DGIWG-P507/glaux-server/issues/3).
      - **1.1.2 Establish the three-package Rust build.** Scope: Create or adapt the domain, standards and server workspace packages, pin the available tested toolchain/dependencies and document the build command. Done: Workspace builds and initial tests pass; package dependencies follow the Guide; unrelated existing work is retained. Guide: §§2.2, 2.4. Depends: 1.1.1.
+       - GitHub issue: [#4](https://github.com/DGIWG-P507/glaux-server/issues/4).
      - **1.1.3 Establish the isolated database test harness.** Scope: Configure an approved PostgreSQL/PostGIS instance, connection check and initial migration/test lifecycle. Done: Integration tests prove connection, PostGIS availability and repeatable isolated setup; unavailable storage fails clearly and no existing user database is reset. Setup/reset failure cases stop cleanly, cleanup failures are reported, and repeated runs do not inherit mutable fixture state; seeds, clock inputs and dependency versions needed to reproduce failures are recorded. Guide: §§4.7, 4.12, 8.1. Depends: 1.1.2.
+       - GitHub issue: [#5](https://github.com/DGIWG-P507/glaux-server/issues/5).
      - **1.1.4 Automate and reproduce the initial build checks.** Scope: Add CI formatting, lint, build and initial unit/database checks with pinned prerequisites, dependency/license inventory and matching README instructions. Done: The checks run successfully in the stated environment; missing dependencies cannot produce a false green database result, and a clean documented setup reproduces the initial build. Demonstrate expected suite discovery and failure propagation with an intentionally failing assertion, failed service setup and runner error; an unexpectedly empty or filtered required suite cannot pass. Preserve outcome counts/selection and initial failures rather than retrying to green; justified inapplicability is explicit. Guide: §§2.4, 4.12, 8.1. Depends: 1.1.3.
+       - GitHub issue: [#6](https://github.com/DGIWG-P507/glaux-server/issues/6).
 2. **1.2 Prove shared validation and value primitives — High.**
    - Scope/deliverables: Package pinned standards/schema artifacts with offline allowlisted resolution; establish typed IDs, exact number/time handling and operation/direction validation. Create the independently specified fixture/test foundation, including recursive SensorML/SWE examples and source-conflict fixtures.
    - Verification: Prove recursive resolution without network/file escape, generated versus writable fields, malformed/deep input limits, exact numeric/time boundaries and calendar/offset/leap-second handling before committing to storage types.
    - Dependencies: 1.1. Full component-family implementation follows in 2.1; a simple parser pass is not that proof.
    - Issue-sized subtasks:
      - **1.2.1 Package the pinned standards and schema corpus.** Scope: Bundle original artifacts, source revisions, license notices and independently authored initial recursive/source-conflict fixtures. Done: Artifact digests and local reference targets are checked; originals and project adaptations remain distinguishable and the corpus needs no live upstream fetch. Guide: §§1.2, 4.3, 8.1, 13. Depends: 1.1.
+       - GitHub issue: [#7](https://github.com/DGIWG-P507/glaux-server/issues/7).
      - **1.2.2 Prove bounded offline structural validation.** Scope: Select/pin the validator and configure allowlisted local resolution with recursion/input limits. Done: Actual recursive SensorML/SWE fixtures validate; invalid/deep/cyclic-reference abuse and network/filesystem escape attempts fail safely. Guide: §§2.4, 4.3, 9.2. Depends: 1.2.1.
+       - GitHub issue: [#8](https://github.com/DGIWG-P507/glaux-server/issues/8).
      - **1.2.3 Implement typed resource identities.** Scope: Introduce opaque local ID generation/parsing and distinct UID/source-identifier types without adding family storage. Done: UUIDv7 IDs round-trip, malformed IDs fail and tests prevent treating an identifier as authorization or observation time. Guide: §§4.2, 6.1. Depends: 1.1.
+       - GitHub issue: [#9](https://github.com/DGIWG-P507/glaux-server/issues/9).
      - **1.2.4 Prove exact numeric representation.** Scope: Implement the shared numeric parsing/comparison representation needed by Counts and measured values. Done: Independently specified large-integer, fractional, zero and precision-boundary fixtures survive parsing/comparison without silent rounding; non-finite cases retain explicit meaning or errors. Guide: §§4.3, 4.7, 9.2. Depends: 1.1.
+       - GitHub issue: [#10](https://github.com/DGIWG-P507/glaux-server/issues/10).
      - **1.2.5 Prove exact time parsing and comparison.** Scope: Implement normalized instants plus retained source precision/lexical context and a database round-trip proof for the selected storage representation. Done: Calendar, offset, fractional-boundary and leap-second fixtures have explicit tested outcomes; no unsupported precision silently rounds into a different match. Guide: §§4.7, 6.3, 9.2. Depends: 1.1, 1.2.4.
+       - GitHub issue: [#11](https://github.com/DGIWG-P507/glaux-server/issues/11).
      - **1.2.6 Separate request and response validation.** Scope: Implement operation/direction-specific validation projections and initial System/stream/observation fixtures without creating those endpoints. Done: Minimal requests do not require generated fields; response-only and write-only members are treated correctly; invalid adaptations are distinguished from original schemas. Guide: §§4.3, 4.6, 6.2, 13. Depends: 1.2.2, 1.2.3.
+       - GitHub issue: [#12](https://github.com/DGIWG-P507/glaux-server/issues/12).
 3. **1.3 Establish the transactional storage boundary — High.**
    - Scope/deliverables: Add initial migrations and shared identity, revision/artifact, relationship, audit, retry and outbox/work storage. Implement short application transactions, conditional-write handling and rollback; add family tables with their later capabilities rather than creating empty subsystems.
    - Verification: Real-database tests establish atomic resource/revision/audit/outbox commit, no effect after rejected input, identity constraints, stale preconditions and concurrent/repeated writes. A transport worker is not needed to inspect durable outgoing work.
    - Dependencies: 1.1–1.2.
    - Issue-sized subtasks:
      - **1.3.1 Persist canonical identity and typed associations.** Scope: Add initial identity/source/relationship migrations and repository operations for the first System path. Done: Real-database tests reject duplicate authoritative identity and invalid association endpoints without partial changes; migrations preserve existing data. Guide: §§4.2, 4.7, 6.1. Depends: 1.1, 1.2.
+       - GitHub issue: [#13](https://github.com/DGIWG-P507/glaux-server/issues/13).
      - **1.3.2 Persist immutable revisions and source artifacts.** Scope: Store exact document bytes/digests, semantic/receipt times and resource revision references. Done: Byte and exact-time round trips pass; later changes cannot rewrite retained revisions; missing artifact references fail transactionally. Guide: §§4.3, 4.7, 6.1. Depends: 1.3.1.
+       - GitHub issue: [#14](https://github.com/DGIWG-P507/glaux-server/issues/14).
      - **1.3.3 Commit resource, revision, audit and outbox together.** Scope: Implement the initial application write transaction and durable outgoing-work record without a delivery worker. Done: Injected failure at each write boundary rolls everything back; successful writes create matching immutable context and no external effect occurs before commit. Guide: §§2.3, 4.6–4.8, 4.10. Depends: 1.3.2.
+       - GitHub issue: [#15](https://github.com/DGIWG-P507/glaux-server/issues/15).
      - **1.3.4 Enforce conditional writes and concurrent revision checks.** Scope: Add the selected precondition/revision handling at the shared transaction boundary. Done: Supplied stale preconditions reject concurrent changes without resource/audit/outbox mutation; unconditional standard writes remain permitted with their documented lost-update tradeoff. Guide: §§4.6, 6.4. Depends: 1.3.3.
+       - GitHub issue: [#16](https://github.com/DGIWG-P507/glaux-server/issues/16).
      - **1.3.5 Persist optional write-retry identity.** Scope: Add scoped retry receipts and request-content comparison for the first application write path. Done: Identical retries return the recorded outcome once; changed content or caller/source context cannot reuse another operation's receipt, including under concurrency. Guide: §§4.6, 6.4. Depends: 1.3.4.
+       - GitHub issue: [#17](https://github.com/DGIWG-P507/glaux-server/issues/17).
 4. **1.4 Establish HTTP, discovery and access enforcement — High.**
    - Scope/deliverables: Implement Axum routing, safe origin/link construction, problems/negotiation, initial landing/API/conformance documents, typed configuration and health endpoints. Add verified JWT caller context, explicit loopback development identities and the configured action/resource policy interface.
    - Verification: Independent HTTP tests cover authentication failures, two permitted/denied sources, unsafe configuration rejection, unavailable identity/storage, forged forwarding headers and accurate partial declarations. No unverified route becomes public by default.
    - Dependencies: 1.1–1.3; domain-specific access cases grow with later tasks.
    - Issue-sized subtasks:
      - **1.4.1 Validate runtime configuration and health endpoints.** Scope: Add typed configuration, explicit startup/schema checks, liveness/readiness and redacted diagnostics. Done: Unknown keys, missing secrets and public development-auth combinations are rejected; unavailable storage changes readiness without exposing secrets or resetting data. Guide: §§4.10, 4.12. Depends: 1.1, 1.3.
+       - GitHub issue: [#18](https://github.com/DGIWG-P507/glaux-server/issues/18).
      - **1.4.2 Establish HTTP errors, negotiation and safe links.** Scope: Add the shared Axum boundary for request/media limits, documented error responses and configured-origin link generation. Done: Independent HTTP fixtures check unsupported media, malformed input, path-prefixed origins and forged forwarding headers; no hidden policy/schema details leak. Guide: §§4.1, 4.3, 6.4. Depends: 1.4.1.
+       - GitHub issue: [#19](https://github.com/DGIWG-P507/glaux-server/issues/19).
      - **1.4.3 Verify JWT credentials and development identities.** Scope: Implement the configured token-verification contract and explicitly loopback-only development caller context. Done: Valid fixtures authenticate while bad signature/algorithm/type/issuer/audience/time fail; token decoding alone never grants access and public development identities are rejected. Guide: §4.10. Depends: 1.4.1, 1.4.2.
+       - GitHub issue: [#20](https://github.com/DGIWG-P507/glaux-server/issues/20).
      - **1.4.4 Bound trusted-key refresh and credential failures.** Scope: Add configured issuer-key cache/refresh and its unavailable/rotation behavior. Done: Rotation, expired cached context and issuer outages have tested bounded behavior; request-controlled URLs cannot trigger arbitrary key fetching or fail-open authentication. Guide: §§4.10, 4.12. Depends: 1.4.3.
+       - GitHub issue: [#21](https://github.com/DGIWG-P507/glaux-server/issues/21).
      - **1.4.5 Enforce action, source and resource permissions.** Scope: Implement the configured policy interface and query/write admission restrictions using two-source fixtures. Done: Allowed and denied operations, cross-source attempts and unavailable policy decisions have explicit outcomes; fixture checks prove caller identity is not producer/reporting authority. Guide: §4.10. Depends: 1.4.3, 1.4.4.
+       - GitHub issue: [#22](https://github.com/DGIWG-P507/glaux-server/issues/22).
      - **1.4.6 Publish accurate initial discovery and API documents.** Scope: Add linked landing/conformance/API documents, a pinned locally served documentation renderer and offline initial examples based on enabled routes. Done: Independent HTTP checks follow root links and compare advertised methods/media against actual routes; no unfinished class or disabled extension is advertised. Guide: §§4.1, 7.3. Depends: 1.4.2, 1.4.5.
+       - GitHub issue: [#23](https://github.com/DGIWG-P507/glaux-server/issues/23).
 5. **1.5 Deliver the first persisted System workflow — Medium.**
    - Scope/deliverables: Implement a standards-shaped System POST/GET slice through the actual validation, authorization and storage boundary; add root-to-resource examples and an isolated backup/restore procedure for the data already present.
    - Verification: An independent HTTP client creates a System, follows its canonical link, reads it after restart and after isolated restore; invalid/denied input leaves no resource or outgoing work. No complete Part 1 class is claimed merely from this slice.
    - Dependencies: 1.2–1.4.
    - Issue-sized subtasks:
      - **1.5.1 Create a System through the real HTTP write path.** Scope: Wire one documented minimal System representation through request validation, source authorization and the shared database transaction. Done: An independent client receives the documented creation response/canonical identity; invalid, duplicate or denied input leaves no resource or queued event. Guide: §§4.2–4.3, 4.6, 6.2, 6.4. Depends: 1.2, 1.3, 1.4.
+       - GitHub issue: [#24](https://github.com/DGIWG-P507/glaux-server/issues/24).
      - **1.5.2 Retrieve the persisted System with authorized discovery.** Scope: Add canonical System retrieval for that representation and root-to-resource example/navigation updates. Done: A separate HTTP client retrieves identical identity and meaning after restart; missing/denied resources have safe responses and API documents match the new routes. Guide: §§4.1–4.3, 4.10, 8.2. Depends: 1.5.1.
+       - GitHub issue: [#25](https://github.com/DGIWG-P507/glaux-server/issues/25).
      - **1.5.3 Restore the first System in an isolated database.** Scope: Add a reproducible backup/restore example for current resources, revisions and artifacts with effects disabled in the clone. Done: The independent System workflow passes after restore, exact context is preserved, no outgoing work is delivered and the original database is untouched. Guide: §§4.7, 4.12, 8.2. Depends: 1.5.2.
+       - GitHub issue: [#26](https://github.com/DGIWG-P507/glaux-server/issues/26).
 
 **Phase exit:** The documented build and first real workflow pass with safe negative cases and an initial restore proof. Exactness/recursive-validation failures affecting subsequent storage are resolved or explicitly block that dependent work. The server remains an accurately described partial implementation.
 
@@ -678,6 +702,8 @@ All implementation subtasks are initially **planned**, with **sizing target: one
 
 Create one GitHub issue in `DGIWG-P507/glaux-server` for every three-level leaf in §4, across all nine phases, before beginning implementation. Keep the nine phases and 41 parent groups as organization in this document; they are not additional oversized implementation tickets. Use titles such as `[1.1.1] Inspect the server checkout and approved prerequisites` so the outline survives in GitHub.
 
+The project lead approved batch publication on September 18, 2026: Phase 1's 24 issues first, then approximately 20–30 issues per iteration at existing capability-group boundaries where practical. Each `proceed` authorizes one stated publication batch and its verification, not the remaining queue or coding. Check the complete outline/dependency inventory before the first batch; use a recorded planning baseline, review each batch before publication, and read back its actual issue bodies and prerequisite links afterward. Preserve returned issue numbers as work proceeds and link the verified issues here. The final publication batch also reconciles the complete 286-issue set before implementation may begin.
+
 Each issue contains its leaf ID/title, parent scope and relevant boundaries, precise deliverable, acceptance checks, linked Guide/source references, prerequisite issue links, and the common completion rules below. Expand parent-group dependencies to the corresponding prerequisite issue set; a heading is not evidence that work is complete. Link the created issue beside its leaf in this Roadmap. Inspect existing issues first, reuse matching work where appropriate and do not create duplicates. Publish all leaves, not broad placeholder tickets with decomposition left for execution.
 
 Use the server's [implementation-task template][IssueTemplate] and [contributor instructions][Contributing]. API publication must populate the same body explicitly, without YAML front matter or authoring comments; GitHub does not apply the web template automatically to API-created issues. Record the source version/commit, preserve each leaf's explicit prerequisites and relevant parent constraints without expanding its deliverable to every sibling, and leave completion checks unchecked. Replace every template field with task-specific content or a justified non-applicability statement. Inspection and verification leaves may deliver evidence rather than code.
@@ -702,7 +728,11 @@ One iteration is a sizing target. If execution demonstrates that a leaf is too l
 
 ### 5.3 Immediate next step
 
-The issue template and contributor instructions are prepared; no implementation issue is completed by that setup. The next `proceed` publishes and verifies the complete GitHub issue set from this outline. It does not start server implementation. The following implementation iteration begins with issue `1.1.1`: inspect the actual server checkout and approved tool/database availability, without installing software implicitly. Subsequent ready issues establish the build and tests; missing prerequisites block their dependent issues, not the accuracy of the published plan.
+**Publication progress:** 24/286 issues published and verified; 262 remain. The first batch covers tasks `1.1.1`–`1.5.3`, linked individually in Phase 1 as server issues #3–#26. All remain open and marked **Not started** at publication. Exact titles, leaf scope/completion criteria, populated template sections, unchecked checklists, pinned references and expanded prerequisite links were checked against the source plan and read back from GitHub. These are publication checks, not executed server tests or accepted implementation work.
+
+**Next `proceed`:** publish and verify the 22 issues in groups `2.1` and `2.2`, completing each group's existing leaves in outline order. First reconcile the existing issues and planning baseline to avoid duplicates or stale content. Later publication batches continue through the remaining groups; no coding begins until all 286 issues and links pass whole-set reconciliation.
+
+After publication is complete, the first implementation iteration begins with [task 1.1.1 / issue #3](https://github.com/DGIWG-P507/glaux-server/issues/3): inspect the actual server checkout and approved tool/database availability, without installing software implicitly. Subsequent ready issues establish the build and tests; missing prerequisites block their dependent issues, not the accuracy of the published plan.
 
 ## 6. Coverage, Milestones and Deliverables
 
@@ -828,7 +858,9 @@ Version 1.3 records the implementation-task template, concise contributor instru
 
 Version 1.4 applies the project lead's `proceed` after the focused test-quality review. Guide v1.2 restores practical assertion-strength, generated-input, fixture-review and false-green controls. Task 1.1.4's completion checks are strengthened; §§5/8 assign application through existing capability tasks and readable issue/PR evidence. The other leaf definitions, all IDs/titles/dependencies and the one-ready-issue-per-iteration delivery policy remain unchanged.
 
-Goal v1.7, capability scope and accepted research findings remain unchanged. No software installation, server implementation, implementation-issue publication or production action is performed by this correction iteration, and no implementation issue is marked complete. The next `proceed` publishes and verifies the complete issue set using the strengthened instructions; implementation follows in subsequent authorized iterations.
+Version 1.5 applies the project lead's approval to publish in bounded batches. The full outline check found 286 unique leaves, 41 groups and no missing or forward dependencies. The first 24 issue bodies were prepared from v1.4 / Guide v1.2, reviewed, published in dependency order and read back exactly; their returned GitHub links now accompany the Phase 1 leaves. Group dependencies were expanded to actual prerequisite issues without changing the task definitions. Section 5.3 identifies the next 22-issue batch. The remaining 262 issues must still be published and the whole set reconciled before coding.
+
+Goal v1.7, Guide v1.2, capability scope and accepted research findings remain unchanged. This iteration publishes issues and updates this handoff; it does not install software, implement the server, perform production actions or mark an implementation issue complete.
 
 Use version updates for material sequencing or scope changes. Technical design changes belong in the Guide; mission/scope changes belong in the Goal first. Keep task-to-Guide/test connections current without copying the standards into a separate requirement list. Historical research acceptance and findings remain unchanged.
 
