@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.113<br>
+**Version:** 3.114<br>
 **Date:** September 18, 2026<br>
-**Status:** Original IDR and supplements 058–062 complete and accepted; approved clarifications retained in Guide v1.1; issue template and contributor workflow prepared under Roadmap v1.3; complete issue publication next; Goal v1.7 unchanged<br>
+**Status:** Original IDR and supplements 058–062 complete and accepted; focused test-quality corrections incorporated in Guide v1.2 / Roadmap v1.4 and server issue instructions; complete issue publication next; Goal v1.7 unchanged<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -757,6 +757,7 @@ The final report must:
 | 2026-09-18 | CS-GO Engineering Synthesis Addendum | Prepared Addendum E from accepted IDR-SRV-062, connecting the engineering examples and limits to existing architecture, verification and documentation work; preserved original 67-topic totals and Addenda A–D | Five supplements now accepted. Next is discussion of two bounded clarifications before resuming complete issue publication; no new external research, tests, dependencies, planning edits, issues or code | Glaux Project Lead (synthesis authorization; addendum prepared for review) |
 | 2026-09-18 | CS-GO Planning Discussion and Approved Clarifications | Following the discussion-only iteration, the user's `proceed` approved two small edits: Guide v1.1 §§4.12/8.1 and Roadmap v1.2 task 1.1.3/§5.2 clarify test lifecycle/reproduction and maintenance of any contributor/assistant guidance | Goal v1.7, scope and all 286 task IDs/titles/dependencies unchanged. Planning handoff now returns to complete issue publication on the next `proceed`, before coding; no new research, tools, issues or implementation in this iteration | Glaux Project Lead (clarification approval and publication authorization) |
 | 2026-09-18 | Implementation Issue Preparation | Following the issue-template/governance assessment, the user's `proceed` authorized the server implementation-task template, concise contributor instructions and representative drafting checks. Roadmap v1.3 records these and the explicit choice of one branch/PR per issue with assistant merge after applicable checks and review | Publication preparation only; no new research, changed leaf definitions, implementation issues or server code. Complete publication of all 286 issues remains next, followed by one ready issue per `proceed`; Goal v1.7 and Guide v1.1 unchanged | Glaux Project Lead (preparation authorization and delivery-policy choice) |
+| 2026-09-18 | Test-Quality Review and Approved Corrections | The project lead paused issue publication for a rigorous read-only assessment of existing research, current planning, CS-GO test source and primary testing guidance, then authorized focused corrections with `proceed`. Guide v1.2, Roadmap v1.4 and server issue/contributor instructions make behavioral failure evidence, assertion review, targeted generated-input/mutation checks, false-green prevention and readable reporting explicit | Existing research informs the correction; no new research topic or evidence framework. Strengthens 1.1.4 and common testing rules while preserving all 286 IDs/titles/dependencies and Goal v1.7. No runtime verification, installations, implementation issues or server code; complete issue publication remains next | Glaux Project Lead (assessment request and correction authorization) |
 
 ---
 

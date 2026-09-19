@@ -1,14 +1,14 @@
 # Glaux Server Roadmap
 
-**Version:** 1.3<br>
+**Version:** 1.4<br>
 **Date:** 18 September 2026<br>
 **Effort:** Glaux Server<br>
 **Status:** Issue-sized task outline prepared — complete GitHub issue publication before implementation<br>
 **Depends On:** [Goal and Definition v1.7](glaux-server-goal-and-definition.md), Approved<br>
-**Implements:** [Implementation Guide v1.1][Guide], Baselined<br>
+**Implements:** [Implementation Guide v1.2][Guide], Baselined<br>
 **Implementation status:** All implementation subtasks remain planned, not verified complete. GitHub issue publication is the next step; this revision does not start server implementation.
 
-**Revision summary:** Adds the server repository's implementation-task template and contributor instructions to the publication workflow, and records the project lead's choice of one branch/PR per issue with assistant merge after applicable checks and review. All nine phases, 41 capability groups and 286 leaf definitions remain unchanged from v1.2. Complete issue publication remains next, before coding; Goal v1.7, Guide v1.1 and capability scope are unchanged.
+**Revision summary:** Applies Guide v1.2's approved test-quality safeguards through the existing workflow and capability owners. Strengthens task 1.1.4's CI discovery/failure-propagation checks and makes targeted test methods and readable evidence explicit in §§5/8. All nine phases, 41 groups, 286 task IDs/titles and dependencies remain unchanged. Complete issue publication remains next, before coding; Goal v1.7 and capability scope are unchanged.
 
 ## 1. Purpose and Executive Summary
 
@@ -46,7 +46,7 @@ Provide the small three-package Rust workspace and PostgreSQL/PostGIS design alr
 
 ## 2. Planning Assumptions and Constraints
 
-- Goal v1.7 and Guide v1.1 control this Roadmap. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
+- Goal v1.7 and Guide v1.2 control this Roadmap. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
 - Each implementation task includes its tests, safe error/access behavior, API/example updates and relevant source/test identifiers. A passing happy path alone is not task completion.
 - Preserve original standards/schema artifacts and the Guide's explicit interpretations. Do not silently adopt moving drafts or claim that a project interpretation resolved an upstream ambiguity.
 - Use a real PostgreSQL/PostGIS test instance and independent HTTP checks from the first persistent slice. Keep expected values independent of server serializers and query code.
@@ -98,7 +98,7 @@ All implementation subtasks are initially **planned**, with **sizing target: one
      - **1.1.1 Inspect the server checkout and approved prerequisites.** Scope: Record the current server branch/files and availability of Rust, build tools and an approved PostgreSQL/PostGIS test service in the server setup notes. Done: Existing changes are identified without overwriting them; available checks and exact missing prerequisites are recorded without installing software or exposing credentials. Guide: §§2.1, 2.4, 4.12. Depends: none.
      - **1.1.2 Establish the three-package Rust build.** Scope: Create or adapt the domain, standards and server workspace packages, pin the available tested toolchain/dependencies and document the build command. Done: Workspace builds and initial tests pass; package dependencies follow the Guide; unrelated existing work is retained. Guide: §§2.2, 2.4. Depends: 1.1.1.
      - **1.1.3 Establish the isolated database test harness.** Scope: Configure an approved PostgreSQL/PostGIS instance, connection check and initial migration/test lifecycle. Done: Integration tests prove connection, PostGIS availability and repeatable isolated setup; unavailable storage fails clearly and no existing user database is reset. Setup/reset failure cases stop cleanly, cleanup failures are reported, and repeated runs do not inherit mutable fixture state; seeds, clock inputs and dependency versions needed to reproduce failures are recorded. Guide: §§4.7, 4.12, 8.1. Depends: 1.1.2.
-     - **1.1.4 Automate and reproduce the initial build checks.** Scope: Add CI formatting, lint, build and initial unit/database checks with pinned prerequisites, dependency/license inventory and matching README instructions. Done: The checks run successfully in the stated environment; missing dependencies cannot produce a false green database result, and a clean documented setup reproduces the initial build. Guide: §§2.4, 4.12, 8.1. Depends: 1.1.3.
+     - **1.1.4 Automate and reproduce the initial build checks.** Scope: Add CI formatting, lint, build and initial unit/database checks with pinned prerequisites, dependency/license inventory and matching README instructions. Done: The checks run successfully in the stated environment; missing dependencies cannot produce a false green database result, and a clean documented setup reproduces the initial build. Demonstrate expected suite discovery and failure propagation with an intentionally failing assertion, failed service setup and runner error; an unexpectedly empty or filtered required suite cannot pass. Preserve outcome counts/selection and initial failures rather than retrying to green; justified inapplicability is explicit. Guide: §§2.4, 4.12, 8.1. Depends: 1.1.3.
 2. **1.2 Prove shared validation and value primitives — High.**
    - Scope/deliverables: Package pinned standards/schema artifacts with offline allowlisted resolution; establish typed IDs, exact number/time handling and operation/direction validation. Create the independently specified fixture/test foundation, including recursive SensorML/SWE examples and source-conflict fixtures.
    - Verification: Prove recursive resolution without network/file escape, generated versus writable fields, malformed/deep input limits, exact numeric/time boundaries and calendar/offset/leap-second handling before committing to storage types.
@@ -682,6 +682,8 @@ Each issue contains its leaf ID/title, parent scope and relevant boundaries, pre
 
 Use the server's [implementation-task template][IssueTemplate] and [contributor instructions][Contributing]. API publication must populate the same body explicitly, without YAML front matter or authoring comments; GitHub does not apply the web template automatically to API-created issues. Record the source version/commit, preserve each leaf's explicit prerequisites and relevant parent constraints without expanding its deliverable to every sibling, and leave completion checks unchecked. Replace every template field with task-specific content or a justified non-applicability statement. Inspection and verification leaves may deliver evidence rather than code.
 
+In the existing verification field, identify the expected answer's source, a plausible wrong behavior the tests should distinguish, and the applicable targeted method from §8/Guide §8.1.1. Describe the intended failure-sensitivity check or justified alternative; do not invent execution results before work begins. Keep common rules linked and task-specific examples concrete.
+
 Verify one-to-one coverage, issue contents and dependency links after publication. If publication is interrupted, retain the returned issue numbers, reconcile the repository and finish the missing entries before coding. GitHub issues track execution status; this Roadmap retains organization, scope and links. No separate issue-catalog document or new approval form is required.
 
 ### 5.2 Execute one ready issue per iteration
@@ -693,6 +695,8 @@ The project lead selected one branch/PR per issue with assistant merge after che
 Relevant documentation includes any contributor or coding-assistant instructions already present. When commands, conventions or architectural boundaries change, update affected guidance in the same issue; link explanations to controlling standards and the Guide, and keep executable examples current. No additional assistant-specific file or tool is required.
 
 Each leaf includes its own unit/integration and relevant negative, authorization and failure tests; later verification leaves combine and repeat those tests rather than supply missing basic checks. Preserve standards/source interpretations and do not claim unrun tests passed. A prerequisite-inspection or final-verification issue may deliver documented executable evidence rather than new production code. Test fixtures, dependency pins and documentation needed to reproduce the result are part of the same issue, not an unspecified future task.
+
+Apply Guide §8.1.1's behavioral failure-before-fix practice and justified alternatives. Assistant review must examine expected answers, assertion strength, changed fixtures and actual execution evidence, not only production code or a green job. Documentation/prerequisite-only work does not require fabricated behavioral tests. Missing, filtered, flaky or quarantined required checks remain evidence gaps; neither an advisory diagnostic label nor a retry erases an identified defect. Preserve the existing branch/PR policy without adding a human-approval gate.
 
 One iteration is a sizing target. If execution demonstrates that a leaf is too large or blocked, leave it open, record the precise reason and explicitly correct the Roadmap and issue breakdown; preserve completed work and the original obligation. Do not close a partially implemented issue, silently abandon its remainder or use this exception to postpone the initial full breakdown. Scope changes still follow the existing Goal/Guide process.
 
@@ -778,7 +782,20 @@ Failure of a prerequisite blocks dependent completion, not unrelated work. Fix t
 
 Run unit/codec and applicable real-database/HTTP tests with each implementation slice. Expand the independent standards runner, synthetic dataset, source-conflict fixtures and client scenarios as endpoints arrive. At phase completion, rerun the combined affected workflows; Phase 9 repeats the complete set in a clean reference environment.
 
-Each implementation handoff states the issue worked, what changed, what was actually run, failures or limitations, commit/evidence location and the next dependency-ready issue. Record execution evidence and state in the linked GitHub issue; update this document's phase/group completion when all constituent issues pass, and keep scope/dependency/link changes synchronized. Completed drafting or issue publication does not mark implementation tasks complete. Update estimates only from stated evidence and assumptions; do not translate assistant response time into developer labor automatically.
+Guide §8.1.1 supplies the test-strength and execution rules. The following assigns their introduction to existing tasks; these are not additional issues or dependencies. Preserve each leaf's bounded deliverable, and include only its applicable methods when publishing its issue.
+
+| Existing owners | Targeted testing responsibility |
+|---|---|
+| 1.1.3–1.1.4 | Isolated setup/reset/cleanup and CI discovery, outcome reporting and failure propagation; later owners extend these checks when adding a suite or scheduled job |
+| 1.2.2, 1.2.4–1.2.5 and 1.4.2 | Boundary/property cases for validation, numbers/time and HTTP parsing; initial bounded fuzz targets for owned untrusted-input boundaries, with reproducible concrete regressions |
+| 2.5, 3.3 and 7.3–7.4 | Independently expected query sets/order and contrasting predicates; bounded query/paging properties and targeted predicate mutation or known-bad-result checks |
+| 4.1.6, 4.2.6 and 4.3.8 | Property/fuzz cases for JSON/Text/Binary framing, truncation and resource limits, retaining independent value/byte expectations |
+| 1.4.3–1.4.5, 5.2, 6.1–6.2 and 8.3–8.4 | Controlled authorization, commit/retry, replay and restore faults; bounded state-sequence properties and targeted mutation where useful, with real dependency/effect-boundary checks rather than mock-only claims |
+| 8.1.1 | Bounded property/fuzz cases for exchange identities, framing, digests and rejected input before application |
+
+Run bounded properties and persisted regressions with the owning PR. Introduce each relevant scheduled method/job with its first owning target, incrementally, with measured budgets and recorded limitations; no single task must establish the entire fuzz/property/mutation/coverage tool portfolio. Later owners extend the relevant jobs. Such jobs are not mandatory on every PR and do not replace its required checks. Investigate meaningful survivors and failures; no coverage percentage, mutation score or fuzz duration alone grants completion. Tool availability is handled through approved prerequisites, not implicit installation. Phase 9 integrates existing evidence rather than introducing these practices at the end.
+
+Each implementation handoff states the issue worked, what changed, what behavior was proved, the independent expected answer's source, a meaningful wrong behavior detected (or justified alternative/limitation), what was actually run, remaining uncertainty, commit/evidence location and the next dependency-ready issue. Use plain language plus links to ordinary results, not test counts alone. Record execution evidence and state in the linked GitHub issue; update this document's phase/group completion when all constituent issues pass, and keep scope/dependency/link changes synchronized. Completed drafting or issue publication does not mark implementation tasks complete. Update estimates only from stated evidence and assumptions; do not translate assistant response time into developer labor automatically.
 
 Use the server repository's ordinary test results and a small summary recording build/commit, configuration, dependency/schema/fixture pins, executed cases and outcomes. Distinguish not run, unsupported client feature, implementation failure and source interpretation. The project lead's `proceed` remains the normal iteration control; no special acceptance phrase is required.
 
@@ -809,7 +826,9 @@ Version 1.2 incorporates the two clarifications approved by the project lead's S
 
 Version 1.3 records the implementation-task template, concise contributor instructions and the project lead's branch/PR/assistant-merge choice. Template preparation checks cover prerequisite inspection (1.1.1), spatial implementation (2.5.7) and final evidence reconciliation (9.1.9), with group-dependency expansion checked separately for 2.5.1. These are unpublished drafting checks, not implementation or acceptance evidence for those tasks. All leaf definitions remain unchanged.
 
-Goal v1.7, Guide v1.1, capability scope and accepted research findings remain unchanged. No software installation, server implementation, implementation-issue publication or production action is performed by this preparation iteration, and no implementation issue is marked complete. The next `proceed` publishes and verifies the complete issue set; implementation follows in subsequent authorized iterations.
+Version 1.4 applies the project lead's `proceed` after the focused test-quality review. Guide v1.2 restores practical assertion-strength, generated-input, fixture-review and false-green controls. Task 1.1.4's completion checks are strengthened; §§5/8 assign application through existing capability tasks and readable issue/PR evidence. The other leaf definitions, all IDs/titles/dependencies and the one-ready-issue-per-iteration delivery policy remain unchanged.
+
+Goal v1.7, capability scope and accepted research findings remain unchanged. No software installation, server implementation, implementation-issue publication or production action is performed by this correction iteration, and no implementation issue is marked complete. The next `proceed` publishes and verifies the complete issue set using the strengthened instructions; implementation follows in subsequent authorized iterations.
 
 Use version updates for material sequencing or scope changes. Technical design changes belong in the Guide; mission/scope changes belong in the Goal first. Keep task-to-Guide/test connections current without copying the standards into a separate requirement list. Historical research acceptance and findings remain unchanged.
 
