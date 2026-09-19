@@ -1,12 +1,12 @@
 # Glaux Server Implementation Guide
 
-**Version:** 1.0<br>
+**Version:** 1.1<br>
 **Date:** 18 September 2026<br>
 **Effort:** Glaux Server<br>
-**Status:** Baselined for Roadmap development — drafting iterations 1–3 complete<br>
+**Status:** Baselined — drafting iterations 1–3 complete; focused engineering clarifications incorporated<br>
 **Depends On:** [Glaux Server Goal and Definition v1.7](glaux-server-goal-and-definition.md), Approved
 
-**Revision summary:** Completes the third drafting pass and establishes the technical baseline for Roadmap development. The whole-guide review checked Goal coverage and registration, observation, streaming, command and recovery workflows; clarified their cross-section contracts; and separated remaining implementation proofs from settled design choices. Goal v1.7, the full conformance target and the Part 5 deferral remain unchanged. This is a completed design baseline, not a claim of implemented or tested server software.
+**Revision summary:** Incorporates the two focused clarifications approved after IDR-SRV-062: explicit test setup/reset/cleanup and reproducibility expectations (§8.1), and maintenance of any contributor/coding-assistant instructions within the existing documentation workflow (§4.12). The v1.0 design baseline, Goal v1.7, full conformance target and Part 5 deferral remain unchanged. Roadmap v1.2 assigns this work within its existing 286 tasks; complete issue publication is next. This is a design baseline, not a claim of implemented or tested server software.
 
 ## Executive Summary
 
@@ -27,7 +27,7 @@ The selected engineering choices are:
 
 The core completion target remains all 25 direct CSAPI conformance classes and applicable prerequisites. The selected experimental capabilities and six additional filtering classes are also planned implementation deliverables, tracked separately from that count. Incremental releases may implement fewer classes, but must say exactly what works. JSON-only result support, read-only operation, partial command/feasibility APIs, or SSE-only streaming are not substitutes for the complete intended server; JSON-only CQL2 expression encoding does not restrict SWE result formats. A simulated device is valid test equipment for the full tasking interface; selecting operational hardware is not a new server-completion prerequisite.
 
-This guide defines technical design and verification. The Roadmap will assign implementation order and tasks. Governance defines the working rules. The approved Goal and Definition controls scope. No separate requirements document, decision-record system, or new approval process is introduced.
+This guide defines technical design and verification. The [Roadmap](glaux-server-roadmap.md) assigns implementation order and tasks. Governance defines the working rules. The approved Goal and Definition controls scope. No separate requirements document, decision-record system, or new approval process is introduced.
 
 ## Table of Contents
 
@@ -487,6 +487,8 @@ Absence implies deletion only for an explicitly complete authoritative replaceme
 
 Provide `serve`, `migrate`, `check-config`, and administrative sample-data/export/import operations. Their final flags belong in executable help and the server README when implemented. Document build, migration, sample loading, serving, tests, backup/restore, and disposal separately; no automatic reset of a persistent database. Sample loads use the validated application path.
 
+Keep any contributor or coding-assistant instructions synchronized with the commands, conventions and architectural boundaries they describe. Update affected instructions in the same implementation issue as the change, and link explanations to the controlling standards and this Guide with current executable examples. This applies to guidance if present; it does not require an additional assistant-specific file, tool or documentation system. [IDR-062][R062]
+
 Use typed configuration with unknown-key rejection and startup validation. Configure public origin, listeners, database, identity/policy integration, limits, optional adapters, and retention explicitly. Read secrets from protected files/environment references or deployment secret providers, not checked-in examples. Redact effective configuration diagnostics. Reject unsafe combinations such as public listeners with development authentication.
 
 Expose liveness and readiness separately. Liveness reports whether the process can respond; readiness reports whether required storage/schema/configuration permits serving its declared capability. Optional broker failure can degrade publication without stopping valid historical reads. Report that condition through protected diagnostics, not false global readiness or a false System status.
@@ -768,6 +770,8 @@ For Part 4, keep the pinned draft clauses, adapted-schema checks, project interp
 
 Use a small synthetic dataset rich enough to distinguish behaviors: two permitted/denied source groups, a parent and child System, a Procedure, nested Deployments, multiple Sampling Features, property derivation, two observation streams with out-of-order/tied times, a status stream, and synchronous/asynchronous ControlStreams. Include positive and negative SensorML/SWE documents and independently specified expected values. Keep fixtures source-attributed and versioned; do not depend on live operational information or external servers for routine tests. [IDR-053][R053]
 
+Arrange cleanup when test resources are created, including failure paths. Report setup, reset and cleanup failures; failed setup or reset must prevent the affected test from continuing with stale state. Tests must not depend on another test's mutable data or execution order. Record the seeds, clock inputs and dependency versions needed to reproduce failures. [IDR-062][R062]
+
 Code formatting, linting, compilation, ordinary `cargo test`, dependency checks, and deterministic fixture validation run in CI. Add suite-management tools when needed; a large named test taxonomy is not a prerequisite. Test instructions must distinguish routine offline tests from optional external-client/broker runs and disclose what was not run.
 
 ### 8.2 Representative end-to-end scenarios
@@ -870,7 +874,9 @@ Version 0.1 was drafting iteration 1. Version 0.2 incorporated the approved Part
 
 Version 1.0 completes the third pass authorized by the project lead's subsequent `proceed`. It checks scope and end-to-end workflows, clarifies direction-aware validation and stream-schema registration, corrects cascade/terminal-status interactions, and makes backup-rollback continuity and command uncertainty explicit. It removes the unselected `f` negotiation extension and leftover proposal wording for selected choices. These refine the design within Goal v1.7; they do not add scope or claim implemented software.
 
-This Guide is now baselined for Roadmap development under the existing planning guidance. The next `proceed` begins Roadmap drafting from Goal v1.7 and Guide v1.0. No fourth Guide pass, separate requirements document, additional approval gate or server implementation is started by this handoff. Continue to push and summarize one completed iteration at a time.
+Version 1.1 incorporates the project lead's September 18, 2026 `proceed` after discussion of IDR-SRV-062 and synthesis Addendum E. It clarifies test-harness failure/isolation/reproduction behavior (§8.1) and maintenance of contributor/assistant guidance (§4.12), without changing architecture or scope. Roadmap v1.2 retains the same nine phases, 41 capability groups and 286 issue-sized tasks.
+
+The Guide remains baselined. The next `proceed` publishes and verifies the complete GitHub issue set under Roadmap §5.1 before any coding. No further Guide drafting pass, separate requirements document or additional approval gate is introduced. Continue to push and summarize one completed iteration at a time; implementation later proceeds one ready issue per authorized iteration.
 
 Record material technical changes here with their reason and affected behavior/tests. A change that expands the approved goal must first be addressed in the Goal and Definition; an internal implementation improvement need not reopen mission scope. Update standards interpretations when authoritative corrections arrive and test compatibility before changing a published contract.
 
@@ -906,6 +912,7 @@ The OS4CSAPI examples inform the use of concrete component boundaries, input/out
 | [059: enhanced querying][R059] | Adopted six-class JSON filtering and explicit direct-geometry/scalar mappings: §§4.4.1, 6.3.1, 7.4 and 8.2; qualifies the earlier CQL2 deferral |
 | [060: Part 5 Protobuf-first assessment][R060] | §1.5 records implementation deferral with existing codec/schema separation; no Protobuf replacement for SWE Binary |
 | [061: provenance and related metadata][R061] | §§4.3, 4.10, 6.1 and 8 distinguish production/audit context, exact known inputs, roles, quality and disclosure; no new provenance platform or security regime |
+| [062: CS-GO engineering practices and development history][R062] | §§4.12 and 8.1 clarify guidance maintenance and reliable test lifecycle/reproduction; other lessons reinforce existing work, without importing Go-specific mechanisms or claiming established peer TDD/runtime results |
 
 Consequential source checks during this drafting pass included the published CSAPI resource/encoding clauses, the exact conformance identifiers, Features transaction draft pins and conditional-request permissions, SWE optional/array behavior, command/feasibility semantics, and the current pinned Part 3 source. This is targeted checking of findings used in the design, not a claim that every research paragraph has been re-audited.
 
@@ -997,6 +1004,7 @@ These treatments are part of the technical baseline; baselining does not resolve
 [R059]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md
 [R060]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md
 [R061]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md
+[R062]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md
 [RSynthesis]: ../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/final-idr-research-report.md
 [S1]: https://docs.ogc.org/is/23-001/23-001.html
 [S2]: https://docs.ogc.org/is/23-002/23-002.html

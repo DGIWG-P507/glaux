@@ -1,14 +1,14 @@
 # Glaux Server Roadmap
 
-**Version:** 1.1<br>
+**Version:** 1.2<br>
 **Date:** 18 September 2026<br>
 **Effort:** Glaux Server<br>
 **Status:** Issue-sized task outline prepared — complete GitHub issue publication before implementation<br>
 **Depends On:** [Goal and Definition v1.7](glaux-server-goal-and-definition.md), Approved<br>
-**Implements:** [Implementation Guide v1.0][Guide], Baselined<br>
+**Implements:** [Implementation Guide v1.1][Guide], Baselined<br>
 **Implementation status:** All implementation subtasks remain planned, not verified complete. GitHub issue publication is the next step; this revision does not start server implementation.
 
-**Revision summary:** Corrects the v1.0 execution granularity to match the project lead's issue-per-iteration workflow. Retains nine phases and 41 capability groups, enumerates their issue-sized subtasks in the same outline, and requires publication of the complete corresponding GitHub issue set before coding. Each leaf has a specific change, completion checks, Guide references and dependencies. Goal, Guide and accepted research remain unchanged.
+**Revision summary:** Incorporates Guide v1.1's two approved engineering clarifications: explicit setup/reset/cleanup checks in existing task 1.1.3 and maintenance of any contributor/assistant guidance under §5.2's common documentation rule. Retains all nine phases, 41 capability groups and 286 issue-sized subtasks, including their IDs, titles and dependencies. Complete issue publication remains next, before coding; Goal v1.7 and capability scope are unchanged.
 
 ## 1. Purpose and Executive Summary
 
@@ -46,7 +46,7 @@ Provide the small three-package Rust workspace and PostgreSQL/PostGIS design alr
 
 ## 2. Planning Assumptions and Constraints
 
-- Goal v1.7 and Guide v1.0 control this Roadmap. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
+- Goal v1.7 and Guide v1.1 control this Roadmap. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
 - Each implementation task includes its tests, safe error/access behavior, API/example updates and relevant source/test identifiers. A passing happy path alone is not task completion.
 - Preserve original standards/schema artifacts and the Guide's explicit interpretations. Do not silently adopt moving drafts or claim that a project interpretation resolved an upstream ambiguity.
 - Use a real PostgreSQL/PostGIS test instance and independent HTTP checks from the first persistent slice. Keep expected values independent of server serializers and query code.
@@ -97,7 +97,7 @@ All implementation subtasks are initially **planned**, with **sizing target: one
    - Issue-sized subtasks:
      - **1.1.1 Inspect the server checkout and approved prerequisites.** Scope: Record the current server branch/files and availability of Rust, build tools and an approved PostgreSQL/PostGIS test service in the server setup notes. Done: Existing changes are identified without overwriting them; available checks and exact missing prerequisites are recorded without installing software or exposing credentials. Guide: §§2.1, 2.4, 4.12. Depends: none.
      - **1.1.2 Establish the three-package Rust build.** Scope: Create or adapt the domain, standards and server workspace packages, pin the available tested toolchain/dependencies and document the build command. Done: Workspace builds and initial tests pass; package dependencies follow the Guide; unrelated existing work is retained. Guide: §§2.2, 2.4. Depends: 1.1.1.
-     - **1.1.3 Establish the isolated database test harness.** Scope: Configure an approved PostgreSQL/PostGIS instance, connection check and initial migration/test lifecycle. Done: Integration tests prove connection, PostGIS availability and repeatable isolated setup; unavailable storage fails clearly and no existing user database is reset. Guide: §§4.7, 4.12, 8.1. Depends: 1.1.2.
+     - **1.1.3 Establish the isolated database test harness.** Scope: Configure an approved PostgreSQL/PostGIS instance, connection check and initial migration/test lifecycle. Done: Integration tests prove connection, PostGIS availability and repeatable isolated setup; unavailable storage fails clearly and no existing user database is reset. Setup/reset failure cases stop cleanly, cleanup failures are reported, and repeated runs do not inherit mutable fixture state; seeds, clock inputs and dependency versions needed to reproduce failures are recorded. Guide: §§4.7, 4.12, 8.1. Depends: 1.1.2.
      - **1.1.4 Automate and reproduce the initial build checks.** Scope: Add CI formatting, lint, build and initial unit/database checks with pinned prerequisites, dependency/license inventory and matching README instructions. Done: The checks run successfully in the stated environment; missing dependencies cannot produce a false green database result, and a clean documented setup reproduces the initial build. Guide: §§2.4, 4.12, 8.1. Depends: 1.1.3.
 2. **1.2 Prove shared validation and value primitives — High.**
    - Scope/deliverables: Package pinned standards/schema artifacts with offline allowlisted resolution; establish typed IDs, exact number/time handling and operation/direction validation. Create the independently specified fixture/test foundation, including recursive SensorML/SWE examples and source-conflict fixtures.
@@ -686,6 +686,8 @@ Verify one-to-one coverage, issue contents and dependency links after publicatio
 
 After issue publication, each `proceed` selects one open issue whose prerequisites are complete. State the issue and intended result, implement it, run its checks, update relevant examples/API/developer documentation, commit/push and record the evidence in the issue. Close it only when its acceptance criteria pass; summarize the outcome and pause for the next `proceed`. Do not interpret one authorization as permission to work through the remaining queue.
 
+Relevant documentation includes any contributor or coding-assistant instructions already present. When commands, conventions or architectural boundaries change, update affected guidance in the same issue; link explanations to controlling standards and the Guide, and keep executable examples current. No additional assistant-specific file or tool is required.
+
 Each leaf includes its own unit/integration and relevant negative, authorization and failure tests; later verification leaves combine and repeat those tests rather than supply missing basic checks. Preserve standards/source interpretations and do not claim unrun tests passed. A prerequisite-inspection or final-verification issue may deliver documented executable evidence rather than new production code. Test fixtures, dependency pins and documentation needed to reproduce the result are part of the same issue, not an unspecified future task.
 
 One iteration is a sizing target. If execution demonstrates that a leaf is too large or blocked, leave it open, record the precise reason and explicitly correct the Roadmap and issue breakdown; preserve completed work and the original obligation. Do not close a partially implemented issue, silently abandon its remainder or use this exception to postpone the initial full breakdown. Scope changes still follow the existing Goal/Guide process.
@@ -799,7 +801,9 @@ Version 0.1 was the complete first Roadmap draft. Version 1.0 completed the seco
 
 Version 1.1 applies that direction through a phase → capability group → issue-sized subtask outline in this document. It retains all parent obligations and adds explicit leaf scope, completion checks, Guide references and dependencies. Section 5 requires complete issue publication before one-issue-at-a-time implementation. This corrects execution granularity and a missing workflow step; it does not reopen research or change architecture.
 
-Goal v1.7, Guide v1.0 and accepted research remain unchanged. No software installation, server implementation, issue publication or production action is performed by this outline-revision iteration, and no implementation issue is marked complete. The next `proceed` publishes the complete issue set; implementation follows in subsequent authorized iterations.
+Version 1.2 incorporates the two clarifications approved by the project lead's September 18, 2026 `proceed` after the CS-GO engineering discussion. Guide v1.1 supplies the test lifecycle/reproduction and guidance-maintenance rules; existing task 1.1.3 and §5.2 apply them without adding or renumbering tasks. The remaining leaf definitions and dependencies are unchanged.
+
+Goal v1.7, capability scope and accepted research findings remain unchanged. No software installation, server implementation, issue publication or production action is performed by this clarification iteration, and no implementation issue is marked complete. The next `proceed` publishes and verifies the complete issue set; implementation follows in subsequent authorized iterations.
 
 Use version updates for material sequencing or scope changes. Technical design changes belong in the Guide; mission/scope changes belong in the Goal first. Keep task-to-Guide/test connections current without copying the standards into a separate requirement list. Historical research acceptance and findings remain unchanged.
 

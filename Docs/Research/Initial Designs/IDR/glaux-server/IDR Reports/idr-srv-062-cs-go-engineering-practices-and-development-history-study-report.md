@@ -334,8 +334,8 @@ Research and report preparation are complete. **The Glaux Project Lead accepted 
 ## 10. Next Steps and Handoff
 
 1. **Project Lead — complete:** The next `proceed` after publication in `79f736a` accepted this report and authorized the separate synthesis addendum on September 18, 2026. No special acceptance phrase was required.
-2. **Research assistant — complete:** Prepared [Addendum E](final-idr-research-report.md#addendum-e-cs-go-engineering-practices-and-development-history) in the existing final synthesis and updated acceptance records, preserving older dated findings and current scope. The addendum is prepared for review; source-report acceptance does not automatically accept the newly written addendum.
-3. **Project Lead and assistant, following discussion:** Decide whether to make the two small Guide/Roadmap clarifications. Then resume publication of the complete implementation-issue set and verify its links/dependencies before coding.
+2. **Research assistant — complete:** Prepared [Addendum E](final-idr-research-report.md#addendum-e-cs-go-engineering-practices-and-development-history) in the existing final synthesis and updated acceptance records, preserving older dated findings and scope. Its §E.6 now records the separate subsequent planning disposition; source-report acceptance alone did not adopt planning edits.
+3. **Project Lead and assistant — discussion and edits complete:** The subsequent September 18, 2026 `proceed` after discussion approved the two small clarifications, incorporated in [Guide v1.1][guide] §§4.12/8.1 and [Roadmap v1.2][roadmap] task 1.1.3/§5.2. No Goal change or task addition followed. The next `proceed` publishes and verifies the complete implementation-issue set and its links/dependencies before coding.
 4. **Implementation workflow thereafter:** One ready issue per authorized iteration. Do not treat this study as authorization to start implementation now.
 
 No calendar deadline is inferred for user-controlled acceptance or later iterations.
