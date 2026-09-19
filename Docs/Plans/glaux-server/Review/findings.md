@@ -1,6 +1,6 @@
 # Glaux Server review findings and assessment
 
-**Checkpoint:** September 19, 2026, through Copilot Pass 3c iteration 11.
+**Checkpoint:** September 19, 2026, through Copilot Pass 3c iteration 12 (standards batch: SWE quality and array flags; both interpretations supported).
 **Status:** Partial independent review; no implementation changes approved or performed by this checkpoint.
 **Purpose:** Preserve paid-for work and let another reviewer continue without chat memory or a restart.
 
@@ -31,7 +31,7 @@ No defensible overall effort percentage, remaining dollar cost or remaining turn
 | Area | Documented work | Not established complete |
 |---|---|---|
 | Baseline | Goal v1.8, Guide v1.3, Roadmap v1.18, README, CONTRIBUTING and issue template read | Only later changes would need targeted checking |
-| Standards | Substantial pinned-source checks; Part 1 normative body/Annex A read; targeted Part 2 and other checks | Six named standards groups plus F-13 extension-rule check |
+| Standards | Substantial pinned-source checks; Part 1 normative body/Annex A read; targeted Part 2 and other checks; SWE Common 3.0 quality and array-flag interpretations verified against 24-014 and the published schemas (iteration 12) | Four named standards groups plus F-13 extension-rule check |
 | Research | Synthesis/register read; full reads of 011, 029, 031, 036, 041, 050, 052; other partial reads | Corpus-wide key-section sweep and several previously promised deep reads |
 | Scenarios | Selected transaction, command, security and disconnected-operation analysis | Systematic end-to-end pass |
 | Test quality | Relevant research and selected issue assertions examined | Systematic verification-credibility pass |
@@ -42,7 +42,7 @@ The original six-pass review is the completion objective, as summarized in [the 
 
 ### Remaining checks already named in the review
 
-Standards: SWE quality; array flags; Features Part 3/CQL2 identifiers and GeometryCollection `minItems`; SensorML class identifiers; remaining IDR-011 abstract-test rows; Part 2 Annex A.1 inheritance; F-13 extension rules.
+Standards: Features Part 3/CQL2 identifiers and GeometryCollection `minItems`; SensorML class identifiers; remaining IDR-011 abstract-test rows; Part 2 Annex A.1 inheritance; F-13 extension rules. (SWE quality and array flags were closed as supported in iteration 12; see "Resolved standards checks" below.)
 
 Research portions: IDR-008 sections 16-17; 037/038 appendices; 039 section 7 and 21-22; 040 sections 9-21; remaining 042/043 sections. Additional promised deep reads were 030, 034, 039A and 055. Some CS-GO/OSH pinned-source spot checks remain unaccounted for.
 
@@ -137,6 +137,8 @@ The Guide selects the maximum resultTime within the authorized, filtered endpoin
 The prerequisite conflict was already recorded in research; the original claim that it was unrecorded everywhere was withdrawn. Annex A is normative, so an adapted procedure needs an explicit qualification.
 
 **Next consideration:** Carry the selected treatment into test evidence; distinguish original from adapted abstract-test outcomes. Part 2 inheritance remains an open check.
+
+**Related instance (iteration 12, SWE Common 3.0):** Abstract Tests A.85 `/conf/json-encoding-rules/record-object-valid` and A.86 `/conf/json-encoding-rules/vector-object-valid` in OGC 24-014 prescribe test methods that check only the JSON-object form of DataRecord/Vector values. Array-form values (`recordsAsArrays`/`vectorsAsArrays` true) therefore cannot pass the literal test method even though Requirement 85C/86C defines their rules; any Glaux evidence for array-form values is an adapted check and must be labelled as such. Owning work: the conformance-claim leaves assembling `swecommon-json` evidence (Guide Section 7 row for `swecommon-json`; Phase 9 reverification), not the codec leaf 4.1.3 (#130), whose tests are adequate. Evidence: [17-pass-3c-12-standards-swe.md](evidence/17-pass-3c-12-standards-swe.md), Section 3.3.
 
 **Saved evidence:** [03-pass-3a.txt](evidence/03-pass-3a.txt), starting at line 113. Consult later qualifications below where applicable.
 
@@ -294,6 +296,17 @@ No explicit exporter-side durable audit requirement was found in the checked Gui
 
 **Saved evidence:** [15-pass-3c-11.txt](evidence/15-pass-3c-11.txt), starting at line 81. Consult later qualifications below where applicable.
 
+## Resolved standards checks (no finding)
+
+These carried standards questions were closed with evidence and produced no new finding. They are recorded here so a successor does not redo them; the structured status lives in `remaining_checks` of [review-state.json](review-state.json).
+
+| Check | Disposition | Where verified |
+|---|---|---|
+| SWE Common 3.0 `quality` schema/semantic claim (Guide Section 4.3 and Section 13 row) | **Supported.** 24-014 Clause 8.2.3 declares an optional multi-valued `quality` attribute of the Clause 8.2.15 union; the published `AbstractSimpleComponent.json` declares no `quality` member and no schema sets `additionalProperties`/`unevaluatedProperties: false`, so the member is schema-permitted but unvalidated. The Guide's array-of-components reading follows the model; its local `href` reference for dynamic quality is a labelled Glaux choice. No Guide correction. | [17-pass-3c-12-standards-swe.md](evidence/17-pass-3c-12-standards-swe.md), Section 2 |
+| `recordsAsArrays`/`vectorsAsArrays` "true means arrays" (Guide Section 13 row; register #71) | **Supported; register #71 confirmed verbatim.** Requirement 85A/86A literally reverse the booleans and contradict their own default sentence; Clause 8.7.1, the 10.2.3 introduction, `encodings.json` and Annex B.2.4 all make `true` mean arrays. Consequence added under F-08: A.85/A.86 test only the object form. Optional one-clause clarification to the Guide row; no upstream filing authorized. | [17-pass-3c-12-standards-swe.md](evidence/17-pass-3c-12-standards-swe.md), Section 3 |
+
+Material follow-up questions raised by the same schema reads (encodings.json root `oneOf` omitting `BinaryEncoding`; `Quantity.json` requiring `label`) are recorded in `follow_up_questions` of the state file. They are not review obligations unless a later batch selects them.
+
 ## Important corrections preserved outside Copilot's last report
 
 These are Codex review qualifications already communicated in the conversation. They do not silently overwrite the archived reviewer reports or count as the project lead accepting design changes.
@@ -320,7 +333,7 @@ Keep review disposition separate from implementation: supported findings identif
 
 ## Source order
 
-The archive filenames 01-15 are chronological: Pass 1, Pass 2, Pass 3a, Pass 3b, then Pass 3c iterations 1-11. Later reports can narrow or withdraw earlier claims. Original files are retained unchanged so a handoff does not erase those corrections or recreate rejected findings.
+The archive filenames 01-15 are chronological: Pass 1, Pass 2, Pass 3a, Pass 3b, then Pass 3c iterations 1-11. Later reports can narrow or withdraw earlier claims. Original files are retained unchanged so a handoff does not erase those corrections or recreate rejected findings. File 16 is the superseded resumption brief (history only). From 17 onward, evidence files are reviewer-authored iteration reports saved directly to the repository during the iteration they describe; their manifest entries record the authored hash as both original and published.
 
 Snapshot baselines reported by the review:
 - Planning: [a310eaee2e80bb861197822a3c5bb12164ca9ac3](https://github.com/DGIWG-P507/glaux/tree/a310eaee2e80bb861197822a3c5bb12164ca9ac3).

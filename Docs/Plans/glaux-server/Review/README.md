@@ -10,9 +10,9 @@
 2. Read **instructions.md**, especially the rule for recording disagreements without interrupting coverage.
 3. Use **current_work** in **review-state.json** to resume the exact unfinished step or next batch. Do not reload every archived response.
 
-The last substantive reviewer response is **Copilot Pass 3c, iteration 11**. The imported record has **22 finding IDs, including two withdrawals**, with subsequent qualifications preserved. The documentation-organization work has not performed another technical-review pass.
+The last substantive reviewer response is **Copilot Pass 3c, iteration 12** (standards batch: SWE Common 3.0 quality and array-flag interpretations, both closed as supported; see the "Resolved standards checks" table in findings.md). The record has **22 finding IDs, including two withdrawals**, with subsequent qualifications preserved; iteration 12 added a related abstract-test instance under F-08 and no new finding number.
 
-The next selected batch is the two carried SWE questions: quality schema/semantics and array-flag interpretation. The machine state is authoritative for that cursor as review continues.
+The next selected batch is the Features Part 3/CQL2 identifiers and GeometryCollection `minItems` question together with the SensorML 3.0 class-identifier question. The machine state is authoritative for that cursor as review continues.
 
 ## What lives here
 
@@ -33,7 +33,7 @@ The purpose is to finish the review, not maintain an endless reading queue. Reus
 | Original area | Current position | Finish condition |
 |---|---|---|
 | 1. Baseline/planning documents | Completed at the recorded baseline | Reuse it; check relevant subsequent changes only |
-| 2. Standards | Partially complete | Resolve the six carried standards groups and F-13 extension question with evidence or a stated bounded unresolved result |
+| 2. Standards | Partially complete; two of six carried groups closed (SWE quality, array flags) | Resolve the four remaining carried standards groups and the F-13 extension question with evidence or a stated bounded unresolved result |
 | 3. Research and peer evidence | Partially complete | Account for key findings/recommendations/open questions across 71 reports, finish consequential committed deep reads and remaining pinned CS-GO/OSH checks; not blanket full reads of every plan/report |
 | 4. End-to-end scenarios | Selected analysis exists | Account for the approved capability workflows and consequential failures/security/provenance boundaries |
 | 5. Verification quality | Selected checks exist | Assess independent expected answers, meaningful failure detection and appropriate real-system checks across the planned capabilities |

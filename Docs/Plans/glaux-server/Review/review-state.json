@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 11",
+  "latest_report": "Pass 3c iteration 12 (standards batch: SWE quality and array flags)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -3055,9 +3055,10 @@
       "evidence": [
         "evidence/02-pass-2.txt",
         "evidence/03-pass-3a.txt",
-        "evidence/15-pass-3c-11.txt"
+        "evidence/15-pass-3c-11.txt",
+        "evidence/17-pass-3c-12-standards-swe.md"
       ],
-      "finish_condition": "Close the six carried groups and F-13 extension-rule question with supported or bounded unresolved conclusions."
+      "finish_condition": "Close the carried groups (two of six closed in iteration 12; four remain) and the F-13 extension-rule question with supported or bounded unresolved conclusions."
     },
     {
       "area": "research",
@@ -3104,16 +3105,22 @@
     {
       "id": "standards-quality",
       "question": "SWE Common 3.0 quality schema/semantic claim",
-      "status": "pending",
-      "evidence": [],
-      "conclusion_or_remaining_question": "SWE Common 3.0 quality schema/semantic claim"
+      "status": "closed_supported",
+      "closed_on": "2026-09-19",
+      "evidence": [
+        "evidence/17-pass-3c-12-standards-swe.md"
+      ],
+      "conclusion_or_remaining_question": "Supported. OGC 24-014 Clause 8.2.3 declares an optional multi-valued 'quality' attribute of the Clause 8.2.15 union (Quantity, QuantityRange, Category, Text); Clause 7.4.1 allows static or dynamic quality carried by another component. The published AbstractSimpleComponent.json / AbstractDataComponent.json / Quantity.json declare no 'quality' member, and sweCommon.json and these files set no additionalProperties/unevaluatedProperties restriction, so an added 'quality' member is schema-permitted but unvalidated (Requirement 55 is not violated; Abstract Test A.54 cannot detect a malformed one). The Guide Section 4.3 array-of-components interpretation and inline-value rule follow 8.2.3/8.2.15; the local href reference for dynamic quality is a labelled Glaux choice with no standard JSON syntax. No Guide correction; owning leaves 2.1.10 (#36), 2.1.11 (#37), 4.1.5 (#132) unchanged. Planned tests are not executed evidence."
     },
     {
       "id": "standards-array-flags",
       "question": "recordsAsArrays and vectorsAsArrays interpretation",
-      "status": "pending",
-      "evidence": [],
-      "conclusion_or_remaining_question": "recordsAsArrays and vectorsAsArrays interpretation"
+      "status": "closed_supported_with_note",
+      "closed_on": "2026-09-19",
+      "evidence": [
+        "evidence/17-pass-3c-12-standards-swe.md"
+      ],
+      "conclusion_or_remaining_question": "Supported; register #71 confirmed verbatim. 24-014 Requirement 85A/86A literally say true means JSON objects and 'else' arrays while omitted (default false) means objects, contradicting Clause 8.7.1 (default false = objects), the Clause 10.2.3 introduction (flags switch to arrays), encodings.json ('If true, ... encoded as JSON arrays instead of JSON objects', default false) and Annex B.2.4 (vectorsAsArrays true -> array). The Guide Section 13 'true means arrays' reading is the only one consistent with all other sources; issue #130 tests omitted/false/true and mixed combinations and retains the contradictory wording. Added consequence: Abstract Tests A.85/A.86 test methods check only the JSON-object form, so array-form fixtures are adapted checks against Requirement 85C/86C and must be labelled adapted (related instance recorded under F-08). Optional one-clause addition to Guide Section 13 row 1150; no upstream filing authorized. The singular 'vectorAsArrays' typo in 10.2.3 is confirmed; the schema property is 'vectorsAsArrays'."
     },
     {
       "id": "standards-features-cql2",
@@ -3173,23 +3180,24 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Copilot Pass 3c iteration 11",
+    "last_substantive_checkpoint": "Copilot Pass 3c iteration 12 (standards batch: SWE quality and array flags)",
     "provider": "GitHub Copilot",
-    "model": "not recorded",
+    "model": "self-reported as Claude Fable 5.1",
     "active_batch": null,
-    "unfinished_step": "No work on the selected next SWE batch is recorded. Start from the existing standards notes and pinned sources.",
+    "unfinished_step": "None. Iteration 12 completed both SWE checks and published this checkpoint. The next batch has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
-      "evidence/03-pass-3a.txt"
+      "evidence/03-pass-3a.txt",
+      "evidence/17-pass-3c-12-standards-swe.md"
     ],
     "next_batch": {
-      "title": "Resolve the two carried SWE questions",
+      "title": "Resolve the Features Part 3/CQL2 and SensorML class-identifier standards questions",
       "check_ids": [
-        "standards-quality",
-        "standards-array-flags"
+        "standards-features-cql2",
+        "standards-sensorml-classes"
       ],
-      "source_scope": "Existing Guide interpretation rows, related research evidence and their already pinned SWE Common source artifacts.",
-      "stop_condition": "Record each question as supported, corrected or specifically unresolved, with source references; save the checkpoint.",
+      "source_scope": "Guide Section 1.2/7.4/13 rows and the Section 7 conformance table; the published OGC API - Features Part 3 and CQL2 documents and their pinned cql2.json schema (GeometryCollection minItems); OGC 23-000 SensorML 3.0 published conformance class identifiers (json-simple-process, json-physical-system, json-deployment, json-derived-property); IDR-059 and IDR-021/IDR-011 evidence already cited; owning Roadmap leaves and issue bodies for the six Features Part 3/CQL2 classes and the SensorML classes.",
+      "stop_condition": "Record each question as supported, corrected or specifically unresolved, with exact identifiers and source references and any consequential planning/test implication; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     }
   },
@@ -3211,6 +3219,44 @@
       "activity": "Organized and prepared publication of review artifacts under the server planning folder; normalized local paths in public evidence; separated canonical findings from coverage/cursor state. No additional technical review performed.",
       "coverage_completed": [],
       "review_complete": false
+    },
+    {
+      "date": "2026-09-19",
+      "provider": "GitHub Copilot",
+      "model": "self-reported as Claude Fable 5.1",
+      "activity": "Pass 3c iteration 12. Resolved the two carried SWE standards checks against the published OGC 24-014 text and the published sweCommon 3.0 JSON schemas: standards-quality closed as supported (schema omits 'quality'; member is permitted but unvalidated; Guide interpretation follows 8.2.3/8.2.15/7.4.1); standards-array-flags closed as supported with register #71 confirmed verbatim and an added adapted-test consequence (A.85/A.86 test only the object form), recorded under F-08 as a related instance. Read issue #130 in full. No Guide correction required; one optional clarification to Section 13 row 1150. Recorded three material follow-up questions without scheduling them. Added evidence/17-pass-3c-12-standards-swe.md and its manifest entry.",
+      "coverage_completed": [
+        "standards-quality",
+        "standards-array-flags"
+      ],
+      "material_points": [
+        "No new finding number; F-08 gains a related SWE abstract-test instance.",
+        "Follow-up questions recorded (not scheduled): encodings.json root oneOf omits BinaryEncoding; Quantity.json requires 'label' although UML 8.2.2 calls it optional; XMLEncoding residue already recorded by IDR-022."
+      ],
+      "next_work": "standards-features-cql2 and standards-sensorml-classes (see current_work.next_batch).",
+      "review_complete": false
+    }
+  ],
+  "follow_up_questions": [
+    {
+      "id": "fq-01-encodings-root-oneof",
+      "raised": "2026-09-19",
+      "question": "encodings.json root oneOf lists TextEncoding, XMLEncoding and JSONEncoding but not BinaryEncoding; DataArray.json references each encoding by $defs, so component validation is unaffected. Does any planned validation path use the encodings.json root?",
+      "relevance": "swecommon-binary class (Guide Section 7 row line 891; Phase 4.3 leaves) only if root-level validation is used",
+      "status": "noted_not_scheduled",
+      "evidence": [
+        "evidence/17-pass-3c-12-standards-swe.md"
+      ]
+    },
+    {
+      "id": "fq-02-quantity-label-required",
+      "raised": "2026-09-19",
+      "question": "Quantity.json requires 'label' (with type, definition, uom) while 24-014 Clause 8.2.2 describes label as optional; under Requirement 55 a Quantity without label is schema-invalid. A single grep of IDR-022/023/024 found no explicit record of this. Is it recorded elsewhere, and do minimal fixtures/publisher schemas in Phase 2.1/4.1 leaves account for it?",
+      "relevance": "Component validation fixtures and publisher-supplied recordSchema acceptance",
+      "status": "noted_not_scheduled",
+      "evidence": [
+        "evidence/17-pass-3c-12-standards-swe.md"
+      ]
     }
   ],
   "publication": {

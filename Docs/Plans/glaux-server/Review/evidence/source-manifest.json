@@ -152,6 +152,20 @@
       "published_sha256": "30834D849DD45FF7F1C9912ECFE05AE93919A4114A00469A73935DAD3B106F68",
       "published_bytes": 17574,
       "publication_change": "local_paths_normalized"
+    },
+    {
+      "name": "17-pass-3c-12-standards-swe.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-19",
+      "provider": "GitHub Copilot",
+      "model": "self-reported as Claude Fable 5.1",
+      "original_sha256": "035D45060A715D07717982F3664290C3E24ABBDAF0235D315DAE45CB6D88B035",
+      "original_bytes": 13985,
+      "published_sha256": "035D45060A715D07717982F3664290C3E24ABBDAF0235D315DAE45CB6D88B035",
+      "published_bytes": 13985,
+      "publication_change": "none_byte_identical",
+      "line_endings": "CRLF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Standards batch: standards-quality and standards-array-flags (Pass 3c iteration 12)"
     }
   ]
 }
