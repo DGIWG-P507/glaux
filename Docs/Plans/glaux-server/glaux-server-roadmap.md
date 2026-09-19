@@ -1,6 +1,6 @@
 # Glaux Server Roadmap
 
-**Version:** 1.2<br>
+**Version:** 1.3<br>
 **Date:** 18 September 2026<br>
 **Effort:** Glaux Server<br>
 **Status:** Issue-sized task outline prepared — complete GitHub issue publication before implementation<br>
@@ -8,7 +8,7 @@
 **Implements:** [Implementation Guide v1.1][Guide], Baselined<br>
 **Implementation status:** All implementation subtasks remain planned, not verified complete. GitHub issue publication is the next step; this revision does not start server implementation.
 
-**Revision summary:** Incorporates Guide v1.1's two approved engineering clarifications: explicit setup/reset/cleanup checks in existing task 1.1.3 and maintenance of any contributor/assistant guidance under §5.2's common documentation rule. Retains all nine phases, 41 capability groups and 286 issue-sized subtasks, including their IDs, titles and dependencies. Complete issue publication remains next, before coding; Goal v1.7 and capability scope are unchanged.
+**Revision summary:** Adds the server repository's implementation-task template and contributor instructions to the publication workflow, and records the project lead's choice of one branch/PR per issue with assistant merge after applicable checks and review. All nine phases, 41 capability groups and 286 leaf definitions remain unchanged from v1.2. Complete issue publication remains next, before coding; Goal v1.7, Guide v1.1 and capability scope are unchanged.
 
 ## 1. Purpose and Executive Summary
 
@@ -680,11 +680,15 @@ Create one GitHub issue in `DGIWG-P507/glaux-server` for every three-level leaf 
 
 Each issue contains its leaf ID/title, parent scope and relevant boundaries, precise deliverable, acceptance checks, linked Guide/source references, prerequisite issue links, and the common completion rules below. Expand parent-group dependencies to the corresponding prerequisite issue set; a heading is not evidence that work is complete. Link the created issue beside its leaf in this Roadmap. Inspect existing issues first, reuse matching work where appropriate and do not create duplicates. Publish all leaves, not broad placeholder tickets with decomposition left for execution.
 
+Use the server's [implementation-task template][IssueTemplate] and [contributor instructions][Contributing]. API publication must populate the same body explicitly, without YAML front matter or authoring comments; GitHub does not apply the web template automatically to API-created issues. Record the source version/commit, preserve each leaf's explicit prerequisites and relevant parent constraints without expanding its deliverable to every sibling, and leave completion checks unchecked. Replace every template field with task-specific content or a justified non-applicability statement. Inspection and verification leaves may deliver evidence rather than code.
+
 Verify one-to-one coverage, issue contents and dependency links after publication. If publication is interrupted, retain the returned issue numbers, reconcile the repository and finish the missing entries before coding. GitHub issues track execution status; this Roadmap retains organization, scope and links. No separate issue-catalog document or new approval form is required.
 
 ### 5.2 Execute one ready issue per iteration
 
-After issue publication, each `proceed` selects one open issue whose prerequisites are complete. State the issue and intended result, implement it, run its checks, update relevant examples/API/developer documentation, commit/push and record the evidence in the issue. Close it only when its acceptance criteria pass; summarize the outcome and pause for the next `proceed`. Do not interpret one authorization as permission to work through the remaining queue.
+After issue publication, each `proceed` selects one open issue whose prerequisites are complete. State the issue and intended result, work on its task branch, implement it, run its checks, update relevant examples/API/developer documentation and open a linked PR to `main`. Record the evidence and assistant review; resolve blocking findings. Merge only after task-specific acceptance criteria, applicable checks and review pass, then record the final commit/PR and close the completed issue. Summarize the outcome and pause for the next `proceed`. Do not interpret one authorization as permission to work through the remaining queue.
+
+The project lead selected one branch/PR per issue with assistant merge after checks on September 18, 2026. Human review is available but is not a mandatory additional pause unless requested or required by repository controls. Review the actual PR head, respect protections and do not treat missing required checks as success. For documentation or prerequisite work before CI exists, record the checks actually performed and why runtime checks are inapplicable. This policy does not configure repository protections or claim an absent CI run passed; details are in [CONTRIBUTING.md][Contributing].
 
 Relevant documentation includes any contributor or coding-assistant instructions already present. When commands, conventions or architectural boundaries change, update affected guidance in the same issue; link explanations to controlling standards and the Guide, and keep executable examples current. No additional assistant-specific file or tool is required.
 
@@ -694,7 +698,7 @@ One iteration is a sizing target. If execution demonstrates that a leaf is too l
 
 ### 5.3 Immediate next step
 
-The next `proceed` publishes and verifies the complete GitHub issue set from this outline. It does not start server implementation. The following implementation iteration begins with issue `1.1.1`: inspect the actual server checkout and approved tool/database availability, without installing software implicitly. Subsequent ready issues establish the build and tests; missing prerequisites block their dependent issues, not the accuracy of the published plan.
+The issue template and contributor instructions are prepared; no implementation issue is completed by that setup. The next `proceed` publishes and verifies the complete GitHub issue set from this outline. It does not start server implementation. The following implementation iteration begins with issue `1.1.1`: inspect the actual server checkout and approved tool/database availability, without installing software implicitly. Subsequent ready issues establish the build and tests; missing prerequisites block their dependent issues, not the accuracy of the published plan.
 
 ## 6. Coverage, Milestones and Deliverables
 
@@ -803,7 +807,9 @@ Version 1.1 applies that direction through a phase → capability group → issu
 
 Version 1.2 incorporates the two clarifications approved by the project lead's September 18, 2026 `proceed` after the CS-GO engineering discussion. Guide v1.1 supplies the test lifecycle/reproduction and guidance-maintenance rules; existing task 1.1.3 and §5.2 apply them without adding or renumbering tasks. The remaining leaf definitions and dependencies are unchanged.
 
-Goal v1.7, capability scope and accepted research findings remain unchanged. No software installation, server implementation, issue publication or production action is performed by this clarification iteration, and no implementation issue is marked complete. The next `proceed` publishes and verifies the complete issue set; implementation follows in subsequent authorized iterations.
+Version 1.3 records the implementation-task template, concise contributor instructions and the project lead's branch/PR/assistant-merge choice. Template preparation checks cover prerequisite inspection (1.1.1), spatial implementation (2.5.7) and final evidence reconciliation (9.1.9), with group-dependency expansion checked separately for 2.5.1. These are unpublished drafting checks, not implementation or acceptance evidence for those tasks. All leaf definitions remain unchanged.
+
+Goal v1.7, Guide v1.1, capability scope and accepted research findings remain unchanged. No software installation, server implementation, implementation-issue publication or production action is performed by this preparation iteration, and no implementation issue is marked complete. The next `proceed` publishes and verifies the complete issue set; implementation follows in subsequent authorized iterations.
 
 Use version updates for material sequencing or scope changes. Technical design changes belong in the Guide; mission/scope changes belong in the Goal first. Keep task-to-Guide/test connections current without copying the standards into a separate requirement list. Historical research acceptance and findings remain unchanged.
 
@@ -811,6 +817,7 @@ Use version updates for material sequencing or scope changes. Technical design c
 
 - [Approved Goal and Definition](glaux-server-goal-and-definition.md)
 - [Baselined Implementation Guide][Guide], especially §§1, 7–10 and 13
+- [Server implementation-task issue template][IssueTemplate] and [contributor instructions][Contributing]
 - [Roadmap template](../../Governance/roadmap-template.md) and [Initial Planning Guidance](../../Governance/initial-planning-guidance.md)
 - [Final research synthesis and supplements](../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/final-idr-research-report.md), used through the Guide's selected findings
 - [OS4CSAPI implementation Roadmap][ExampleMain] and [Phase 5 parser-completion Roadmap][ExampleParser], pinned to the inspected example revision
@@ -818,5 +825,7 @@ Use version updates for material sequencing or scope changes. Technical design c
 The examples inform concrete task boundaries, dependency order, deliverables and tests accompanying implementation. Their historical hours, code-volume estimates, client-only scope, tolerant parsing rules and restrictions on live/performance testing are not server requirements. The standards baseline and existing interpretations remain those linked by the Guide; this scheduling pass does not repin standards or conduct another research study.
 
 [Guide]: glaux-server-implementation-guide.md
+[IssueTemplate]: https://github.com/DGIWG-P507/glaux-server/blob/main/.github/ISSUE_TEMPLATE/implementation_task.md
+[Contributing]: https://github.com/DGIWG-P507/glaux-server/blob/main/CONTRIBUTING.md
 [ExampleMain]: https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/planning/ROADMAP.md
 [ExampleParser]: https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/754411897173c2ec4debaa9bcf4ed9e0f8a9e230/docs/planning/phase-5/P5-ROADMAP.md
