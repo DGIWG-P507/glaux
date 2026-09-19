@@ -1,14 +1,14 @@
 # Glaux Server Roadmap
 
-**Version:** 1.5<br>
-**Date:** 18 September 2026<br>
+**Version:** 1.6<br>
+**Date:** 19 September 2026<br>
 **Effort:** Glaux Server<br>
-**Status:** GitHub issue publication in progress — Phase 1 published; implementation not started<br>
+**Status:** GitHub issue publication in progress — Phase 1 and groups 2.1–2.2 published; implementation not started<br>
 **Depends On:** [Goal and Definition v1.7](glaux-server-goal-and-definition.md), Approved<br>
 **Implements:** [Implementation Guide v1.2][Guide], Baselined<br>
-**Implementation status:** All implementation subtasks remain planned, not verified complete. Phase 1's 24 issues are published and linked; 262 of the 286 initial issues remain to publish. Complete issue publication and verification are required before server implementation.
+**Implementation status:** All implementation subtasks remain planned, not verified complete. Phase 1 and groups 2.1–2.2 have 46 published and linked issues; 240 of the 286 initial issues remain to publish. Complete issue publication and verification are required before server implementation.
 
-**Revision summary:** Records the project lead's approved batch-publication workflow and links the first 24 implementation issues, covering Phase 1. Published bodies were checked against Roadmap v1.4 / Guide v1.2 at planning commit `9df8e87127c62ed5c89df4dfead3239d096d382f` and the server template/contributor baseline `0be3f25a71b075fed6105b07697357e1af53e485`. All nine phases, 41 groups, 286 leaf definitions and dependencies are unchanged. Issue publication is not implementation completion; Goal v1.7 and Guide v1.2 remain unchanged.
+**Revision summary:** Links the second publication batch: 22 issues covering the shared SWE component model and SensorML/GeoJSON representation mappings in groups 2.1–2.2. Published bodies were reviewed against Roadmap v1.5 / Guide v1.2 at planning commit `41a8d3bf3d17295da5f0db9d5a8073d0cbddf16f` and the unchanged server template/contributor baseline `0be3f25a71b075fed6105b07697357e1af53e485`, then read back from GitHub. The first 24 issues are unchanged. All nine phases, 41 groups, 286 leaf definitions and dependencies remain unchanged; Goal v1.7 and Guide v1.2 are unchanged. Publication is not implementation completion.
 
 ## 1. Purpose and Executive Summary
 
@@ -180,32 +180,54 @@ All implementation subtasks are initially **planned**, with **sizing target: one
    - Dependencies: 1.2–1.3; execution slices should group related component families with their tests.
    - Issue-sized subtasks:
      - **2.1.1 Boolean, Text and Category components.** Scope: Add typed descriptions, values, definitions, code spaces and applicable constraints for these three scalar types. Done: Independent valid/invalid fixtures preserve false and empty versus absent values, reject wrong types and enforce Category constraints. Guide: §§4.3, 8.1. Depends: 1.2, 1.3.
+       - GitHub issue: [#27](https://github.com/DGIWG-P507/glaux-server/issues/27).
      - **2.1.2 Count and Quantity components.** Scope: Implement exact numeric values, numeric constraints and unit declarations without implicit conversions. Done: Boundary and large-Count fixtures round-trip exactly; invalid units, wrong numeric types and violated constraints fail without rounding. Guide: §§4.3, 4.7. Depends: 1.2, 1.3.
+       - GitHub issue: [#28](https://github.com/DGIWG-P507/glaux-server/issues/28).
      - **2.1.3 Time components and reference frames.** Scope: Bind calendar/numeric Time values to declared units, frame and origin using the exact-time primitives. Done: Known instants retain precision; invalid calendars and unsupported frame conversions fail explicitly instead of inventing UTC. Guide: §§4.3, 4.7, 8.1. Depends: 2.1.2.
+       - GitHub issue: [#29](https://github.com/DGIWG-P507/glaux-server/issues/29).
      - **2.1.4 Range components and nil semantics.** Scope: Implement CategoryRange, CountRange, QuantityRange and TimeRange with applicable constraints and declared nil values/reasons. Done: Valid pairs and nil fixtures round-trip; malformed pairs and invalid bounds fail, and missing values remain distinct from declared nil. Guide: §§4.3, 13. Depends: 2.1.1, 2.1.2, 2.1.3.
+       - GitHub issue: [#30](https://github.com/DGIWG-P507/glaux-server/issues/30).
      - **2.1.5 DataRecord and Vector components.** Scope: Add named/ordered children, axis/frame metadata and nested scalar/range validation. Done: Independent fixtures preserve field order and identity, reject invalid duplicate names and incompatible vector members, and retain supplied frame metadata. Guide: §§4.3, 8.1. Depends: 2.1.4.
+       - GitHub issue: [#31](https://github.com/DGIWG-P507/glaux-server/issues/31).
      - **2.1.6 DataChoice components.** Scope: Implement alternatives, selection identity and validation of the selected component. Done: Each supported alternative validates independently; unknown selections, mismatched values and invalid nested alternatives fail with bounded diagnostics. Guide: §§4.3, 8.1. Depends: 2.1.5.
+       - GitHub issue: [#32](https://github.com/DGIWG-P507/glaux-server/issues/32).
      - **2.1.7 DataArray and Matrix descriptions.** Scope: Implement element descriptors, dimensions/counts and applicable variable-size references without payload encoding yet. Done: Fixed/variable nested examples retain dimensions and ordering; inconsistent counts, invalid references and excessive dimensions fail before allocation. Guide: §§4.3, 8.1. Depends: 2.1.6.
+       - GitHub issue: [#33](https://github.com/DGIWG-P507/glaux-server/issues/33).
      - **2.1.8 Geometry component descriptions.** Scope: Implement the applicable SWE Geometry representation and its frame/coordinate metadata in the shared model. Done: Valid component fixtures preserve coordinate meaning and height; invalid shape/coordinate metadata is rejected without silently coercing it to a scalar or GeoJSON feature. Guide: §§4.3, 8.1. Depends: 2.1.5.
+       - GitHub issue: [#34](https://github.com/DGIWG-P507/glaux-server/issues/34).
      - **2.1.9 Component references and bounded traversal.** Scope: Resolve permitted local component references and preserve nonlocal metadata without request-time fetching. Done: Nested valid graphs resolve deterministically; duplicate IDs, unresolved required local targets, cycles and depth/size exhaustion produce bounded errors. Guide: §§4.3, 4.10. Depends: 2.1.7, 2.1.8.
+       - GitHub issue: [#35](https://github.com/DGIWG-P507/glaux-server/issues/35).
      - **2.1.10 Inline quality assertions.** Scope: Implement the Guide's separate quality-array validation for Quantity, QuantityRange, Category and Text, retaining units, subject and supplied values. Done: All four types and multiple assertions round-trip; malformed quality strings, wrong types and invalid units fail, while absent quality is not zero or a pass. Guide: §§4.3, 4.10, 13. Depends: 2.1.9.
+       - GitHub issue: [#36](https://github.com/DGIWG-P507/glaux-server/issues/36).
      - **2.1.11 Per-record quality references.** Scope: Bind local quality references to one eligible component and record occurrence without adding hidden payload fields. Done: Independent nested-record fixtures resolve the intended value; ambiguous occurrences, invalid targets and cycles fail, and missing/nil quality remains unavailable. Guide: §§4.3, 8.2. Depends: 2.1.10.
+       - GitHub issue: [#37](https://github.com/DGIWG-P507/glaux-server/issues/37).
      - **2.1.12 Immutable compiled component contracts.** Scope: Assemble validated component trees and applicable enclosing SWE descriptors into immutable bounded plans, retaining exact source bytes, media type and digest. Done: Every implemented component family compiles from a fixture; invalid bindings fail atomically, and a new source/contract cannot alter a previously compiled plan. Guide: §§4.3, 6.1, 8.1. Depends: 2.1.9, 2.1.11.
+       - GitHub issue: [#38](https://github.com/DGIWG-P507/glaux-server/issues/38).
 2. **2.2 Complete SensorML and GeoJSON representation mappings — High.**
    - Scope/deliverables: Implement applicable SimpleProcess, PhysicalSystem, Deployment and DerivedProperty mappings/dependencies, source preservation and supported input/output bindings. Keep Procedure and Property representation differences explicit.
    - Verification: Independent expected meanings establish alternate-representation identity/relationship preservation, allowed extensions, rich source retention and documented mapping limitations; no request-time external dereference.
    - Dependencies: 2.1 and the Phase 1 request/response validation boundary.
    - Issue-sized subtasks:
      - **2.2.1 Common SensorML descriptive content.** Scope: Implement the shared identifiers, classifiers, contacts, documentation, validity and permitted extension mappings used by the selected resource types. Done: Source-attributed fixtures preserve these fields and source bytes; invalid typed content and reserved-field collisions fail without external dereference. Guide: §§4.2–4.3, 4.10. Depends: 2.1, 1.2.
+       - GitHub issue: [#39](https://github.com/DGIWG-P507/glaux-server/issues/39).
      - **2.2.2 Procedure SensorML mapping.** Scope: Implement the selected SimpleProcess representation and applicable process-description dependencies for Procedures. Done: Minimal and rich Procedure fixtures validate and round-trip with consistent UID/meaning; positioned-System assumptions and malformed process structures do not pass. Guide: §§4.2–4.3, 6.2. Depends: 2.2.1.
+       - GitHub issue: [#40](https://github.com/DGIWG-P507/glaux-server/issues/40).
      - **2.2.3 System SensorML mapping.** Scope: Implement PhysicalSystem and applicable component/position descriptions, preserving inline components without automatically creating resource identities. Done: Nested physical descriptions retain IDs, frames and supplied position; invalid structures fail and inline children do not become invented Systems. Guide: §§4.2–4.3, 6.2. Depends: 2.2.1.
+       - GitHub issue: [#41](https://github.com/DGIWG-P507/glaux-server/issues/41).
      - **2.2.4 Deployment SensorML mapping.** Scope: Implement Deployment descriptions, validity and participating-system references. Done: Valid deployment fixtures preserve associations and time meaning; malformed validity and wrong reference shapes fail without replacing domain time with receipt time. Guide: §§4.2–4.3, 6.2. Depends: 2.2.1.
+       - GitHub issue: [#42](https://github.com/DGIWG-P507/glaux-server/issues/42).
      - **2.2.5 DerivedProperty mapping.** Scope: Implement the selected SensorML Property representation with base-property, object-type and applicable derivation metadata. Done: Fixtures preserve semantic URIs and derivation; invalid mandatory fields fail, and the resource is never serialized as a GeoJSON Feature. Guide: §§4.2–4.3, 6.2, 13. Depends: 2.2.1.
+       - GitHub issue: [#43](https://github.com/DGIWG-P507/glaux-server/issues/43).
      - **2.2.6 System GeoJSON mapping.** Scope: Map the common System identity, properties, associations and applicable geometry between the typed model and GeoJSON. Done: Independent expected fields agree with SensorML; required coordinate order and height are preserved, and a richer source is not discarded by a read projection. Guide: §§4.2–4.3, 6.2. Depends: 2.2.3.
+       - GitHub issue: [#44](https://github.com/DGIWG-P507/glaux-server/issues/44).
      - **2.2.7 Procedure and Deployment GeoJSON mappings.** Scope: Add their distinct GeoJSON projections, including deployment relationships/validity and the non-positioned Procedure rule. Done: Both fixture families preserve identity and common meaning across encodings; invalid geometry/required-property cases fail rather than borrowing System defaults. Guide: §§4.2–4.3, 6.2. Depends: 2.2.2, 2.2.4, 2.2.6.
+       - GitHub issue: [#45](https://github.com/DGIWG-P507/glaux-server/issues/45).
      - **2.2.8 Generic SamplingFeature GeoJSON mapping.** Scope: Implement approved generic sampling descriptions and their feature/association fields, without Part 4 specialized validation. Done: Spatial and geometry-less valid fixtures round-trip; malformed geometry or associations fail, and unsupported specialized types gain no false conformance claim. Guide: §§4.2–4.3, 6.2. Depends: 2.2.1.
+       - GitHub issue: [#46](https://github.com/DGIWG-P507/glaux-server/issues/46).
      - **2.2.9 SensorML input/output and qualifier bindings.** Scope: Preserve applicable SWE-backed input/output, connection, qualifier and interface descriptions and validate supported typed bindings. Done: Valid nested bindings retain component identity; invalid local bindings fail, and unsupported executable bindings are explicit rather than silently dropped or executed. Guide: §§4.3, 13. Depends: 2.2.2, 2.2.3, 2.1.
+       - GitHub issue: [#47](https://github.com/DGIWG-P507/glaux-server/issues/47).
      - **2.2.10 Alternate representations and source protection.** Scope: Connect the completed family serializers to permitted projections and source-artifact access, with representation-specific examples. Done: Rich-to-common-to-rich read sequences retain original meaning; denied source fields cannot escape through alternate output or raw original bytes. Guide: §§4.1–4.3, 4.10, 6.2. Depends: 2.2.5, 2.2.7, 2.2.8, 2.2.9.
+       - GitHub issue: [#48](https://github.com/DGIWG-P507/glaux-server/issues/48).
 3. **2.3 Complete Part 1 resources, hierarchy and collections — High.**
    - Scope/deliverables: Extend Systems and implement Subsystems, Deployments/Subdeployments, Procedures, generic SamplingFeatures and Properties with canonical/nested routes and typed relationships. Implement collection metadata/views and the required member operations without adding an unrelated collection-management API.
    - Verification: Register the Guide's connected fixture set; prove canonical identity across views, UID conflicts, parent/cardinality/cycle rules, recursion and authorized membership.
@@ -728,9 +750,9 @@ One iteration is a sizing target. If execution demonstrates that a leaf is too l
 
 ### 5.3 Immediate next step
 
-**Publication progress:** 24/286 issues published and verified; 262 remain. The first batch covers tasks `1.1.1`–`1.5.3`, linked individually in Phase 1 as server issues #3–#26. All remain open and marked **Not started** at publication. Exact titles, leaf scope/completion criteria, populated template sections, unchecked checklists, pinned references and expanded prerequisite links were checked against the source plan and read back from GitHub. These are publication checks, not executed server tests or accepted implementation work.
+**Publication progress:** 46/286 issues published and verified; 240 remain. The first batch covers tasks `1.1.1`–`1.5.3` as server issues #3–#26; the second covers `2.1.1`–`2.2.10` as issues #27–#48. Each is linked beside its leaf. All remain open and marked **Not started** at this handoff. The new 22 bodies and their 81 prerequisite links were verified; the previous 24 bodies remain unchanged. The cumulative check covered 46 unique tasks and 154 prerequisite links, exact titles/scope/completion criteria, populated template sections, unchecked checklists and pinned references. These are publication checks, not executed server tests or accepted implementation work.
 
-**Next `proceed`:** publish and verify the 22 issues in groups `2.1` and `2.2`, completing each group's existing leaves in outline order. First reconcile the existing issues and planning baseline to avoid duplicates or stale content. Later publication batches continue through the remaining groups; no coding begins until all 286 issues and links pass whole-set reconciliation.
+**Next `proceed`:** publish and verify the 20 issues in groups `2.3` and `2.4`: complete Part 1 resources/hierarchy/collections and required representation-safe writes. Complete each group's existing leaves in outline order. First reconcile the existing issues and planning baseline to avoid duplicates or stale content. Later publication batches continue through the remaining groups; no coding begins until all 286 issues and links pass whole-set reconciliation.
 
 After publication is complete, the first implementation iteration begins with [task 1.1.1 / issue #3](https://github.com/DGIWG-P507/glaux-server/issues/3): inspect the actual server checkout and approved tool/database availability, without installing software implicitly. Subsequent ready issues establish the build and tests; missing prerequisites block their dependent issues, not the accuracy of the published plan.
 
@@ -858,7 +880,9 @@ Version 1.3 records the implementation-task template, concise contributor instru
 
 Version 1.4 applies the project lead's `proceed` after the focused test-quality review. Guide v1.2 restores practical assertion-strength, generated-input, fixture-review and false-green controls. Task 1.1.4's completion checks are strengthened; §§5/8 assign application through existing capability tasks and readable issue/PR evidence. The other leaf definitions, all IDs/titles/dependencies and the one-ready-issue-per-iteration delivery policy remain unchanged.
 
-Version 1.5 applies the project lead's approval to publish in bounded batches. The full outline check found 286 unique leaves, 41 groups and no missing or forward dependencies. The first 24 issue bodies were prepared from v1.4 / Guide v1.2, reviewed, published in dependency order and read back exactly; their returned GitHub links now accompany the Phase 1 leaves. Group dependencies were expanded to actual prerequisite issues without changing the task definitions. Section 5.3 identifies the next 22-issue batch. The remaining 262 issues must still be published and the whole set reconciled before coding.
+Version 1.5 applied the project lead's approval to publish in bounded batches. The full outline check found 286 unique leaves, 41 groups and no missing or forward dependencies. The first 24 issue bodies were prepared from v1.4 / Guide v1.2, reviewed, published in dependency order and read back exactly; their returned GitHub links accompany the Phase 1 leaves. Group dependencies were expanded to actual prerequisite issues without changing the task definitions. At that handoff, 262 issues remained and groups 2.1–2.2 were the next authorized publication target.
+
+Version 1.6 records the second publication batch on September 19, 2026, authorized by the next `proceed`. Issues #27–#48 cover all 22 leaves of groups 2.1–2.2, with exact leaf scope/completion criteria, task-specific verification, pinned sources and 81 expanded prerequisite links. Review clarified the distinction between prohibited Procedure position and permitted descriptive extensions, kept quality-record fixtures independent of the later compiler task, and avoided requiring unsafe buffer mutation in immutability tests. These are issue-drafting clarifications within the existing Guide, not changes to its contracts or Roadmap leaves. All 46 published bodies and 154 dependency links were reconciled; the first batch is unchanged. Section 5.3 records the next 20-issue batch; 240 issues remain before whole-set reconciliation and coding.
 
 Goal v1.7, Guide v1.2, capability scope and accepted research findings remain unchanged. This iteration publishes issues and updates this handoff; it does not install software, implement the server, perform production actions or mark an implementation issue complete.
 
