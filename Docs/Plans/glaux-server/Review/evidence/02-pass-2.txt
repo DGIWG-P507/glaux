@@ -1,0 +1,178 @@
+Updated todo list
+
+Starting Pass 2. I'll verify the Guide's consequential standards claims against the published OGC documents and pinned upstream artifacts, beginning with conformance-class inventories and the `resultTime=latest` semantics. 
+
+
+
+Fetched https://docs.ogc.org/is/23-002/23-002.html
+
+Part 2 verified in detail (notes below). Now Part 1's class/requirement inventory, endpoint set, and key parameter rules. 
+
+
+
+Fetched https://docs.ogc.org/is/23-001/23-001.html
+
+Searched for regex `latest` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-011-*.md`), 22 results
+
+No matches found. Your search pattern might be excluded completely by either the search.exclude settings or .*ignore files.
+If you believe that it should have results, you can check into the .*ignore files and the exclude setting (here are some excluded patterns for reference:[**/node_modules,**/bower_components,**/*.code-search]).
+Then if you want to include those files you can call the tool again by setting "includeIgnoredFiles" to true.
+
+
+
+Fetched 2 resources
+
+Searched opensensorhub/osh-core for "withLatestResult latest result observation filter per datastream foi", 64 results
+
+Searched for regex `Common[^\n]{0,15}Part 2|19-087|simple-query|/components|deployedSystems\?|/systemEvents\b[^\n]{0,40}(ATS|A\.43|inconsist)` (`**/Docs/**/*.md`), 19 results
+
+Searched for regex `ogcapi-1/1\.0|ogcapi-4/1\.0|common-2|collections.*prerequisite|prerequisite.*collections|conf/core.*conf/landing|ATS prerequisite|A\.2 ` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-008-*.md`), 1 result
+
+Searched for regex `spec/ogcapi-1/1\.0|spec/ogcapi-4/1\.0|ogcapi-common-2|Common Part 2 collections|conf/simple-query` (`**/Docs/**/*.md`), 1 result
+
+Read , lines 724 to 750
+
+Ran terminal command: $root="<workspace>\Docs"; $good=(Select-String -Path "$root\**\*.md" -Pattern '8e03b236a049849f2ccc24b4fd9fdce5ff69bed2' -AllMatches | ForEach-Object { $_.Matches.Count } | Measure-Object -Sum).Sum; $bad=Select-String -Path "$root\**\*.md" -Pattern '8e03b236a049f2ccc24b4fd9fdce5ff69bed2' -AllMatches; "good-hash refs: $good"; "bad-hash refs: $(($bad | ForEach-Object { $_.Matches.Count } | Measure-Object -Sum).Sum)"; $bad | Group-Object Path | ForEach-Object { "  $($_.Count)  $($_.Name.Substring($root.Length+1))" }; "--- any other 38-char truncations of 40-char hashes in Guide/Roadmap? ---"; Select-String -Path "$root\Plans\glaux-server\*.md" -Pattern '/(blob|tree)/([0-9a-f]{30,39})/' -AllMatches | ForEach-Object { $_.Matches } | ForEach-Object { $_.Groups[2].Value } | Sort-Object -Unique
+
+Ran terminal command: $root="<workspace>\Docs"; $files=Get-ChildItem -Path $root -Recurse -Filter *.md; $good=($files | Select-String -Pattern '8e03b236a049849f2ccc24b4fd9fdce5ff69bed2' -AllMatches | ForEach-Object { $_.Matches.Count } | Measure-Object -Sum).Sum; $bad=$files | Select-String -Pattern '8e03b236a049f2ccc24b4fd9fdce5ff69bed2' -AllMatches; "good-hash refs: $good"; "bad-hash refs: $(($bad | ForEach-Object { $_.Matches.Count } | Measure-Object -Sum).Sum)"; $bad | Group-Object Path | ForEach-Object { "  $($_.Count) lines  $($_.Name.Substring($root.Length+1))" }; "--- truncated (30-39 char) hashes in Plans ---"; Get-ChildItem "$root\Plans\glaux-server" -Filter *.md | Select-String -Pattern '/(blob|tree)/([0-9a-f]{30,39})/' -AllMatches | ForEach-Object { $_.Matches } | ForEach-Object { $_.Groups[2].Value } | Sort-Object -Unique
+
+
+
+
+
+Fetched 2 resources
+
+Fetched 2 resources
+
+
+
+Fetched 2 resources
+
+
+
+Fetched 2 resources
+
+
+
+Fetched 2 resources
+
+
+
+Fetched 4 resources
+
+
+
+
+
+Fetched 2 resources
+
+Fetched 2 resources
+
+Compacted conversation
+
+Searched for regex `foi@id|samplingFeature@id` (`**/Docs/**/*.md`), 6 results
+
+Searched for regex `OWSLib|owslib|TEAM Engine|ETS|conformance test suite|cite\b|CITE` (`**/Docs/Plans/glaux-server/*.md`), 56 results
+
+Read , lines 935 to 950
+
+
+
+Searched for regex `OS4CSAPI|os4csapi|osh-js|oshconnect` (`**/Docs/**/*.md`), 76 results
+
+Fetched 2 resources
+
+
+
+Fetched 3 resources
+
+Searched for regex `put-rid|body identifier|identifier in the (request )?body|mismatch|If-Match|ETag|optimistic` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 12 results
+
+Read , lines 1127 to 1165
+
+Searched for regex `resultTime=latest|latest result time|greatest visible` (`**/Docs/Plans/glaux-server/*.md`), 4 results
+
+
+
+Fetched https://raw.githubusercontent.com/SomethingCreativeStudios/connected-systems-go/b1fd2e0e9bd69e222d05258d659a842ca24502cb/e2e/observations_test.go
+
+## Pass 2 — Research and standards integrity
+
+### Material reviewed in this pass (depth)
+
+| Material | Depth |
+|---|---|
+| OGC 23-001 Part 1 v1.0.0 (docs.ogc.org/is/23-001) — requirements classes, numbering, dependency statements, Annex A A.1–A.110 | Full |
+| OGC 23-002 Part 2 v1.0.0 — 12 classes, requirements 1–130, status codes, cascade, `obsFormat`/`cmdFormat`, paths, Annex A | Full |
+| GitHub tag `v1.0.0` → `8e03b236…` (API ref + release page); tagged `observation.json`, `systemEvent.json` | Full |
+| Features Part 4 pin `9ca25f5` (13 Jul 2026 repo snapshot; Part 4 content = 20-002r1, 1.0.0-draft.2): `REQ_rid` (`/put-rid`), `REQ_rid-exception`, `REQ_put-op`, `REQ_response`; compared with later `4e30324` (11 Sep 2026, Common Part 5 rename) | Full (those files) |
+| Part 3 pin `6f529a1` (1 Sep 2026) and Part 4 pin `05a3c62` (30 Jun 2026) — existence, date, content | Targeted |
+| OSH `osh-core` latest-observation logic; CS-GO `b1fd2e0` `e2e/observations_test.go`; OWSLib `owslib/ogcapi/connectedsystems.py` | Full file / targeted |
+| Upstream issues #64, #88 (closed), #166, #170, #201 (open) | Full |
+| IDR-011 report (`latest` passages; §14.3 ATS defect table) | Partial |
+| Guide §§1.2, 4.4, 4.6, 6.3, 7.1, 8.1, 13; Roadmap 3.3.5 | Targeted re-read |
+| Corpus-wide commit-hash search (all `Docs/**/*.md`) | Complete |
+
+### Findings
+
+**F-07 — `resultTime=latest` semantics diverge from the reference implementation and the divergence is unrecorded**
+- Severity/type: Medium–High, credible interoperability risk (plus documentation omission).
+- Evidence: Part 2 Requirement 50 D says only observations "with the latest result time SHALL be included" — silent on grouping. Guide §4.4 (`glaux-server-implementation-guide.md:440`): "select the greatest visible result time and retain ties" within endpoint scope; Roadmap 3.3.5 (`glaux-server-roadmap.md:403`) tests "independently expected maxima" on root and single-stream fixtures. OSH (`MVObsStoreImpl.getObsStream`, `InMemoryObsStore` class doc, `ObsFilter.withLatestResult()`) returns the latest observation *per datastream/FOI series*. IDR-011 considered per-datastream grouping and rejected it as "not baseline"; Guide §13 has no row for this.
+- Failure scenario: a client calls `/observations?system=X&resultTime=latest` to get current values for all of X's streams. Glaux returns only the stream(s) that happened to report last; OSH returns one per stream. Same query, different answers, both "conformant". Test 3.3.5 then hard-codes the literal reading as the "independent expected answer".
+- Contrary evidence checked: the literal text does support the Glaux reading; ATS A.50 does not test `latest`, so neither reading fails conformance; CS-GO's latest test seeds a single datastream, so it does not discriminate; upstream #64/#88 addressed `earliest`/`now`, not grouping.
+- Smallest correction: add a §13 row recording the divergence from OSH and choose explicitly — either per-series semantics on multi-stream endpoints, or literal semantics with a documented deviation — and file an upstream clarification (owner is already a collaborator; see #201). Amend 3.3.5's Done text accordingly.
+- Resolving evidence: a two-datastream fixture with different latest times whose expected result set is written down before implementation; one run through an OSH-based or OWSLib client.
+- Timing: before #112 (3.3.5); ideally as a Guide change before Phase 3 opens.
+
+**F-08 — Part 1 ATS prerequisite lists conflict with the normative dependency statements and Guide §1.2 does not record it**
+- Severity/type: Medium, unrecorded source inconsistency.
+- Evidence: 23-001 Annex A, test A.2 (`/conf/api-common`) lists prerequisites `ogcapi-common-2/1.0/conf/collections` and `…/conf/simple-query` (OGC API – Common Part 2) and malformed URIs (`spec/ogcapi-1/1.0/conf/core`; A.11/A.12 `ogcapi-4/1.0/…`; A.13 `ogcapi-1/1.0/conf/geojson`). The requirements class itself depends only on Common Part 1 core/landing-page/json and Features Part 1 core. Guide §1.2 states the "exact dependencies" and says no Common Part 2; §13 has no row. Docs grep: no mention of Common Part 2 prerequisites anywhere except IDR-014B line 248, which judges CS-GO's Common Part 2 URI "misaligned" — arguably unfair given the ATS.
+- Failure scenario: 2.6.1 (#80, prerequisite tests) is authored from the Guide; a reviewer or a future executable suite built from the ATS expects Common Part 2 collections/simple-query evidence Glaux never targeted; the conformance declaration is then disputed on paper.
+- Contrary evidence: practical delta is small — Features Part 1 core already requires `/collections` and `bbox`/`datetime`/`limit`, so behaviourally Glaux will largely satisfy those classes anyway.
+- Smallest correction: one §13 row recording the ATS prerequisite defects and the decision to follow the requirements-class dependency statements; reword IDR-014B:248.
+- Resolving evidence: 2.6.1 test plan cites both the class dependencies and the §13 row.
+- Timing: before #80.
+
+**F-09 — ATS path defect `deployedSystems?recursive=true` not in the recorded overlay**
+- Severity/type: Low, unrecorded ATS defect.
+- Evidence: 23-001 tests A.53/A.55/A.56 use `{deploymentCanonicalUrl}/deployedSystems?recursive=true`; the requirement path is `/deployments/{deploymentId}/systems` (OWSLib also uses `deployments/{id}/systems`). IDR-011 §14.3 records `/components`, `/controls/{id}`, `/command/{cmdId}/status`, etc., but not this one.
+- Failure scenario: 2.6.2 (#81) test author copies the ATS path; test fails and someone adds an alias route to "pass".
+- Smallest correction: add the row to IDR-011 §14.3 / Guide §13.
+- Timing: before #81.
+
+**F-10 — Nine broken source links in IDR-011**
+- Severity/type: Low, reproducibility defect.
+- Evidence: recursive search of all `Docs/**/*.md`: 268 references to the correct hash `8e03b236a049849f2ccc24b4fd9fdce5ff69bed2`; 9 lines in idr-srv-011…report.md use a 38-character truncation (`8e03b236a049f2ccc…`) that 404s. No truncated pins in the Guide or Roadmap.
+- Smallest correction: fix the 9 links.
+- Timing: before IDR-011 is used as a citation source in 2.6.x/3.x test authoring.
+
+### Verified sound in this pass
+
+- Tag `v1.0.0` = `8e03b23…` (confirmed via Git ref API); release lists 23-001, 23-002, SensorML 3.0, SWE Common 3.0.
+- 25 classes / 233 requirements / 240 abstract tests reconcile exactly with both documents; Guide §7.1 ranges match.
+- `obsFormat` required, `cmdFormat` optional; cascade Boolean disposition; 9 command status codes; feasibility unused statuses; `/feasibility`, `/systemEvents`, `/systems/{id}/events`, `/systems/{id}/deployments` — all correct.
+- Tagged `observation.json`: `datastream@id`, `samplingFeature@id` (not `foi@id`), `procedure@link`, `result`/`result@link` oneOf, required `id`/`datastream@id`/`resultTime` — research (IDR-010/017/061) uses the correct member names.
+- Tagged `systemEvent.json`: SensorML `Event` + required `definition`/`label`/`time` — Guide §13 correct; #201 filed by the owner 15 Sep 2026 (open, unanswered).
+- Features Part 4 pin: `/req/create-replace-delete/put-rid` "server SHALL ignore this identifier" → Guide `glaux-server-implementation-guide.md:493` and §13 row correct; `put-rid-exception` (404 without create-by-PUT; 412 only if `If-Match` supplied) → Guide §6.4/§13 correct. Later `4e30324` is the Common Part 5 rename the Guide already notes.
+- Part 3 pin exists (1 Sep 2026; a 2,793-line restructuring commit — identifiers volatile; Guide's "experimental" framing is appropriate). Part 4 pin exists (30 Jun 2026; owner's own commit adding rendered 23-004r0 review artifacts — appropriate only as experimental, which it is).
+- Upstream #166/#170 open, labelled "rec: SWG decision" — Guide §13 "remain open upstream" is accurate.
+- OWSLib has a CSAPI module (Botts, 2024; last touched ~11 months ago). Coverage: systems, procedures, deployments, sampling features, properties, datastreams, observations, controlstreams, commands/status, system events, history. No feasibility, no command result, no subsystems/subdeployments routes; at least one evident bug (`self.params.parent = …` on a dict). The Guide's hedge "supported OWSLib CSAPI functionality" is appropriate, but interop evidence from it will be partial.
+- Guide line 1129's characterization of CS-GO's latest/time-range tests is accurate.
+
+### Not verified in this pass (carried forward)
+
+- IDR-011 §14.3 ATS-defect rows beyond the ones spot-checked.
+- SWE Common 3.0 / SensorML 3.0 schema claims (quality gap, array flags, media types) against 24-014 / 23-000.
+- Features Part 3 / CQL2 pins and the GeometryCollection `minItems` claim.
+- CS-GO/OSH "lessons" other than `latest`.
+
+### Cumulative record
+
+- Passes complete: 1 (purpose/scope/document integrity), 2 (standards integrity).
+- Findings so far: F-01 license (Med), F-02 no branch protection (High), F-03 authz model undefined (Med), F-04 oversized leaves (Low), F-05 tasking gated on codecs (Low), F-06 bespoke exchange protocol (Low), F-07 `latest` semantics (Med–High), F-08 ATS prerequisites unrecorded (Med), F-09 `deployedSystems` unrecorded (Low), F-10 broken links (Low).
+- Still unreviewed: the 71 IDR reports + final synthesis (Pass 3); end-to-end design failure scenarios and security boundaries (Pass 4); test/verification credibility (Pass 5); all 286 issue bodies (Pass 6).
+- Readiness view unchanged: #3 (inspection-only) can begin; F-01 before #4 merges code; F-02 before #7; F-03 before #22; F-08/F-09/F-10 before #80–#81; F-07 before #112.
+
+Pausing. Say "proceed" to start Pass 3 (research corpus).
+
+Created 4 todos

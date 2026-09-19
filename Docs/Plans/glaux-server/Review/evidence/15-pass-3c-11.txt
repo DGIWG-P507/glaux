@@ -1,0 +1,105 @@
+Updated todo list
+
+Searched for files matching `**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-04[23]*.md`, 2 matches
+
+Searched for regex `^#{1,3} ` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-042-ddil-informed-server-semantics-report.md`), 73 results
+
+Read , lines 1 to 125
+
+Read , lines 205 to 250
+
+Read , lines 343 to 382
+
+Read , lines 443 to 564
+
+Read , lines 651 to 703
+
+Now Guide §4.11 in full. 
+
+Read , lines 614 to 652
+
+Searched for regex `identity provider|IdP|Keycloak|issuer outage|offline operation|disconnected|expired authority|last-known` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 17 results
+
+Searched for regex `^#{1,3} |audit` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-043-server-synchronization-and-conflict-handling-boundary-report.md`), 140 results
+
+Searched for regex `^#{2,3} (1[5-9]|2[0-3])\. |^### 15\.|^### 19\.|^### 20\.` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-043-server-synchronization-and-conflict-handling-boundary-report.md`), 10 results
+
+Read , lines 519 to 537
+
+Read , lines 636 to 688
+
+Searched for regex `^\s+- \*\*8\.\d+\.\d+ |^\d+\. \*\*8\.\d ` (`**/Docs/Plans/glaux-server/glaux-server-roadmap.md`), 28 results
+
+Read , lines 807 to 823
+
+
+
+Fetched https://api.github.com/repos/DGIWG-P507/glaux-server/issues/240
+
+Updated memory file 
+
+## Pass 3c — iteration 11 report (read-only; nothing edited, no issues or upstream filings)
+
+### 1. Coverage this iteration
+
+| Item | Result |
+|---|---|
+| Guide §4.11 | Read in full (`glaux-server-implementation-guide.md:614-652`) |
+| IDR-042 (DDIL semantics) | §§1–2, 5, 8, 11–14, 17–18 read; §§3–4, 6–7, 9–10, 15–16, 19–20 unread |
+| IDR-043 (synchronization) | §15 (audit sync) and §§19–20 read; §§6, 7, 11.4 audit rows read via grep; §§1–14 body otherwise unread |
+| Roadmap Phase 8 | All 24 leaves read (L807–873); issue #240 (8.1.2) read in full; #15 and #22 re-read for F-19/F-20 |
+| IDR-039A, IDR-055, IDR-040 §§9–21, IDR-030/034 | Not started — carried forward, not substituted |
+
+### 2. Carried corrections (applied, not re-litigated)
+
+- **F-19 privilege assumption withdrawn.** PostgreSQL privileges are separable; INSERT can be granted without UPDATE/DELETE. The accurate statement is that the Guide has **no database role model at all**: it does not say which role serves requests, which runs `migrate` (`glaux-server-implementation-guide.md:529`, `glaux-server-implementation-guide.md:659`), which performs retention cleanup (8.3.5), or what any of them may do to audit rows. F-19 is now a clarification candidate: (a) audit rows are append-only through every application path (testable in #15); (b) ordinary serving access versus administrative migration/retention roles is a deployment/configuration matter for 8.3.5/8.3.6; (c) 8.3.5's protected dependencies (schema/artifact, pending work, receipts, tombstones) do not list audit, so whether retention may remove audit rows should be stated.
+- **F-20 reframed.** §4.10 has owners — #15 and #22 both cite it. What is absent is an **explicit deliverable**: no leaf's Done criterion requires a denial record (#22 says only "allowance for safe denial auditing"). My proposed categories for "relevant" (authenticated caller denied a mutation/command/subscription; aggregated authentication failures; no per-request storage of anonymous read denials) are **recommendations** for the owner, not requirements. The invariant to state explicitly: audit failure never authorizes a denied operation (implied by the Guide's decision-before-record order; not written).
+
+### 3. IDR-042/043 against Guide §4.11 — recommended versus adopted
+
+**Adopted (design text present):** local artifacts and authorized reads continue offline (L618); credential/policy validity bounds offline access (L618, `glaux-server-implementation-guide.md:175`); at-least-once receipt committed with the outcome in one transaction, identical input a no-op (`glaux-server-implementation-guide.md:631`); exact bytes + digest retained (`glaux-server-implementation-guide.md:622`); staging for unknown dependencies (L631); no arrival-order/UUID/clock resolution, resolution as an authorized new operation with reason (L641, `glaux-server-implementation-guide.md:649`); tombstones and anti-resurrection (L649–651); synchronized command intent never auto-dispatches (L649); completeness checkpoints not advanced past unresolved records (L641); fault-scenario verification (L651; 8.4.1–8.4.5).
+
+**Optional research mechanisms not adopted (no finding):** orthogonal mode taxonomy and per-operation posture; `RepresentationAssessmentV1`/warning codes (the Guide uses standard timestamps and status resources); signed offline security bundles and offline command classes; connected-authority-required administration; `SyncEnvelopeV1`/`SyncConflictV1` shapes (the Guide defines `glaux-exchange/1`); signatures/canonicalization (explicitly declined at L622). IDR-042 §8.1's pre-create `409/503` for command submission is a proposal already covered by F-18.
+
+**#21 DDIL residual — closed.** The consequence is stated: L175 "disconnected operation does not extend expired credentials", L618, `glaux-server-implementation-guide.md:687`/`glaux-server-implementation-guide.md:1045` place identity providers with deployments, and 8.4.1 verifies "expired/revoked credentials do not gain an offline bypass". Optional clarification only: sustained disconnected authenticated operation requires a locally reachable identity provider.
+
+### 4. Offline audit continuity — assessed, not assumed
+
+- *Local durability and exhaustion (E3/E4):* fail-closed by construction — the audit write is part of the domain transaction on the local store, so connectivity is irrelevant and storage exhaustion rejects the mutation/admission rather than losing evidence. No reserve/threshold mechanism exists (research-optional; §4.12 readiness and metrics give generic signals).
+- *Denial evidence offline:* same unresolved behaviour as online → F-20.
+- *Consolidation:* → F-21 below. *Export accountability:* → F-22 below.
+
+### 5. New findings
+
+**F-21 — Audit is node-local and not exchanged; consequence unrecorded.** Clarification candidate; Low.
+- *Evidence:* `glaux-exchange/1` carries resources, schema/artifact dependencies, relationships and tombstones (`glaux-server-implementation-guide.md:620-627`; 8.1.2/#240) — not audit records. IDR-041 §15.2 and IDR-043 §6 (L232), §7 (L257), §11.4 (L428), §15 propose an audit-range-upload scenario [A/P]; the Guide neither adopts it nor lists it in §12.2 (`glaux-server-implementation-guide.md:1118`).
+- *Failure scenario:* a hub holding imported records cannot answer "who on the edge created or changed this" from its own store; loss of the edge node loses the actor trail while the resources survive at the hub.
+- *Contrary evidence / mitigation:* the Guide never claims cross-node audit durability; whole-database backup/restore (8.3.2) preserves audit rows with everything else; the receiver's import is itself audited as a mutation with the exchange receipt (L631).
+- *Smallest correction:* one sentence in §4.11 stating audit is node-local, not part of the exchange format, and preserved by database backup; a §12.2 entry recording the non-adoption.
+- *Timing:* before #240; no test change needed.
+
+**F-22 — Administrative export (cross-boundary disclosure) is outside the audit floor.** Credible risk; Medium.
+- *Evidence:* the floor at `glaux-server-implementation-guide.md:602` is "meaningful mutations and command attempts"; `glaux-server-implementation-guide.md:629` requires exports to be authorized but says nothing about recording them; `glaux-server-implementation-guide.md:165` claims accountability "including across organizational boundaries" yet fulfils it with "audit records for important writes and command attempts". #240's verification covers authorization, exact bytes and non-leakage only. Imports **are** covered (they are mutations committed with the receipt, L631); exports are not. IDR-041 §6.2 classes protected export as mandatory/E4; IDR-040 treats cross-boundary release as audited.
+- *Failure scenario:* an administrator exports a protected scope to a configured recipient; later the data appears where it should not; the server holds no record of whether, when, by whom, or to which recipient the export occurred.
+- *Contrary evidence checked:* Goal §5.7 does not enumerate export audit; the receiver retains manifest bytes and digest (L622), so evidence exists on the *receiving* side if that node is reachable and cooperative — which is exactly the case that fails across organizational boundaries.
+- *Smallest correction:* extend the L602 floor to "meaningful mutations, command attempts, and administrative exports" and add a Done clause to 8.1.2/#240: each export commits a durable record of actor, recipient, scope/scopeVersion, exchangeId, manifest digest, time and outcome, with no protected content. This is not an import of IDR-041's mechanism set; it applies the Guide's existing audit rule to an operation the Guide itself defines.
+- *Timing:* before #240; the §4.10 wording can be batched with F-19/F-20.
+
+**Observation (optional improvement, unnumbered):** L622 declines signatures; digests detect replay/difference only. For file-based exchange, origin authenticity therefore rests on medium custody, the importing administrator's authority and local re-validation (L625, L631); later ancestry mismatch detects tampering only for resources that change again. The Guide is honest about the digest's purpose; a sentence naming the deployment responsibility would help.
+
+### 6. Cumulative record
+
+- **Findings:** F-01 Med; F-02 High; F-03 Low–Med; F-04 Low; F-05 Low; F-06 withdrawn; F-07 Med; F-08 Low–Med; F-09 Low; F-10 Low; F-11 Med; F-12 Low; F-13 Low; F-14 Low; F-15 Low–Med; F-16 withdrawn; F-17 Low editorial; F-18 Low; F-19 Low–Med (clarification candidate, revised); F-20 Low (clarification candidate, revised); **F-21 Low (clarification candidate, new); F-22 Medium (new)**.
+- **Reads added:** Guide §4.11 full; IDR-042 partial; IDR-043 partial; Roadmap Phase 8; #240.
+- **Owed:** IDR-042/043 remaining sections; IDR-039A; IDR-055; IDR-040 §§9–21; IDR-030, IDR-034; IDR-039 §7/§§21–22; IDR-037/038 appendices; IDR-008 §16–17; Pass 2 standards backlog; F-13 extension-rule check.
+- **Standing qualifications carried:** documented safeguards ≠ executed verification; single admitted dispatch ≠ exactly-once physical effect; offline authentication follows the #21 bounded key-cache policy; audit failure never authorizes a denied operation; proposed event categories are recommendations; F-18's three qualifications.
+
+### 7. Next iteration (on "proceed")
+
+1. IDR-039A and IDR-055 against Guide §4.10/§8.1 and #22.
+2. IDR-040 §§9–21; IDR-042/043 remaining sections (to confirm nothing changes §3 above).
+3. Begin Pass 4 scenarios with the DDIL cases now grounded in §4.11.
+
+Pausing. Say "proceed" to continue.
+
+Created 9 todos

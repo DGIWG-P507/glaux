@@ -1,0 +1,265 @@
+Updated todo list
+
+I'll start by establishing the actual state of both repositories rather than relying on the orientation figures, then begin substantive review in this same cycle. 
+
+Ran terminal command: git -C "<workspace>" status --short --branch; git -C "<workspace>" log -5 --format="%H %ad %s" --date=short; git -C "<workspace>" remote -v
+
+   
+
+
+
+Fetched 2 resources
+
+Ran `repository_get_file_content` 
+Completed with input: {
+  "file_path": "Docs/Plans/glaux-server/glaux-server-goal-and-definition.md",
+  "provider": "github",
+  "ref": "main",
+  "repository_name": "glaux",
+  "repository_organization": "DGIWG-P507"
+}
+
+
+
+Ran terminal command: Get-ChildItem -Recurse -File "<workspace>\Docs" | Where-Object { $_.Name -ne '.gitkeep' } | Select-Object @{n='Path';e={$_.FullName.Substring(76)}}, @{n='KB';e={[math]::Round($_.Length/1KB)}} | Sort-Object Path | Format-Table -AutoSize | Out-String -Width 250
+
+Read 
+
+Read 
+
+Read 
+
+Read 
+
+Ran terminal command: $root="<workspace>\Docs\Plans\glaux-server"; foreach ($f in Get-ChildItem $root -File) { "== $($f.Name) : $((Get-Content $f.FullName | Measure-Object -Line).Lines) lines, $([math]::Round($f.Length/1KB)) KB"; Get-Content $f.FullName -TotalCount 14 }
+
+Read 
+
+Ran `repository_get_file_content` 
+Completed with input: {
+  "file_path": "CONTRIBUTING.md",
+  "provider": "github",
+  "ref": "main",
+  "repository_name": "glaux-server",
+  "repository_organization": "DGIWG-P507"
+}
+
+
+
+Fetched https://github.com/DGIWG-P507/glaux-server/tree/main/.github/ISSUE_TEMPLATE
+
+Read , lines 1 to 140
+
+Ran `repository_get_file_content` 
+Completed with input: {
+  "file_path": ".github/ISSUE_TEMPLATE/implementation_task.md",
+  "provider": "github",
+  "ref": "main",
+  "repository_name": "glaux-server",
+  "repository_organization": "DGIWG-P507"
+}
+
+Ran `repository_get_file_content` 
+Completed with input: {
+  "file_path": "README.md",
+  "provider": "github",
+  "ref": "main",
+  "repository_name": "glaux-server",
+  "repository_organization": "DGIWG-P507"
+}
+
+Read , lines 96 to 140
+
+Read 
+
+Created 5 todos
+
+
+
+Fetched https://raw.githubusercontent.com/DGIWG-P507/glaux-server/main/CONTRIBUTING.md
+
+Read , lines 108 to 140
+
+Ran terminal command: $f="<workspace>\Docs\Plans\glaux-server\glaux-server-goal-and-definition.md"; $lines = Get-Content $f; $i=0; foreach ($l in $lines) { $i++; if ($i -ge 110) { "$i`t$l" } }
+
+Read , lines 1 to 120
+
+Read , lines 120 to 136
+
+Searched for regex `^#{1,4} ` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 71 results
+
+Searched for regex `^#{1,4} ` (`**/Docs/Plans/glaux-server/glaux-server-roadmap.md`), 31 results
+
+Access is confirmed; the orientation figures check out. I'll now read the Implementation Guide in full, starting with the scope baseline, architecture, and standards pins. 
+
+Read , lines 1 to 120
+
+Read , lines 120 to 300
+
+Read , lines 300 to 480
+
+Read , lines 480 to 690
+
+Read , lines 690 to 935
+
+Read , lines 935 to 1180
+
+Read , lines 1180 to 1240
+
+The Guide is fully read. Now the Roadmap in full. 
+
+Read , lines 1 to 170
+
+Read , lines 170 to 340
+
+Read , lines 340 to 540
+
+Read , lines 540 to 740
+
+Read , lines 740 to 965
+
+Read , lines 965 to 1171
+
+All three planning documents are fully read. Now I'll verify the issue backlog boundaries and inspect the first task issue before reporting Pass 1.    
+
+Fetching item [#3](https://github.com/DGIWG-P507/glaux-server/issues/3) from GitHub
+Completed with input: {
+  "issueNumber": 3,
+  "repo": {
+    "owner": "DGIWG-P507",
+    "name": "glaux-server"
+  }
+}
+
+Fetching item [#1](https://github.com/DGIWG-P507/glaux-server/issues/1) from GitHub
+Completed with input: {
+  "issueNumber": 1,
+  "repo": {
+    "owner": "DGIWG-P507",
+    "name": "glaux-server"
+  }
+}
+
+Fetching item [#2](https://github.com/DGIWG-P507/glaux-server/issues/2) from GitHub
+Completed with input: {
+  "issueNumber": 2,
+  "repo": {
+    "owner": "DGIWG-P507",
+    "name": "glaux-server"
+  }
+}
+
+Fetching item [#289](https://github.com/DGIWG-P507/glaux-server/issues/289) from GitHub
+Completed with input: {
+  "issueNumber": 289,
+  "repo": {
+    "owner": "DGIWG-P507",
+    "name": "glaux-server"
+  }
+}
+
+Ran terminal command: $d="<local-copilot-session-cache>"; foreach ($f in @("toolu_018Dnbdt7uwAKXujSvdR6ko8__vscode-1789723756775","toolu_01DmQ6XbXmFjWbMGK4Cb2nP7__vscode-1789723756776")) { $j = Get-Content "$d\$f\content.json" -Raw | ConvertFrom-Json; "#: title=$($j.title) | isPR=$([bool]$j.fileChanges) | files=$(($j.fileChanges | ForEach-Object fileName) -join ',')"; $j.body.Substring(0, [Math]::Min(600, $j.body.Length)); "-----" }
+
+Ran terminal command: $f="<workspace>\Docs\Plans\glaux-server\glaux-server-roadmap.md"; $t=Get-Content $f -Raw; $m=[regex]::Matches($t,'GitHub issue: \[#(\d+)\]\(https://github\.com/DGIWG-P507/glaux-server/issues/(\d+)\)'); "issue links: $($m.Count)"; $nums=$m | ForEach-Object { [int]$_.Groups[1].Value }; "unique: $(($nums | Sort-Object -Unique).Count) min=$(($nums|Measure-Object -Min).Minimum) max=$(($nums|Measure-Object -Max).Maximum)"; $mismatch = $m | Where-Object { $_.Groups[1].Value -ne $_.Groups[2].Value }; "text/url mismatches: $($mismatch.Count)"; $leaves=[regex]::Matches($t,'- \*\*(\d+\.\d+\.\d+) '); "leaf headings: $($leaves.Count) unique: $(($leaves | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique).Count)"; $dep=[regex]::Matches($t,'Depends: ([^\r\n]*?)\.\s*$', 'Multiline'); "Depends clauses: $($dep.Count)"; Get-Command gh -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source; git -C "<workspace>" log -1 --format="%H %ci" origin/main
+
+## Pass 1 — Access, baseline state, and document integrity
+
+### Access and verified starting point (retrieved 2026-09-19)
+
+| Item | Verified state |
+|---|---|
+| `DGIWG-P507/glaux` (planning) | `main` @ `a310eaee2e80bb861197822a3c5bb12164ca9ac3` (2026‑09‑19 10:47 ‑0400). Local clone is level with `origin/main`; one untracked local file exists in the workspace root (`PITON-OGC-API-Composition…13SEP2026.md`) that is not part of the repository and was not treated as baseline. |
+| `DGIWG-P507/glaux-server` (implementation) | `main` @ `b1a80298305fd62164160058cde6d1794f533174` (README update). Contents: `README.md`, `CONTRIBUTING.md`, `.github/ISSUE_TEMPLATE/implementation_task.md` (template/CONTRIBUTING at `0be3f25a…`, PR #2). No Rust code, CI, or LICENSE. |
+| Goal and Definition | v1.8, 19 Sep 2026, Approved — `glaux-server-goal-and-definition.md` |
+| Implementation Guide | v1.3, 19 Sep 2026, Baselined — `glaux-server-implementation-guide.md` |
+| Roadmap | v1.18, 19 Sep 2026 — `glaux-server-roadmap.md` |
+| Backlog | Repo shows 286 open issues. `#1`, `#2`, `#289` are pull requests (template/CONTRIBUTING/README), so implementation issues are exactly `#3`–`#288`. Roadmap contains 286 unique leaf headings and 286 unique issue links `#3`–`#288`, zero text/URL mismatches. |
+| Research | 71 topic reports (001–056 incl. 010A, 014A–H, 039A; 058–062) plus `final-idr-research-report.md` (191 KB); `IDR Evidence/` register; 72 plans. |
+| Implementation | Not started. Confirmed. |
+
+Your orientation figures are correct.
+
+### Review sequence
+
+1. **Pass 1 (this)** — state, full read of Goal/Guide/Roadmap, template, CONTRIBUTING, README, issue #3; integrity findings.
+2. **Pass 2** — independent verification of consequential standards interpretations and pins against OGC primary sources (class/requirement counts, `resultTime=latest`, `obsFormat`/`cmdFormat`, `cascade`, Features Part 4 pin and `put-rid`, endpoint coverage, Part 3/4 pins, SWE quality).
+3. **Pass 3** — research corpus: synthesis fully; every topic report's findings/recommendations/unresolved sections systematically; deep reads of consequential reports; CS‑GO/OSH evidence checks against their actual repositories.
+4. **Pass 4** — end‑to‑end design and failure scenarios; security/provenance boundaries.
+5. **Pass 5** — test and verification credibility.
+6. **Pass 6** — all 286 issue bodies: coverage, dependency graph/cycles, sizing, acceptance criteria. (`gh` CLI is not available; I will retrieve via the API.)
+7. **Final deliverable.**
+
+### Depth of review so far
+
+Read completely: Goal v1.8; Guide v1.3 (all 13 sections + appendix); Roadmap v1.18 (all 9 phases, §§1–11); `CONTRIBUTING.md`; issue template; server README; issue #3; PR #1/#2/#289 metadata; `initial-planning-guidance.md`, `research-planning-approach.md` (earlier this session). Not yet reviewed: research reports, remaining 285 issue bodies, primary standards.
+
+### Verified sound (basis and limits)
+
+- Goal → Guide → Roadmap version chain is internally consistent; Guide §1.1 anchors match the Goal's links.
+- Roadmap leaf ↔ issue coverage is one‑to‑one by count and numbering (bodies not yet checked).
+- Issue #3's Scope/Done text matches Roadmap v1.18 leaf 1.1.1 exactly; its pins to Roadmap v1.4 / Guide v1.2 / Goal v1.7 are intentional historical references, and v1.5–v1.18 / v1.3 / v1.8 are declared link‑and‑explanation‑only, so no incorrect work results. CONTRIBUTING's "Goal v1.7 and Guide v1.2 are the preparation baseline; follow subsequent approved revisions" is benign for the same reason.
+- Verification is scheduled early: real DB (1.1.3), CI with deliberate failure propagation (1.1.4), JWT verification and policy (1.4.3–1.4.5), independent clients by end of Phase 2. This is not a "tests last" plan.
+
+### Findings
+
+**F‑01 — No open‑source license exists or is scheduled**
+- Severity: Medium. Confirmed omission.
+- Evidence: Goal §7 ("released as open-source software", `glaux-server-goal-and-definition.md:194`); `glaux-server` main has no LICENSE; `glaux` main has no LICENSE. Roadmap 1.1.2, 1.2.1, 9.3.1 address *dependency* and *artifact* licenses only; no leaf selects or adds the project's own license.
+- Consequence: 1.1.2's "dependency/license inventory" and 9.3.1's "license checks" have no compatibility target; 1.2.1's bundling of OGC schema artifacts with "license notices" cannot be reconciled with an undeclared project license; the open‑source claim is unsupported.
+- Contrary evidence checked: none found in Guide §4.12 or Roadmap §6.
+- Smallest correction: project lead selects a license (organizational decision), commits LICENSE to `glaux-server`, and adds "project LICENSE present and compatible with pinned dependencies" to 1.1.2's Done (issue #4).
+- Resolves it: LICENSE file present; 9.3.1 checks against it.
+- When: before #4 merges the first code. Not blocking #3.
+
+**F‑02 — Nothing enforces the checks the plan relies on; assistant self‑merge is the only gate**
+- Severity: High for this project's risk profile. Credible risk.
+- Evidence: CONTRIBUTING "The assistant may merge after task-specific acceptance criteria, applicable checks and review pass. A separate human-approval pause is not mandatory"; "This policy does not itself configure branch protection, required reviewers or CI. Respect whatever controls actually exist." Roadmap §5.2 ([line 977](Docs/Plans/glaux-server/glaux-server-roadmap.md#L977)). No controls exist on `glaux-server`, and no leaf configures repository protection — 1.1.4 adds a CI *workflow*, which is code; making it *required* is a repository setting nobody owns in the plan.
+- Failure scenario: a PR reports "tests passed" while the CI job was filtered/empty or never ran; the same assistant reviews and merges. Guide §8.1.1's "Prevent false‑green execution" ([line 950](Docs/Plans/glaux-server/glaux-server-implementation-guide.md#L950)) is procedural only.
+- Contrary evidence: 1.1.4 requires demonstrating failure propagation — good, but it does not prevent merging on a red or absent check.
+- Smallest correction: after #6 (1.1.4) lands, the project lead enables branch protection on `main`: require the CI status check, require branches up to date, block force‑push and direct pushes. Record this owner action in #6's Done or CONTRIBUTING.
+- Resolves it: a deliberately failing PR is blocked from merge by GitHub, not by the assistant.
+- When: before the first post‑CI code merge (#7 onward). Not blocking #3–#6.
+
+**F‑03 — The authorization model is undefined, so disclosure tests cannot have independent expected answers**
+- Severity: Medium. Unresolved question / deferred fundamental design decision.
+- Evidence: Guide §4.10 ([line 590](Docs/Plans/glaux-server/glaux-server-implementation-guide.md#L590)) specifies an "access‑policy interface" and "configured caller/group/source permissions and resource relationships" but no policy schema: subjects, actions (read/write/task/report/subscribe/admin), scope granularity (family, System subtree, stream), inheritance (does System permission imply its datastreams/observations?), or how "source authority" binds to a token claim. Roadmap 1.4.5 (#22) implements "the configured policy interface … using two‑source fixtures".
+- Consequence: the AI at #22 will invent the model; every later disclosure test (3.1.9, 3.5.5, 6.4.3, 7.3.4, 9.3.2) then derives its expected answers from that invention rather than from a documented rule — the exact "components built from the same assumptions" failure you asked me to look for. Goal §5.7 requires enforcement of *configured* rules.
+- Contrary evidence: Guide deliberately declines a "universal policy engine" — appropriate. A minimal declared model is not an engine.
+- Smallest correction: add a short subsection to Guide §4.10 (or a note in #22) fixing the minimal policy vocabulary and the configuration file shape, with the two‑source fixture written as data before implementation.
+- Resolves it: the access‑matrix fixture in #22 is authored from that subsection, not from the code.
+- When: before #22. Not blocking Phase 1.1–1.3.
+
+**F‑04 — Many leaves are not one‑iteration tasks**
+- Severity: Low. Credible risk, acknowledged.
+- Evidence: e.g., 1.2.2 (validator selection *and* recursive SensorML/SWE corpus proof), 2.1.12, 4.3.7 (binary blocks *and* bounded decompression), 5.3.6, 8.2.2, 8.3.2, 9.2.1. Roadmap §1.1 "Effort estimate: Not yet calibrated."
+- Consequence: early leaves will split; §5.2 provides the correction path and forbids silent closure.
+- Correction: none required now; expect recalibration at Phase 1 exit. Non‑blocking.
+
+**F‑05 — Tasking is gated behind complete Text/Binary codecs**
+- Severity: Low. Optional improvement.
+- Evidence: 5.1.1 (#156) `Depends: 2.3, 2.4, 4.4`; 4.4.7 depends on 4.4.6 which depends on all three codec groups. Goal §5.5 calls tasking "first‑order".
+- Consequence: no command path exists until after SWE Binary is fully integrated, although ordinary‑JSON command parameters need only the Phase 3 value binding. Scope is unaffected; delivery of a Goal capability is late.
+- Correction (optional): let 5.1.1–5.3.x depend on 3.1.4 plus a JSON‑only 4.4.7 interface, with 5.5.12 retaining the full‑format proof. Non‑blocking.
+
+**F‑06 — The largest invented subsystem has no standard and no consumer**
+- Severity: Low. Credible complexity risk, Goal‑driven.
+- Evidence: Guide §4.11 `glaux-exchange/1` (manifest, epochs, ancestry fingerprints, staging, `exchange inspect/resolve`, SSE bootstrap tokens); Roadmap Phase 8 (24 issues) plus 6.1.3/6.2.3. Goal §5.8 requires conflict identification and consistent repeat/delay handling; it does not require a replication protocol.
+- Consequence: roughly a tenth of the backlog implements a bespoke protocol with no second Glaux server to exchange with, while the test oracle is again the project's own design.
+- Contrary evidence: Goal §9 makes DDIL non‑negotiable; the design is bounded and administrative‑only.
+- Correction: none prescribed. Recommend the project lead consciously reconfirm Phase 8's size when Phase 7 closes. Non‑blocking.
+
+### Queued for Pass 2 (not yet asserted as findings)
+
+Guide claims I will verify against primary sources: 25 classes / 233 requirements / 240 abstract tests; `resultTime=latest` scope (per‑datastream vs endpoint‑wide selection — consequential); `obsFormat` required vs `cmdFormat` optional; `cascade` true/false vs presence (Part 2 req. 65/70, A.65/A.70); Features Part 4 pin `9ca25f5` and the `put-rid` rule relative to CSAPI v1.0.0's publication; CSAPI tag `v1.0.0` = `8e03b23…`; Part 3 `6f529a1` and Part 4 `05a3c62` pins; endpoint completeness (`/deployments/{id}/systems`, `/feasibility`, `/systemEvents`); command status enumeration; SWE `quality` schema gap.
+
+### Cumulative record
+
+- **Reviewed:** listed above, in full.
+- **Remaining:** primary standards checks; 71 research reports + synthesis; 285 issue bodies; peer implementation evidence.
+- **Inaccessible:** none so far. `gh` CLI absent (API retrieval planned).
+- **Findings:** F‑01…F‑06.
+- **Next pass:** Pass 2, standards integrity.
+
+Pausing. Say "proceed" to start Pass 2.
+
+Starting: *Inventory and assess issues* (5/5)

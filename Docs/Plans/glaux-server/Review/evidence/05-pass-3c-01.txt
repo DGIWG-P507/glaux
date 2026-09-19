@@ -1,0 +1,166 @@
+Updated todo list
+
+
+
+Searched for regex `^### 7\.\d|^## 7\.|^## 8\.|^### 8\.\d` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 10 results
+
+Fetched https://api.github.com/repos/DGIWG-P507/glaux-server/issues/19
+
+Read , lines 895 to 932
+
+
+
+Fetched https://github.com/opengeospatial/ogcapi-connected-systems/tree/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2/api/part2/openapi/examples
+
+
+
+Fetched https://github.com/opengeospatial/ogcapi-connected-systems/tree/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2/api/part2/openapi/examples/observations
+
+
+
+Fetched 3 resources
+
+Read , lines 294 to 508
+
+Read , lines 508 to 737
+
+Read , lines 102 to 330
+
+Searched for regex `casefold|NFKC|substring|\bparent=|parent parameter|top-level|bbox|numberMatched|numberReturned|keyset|cursor` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 19 results
+
+Searched for regex `` `parent`|parent filter|`q`|keyword|objectType|CAN also|deployed subsystem|currently deployed `` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 6 results
+
+Read , lines 330 to 437
+
+Read , lines 498 to 692
+
+Searched for regex ``artifact-only|OAS-only|OpenAPI-only|undeclared|unknown (query )?parameter|not advertised|`dataStream`|`system` (query|parameter)`` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 3 results
+
+Read , lines 745 to 762
+
+Searched for regex `^\| (Unknown|Undeclared|Malformed|Invalid|Unsupported) ` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 1 result
+
+Compacted conversation
+
+Read , lines 775 to 837
+
+Read , lines 877 to 1000
+
+Read , lines 1000 to 1142
+
+Searched for regex `^## |^### ` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md`), 93 results
+
+Read , lines 64 to 101
+
+
+
+Fetched https://docs.ogc.org/is/23-001/23-001.html
+
+Searched for regex `parent|uniqueID|set to the unique|href.{0,40}uid|uid.{0,40}href` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 27 results
+
+Ran terminal command: $root = "<workspace>\Docs"; Get-ChildItem -Path $root -Recurse -Filter *.md | Select-String -Pattern 'set to the uniqueID|set to the unique ?ID|uniqueID of the system|/components\?recursive|components\?recursive|samplingFeatures\?recursive' | ForEach-Object { "{0}:{1}: {2}" -f $_.Filename, $_.LineNumber, ($_.Line.Substring(0, [Math]::Min(220, $_.Line.Length))) }
+
+Ran terminal command: $root = "<workspace>\Docs"; Get-ChildItem -Path $root -Recurse -Filter *.md | Select-String -Pattern 'uniqueID|/components|A\.49|A\.50|A\.51|A\.47' | ForEach-Object { "{0}:{1}: {2}" -f $_.Filename, $_.LineNumber, ($_.Line.Substring(0, [Math]::Min(200, $_.Line.Length))) } | Select-Object -First 40
+
+Read 
+
+Read , lines 725 to 745
+
+Searched for regex `vacuous|known-hit|known-miss|non-?empty|at least one match|empty (result|collection|set)|trivially pass` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 3 results
+
+Read , lines 950 to 966
+
+Read , lines 144 to 148
+
+Ran terminal command: $root = "<workspace>\Docs"; Get-ChildItem -Path $root -Recurse -Filter *.md | Where-Object { $_.Name -match 'idr-srv-017|idr-srv-010-|glaux-server-implementation-guide' } | Select-String -Pattern '#62|issues/62\)|href.{0,60}(UID|uid|unique)|(UID|uid|unique).{0,60}href' | ForEach-Object { "{0}:{1}: {2}" -f $_.Filename, $_.LineNumber, ($_.Line.Substring(0, [Math]::Min(260, $_.Line.Length))) } | Select-Object -First 25
+
+Ran terminal command: $root = "<workspace>\Docs"; Get-ChildItem -Path $root -Recurse -Filter *.md | Where-Object { $_.Name -match 'idr-srv-017|idr-srv-010-|idr-srv-030|idr-srv-031|glaux-server-implementation-guide' } | Select-String -Pattern 'deployedSystems|deployed-system link|deployed System link|link.{0,30}stored locally|inserting or modifying' | ForEach-Object { "{0}:{1}: {2}" -f $_.Filename, $_.LineNumber, ($_.Line.Substring(0, [Math]::Min(300, $_.Line.Length))) } | Select-Object -First 25
+
+Ran terminal command: $root = "<workspace>\Docs"; Get-ChildItem -Path $root -Recurse -Filter *.md | Where-Object { $_.Name -match 'idr-srv-016|idr-srv-017|idr-srv-030|idr-srv-031|idr-srv-023' } | Select-String -Pattern 'href' | Where-Object { $_.Line -match 'UID|uid|unique|URN|urn:|accept|write|POST|PUT|submitted|inbound|resolve' } | ForEach-Object { "{0}:{1}: {2}" -f $_.Filename, $_.LineNumber, ($_.Line.Substring(0, [Math]::Min(320, $_.Line.Length))) } | Select-Object -First 30
+
+Read , lines 430 to 460
+
+Read , lines 1 to 200
+
+Read , lines 200 to 360
+
+Read , lines 360 to 540
+
+Read , lines 540 to 720
+
+Searched for regex `^## ` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-008-conformance-class-and-requirement-mapping-report.md`), 21 results
+
+Read , lines 861 to 990
+
+Searched for regex `PURL|NamingAuthority|resolv(e|able)|dereferenc|clause-derived|system-features|derived-properties|issues/23\b|#23\b|\[EncodingIssue\]|write-media|mediatype-write` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 25 results
+
+Searched for regex ``conformsTo|/conformance|conformance class URI|class URI|canonical identifier|literal `http|http://www\.opengis\.net/spec`` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 6 results
+
+Read , lines 258 to 264
+
+Ran terminal command: $root = "<workspace>\Docs"; Get-ChildItem -Path $root -Recurse -Filter *.md | Where-Object { $_.Name -match 'idr-srv-014|idr-srv-027|idr-srv-056|glaux-server-implementation-guide|glaux-server-roadmap' } | Select-String -Pattern 'ascending|descending|newest[- ]first|oldest[- ]first|P-011-06|default (total )?order' | ForEach-Object { "{0}:{1}: {2}" -f $_.Filename, $_.LineNumber, ($_.Line.Substring(0, [Math]::Min(260, $_.Line.Length))) } | Select-Object -First 30
+
+## Pass 3c — iteration 1 report (read-only; nothing edited, no issues or upstream filings)
+
+### 1. Coverage changes versus the 3b plan (explicit)
+
+| Promised in 3b | Delivered now | Status |
+|---|---|---|
+| IDR-050 full read | Completed (§§1–18) | **Full** |
+| IDR-011 full read | Completed this iteration: §§2–7, 9–13, 15–16, 18–19, Appendices A–D added to the earlier §1, §8, §14, §17 | **Full** |
+| IDR-008 full read | §§1–15, 18–19 and Appendices A–E read | **Near-full**: §16 (validation checklist) and §17 (reference list) unread |
+| IDR-052 full read | **Not started** — no summary substituted; carried to the next iteration | **Unexamined body** (§1 only) |
+| (not planned) OGC 23-001 published HTML | Clauses 1–19 and Annex A read in full to check IDR-011/IDR-008 conclusions; Annexes B–D skimmed | **Full (normative body + ATS)** |
+
+Also read this iteration: Guide §§6.3, 7.2–7.4, 8.1.1 (again, verbatim); IDR-017 §9.1; register row #62; targeted greps of IDR-014a/014c/027.
+
+### 2. F-12 reassessed against Guide §7.2 and issue #19
+
+**Revised finding — F-12: runner independence rule permits shared wire types for response interpretation.** Severity **Low** (down from Medium); type: optional improvement.
+
+- **Evidence.** Guide §7.2 already states: implement the abstract tests "as independent HTTP checks"; the runner "must not import server selection logic, serializers, or fixture-derived expected responses as its sole oracle. It may use ordinary HTTP/format libraries and pinned schemas, but expected resource relationships, query answers, and value meaning must be independently authored or calculated." Guide §8.1.1 adds "Encoder/decoder agreement alone cannot exclude a shared bug." Issue #19 (leaf 1.4.2) requires "a separately implemented HTTP test client against a real isolated listener" and "independent request/response fixtures". My 3b statement that the Guide lacked a runner-independence rule was wrong; it exists.
+- **Precise remaining gap.** "As its sole oracle" forbids the server being the *only* judge but permits the runner to deserialize responses through `glaux-standards` wire structs so long as expected *values* are independent. Independent values do not catch a shared member-name or encoding misreading when both sides use one type (e.g., the `foi@id`/`samplingFeature@id` confusion in F-13 below; a wrong `@link` spelling; a wrongly optional member). IDR-050 is stricter — §6.3 "black-box cases do not deserialize through the server's wire structs", `idr-srv-050-conformance-harness-strategy-report.md:689-692` "without linking server domain or wire crates", §17 rec 3, §18.1 — and the Guide did not import that sentence.
+- **Contrary evidence / mitigation checked.** Pinned schemas are used, but tagged `observation.json` has no `additionalProperties:false` and `samplingFeature@id` is optional, so schema validation would not detect an emitted `foi@id`. Issue #19's fixtures are independent for the HTTP boundary (Guide §§4.1/4.3/6.4), not for CSAPI representations.
+- **Smallest correction.** One sentence in §7.2: the conformance runner interprets response bytes with generic JSON and the pinned schemas plus independently authored member names; it does not use server wire types for interpretation. **Not** a separate workspace package, and nextest stays optional (Guide §8.1.1 already says so).
+- **Resolving evidence.** Runner crate has no dependency on `glaux-standards`/`glaux-domain` (compile-time check in CI). **Timing:** before #19 or the first "extend the independent runner" leaf (2.6.1).
+
+### 3. New findings
+
+**F-13 — Published Part 2 example uses `foi@id`, which the schema does not define.** Severity **Low**; type: unresolved question (source defect) + fixture hazard.
+- **Evidence.** Published Part 2 Clause 16.1.5 third example and tagged `api/part2/openapi/examples/observations/obs-link-inline-image.json` contain `"foi@id": "55f48g48th"`. Tagged `observation.json` defines `samplingFeature@id`, `datastream@id`, `procedure@link`, `result`/`result@link`; no `foi@id`. Grep of the whole corpus for `foi@id`: no hits; register row #83 records only the `data:` URL; Guide §13 has no row.
+- **Failure scenario.** A fixture author copies the published example; the server (or a shared wire type, see F-12) accepts/emits `foi@id`; the permissive schema passes; observation→sampling-feature linkage silently disappears for that record.
+- **Mitigation checked.** Guide §4.3/§4.4 name `samplingFeature@id` indirectly via the schema; nothing warns about the example.
+- **Correction.** §13 row: never emit `foi@id`; treat inbound `foi@id` under the unknown-member policy; fixtures derived from that example are corrected and labelled. **Test:** negative fixture posting the published example → documented rejection/ignore outcome. **Timing:** before the Phase 3 observation representation leaves.
+
+**F-14 — Accepted query/relationship interpretations not carried into the Guide.** Severity **Low**; type: confirmed documentation gap (a), unresolved questions (b, c). Same pattern as F-07a/F-11.
+
+(a) **Root `parent` filter vs top-level default.** Part 1 Req 11 B: with `recursive` omitted, `/systems` "SHALL only include the top-level systems"; Req 42 B: `parent` returns "only subsystems of a parent system…"; example `/systems?parent=4g4ds54vv`. Literal composition yields an empty set; ATS A.47 ("for each System resource in the returned collection…") passes vacuously on an empty result. Same for Deployments (Req 21 B vs Req 47 B, A.52). IDR-011 §7.5 and accepted P-011-05 resolve this (explicit `parent` is a direct-child query regardless of the root default). `glaux-server-implementation-guide.md:735` says only "Root lists use the standard top-level/default-recursion behavior"; L752 gives no exception; §13 has no row. **Mitigation:** Guide §8.1.1 "check exact identities" and the L944 parent/child fixture reduce the runtime risk if applied. **Correction:** §13 row citing P-011-05; adapted A.47/A.52 must include a known-hit assertion. **Timing:** before the Phase 2 hierarchy/filter leaves (group 2.5).
+
+(b) **Write-side form of `deployedSystems` link `href`.** Part 1 Tables 43 and 52 footnote: "When inserting or modifying a link to a system stored locally, the link url (href property) shall be set to the uniqueID of the system"; the published Deployment example (a read response) uses a canonical URL plus `uid`. `ogc-connected-systems-upstream-history-register.md:146` records the rule (routed to 010/017); IDR-017 §9.1 says `uid` "is never… a substitute for resolving `href`"; IDR-011 P-011-15 covers query-side matching by ID/UID/href. The Guide contains no `deployedSystems`, `uniqueID`, or accepted-href-form rule (grep). **Scenario:** a peer client or fixture sends `href` = URN UID (per footnote) and the server accepts only URLs, or the reverse; interoperability and fixture disagreement. **Correction:** one sentence in §4.6 or §13: accept UID or canonical local URL for local targets, resolve to one identity, emit canonical URL plus `uid` on read. **Timing:** before the first Deployment create/replace leaf.
+
+(c) **Default observation order direction.** `glaux-server-implementation-guide.md:444`: "result time then ID" — direction unstated. Accepted P-011-06 and IDR-027 L77/§8.3 fix **ascending**, flagged provisional pending 014A–G; 014a notes OSH `order=desc`, 014c notes pygeoapi ascending by phenomenonTime; no later revisit found in Guide/Roadmap. **Consequence:** default `GET …/observations` (limit 10) returns the ten oldest records. **Correction:** state the direction in §4.4 (either confirm ascending or record a deliberate change as a §13 decision — the owner's call); paging fixtures must encode it. **Timing:** before the 3.3.x observation listing leaf.
+
+### 4. Consequential accepted conclusions checked against primary evidence (this iteration)
+
+Confirmed against 23-001 as published: Req 10–13/20–23 recursion semantics and IDR-011 §6.1 route applicability; Req 38–40 (`ID_List`, trailing `*`, `q` always searches name/description; lemmatization *permitted* — P-011-04 disables it, allowed); Req 41 D/E (multi-geometry server choice; geometry-less excluded — P-011-14 consistent); Tables 9/13 recursive associations (Guide L735 correct); Annex A prerequisite anomalies A.2/A.11/A.12/A.13/A.14 and IDR-008 §7.3 rows; the ATS defects recorded in IDR-011 §14.3 (A.47 ID check, A.50/A.51 `/components`, A.52, A.53); Part 1 §19.2.1 SensorML 3.0 class identifiers exactly as IDR-008 §7.1 lists them (whether 23-000 defines them remains open — backlog item 4, half closed); IDR-008 §8.5 condition defects (`[clause-derived-properties]` in 17.8/18.6; `/req/system-features` etc. in 19.2) are real published text.
+
+Minor unrecorded source anomalies (for the overlay, not new findings): A.49 uses `…/samplingFeatures?recursive=true`, a parameter no requirement defines for that endpoint; §16.9.1 names `/samplingFeatures` as the Property canonical endpoint (copy error).
+
+Guide-side confirmations: L262 gives the exact `http://…/connectedsystems-{1,2}/1.0` bases (IDR-008 §10's Part 2 PURL 404s are operational only; Pass 6 will check no leaf requires dereferencing). IDR-008 §8.5 staged-claim gating is not in §13 — matters only for partial releases; Pass 6 will check leaf 9.1.x.
+
+### 5. Cumulative record
+
+- **Findings:** F-01 Medium; F-02 High; F-03 Low–Medium; F-04 Low; F-05 Low; F-06 withdrawn; F-07 Medium (a confirmed gap / b provisional); F-08 Low–Medium; F-09 Low; F-10 Low; F-11 Medium; **F-12 Low (re-scoped)**; **F-13 Low (new)**; **F-14 Low (new, three parts)**.
+- **Full reads:** Guide, Roadmap, Goal, CONTRIBUTING, issue template, final report, register v1.16, IDR-050, IDR-011, IDR-008 (bar §16–17), OGC 23-001 body + Annex A. Issues fully read: #3, #19, #22, #56.
+- **Partial:** IDR-006 §13; IDR-007 §13; IDR-010 link sections; IDR-017 §9.1; IDR-029 §1/§19.2; IDR-031, 036, 039, 052 §1; IDR-044 §22.2; 014a/014c grep hits only.
+- **Unexamined:** IDR-052 body and ~58 other report bodies; all 73 IDR Plans; Part 2 HTML beyond targeted clauses; SensorML 3.0/SWE Common 3.0 texts; Features Part 3/CQL2 identifiers; 282 issue bodies.
+
+### 6. Next iteration (on "proceed")
+
+1. IDR-052 full read (owed), then IDR-037 and IDR-038 full reads.
+2. Pass 2 verification backlog: (1) SWE Common 3.0 `quality` schema gap; (2) `recordsAsArrays`/`vectorsAsArrays`; (3) Features Part 3/CQL2 identifiers and `cql2.json` `minItems`; (4) confirm 23-000 defines the four `sensorML/3.0` classes; (5) remaining §14.3 rows; (6) Part 2 A.1 inheritance effect.
+3. Then Pass 4 (end-to-end design and security/provenance scenarios).
+
+Pausing. Say "proceed" to continue.
+
+Created 5 todos

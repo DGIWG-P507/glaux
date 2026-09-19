@@ -1,0 +1,59 @@
+Updated todo list
+
+Searched for regex `^## ` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-040-policy-releasability-and-cross-boundary-access-constraints-report.md`), 23 results
+
+Read , lines 65 to 228
+
+Read , lines 228 to 344
+
+Searched for regex `^\d+\. \*\*|^## 1\. |fail(s|ing)? closed|fail-closed|hash[- ]chain|WORM|tamper-evident|tamper-proof|append-only` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-041-audit-logging-and-accountability-strategy-report.md`), 19 results
+
+Updated memory file 
+
+## Pass 3c — iteration 9 report (read-only; nothing edited, no issues or upstream filings)
+
+### 1. Coverage this iteration
+
+| Item | Result |
+|---|---|
+| IDR-040 (policy/releasability/cross-boundary) | §§1–8 read (concept taxonomy, controlled-data matrix, enforcement points, existence/links/counts/pagination); §§9–21 unread |
+| IDR-041 (audit/accountability) | Targeted grep only (assurance-claim rules, integrity layers, rejected options); body unread |
+| IDR-039A, IDR-055, IDR-042/043, IDR-030, IDR-034 | Not started — carried forward |
+
+Budget for this iteration was consumed by the IDR-040 matrix; I stopped rather than substitute summaries for the remaining sections.
+
+### 2. Security review — IDR-040/041 against Guide §4.10 (required vs optional)
+
+All statements below concern design text and leaf acceptance criteria, not executed verification.
+
+**Required safeguards — present as design text (no finding):**
+- Authorized view built before data access, so counts, extents, links, latest selection, schema disclosure and streaming reveal only the caller's view: `glaux-server-implementation-guide.md:596` — matches IDR-040 §8.1/§8.4 ("never substitutes global totals"; "latest means newest releasable record in the authorized view"). Also consistent with IDR-011 §10.1 (authorization before predicates) already verified.
+- Schema-true disclosure: a protected field is not simply removed if that falsifies the advertised schema; define a valid projection/profile or deny the representation: `glaux-server-implementation-guide.md:598` — matches IDR-040 §1/§8.3 ("must not emit a dead link as camouflage").
+- Links, schemas, command capabilities, original artifacts, error details and replay history protected like data: L598 — matches IDR-040 §§6.1, 8.3.
+- No labeling regime hardcoded; IC-EDH/ISM or STANAG 4774/4778 integration requires an authoritative policy and concrete binding profile; no adapter selected: `glaux-server-implementation-guide.md:610` — matches IDR-040 §1 ("no single national, NATO… regime is hardcoded").
+- Audit committed with the mutation; denials recorded safely without unbounded load; no secrets/tokens/raw payloads/protected reasons logged; accountability independent of sampled diagnostics: L600 and §4.6 L501 — matches IDR-041's minimum slice (atomic journal append; independent failure spool). Guide L600's "a mandatory tamper-proof ledger… is not proposed" is consistent with IDR-041 itself, which rejects "tamper-proof"/"non-repudiation" claims (L74, L455, L737).
+
+**Optional research mechanisms — not adopted, not missing requirements:** the three-record `PolicyAssertion`/`PolicyBinding`/`DisclosureDecision` model and `ALLOW/DENY/INDETERMINATE` + `REVEAL/CONCEAL` envelope; the transform catalog beyond pass/project/deny (generalize, aggregate, delay, suppress, minimum-cohort aggregates); an explicit "Glaux is not a cross-domain solution or release authority" statement (true, and implied by L610, but a clarification rather than a requirement); hash-chain/checkpoint/MAC/WORM integrity layers (IDR-041 §§11–13, conditional even in the research).
+
+**Effect on findings:** none new. F-03 unchanged — IDR-040 §5.2's explicit combining rules ("no unmarked-means-public, local-means-trusted, lexicographic order, last-writer-wins, or client-selected downgrade") are the kind of stated defaults §4.10 leaves to the #22 matrix; still Low–Medium.
+
+**Standing qualifications carried:** documented safeguards ≠ executed verification (Pass 5); one admitted dispatch ≠ exactly-once physical effect (Guide §6.4 disclaims; IDR-029 §11.2); offline authentication follows the #21/§4.10 bounded key-cache policy (fail-closed on expired trust); F-18's three qualifications.
+
+### 3. Cumulative record
+
+- **Findings:** F-01 Med; F-02 High; F-03 Low–Med; F-04 Low; F-05 Low; F-06 withdrawn; F-07 Med; F-08 Low–Med; F-09 Low; F-10 Low; F-11 Med; F-12 Low; F-13 Low (input-policy option unapproved); F-14 Low; F-15 Low–Med; F-16 withdrawn; F-17 Low editorial; F-18 Low.
+- **Full reads:** Guide (incl. §§4.3, 4.6, 4.9, 4.10, 6.4), Roadmap, Goal, CONTRIBUTING, issue template, final report, register v1.16, IDR-008 (bar §16–17), IDR-011, IDR-029, IDR-031, IDR-036, IDR-037 (bar appendices), IDR-038 (bar appendices), IDR-050, IDR-052, OGC 23-001 body + Annex A, tagged Part 2 Clause 9 source, pinned `controlStream.json`, overall plan Rules 1–10. Issues: #3, #19, #21, #22, #56, #71, #72, #104, #156, #163, #164, #168, #174.
+- **Partial:** IDR-039 (bar §7, §§21–22); IDR-040 §§1–8; IDR-041 grep; IDR-006 §13; IDR-007 §13; IDR-010 link sections; IDR-017 §9.1; IDR-044 §22.2.
+- **Owed full reads:** IDR-040 §§9–21; IDR-041; IDR-039A; IDR-055; IDR-042/043 (with Guide §4.11 and owning issues — closes the DDIL documentation residual); IDR-030, IDR-034; IDR-039 §7/§§21–22; appendices of IDR-037/038; IDR-008 §16–17.
+- **Owed checks:** Pass 2 standards backlog (SWE `quality`; `recordsAsArrays`; Features Part 3/CQL2 identifiers + `cql2.json`; 23-000 class identifiers; remaining IDR-011 §14.3 rows; Part 2 A.1 inheritance); F-13 extension-rule examination.
+- **Unexamined:** ~48 other report bodies; 69 IDR Plans; Part 2 HTML beyond targeted clauses; 273 issue bodies.
+
+### 4. Next iteration (on "proceed")
+
+1. IDR-042 and IDR-043 with Guide §4.11 and owning Phase 8 issues (DDIL/sync; closes the offline-consequence residual), then IDR-039A and IDR-055.
+2. IDR-040 §§9–21 and IDR-041 body.
+3. IDR-030/034 as budget allows; then Pass 4 scenario analysis proper.
+
+Pausing. Say "proceed" to continue.
+
+Created 10 todos

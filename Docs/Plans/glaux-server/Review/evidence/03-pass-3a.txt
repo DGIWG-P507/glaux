@@ -1,0 +1,179 @@
+Updated todo list
+
+Searched for regex `latest` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md`), 22 results
+
+Searched for regex `glaux-exchange` (`**/Docs/**/*.md`), 2 results
+
+
+
+Searched for regex `exchange|export|import|disconnected|denied|intermittent|air.?gap|sneakernet|removable|offline` (`**/Docs/Plans/glaux-server/glaux-server-goal-and-definition.md`), 14 results
+
+Fetched https://api.github.com/repos/DGIWG-P507/glaux-server/issues/22
+
+
+
+Searched for regex `^### 4\.1[01]|^### 4\.4|^#### 4\.4|^### 6\.3|^#### 6\.3` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 6 results
+
+Fetched https://docs.ogc.org/is/23-001/23-001.html
+
+
+
+No matches found. Your search pattern might be excluded completely by either the search.exclude settings or .*ignore files.
+If you believe that it should have results, you can check into the .*ignore files and the exclude setting (here are some excluded patterns for reference:[**/node_modules,**/bower_components,**/*.code-search]).
+Then if you want to include those files you can call the tool again by setting "includeIgnoredFiles" to true.
+
+Fetched https://raw.githubusercontent.com/opengeospatial/ogcapi-connected-systems/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2/api/part1/openapi/openapi-connectedsystems-1.yaml
+
+Searched for regex `deployed system|deployedSystem|platform@link|membership` (`**/Docs/Plans/glaux-server/*.md`), 15 results
+
+Searched for regex `deployedSystems` (`**/Docs/Research/**/*.md`), 12 results
+
+Read , lines 590 to 640
+
+Searched for regex `^## Phase 8|^   - \*\*8\.\d|^     - \*\*8\.\d\.\d` (`**/Docs/Plans/glaux-server/glaux-server-roadmap.md`), 24 results
+
+
+
+Fetched https://docs.ogc.org/is/23-002/23-002.html
+
+Ran terminal command: $root="<workspace>\Docs\Research\Initial Designs\IDR\glaux-server"; Get-ChildItem "$root\IDR Reports" -Filter *.md | Sort-Object Name | ForEach-Object { $lines=(Get-Content $_.FullName | Measure-Object -Line).Lines; "{0,6} lines  {1,8:N0} B  {2}" -f $lines, $_.Length, $_.Name }; "--- totals ---"; $all=Get-ChildItem "$root\IDR Reports" -Filter *.md; "{0} files, {1:N0} lines" -f $all.Count, (($all | ForEach-Object { (Get-Content $_.FullName | Measure-Object -Line).Lines }) | Measure-Object -Sum).Sum; "--- Evidence / Plans ---"; Get-ChildItem "$root\IDR Evidence","$root\IDR Plans" -Filter *.md | ForEach-Object { "{0,6} lines  {1}" -f (Get-Content $_.FullName | Measure-Object -Line).Lines, $_.Name } | Select-Object -First 5; "plans: $((Get-ChildItem "$root\IDR Plans" -Filter *.md).Count)"
+
+Searched for regex `^#{1,3} ` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/final-idr-research-report.md`), 121 results
+
+Read , lines 1 to 235
+
+Searched for regex `^\[(ReplaceIssue|PatchIssue|EventIssue|F4|F4Later|P3|P4Types|P4Spatial|SFSchema|QualityPeer|S1|S2|SWE|CQLSchema|CQL2|F3)\]:` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 16 results
+
+Read , lines 235 to 480
+
+Read , lines 481 to 720
+
+Read , lines 720 to 1000
+
+Searched for regex `harness|black-box|fencing|dispatch ticket|single-use|inbound|traceability|requirements register|ADR|architecture decision` (`**/Docs/Plans/glaux-server/*.md`), 14 results
+
+Searched for regex `approval|two-person|simulator|physical|adapter authority|non-network|sim:` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 25 results
+
+Read , lines 1086 to 1126
+
+Read , lines 1000 to 1400
+
+Read , lines 1400 to 1407
+
+Final report read in full. Now the evidence register. 
+
+Read , lines 1 to 308
+
+Searched for regex `^## \d+\.? .*(Unresolved|Open Question|Risks, Constraints|Open Issues|Limitations)` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-0*.md`), 73 results
+
+Read , lines 850 to 863
+
+Read , lines 784 to 835
+
+Searched for regex `common-2|simple-query|ogcapi-1/1\.0|sensorml/2\.1|ogcapi-4/1\.0|A\.2\b|prerequisite` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-006-csapi-part-1-requirement-baseline-report.md`), 28 results
+
+Read , lines 864 to 905
+
+Searched for regex `INT-CS1-001|Common 2|Common Part 2|Simple Query|simple-query|ogcapi-1\b|sensorml 2\.1|SensorML 2\.1|claim wording|declare.*prerequisite|deployedSystems|A\.53|A\.27` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-008-conformance-class-and-requirement-mapping-report.md`), 6 results
+
+Searched for regex `deployment-by-system|deployment-by-obsprop|deployment-by-controlprop|subdeployment/recursive-assoc|featuresOfInterest\b.*deployment|deploymentCanonicalUrl` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/*.md`), 10 results
+
+Searched for regex `/deployments/\{|deployments/\{id\}|Glaux-defined|project-defined route|additional route|extension route` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 1 result
+
+Read , lines 714 to 745
+
+Searched for regex ``^\| \d+ \| `[a-z-]+` \|`` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 25 results
+
+Searched for regex `ogcapi-common-1|ogcapi-features-1/1\.0|conformsTo|conformance declaration|declared class list|declare` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 16 results
+
+No matches found. Your search pattern might be excluded completely by either the search.exclude settings or .*ignore files.
+If you believe that it should have results, you can check into the .*ignore files and the exclude setting (here are some excluded patterns for reference:[**/node_modules,**/bower_components,**/*.code-search]).
+Then if you want to include those files you can call the tool again by setting "includeIgnoredFiles" to true.
+
+Recovered from a request errorRecovered from a request error
+
+Searched for regex `link relation|rel=|relation types?|association name` (`**/Docs/Plans/glaux-server/*.md`), 1 result
+
+Searched for regex `prefix|P-010-0\d.*rel|unprefixed|bare` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-010-collections-resources-links-and-navigation-behavior-report.md`), 23 results
+
+## Reassessment of earlier findings
+
+**F-03 (authorization model) — revised, downgraded to Low–Medium.**
+Issue #22 does require "an independent action/source/resource access matrix from Guide §4.10, with two distinguishable source groups and explicit allowed, denied and unavailable decisions", plus forged-authority, policy-outage fail-closed, and inverted-predicate checks. Those are genuine mechanism-level checks, independent of the code. What remains open is narrower than I stated: §4.10 ([guide L590–L611](Docs/Plans/glaux-server/glaux-server-implementation-guide.md#L590-L611)) gives principles ("configured caller/group/source permissions and resource relationships"; publishers restricted to "assigned Systems/streams") but does not enumerate the action vocabulary, the scope unit (System subtree, stream, collection), inheritance to nested resources, how a "source" is bound to a caller, or concealment-vs-denial. Accepted research already proposes a concrete model (final report §13.2: RBAC + resource/action/context rules; ALLOW/DENY/INDETERMINATE with indeterminate denied; SourceAssertion / PolicyBinding / DisclosureDecision separation), which the Guide deliberately did not import (§12.2: "no universal policy or trust engine"). Consequence: the matrix rows in #22 will be the first written record of the policy semantics, and "later owning tasks extend domain-specific cases" from it. Smallest correction: one approved paragraph (Guide §4.10 or the #22 execution record before execution) fixing actions, scope units, inheritance and source binding, referencing IDR-039/039A/040. Timing unchanged: before #22.
+
+**F-06 (exchange protocol) — withdrawn as a finding.**
+Consumers are planned: configured peer instances or authorized files (Guide §4.11: "administrative export/import adapter for configured peers or authorized files"), the SSE snapshot-to-live bootstrap (8.2.5, 8.4.3) and MQTT recovery (8.4.4); Goal §5.8 requires "intermittent synchronization, constrained exchange". Phase 8.3 (migrations, restore, epochs/fencing, retention, config, shutdown) is ordinary recovery work, not exchange cost. Retained only as a note: the peer consumer is another Glaux instance, which the Guide already labels an integration format, not a CSAPI representation.
+
+**F-07 (`resultTime=latest`) — split and restated.**
+- Recorded in research: yes. IDR-011 rows `idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md:297-298` ("Standard does not state canonical endpoint grouping explicitly" / "Project interpretation; per-stream grouping is not baseline"), `idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md:400`, `idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md:868`, P-011-03 accepted 2 Aug 2026. IDR-011 L742 also records that ATS A.50 omits `latest` and prescribes supplemental tests.
+- Confirmed gap (Medium, documentation): Guide §4.4 states the rule as settled and §13 — which claims to record "known consequential seams in one place" — has no row, even though the research itself labels it a project interpretation.
+- Provisional (credible interoperability risk): the editor's implementation (OSH) selects latest per datastream/FOI series. Peer behaviour does not settle normative meaning, and A.50's silence means conformance is undetermined under either reading, not established. Supported query for the scenario: `GET /observations?foi={sf}&resultTime=latest` (Req 51 `foi` + Req 50D) or `GET /observations?resultTime=latest` (Req 14), where two datastreams observe the same sampling feature with different latest result times — Glaux returns only the later stream's observation(s); a per-series server returns one per stream. The standard's only `latest` example is nested (`/datastreams/123/observations?resultTime=latest`), where both readings coincide.
+- Smallest correction: §13 row (interpretation + noted divergence); 3.3.5 Done text to require a multi-stream fixture on the canonical endpoint; an upstream clarification is an owner decision, not something I will file. Timing: before #112.
+
+**F-08 (Annex A prerequisites) — revised; my Pass 2 statement was wrong.**
+I reported "no mention in Docs". That grep missed the research's wording. The conflict is recorded: IDR-006 §13.2 `idr-srv-006-csapi-part-1-requirement-baseline-report.md:871-873` ("`/conf/api-common` … uses a broken `ogcapi-1` URI, adds draft Common 2 Collections/Simple Query, and omits JSON"; `ogcapi-4`; `/conf/update` prerequisite substitution; SensorML 2.1 vs 3.0), and IDR-008 `idr-srv-008-conformance-class-and-requirement-mapping-report.md:361-365` dispositions it: "Use the coherent requirement-table prerequisites; preserve Annex discrepancy as an adapter record." IDR-007 records the Part 2 analogue (P2-INT-008). Restated correctly: Clause 2 makes Annex A normative ("Conformance … shall be checked using all the relevant tests specified in Annex A"), so this is a conflict between two normative parts, and the research's disposition is a qualified interpretation that belongs in Guide §13 with explicit claim wording (the tagged `confClasses.json` example even declares Common Part 2 classes, per IDR-008 L534). Severity Low–Medium; correction: §13 row citing IDR-006/008; timing before #80.
+
+**F-09 (`deployedSystems`) — path claim withdrawn; finding restated.**
+I cannot substantiate a normative `/deployments/{id}/systems` requirement — there is none. Part 1 Clause 11.4 defines only `/deployments`, `/deployments/{id}`, `/deployments/{parentId}/subdeployments` (Req 19) and `/systems/{sysId}/deployments` (Req 17); the tagged Part 1 OpenAPI has no other deployment path; Tables 43/52 encode `deployedSystems` inline (`properties/deployedSystems@link` array; SensorML `deployedSystems[]`); register issue #30 records that a separate `DeployedSystem` resource was rejected. OWSLib's `deployments/{id}/systems` is client-library behaviour, not normative. The actual conflict: ATS A.27 ("If the Deployment resource contains a link with relation type deployedSystems … Issue an HTTP GET request to the link URL") and A.53/A.55/A.56 (`{deploymentCanonicalUrl}/deployedSystems?recursive=true`) presume a dereferenceable endpoint that no requirement or encoding table defines. Research (IDR-010/017/021) follows the inline encoding correctly, but IDR-011 §14.3 records only A.53's `foi`/`system` copy error (`idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md:734`), not this. Revised correction (Low): add the row to the ATS overlay with the qualified interpretation (inline array is the encoding; the ATS dereference steps are satisfied by reading it; Table 13 requires a parent Deployment's `deployedSystems@link` to include subdeployments' systems recursively — a concrete expectation for 2.5.4/2.6.2). Timing before #81.
+
+## Pass 3a — research corpus, part 1 of 3
+
+### Material reviewed and depth
+
+| Material | Depth |
+|---|---|
+| `final-idr-research-report.md` (~1,400 lines, §§1–27 + Addenda A–E) | Full |
+| `ogc-connected-systems-upstream-history-register.md` v1.16 | Full |
+| IDR-006 §13 (risks + 23-row interpretation register) | Selected section |
+| IDR-007 §13 (risks + 17-row interpretation register) | Selected section |
+| IDR-008 (P1 disposition table, declaration notes), IDR-010 (link-relation decision), IDR-011 (latest, ATS table) | Targeted grep/read |
+| Guide §§4.10, 4.11, 6.2, 7.1, 12.2, 13; Roadmap Phase 8; issue #22 body | Full re-read of those sections |
+| Corpus inventory: 72 report files, 43,473 lines; 73 plans | Listing only |
+
+Not yet read: the "Risks/Open Questions" sections of the other 69 reports; full text of any topic report; IDR Plans.
+
+### Finding
+
+**F-11 — Link-relation wire form decided in research but absent from the Guide**
+- Severity/type: Medium, confirmed propagation gap with test and interoperability consequences.
+- Evidence: IDR-006 INT-CS1-004 and register #173/PR #176: Req 79/91 say "association name"; the mapping-table footnotes require `ogc-rel:` + name; tagged examples are bare; post-release master fixes three examples. IDR-010 adopted a rule (`idr-srv-010-collections-resources-links-and-navigation-behavior-report.md:433`, `idr-srv-010-collections-resources-links-and-navigation-behavior-report.md:747`, `idr-srv-010-collections-resources-links-and-navigation-behavior-report.md:770`): emit prefixed Table 3 spellings, compare case-insensitively, accept known bare inputs only as compatibility. It also notes CSAPI Explorer "does not recognize the standards-published `ogc-rel:` association vocabulary" and OSH uses bare relations. The Guide and Roadmap contain no occurrence of `ogc-rel`, "link relation", or "association name" (grep of `Docs/Plans/glaux-server/*.md`); §13 has no row.
+- Failure scenario: the implementer of group 2.3 copies the bare names from the tagged examples or OSH; 2.3.x/2.6.x tests written from the same choice pass; A.86/A.98 manual inspection against Tables 41/50 fails, and pinned-client interop results (OS4CSAPI, OWSLib) are misattributed because the intended wire form was never fixed in the controlling document.
+- Contrary evidence: Guide §12.2 says research 009–014 informed §§4.1–4.4/§6 "including source-conflict handling", so the author may consider IDR-010 incorporated by reference; but §13 claims to hold consequential seams "in one place" and the Roadmap Done texts for 2.3.x do not name the rule.
+- Smallest correction: one §13 row adopting (or revising) IDR-010's rule; name the wire form in the 2.3.8 / 2.6.2 Done text.
+- Resolving evidence: link fixtures asserting exact `rel` values and case-insensitive comparison; one pinned-client navigation run.
+- Timing: before group 2.3 begins.
+
+Candidates of the same pattern to check in Pass 3b: INT-CS1-021 (`CAN also expose … currently deployed` subsystems in `/subsystems`), INT-CS1-022 ("Required … if any" association cardinality vs schemas), P2-INT-006 (`cmdFormat` omitted — Guide §6.2 does resolve this one), P2-INT-017 (System Event `message` — resolved via §13 + #201).
+
+### Verified sound in this pass
+
+- The synthesis's vertical-slice order (§§18–19) matches the Roadmap's nine phases; the Guide records its deliberate departures from research ([§12.2 L1118](Docs/Plans/glaux-server/glaux-server-implementation-guide.md#L1118)) and states honestly that its source checks were targeted, "not a claim that every research paragraph has been re-audited" — which is exactly where this review adds value.
+- Evidence-authority classes (published > project-controlling > maintenance > proposals > draft > peers) are stated and the register applies them consistently; #64/PR #88 ("closed ≠ implemented") is used as the worked counterexample.
+- Register is current (master `3fd86c73`, Part 3 `6f529a15`, Part 4 `05a3c62d`, Features `4e30324a`; #201 captured 15 Sep). The Guide's pins match.
+- IDR-007's P2-INT-001…017 register corresponds to the Guide §13 rows I verified in Pass 2 (cascade, singular paths, feasibility item ID, `cmdFormat`, SWE media types, System Event mapping).
+- Guide §7.1 carries the Part 2 advanced-filtering → Part 1 dependency (P2-INT-008).
+- Structural note (not a finding): all 72 reports and the synthesis are single-author AI output (Report Author: OpenAI Codex), accepted by the Project Lead with zero exceptions. Cross-report agreement is therefore not independent corroboration; primary-source checks in Passes 2–3 are the independent leg.
+
+### Plan for the remaining Pass 3 iterations
+
+- **3b:** selected-section review of the "Risks, Constraints and Open Questions" sections of all 69 remaining reports, checking each open decision for a disposition in Guide/Roadmap; full reads of IDR-008 and IDR-011 (test-authoring inputs); full reads of IDR-050 and IDR-052 (feeds Pass 5).
+- **3c:** full reads of IDR-029/031/036/037 (transactions, writes, commands, feasibility) and IDR-039/039A/040 (security) to feed Pass 4; spot-verify CS-GO/OSH lessons (014A/014B/062) against the pinned repos.
+
+### Scheduled verification backlog (from Pass 2; to close before the final assessment)
+
+1. SWE Common 3.0 (24-014) JSON schema: confirm the Guide §13 "simple-component schema omits `quality`" claim and IDR-061's probe against the published schemas.
+2. 24-014 `recordsAsArrays`/`vectorsAsArrays` reversed-boolean claim (register #71; Guide §13 row).
+3. Features Part 3 (19-079r2) and CQL2 (21-065r2) class identifiers in Guide §7.4; `cql2.json` GeometryCollection `minItems` claim.
+4. SensorML 3.0 (23-000) class identifiers `json-simple-process`, `json-physical-system`, `json-deployment`, `json-derived-property`.
+5. Remaining IDR-011 §14.3 ATS rows (spot-check A.35/A.36/A.40/A.42 copy errors observed in Part 2 Annex A today).
+6. Transitive effect of Part 2 A.1 inheriting Part 1 `/conf/api-common` (and thus the F-08 conflict) on Part 2 class declarations.
+
+### Cumulative record
+
+- Passes: 1 and 2 complete; 3a complete (3b, 3c pending); 4, 5, 6 pending.
+- Findings: F-01 (Med), F-02 (High), F-03 (Low–Med, revised), F-04 (Low), F-05 (Low), F-06 withdrawn, F-07 (Med, split), F-08 (Low–Med, revised; my earlier "unrecorded" claim retracted), F-09 (Low, revised; path claim withdrawn), F-10 (Low), F-11 (Med, new).
+- Readiness view unchanged: #3 can begin. Ordered corrections: F-01 before #4 merges code; F-02 before #7; F-03 before #22; F-11 before group 2.3; F-08/F-09/F-10 before #80–#81; F-07 before #112.
+
+Pausing. Say "proceed" to continue with Pass 3b.
+
+Created 6 todos

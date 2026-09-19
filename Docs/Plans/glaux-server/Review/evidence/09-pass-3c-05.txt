@@ -1,0 +1,87 @@
+Updated todo list
+
+Read , lines 570 to 589
+
+Read , lines 1 to 238
+
+Read , lines 262 to 460
+
+Read , lines 460 to 700
+
+Read , lines 700 to 760
+
+Read , lines 1 to 200
+
+Read , lines 200 to 334
+
+Read , lines 344 to 520
+
+Read , lines 520 to 700
+
+Searched for regex `` `live`|live=false|`async`|not (currently )?accepting|synchronous ControlStream|async= `` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 1 result
+
+Searched for regex ``^\| `?5\.1\.\d|live|admission`` (`**/Docs/Plans/glaux-server/glaux-server-roadmap.md`), 101 results
+
+Searched for regex `\*\*5\.1\.\d|\*\*5\.3\.[1-3]` (`**/Docs/Plans/glaux-server/glaux-server-roadmap.md`), 9 results
+
+Read , lines 560 to 586
+
+
+
+Fetched 2 resources
+
+
+
+Fetched https://api.github.com/repos/DGIWG-P507/glaux-server/issues/164
+
+Updated memory file 
+
+Updated memory file 
+
+## Pass 3c — iteration 5 report (read-only; nothing edited, no issues or upstream filings)
+
+### 1. Coverage this iteration
+
+| Item | Result |
+|---|---|
+| Guide §4.9 (complete re-read) | Done |
+| IDR-036 (command lifecycle) | **Full** (§§1–20, Appendices A–B) |
+| IDR-037 (feasibility / async tasking) | **Body full** (§§1–14); Appendices A–D unread |
+| IDR-038 (command safety/audit) | Not started — carried forward |
+| IDR-030, IDR-034 | Not started — carried forward |
+| Issues #156 (5.1.1), #163 (5.2.2), #164 (5.2.3) | Full bodies read (owning-issue rule for the finding below) |
+
+### 2. Command-path conclusions checked against Guide §§4.9/6.4
+
+Verified consistent (no finding): two-layer lifecycle with exactly nine public codes and no invented status (IDR-036 §1/§8 ↔ Guide L576–578); `201` + canonical `Location` + CommandStatus body + individual-status `Content-Location`, no `202` for async streams (IDR-037 §§5.1, 7.1, 7.4 ↔ Guide §6.4 L841, #164 "Do not return 202 merely because processing is asynchronous"); private durable staging for synchronous streams and rejoin by key (IDR-037 §1/§9.1 ↔ Guide L845–849, leaves 5.3.1–5.3.4); commit-before-dispatch and no transaction across the adapter call (IDR-036 §9.1 ↔ Guide L574, #165 Done text); cancellation via `CANCELED` report mediated by adapter authority, DELETE is not cancellation (IDR-036 §9.4 ↔ Guide L582); late/contradictory reports retained privately (IDR-036 §11.3 ↔ Guide L582–584); deterministic reference adapter (Guide L580).
+
+Recorded departure, in place: the Guide declines IDR-037 §4.2's universal feasibility result profile (`decision` YES/NO/CONDITIONAL/INDETERMINATE etc.) — `glaux-server-implementation-guide.md:586`: "represented according to that ControlStream's result contract, not a mandatory invented universal feasibility object." Not in §12.2's list, but explicit where it matters.
+
+Not independently verified this iteration: IDR-036/037's statement [N] that ControlStream `live` and `async` are required Booleans in Part 2 §10.2 (I did not re-open the tagged `controlStream.json`).
+
+### 3. New finding
+
+**F-18 — ControlStream `live`/`async` ownership and non-live admission are unspecified.** Severity **Low**; type: missing rule (unresolved question). Rule followed: complete reads of Guide §§4.6, 4.9, 6.4 and the owning issues #156 (stream registration/metadata), #163 (admission), #164 (POST surface).
+- **Evidence.** The Guide never mentions `live`; the word `async` appears only as prose ("synchronous/asynchronous"). #156 delivers "generated stream metadata" without naming these fields; #163 rejects "invalid parameters, forged sender, denied targets"; #164 covers `201`/`Location`/`Content-Location`/`PENDING` and concealment. None says who sets `live`/`async` (client-supplied vs server-derived; register #65 records the same ambiguity for DataStream `live`) or what a command/feasibility POST returns when `live=false`. Research does: IDR-037 §6.3 ("reject … before creation with stable `409 Conflict`… A gateway becoming unreachable after asynchronous creation does not retroactively turn creation into an HTTP failure"); IDR-036 §6.1 (`live` means the stream can accept live Commands; not reachability) and §6.3 (internal `active`/`suspended`/`retired` states).
+- **Failure scenario.** An implementer either accepts commands into a stream advertised `live=false` (misleading clients that check it) or invents a status (`403`/`503`) that differs from research and peers; the independent runner has no expected answer for the fixture.
+- **Mitigation checked.** Guide L944 fixtures include synchronous/asynchronous ControlStreams but not a non-live one; #163's "denied targets" is an authorization case, not stream state.
+- **Smallest correction.** One sentence in §4.9: `live`/`async` are server-managed stream metadata (or client-supplied and validated — owner's choice), and a POST to a stream with `live=false` returns `409` before any resource or work exists (IDR-037 §6.3). Add the case to #163's Done text. **Test:** `live=false` fixture → `409`, zero Command/status/work rows; `live=true` → `201`. **Timing:** before #163.
+
+### 4. Cumulative record
+
+- **Findings:** F-01 Med; F-02 High; F-03 Low–Med; F-04 Low; F-05 Low; F-06 withdrawn; F-07 Med; F-08 Low–Med; F-09 Low; F-10 Low; F-11 Med; F-12 Low; F-13 Low (input-policy option unapproved); F-14 Low; F-15 Low–Med (accepted risk; §13 record partial); F-16 withdrawn; F-17 Low editorial; **F-18 Low (new)**.
+- **Full reads:** Guide (incl. §§4.6, 4.9, 6.4 complete), Roadmap, Goal, CONTRIBUTING, issue template, final report, register v1.16, IDR-008 (bar §16–17), IDR-011, IDR-029, IDR-031, IDR-036, IDR-037 (bar Appendices A–D), IDR-050, IDR-052, OGC 23-001 body + Annex A, overall IDR plan Rules 1–10. Issues: #3, #19, #22, #56, #71, #72, #104, #156, #163, #164, #168, #174.
+- **Partial:** IDR-006 §13; IDR-007 §13; IDR-010 link sections; IDR-017 §9.1; IDR-039 §1; IDR-044 §22.2; topic-plan acceptance blocks (014b/029/030/036).
+- **Owed full reads (carried forward):** IDR-030, IDR-034; IDR-038; IDR-039, IDR-039A, IDR-040, IDR-041, IDR-055; IDR-042, IDR-043; IDR-037 Appendices A–D; IDR-008 §16–17.
+- **Owed checks:** Pass 2 standards backlog (SWE `quality`; `recordsAsArrays`; Features Part 3/CQL2 identifiers + `cql2.json`; 23-000 class identifiers; remaining IDR-011 §14.3 rows; Part 2 A.1 inheritance); F-13 extension-rule examination; tagged `controlStream.json` required fields (F-18 premise).
+- **Unexamined:** ~51 other report bodies; 69 IDR Plans; Part 2 HTML beyond targeted clauses; 274 issue bodies.
+
+### 5. Next iteration (on "proceed")
+
+1. IDR-038 full read (command authorization/safety/audit) against Guide §§4.9, 4.10 and the Phase 5 safety leaves; then IDR-039 and IDR-040 (security) against §4.10 and the 1.4.x leaves already read.
+2. IDR-030 and IDR-034 as budget allows.
+3. Then IDR-039A/041/055 and IDR-042/043, feeding Pass 4 scenarios.
+
+Pausing. Say "proceed" to continue.
+
+Created 4 todos

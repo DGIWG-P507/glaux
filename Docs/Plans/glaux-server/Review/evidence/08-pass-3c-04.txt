@@ -1,0 +1,73 @@
+Updated todo list
+
+
+
+Fetched 3 resources
+
+Searched for regex `^#{2,4} ` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 70 results
+
+Searched for regex `^### 6\.|^### 7\.|^### 8\.|^## [5-9]|^## 1[0-3]` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 22 results
+
+Read , lines 825 to 858
+
+Read , lines 489 to 496
+
+Ran terminal command: $root = "<workspace>\Docs\Research\Initial Designs\IDR\glaux-server\IDR Plans"; Get-ChildItem -Path $root -Filter *.md | Where-Object { $_.Name -match 'overall|idr-srv-029|idr-srv-030|idr-srv-036|idr-srv-014b' } | Select-String -Pattern 'IDR-SRV-029|Accept(ed|ance)|Report Status|Plan Status|In Review' | Where-Object { $_.Line -match '029|Accept|Status|Review' } | ForEach-Object { "{0}:{1}: {2}" -f $_.Filename, $_.LineNumber, ($_.Line.Substring(0, [Math]::Min(220, $_.Line.Length))) } | Select-Object -First 40
+
+Read , lines 53 to 54
+
+Updated memory file 
+
+## Pass 3c — iteration 4 report (read-only; nothing edited, no issues or upstream filings)
+
+### 1. Method note
+
+For each reassessment below I read the complete Guide section named and the full body of each owning issue before revising the finding. The same rule now applies to any further missing-rule or missing-test finding.
+
+### 2. F-15 reassessed — command submission without an idempotency key
+
+**Full-section and issue reads:** Guide §4.6 (complete), Guide §6.4 (complete), issue #168 (leaf 5.2.7), issue #174 (leaf 5.3.4).
+
+**Correction to iteration 3.** I said the unkeyed consequence was acknowledged "only obliquely" (L981). That was wrong. `glaux-server-implementation-guide.md:851` states it directly: "Unkeyed submissions remain permitted. After an ambiguous disconnect, matching payloads do not establish retry identity: a new POST may be a distinct action… unique client recovery is not guaranteed and automatic resubmission is unsafe." My grep did not include "unkeyed"; lesson re-recorded.
+
+**Existing documented limitation (design decision, recorded).**
+- Guide L505 ("optional… Do not require this header for all CSAPI clients"), L503 ("deliberately does not adopt IDR-029/031's stronger mandatory-header policy"), §6.4 L849–851 (same-key rejoin; unkeyed limits), §8.2 L981 (test scenario).
+- Issue #168 (5.2.7): "Do not require Idempotency-Key, deduplicate unkeyed requests by equal parameter values…"; acceptance requires "two unkeyed equal-valued requests remain distinct actions."
+- Issue #174 (5.3.4): "Do not make Idempotency-Key mandatory, introduce content-based command deduplication or promise exactly-once physical effects"; deliverable includes "document unkeyed recovery limits"; verification: "document that an ambiguous disconnect cannot be safely resolved by automatic unkeyed resubmission."
+
+**Operational risk retained (accepted by design).** A third-party CSAPI client with no Glaux extension, on a DDIL link, loses a command POST response; its only safe recoveries are "ordinary authorized discovery" (listing commands) or operator reconciliation, and a resubmission may dispatch twice. Research recommended the opposite for physical-effect submissions: IDR-029 §8.2 and rec 4, IDR-031 rec 4, IDR-037 §7.3 ("The unsafe POST profile requires a scoped idempotency key").
+
+**Residual gap.** §12.2 L1118 and §13 record the `If-Match` departure but not this one; the rationale (standard-client interoperability) is implied, not stated.
+
+**Revised:** Severity **Low–Medium** (Medium operational consequence, Low documentation gap); type: accepted credible risk. **Smallest correction:** one §13 row naming IDR-029/031/037's mandatory-key recommendation, the interoperability rationale, and the accepted consequence. **Separate from the finding:** a per-deployment or per-ControlStream option to require the key is a *new feature proposal* that #168/#174 expressly exclude from those leaves; it needs an owner decision and a Guide/Roadmap change, not a review correction. Optional low-cost improvement: Glaux-published client examples always send `Idempotency-Key` on command POST (parallel to L503's "encourage conditional updates in examples").
+
+### 3. F-16 reassessed — batch atomicity
+
+**Reads:** Guide §4.6 complete; issue #104 (3.2.7); `idr-srv-029-transaction-consistency-idempotency-and-concurrency-strategy-report.md:318-322`.
+
+IDR-029 §10 permits three alternatives — "atomic entire batch; independent item transactions with per-item results; or durable asynchronous job" — provided success is never returned while dropping items. The Guide (`glaux-server-implementation-guide.md:507`) selects the first and labels it "a Glaux atomicity choice, not a new OGC batch claim"; #104 selects the same ("all-or-nothing admission is the selected Glaux policy"), excludes partial-success semantics, requires "the source-defined response rather than assuming a single-item Location contract", and requires the choice be documented "separately from normative CSAPI obligations". IDR-031 rec 7 preferred per-item atomicity, but that preference sits inside IDR-029's permitted set, and the Guide/leaf record the selection. **F-16 withdrawn** — verified consistent.
+
+### 4. F-17 reassessed — stale "In Review" text
+
+**Reads:** overall IDR plan Rules 9–10; topic plans for 014b, 029, 030, 036.
+
+Rule 9 fixes where acceptance is recorded: "The acceptance authority and date are recorded in the report, and aggregate acceptance coverage is recorded in progress tracking." Rule 10: handoff wording "alone neither records acceptance nor begins the next topic." Dated records exist for every report I flagged that I checked: report headers ("Accepted By… Acceptance Date"), topic-plan completion notes ("accepted by the Glaux Project Lead on September 14, 2026" for 029; equivalents at 030 L430/435, 036 L503/508, 014b L396/400) and the overall plan's "67 (complete and accepted)". The residual "In Review… not accepted for downstream use" paragraphs in report closing sections — and the `Status: In Review` header fields in the 029/030 topic plans — are leftover handoff wording with no effect under the project's own rules. My earlier "header status controls" phrasing was an invention; the correct reconciliation is Rule 9. **Revised:** Low, editorial optional improvement (update residual strings); not a governance or integrity defect.
+
+### 5. Cumulative record
+
+- **Findings:** F-01 Med; F-02 High; F-03 Low–Med; F-04 Low; F-05 Low; F-06 withdrawn; F-07 Med; F-08 Low–Med; F-09 Low; F-10 Low; F-11 Med; F-12 Low; F-13 Low (input-policy option unapproved pending extension-rule review); F-14 Low; **F-15 Low–Med (accepted risk; §13 record partial); F-16 withdrawn; F-17 Low editorial.**
+- **Full reads:** Guide (incl. §§4.6, 6.4 re-read complete), Roadmap, Goal, CONTRIBUTING, issue template, final report, register v1.16, IDR-008 (bar §16–17), IDR-011, IDR-029, IDR-031, IDR-050, IDR-052, OGC 23-001 body + Annex A, overall IDR plan Rules 1–10. Issues: #3, #19, #22, #56, #71, #72, #104, #168, #174.
+- **Partial:** IDR-006 §13; IDR-007 §13; IDR-010 link sections; IDR-017 §9.1; IDR-036 §7.1–7.3; IDR-037 §7.3; IDR-039 §1; IDR-044 §22.2; topic plans 014b/029/030/036 acceptance blocks.
+- **Owed full reads (carried forward):** IDR-030, IDR-034; IDR-036, IDR-037, IDR-038; IDR-039, IDR-039A, IDR-040, IDR-041, IDR-055; IDR-042, IDR-043; IDR-008 §16–17.
+- **Owed checks:** Pass 2 standards backlog (SWE `quality`; `recordsAsArrays`; Features Part 3/CQL2 identifiers + `cql2.json`; 23-000 class identifiers; remaining §14.3 rows; Part 2 A.1 inheritance); F-13 extension-rule examination (RFC 7946 §6.1, open `observation.json`, SensorML 3.0 extensions, Part 1 Req 80/93).
+- **Unexamined:** ~53 other report bodies; 69 IDR Plans; Part 2 HTML beyond targeted clauses; 277 issue bodies.
+
+### 6. Next iteration (on "proceed")
+
+1. IDR-036, IDR-037, IDR-038 full reads (command path) against Guide §§4.9, 6.4 and the owning Phase 5 issues, applying the full-section/owning-issue rule before any new finding.
+2. IDR-030 and IDR-034 if budget allows.
+3. Then security (039/039A/040/041/055) and DDIL/sync (042/043), feeding Pass 4.
+
+Pausing. Say "proceed" to continue.
+
+Created 4 todos

@@ -1,0 +1,127 @@
+Updated todo list
+
+
+
+Fetched https://api.github.com/repos/DGIWG-P507/glaux-server/issues/56
+
+Searched for regex `^#{2,3} ` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md`), 93 results
+
+Read , lines 21 to 101
+
+Read , lines 437 to 497
+
+Read , lines 692 to 775
+
+Read , lines 837 to 877
+
+Searched for regex `^#{2,3} ` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-050-conformance-harness-strategy-report.md`), 85 results
+
+Read , lines 62 to 294
+
+Searched for regex `wire struct|wire model|deserializ|shared type|same crate|independent(ly)? (parsed|model|client|runner)|tautolog|server output as|from server output|copied from server` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 9 results
+
+Read , lines 950 to 970
+
+Searched for regex `^## [12]\. ` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-0{29,31,36,39,52}-*.md`), 10 results
+
+Read , lines 64 to 89
+
+Read , lines 54 to 73
+
+Read , lines 64 to 85
+
+Read , lines 61 to 78
+
+Read , lines 721 to 770
+
+Read , lines 65 to 99
+
+Searched for regex `^### \d+\.\d+ .*(Remaining|Unresolved|Open Question|Open Issues|Deferred)` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-0{29,31,39,44,45,50,52,53}-*.md`), 7 results
+
+Read , lines 503 to 520
+
+Read , lines 737 to 775
+
+Read , lines 673 to 690
+
+Searched for regex `\*\*2\.6\.1|\*\*2\.6\.3|\*\*1\.1\.4|\*\*9\.1\.1` (`**/Docs/Plans/glaux-server/glaux-server-roadmap.md`), 4 results
+
+Searched for regex `independent (HTTP )?runner|runner` (`**/Docs/Plans/glaux-server/glaux-server-roadmap.md`), 4 results
+
+Searched for regex `\*\*1\.4\.\d|\*\*1\.5\.\d|\*\*2\.1\.1 |\*\*2\.2\.1 ` (`**/Docs/Plans/glaux-server/glaux-server-roadmap.md`), 11 results
+
+
+
+
+
+Fetched https://raw.githubusercontent.com/opengeospatial/ogcapi-connected-systems/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2/api/part1/openapi/parameters/limit.yaml
+
+Fetched https://cite.ogc.org/teamengine/
+
+## Adjustments from your two qualifications
+
+**F-07 — nested endpoint is not a safe harbour.** Part 2 Table 5 makes a DataStream's `samplingFeatures` a list and Table 7 makes `samplingFeature` per-observation, so one datastream can carry observations of several sampling features. Under OSH's per (datastream, FOI) series rule, `GET /datastreams/{id}/observations?resultTime=latest` returns one observation per sampling feature; under Guide §4.4's endpoint-wide maximum it returns only the most recent one. My Pass 2/3a statement that "both readings coincide on the nested endpoint" is withdrawn. The divergence applies to nested, canonical, `foi=`-filtered and collection-items requests alike. Consequence sharpened by IDR-011 §8.2 (accepted): default order is ascending `(resultTime, RID)` and no sort parameter is baselined, so `resultTime=latest` is the only way a client obtains "newest" without paging — the interpretation therefore determines whether "newest per stream/feature" is obtainable in one request at all. Still provisional as an interoperability risk; confirmed as a §13 documentation gap.
+
+**F-08 / F-09 — adapted vs original tests.** IDR-050 §4.2 rules 3 and 6 and §5.2 ("copied/mistargeted ATS steps need ledger adapters"; official results "retain their own suite/version/target identity") and Guide `glaux-server-implementation-guide.md:899` ("Preserve both the source procedure and the documented correction") already require the distinction. Any correction I propose for these findings assumes evidence records, per ATS case, whether the executed procedure is the published text or a ledger adaptation, and that the two are never summed. Whether the Roadmap 9.1.x reverification and claim manifest carry that labelling is deferred to Pass 5/6.
+
+**F-11 — accounting for #56.** Issue #56 (2.3.8) requires "an expected edge list from the Guide and adopted Part 1 navigation requirements … compare exact target IDs, relation semantics and canonical URLs". That is a genuine independent relationship check. It does not fix the wire form: the Guide is silent, and the source conflicts (Req 79/91 "association name" vs. the mapping-table footnotes' `ogc-rel:` prefix vs. unprefixed examples), so an author can choose either and pass their own edge list. F-11 stays a documentation/interpretation gap, not a missing check.
+
+## Pass 3b — research corpus, part 2 of 3
+
+### Coverage (explicit)
+
+| Material | Depth |
+|---|---|
+| IDR-011 | Partial (~40%): §1, §8, §14, §17 read in full; §6 rows, §7.4 earlier; §§2–5, 9–13, 15–16, appendices unread |
+| IDR-050 | Partial (~35%): §§1–6.3 and §18 in full |
+| IDR-029, 031, 036, 039, 052 | Executive summaries only (+ IDR-029 §19.2) |
+| IDR-008 §15; IDR-044 §22.2 | Selected sections |
+| Issue #56 body | Full |
+| Primary sources: tagged `limit.yaml`; cite.ogc.org suite list; Part 2 §14.5 note | Targeted |
+
+Not examined: the body of ~60 topic reports beyond their synthesis rows; all IDR Plans. The corpus is not "reviewed"; roughly six reports have been read substantially, and only the synthesis and the evidence register in full.
+
+### Consequential accepted conclusions checked against primary evidence
+
+| Accepted conclusion | Primary check | Result |
+|---|---|---|
+| `limit` profile 1 / 10 / 10,000 (IDR-011 P-011; Guide §6.3) | tagged `api/part1/openapi/parameters/limit.yaml` | Confirmed |
+| No official CSAPI, SensorML 3.0 or SWE Common 3.0 ETS; Features ETS 1.6; TEAM Engine 5.6.1 (IDR-050 §1) | cite.ogc.org suite list, today | Confirmed (only SensorML 1.0.1/2.0, SWE Common 2.0 suites exist) |
+| Cancellation = `CANCELED` status report, not DELETE (IDR-036) | Part 2 §14.5 note | Confirmed |
+| Nine public status codes, private orchestration states never serialized (IDR-036) | Guide §4.9 `glaux-server-implementation-guide.md:576-578` | Carried |
+| Mandatory `If-Match`/428 (IDR-029 §1, IDR-031 §1) | Guide §13 row: departs, honours supplied conditions only; Features Part 4 draft `put-rid-exception` B (verified Pass 2) only requires 412 when `If-Match` is present | Departure recorded and correct — requiring the header would make the unchanged Part 4 ATS fail against Glaux |
+| Annex A vs requirement-class prerequisites (IDR-006 INT-CS1-001…003; IDR-008 P1-01/12/13) | Part 1 Clauses 8.1/19 vs A.2/A.11–A.14 (Pass 2) | Research disposition sound; not carried to Guide §13 (F-08) |
+| IDR-011 §17.3 item 6 and closing sentence: interpretations must be "preserved as explicit policy rather than mislabeled standards text" | Guide §4.4 states the rule as text; §13 has no row | Supports F-07 documentation part |
+| IDR-011 §14.3 ATS overlay | Full read of the table | Thorough; lacks A.27/A.53/A.55/A.56 `deployedSystems` conflict (F-09) |
+| IDR-052: production packages never depend on `glaux-test-support`; nextest primary, retries zero | Guide §8.1: nextest "optional"; no test-support crate in the three-crate workspace | Departure; independence consequences below |
+
+### New finding
+
+**F-12 — "Independent" HTTP/conformance runner is asserted by adjective, not defined structurally**
+- Severity/type: Medium, confirmed propagation gap with verification-independence consequences (to be examined further in Pass 5).
+- Evidence: IDR-050 §6.3 requires that black-box cases "do not deserialize through the server's wire structs or call application services", expectations "derive from pinned standards … not current server output", and "server generated both sides" is prohibited; §18.1 lists "server and harness share models/logic → tautological passes" with required control "independent wire models and black-box release lane". Final report §17.1 repeats "independent wire models". The Guide carries only "The implementation's own serializers are not the sole judge" (`glaux-server-implementation-guide.md:23`) and "Encoder/decoder agreement alone cannot exclude a shared bug" (§8.1.1); its workspace has three crates (`glaux-domain`, `glaux-standards`, `glaux-server`) and no test/harness crate. Roadmap leaves 1.4.2, 1.4.6, 2.6.1, 3.5.1 say "independent HTTP fixtures/checks", "extend the independent runner", but no leaf establishes the runner or defines the independence rule.
+- Failure scenario: the runner is written under `glaux-server/tests` and parses responses with `glaux_standards` types. A shared misreading (e.g., a wrong member name, a wrong `latest` rule, a wrong `rel` value) is encoded once and passes on both sides; mutation testing of server logic cannot detect a mistake located in the shared type.
+- Contrary evidence: §8.1.1's assertion-strength rules, independent expected values, and the pinned external clients (OS4CSAPI, OWSLib) provide partial independence for the surfaces those clients touch.
+- Smallest correction: state the structural rule once (Guide §8.1 or the first runner leaf): runner in its own crate/binary that does not depend on server or `glaux-standards` types for response interpretation; parse with generic JSON plus the pinned official schemas; expectations from the standard/fixture, never from a server response.
+- Resolving evidence: crate dependency graph shows no server→runner or runner→server-types edge; one deliberate server-side schema misnaming fails the runner.
+- Timing: before 1.4.2 (#19, first "independent HTTP fixtures" leaf; numbering per the Pass 1 mapping in which 1.4.3 = #20).
+
+### Notes carried to later passes (not findings yet)
+
+- IDR-051's trace catalog and IDR-050's evidence package were not adopted; how requirement→test linkage and "adapted vs original" ATS outcomes will be evidenced in 9.1.x and the claim manifest — Pass 5/6.
+- IDR-044 §22.2 leaves SQLx 0.9 vs fallback, Utoipa 3.0/3.1, geozero/EWKB and the TLS/crypto provider open; check that 1.1.2 (#4) pins them with a recorded decision — Pass 6.
+- IDR-029 §19.2 leaves the idempotency-header name/schema and which endpoints mandate it to 031–033/045/050; Guide uses optional `Idempotency-Key` — confirm the leaf that fixes it — Pass 4/6.
+
+### Plan for Pass 3c
+
+Full reads of IDR-037 (feasibility) and IDR-038 (command safety) and the decision sections of IDR-039A/040/041 to feed Pass 4; spot-verify two CS-GO/OSH lessons from 014A/014B/062 against the pinned repos; complete the Pass 2 verification backlog items 1–4 (SWE quality/array flags, Features Part 3/CQL2 identifiers and `minItems`, SensorML 3.0 class identifiers).
+
+### Cumulative record
+
+- Passes: 1, 2, 3a, 3b complete; 3c, 4, 5, 6 pending. Verification backlog items 1–6 still open.
+- Findings: F-01 (Med), F-02 (High), F-03 (Low–Med), F-04 (Low), F-05 (Low), F-06 withdrawn, F-07 (Med; nested-endpoint claim corrected), F-08 (Low–Med), F-09 (Low), F-10 (Low), F-11 (Med), F-12 (Med, new).
+- Readiness view unchanged: #3 can begin. Ordered corrections: F-01 before #4; F-02 before #7; F-12 before #19; F-03 before #22; F-11 before group 2.3; F-08/F-09/F-10 before #80–#81; F-07 before #112. Consolidated corrections deferred until findings are complete.
+
+Pausing. Say "proceed" to continue with Pass 3c.
+
+Created 5 todos

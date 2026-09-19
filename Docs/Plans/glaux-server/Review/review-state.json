@@ -1,0 +1,3222 @@
+{
+  "snapshot_date": "2026-09-19",
+  "latest_report": "Pass 3c iteration 11",
+  "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
+  "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
+  "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
+  "review_complete": false,
+  "research_reports": [
+    {
+      "id": "IDR-001",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-001-stanag-4789-aep-4789-server-obligation-baseline-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-002",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-002-aep-4789-volume-i-functional-mapping-to-server-responsibilities-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-003",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-003-aep-4789-volume-ii-standards-package-implementation-baseline-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-004",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-004-terminology-and-concept-crosswalk-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-005",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-005-related-nato-standards-boundary-review-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-006",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-006-csapi-part-1-requirement-baseline-report.md",
+      "documented_read_depth": "partial",
+      "note": "Interpretation/open-question sections; not a full read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/03-pass-3a.txt"
+      ],
+      "conclusion_or_remaining_question": "Interpretation/open-question sections; not a full read."
+    },
+    {
+      "id": "IDR-007",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-007-csapi-part-2-requirement-baseline-report.md",
+      "documented_read_depth": "partial",
+      "note": "Interpretation/open-question sections; not a full read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/03-pass-3a.txt"
+      ],
+      "conclusion_or_remaining_question": "Interpretation/open-question sections; not a full read."
+    },
+    {
+      "id": "IDR-008",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-008-conformance-class-and-requirement-mapping-report.md",
+      "documented_read_depth": "partial",
+      "note": "Substantial read; sections 16-17 still recorded as outstanding.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/05-pass-3c-01.txt"
+      ],
+      "conclusion_or_remaining_question": "Substantial read; sections 16-17 still recorded as outstanding."
+    },
+    {
+      "id": "IDR-009",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-009-landing-page-api-definition-and-conformance-declaration-behavior-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-010",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-010-collections-resources-links-and-navigation-behavior-report.md",
+      "documented_read_depth": "partial",
+      "note": "Link sections; not a full read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/03-pass-3a.txt"
+      ],
+      "conclusion_or_remaining_question": "Link sections; not a full read."
+    },
+    {
+      "id": "IDR-010A",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-010a-api-versioning-backward-compatibility-and-deprecation-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-011",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md",
+      "documented_read_depth": "full",
+      "note": "Full read reported; not a claim of every assertion independently verified.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/05-pass-3c-01.txt"
+      ],
+      "conclusion_or_remaining_question": "Reuse the recorded full read and findings. Reconcile existing key-section dispositions without automatically rereading; record any substantive gap."
+    },
+    {
+      "id": "IDR-012",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-012-content-negotiation-media-types-and-encoding-selection-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-013",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-013-error-model-http-status-codes-and-failure-semantics-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-014",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014-openapi-description-and-api-documentation-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-014A",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014a-osh-csapi-server-implementation-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-014B",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014b-connected-systems-go-csapi-server-implementation-study-report.md",
+      "documented_read_depth": "partial",
+      "note": "Targeted acceptance/history references; a full report read is not established.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/08-pass-3c-04.txt"
+      ],
+      "conclusion_or_remaining_question": "Targeted acceptance/history references; a full report read is not established."
+    },
+    {
+      "id": "IDR-014C",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014c-pygeoapi-csapi-server-implementation-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-014D",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014d-secd-csapi-server-implementation-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-014E",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014e-os4csapi-client-smoke-test-findings-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-014F",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014f-secd-interoperability-findings-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-014G",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014g-os4csapi-discussions-lessons-learned-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-014H",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014h-draft-csapi-part-3-publish-subscribe-and-implementation-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-015",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-015-canonical-glaux-server-resource-model-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-016",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-016-identifier-uri-and-resource-lifecycle-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-017",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-017-relationship-and-linkage-model-report.md",
+      "documented_read_depth": "partial",
+      "note": "Section 9.1 mentioned in the coverage record.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/12-pass-3c-08.txt"
+      ],
+      "conclusion_or_remaining_question": "Section 9.1 mentioned in the coverage record."
+    },
+    {
+      "id": "IDR-018",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-018-temporal-validity-and-freshness-model-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-019",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-019-provenance-lineage-quality-and-trust-metadata-model-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-020",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-020-status-availability-and-system-event-model-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-021",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-021-sensorml-representation-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-022",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-022-swe-common-data-component-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-023",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-023-schema-and-encoding-validation-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-024",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-024-units-observed-properties-and-semantic-binding-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-025",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-025-database-and-persistence-architecture-options-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-026",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-026-geospatial-storage-and-query-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-027",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-027-time-series-observation-storage-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-028",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-028-metadata-and-document-storage-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-029",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-029-transaction-consistency-idempotency-and-concurrency-strategy-report.md",
+      "documented_read_depth": "full",
+      "note": "Full read reported; not a claim of every assertion independently verified.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/07-pass-3c-03.txt"
+      ],
+      "conclusion_or_remaining_question": "Reuse the recorded full read and findings. Reconcile existing key-section dispositions without automatically rereading; record any substantive gap."
+    },
+    {
+      "id": "IDR-030",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-030-data-lifecycle-retention-archival-and-deletion-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-031",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-031-server-write-and-ingestion-model-report.md",
+      "documented_read_depth": "full",
+      "note": "Full read reported; not a claim of every assertion independently verified.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/07-pass-3c-03.txt"
+      ],
+      "conclusion_or_remaining_question": "Reuse the recorded full read and findings. Reconcile existing key-section dispositions without automatically rereading; record any substantive gap."
+    },
+    {
+      "id": "IDR-032",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-032-publisher-to-server-contract-boundary-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-033",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-033-simulator-to-server-contract-boundary-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-034",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-034-datastream-observation-and-status-update-semantics-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-035",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-035-streaming-and-event-publication-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-036",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-036-control-stream-and-command-lifecycle-model-report.md",
+      "documented_read_depth": "full",
+      "note": "Full read reported; not a claim of every assertion independently verified.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/09-pass-3c-05.txt"
+      ],
+      "conclusion_or_remaining_question": "Reuse the recorded full read and findings. Reconcile existing key-section dispositions without automatically rereading; record any substantive gap."
+    },
+    {
+      "id": "IDR-037",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-037-feasibility-and-asynchronous-tasking-strategy-report.md",
+      "documented_read_depth": "partial",
+      "note": "Main body read; appendices A-D outstanding.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/09-pass-3c-05.txt"
+      ],
+      "conclusion_or_remaining_question": "Main body read; appendices A-D outstanding."
+    },
+    {
+      "id": "IDR-038",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-038-command-authorization-safety-and-audit-strategy-report.md",
+      "documented_read_depth": "partial",
+      "note": "Main body read; appendices A-C outstanding.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/11-pass-3c-07.txt"
+      ],
+      "conclusion_or_remaining_question": "Main body read; appendices A-C outstanding."
+    },
+    {
+      "id": "IDR-039",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-039-authentication-authorization-and-api-security-threat-model-report.md",
+      "documented_read_depth": "partial",
+      "note": "Sections 1-6, 8-20 read; section 7 and 21-22 outstanding.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/12-pass-3c-08.txt"
+      ],
+      "conclusion_or_remaining_question": "Sections 1-6, 8-20 read; section 7 and 21-22 outstanding."
+    },
+    {
+      "id": "IDR-039A",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-039a-zero-trust-architecture-alignment-and-enforcement-model-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-040",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-040-policy-releasability-and-cross-boundary-access-constraints-report.md",
+      "documented_read_depth": "partial",
+      "note": "Sections 1-8 read; 9-21 outstanding.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/13-pass-3c-09.txt"
+      ],
+      "conclusion_or_remaining_question": "Sections 1-8 read; 9-21 outstanding."
+    },
+    {
+      "id": "IDR-041",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-041-audit-logging-and-accountability-strategy-report.md",
+      "documented_read_depth": "full",
+      "note": "Full read reported; not a claim of every assertion independently verified.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/14-pass-3c-10.txt"
+      ],
+      "conclusion_or_remaining_question": "Reuse the recorded full read and findings. Reconcile existing key-section dispositions without automatically rereading; record any substantive gap."
+    },
+    {
+      "id": "IDR-042",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-042-ddil-informed-server-semantics-report.md",
+      "documented_read_depth": "partial",
+      "note": "Sections 1-2, 5, 8, 11-14, 17-18 read; other sections/end matter not established complete.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/15-pass-3c-11.txt"
+      ],
+      "conclusion_or_remaining_question": "Sections 1-2, 5, 8, 11-14, 17-18 read; other sections/end matter not established complete."
+    },
+    {
+      "id": "IDR-043",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-043-server-synchronization-and-conflict-handling-boundary-report.md",
+      "documented_read_depth": "partial",
+      "note": "Sections 15, 19-20 read; selected rows from 6, 7, 11.4; remaining body/end matter not established complete.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/15-pass-3c-11.txt"
+      ],
+      "conclusion_or_remaining_question": "Sections 15, 19-20 read; selected rows from 6, 7, 11.4; remaining body/end matter not established complete."
+    },
+    {
+      "id": "IDR-044",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-044-rust-implementation-language-and-framework-strategy-report.md",
+      "documented_read_depth": "partial",
+      "note": "Section 22.2 mentioned in the coverage record.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/04-pass-3b.txt"
+      ],
+      "conclusion_or_remaining_question": "Section 22.2 mentioned in the coverage record."
+    },
+    {
+      "id": "IDR-045",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-045-service-architecture-and-modularization-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-046",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-046-reference-deployment-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-047",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-047-configuration-secrets-and-environment-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-048",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-048-observability-logs-metrics-and-health-check-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-049",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-049-migration-upgrade-backup-and-restore-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-050",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-050-conformance-harness-strategy-report.md",
+      "documented_read_depth": "full",
+      "note": "Full read reported; not a claim of every assertion independently verified.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/05-pass-3c-01.txt"
+      ],
+      "conclusion_or_remaining_question": "Reuse the recorded full read and findings. Reconcile existing key-section dispositions without automatically rereading; record any substantive gap."
+    },
+    {
+      "id": "IDR-051",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-051-requirement-to-test-traceability-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-052",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-052-rust-test-driven-architecture-and-multi-layer-test-strategy-report.md",
+      "documented_read_depth": "full",
+      "note": "Full read reported; not a claim of every assertion independently verified.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/06-pass-3c-02.txt"
+      ],
+      "conclusion_or_remaining_question": "Reuse the recorded full read and findings. Reconcile existing key-section dispositions without automatically rereading; record any substantive gap."
+    },
+    {
+      "id": "IDR-053",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-053-test-data-fixtures-golden-files-and-scenario-corpus-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-054",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-054-performance-load-stress-and-streaming-test-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-055",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-055-security-authorization-and-command-control-test-strategy-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-056",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-056-interoperability-test-matrix-for-external-csapi-clients-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-058",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-058-draft-csapi-part-4-sampling-features-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-059",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-059-enhanced-csapi-querying-and-spatial-observation-retrieval-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-060",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-061",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    },
+    {
+      "id": "IDR-062",
+      "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md",
+      "documented_read_depth": "not_established_from_supplied_coverage",
+      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+    }
+  ],
+  "implementation_issues": [
+    {
+      "number": 3,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/3",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/01-pass-1.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 4,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/4",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 5,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/5",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 6,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/6",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 7,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/7",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 8,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/8",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 9,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/9",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 10,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/10",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 11,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/11",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 12,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/12",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 13,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/13",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 14,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/14",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 15,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/15",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/14-pass-3c-10.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 16,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/16",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 17,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/17",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 18,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/18",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 19,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/19",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/05-pass-3c-01.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 20,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/20",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 21,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/21",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/12-pass-3c-08.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 22,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/22",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/15-pass-3c-11.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 23,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/23",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 24,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/24",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 25,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/25",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 26,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/26",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 27,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/27",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 28,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/28",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 29,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/29",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 30,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/30",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 31,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/31",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 32,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/32",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 33,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/33",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 34,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/34",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 35,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/35",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 36,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/36",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 37,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/37",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 38,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/38",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 39,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/39",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 40,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/40",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 41,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/41",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 42,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/42",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 43,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/43",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 44,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/44",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 45,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/45",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 46,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/46",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 47,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/47",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 48,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/48",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 49,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/49",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 50,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/50",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 51,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/51",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 52,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/52",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 53,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/53",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 54,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/54",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 55,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/55",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 56,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/56",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/04-pass-3b.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 57,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/57",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 58,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/58",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 59,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/59",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 60,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/60",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 61,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/61",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 62,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/62",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 63,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/63",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 64,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/64",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 65,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/65",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 66,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/66",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 67,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/67",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 68,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/68",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 69,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/69",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 70,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/70",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 71,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/71",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/06-pass-3c-02.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 72,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/72",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/06-pass-3c-02.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 73,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/73",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 74,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/74",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 75,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/75",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 76,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/76",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 77,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/77",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 78,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/78",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 79,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/79",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 80,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/80",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 81,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/81",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 82,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/82",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 83,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/83",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 84,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/84",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 85,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/85",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 86,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/86",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 87,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/87",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 88,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/88",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 89,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/89",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 90,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/90",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 91,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/91",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 92,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/92",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 93,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/93",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 94,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/94",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 95,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/95",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 96,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/96",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 97,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/97",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 98,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/98",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 99,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/99",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 100,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/100",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 101,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/101",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 102,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/102",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 103,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/103",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 104,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/104",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/08-pass-3c-04.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 105,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/105",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 106,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/106",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 107,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/107",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 108,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/108",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 109,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/109",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 110,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/110",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 111,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/111",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 112,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/112",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 113,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/113",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 114,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/114",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 115,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/115",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 116,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/116",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 117,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/117",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 118,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/118",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 119,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/119",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 120,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/120",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 121,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/121",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 122,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/122",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 123,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/123",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 124,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/124",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 125,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/125",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 126,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/126",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 127,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/127",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 128,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/128",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 129,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/129",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 130,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/130",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 131,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/131",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 132,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/132",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 133,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/133",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 134,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/134",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 135,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/135",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 136,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/136",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 137,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/137",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 138,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/138",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 139,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/139",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 140,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/140",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 141,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/141",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 142,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/142",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 143,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/143",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 144,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/144",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 145,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/145",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 146,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/146",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 147,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/147",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 148,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/148",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 149,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/149",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 150,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/150",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 151,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/151",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 152,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/152",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 153,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/153",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 154,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/154",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 155,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/155",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 156,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/156",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/09-pass-3c-05.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 157,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/157",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 158,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/158",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 159,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/159",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 160,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/160",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 161,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/161",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 162,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/162",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 163,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/163",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/09-pass-3c-05.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 164,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/164",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/09-pass-3c-05.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 165,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/165",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 166,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/166",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 167,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/167",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 168,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/168",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/08-pass-3c-04.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 169,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/169",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 170,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/170",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 171,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/171",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 172,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/172",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 173,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/173",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 174,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/174",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/08-pass-3c-04.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 175,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/175",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 176,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/176",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 177,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/177",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 178,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/178",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 179,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/179",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 180,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/180",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 181,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/181",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 182,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/182",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 183,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/183",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 184,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/184",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 185,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/185",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 186,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/186",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 187,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/187",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 188,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/188",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 189,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/189",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 190,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/190",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 191,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/191",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 192,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/192",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 193,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/193",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 194,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/194",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 195,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/195",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 196,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/196",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 197,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/197",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 198,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/198",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 199,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/199",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 200,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/200",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 201,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/201",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 202,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/202",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 203,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/203",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 204,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/204",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 205,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/205",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 206,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/206",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 207,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/207",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 208,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/208",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 209,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/209",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 210,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/210",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 211,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/211",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 212,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/212",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 213,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/213",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 214,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/214",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 215,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/215",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 216,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/216",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 217,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/217",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 218,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/218",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 219,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/219",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 220,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/220",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 221,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/221",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 222,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/222",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 223,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/223",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 224,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/224",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 225,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/225",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 226,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/226",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 227,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/227",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 228,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/228",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 229,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/229",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 230,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/230",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 231,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/231",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 232,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/232",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 233,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/233",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 234,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/234",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 235,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/235",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 236,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/236",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 237,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/237",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 238,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/238",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 239,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/239",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 240,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/240",
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/15-pass-3c-11.txt"
+      ],
+      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+    },
+    {
+      "number": 241,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/241",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 242,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/242",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 243,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/243",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 244,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/244",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 245,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/245",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 246,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/246",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 247,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/247",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 248,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/248",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 249,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/249",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 250,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/250",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 251,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/251",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 252,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/252",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 253,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/253",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 254,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/254",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 255,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/255",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 256,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/256",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 257,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/257",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 258,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/258",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 259,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/259",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 260,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/260",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 261,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/261",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 262,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/262",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 263,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/263",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 264,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/264",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 265,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/265",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 266,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/266",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 267,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/267",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 268,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/268",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 269,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/269",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 270,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/270",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 271,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/271",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 272,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/272",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 273,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/273",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 274,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/274",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 275,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/275",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 276,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/276",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 277,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/277",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 278,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/278",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 279,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/279",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 280,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/280",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 281,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/281",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 282,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/282",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 283,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/283",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 284,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/284",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 285,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/285",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 286,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/286",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 287,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/287",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    },
+    {
+      "number": 288,
+      "url": "https://github.com/DGIWG-P507/glaux-server/issues/288",
+      "full_body_read_reported": false,
+      "review_status": "not_recorded",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+    }
+  ],
+  "budget": {
+    "dollar_amount_known": false,
+    "remaining_subscription_allowance_visible": false,
+    "unread_inventory_is_not_spending_authorization": true
+  },
+  "next_subscription": {
+    "read_start_page_first": true,
+    "resume_current_work": true,
+    "repeat_completed_review": false,
+    "follow_user_iteration_boundaries": true
+  },
+  "schema_version": 2,
+  "findings_file": "findings.md",
+  "path_conventions": {
+    "research_report_paths": "relative to repository root",
+    "evidence_paths": "relative to this Review directory"
+  },
+  "completion_objective": "Finish the original six-area review and publish its final assessment; recommendations need not be implemented. Budget/provider stops are checkpoints, not completion.",
+  "authorization": "Maintain and publish review artifacts. Continue the next bounded review iteration on the user's proceed. No automatic implementation or alteration of approved project decisions.",
+  "backlog_analysis": {
+    "status": "not_complete",
+    "issue_count": 286,
+    "issue_range": {
+      "first": 3,
+      "last": 288
+    },
+    "whole_dependency_graph_checked": false,
+    "scope_coverage_checked": false,
+    "sizing_checked": false,
+    "evidence": [
+      "evidence/01-pass-1.txt"
+    ],
+    "remaining_question": "Resolve Roadmap leaf/group prerequisites, check the whole graph and account for unique issue scope/acceptance/sizing; inventory counts alone are insufficient."
+  },
+  "review_areas": [
+    {
+      "area": "baseline",
+      "status": "complete_at_recorded_baseline",
+      "evidence": [
+        "evidence/01-pass-1.txt"
+      ],
+      "finish_condition": "Reuse reviewed Goal, Guide, Roadmap, README and contributor/template material; inspect relevant changes only."
+    },
+    {
+      "area": "standards",
+      "status": "partial",
+      "evidence": [
+        "evidence/02-pass-2.txt",
+        "evidence/03-pass-3a.txt",
+        "evidence/15-pass-3c-11.txt"
+      ],
+      "finish_condition": "Close the six carried groups and F-13 extension-rule question with supported or bounded unresolved conclusions."
+    },
+    {
+      "area": "research",
+      "status": "partial",
+      "evidence": [
+        "evidence/03-pass-3a.txt",
+        "evidence/15-pass-3c-11.txt"
+      ],
+      "finish_condition": "Account for key findings/recommendations/open questions across all topic reports, committed consequential deep reads and remaining peer-source checks; reuse previous work."
+    },
+    {
+      "area": "scenarios",
+      "status": "partial",
+      "evidence": [
+        "evidence/15-pass-3c-11.txt"
+      ],
+      "finish_condition": "Account for approved workflows and consequential failure/security/provenance boundaries."
+    },
+    {
+      "area": "verification",
+      "status": "partial",
+      "evidence": [
+        "evidence/05-pass-3c-01.txt",
+        "evidence/06-pass-3c-02.txt"
+      ],
+      "finish_condition": "Assess independent expectations, meaningful negative/fault detection and appropriate runtime boundaries of planned verification."
+    },
+    {
+      "area": "issues",
+      "status": "partial",
+      "evidence": [
+        "evidence/15-pass-3c-11.txt"
+      ],
+      "finish_condition": "Account for all unique implementation-issue content and complete whole-backlog dependency, coverage and sizing analysis."
+    },
+    {
+      "area": "final_assessment",
+      "status": "not_complete",
+      "evidence": [],
+      "finish_condition": "Publish consolidated dispositions, coverage/approved exceptions, implementation timing and limits; recommendations need not be implemented."
+    }
+  ],
+  "remaining_checks": [
+    {
+      "id": "standards-quality",
+      "question": "SWE Common 3.0 quality schema/semantic claim",
+      "status": "pending",
+      "evidence": [],
+      "conclusion_or_remaining_question": "SWE Common 3.0 quality schema/semantic claim"
+    },
+    {
+      "id": "standards-array-flags",
+      "question": "recordsAsArrays and vectorsAsArrays interpretation",
+      "status": "pending",
+      "evidence": [],
+      "conclusion_or_remaining_question": "recordsAsArrays and vectorsAsArrays interpretation"
+    },
+    {
+      "id": "standards-features-cql2",
+      "question": "Features Part 3/CQL2 identifiers and GeometryCollection minItems",
+      "status": "pending",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Features Part 3/CQL2 identifiers and GeometryCollection minItems"
+    },
+    {
+      "id": "standards-sensorml-classes",
+      "question": "SensorML 3.0 four referenced class identifiers",
+      "status": "pending",
+      "evidence": [],
+      "conclusion_or_remaining_question": "SensorML 3.0 four referenced class identifiers"
+    },
+    {
+      "id": "standards-ats-rows",
+      "question": "Remaining IDR-011 section 14.3 abstract-test discrepancy rows",
+      "status": "pending",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Remaining IDR-011 section 14.3 abstract-test discrepancy rows"
+    },
+    {
+      "id": "standards-part2-inheritance",
+      "question": "Part 2 Annex A.1 inheritance effect",
+      "status": "pending",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Part 2 Annex A.1 inheritance effect"
+    },
+    {
+      "id": "observation-extension-policy",
+      "question": "F-13 permitted extensions and association-member distinction",
+      "status": "pending",
+      "evidence": [],
+      "conclusion_or_remaining_question": "F-13 permitted extensions and association-member distinction"
+    },
+    {
+      "id": "research-deep-read-remainders",
+      "question": "Recorded remaining sections of 008, 037, 038, 039, 040, 042, 043; committed deep reads 030, 034, 039A, 055",
+      "status": "partial",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Recorded remaining sections of 008, 037, 038, 039, 040, 042, 043; committed deep reads 030, 034, 039A, 055"
+    },
+    {
+      "id": "research-key-section-sweep",
+      "question": "Systematic topic key-section accounting using the report inventory and prior evidence",
+      "status": "partial",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Systematic topic key-section accounting using the report inventory and prior evidence"
+    },
+    {
+      "id": "peer-source-spot-checks",
+      "question": "Remaining promised CS-GO/OSH checks associated with 014A, 014B, 062 at the recorded pins; no new whole-history study",
+      "status": "partial",
+      "evidence": [],
+      "conclusion_or_remaining_question": "Remaining promised CS-GO/OSH checks associated with 014A, 014B, 062 at the recorded pins; no new whole-history study"
+    }
+  ],
+  "current_work": {
+    "last_substantive_checkpoint": "Copilot Pass 3c iteration 11",
+    "provider": "GitHub Copilot",
+    "model": "not recorded",
+    "active_batch": null,
+    "unfinished_step": "No work on the selected next SWE batch is recorded. Start from the existing standards notes and pinned sources.",
+    "evidence_already_obtained": [
+      "evidence/02-pass-2.txt",
+      "evidence/03-pass-3a.txt"
+    ],
+    "next_batch": {
+      "title": "Resolve the two carried SWE questions",
+      "check_ids": [
+        "standards-quality",
+        "standards-array-flags"
+      ],
+      "source_scope": "Existing Guide interpretation rows, related research evidence and their already pinned SWE Common source artifacts.",
+      "stop_condition": "Record each question as supported, corrected or specifically unresolved, with source references; save the checkpoint.",
+      "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
+    }
+  },
+  "batch_history": [
+    {
+      "date": "2026-09-19",
+      "provider": "GitHub Copilot",
+      "model": "not recorded",
+      "activity": "Imported 15 supplied responses through Pass 3c iteration 11; detailed history is in the evidence manifest.",
+      "coverage_evidence": [
+        "evidence/source-manifest.json"
+      ],
+      "review_complete": false
+    },
+    {
+      "date": "2026-09-19",
+      "provider": "Codex",
+      "model": "not recorded",
+      "activity": "Organized and prepared publication of review artifacts under the server planning folder; normalized local paths in public evidence; separated canonical findings from coverage/cursor state. No additional technical review performed.",
+      "coverage_completed": [],
+      "review_complete": false
+    }
+  ],
+  "publication": {
+    "repository": "DGIWG-P507/glaux",
+    "directory": "Docs/Plans/glaux-server/Review",
+    "commit_reference": "Use repository history for this directory; reviewers report and verify each published checkpoint commit.",
+    "scope": "Review artifacts and applicable navigation only."
+  }
+}

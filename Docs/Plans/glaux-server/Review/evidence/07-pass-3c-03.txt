@@ -1,0 +1,89 @@
+Updated todo list
+
+Searched for files matching `**/IDR Reports/idr-srv-0{29,30,31,34,36}*.md`, 5 matches
+
+Read , lines 1 to 200
+
+Read , lines 200 to 330
+
+Read , lines 330 to 470
+
+Read , lines 497 to 511
+
+Searched for regex `Idempotency-Key|idempotency|duplicate (command|POST|submission)|lost response|second command|same-key` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 8 results
+
+Ran terminal command: $root = "<workspace>\Docs\Research\Initial Designs\IDR\glaux-server\IDR Reports"; Get-ChildItem -Path $root -Filter *.md | Where-Object { $_.Name -match 'idr-srv-03[678]|idr-srv-031|idr-srv-055' } | Select-String -Pattern 'Idempotency-Key|idempotency key|unkeyed|without a key|duplicate submission|double submit|client command ID|client-supplied (command )?ID|require.{0,30}key' | ForEach-Object { "{0}:{1}: {2}" -f $_.Filename, $_.LineNumber, ($_.Line.Substring(0, [Math]::Min(280, $_.Line.Length))) } | Select-Object -First 30
+
+Read , lines 239 to 262
+
+Read , lines 334 to 344
+
+Read , lines 470 to 560
+
+Read , lines 1 to 140
+
+Read , lines 140 to 330
+
+Searched for regex `all-or-nothing|per-item|item-atomic|partial success|partial-success|multi-record|batch` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 7 results
+
+Read , lines 330 to 486
+
+Ran terminal command: $root = "<workspace>\Docs\Research\Initial Designs\IDR\glaux-server\IDR Reports"; Get-ChildItem -Path $root -Filter *.md | Select-String -Pattern '\*\*In Review\*\*|is not accepted for downstream use|Report Status:\*\* (Draft|In Review)' | ForEach-Object { "{0}:{1}: {2}" -f $_.Filename, $_.LineNumber, ($_.Line.Substring(0, [Math]::Min(200, $_.Line.Length))) } | Select-Object -First 20
+
+Updated memory file 
+
+Updated memory file 
+
+## Pass 3c — iteration 3 report (read-only; nothing edited, no issues or upstream filings)
+
+### 1. Corrections requested
+
+- **Ordering claim corrected.** In iteration 2 I wrote that newest-first access "is served by `resultTime=latest` or a time window". That is wrong. `resultTime=latest` returns only the observation(s) at the single greatest result time (ties included); a time window returns the matching set in the same ascending default order. CSAPI 1.0 defines no sort parameter (IDR-011 §8.1, upstream #175), so "the most recent N observations" has no standard request: a client must page ascending to the last page or repeatedly narrow a window. The research choice (ascending, P-011-06/IDR-027) stands; F-14(c) remains a documentation gap only — the Guide should state the direction — and the practical consequence above should be stated with it.
+- **F-13 restrictions unapproved.** The suggestion to reject or warn on `@id`/`@link`-suffixed unknown members is withdrawn as a recommendation and recorded as an unapproved option. Deciding it requires examining the applicable extension rules first: RFC 7946 §6.1 foreign members (GeoJSON resources), the open `observation.json` schema (no `additionalProperties:false`), SensorML 3.0 extension rules, and Part 1 Req 80/93 mapping tables. F-13's confirmed content is unchanged: the example/schema discrepancy, the absence of any Guide policy for unknown inbound members, and the requirement that tests isolate the `foi@id` member from the `data:` URL defect.
+
+### 2. Coverage this iteration
+
+| Item | Result |
+|---|---|
+| IDR-029 (transactions/idempotency) | **Full** (§§1–20; §21.2 technology reference list only skimmed) |
+| IDR-031 (write and ingestion model) | **Full** (§§1–19) |
+| IDR-036 §7.1–7.3, IDR-037 §7.3 | Targeted reads for the idempotency question (partial) |
+| IDR-030, IDR-034 | Not started — carried forward |
+| Owed command/security/DDIL reads; Pass 2 standards backlog | Not advanced — carried forward |
+
+### 3. New findings from the write-path reads
+
+**F-15 — Command submission without an idempotency key.** Severity **Medium**; type: credible risk (departure from accepted research, only obliquely recorded).
+- **Evidence.** `glaux-server-implementation-guide.md:505`: "Provide an optional, documented `Idempotency-Key` extension for creation and command submission… Do not require this header for all CSAPI clients." Accepted research required it for unsafe submissions: IDR-029 §8.2 ("Require for command submission/cancellation and any action that may cause a physical effect"), rec 4 [Critical], §19.1 ("Command redispatch after ambiguous response → duplicated physical effect → mandatory key"); `idr-srv-031-server-write-and-ingestion-model-report.md:266-275` ("Mandatory scoped idempotency for unsafe submission") and rec 4; IDR-037 §7.3 ("The unsafe POST profile requires a scoped idempotency key… A client timeout is not evidence of failure"). The Guide acknowledges the consequence only in a verification bullet (`glaux-server-implementation-guide.md:981`: "unkeyed ambiguity makes no deduplication promise"); §13 has no row, unlike the recorded `If-Match` departure at L503.
+- **Failure scenario.** A standard CSAPI client (no Glaux header) posts a command over a DDIL link, the response is lost, and the client (or operator) resubmits. IDR-036 §7.3 correctly forbids parameter-equality dedup ("a new operator intent uses a new key even if parameters are equal"), so the server must treat the retry as a second command and dispatch twice. Server-side reconciliation (Guide L137) covers dispatch retries, not client retries.
+- **Mitigation checked.** Optional key protects Glaux-aware clients (Publisher, webapp); adapters may have device-level correlation. Neither helps third-party clients, and the Goal makes DDIL operation a first-class context.
+- **Smallest correction.** Record the departure and rationale (standard-client interoperability) in §13, and put one decision to the owner: whether a deployment/ControlStream-level option to require the key for command and feasibility POST exists (research's "unsafe POST profile"), default off. **Test:** unkeyed double POST yields two commands (documented); keyed double POST yields one; with the option on, unkeyed POST is rejected with a documented problem. **Timing:** before the Phase 5 command submission leaf.
+
+**F-16 — Batch atomicity default reversed without a record.** Severity **Low**; type: optional improvement. `glaux-server-implementation-guide.md:507` chooses a bounded all-or-nothing transaction for multi-record requests; accepted IDR-031 rec 7 ("Default batches to item atomicity with complete results. An all-or-none job is a separate bounded capability") and IDR-029 §10 chose per-item atomicity. The Guide's choice is defensible for the public API — CSAPI defines no per-item result document — but the departure is not in §12.2/§13. **Correction:** one §13 row. **Test:** batch with one invalid item stores nothing and reports the failing item.
+
+**F-17 — Stale acceptance text inside accepted reports.** Severity **Low**; type: confirmed defect (document integrity). Headers say "Accepted", but closing sections still read "In Review… not accepted for downstream use" or "acceptance remains deliberately unchecked": IDR-014b L644, 014c L663, 014e L681, 028 L526, `idr-srv-029-transaction-consistency-idempotency-and-concurrency-strategy-report.md:534`, 030 L772, 032 L495, 033 L539, 035 L606, 036 L649. **Correction:** a one-line register/Guide note that the header status controls, or normalize the text. Not blocking.
+
+### 4. Consequential accepted conclusions checked this iteration
+
+- Guide §4.6 departures from IDR-029/031 that **are** recorded and coherent: no mandatory `If-Match`/`428` (L503, §13); body `id` ignored on PUT/PATCH under the earlier Part 4 pin rather than IDR-031's rejection under `4e30324` (§1.2, §13); no create-by-PUT (L493 ✓ IDR-031 §3).
+- Guide agrees with IDR-029/031 on: one transaction per accepted operation including retry record and outbox (L501); no external I/O inside the transaction (L501); `202` only with a durable status resource (§13 L1144); merge-patch on JSON projections, no SWE text/binary patch (L497); cascade `409`/`cascade=true` semantics (L509); durable command admission before dispatch (§6.4).
+- IDR-029 §19.2's open question on the idempotency header's name/endpoints is answered by the Guide (`Idempotency-Key`; creation and command submission) — resolved, except for the mandatory-profile point in F-15.
+
+### 5. Cumulative record
+
+- **Findings:** F-01 Med; F-02 High; F-03 Low–Med; F-04 Low; F-05 Low; F-06 withdrawn; F-07 Med; F-08 Low–Med; F-09 Low; F-10 Low; F-11 Med; F-12 Low; F-13 Low (input-policy option unapproved); F-14 Low (ordering statement corrected); **F-15 Med; F-16 Low; F-17 Low**.
+- **Full reads:** Guide, Roadmap, Goal, CONTRIBUTING, issue template, final report, register v1.16, IDR-008 (bar §16–17), IDR-011, IDR-029, IDR-031, IDR-050, IDR-052, OGC 23-001 body + Annex A. Issues: #3, #19, #22, #56, #71, #72.
+- **Partial:** IDR-006 §13; IDR-007 §13; IDR-010 link sections; IDR-017 §9.1; IDR-036 §7.1–7.3; IDR-037 §7.3; IDR-039 §1; IDR-044 §22.2; 014a/014c grep hits.
+- **Owed full reads (unchanged commitment):** IDR-030, IDR-034; IDR-036, IDR-037, IDR-038; IDR-039, IDR-039A, IDR-040, IDR-041, IDR-055; IDR-042, IDR-043; IDR-008 §16–17.
+- **Owed standards checks:** SWE Common 3.0 `quality`; `recordsAsArrays`/`vectorsAsArrays`; Features Part 3/CQL2 identifiers and `cql2.json` `minItems`; 23-000 class identifiers; remaining IDR-011 §14.3 rows; Part 2 A.1 inheritance; plus the F-13 extension-rule examination.
+- **Unexamined:** ~53 other report bodies; all 73 IDR Plans; Part 2 HTML beyond targeted clauses; 280 issue bodies.
+
+### 6. Next iteration (on "proceed")
+
+1. IDR-036, IDR-037, IDR-038 full reads (command path), checking F-15 against their lifecycle/safety conclusions and Guide §§4.9, 6.4.
+2. IDR-030 and IDR-034 full reads if budget allows; otherwise the following iteration.
+3. Then security (039/039A/040/041/055) and DDIL/sync (042/043), feeding Pass 4 scenarios.
+
+Pausing. Say "proceed" to continue.
+
+Created 5 todos

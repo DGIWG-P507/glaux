@@ -23,6 +23,8 @@ DGIWG Glaux is maintained as a modular ecosystem of specialized components. This
 * **[Glaux (Meta-Repo)](../glaux)** - The flagship landing page and documentation hub, coordinating ecosystem orchestration through release-tag alignment and shared integration manifests.
 * **[Glaux Server](../glaux-server)** - The foundational OGC API - Connected Systems authority node for secure discovery, observations, and tasking workflows.
 
+Glaux Server's [planning documents and pre-implementation review](Docs/Plans/glaux-server/README.md) include the current design, implementation roadmap, review findings and cross-provider continuation record.
+
 ### Data and Simulation
 
 * **[Glaux Simulator](../glaux-simulator)** - The STANAG 4789 telemetry generator for validation, stress-testing, and demonstrations without live tactical feeds.

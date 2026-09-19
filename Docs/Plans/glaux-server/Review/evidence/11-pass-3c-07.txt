@@ -1,0 +1,58 @@
+Updated todo list
+
+Read , lines 320 to 516
+
+Read , lines 516 to 675
+
+Read , lines 590 to 613
+
+Updated memory file 
+
+## Pass 3c — iteration 7 report (read-only; nothing edited, no issues or upstream filings)
+
+### 1. Coverage this iteration
+
+| Item | Result |
+|---|---|
+| IDR-038 (command authorization/safety/audit) | **Body full** (§§1–19); Appendices A–C unread |
+| Guide §4.10 | Complete read (with §§4.6, 4.9 already complete) |
+| IDR-039, IDR-040, IDR-030, IDR-034 | Not started — carried forward |
+
+F-18's qualifications are carried into the consolidated list below and not restated further.
+
+### 2. Security review — IDR-038 against Guide §§4.9/4.10 and the owning leaves
+
+Method: each IDR-038 recommendation was classified as either a safeguard the Goal/Guide/standards actually require, or a mechanism the research proposed to realise it. Only the former can be "missing".
+
+**Required safeguards — present in the Guide and leaves (no finding):**
+- Accountability committed with the decision: `glaux-server-implementation-guide.md:501` ("commits resource state… audit information… in one transaction") and `glaux-server-implementation-guide.md:600` ("committed write/command accountability cannot depend on [diagnostic logs]"). This is fail-closed by construction — IDR-038 §11.5's fail-closed rule is satisfied without a separate audit service.
+- Recheck immediately before dispatch and exactly one dispatch under concurrency: `glaux-server-implementation-guide.md:580`; Roadmap 5.2.4/#165 Done text ("Concurrent workers produce one admitted dispatch; revoked authority, changed contracts and elapsed execution deadlines cannot bypass checks"). IDR-038's single-use ticket/fence (§9.4) is one way to implement this, not a requirement.
+- Deny by default; no allow on policy-service failure: `glaux-server-implementation-guide.md:596`; #22 acceptance text.
+- Protected discovery of command capabilities/schemas: `glaux-server-implementation-guide.md:598`.
+- Submission permission separate from status/result reporting authority; submitter cannot impersonate `sender`: `glaux-server-implementation-guide.md:574`, L596.
+- Fail-safe when token verification is unavailable (cached issuer keys, bounded refresh): L594.
+
+**Optional research mechanisms — not adopted, and not missing requirements:** `CommandAuthorityGrant` and `ControlAuthorityLease` with exclusive/coordinated modes (IDR-038 §§6.1, 6.3; upstream #58 remains open, and the Guide places interlocks with device adapters at L580); approval/override decision records (§6.4); the dispatch-ticket encoding (§9.4); signed DDIL authorization bundles and command operating classes (§13); emergency stop modelled as its own command (§8.4). Guide §12.2 declines a "universal policy or trust engine" deliberately.
+
+**Effect on existing findings:** F-03 is unchanged (Low–Medium). IDR-038 §6.1 shows research had an action vocabulary; the residual gap remains that the Guide does not name the minimal actions/scope units the #22 matrix must cover, so the matrix rows become de facto policy. Approval/override/lease actions are optional and outside F-03.
+
+**Carried to Pass 4 (scenario, not a finding):** a disconnected node whose cached issuer keys expire denies all tasking (fail-safe); whether that consequence is documented for DDIL deployments needs Guide §4.11 and its owning issues read first.
+
+### 3. Cumulative record
+
+- **Findings:** F-01 Med; F-02 High; F-03 Low–Med; F-04 Low; F-05 Low; F-06 withdrawn; F-07 Med; F-08 Low–Med; F-09 Low; F-10 Low; F-11 Med; F-12 Low; F-13 Low (input-policy option unapproved); F-14 Low; F-15 Low–Med; F-16 withdrawn; F-17 Low editorial; F-18 Low — carried with three qualifications: (i) schema `readOnly`/`writeOnly` annotations constrain ownership (`live` server-derived, `async` client-set) but do not define how `live` is derived; (ii) the Guide must state separate outcomes for `live=false` vs `live=null`, and for Command vs Feasibility POST, with the research's `409` treated as a proposal; (iii) runner tests must encode whichever behaviour is selected.
+- **Full reads:** Guide (incl. §§4.3, 4.6, 4.9, 4.10, 6.4 complete), Roadmap, Goal, CONTRIBUTING, issue template, final report, register v1.16, IDR-008 (bar §16–17), IDR-011, IDR-029, IDR-031, IDR-036, IDR-037 (bar Appendices A–D), IDR-038 (bar Appendices A–C), IDR-050, IDR-052, OGC 23-001 body + Annex A, tagged Part 2 Clause 9 source, pinned `controlStream.json`, overall IDR plan Rules 1–10. Issues: #3, #19, #22, #56, #71, #72, #104, #156, #163, #164, #168, #174.
+- **Partial:** IDR-006 §13; IDR-007 §13; IDR-010 link sections; IDR-017 §9.1; IDR-039 §1; IDR-044 §22.2.
+- **Owed full reads (carried forward):** IDR-039, IDR-039A, IDR-040, IDR-041, IDR-055; IDR-030, IDR-034; IDR-042, IDR-043; appendices of IDR-037/038; IDR-008 §16–17.
+- **Owed checks:** Pass 2 standards backlog (SWE `quality`; `recordsAsArrays`; Features Part 3/CQL2 identifiers + `cql2.json`; 23-000 class identifiers; remaining IDR-011 §14.3 rows; Part 2 A.1 inheritance); F-13 extension-rule examination.
+- **Unexamined:** ~50 other report bodies; 69 IDR Plans; Part 2 HTML beyond targeted clauses; 274 issue bodies.
+
+### 4. Next iteration (on "proceed")
+
+1. IDR-039 and IDR-040 full reads against Guide §4.10 (now complete) and the 1.4.x leaves (#18–#23), applying the required-vs-optional distinction.
+2. IDR-030 and IDR-034 as budget allows.
+3. Then IDR-039A/041/055 and IDR-042/043 (with Guide §4.11 and owning issues), feeding Pass 4.
+
+Pausing. Say "proceed" to continue.
+
+Created 7 todos

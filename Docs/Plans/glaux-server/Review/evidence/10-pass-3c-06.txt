@@ -1,0 +1,71 @@
+Updated todo list
+
+
+
+Fetched https://raw.githubusercontent.com/opengeospatial/ogcapi-connected-systems/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2/api/part2/openapi/schemas/json/controlStream.json
+
+Read , lines 402 to 427
+
+
+
+Fetched https://raw.githubusercontent.com/opengeospatial/ogcapi-connected-systems/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2/api/part2/standard/sections/clause_9_requirements_class_controlstreams.adoc
+
+Searched for regex `^## ` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-038-command-authorization-safety-and-audit-strategy-report.md`), 25 results
+
+Read , lines 63 to 320
+
+Updated memory file 
+
+## Pass 3c — iteration 6 report (read-only; nothing edited, no issues or upstream filings)
+
+### 1. F-18 — primary-source checks completed; finding narrowed
+
+**Ownership is specified; my earlier statement is withdrawn.** The pinned `controlStream.json` (tag `8e03b23…`, `api/part2/openapi/schemas/json/`) distinguishes the two fields:
+- `live`: `oneOf [null, {boolean, readOnly: true}]`, description "Flag indicating if the command channel can currently accept commands", listed in `required` — server-derived and nullable.
+- `async`: plain `boolean`, no `readOnly`, listed in `required` — client-supplied.
+- `schema`: `writeOnly`; `system@link`, `controlledProperties`, `issueTime`, `executionTime`: `readOnly` (several nullable).
+
+`glaux-server-implementation-guide.md:418` governs exactly this: "Maintain explicit request projections for server-generated/read-only members and response projections for write-only members… Clients need not supply generated IDs, server-generated parent links, format lists or derived summaries." Issue #156 (5.1.1) requires "generated stream metadata", forbids "generated-field input requirements", and its verification submits "one write-only schema without generated ID, parent links or format lists". So `live` is Glaux-derived and `async` is client-set; nothing is unspecified there.
+
+**Published requirement vs research policy.** The tagged Clause 9 attribute table defines `live` as "Indicates whether the control stream currently accepts commands" (Required) and `async` as "Indicates whether commands are processed asynchronously" (Required); the clause prose says a ControlStream "can be used to provide access to real-time commands only, archived commands only, or both", disambiguated by its metadata. No published requirement states what a POST receives when `live` is `false`. The `409`-before-creation rule in IDR-037 §6.3 is labelled [N/E/P] — a proposed Glaux policy, not a CSAPI obligation.
+
+**Narrow remaining question (Low; unresolved question, owner decision).** Guide §§4.9/6.4 and the owning leaves #163/#164 do not say what happens on a Command POST when Glaux's own `live` value is `false` (or `null`):
+- **Command:** rejection before creation is well-motivated — the stream advertises that it does not currently accept commands, and admitting one contradicts the server's own published metadata. Options are the research's `409` or a documented alternative; either must leave no resource or work.
+- **Feasibility:** needs its own justification. `live` is defined only for command acceptance; §11 does not tie feasibility to it. Analysing a future command against a currently non-accepting stream can be legitimate planning if an evaluator exists, or meaningless for an archive-only stream with no executor. IDR-037 applies `409` to both for simplicity; the Guide should choose explicitly rather than inherit that by default.
+- **Adjacent sub-point:** the rule that derives `live` (when it is `false`, when `null`) is not stated; the runner needs it to construct a non-live fixture.
+- **Not implied:** IDR-036's internal stream states (`draft/active/suspended/…`) are not adopted by the Guide and are not part of this finding.
+
+**Correction:** one sentence in §4.9 (or a §6.4 table row) stating the Command outcome, the Feasibility outcome, and the `live` derivation; add the case to #163's Done text. **Test:** non-live fixture → documented outcome with zero Command/status/work rows; `live=null` → documented outcome. **Timing:** before #163.
+
+### 2. Coverage this iteration
+
+| Item | Result |
+|---|---|
+| Pinned `controlStream.json`; tagged Clause 9 source (ControlStreams/Commands/Status/Result) | Read for F-18 |
+| Guide §4.3 | Complete re-read |
+| IDR-038 (command authorization/safety/audit) | **Partial:** §§1–7 (L63–320) read; §§8–19 and Appendices A–C unread — carried forward |
+| IDR-030, IDR-034 | Not started — carried forward |
+
+### 3. Observations from IDR-038 §§1–7 (no new finding assigned — full-section/owning-issue rule not yet satisfied)
+
+- IDR-038 supplies an enumerated command action vocabulary (`command.submit/read/update/cancel/approve/override/dispatch`, `status.append/read`, `result.append/read`), scoped `CommandAuthorityGrant`, `ControlAuthorityLease` modes (`exclusive`/`coordinated`/`concurrent-safe`, addressing open upstream #58), a versioned safety-rule engine with `ALLOW/DENY/REQUIRE_APPROVAL/REQUIRE_FRESH_EVIDENCE`, a single-use pre-dispatch ticket, and fail-closed behaviour when command audit cannot commit. Guide §12.2 deliberately declines a "universal policy or trust engine"; §4.9 keeps the principles (recheck before dispatch; separate submit vs report permissions). This **strengthens F-03**'s evidence (research provides the action vocabulary §4.10 lacks) without changing its severity.
+- To check in the security iteration after reading Guide §4.10 in full and the owning 1.4.x/5.x issues: audit fail-closed at command admission/dispatch; whether any control-exclusivity mode is specified; pre-dispatch fencing.
+
+### 4. Cumulative record
+
+- **Findings:** F-01 Med; F-02 High; F-03 Low–Med (reinforced); F-04 Low; F-05 Low; F-06 withdrawn; F-07 Med; F-08 Low–Med; F-09 Low; F-10 Low; F-11 Med; F-12 Low; F-13 Low (input-policy option unapproved); F-14 Low; F-15 Low–Med; F-16 withdrawn; F-17 Low editorial; **F-18 Low (narrowed to non-live admission and `live` derivation)**.
+- **Full reads:** Guide (incl. §§4.3, 4.6, 4.9, 6.4 complete), Roadmap, Goal, CONTRIBUTING, issue template, final report, register v1.16, IDR-008 (bar §16–17), IDR-011, IDR-029, IDR-031, IDR-036, IDR-037 (bar Appendices A–D), IDR-050, IDR-052, OGC 23-001 body + Annex A, tagged Part 2 Clause 9 source, pinned `controlStream.json`, overall IDR plan Rules 1–10. Issues: #3, #19, #22, #56, #71, #72, #104, #156, #163, #164, #168, #174.
+- **Partial:** IDR-038 §§1–7; IDR-006 §13; IDR-007 §13; IDR-010 link sections; IDR-017 §9.1; IDR-039 §1; IDR-044 §22.2.
+- **Owed full reads (carried forward):** IDR-038 §§8–19 + appendices; IDR-030, IDR-034; IDR-039, IDR-039A, IDR-040, IDR-041, IDR-055; IDR-042, IDR-043; IDR-037 Appendices A–D; IDR-008 §16–17.
+- **Owed checks:** Pass 2 standards backlog (SWE `quality`; `recordsAsArrays`; Features Part 3/CQL2 identifiers + `cql2.json`; 23-000 class identifiers; remaining IDR-011 §14.3 rows; Part 2 A.1 inheritance); F-13 extension-rule examination.
+- **Unexamined:** ~51 other report bodies; 69 IDR Plans; Part 2 HTML beyond targeted clauses; 274 issue bodies.
+
+### 5. Next iteration (on "proceed")
+
+1. Finish IDR-038 (§§8–19, appendices), then Guide §4.10 in full and the owning 1.4.x/5.x issues before assessing the three security observations above.
+2. IDR-039 and IDR-040 full reads; IDR-030/034 as budget allows.
+3. Then IDR-039A/041/055 and IDR-042/043, feeding Pass 4.
+
+Pausing. Say "proceed" to continue.
+
+Created 3 todos

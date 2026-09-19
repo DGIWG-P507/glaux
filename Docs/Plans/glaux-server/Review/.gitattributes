@@ -1,0 +1,3 @@
+# Preserve archived transcript bytes, including historical whitespace.
+evidence/*.txt -text -whitespace
+evidence/*.md -text -whitespace

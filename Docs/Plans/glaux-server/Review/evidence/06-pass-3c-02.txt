@@ -1,0 +1,79 @@
+Updated todo list
+
+
+
+Fetched 2 resources
+
+Searched for regex `unknown (JSON )?member|additional ?propert|unrecogni[sz]ed|extra member|unknown propert|undeclared member|unknown field|silently (ignore|drop)` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 5 results
+
+Searched for regex `foreign member|extension member|permitted extension|unlisted member|members? (not|outside) (the|its) schema|strict(ly)? (parse|parsing|validation)|reject.{0,40}member|preserv.{0,40}member` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 3 results
+
+Searched for files matching `**/IDR Reports/idr-srv-05[2-7]*.md`, 5 matches
+
+Read , lines 1 to 280
+
+Read , lines 280 to 560
+
+Read , lines 560 to 850
+
+Read , lines 850 to 920
+
+Created memory file 
+
+## Pass 3c — iteration 2 report (read-only; nothing edited, no issues or upstream filings)
+
+### 1. Coverage this iteration
+
+| Item | Result |
+|---|---|
+| IDR-052 full read (owed) | **Completed** (§§1–20; §21 is a reference list) |
+| Issues #71 (2.5.3) and #72 (2.5.4) | **Full bodies read** via API |
+| IDR-008 §16–17 | Still unread (validation checklist, references) |
+| Owed transaction/write/command/security full reads | **Not started this iteration** — carried forward explicitly (list in §5); no summaries substituted |
+| Pass 2 standards backlog (6 items) | Not advanced; carried forward |
+
+### 2. F-14 reassessed
+
+**(a) Root `parent` filter — accounting for #71/#72.** Issue #71 says: "Independently tabulate expected IDs from Part 1 hierarchy/filter requirements, Guide §§4.2/6.2–6.3 **and IDR-011's root-parent interpretation**… Compare root defaults, **explicit root parent**, nested direct children and recursive descendants; direct parent remains direct with recursion enabled… demonstrate that… **an ignored parent predicate is detected**." Issue #72 requires exact IDs for "root/nested defaults, explicit parent and applicable System selectors". So the leaves already carry P-011-05 and demand a known-hit assertion, which closes the vacuous-pass hazard (ATS A.47/A.52 pass on an empty set) at the leaf level. What remains is documentation consistency: the same issues state that "later Guide decisions control" over IDR-011 project choices, yet `glaux-server-implementation-guide.md:735` states only the plain top-level default and §13 has no row, so the Guide and the leaves rely on different documents for the expected answer. **Revised:** Low, optional improvement — one §13 row citing P-011-05 (Req 11 B/21 B vs Req 42 B/47 B); no change to #71/#72. Separately, the ATS overlay used by the runner leaves should record that A.47/A.52 need a non-empty known-hit check (IDR-011 §14.3 corrects only the ID comparison).
+
+**(b) `deployedSystems` link `href` on write — three distinct things.**
+- **Required:** accept a UID-form `href` (URI/URN) for locally stored Systems in GeoJSON `deployedSystems@link[]` and SensorML `deployedSystems[]` on create/replace/patch, resolving by UID. Basis: Table 43/52 footnote "the link url (href property) shall be set to the uniqueID of the system to be linked", incorporated by Req 84 and Req 98 ("SHALL implement the mappings specified in Table 42 and Table 43" / "Table 51 and Table 52"); register `ogc-connected-systems-upstream-history-register.md:146` (closed via PR #92). A standards-following client sends exactly this form; external systems keep an external URL.
+- **Optional compatibility (project choice to record):** also accepting a canonical local URL `href` (the form shown in the published *read* example and likely from peers). If adopted, it must resolve to the same identity; if not, the rejection must be documented.
+- **Optional response metadata:** emitting `uid` beside `href` in returned link objects. The shared Link schema permits `uid`; the published example shows it; IDR-017 §9.1 treats `uid` as a hint, never the authority.
+- **Gap:** the Guide states none of the three (no `deployedSystems`, `uniqueID` or href-form text). **Severity Low; type:** confirmed documentation gap for the required item, unresolved question for the two optional items. **Correction:** one §4.6/§13 sentence covering all three. **Test:** POST/PUT Deployment with UID-form href → success and read-back resolves to the System; URL-form and unknown-UID variants → the documented outcome. **Timing:** before the first Deployment create/replace leaf.
+
+**(c) Default observation order.** Treated as settled research: ascending `(resultTime, ResourceId)` per accepted P-011-06 and IDR-027 L77/§8.3. I found no grounds to revisit: 014A–G recorded no recommendation to change (014a notes OSH offers optional `order=desc`; 014c notes pygeoapi ascending by phenomenonTime), and newest-first access is served by `resultTime=latest` or a time window. Remaining gap is only that `glaux-server-implementation-guide.md:444` omits the direction; paging fixtures need it. **Low; optional improvement:** add "ascending" to §4.4.
+
+### 3. F-13 restated with the two problems separated
+
+1. **Example/schema discrepancy (source defect).** Normative Req 97 `/req/json/observation-schema` requires validity against `observation.json`, whose mapped member is `samplingFeature@id`. The published Clause 16.1.5 example and tagged `obs-link-inline-image.json` use `foi@id`, which is informative text and merely schema-permitted as an extra member. Schema controls; the example is defective and unrecorded in the corpus/Guide. Whether to report it upstream is the owner's decision.
+2. **Input-handling policy (separately justified).** The Guide has no general rule for unknown/foreign members in inbound resource JSON — `glaux-server-implementation-guide.md:406` ("preserve permitted extensions without allowing them to replace… validated relationships") and `glaux-server-implementation-guide.md:410` ("permissive acceptance of an unknown member is not validation") are the nearest statements. So the fate of `foi@id` on POST — preserved as an extension (silent loss of the sampling-feature association), ignored, or rejected — is currently undetermined. This decision stands on its own and should be made explicitly; my recommendation is to reject or at least warn on `@id`/`@link`-suffixed members that are not mapped members, because they mimic reserved association syntax.
+3. **Test isolation.** Baseline: a valid observation with `samplingFeature@id` and a plain result → success and the association is present. Variant: identical except `foi@id` replaces `samplingFeature@id` → the policy outcome, with any problem detail naming `foi@id`. Control: the same published example's `data:` URL result (register #83) is tested separately so a rejection cannot be misattributed to the field name. Never emit `foi@id`.
+
+### 4. IDR-052 (now fully read) checked against the Guide
+
+- **Runner independence wording.** IDR-052 §7.1 ("standalone conformance harness retains independent models and dependencies"), §6.1 ("independent wire models/oracle") and §17.2 align with IDR-050 §6.3/§16.1; the Guide's "sole oracle" phrasing is the softest of the three. Supports F-12 as re-scoped; no change to severity.
+- **Nextest mandatory (IDR-052 §9.2) vs Guide §8.1.1 "optional".** An explicit, recorded departure in the Guide — not a finding, consistent with your instruction.
+- **Nine-crate layout (§7.1) vs three crates.** Explicit departure (Guide §12.2 "eight-package skeleton") — not a finding.
+- **Trace catalog / stable assertion IDs (§8.4, §17.1) and release-closure proof (§17.4 #12).** Not adopted by the Guide (§7.3 "no dedicated evidence platform"). The open question — how requirement→test closure and adapted-vs-original ATS outcomes are evidenced for `/conformance` claims — stays with Pass 5.
+- **§13.4 fail-closed database tests; CI never uses a developer's preexisting database.** To check against leaf 1.1.3/#5 in Pass 6.
+- **§5.4 anti-pattern "requirement IDs encoded only in function names".** Pass 5 input.
+
+### 5. Cumulative record
+
+- **Findings:** F-01 Med; F-02 High; F-03 Low–Med; F-04 Low; F-05 Low; F-06 withdrawn; F-07 Med (a confirmed / b provisional); F-08 Low–Med; F-09 Low; F-10 Low; F-11 Med; F-12 Low; F-13 Low (two separated problems); F-14 Low (a mitigated by #71/#72 — doc consistency only; b required/optional split; c documentation only).
+- **Full reads:** Guide, Roadmap, Goal, CONTRIBUTING, issue template, final report, register v1.16, IDR-050, IDR-011, IDR-052, IDR-008 (bar §16–17), OGC 23-001 body + Annex A. Issues: #3, #19, #22, #56, #71, #72.
+- **Partial:** IDR-006 §13; IDR-007 §13; IDR-010 link sections; IDR-017 §9.1; IDR-029 §1/§19.2; IDR-031/036/039 §1; IDR-044 §22.2; 014a/014c grep hits.
+- **Owed full reads (carried forward, to be completed in Pass 3 or Pass 4, not substituted):** write/transaction — IDR-029, IDR-030, IDR-031, IDR-034; command — IDR-036, IDR-037, IDR-038; security — IDR-039, IDR-039A, IDR-040, IDR-041, IDR-055; DDIL/sync — IDR-042, IDR-043. Also IDR-008 §16–17.
+- **Owed standards checks (Pass 2 backlog):** SWE Common 3.0 `quality`; `recordsAsArrays`/`vectorsAsArrays`; Features Part 3/CQL2 identifiers and `cql2.json` `minItems`; 23-000 defines the four `sensorML/3.0` classes; remaining IDR-011 §14.3 rows; Part 2 A.1 inheritance effect.
+- **Unexamined:** ~55 other report bodies; all 73 IDR Plans; Part 2 HTML beyond targeted clauses; 280 issue bodies.
+
+### 6. Next iteration (on "proceed")
+
+1. Full reads IDR-029, IDR-030, IDR-031, IDR-034 (write/transaction path), checking each consequential conclusion against Guide §§4.6, 6.4 and the Features Part 4 pin; note anything for F-14(b).
+2. If budget remains: IDR-036 (command lifecycle) begun.
+3. Then command (036–038), security (039–041, 055), DDIL/sync (042–043) reads, feeding Pass 4 scenarios directly.
+
+Pausing. Say "proceed" to continue.
+
+Created 5 todos

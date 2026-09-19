@@ -1,0 +1,120 @@
+Compacted conversation
+
+Updated todo list
+
+Searched for regex `^#{1,3} ` (`**/Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-041-audit-logging-and-accountability-strategy-report.md`), 71 results
+
+Read , lines 1 to 130
+
+Read , lines 130 to 300
+
+Read , lines 300 to 460
+
+Read , lines 460 to 612
+
+Read , lines 612 to 820
+
+Searched for regex `audit|journal|spool|hash-link|hash chain|checkpoint|tamper|append-only|append only|accountab` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 28 results
+
+Read , lines 590 to 613
+
+Searched for regex `audit|accountab|tamper|integrity|non-repudiation|evidence` (`**/Docs/Plans/glaux-server/glaux-server-goal-and-definition.md`), 6 results
+
+Searched for regex `^### 5\.7|^### 5\.6|^### 5\.8|who did what|record.*(action|change)|traceab|authoriz` (`**/Docs/Plans/glaux-server/glaux-server-goal-and-definition.md`), 19 results
+
+Searched for regex `database role|db role|least.privilege|least privilege|GRANT|superuser|migration|UPDATE|DELETE.*row|immutable|before (the )?(adapter|dispatch|device)|prior to dispatch|dispatch record|attempt record` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 55 results
+
+Read , lines 513 to 533
+
+Read , lines 651 to 672
+
+Searched for regex `audit|denial|accountab` (`**/Docs/Plans/glaux-server/glaux-server-roadmap.md`), 15 results
+
+Read , lines 118 to 160
+
+
+
+Fetched https://api.github.com/repos/DGIWG-P507/glaux-server/issues/15
+
+Searched for regex `denied|rejected attempt|record(s|ed|ing)? (the )?(deni|reject)|unbounded` (`**/Docs/Plans/glaux-server/glaux-server-roadmap.md`), 51 results
+
+
+
+Fetched https://api.github.com/repos/DGIWG-P507/glaux-server/issues/22
+
+Searched for regex `^\s+- \*\*9\.\d+\.\d+ .*(security|access|authoriz|regression|denied|policy|threat|penetration|dependency)` (`**/Docs/Plans/glaux-server/glaux-server-roadmap.md`), 11 results
+
+Searched for regex `^### 12\.2|^## 12|not adopted|deliberately not|non-adoption` (`**/Docs/Plans/glaux-server/glaux-server-implementation-guide.md`), 2 results
+
+Read , lines 1090 to 1130
+
+Read , lines 691 to 714
+
+Updated memory file 
+
+## Pass 3c — iteration 10 report (read-only; nothing edited, no issues or upstream filings)
+
+### 1. Coverage this iteration
+
+| Item | Result |
+|---|---|
+| IDR-041 (audit/accountability) | Read in full, §§1–20 (L1–820) |
+| Guide audit text | §4.10 re-read L590–612; §4.7 L513–533; §4.12 L653–670; §6.1 table L691–713; §12.2 L1090–1118; grep of every `audit`/`journal`/`spool`/`checkpoint`/`tamper` occurrence |
+| Owning leaves/issues | Roadmap 1.3.x/1.4.x (L123–153); issues #15 (1.3.3) and #22 (1.4.5) read in full; Roadmap grep for `denial|denied|audit` across all phases |
+| Goal | grep for audit/accountability/integrity terms (§5.7 L129–137) |
+| IDR-042/043 + Guide §4.11, IDR-039A, IDR-055, IDR-040 §§9–21 | Not started — the IDR-041 read and its owning-issue checks consumed the budget; carried forward, not substituted |
+
+### 2. Corrections to iteration 9
+
+1. **Failure spool.** I wrote that Guide L600 "matches IDR-041's minimum slice (atomic journal append; independent failure spool)". Wrong: the Guide specifies atomic audit commit only (`glaux-server-implementation-guide.md:501`, `glaux-server-implementation-guide.md:602`). It contains no independent audit path, spool, gap record or failure-class table. Its only non-transactional audit statement is "Record relevant denials safely without turning every denied request into unbounded database load."
+2. **Integrity layers.** I wrote that hash-chain/checkpoint layers were "conditional even in the research". Wrong: IDR-041 §11.1 states "All profiles implement Layers 1–3", and Layer 3 is "deterministic canonical event encoding, local sequence, previous-event hash and explicit segment/checkpoint records" — required in every research profile, including local development (§6.3 "Local chain/checkpoint self-test"). Only Layer 4 (separated MAC/signature) is expose-and-declare, Layer 5 (independent custody) is deployment-selected, and WORM / per-record signatures are conditional (§19.2).
+3. **Line anchors.** My §4.10 citations in iterations 7–9 were off by one to two lines. Correct anchors: L594 JWT; L596 development identities/TLS/CORS; L598 authorize-before-counts; L600 schema-true projection; **L602 audit**; L604 production context; L606 uploader/creator roles; L610 labeling. Cumulative notes now use these.
+
+### 3. IDR-041 — what the research recommended versus what the Guide adopted
+
+**Adopted (design text present):**
+- Audit as a durable server-owned record, not filtered telemetry: L602 "Diagnostic logs may be sampled; committed write/command accountability cannot depend on them"; `glaux-server-implementation-guide.md:527` "command evidence cannot be reconstructed from sampled logs". (IDR-041 §1, §19.2.)
+- E3 — minimum audit in the same transaction as state/revision/outbox: L501; Roadmap 1.3.3; #15 requires injected-failure rollback and "supplied actor/source rather than only record counts".
+- E4 — durable pre-effect evidence for commands: `glaux-server-implementation-guide.md:574` "Persist immutable command intent/revisions and an adapter-work record before dispatch"; `glaux-server-implementation-guide.md:845`; #163.
+- Minimization: no secrets, tokens, raw sensitive payloads or protected policy reasons (L602). Field floor: verified actor/source, operation, target/revision, time, outcome, correlation identifier (L602; §6.1 `glaux-server-implementation-guide.md:709`).
+- Role separation (uploader ≠ creator; delegation verification state retained): L606. Private audit records are not CSAPI families: `glaux-server-implementation-guide.md:713`. Exchange resolution audited with the revision: `glaux-server-implementation-guide.md:641`.
+- Claim language: "A mandatory tamper-proof ledger… is not proposed" (L602) is consistent with IDR-041 §11.3/§19.2, which themselves reject "tamper-proof" and "non-repudiation".
+
+**Not adopted (Guide silent):** Layer 2 ordinary prevention (separate schema, append-only interface, writer role without UPDATE/DELETE); Layer 3 local detection (canonical bytes, per-stream sequence, previous-hash, checkpoints); independent E2 path/durable spool/gap events/reserved capacity; audit search/review/annotation/export and audit-of-audit; audit retention class; taxonomy/schema versioning of audit records; DDIL node/epoch/clock-quality fields. The §12.2 deliberate-non-adoption list (`glaux-server-implementation-guide.md:1118`) does not mention any of these; the only recorded decision is the "tamper-proof ledger" sentence, which declines a stronger claim than the accepted research actually made.
+
+Applying the standing rule: none of these is automatically a missing requirement. The Goal (§5.7) requires "explicit treatment of… access governance, failure semantics" and "governance of authorized command interactions"; it does not require tamper-evidence or any audit architecture. The test I applied is whether a difference leaves the Guide unable to support its **own** accountability claims.
+
+### 4. Findings from this iteration
+
+**F-19 — Audit record has no stated immutability or assurance level.** Credible risk + documentation gap; Low–Medium.
+- *Evidence:* §6.1 row "Server audit" (`glaux-server-implementation-guide.md:709`) has no update rule, whereas sibling rows do ("Immutable source bytes" L702; "Changes create accountable revisions" L698; migrations "immutable SQL files" L529). §4.10 L602 says "durable" only. §4.7 does not say whether a configured retention policy may remove audit rows. #15 verifies that audit facts are written and roll back, not that they cannot later be changed. IDR-041 §11.1 (Layers 1–3 in all profiles), §13.2 (writer role without update/delete) and §19.1 items 3 and 6 were accepted 15 Sep 2026; the Guide neither adopts nor records declining them.
+- *Failure scenario:* the serving database role that inserts audit rows in the shared transaction will, by default, also hold UPDATE/DELETE on them; a defect, injection (which the Guide tests for at L612), compromised application credentials, or a retention job can alter or remove evidence with no trace, while operators read "durable audit" as stronger than it is.
+- *Contrary evidence checked:* the Guide's immutability for revisions is also application-level, so this is consistent treatment if stated; the "tamper-proof ledger" disclaimer is honest about what is not provided; Goal §5.7 does not mandate integrity protection.
+- *Smallest correction:* one sentence in §4.10 or the §6.1 row: audit records are append-only through every application path; the serving role should not hold UPDATE/DELETE on audit tables where the deployment can grant separately; state whether retention applies to audit rows. Record in §12.2/§13 that IDR-041's hash-linked streams/checkpoints are deferred, with the resulting assurance statement (durability and atomicity, not tamper-evidence).
+- *Resolving test:* in 1.3.3/#15, an attempted update/delete of an audit row through the application/serving role fails and leaves the row unchanged.
+- *Timing:* before #15 merges (the audit table migration is where grants and rules are set). Adopting Layer 3 remains an owner option, not a correction.
+
+**F-20 — "Record relevant denials safely" has no owner, scope, or failure behaviour.** Unresolved question / coverage gap; Low.
+- *Evidence:* Guide L602. Roadmap grep for `denial|denied|audit` finds no leaf whose Done criterion requires a denial record; #22's verification text says "with allowance for safe denial auditing" (tolerates, does not require); #163 requires only that denied targets "leave no admitted work". "Relevant" is undefined; behaviour when the denial write fails is unstated (IDR-041 §12.1 E2: the denial stands, evidence goes through an independent path, otherwise a declared gap).
+- *Failure scenario:* an authenticated caller's unauthorized command or cross-source publish attempt leaves no evidence; or an implementer records every anonymous 401/404 and creates the load the Guide warns against.
+- *Contrary evidence:* the Guide does not claim denial-evidence completeness, and the denial itself is fail-closed regardless.
+- *Smallest correction:* define "relevant" (authenticated caller denied a mutation, command or subscription; aggregate repeated authentication failures; no per-request storage for anonymous read denials), name the owning leaf, and state that the denial response never depends on the record succeeding.
+- *Timing:* before #22 — can be combined with the F-03 correction, which touches the same section and issue.
+
+**No finding:** offline audit continuity (IDR-041 §15) is inherent in the single-store design — the database is on the node; node/epoch/clock-quality audit fields are research-optional. E4 for commands is satisfied by L574/L845.
+
+### 5. Cumulative record
+
+- **Findings:** F-01 Med; F-02 High; F-03 Low–Med; F-04 Low; F-05 Low; F-06 withdrawn; F-07 Med; F-08 Low–Med; F-09 Low; F-10 Low; F-11 Med; F-12 Low; F-13 Low; F-14 Low; F-15 Low–Med; F-16 withdrawn; F-17 Low editorial; F-18 Low; **F-19 Low–Med (new); F-20 Low (new)**.
+- **Full reads add:** IDR-041; issues #15, #22 (re-read). Partial/owed lists otherwise unchanged: IDR-040 §§9–21; IDR-039A; IDR-055; IDR-042/043 with Guide §4.11 and owning issues; IDR-030, IDR-034; IDR-039 §7/§§21–22; IDR-037/038 appendices; IDR-008 §16–17; Pass 2 standards backlog; F-13 extension-rule check.
+- **Standing qualifications carried:** documented safeguards ≠ executed verification; single admitted dispatch ≠ exactly-once physical effect; offline authentication follows the #21 bounded key-cache policy; F-18's three qualifications; F-19/F-20 are Guide-internal consistency findings, not imports of research mechanisms.
+
+### 6. Next iteration (on "proceed")
+
+1. IDR-042 and IDR-043 with Guide §4.11 and the Phase 8 owning issues (closes the DDIL-documentation residual).
+2. IDR-039A, IDR-055; then IDR-040 §§9–21.
+3. IDR-030/034 as budget allows, then Pass 4 scenarios.
+
+Pausing. Say "proceed" to continue.
+
+Created 4 todos

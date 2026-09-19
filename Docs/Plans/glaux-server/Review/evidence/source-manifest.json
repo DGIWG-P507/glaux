@@ -1,0 +1,157 @@
+{
+  "snapshot_date": "2026-09-19",
+  "purpose": "Archived user-supplied review reports and one superseded instruction. Hashes establish source/copy integrity, not correctness of claims. Archived instructions are historical evidence, not active instructions.",
+  "path_base": "Review/evidence",
+  "privacy_transformations": [
+    "Replace the local workspace root with <workspace>.",
+    "Replace the personal Copilot cache/session location with <local-copilot-session-cache>.",
+    "Replace local attachment paths with <local-attachment>/pasted-text.txt.",
+    "Path-normalized text files use LF line endings and a terminal newline; logical line positions and substantive review text are preserved. Unchanged files retain original bytes."
+  ],
+  "sources": [
+    {
+      "name": "01-pass-1.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "D5373B0C20DEA1C2E7EB7F2D4E65310E733A82F8B7759BC3CD81B51C146329A0",
+      "original_bytes": 17627,
+      "published_sha256": "F96AD94EC21DCE6007BBC1AC00AF232B51469FFA01571AA3A23F2AE7B9D4AABE",
+      "published_bytes": 16884,
+      "publication_change": "local_paths_normalized"
+    },
+    {
+      "name": "02-pass-2.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "E789F76B11B0CFC51461E6CEB9B5AF11FE816FBB59F74B960159E830BF286C19",
+      "original_bytes": 14390,
+      "published_sha256": "5E5BD304876E1369BFFC0202CB31AC05A2E83D519A5086DC38A2172B894F66C4",
+      "published_bytes": 14241,
+      "publication_change": "local_paths_normalized"
+    },
+    {
+      "name": "03-pass-3a.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "1D7793AA13E5FE76C848B494E02ED3A1A79822C5B658CA2EB4BE175994EDF723",
+      "original_bytes": 19778,
+      "published_sha256": "73FEB4336A6DF6D757BA2E1DA59C9E59DC8D782C196367049D731026C4D88474",
+      "published_bytes": 19704,
+      "publication_change": "local_paths_normalized"
+    },
+    {
+      "name": "04-pass-3b.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "B8297B4697A9602455F35E25DC9C90C3DFFD547830BC2F13EA2B1DEBDA160870",
+      "original_bytes": 11132,
+      "published_sha256": "B8297B4697A9602455F35E25DC9C90C3DFFD547830BC2F13EA2B1DEBDA160870",
+      "published_bytes": 11132,
+      "publication_change": "none_byte_identical"
+    },
+    {
+      "name": "05-pass-3c-01.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "C9982722BAA4399C54A98F2B932F8B25F15343695B424FD8067EEBFDEDB346E2",
+      "original_bytes": 17068,
+      "published_sha256": "E06A86BEF089B69FAB81028BEDBA47CB2A4CF50A2AD8B7DC00B1C1EA41A63FCE",
+      "published_bytes": 16619,
+      "publication_change": "local_paths_normalized"
+    },
+    {
+      "name": "06-pass-3c-02.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "93FC3C73D205E7A02D3C7E0C89B5C53376888F3000F4C966DDC861C6013E3387",
+      "original_bytes": 9897,
+      "published_sha256": "93FC3C73D205E7A02D3C7E0C89B5C53376888F3000F4C966DDC861C6013E3387",
+      "published_bytes": 9897,
+      "publication_change": "none_byte_identical"
+    },
+    {
+      "name": "07-pass-3c-03.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "4090E356F54831D9B486B96723B1790B6BD8FB05BAF68DBCE11061255CF5D77F",
+      "original_bytes": 10166,
+      "published_sha256": "BE3A05F8E16DC5818F4D3C3A23480F20C1FF113FDB09B8406D42EA11D3457E2D",
+      "published_bytes": 10017,
+      "publication_change": "local_paths_normalized"
+    },
+    {
+      "name": "08-pass-3c-04.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "934C135C350592BFAA9606678BA7C3C68F4439BE016514D952CFB2675E87663C",
+      "original_bytes": 8286,
+      "published_sha256": "C5B2CD12EC6A13B0954F0D811D389DE4B0DAF4A8B1D61DD52ACF94AECDE359FD",
+      "published_bytes": 8212,
+      "publication_change": "local_paths_normalized"
+    },
+    {
+      "name": "09-pass-3c-05.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "F126B4E2CAE75BF3AF702FC37E57421CDE9ECED7D0DC1F88C680BAF83FF86631",
+      "original_bytes": 6920,
+      "published_sha256": "F126B4E2CAE75BF3AF702FC37E57421CDE9ECED7D0DC1F88C680BAF83FF86631",
+      "published_bytes": 6920,
+      "publication_change": "none_byte_identical"
+    },
+    {
+      "name": "10-pass-3c-06.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "2CC5C0EF5CD5DD2C1C5CFD679C09997B9B64A97F13D0547575493041BC45D828",
+      "original_bytes": 7587,
+      "published_sha256": "2CC5C0EF5CD5DD2C1C5CFD679C09997B9B64A97F13D0547575493041BC45D828",
+      "published_bytes": 7587,
+      "publication_change": "none_byte_identical"
+    },
+    {
+      "name": "11-pass-3c-07.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "205272AD29F991031CF478395328933FF4D87BA966DB4D9CDF9ABF954DB4B437",
+      "original_bytes": 5600,
+      "published_sha256": "205272AD29F991031CF478395328933FF4D87BA966DB4D9CDF9ABF954DB4B437",
+      "published_bytes": 5600,
+      "publication_change": "none_byte_identical"
+    },
+    {
+      "name": "12-pass-3c-08.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "262B990AE12DC9254CD27C041EE3E52691CEF51967E0794003BAA44953B94888",
+      "original_bytes": 6318,
+      "published_sha256": "262B990AE12DC9254CD27C041EE3E52691CEF51967E0794003BAA44953B94888",
+      "published_bytes": 6318,
+      "publication_change": "none_byte_identical"
+    },
+    {
+      "name": "13-pass-3c-09.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "A63C6B7D64445EF9AF0A3255BD8C2B535D0EB4C3EA85C56F2DE3328D7F453D22",
+      "original_bytes": 6195,
+      "published_sha256": "A63C6B7D64445EF9AF0A3255BD8C2B535D0EB4C3EA85C56F2DE3328D7F453D22",
+      "published_bytes": 6195,
+      "publication_change": "none_byte_identical"
+    },
+    {
+      "name": "14-pass-3c-10.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "5B004226D019C46D247D81CB00EA01435FE5992C1D4EBDE608B98988C4EA02CD",
+      "original_bytes": 12178,
+      "published_sha256": "5B004226D019C46D247D81CB00EA01435FE5992C1D4EBDE608B98988C4EA02CD",
+      "published_bytes": 12178,
+      "publication_change": "none_byte_identical"
+    },
+    {
+      "name": "15-pass-3c-11.txt",
+      "source_kind": "user_supplied_copilot_response",
+      "original_sha256": "DDCD1E01BD1FB186B81524CDAF972035F84C654C67A3D1C440A9E2BC267FD67B",
+      "original_bytes": 11149,
+      "published_sha256": "DDCD1E01BD1FB186B81524CDAF972035F84C654C67A3D1C440A9E2BC267FD67B",
+      "published_bytes": 11149,
+      "publication_change": "none_byte_identical"
+    },
+    {
+      "name": "16-superseded-resumption-brief.md",
+      "source_kind": "superseded_local_handoff",
+      "original_sha256": "43FBFB33C6CCBC80ABEDED7A50CE158F4B8C51A6C3888069C30EAD6C3592F097",
+      "original_bytes": 17684,
+      "published_sha256": "30834D849DD45FF7F1C9912ECFE05AE93919A4114A00469A73935DAD3B106F68",
+      "published_bytes": 17574,
+      "publication_change": "local_paths_normalized"
+    }
+  ]
+}
