@@ -1,9 +1,9 @@
 # Glaux Server Goal and Definition
-**Version:** 1.7<br>
-**Date:** 17 September 2026<br>
+**Version:** 1.8<br>
+**Date:** 19 September 2026<br>
 **Status:** Approved
 
-**Revision summary:** Records the project lead's approved scope additions of experimental static CSAPI Part 4 points, curves and surfaces, and bounded Features Part 3/CQL2 observation filtering. These are implementation deliverables, not compatibility placeholders. The full Parts 1 and 2 target, experimental Part 3 intent and existing ten-section structure are unchanged.
+**Revision summary:** Adds direct links from the Goal's capability sections to the paired explanations in Implementation Guide v1.3, showing which selected technologies and mechanisms fulfill each description. This is a navigation-only update authorized by the project lead; the approved Goal v1.7 requirements, scope, standards baseline and experimental boundaries are unchanged.
 
 ---
 
@@ -13,6 +13,8 @@ This document defines the goal, scope, and planning baseline for **Glaux Server*
 Glaux Server is intended to be a full-scope, open-source Rust reference implementation of OGC API - Connected Systems through which the Glaux software suite operationalizes the STANAG 4789 / AEP-4789 standards framework. Its resources and APIs shall support connected-system discovery, description, access, exchange, streaming, status, and tasking workflows across NATO, national, coalition, federated, and tactical environments.
 
 This document is not an implementation guide, roadmap, or software design specification. It establishes the goal and definition baseline from which those later artifacts shall be developed.
+
+**How will the server fulfill this Goal?** Read [Implementation Guide §1.1: How the implementation fulfills the Goal](glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal). It pairs the capability descriptions below with plain-English explanations of the selected technologies and their roles.
 
 ---
 
@@ -37,6 +39,9 @@ The server shall expose, manage, validate, and control access to API resources a
 ---
 
 ## 4. Standardization Basis
+
+**Implementation explanations:** [Core capability overview](glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal), [experimental publish/subscribe](glaux-server-implementation-guide.md#goal-54-streaming-and-dynamic-data), [selected sampling types](glaux-server-implementation-guide.md#goal-52-registration-and-description) and [enhanced observation filtering](glaux-server-implementation-guide.md#goal-53-access-and-exchange).
+
 Glaux Server shall be planned and implemented against the STANAG 4789 / AEP-4789 framework and the open standards adopted by AEP-4789 Volume II.
 
 The core standards package and versions for this planning baseline are:
@@ -66,9 +71,15 @@ The project lead approved these two additions through the September 17, 2026 `pr
 Glaux Server planning and implementation shall address the following full-scope capability areas.
 
 ### 5.1 Connected-System Discovery and Navigation
+
+**Implementation explanation:** [To do this, the server will use…](glaux-server-implementation-guide.md#goal-51-connected-system-discovery-and-navigation).
+
 Glaux Server shall support standards-aligned discovery, resource navigation, landing-page behavior, conformance declaration, collection/resource discovery, and API description behavior needed by human users, client software, AI-enabled services, and interoperable external systems.
 
 ### 5.2 Registration and Description
+
+**Implementation explanation:** [To do this, the server will use…](glaux-server-implementation-guide.md#goal-52-registration-and-description).
+
 Glaux Server shall support the registration, description, update, and retrieval of connected-system resources and associated metadata, including systems, platforms, sensors, actuators, samplers, procedures, deployments, sampling features, observed or controlled properties, and related contextual resources.
 
 Descriptions shall be sufficient to support persistent identification, capability understanding, deployment context, provenance, validity, lineage, and machine interpretation.
@@ -78,6 +89,9 @@ Alternate representations of a resource shall preserve consistent identity, rela
 The selected experimental Part 4 specializations shall be managed through the existing SamplingFeature resource, with explicit type validation and preservation of their sampling meaning. Generic JSON acceptance alone does not establish specialized support.
 
 ### 5.3 Access and Exchange
+
+**Implementation explanation:** [To do this, the server will use…](glaux-server-implementation-guide.md#goal-53-access-and-exchange).
+
 Glaux Server shall support standards-aligned access to connected-system information and related data, including structured resource retrieval, observation access, metadata access, historical query behavior, exchange of sensor-derived information, and preservation of contextual binding between data, producing systems, observed properties, features of interest, time, location, provenance, and validity.
 
 Storage, retrieval, and supported conversions shall preserve the applicable schema bindings, units, and temporal meaning. Any limitations of a supported conversion shall be documented; conversion shall not silently change the meaning of the data.
@@ -85,6 +99,9 @@ Storage, retrieval, and supported conversions shall preserve the applicable sche
 Enhanced observation filtering shall distinguish direct sampling geometry from an intersecting sampling ancestor, current geometry from geometry applicable at observation time, and measured values from property identifiers or serialized text. Missing historical evidence shall not silently be replaced with present-day location. Result filtering shall preserve type, unit and nil-value meaning and shall not disclose protected related information.
 
 ### 5.4 Streaming and Dynamic Data
+
+**Implementation explanation:** [To do this, the server will use…](glaux-server-implementation-guide.md#goal-54-streaming-and-dynamic-data).
+
 Glaux Server shall support dynamic data workflows associated with connected systems, including datastreams, observations, status information, event-driven updates, time-varying information, and streaming or near-real-time exchange patterns where applicable.
 
 Dynamic data behavior shall preserve temporal context, sequencing, freshness, operational relevance, and machine-readable structure sufficient for interoperable use.
@@ -92,6 +109,9 @@ Dynamic data behavior shall preserve temporal context, sequencing, freshness, op
 Publish/subscribe work includes the planned experimental Part 3 support described in Section 4, with its draft status and supported capabilities made explicit.
 
 ### 5.5 Tasking and Control
+
+**Implementation explanation:** [To do this, the server will use…](glaux-server-implementation-guide.md#goal-55-tasking-and-control).
+
 Glaux Server shall support tasking and control workflows where applicable, including control streams, commands, command status, feasibility-related exchanges, controllable parameters, tasking lifecycle behavior, and governance of authorized command interactions.
 
 Tasking and control shall be treated as first-order server capabilities, not as optional user-interface behavior or later application-layer decoration.
@@ -99,11 +119,17 @@ Tasking and control shall be treated as first-order server capabilities, not as 
 Tasking behavior shall preserve the standard's command and feasibility semantics and clearly distinguish feasibility assessments, accepted requests, execution status, and confirmed outcomes. Device-specific actuation and safety arrangements are defined with the connected systems and deployments that carry out commands.
 
 ### 5.6 Status and Availability
+
+**Implementation explanation:** [To do this, the server will use…](glaux-server-implementation-guide.md#goal-56-status-and-availability).
+
 Glaux Server shall support the exposure and exchange of system status, operational state, availability, health, configuration state, lifecycle state, degraded operation, and other system events required to understand whether connected systems can support operational use.
 
 Status and availability information shall preserve temporal and validity context so consumers can distinguish current information from stale, delayed, or last-known state.
 
 ### 5.7 Security, Authorization, and Trust
+
+**Implementation explanation:** [To do this, the server will use…](glaux-server-implementation-guide.md#goal-57-security-authorization-and-trust).
+
 Glaux Server shall be designed with explicit treatment of security, authorization, validation, trust, access governance, failure semantics, and policy-aware interoperability.
 
 Security and authorization shall not be treated as deployment afterthoughts. The server design shall account for cross-organizational, coalition, federated, and differently accredited environments in which access to information or tasking authority may vary by user, system, organization, mission, role, policy, or operational context.
@@ -111,6 +137,9 @@ Security and authorization shall not be treated as deployment afterthoughts. The
 Glaux Server shall enforce configured access rules and provide documented integration with identity and policy services. The surrounding organizations and deployments retain responsibility for identity administration, policy ownership, authorization to release operational information, and accreditation.
 
 ### 5.8 Cross-Environment and DDIL-Informed Operation
+
+**Implementation explanation:** [To do this, the server will use…](glaux-server-implementation-guide.md#goal-58-cross-environment-and-ddil-informed-operation).
+
 In this planning baseline, **DDIL-informed** refers broadly to disconnected, denied, degraded, intermittent, and limited-bandwidth operating conditions; it does not assert that one fixed operating-state taxonomy has already been selected.
 
 Glaux Server shall be designed with awareness of enterprise, coalition, federated, tactical, constrained, and DDIL-informed operating environments.
@@ -120,6 +149,9 @@ The server architecture and implementation planning shall account for degraded c
 The server shall preserve source identity and timestamps, handle repeated or delayed updates consistently, identify synchronization conflicts, and distinguish last-known information from current evidence. This scope concerns correct server behavior during interruption and recovery. Network topology, connectivity provision, and federation arrangements are defined by the deployments that require them.
 
 ### 5.9 Validation, Conformance, and Verification
+
+**Implementation explanation:** [To do this, the server will use…](glaux-server-implementation-guide.md#goal-59-validation-conformance-and-verification).
+
 Glaux Server shall be planned using a conformance-first and verification-first approach.
 
 Implementation work shall include explicit test, validation, and conformance strategies for standards behavior, resource models, encodings, API behavior, error handling, security behavior, tasking workflows, ecosystem integration, and operationally representative scenarios.
@@ -129,6 +161,9 @@ Verification shall include tests derived from the standards' requirements and te
 ---
 
 ## 6. Role in the Glaux Ecosystem
+
+**Implementation explanation:** [To do this, the server will use…](glaux-server-implementation-guide.md#goal-6-role-in-the-glaux-ecosystem).
+
 Glaux Server provides the canonical server-side contract for the wider Glaux ecosystem.
 
 It shall support integration with:
@@ -147,6 +182,9 @@ The server shall offer the same published CSAPI interfaces to Glaux components a
 ---
 
 ## 7. Implementation Character
+
+**Implementation explanation:** [To do this, the server will use…](glaux-server-implementation-guide.md#goal-7-implementation-character).
+
 Glaux Server shall be planned as a full-scope reference implementation component, not as a minimal subset, toy prototype, or temporary demonstration-only service.
 
 Implementation may be sequenced, but sequencing decisions shall not reduce the intended capability model. Each implementation increment shall preserve architectural integrity and remain aligned to the complete Glaux Server definition.

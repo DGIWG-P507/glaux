@@ -1,12 +1,12 @@
 # Glaux Server Implementation Guide
 
-**Version:** 1.2<br>
-**Date:** 18 September 2026<br>
+**Version:** 1.3<br>
+**Date:** 19 September 2026<br>
 **Effort:** Glaux Server<br>
-**Status:** Baselined — drafting iterations 1–3 complete; focused engineering clarifications incorporated<br>
-**Depends On:** [Glaux Server Goal and Definition v1.7](glaux-server-goal-and-definition.md), Approved
+**Status:** Baselined — Goal-paired capability explanations added; implementation not started<br>
+**Depends On:** [Glaux Server Goal and Definition v1.8](glaux-server-goal-and-definition.md), Approved
 
-**Revision summary:** Makes the approved test-quality review actionable: behavioral failure-before-fix evidence, assertion/fixture review, targeted property/fuzz/mutation methods, honest coverage interpretation, and reliable execution/reporting (§§7.2, 8.1). Roadmap v1.4 assigns these practices within its existing 286 tasks. Goal v1.7, architecture, full conformance target and Part 5 deferral remain unchanged; complete issue publication is next. This is a design baseline, not a claim of implemented or tested server software.
+**Revision summary:** Expands §1.1 into plain-English explanations paired to Goal §§5–7: what each capability requires, which selected technologies and mechanisms will deliver it, and where the detailed design is specified. Goal v1.8 adds direct links without changing its approved scope; Roadmap v1.18 aligns current references and the implementation handoff. Technical contracts, standards pins, tests, all 286 task definitions and the published issue preparation baselines are unchanged. This documentation update does not implement or verify server software.
 
 ## Executive Summary
 
@@ -29,9 +29,14 @@ The core completion target remains all 25 direct CSAPI conformance classes and a
 
 This guide defines technical design and verification. The [Roadmap](glaux-server-roadmap.md) assigns implementation order and tasks. Governance defines the working rules. The approved Goal and Definition controls scope. No separate requirements document, decision-record system, or new approval process is introduced.
 
+**Start with [§1.1: How the implementation fulfills the Goal](#11-how-the-implementation-fulfills-the-goal)** for a plain-English explanation of what each selected technology contributes to the required capabilities.
+
 ## Table of Contents
 
 1. [Purpose and Scope Baseline](#1-purpose-and-scope-baseline)
+
+   - [How the implementation fulfills the Goal](#11-how-the-implementation-fulfills-the-goal)
+
 2. [Architecture Context](#2-architecture-context)
 3. [Design Principles and Constraints](#3-design-principles-and-constraints)
 4. [Implementation Specifications](#4-implementation-specifications)
@@ -47,9 +52,175 @@ This guide defines technical design and verification. The [Roadmap](glaux-server
 
 ## 1. Purpose and Scope Baseline
 
-### 1.1 Scope and acceptance boundary
+<a id="11-scope-and-acceptance-boundary"></a>
 
-Implement the capabilities in Goal and Definition §§5–7. The table makes their implementation and verification locations explicit; it does not add objectives.
+### 1.1 How the implementation fulfills the Goal
+
+Read this section alongside [Goal and Definition §§5–7](glaux-server-goal-and-definition.md#5-core-capability-scope). Each pairing summarizes what the Goal requires and explains how the selected implementation will deliver it. The technologies named here are Glaux engineering choices, not requirements imposed by OGC. These are plans for the completed server, not claims that the software already works; exact library versions and remaining implementation proofs are addressed in [§2.4](#24-platform-choices) and [§9](#9-risks-and-remaining-implementation-checks).
+
+The explanations use the Goal's headings so a reader can move directly between a capability and its implementation. The linked detailed sections retain the precise behavior, limits and tests. This overview does not add requirements or replace those contracts.
+
+#### Goal 5.1: Connected-System Discovery and Navigation
+
+[Goal §5.1](glaux-server-goal-and-definition.md#51-connected-system-discovery-and-navigation)
+
+- **The Goal calls for:** Finding the connected systems, information and operations available through the server, with descriptions that applications can understand.
+
+  **To do this, the implementation will use:** An Axum web API with linked entry points for systems, collections, data and other resource families. Shared route definitions describe the supported addresses, operations and formats; the server uses them to assemble navigation links and an OpenAPI description of the enabled interface. A client can start with the server's root address and follow those links. A locally hosted documentation page and downloadable examples help people understand and exercise the same interface.
+
+**Detailed design:** [§4.1 Discovery and API description](#41-discovery-navigation-and-api-description); [§6.2 Endpoints and representations](#62-endpoint-and-representation-baseline).
+
+#### Goal 5.2: Registration and Description
+
+[Goal §5.2](glaux-server-goal-and-definition.md#52-registration-and-description)
+
+- **The Goal calls for:** Registering, describing, updating and retrieving systems, procedures, deployments, sampling features, properties and their associated information.
+
+  **To do this, the implementation will use:** Axum to receive application requests, typed Rust resource models to represent the different kinds of information, and schema and semantic validators to check their content and relationships. Shared application functions check the caller's authority and permitted changes. SQLx then executes PostgreSQL transactions that save the accepted descriptions and related records together. Sensors, platforms, actuators and samplers are described through the applicable standard resources; their names do not create additional invented API families.
+
+- **The Goal calls for:** Persistent identification and descriptions that communicate capabilities, deployment context, provenance, validity and lineage.
+
+  **To do this, the implementation will use:** SensorML's structured descriptions together with database identifiers and explicitly checked relationships. Local resource IDs, persistent UIDs and source-specific identifiers retain their different roles. Relationships connect systems to components, procedures, deployments and sampling features. Retained description revisions distinguish when information applied from when the server received it; supplied method, source and input references preserve provenance and lineage without guessing missing history. PostgreSQL stores searchable relationships separately from validated extensible description content and retained original documents.
+
+- **The Goal calls for:** Different representations of a resource preserving its identity, relationships and descriptive meaning.
+
+  **To do this, the implementation will use:** One authoritative stored resource and explicit standards-specific mappings for its supported representations. Where both apply, a client can request SensorML JSON or GeoJSON describing that same resource. Serde handles JSON serialization; the project's mapping and validation code preserves the required meaning. Original source content is retained separately where needed, so a simpler representation does not erase richer information. Not every resource supports every representation, and a replacement that would lose existing writable content is rejected under the detailed write contract.
+
+- **The Goal calls for:** Genuine support for the selected experimental Part 4 sampling types, not merely acceptance of arbitrary JSON.
+
+  **To do this, the implementation will use:** The existing SamplingFeature API plus type-specific schema and semantic validation. A sampling point requires Point geometry, a sampling curve LineString geometry, and a sampling surface Polygon geometry. Creation and changes must pass the selected type, geometry and association checks before storage. These checks add the approved static specializations without removing generic SamplingFeature behavior or promising the entire Part 4 draft.
+
+**Detailed design:** [§4.2 Descriptions and relationships](#42-descriptions-identity-relationships-and-collections); [§4.2.1 Experimental sampling types](#421-experimental-static-part-4-sampling-types); [§4.3 Validation and mappings](#43-sensorml-swe-common-validation-and-semantic-bindings); [§4.6 Writes](#46-writes-ingestion-concurrency-and-deletion); [§4.7 Storage](#47-persistence-spatial-indexes-and-data-lifecycle); [§4.10 Provenance and access](#410-authentication-authorization-trust-and-audit).
+
+#### Goal 5.3: Access and Exchange
+
+[Goal §5.3](glaux-server-goal-and-definition.md#53-access-and-exchange)
+
+- **The Goal calls for:** Storing, retrieving and exchanging observations with their producing systems, observed properties, subjects, times, units and descriptive context intact.
+
+  **To do this, the implementation will use:** DataStreams that bind a producing System and output to a defined value structure. SWE Common describes that structure and its units, quality and missing-value rules. The server validates submitted observations against the stream's contract, stores accepted values and their references in PostgreSQL, and uses the corresponding JSON, Text and Binary encoders for supported exchanges. Changing a description cannot silently reinterpret previously stored values; the stream-schema restrictions and representation mappings protect that meaning.
+
+- **The Goal calls for:** Historical and current matching information, including the approved enhanced spatial and measured-value observation searches.
+
+  **To do this, the implementation will use:** Explicit SQL queries and database indexes for source, relationship and time selection, with PostGIS for spatial tests. For enhanced observation searches, the server follows the observation's direct SamplingFeature relationship to explicit geometry established as applicable at observation time. It does not substitute a current location or an intersecting ancestor when that evidence is missing. Discoverable CQL2 JSON filters let a client combine the selected spatial conditions and typed scalar value comparisons within a datastream with applicable native filters. Access restrictions are applied before selection; units, missing values and latest-result selection keep their defined meaning.
+
+- **The Goal calls for:** Preserving provenance and quality context rather than losing it during access or conversion.
+
+  **To do this, the implementation will use:** Supplied links to producing systems, actual method/model revisions, exact input observations or source artifacts, creation times and responsible-role assertions. These are stored separately from the audit record of who uploaded the data. Quality components retain the subject, metric, units and supplied uncertainty or confidence information through the supported encodings. Unknown context stays unknown: storing these assertions does not certify their truth or automatically combine them into a universal probability score.
+
+**Detailed design:** [§4.3 Value contracts and encodings](#43-sensorml-swe-common-validation-and-semantic-bindings); [§4.4 Observation access](#44-datastreams-observations-querying-and-spatial-behavior); [§4.4.1 Enhanced filtering](#441-enhanced-observation-filtering); [§4.10 Provenance and quality](#410-authentication-authorization-trust-and-audit); [§6.3 Query rules](#63-query-rules-and-limits).
+
+#### Goal 5.4: Streaming and Dynamic Data
+
+[Goal §5.4](glaux-server-goal-and-definition.md#54-streaming-and-dynamic-data); [Goal §4 experimental Part 3 commitment](glaux-server-goal-and-definition.md#4-standardization-basis)
+
+- **The Goal calls for:** Applications receiving supported updates as information changes, while preserving the connection between saved data and published updates.
+
+  **To do this, the implementation will use:** A database outbox—a record of outgoing work saved in the same transaction as the accepted change—and a retained publication log. Background workers move committed work into that log and deliver it with bounded retries. This keeps publication tied to accepted database changes and supplies the retained history needed for the specified recovery paths. Delivery can repeat after an interruption; it is not an exactly-once processing guarantee.
+
+- **The Goal calls for:** Live exchange, including the explicitly experimental Part 3 support.
+
+  **To do this, the implementation will use:** An optional Server-Sent Events (SSE) interface for authorized resource-change notifications over HTTP, and a separate outbound MQTT 5 adapter for the selected experimental event and native-data messages. The MQTT adapter uses rumqttc, with Mosquitto as the reference test broker; AsyncAPI describes its actual topics and formats. SSE is a Glaux extension, not the Part 3 binding. Native MQTT data is live delivery; a disconnected recipient uses the authorized HTTP/snapshot recovery path rather than assuming that the broker has retained every missed observation.
+
+**Detailed design:** [§4.8 Publication and delivery](#48-publication-live-delivery-and-experimental-part-3); [§4.11 Catch-up and recovery](#411-interrupted-connectivity-replay-synchronization-and-conflicts); [§1.3 Experimental boundary](#13-experimental-part-3-boundary).
+
+#### Goal 5.5: Tasking and Control
+
+[Goal §5.5](glaux-server-goal-and-definition.md#55-tasking-and-control)
+
+- **The Goal calls for:** Authorized applications submitting commands and following their execution status and results.
+
+  **To do this, the implementation will use:** ControlStreams that describe accepted command inputs, the shared validation and access checks, and durable command/work records in PostgreSQL. A background command worker calls a device-adapter interface that translates the request into the connected system's own operations. Standard command-status and result resources expose the supported synchronous and asynchronous outcomes. A deterministic reference adapter makes these workflows runnable and testable without operational hardware; production adapters supply their own device protocols and safety interlocks.
+
+- **The Goal calls for:** Distinguishing feasibility, acceptance, execution and confirmed outcomes, including safe behavior when communication fails.
+
+  **To do this, the implementation will use:** Separate feasibility requests and results, retained command-lifecycle evidence, stable attempt identities and checks before dispatch. A completed feasibility analysis may answer that an action is not possible; it neither authorizes nor performs the action. A timeout or lost response is not proof that a command failed physically. Uncertain work is reconciled through adapter evidence rather than blindly resent, and editing or deleting a public report cannot restart an already completed action.
+
+**Detailed design:** [§4.9 Commands and feasibility](#49-commands-feasibility-status-and-results); [§6.4 Response and recovery contracts](#64-success-error-and-command-response-contracts).
+
+#### Goal 5.6: Status and Availability
+
+[Goal §5.6](glaux-server-goal-and-definition.md#56-status-and-availability)
+
+- **The Goal calls for:** Understanding a system's reported operating condition while distinguishing current evidence from stale, delayed or last-known information.
+
+  **To do this, the implementation will use:** Status DataStreams and observations with defined value structures and meaningful timestamps. Database queries select relevant evidence by when it applied, not simply by which message arrived last. Configured freshness rules can identify old or missing evidence without inventing a failed-device state. System status remains separate from whether the server, broker or command channel is reachable.
+
+- **The Goal calls for:** Access to System Events that explain relevant changes in the connected system.
+
+  **To do this, the implementation will use:** The standard System Event resources and stored links to the affected System, event time, definition and source content. These represent reported occurrences such as calibration or relocation. An HTTP access log or a resource-edit notification is not automatically evidence that such an event occurred.
+
+**Detailed design:** [§4.5 Status and System Events](#45-status-availability-dynamic-properties-and-system-events); [§4.12 Server diagnostics](#412-configuration-deployment-observability-and-developer-use).
+
+#### Goal 5.7: Security, Authorization, and Trust
+
+[Goal §5.7](glaux-server-goal-and-definition.md#57-security-authorization-and-trust)
+
+- **The Goal calls for:** Enforcing configured rules about who can see information, publish or change data, subscribe to updates and command systems.
+
+  **To do this, the implementation will use:** A verified-identity component and an access-policy interface shared by API operations. The selected identity adapter validates externally issued OAuth JWT access tokens, rather than trusting their contents without checking them. Caller/group/source permissions and resource relationships restrict queries, links, writes and tasking. Delivery checks and broker topic permissions protect live updates as well as ordinary reads. TLS protects configured network connections; a missing or unavailable authorization decision is not treated as permission.
+
+- **The Goal calls for:** Accountability and protection of sensitive contextual information, including across organizational boundaries.
+
+  **To do this, the implementation will use:** Durable audit records for important writes and command attempts, plus independent access checks for provenance, quality, schemas, source documents and related links. Supplied labels and binding evidence are preserved without inventing a universal per-field marking policy or claiming that a transformed document retains a verified signature. The server integrates with deployment identity and policy services; it does not provide those organizations' identity administration, release authority, cross-domain guards or accreditation.
+
+**Detailed design:** [§4.10 Authentication, authorization and audit](#410-authentication-authorization-trust-and-audit); [§4.8 Delivery access](#48-publication-live-delivery-and-experimental-part-3); [§4.12 Safe configuration](#412-configuration-deployment-observability-and-developer-use).
+
+#### Goal 5.8: Cross-Environment and DDIL-Informed Operation
+
+[Goal §5.8](glaux-server-goal-and-definition.md#58-cross-environment-and-ddil-informed-operation)
+
+- **The Goal calls for:** Useful, correct behavior when connections are disrupted, intermittent or bandwidth-limited.
+
+  **To do this, the implementation will use:** Locally stored resources, schemas and configuration so permitted historical reads do not depend on a continuously connected publisher or broker. Bounded publication queues and recovery windows support delayed delivery. Timestamps keep last-known information distinguishable from fresh evidence, and disconnected operation does not extend expired credentials or manufacture current sensor availability.
+
+- **The Goal calls for:** Controlled exchange and recovery that preserves source identity, handles repeated or delayed updates and identifies conflicts.
+
+  **To do this, the implementation will use:** An administrative export/import format with resource identities, revisions, dependencies, explicit deletion records and receipts for accepted exchanges. PostgreSQL transactions accept coherent changes together; revision/ancestry checks distinguish known repeats from conflicting or missing changes. Consistent snapshots and retained change history support bounded catch-up, while unresolved conflicts remain explicit. Backup/restore procedures re-establish recovery continuity and hold uncertain commands for reconciliation. Protected omissions are not automatically deletions, and imported command history does not authorize new physical actions. This supplies server recovery behavior, not network connectivity or a general federation service.
+
+**Detailed design:** [§4.11 Exchange and conflicts](#411-interrupted-connectivity-replay-synchronization-and-conflicts); [§4.7 Backup and restore](#47-persistence-spatial-indexes-and-data-lifecycle); [§4.12 Runtime use](#412-configuration-deployment-observability-and-developer-use).
+
+#### Goal 5.9: Validation, Conformance, and Verification
+
+[Goal §5.9](glaux-server-goal-and-definition.md#59-validation-conformance-and-verification)
+
+- **The Goal calls for:** Correct standards behavior, not just successful requests or JSON that happens to parse.
+
+  **To do this, the implementation will use:** Pinned local standard/schema artifacts, operation-specific structural validation, and Rust semantic checks for identities, relationships, times, units and state. Tests link back to the controlling requirements and use independently specified values, resource IDs and bytes as expected answers. Real PostgreSQL/PostGIS and HTTP tests check the actual storage and API behavior; independent clients and real-broker checks cover the boundaries they exercise.
+
+- **The Goal calls for:** Strong verification across normal, invalid, unauthorized and interrupted workflows, with honest claims about what works.
+
+  **To do this, the implementation will use:** Automated build/lint/test checks, negative and fault tests, bounded generated-input/property tests, parser fuzzing and targeted checks that deliberately introduce relevant faults to assess assertion strength. These methods accompany their owning capabilities rather than arriving only at release time. Ordinary issue/PR evidence records what actually ran, including failures and gaps. Conformance declarations are checked against implemented and tested behavior: all 25 direct CSAPI classes and applicable prerequisites remain the core target, with the six selected filtering classes and the bounded experiments tracked separately. Test success is not an OGC certification claim.
+
+**Detailed design:** [§4.3 Validation](#43-sensorml-swe-common-validation-and-semantic-bindings); [§7 Conformance](#7-conformance-and-verification-strategy); [§8 Testing](#8-testing-strategy); [§10 Completion conditions](#10-quality-gates-and-exit-criteria).
+
+#### Goal 6: Role in the Glaux Ecosystem
+
+[Goal §6](glaux-server-goal-and-definition.md#6-role-in-the-glaux-ecosystem)
+
+- **The Goal calls for:** A common server interface usable by Glaux applications, publishers, simulators and independent external clients.
+
+  **To do this, the implementation will use:** The same published CSAPI resources and operations for standard-covered exchanges, with any additional integration interface explicitly identified. OpenAPI, schemas and executable examples describe those contracts; tests with OS4CSAPI and independent HTTP/Python clients check supported workflows. A developer can run the reference examples without first building the other Glaux products. The server supplies APIs, not those products' operational web or mobile user interfaces.
+
+**Detailed design:** [§5 Integration points](#5-integration-points); [§4.1 API documentation](#41-discovery-navigation-and-api-description); [§4.12 Independent setup](#412-configuration-deployment-observability-and-developer-use).
+
+#### Goal 7: Implementation Character
+
+[Goal §7](glaux-server-goal-and-definition.md#7-implementation-character)
+
+- **The Goal calls for:** A maintainable, open-source Rust reference implementation that other implementers can build, understand and test.
+
+  **To do this, the implementation will use:** A small Rust workspace separating resource rules, standards/encoding logic and the running server, with PostgreSQL/PostGIS as its authoritative store. Shared application functions keep HTTP requests, command handling and publication from acquiring contradictory rules. Native build instructions, a Compose deployment example, sample data, executable help and backup/restore instructions make the selected design reproducible on approved prerequisites. A message broker is required only for the MQTT adapter, not for ordinary HTTP use.
+
+- **The Goal calls for:** Incremental delivery without quietly reducing the intended capability or turning research recommendations into new objectives.
+
+  **To do this, the implementation will use:** The existing Roadmap and its dependency-linked issues, with tests and documentation included in each authorized implementation task. Releases describe their actual supported behavior and limitations; full completion still requires all adopted capabilities. The core Parts 1/2 target includes required JSON, Text and Binary value support and complete intended tasking. Experimental Parts 3 and selected static Part 4 retain their labels, while Part 5 implementation remains deferred. The Guide's detailed contracts and recorded interpretations explain chosen mechanisms; the research is supporting evidence, not an additional unchecked backlog.
+
+**Detailed design:** [§2.2 Component boundaries](#22-component-boundaries); [§2.4 Platform choices](#24-platform-choices); [§4.12 Developer use](#412-configuration-deployment-observability-and-developer-use); [§1.5 Part 5 disposition](#15-part-5-and-provenance-research-disposition); [§10 Completion conditions](#10-quality-gates-and-exit-criteria); [Roadmap implementation workflow](glaux-server-roadmap.md#5-implementation-iterations-and-task-size).
+
+#### Design and verification index
+
+The existing capability index below provides the detailed design and verification locations for the same approved scope.
 
 | Approved capability | Design in this guide | Main verification |
 |---|---|---|
@@ -98,7 +269,7 @@ Use the official Part 3 branch snapshot [`6f529a15bfa63259febc3620378d3e5a063053
 
 ### 1.4 Selected Part 4 experiment and additional filtering
 
-Goal v1.7 adopts the static Point/Curve/Surface implementation alternative from [IDR-058][R058], based on official `part4-working-draft` commit [`05a3c62d198ee52d0cf81a734b700967b7d864a1`][P4]. Implement the specialized contracts in §4.2.1, not merely generic GeoJSON storage. No approved Part 4 conformance URI is introduced. Dedicated Solid, Specimen, StatisticalSample, FeaturePart, relative/parametric types, mobile snapshot behavior and derived-volume computation are outside this experiment; their descriptions are not all equally costly, but none is an implicit commitment. Existing generic Part 1 and dynamic-data requirements remain intact.
+Goal §4 retains the static Point/Curve/Surface implementation alternative from [IDR-058][R058], based on official `part4-working-draft` commit [`05a3c62d198ee52d0cf81a734b700967b7d864a1`][P4]. Implement the specialized contracts in §4.2.1, not merely generic GeoJSON storage. No approved Part 4 conformance URI is introduced. Dedicated Solid, Specimen, StatisticalSample, FeaturePart, relative/parametric types, mobile snapshot behavior and derived-volume computation are outside this experiment; their descriptions are not all equally costly, but none is an implicit commitment. Existing generic Part 1 and dynamic-data requirements remain intact.
 
 The separately adopted querying capability uses [Features Part 3 v1.0, OGC 19-079r2][F3] and [CQL2 v1.0.0, OGC 21-065r2][CQL2], with the six complete classes in §7.4 and JSON expression encoding. It supports approved generic SamplingFeatures as well as the selected experimental types. The CSAPI endpoint/queryable mapping is a documented Glaux choice, not a claim that these standards define observation relationships. Broader CQL2 classes, Text expressions, arbitrary joins, unrelated related-property searches and reconstruction of missing geometry are not selected. This does not narrow native CSAPI filtering or SWE value support. [IDR-059][R059]
 
@@ -108,7 +279,7 @@ The scope is approved and this Guide supplies its technical baseline. Optional d
 
 Following the accepted [Part 5 study][R060] and synthesis Addendum C, defer a Part 5 wire implementation. Retain the existing separation of logical values, immutable schema contracts and codecs so a later agreed encoding can be added without reinterpreting stored data. No Protobuf dependency, media type, endpoint, placeholder implementation or additional completion condition is introduced. Required SWE Binary remains in scope. Revisit a concrete pinned binding when justified by new specification/implementation evidence; publication is not an automatic prerequisite or automatic adoption decision.
 
-Apply [the provenance study][R061] and synthesis Addendum D through the existing description, value, revision, security and test design below. Distinguish production history from server processing, preserve supplied exact-input/method/role context, and retain the meaning of quality assertions. No second observation model, public PROV API, graph database, universal confidence score or security-marking regime is adopted. These clarify Goal §§5.2–5.3 and 5.7; Goal v1.7 is unchanged.
+Apply [the provenance study][R061] and synthesis Addendum D through the existing description, value, revision, security and test design below. Distinguish production history from server processing, preserve supplied exact-input/method/role context, and retain the meaning of quality assertions. No second observation model, public PROV API, graph database, universal confidence score or security-marking regime is adopted. These clarify Goal §§5.2–5.3 and 5.7; the approved capability scope is unchanged.
 
 ## 2. Architecture Context
 
@@ -834,7 +1005,7 @@ The third drafting pass checked these paths from input to result against Goal v1
 
 Across these paths, provenance/quality disclosure follows §4.10 and the same write/query boundaries; it is not another server subsystem. Experimental static Part 4 validation feeds the existing SamplingFeature path, and the selected filtering classes remain additional to the 25 CSAPI targets. Developer setup and independent-client use follow §§4.12 and 5.
 
-The Roadmap now needs to assign implementation order and concrete tasks to this Guide's capabilities, §7's complete class/dependency coverage, §8's tests and §9.2's remaining proofs. Keep those tasks in the existing Roadmap format. Do not turn this walkthrough into another review document, requirements inventory or approval process, and do not count documentation completion as software completion.
+The [Roadmap](glaux-server-roadmap.md) assigns implementation order and concrete tasks to these capabilities, §7's complete class/dependency coverage, §8's tests and §9.2's remaining proofs. Its complete initial issue set is published. This walkthrough remains a design review, not executed verification, a separate requirements inventory or an additional approval process.
 
 ## 9. Risks and Remaining Implementation Checks
 
@@ -896,7 +1067,9 @@ Version 1.1 incorporates the project lead's September 18, 2026 `proceed` after d
 
 Version 1.2 implements the project lead's `proceed` after the focused test-quality assessment. It restores useful daily practices from IDR-052/053, informed by primary-source checks and specific CS-GO assertion examples, without adopting the research's larger evidence machinery or mandatory tool portfolio. Roadmap v1.4 strengthens the existing CI task and assigns targeted methods to existing capability owners. No Goal change, new research topic, implementation issue, software installation or runtime verification is part of this document revision.
 
-The Guide remains baselined. The next `proceed` publishes and verifies the complete GitHub issue set under Roadmap §5.1 before any coding. No further Guide drafting pass, separate requirements document or additional approval gate is introduced. Continue to push and summarize one completed iteration at a time; implementation later proceeds one ready issue per authorized iteration.
+Version 1.3 records the project lead's September 19, 2026 `proceed` to pair the Goal's capability descriptions with understandable implementation explanations. Section 1.1 now connects each Goal heading to the selected technologies, their purpose and the detailed design, while retaining the capability index and acceptance boundary. Goal v1.8 adds navigation links only; Roadmap v1.18 updates the current planning references. The previous §1.1 anchor is retained for compatibility. Historical research and all 286 issue preparation pins remain unchanged; there are no new capabilities, technical contracts, technology selections or task definitions.
+
+The Guide remains baselined. Issue publication is complete; the next implementation iteration is [task 1.1.1 / issue #3](https://github.com/DGIWG-P507/glaux-server/issues/3), the approved-prerequisite inspection described in [Roadmap §5.3](glaux-server-roadmap.md#53-immediate-next-step), without implicit installation. This documentation iteration does not execute that issue. Continue to push and summarize one completed iteration at a time; implementation proceeds one ready issue per authorized iteration.
 
 Record material technical changes here with their reason and affected behavior/tests. A change that expands the approved goal must first be addressed in the Goal and Definition; an internal implementation improvement need not reopen mission scope. Update standards interpretations when authoritative corrections arrive and test compatibility before changing a published contract.
 
