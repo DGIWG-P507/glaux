@@ -166,6 +166,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "CRLF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Standards batch: standards-quality and standards-array-flags (Pass 3c iteration 12)"
+    },
+    {
+      "name": "18-pass-3c-13-standards-cql2-sensorml.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-19",
+      "provider": "GitHub Copilot",
+      "model": "self-reported as Claude Fable 5.1",
+      "original_sha256": "4D5F30A7FEA3F7FC69114CC1ED30693BA00719AB49DB71CC3AAD419292AAAD39",
+      "original_bytes": 16640,
+      "published_sha256": "4D5F30A7FEA3F7FC69114CC1ED30693BA00719AB49DB71CC3AAD419292AAAD39",
+      "published_bytes": 16640,
+      "publication_change": "none_byte_identical",
+      "line_endings": "CRLF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Standards batch: standards-features-cql2 and standards-sensorml-classes (Pass 3c iteration 13)"
     }
   ]
 }

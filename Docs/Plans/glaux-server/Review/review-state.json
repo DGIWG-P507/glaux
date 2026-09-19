@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 12 (standards batch: SWE quality and array flags)",
+  "latest_report": "Pass 3c iteration 13 (standards batch: Features Part 3/CQL2 and SensorML class identifiers)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -3056,9 +3056,10 @@
         "evidence/02-pass-2.txt",
         "evidence/03-pass-3a.txt",
         "evidence/15-pass-3c-11.txt",
-        "evidence/17-pass-3c-12-standards-swe.md"
+        "evidence/17-pass-3c-12-standards-swe.md",
+        "evidence/18-pass-3c-13-standards-cql2-sensorml.md"
       ],
-      "finish_condition": "Close the carried groups (two of six closed in iteration 12; four remain) and the F-13 extension-rule question with supported or bounded unresolved conclusions."
+      "finish_condition": "Close the carried groups (four of six closed in iterations 12-13; two remain) and the F-13 extension-rule question with supported or bounded unresolved conclusions."
     },
     {
       "area": "research",
@@ -3125,16 +3126,22 @@
     {
       "id": "standards-features-cql2",
       "question": "Features Part 3/CQL2 identifiers and GeometryCollection minItems",
-      "status": "pending",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Features Part 3/CQL2 identifiers and GeometryCollection minItems"
+      "status": "closed_supported_with_note",
+      "closed_on": "2026-09-19",
+      "evidence": [
+        "evidence/18-pass-3c-13-standards-cql2-sensorml.md"
+      ],
+      "conclusion_or_remaining_question": "Supported. All six Guide Section 7.4 class URIs exist verbatim in the published texts (19-079r2 Clause 2/Annex A: /conf/queryables, /conf/filter; 21-065r2 Clause 2/Annex A: /conf/basic-cql2, /conf/basic-spatial-functions, /conf/basic-spatial-functions-plus, /conf/cql2-json) and the Section 7.4 dependency statements match Clauses 6.1, 7.5, 7.6, 8.3 and 19-079r2 Clause 8.1/Annex A.1. Advertising cql2-json as the only language and the default is conformant under 19-079r2 Requirement 6 B/C (Clause 8.7: no language mandatory; text/JSON SHOULDs belong to the unselected Features Filter class). Section 13 row 1162 confirmed: Annex C.1 and the published cql2.json set geometrycollection.geometries minItems 2 while Clause 7.6.1 prose and the Annex B BNF allow one or more; accepting a singleton exceeds the Requirement 33/38 schema-validity floor and no abstract test exercises it, so it stays a labelled Glaux adaptation (already required by the row and leaf 7.3.3/#231). Test-evidence notes for #229-#232/#228 and Phase 9: A.3.2 evaluates all six comparison operators on Boolean and String queryables (must evaluate, not 400); A.7.1/A.8.1 expect POINT(90 180) to fail (coordinate validation required); dataset-conditional tests A.3.5/A.3.6/A.7.2/A.8.2 are not applicable to an observation server and must be labelled so (F-08 related instance). No Guide correction required."
     },
     {
       "id": "standards-sensorml-classes",
       "question": "SensorML 3.0 four referenced class identifiers",
-      "status": "pending",
-      "evidence": [],
-      "conclusion_or_remaining_question": "SensorML 3.0 four referenced class identifiers"
+      "status": "closed_supported",
+      "closed_on": "2026-09-19",
+      "evidence": [
+        "evidence/18-pass-3c-13-standards-cql2-sensorml.md"
+      ],
+      "conclusion_or_remaining_question": "Supported. OGC 23-000 (published 2025-07-16) base URI http://www.opengis.net/spec/sensorML/3.0 (Clause 6.1) defines /req/json-simple-process (Clause 9.2, /conf/json-simple-process A.12, Requirement 47), /req/json-physical-system (Clause 9.5, /conf/json-physical-system A.15, Requirement 50), /req/json-deployment (Clause 9.6, /conf/json-deployment A.16, Requirement 51) and /req/json-derived-property (Clause 9.7, /conf/json-derived-property A.17, Requirement 52). Published prerequisites: json-physical-system requires /req/json-aggregate-process (A.13) and /req/json-physical-component (A.14); all four rest on /req/json-core (A.11; Requirement 46 media type application/sml+json, matching Guide line 737), whose prerequisite is SWE 3.0 /req/json-block-components. Guide line 255 covers these only generically ('including their applicable dependencies'); optional clarification to name A.11/A.13/A.14 in Section 1.2 or Section 7 so the claim manifest cannot omit them. All JSON-class abstract tests (A.46-A.52) are media-type or schema-validation checks, so the pinned unmodified upstream schemas are the oracle. Editorial residue noted: Clause 9.1.2.1 still carries the draft note recommending application/vnd.ogc.sml+json. No Guide correction required."
     },
     {
       "id": "standards-ats-rows",
@@ -3180,24 +3187,26 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Copilot Pass 3c iteration 12 (standards batch: SWE quality and array flags)",
+    "last_substantive_checkpoint": "Copilot Pass 3c iteration 13 (standards batch: Features Part 3/CQL2 and SensorML class identifiers)",
     "provider": "GitHub Copilot",
     "model": "self-reported as Claude Fable 5.1",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 12 completed both SWE checks and published this checkpoint. The next batch has not been started.",
+    "unfinished_step": "None. Iteration 13 completed both checks and published this checkpoint. The next batch has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
-      "evidence/17-pass-3c-12-standards-swe.md"
+      "evidence/05-pass-3c-01.txt",
+      "evidence/17-pass-3c-12-standards-swe.md",
+      "evidence/18-pass-3c-13-standards-cql2-sensorml.md"
     ],
     "next_batch": {
-      "title": "Resolve the Features Part 3/CQL2 and SensorML class-identifier standards questions",
+      "title": "Resolve the remaining IDR-011 Section 14.3 abstract-test rows and the Part 2 Annex A.1 inheritance question",
       "check_ids": [
-        "standards-features-cql2",
-        "standards-sensorml-classes"
+        "standards-ats-rows",
+        "standards-part2-inheritance"
       ],
-      "source_scope": "Guide Section 1.2/7.4/13 rows and the Section 7 conformance table; the published OGC API - Features Part 3 and CQL2 documents and their pinned cql2.json schema (GeometryCollection minItems); OGC 23-000 SensorML 3.0 published conformance class identifiers (json-simple-process, json-physical-system, json-deployment, json-derived-property); IDR-059 and IDR-021/IDR-011 evidence already cited; owning Roadmap leaves and issue bodies for the six Features Part 3/CQL2 classes and the SensorML classes.",
-      "stop_condition": "Record each question as supported, corrected or specifically unresolved, with exact identifiers and source references and any consequential planning/test implication; save and publish the checkpoint.",
+      "source_scope": "IDR-011 Section 14.3 table (13 rows): the nine rows not yet confirmed against published text (Part 1 /conf/advanced-filtering/indirect-prop; Part 2 status-by-statuscode, feasibility/canonical-url, feasibility/ref-from-controlstream, system-event canonical-url/endpoint tests, system-event/ref-from-system, event-by-type, obs-by-resulttime, status/result resource endpoint tests) read in the published OGC 23-001/23-002 Annex A text (iteration 1 already confirmed system-by-parent, system-by-obsprop/controlprop, deployment-by-parent, deployment-by-system; evidence/05-pass-3c-01.txt Section 4); Part 2 (23-002) Annex A.1 /conf/api-common inheritance wording versus 23-001 /conf/api-common and Guide Section 1.2 line 262 bases, Section 7.1 rows 'api-common' (Part 1 requirements 1-3, Part 2 requirements 1-2) and the Section 7.1 closing paragraph on inherited classes; F-09 deployedSystems conflict as context only; owning Roadmap leaves 2.6.1-2.6.3 (#80-#82), 3.5.1-3.5.2 (#121-#122), 5.5.16 and Phase 9 claim leaves (issue bodies optional).",
+      "stop_condition": "Record each of the nine rows as confirmed, corrected or specifically unresolved with exact published test identifiers; record the Annex A.1 inheritance effect on the Part 2 class declaration as supported, corrected or unresolved; note any consequential Guide Section 7/13 or runner-overlay implication; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     }
   },
@@ -3235,6 +3244,22 @@
       ],
       "next_work": "standards-features-cql2 and standards-sensorml-classes (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-19",
+      "provider": "GitHub Copilot",
+      "model": "self-reported as Claude Fable 5.1",
+      "activity": "Pass 3c iteration 13. Resolved the Features Part 3/CQL2 and SensorML class-identifier checks against the published OGC 19-079r2, 21-065r2, the live schemas.opengis.net cql2.json and OGC 23-000: standards-features-cql2 closed as supported with notes (all six class URIs and dependency statements verified; cql2-json-only default conformant under Requirement 6 B/C; GeometryCollection minItems 2 in Annex C.1/cql2.json versus one-or-more in Clause 7.6.1 and the BNF confirmed; singleton acceptance is an untested Glaux adaptation; A.3.2 Boolean/String ordering comparisons, A.7.1 invalid-coordinate rejection and dataset-conditional tests recorded as test-evidence implications); standards-sensorml-classes closed as supported (four identifiers, base URI, conformance classes A.12/A.15/A.16/A.17 and prerequisites A.11/A.13/A.14 verified; optional clarification to name the dependency classes). No Guide correction required. Issue bodies #228-#232 not fetched. Recorded two material follow-up questions without scheduling them. Added evidence/18-pass-3c-13-standards-cql2-sensorml.md and its manifest entry.",
+      "coverage_completed": [
+        "standards-features-cql2",
+        "standards-sensorml-classes"
+      ],
+      "material_points": [
+        "No new finding number; F-08 gains a related CQL2 abstract-test labelling instance (dataset-conditional tests not applicable; singleton GeometryCollection untested by the official suite).",
+        "Follow-up questions recorded (not scheduled): CQL2 Clause 7.6.1 GeometryCollection member list omits LineString although the BNF and schema include it; 23-000 Clause 9.1.2.1 retains the draft media-type note."
+      ],
+      "next_work": "standards-ats-rows and standards-part2-inheritance (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -3256,6 +3281,26 @@
       "status": "noted_not_scheduled",
       "evidence": [
         "evidence/17-pass-3c-12-standards-swe.md"
+      ]
+    },
+    {
+      "id": "fq-03-cql2-gc-member-list",
+      "raised": "2026-09-19",
+      "question": "OGC 21-065r2 Clause 7.6.1 describes GeometryCollection as 'one or more of Point, Polygon, MultiPoint, MultiLineString, or MultiPolygon' (LineString omitted), while the Annex B BNF geometryLiteral and the Annex C.1/cql2.json schema include linestring. Should Guide Section 13 row 1162 record this second prose/schema seam beside the minItems one so the spatial-plus fixtures for #231 deliberately include a LineString member?",
+      "relevance": "Spatial-plus literal fixtures (leaf 7.3.3, #231); interpretation register completeness",
+      "status": "noted_not_scheduled",
+      "evidence": [
+        "evidence/18-pass-3c-13-standards-cql2-sensorml.md"
+      ]
+    },
+    {
+      "id": "fq-04-sensorml-media-type-note",
+      "raised": "2026-09-19",
+      "question": "OGC 23-000 Clause 9.1.2.1 still contains the draft NOTE recommending application/vnd.ogc.sml+json 'until this Standard is stable' although the document is published and Requirement 46 fixes application/sml+json. Does any pinned client, peer server or fixture the Roadmap relies on still emit the vendor-prefixed type, and should Guide Section 13 record an alias decision for SensorML as it does for the SWE vendor-prefixed conflict (Guide line 737)?",
+      "relevance": "Content negotiation for SensorML JSON (Guide Section 6.2, line 737); interoperability checks in 2.6.6/2.6.7",
+      "status": "noted_not_scheduled",
+      "evidence": [
+        "evidence/18-pass-3c-13-standards-cql2-sensorml.md"
       ]
     }
   ],
