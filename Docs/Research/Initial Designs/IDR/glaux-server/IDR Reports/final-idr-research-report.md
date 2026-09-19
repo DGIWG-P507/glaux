@@ -17,7 +17,7 @@
 **Date:** September 16, 2026<br>
 **Last Updated:** September 16, 2026
 
-**Supplemental material:** [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features) and [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval), prepared September 17, 2026 from accepted IDR-SRV-058/059 research; [Addendum C: CSAPI Part 5 Protobuf-First Implementation](#addendum-c-csapi-part-5-protobuf-first-implementation), prepared September 18, 2026 from accepted IDR-SRV-060 research; [Addendum D: Provenance and Related Metadata Interoperability](#addendum-d-provenance-and-related-metadata-interoperability), prepared September 18, 2026 from accepted IDR-SRV-061 research. The metadata, counts and acceptance above describe the original report; each addendum records its own status and does not change the original completion record.
+**Supplemental material:** [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features) and [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval), prepared September 17, 2026 from accepted IDR-SRV-058/059 research; [Addendum C: CSAPI Part 5 Protobuf-First Implementation](#addendum-c-csapi-part-5-protobuf-first-implementation), prepared September 18, 2026 from accepted IDR-SRV-060 research; [Addendum D: Provenance and Related Metadata Interoperability](#addendum-d-provenance-and-related-metadata-interoperability), prepared September 18, 2026 from accepted IDR-SRV-061 research; [Addendum E: CS-GO Engineering Practices and Development History](#addendum-e-cs-go-engineering-practices-and-development-history), prepared September 18, 2026 from accepted IDR-SRV-062 research. The metadata, counts and acceptance above describe the original report; each addendum records its own status and does not change the original completion record.
 
 ---
 
@@ -51,7 +51,7 @@
 26. [Validation Against Success Criteria](#26-validation-against-success-criteria)
 27. [References and Topic Traceability Index](#27-references-and-topic-traceability-index)
 
-Supplements: [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features); [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval); [Addendum C: CSAPI Part 5 Protobuf-First Implementation](#addendum-c-csapi-part-5-protobuf-first-implementation); [Addendum D: Provenance and Related Metadata Interoperability](#addendum-d-provenance-and-related-metadata-interoperability)
+Supplements: [Addendum A: Draft CSAPI Part 4 Sampling Features](#addendum-a-draft-csapi-part-4-sampling-features); [Addendum B: Enhanced CSAPI Querying and Spatial Observation Retrieval](#addendum-b-enhanced-csapi-querying-and-spatial-observation-retrieval); [Addendum C: CSAPI Part 5 Protobuf-First Implementation](#addendum-c-csapi-part-5-protobuf-first-implementation); [Addendum D: Provenance and Related Metadata Interoperability](#addendum-d-provenance-and-related-metadata-interoperability); [Addendum E: CS-GO Engineering Practices and Development History](#addendum-e-cs-go-engineering-practices-and-development-history)
 
 ---
 
@@ -1324,3 +1324,75 @@ The accepted research and this synthesis are sufficient to return to the agreed 
 **Next step:** the Glaux Project Lead and Codex discuss the provenance and Part 5 Goal/Guide implications together. The next `proceed` starts that discussion; it does not automatically edit either document or authorize implementation. Make only subsequently agreed changes, then resume Guide drafting pass 2. No additional material is required from the project lead to begin that discussion.
 
 **Addendum validation:** IDR-SRV-061 is accounted for as accepted research; conclusions, qualifications and limitations trace to its report; the original synthesis and Addenda A–C are preserved; current approved scope is unchanged; and the remaining choices and next action are explicit. Addendum D is prepared for review, distinct from the recorded acceptance of its source report.
+
+---
+
+## Addendum E: CS-GO Engineering Practices and Development History
+
+**Date:** September 18, 2026<br>
+**Status:** Prepared for review; source research accepted, Guide/Roadmap discussion pending<br>
+**Source:** [IDR-SRV-062 Research Report](idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md), accepted by the Glaux Project Lead on September 18, 2026 through the established `proceed` workflow<br>
+**Purpose:** Integrate practical engineering lessons before discussing two small planning clarifications and resuming complete implementation-issue publication
+
+### E.1 Scope, Evidence and Completion Record
+
+**The deeper CS-GO study reinforces Glaux's existing Rust design and implementation plan.** Its value is concrete examples of how changes, tests and explanations fit together, not a reason to copy a Go architecture or introduce another process framework.
+
+| Supplemental topic | Plan | Report | Completion and acceptance | Synthesis conclusion |
+|---|---|---|---|---|
+| IDR-SRV-062: CS-GO Engineering Practices and Development History Study | [Research plan](../IDR%20Plans/idr-srv-062-cs-go-engineering-practices-and-development-history-study.md) | [Research report](idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md) | Research complete; accepted September 18, 2026; no prerequisite exception | Most lessons are already covered; discuss two bounded harness/documentation clarifications without changing capability scope or adding tasks. |
+
+Coverage is now **67 original accepted topics plus five accepted supplemental topics, 058–062**. Original metadata, counts and acceptance remain historical; Addenda A–D retain their text. Report acceptance authorizes downstream use of the findings, not automatic adoption of the proposed clarifications or acceptance of this newly prepared addendum.
+
+The current planning baseline is [Goal v1.7](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md), [Guide v1.0](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) and [Roadmap v1.1](../../../../../Plans/glaux-server/glaux-server-roadmap.md). Later planning has resolved choices described as pending in earlier addenda: selected Part 3/4 experiments and bounded filtering remain in scope, Part 5 implementation remains deferred, and focused provenance/quality/disclosure treatment is incorporated. This addendum does not reopen those decisions.
+
+This is synthesis of IDR-SRV-062 as published in `79f736ab6cda601a9ad0c4adc7f6bda9550786d3`, not new external research. Its [evidence base](idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md#3-evidence-base) and [reproduction record](idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md#122-reproduction-and-execution-record) control the details. The CS-GO source pin is `b1fd2e0e9bd69e222d05258d659a842ca24502cb`; the release comparison uses v1.0.4 at `244f4dd586da685d4d9b75e43f73001028b5bd0e`. Checks were dated September 18 EDT / September 19 UTC. The study inventoried 68 default-branch commits, 11 ordinary issues, five PRs, three releases and 76 test files, then examined selected cases deeply; it did not inspect every historical diff or private workflow.
+
+No upstream refresh, runtime test, benchmark, installation or maintainer contact was performed for this addendum. Source counts are not passing-test or coverage results. IDR-SRV-014B remains the earlier dated study, not a report to overwrite with the newer main snapshot.
+
+### E.2 Consolidated Findings
+
+**A change should preserve meaning across the whole path.** The formatter refactor consolidates representation handling; spatial repairs connect parsing, storage and returned resource membership; observation storage changes preserve public identity when the partition-key time changes. The transferable lesson is coordinated API, persistence, test and documentation work. It does not select Timescale, GORM or automatic startup migrations for Glaux. [IDR-SRV-062 §4.1](idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md#41-q1--architecture-and-evolution)
+
+**Assert the result that matters, including plausible wrong alternatives.** Useful peer tests check inside and outside resource IDs, changed values, followed links and repaired storage conditions. Other examples check only a count, URL prefix or one surviving label and can miss a wrong result or partial mutation. Independent expected values complement round trips and shared-validator checks; fake transports complement, but do not replace, real transaction and broker-failure tests. These examples reinforce the existing verification design rather than require another testing system. [IDR-SRV-062 §4.3](idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md#43-q3--test-craftsmanship-and-tdd)
+
+**Technical judgment includes rejecting unnecessary work.** Maintainer replies distinguish a mistaken interpretation from an actual problem and identify an existing shared mechanism instead of adding a special case. Upstream implementation and contributed audit findings have different authorship. This supports standards-grounded review and reuse of existing mechanisms, not treating every AI-generated finding as a new requirement. [IDR-SRV-062 §4.2](idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md#42-q2--development-process-and-tools)
+
+**Useful guidance needs the same maintenance as code.** Contributor notes, focused examples and comments explaining constraints help future implementers. Stale migration commands, version guidance and generated context summaries show why those materials must be checked against executable behavior. No particular assistant, generated map or extra document set is required. Public history shows maintained tests and declared tooling, but does not establish test-first sequencing, successful execution or private review practices. [IDR-SRV-062 §§4.2–4.4](idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md#44-q4--comments-documentation-and-coding-guidance)
+
+### E.3 Effect on the Original Synthesis
+
+| Original section / related research | What remains useful | Qualification supplied by IDR-SRV-062 |
+|---|---|---|
+| §§9–10: Representations, validation and persistence; 014B | Shared logical meaning, validation boundaries and transactional integrity | Learn the coordination and identity-preservation patterns, not Go-specific coupling or a new database dependency. Explicit Glaux migrations remain selected. |
+| §11: Publication and ingestion | Shared application rules and separate transports | Peer after-handler publication is not evidence of durable committed-work recovery. Keep Glaux's transaction/outgoing-work and real fault tests. |
+| §§15–16: Rust architecture and developer setup | Simple composition, focused modules and reproducible commands | Retain current packages/stack; commands and actual release artifacts need checking. The studied source-tag manifest discrepancy was not a broken downloadable checksum result. |
+| §17 and 050–053: Verification and test strategy | Independent expectations, real persistence/HTTP, deterministic fixtures and truthful claims | Concrete peer examples sharpen assertions and harness design. An in-process HTTP listener is not shipped-binary testing; test presence is not TDD evidence; skipped checks are not conformance passes. |
+| §24 and current planning: Documentation and workflow | Maintain understandable explanations alongside implementation | Apply ordinary documentation updates to any future contributor/assistant guidance. Do not reinstate earlier proposed document systems, work packages or new mandatory tooling. |
+| Addenda A–D and approved scope | Existing experiments, filtering and provenance decisions | Engineering precedent creates no standards obligation, new conformance claim, Part 5 adoption or scope expansion. |
+
+Exact Guide sections and existing three-level task IDs are recorded in [IDR-SRV-062 §4.6](idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md#46-q6--transfer-to-the-existing-rust-plan). They supply the implementation handoff without reproducing another task catalog here. The nine phases, 41 capability groups and 286 issue-sized tasks remain unchanged.
+
+### E.4 Recommendation and Remaining Choices
+
+**Keep the current goal and plan, and discuss two small clarifications:**
+
+1. **Reliable test setup and cleanup:** In Guide §8.1 and existing task **1.1.3**, make prompt cleanup registration, failed-reset errors, isolated mutable fixtures and recorded seeds/clocks/dependency versions explicit. This makes a failed or unreproducible test easier to diagnose; it is not a new harness project.
+2. **Current contributor guidance:** Extend the existing documentation-update rule to any future contributor/assistant notes, linking them to controlling sources and current executable examples. The existing Roadmap §5.2 rule and tasks **1.1.4 / 9.4.2** already provide the place for this work; no mandatory assistant-specific file or tool is proposed.
+
+Both remain recommendations, not adopted edits. Most other lessons can be applied directly when implementing their existing issues. No new capability, task count, delivery date or implementation-hour estimate follows. [IDR-SRV-062 §§5–7](idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md#5-decision-analysis)
+
+Private TDD/tooling practice, unexecuted upstream tests and unmeasured performance remain explicit unknowns, not blockers to this discussion. Verify applicable terms if direct source/fixture copying is proposed; conceptual learning and independently authored Rust implementation do not require that copying. Optional maintainer questions remain unsent and are not a completion gate. [IDR-SRV-062 §8](idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md#8-risks-constraints-and-open-questions)
+
+### E.5 Downstream Readiness and Handoff
+
+| Artifact / workflow | Next consideration | Change made in this iteration |
+|---|---|---|
+| Goal v1.7 | No expansion recommended | None |
+| Guide v1.0 | Discuss the two clarifications within existing sections | None |
+| Roadmap v1.1 | If agreed, clarify existing completion expectations without adding leaves | None; all 286 tasks retained |
+| GitHub implementation issues | Resume complete issue publication and link/dependency verification after discussion and any agreed planning edits | No issues created; no code written |
+
+**Next step:** the Glaux Project Lead and Codex discuss the two clarifications. The next `proceed` starts that discussion; it does not automatically edit planning documents, create issues or start coding. No additional research or user-supplied material is needed to begin. Once planning choices are settled, retain the complete-issue-set-before-coding workflow and one ready implementation issue per authorized iteration.
+
+**Addendum validation:** IDR-SRV-062 is accounted for as accepted research; conclusions trace to its report; original totals and Addenda A–D are preserved; runtime/TDD/source limitations remain explicit; current scope and planning artifacts are unchanged; and the remaining choices and handoff are bounded. Addendum E is prepared for review, distinct from source-report acceptance.

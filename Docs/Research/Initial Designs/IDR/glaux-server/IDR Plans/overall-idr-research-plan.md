@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.110<br>
+**Version:** 3.111<br>
 **Date:** September 18, 2026<br>
-**Status:** Original IDR and supplements 058–061 complete and accepted; CS-GO engineering supplement 062 research complete, report in review before issue publication; Goal v1.7, Guide v1.0 and Roadmap v1.1 retained<br>
+**Status:** Original IDR and supplements 058–062 complete and accepted; CS-GO synthesis Addendum E prepared, planning discussion next before issue publication; Goal v1.7, Guide v1.0 and Roadmap v1.1 retained<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -75,7 +75,7 @@ The shared upstream-history register is maintained across topics as supporting e
 ---
 
 **Original IDR Topics:** 67 (complete and accepted)<br>
-**Post-Synthesis Supplemental Topics:** 5 (IDR-SRV-058 through IDR-SRV-061 complete and accepted; IDR-SRV-062 research complete, report in review)
+**Post-Synthesis Supplemental Topics:** 5 (IDR-SRV-058 through IDR-SRV-062 complete and accepted)
 
 Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
@@ -483,11 +483,12 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 
 #### IDR-SRV-062: CS-GO Engineering Practices and Development History Study
 
-- Status: Research complete; report in review, acceptance pending. The project lead's September 18, 2026 `proceed` after plan publication in `409afdd` accepted the plan for execution and authorized this research/report iteration only.
+- Status: Complete and accepted September 18, 2026. The user's `proceed` after report publication in `79f736a` accepted the research and authorized its separate synthesis addendum, not planning edits or implementation.
 - Focus: Extend IDR-SRV-014B with a systematic study of the author's architecture/design evolution, commits and PRs, testing and test-first evidence, tools, comments/documentation, coding-assistant guidance, scope choices and omissions. Translate evidenced lessons into bounded recommendations against the existing Rust Guide and issue-sized Roadmap.
 - Plan: [idr-srv-062-cs-go-engineering-practices-and-development-history-study.md](idr-srv-062-cs-go-engineering-practices-and-development-history-study.md).
-- Report: [idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md](../IDR%20Reports/idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md). Complete public inventories and selected source/history/test cases reinforce current planning, with two bounded harness/documentation clarifications proposed for discussion; TDD sequencing and runtime success remain unestablished.
-- Sequence: Plan/publication and research/report preparation complete. Next `proceed` accepts the report and authorizes a separate accepted-findings synthesis addendum, followed by discussion of specific Guide/Roadmap implications. Resume complete issue publication after that discussion and any agreed changes, before coding. The established `proceed` workflow applies without a special acceptance phrase.
+- Report: [idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md](../IDR%20Reports/idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md), accepted. Complete public inventories and selected source/history/test cases reinforce current planning, with two bounded harness/documentation clarifications proposed for discussion; TDD sequencing and runtime success remain unestablished.
+- Synthesis: [Addendum E](../IDR%20Reports/final-idr-research-report.md#addendum-e-cs-go-engineering-practices-and-development-history) prepared for review September 18, 2026; original synthesis totals and Addenda A–D remain intact. No new research or planning change occurred in the addendum iteration.
+- Sequence: Plan/publication, research/report acceptance and synthesis preparation complete. Next `proceed` begins discussion of the two proposed Guide/Roadmap clarifications, not automatic edits, issue creation or implementation. Resume complete issue publication after that discussion and any agreed changes, before coding. The established `proceed` workflow applies without a special acceptance phrase.
 - Boundary: Preserve IDR-SRV-014B, original completion/acceptance counts and supplements 058–061. Distinguish upstream authorship from audit-fork contributions, stated rationale from inference, test presence from TDD, and source inspection from executed verification. No automatic scope/stack change, new planning framework, software installation, maintainer outreach, implementation issue creation or server implementation.
 
 ---
@@ -752,6 +753,8 @@ The final report must:
 | 2026-09-18 | Supplemental CS-GO Engineering Research Planning | Registered IDR-SRV-062 and drafted its plan using the existing template, extending the earlier implementation study into engineering practice, design history, tests, tools and concrete Rust-planning lessons | The user's `proceed` authorizes plan/publication only. This supplement precedes complete implementation-issue publication; research/report, synthesis and planning discussion follow separately. No accepted research or Goal/Guide/Roadmap content changed; no issues or implementation created | Glaux Project Lead (planning authorization) |
 | 2026-09-18 | IDR-SRV-062 Plan Acceptance and Research Authorization | The user's next `proceed` accepted the plan published in `409afdd` for execution and authorized its research/report iteration | Preserve separate report acceptance, synthesis-addendum and planning-discussion steps; no implementation authorization | Glaux Project Lead |
 | 2026-09-18 | IDR-SRV-062 Research Completion | Completed pinned public-history inventories, selected architecture/process/release cases, current test-source and assertion analysis, guidance/tooling checks and exact existing Guide/Roadmap mappings; report placed in review | Most lessons reinforce current planning; two small harness/documentation clarifications proposed, not adopted. Test-first sequencing and runtime success remain unknown; no tools installed, tests executed, upstream outreach, synthesis/planning changes or implementation issues created | Pending Glaux Project Lead review |
+| 2026-09-18 | IDR-SRV-062 Acceptance and Synthesis Addendum Authorization | The user's next `proceed` accepted the report published in `79f736a` and authorized integration through a separate addendum to the final synthesis | Accept research for downstream use without adopting its proposed clarifications or changing Goal/Guide/Roadmap scope; no issue publication or implementation authorization | Glaux Project Lead |
+| 2026-09-18 | CS-GO Engineering Synthesis Addendum | Prepared Addendum E from accepted IDR-SRV-062, connecting the engineering examples and limits to existing architecture, verification and documentation work; preserved original 67-topic totals and Addenda A–D | Five supplements now accepted. Next is discussion of two bounded clarifications before resuming complete issue publication; no new external research, tests, dependencies, planning edits, issues or code | Glaux Project Lead (synthesis authorization; addendum prepared for review) |
 
 ---
 
@@ -779,7 +782,7 @@ Supplemental progress is tracked separately from the completed category totals a
 | IDR-SRV-059 | Complete (1/1) | 1/1 | 1/1 | Research accepted; bounded filtering scope recorded in Goal/Guide | 2026-09-17 |
 | IDR-SRV-060 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum C retained; Guide v1.0 retains Part 5 deferral and existing codec separation | 2026-09-18 |
 | IDR-SRV-061 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum D retained; Guide v1.0 clarifications assigned in Roadmap v1.1 issue-sized outline | 2026-09-18 |
-| IDR-SRV-062 | Complete (1/1) | 1/1 | 0/1 | Research complete; report in review; acceptance and synthesis addendum next on `proceed` | 2026-09-18 |
+| IDR-SRV-062 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum E prepared; two planning clarifications await discussion | 2026-09-18 |
 
 ---
 

@@ -1,7 +1,7 @@
 # Section 062: CS-GO Engineering Practices and Development History Study - Research Report
 
 **Topic ID:** IDR-SRV-062<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-062 plan](../IDR%20Plans/idr-srv-062-cs-go-engineering-practices-and-development-history-study.md)<br>
 **Overall Research Plan:** [Controlling overall IDR plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Q1–Q6; public engineering evidence assessed, private workflow and runtime results explicitly unresolved.<br>
@@ -11,8 +11,8 @@
 **Supporting Resources:** [014B implementation study][prior], [052 testing strategy][tdd], [053 fixtures][fixtures], [Goal v1.7][goal], [Guide v1.0][guide], [Roadmap v1.1][roadmap].<br>
 **Document Purpose:** Identify practical engineering lessons and bounded planning implications before implementation-issue publication; not a new conformance audit or implementation authorization.<br>
 **Author(s):** Glaux research workflow, AI-assisted<br>
-**Accepted By:** Pending Glaux Project Lead review<br>
-**Acceptance Date:** Pending<br>
+**Accepted By:** Glaux Project Lead, through the next `proceed` after report publication in `79f736ab6cda601a9ad0c4adc7f6bda9550786d3`<br>
+**Acceptance Date:** September 18, 2026<br>
 **Date:** September 18, 2026<br>
 **Last Updated:** September 18, 2026
 
@@ -45,7 +45,7 @@ The observation-storage change is particularly instructive: changing the databas
 
 Most lessons are already covered by the Guide and its issue-sized Roadmap. Two small clarifications are worth discussing later: explicit test-harness cleanup/isolation expectations, and applying the existing documentation-update rule to future contributor/assistant guidance. Neither requires a new phase, framework or documentation system. Keep the Rust stack, explicit migrations, independent expected results, and durable transaction/publication design already selected.
 
-This report leaves the Goal, Guide, Roadmap, synthesis and implementation issues unchanged. It is ready for project-lead review; unknown private practices, unexecuted tests and incomplete source-copying clearance are disclosed rather than turned into additional research gates.
+The research/report iteration left the Goal, Guide, Roadmap, synthesis and implementation issues unchanged. The project lead subsequently accepted this report on September 18, 2026 and authorized the separate [synthesis Addendum E](final-idr-research-report.md#addendum-e-cs-go-engineering-practices-and-development-history). Unknown private practices, unexecuted tests and incomplete source-copying clearance remain disclosed rather than becoming additional research gates; acceptance does not adopt the proposed planning clarifications.
 
 ## 2. Scope and Plan Alignment
 
@@ -286,7 +286,7 @@ The proposed harness clarification is an implementation detail of **1.1.3**. The
 
 | Work item | Relative complexity | Estimate / assumptions |
 |---|---|---|
-| Accepted-findings synthesis addendum | Low | One bounded documentation iteration is expected; separately authorized, not yet performed |
+| Accepted-findings synthesis addendum | Low | Estimated as one bounded documentation iteration; subsequently authorized and prepared September 18, 2026, as recorded in §10 |
 | Discuss and, if approved, integrate two clarifications | Low | Small edits to existing prose/task completion expectations; no new task count inferred |
 | Apply examples during implementation | Within existing work | No separate hours estimate supported; calibrate through actual issue execution |
 | Optional upstream runtime/TDD/license follow-up | Unknown until needed | Not a general completion gate; no installation, outreach or copied material assumed |
@@ -329,12 +329,12 @@ Remaining implementation proof belongs to Glaux's existing tasks: build/run with
 | Lessons map to existing Guide/tasks with justified dispositions | Met | §4.6 |
 | Existing template, optional questions and bounded handoff retained | Met | §§5–10; no new scope adopted |
 
-Research and report preparation are complete. **Project-lead acceptance remains pending.**
+Research and report preparation are complete. **The Glaux Project Lead accepted this report September 18, 2026 through the established `proceed` workflow.**
 
 ## 10. Next Steps and Handoff
 
-1. **Project Lead:** Review this report. Under the established workflow, the next `proceed` accepts it and authorizes the separate synthesis addendum. No special acceptance phrase is needed.
-2. **Research assistant, next authorized iteration:** Add the accepted findings to the existing final synthesis and update acceptance records. Preserve older dated findings and the current project scope.
+1. **Project Lead — complete:** The next `proceed` after publication in `79f736a` accepted this report and authorized the separate synthesis addendum on September 18, 2026. No special acceptance phrase was required.
+2. **Research assistant — complete:** Prepared [Addendum E](final-idr-research-report.md#addendum-e-cs-go-engineering-practices-and-development-history) in the existing final synthesis and updated acceptance records, preserving older dated findings and current scope. The addendum is prepared for review; source-report acceptance does not automatically accept the newly written addendum.
 3. **Project Lead and assistant, following discussion:** Decide whether to make the two small Guide/Roadmap clarifications. Then resume publication of the complete implementation-issue set and verify its links/dependencies before coding.
 4. **Implementation workflow thereafter:** One ready issue per authorized iteration. Do not treat this study as authorization to start implementation now.
 
@@ -396,7 +396,7 @@ Local checks used read-only file/working-tree inspection and `Get-Command` avail
 - [x] Recommendations are explicit and actionable
 - [x] Risks and open questions are documented
 - [x] Success criteria validation is complete
-- [ ] Plan-owner acceptance and acceptance date are recorded before downstream acceptance
+- [x] Plan-owner acceptance and acceptance date are recorded before downstream acceptance
 - [x] Next steps are assigned
 
 [tree]: https://github.com/SomethingCreativeStudios/connected-systems-go/tree/b1fd2e0e9bd69e222d05258d659a842ca24502cb

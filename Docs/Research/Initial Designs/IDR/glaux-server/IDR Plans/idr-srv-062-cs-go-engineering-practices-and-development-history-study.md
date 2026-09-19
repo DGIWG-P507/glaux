@@ -1,7 +1,7 @@
 # Section 062: CS-GO Engineering Practices and Development History Study - Research Plan
 
 **Topic ID:** IDR-SRV-062<br>
-**Status:** Research complete; report in review; project-lead acceptance pending<br>
+**Status:** Complete and accepted; synthesis addendum prepared; planning discussion next<br>
 **Last Updated:** September 18, 2026<br>
 **Estimated Research Time:** Not yet calibrated; four bounded phases below, with additional research iterations only if needed for the stated coverage.<br>
 **Actual Research Time:** Approximately 30 minutes elapsed through research/report review, 00:03–00:33 UTC September 19, 2026 (September 18 EDT), in one AI-assisted iteration; not a human-hours estimate and excluding subsequent publication. No upstream tests executed.<br>
@@ -13,7 +13,7 @@
 
 Use the existing [Research Plan Template](../../../../../Governance/research-plan-template.md) and, for the later report, the [Research Report Template](../../../../../Governance/research-report-template.md), preserving their section order. The pinned OS4CSAPI exemplars inform question-led investigation, concrete examples and practical recommendations; their client-specific scope, metrics and estimates are not Glaux requirements.
 
-The project lead's initial September 18, 2026 `proceed` authorized this plan and its minimal registration in the [overall index](overall-idr-research-plan.md), published in `409afdd2ac946b6e9a6455c22fe709a39c59d7e4`. The next `proceed` accepted the plan for execution and authorized the research/report iteration, now complete with the [report in review](../IDR%20Reports/idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md). Report acceptance, the synthesis addendum and discussion of planning changes follow separately. No special acceptance phrase is required. Research completion does not accept the report, publish implementation issues or change the Goal, Guide, Roadmap or final synthesis.
+The project lead's initial September 18, 2026 `proceed` authorized this plan and its minimal registration in the [overall index](overall-idr-research-plan.md), published in `409afdd2ac946b6e9a6455c22fe709a39c59d7e4`. The next `proceed` accepted the plan for execution and authorized the research/report iteration, published in `79f736ab6cda601a9ad0c4adc7f6bda9550786d3`. The subsequent `proceed` accepted the [report](../IDR%20Reports/idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md) on September 18, 2026 and authorized the separate [synthesis Addendum E](../IDR%20Reports/final-idr-research-report.md#addendum-e-cs-go-engineering-practices-and-development-history), now prepared for review. Discussion of the two proposed planning clarifications is next. No special acceptance phrase is required; acceptance and synthesis do not change the Goal, Guide or Roadmap, publish implementation issues or authorize server implementation.
 
 ---
 
@@ -221,13 +221,13 @@ The report supplies evidence for a later addendum to the existing final synthesi
 - [x] Phase 3 complete
 - [x] Phase 4 synthesis complete
 - [x] Deliverable draft complete
-- [x] Deliverable reviewed (source/plan-alignment checks; project-lead acceptance remains pending)
-- [ ] Deliverable accepted
+- [x] Deliverable reviewed (source/plan-alignment checks and project-lead review)
+- [x] Deliverable accepted (Glaux Project Lead, September 18, 2026)
 
 **Actual Research Time:** Approximately 30 minutes elapsed through research/report review, September 18, 2026 EDT; source analysis only, not human-hours and excluding subsequent publication.<br>
-**Completion Date:** September 18, 2026 (research/report preparation; acceptance pending).
+**Completion Date:** September 18, 2026 (research/report preparation and project-lead acceptance).
 
-The report inventories 68 default-branch commits, 11 ordinary issues, five PRs, three releases and 76 test files at `b1fd2e0e9bd69e222d05258d659a842ca24502cb`. It distinguishes selected deep review from inventory coverage, does not establish test-first sequencing, and records the unavailable local runtime prerequisites without installing anything. Most lessons reinforce existing planning; two small harness/documentation clarifications are proposed for later discussion. The official Part 3 recheck found no material register change. No downstream planning artifact or implementation issue was changed.
+The report inventories 68 default-branch commits, 11 ordinary issues, five PRs, three releases and 76 test files at `b1fd2e0e9bd69e222d05258d659a842ca24502cb`. It distinguishes selected deep review from inventory coverage, does not establish test-first sequencing, and records the unavailable local runtime prerequisites without installing anything. Most lessons reinforce existing planning; two small harness/documentation clarifications remain proposed for discussion. The official Part 3 research recheck found no material register change. The separately authorized Addendum E carries these findings into the final synthesis without new external research; the Goal, Guide, Roadmap and implementation issues remain unchanged.
 
 ---
 
