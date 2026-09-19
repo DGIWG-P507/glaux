@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.108<br>
+**Version:** 3.109<br>
 **Date:** September 18, 2026<br>
-**Status:** Original IDR and supplements 058/059/060/061 complete and accepted; Guide v1.0 retained; Roadmap v1.1 adds issue-sized subtasks; complete GitHub issue publication next, before implementation<br>
+**Status:** Original IDR and supplements 058–061 complete and accepted; CS-GO engineering supplement 062 planned before issue publication; Goal v1.7, Guide v1.0 and Roadmap v1.1 retained<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -75,7 +75,7 @@ The shared upstream-history register is maintained across topics as supporting e
 ---
 
 **Original IDR Topics:** 67 (complete and accepted)<br>
-**Post-Synthesis Supplemental Topics:** 4 (IDR-SRV-058 through IDR-SRV-061 complete and accepted)
+**Post-Synthesis Supplemental Topics:** 5 (IDR-SRV-058 through IDR-SRV-061 complete and accepted; IDR-SRV-062 planned)
 
 Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
@@ -478,8 +478,17 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 - Plan: [idr-srv-061-provenance-and-related-metadata-interoperability-study.md](idr-srv-061-provenance-and-related-metadata-interoperability-study.md).
 - Report: [idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md](../IDR%20Reports/idr-srv-061-provenance-and-related-metadata-interoperability-study-report.md), accepted. Recommends existing-standard use and focused Guide/test clarifications; exact public lineage exchange and policy-specific adapters remain conditional. Includes a reproduced SWE quality-schema gap, pinned peer paths and bounded history refresh.
 - Synthesis: [Addendum D](../IDR%20Reports/final-idr-research-report.md#addendum-d-provenance-and-related-metadata-interoperability) prepared for review September 18, 2026; the original synthesis and Addenda A–C remain intact.
-- Sequence: Plan/publication, research/report, synthesis and combined Goal/Guide discussion are complete. The subsequent `proceed` authorized focused provenance/quality/disclosure clarifications in existing Guide sections and resumption of drafting pass 2. Those clarifications were incorporated in v0.3 and retained in the v1.0 baseline after pass 3; Roadmap v1.1 assigns their implementation and verification through issue-sized subtasks. The next authorized iteration publishes the complete GitHub issue set before implementation begins. Goal v1.7 remains unchanged; no public provenance platform or policy-specific adapter is adopted.
+- Sequence: Plan/publication, research/report, synthesis and combined Goal/Guide discussion are complete. The subsequent `proceed` authorized focused provenance/quality/disclosure clarifications in existing Guide sections and resumption of drafting pass 2. Those clarifications were incorporated in v0.3 and retained in the v1.0 baseline after pass 3; Roadmap v1.1 assigns their implementation and verification through issue-sized subtasks. Complete GitHub issue publication remains required before implementation; the subsequently authorized CS-GO supplement below now precedes it. Goal v1.7 remains unchanged; no public provenance platform or policy-specific adapter is adopted.
 - Boundary: Reuse IDR-SRV-019 and relevant representation/security research; preserve all completed-topic counts and approved scope. No preselected schema, graph service, universal confidence calculation, report resource, field-by-field marking mandate or national/NATO security-regime implementation. Preserve stakeholder input only as generalized, unattributed-to-application use cases, not verbatim requirements. Acceptance and addendum publication do not change the Goal/Guide, Roadmap or server code.
+
+#### IDR-SRV-062: CS-GO Engineering Practices and Development History Study
+
+- Status: Planned. The project lead's September 18, 2026 `proceed` following the plan/report discussion authorizes this plan and its minimal index registration/publication only.
+- Focus: Extend IDR-SRV-014B with a systematic study of the author's architecture/design evolution, commits and PRs, testing and test-first evidence, tools, comments/documentation, coding-assistant guidance, scope choices and omissions. Translate evidenced lessons into bounded recommendations against the existing Rust Guide and issue-sized Roadmap.
+- Plan: [idr-srv-062-cs-go-engineering-practices-and-development-history-study.md](idr-srv-062-cs-go-engineering-practices-and-development-history-study.md).
+- Output target: `IDR Reports/idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md`.
+- Sequence: Plan/publication first; research/report on the next `proceed`, with additional research iterations if needed for stated coverage; then a separately authorized accepted-findings synthesis addendum and discussion of specific Guide/Roadmap implications. Resume complete issue publication after that discussion and any agreed changes, before coding. The established `proceed` workflow applies without a special acceptance phrase.
+- Boundary: Preserve IDR-SRV-014B, original completion/acceptance counts and supplements 058–061. Distinguish upstream authorship from audit-fork contributions, stated rationale from inference, test presence from TDD, and source inspection from executed verification. No automatic scope/stack change, new planning framework, software installation, maintainer outreach, implementation issue creation or server implementation.
 
 ---
 
@@ -740,6 +749,7 @@ The final report must:
 | 2026-09-18 | Roadmap Drafting Pass 1 | The project lead's `proceed` after the two-iteration drafting discussion authorized the complete [Roadmap v0.1](../../../../../Plans/glaux-server/glaux-server-roadmap.md): nine phases, 41 tasks, explicit dependencies/tests and full-target coverage | First draft only; next is the separate review/finalization pass, not implementation. Goal v1.7, Guide v1.0 and accepted research unchanged; effort estimates remain explicitly uncalibrated | Glaux Project Lead (drafting authorization) |
 | 2026-09-18 | Roadmap Drafting Pass 2 and Baseline | The next `proceed` authorized review and finalization of [Roadmap v1.0](../../../../../Plans/glaux-server/glaux-server-roadmap.md). Checked scope/class coverage, dependency order, task size and completion evidence; clarified task-level scheduling and the first implementation slice | Roadmap baselined with nine phases and 41 planned tasks. Next `proceed` begins task 1.1; no third drafting pass, implicit software installation or server implementation in this iteration. Goal v1.7, Guide v1.0, research and uncalibrated estimates unchanged | Glaux Project Lead (iteration/finalization authorization) |
 | 2026-09-18 | Roadmap Issue-Sized Outline Correction | The project lead clarified the intended complete-GitHub-issue-set and one-issue-per-AI-iteration workflow, then authorized an outline/subtask approach. [Roadmap v1.1](../../../../../Plans/glaux-server/glaux-server-roadmap.md) retains nine phases and 41 capability groups while enumerating 286 child tasks with completion checks, Guide references and dependencies | Supersedes the v1.0 instruction to start coding directly. Next is complete issue publication/link verification in `glaux-server`, followed by one ready issue per `proceed`. No issues or software created in this planning correction; Goal, Guide and accepted research unchanged | Glaux Project Lead (workflow clarification and correction authorization) |
+| 2026-09-18 | Supplemental CS-GO Engineering Research Planning | Registered IDR-SRV-062 and drafted its plan using the existing template, extending the earlier implementation study into engineering practice, design history, tests, tools and concrete Rust-planning lessons | The user's `proceed` authorizes plan/publication only. This supplement precedes complete implementation-issue publication; research/report, synthesis and planning discussion follow separately. No accepted research or Goal/Guide/Roadmap content changed; no issues or implementation created | Glaux Project Lead (planning authorization) |
 
 ---
 
@@ -767,6 +777,7 @@ Supplemental progress is tracked separately from the completed category totals a
 | IDR-SRV-059 | Complete (1/1) | 1/1 | 1/1 | Research accepted; bounded filtering scope recorded in Goal/Guide | 2026-09-17 |
 | IDR-SRV-060 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum C retained; Guide v1.0 retains Part 5 deferral and existing codec separation | 2026-09-18 |
 | IDR-SRV-061 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum D retained; Guide v1.0 clarifications assigned in Roadmap v1.1 issue-sized outline | 2026-09-18 |
+| IDR-SRV-062 | Complete (1/1) | 0/1 | 0/1 | Plan prepared for publication; research/report execution next on `proceed` | 2026-09-18 |
 
 ---
 
