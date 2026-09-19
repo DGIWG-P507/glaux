@@ -180,6 +180,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "CRLF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Standards batch: standards-features-cql2 and standards-sensorml-classes (Pass 3c iteration 13)"
+    },
+    {
+      "name": "19-pass-3c-14-standards-ats-rows-part2-inheritance.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-19",
+      "provider": "GitHub Copilot",
+      "model": "self-reported as Claude Fable 5.1",
+      "original_sha256": "261504489B53BB93DB793E680B91DE9A6C47F7D951C7D42EC5DF348F121A14CA",
+      "original_bytes": 19384,
+      "published_sha256": "261504489B53BB93DB793E680B91DE9A6C47F7D951C7D42EC5DF348F121A14CA",
+      "published_bytes": 19384,
+      "publication_change": "none_byte_identical",
+      "line_endings": "CRLF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Standards batch: standards-ats-rows and standards-part2-inheritance (Pass 3c iteration 14)"
     }
   ]
 }

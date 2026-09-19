@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 13 (standards batch: Features Part 3/CQL2 and SensorML class identifiers)",
+  "latest_report": "Pass 3c iteration 14 (standards batch: IDR-011 Section 14.3 abstract-test rows and Part 2 Annex A.1 inheritance)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -3057,9 +3057,10 @@
         "evidence/03-pass-3a.txt",
         "evidence/15-pass-3c-11.txt",
         "evidence/17-pass-3c-12-standards-swe.md",
-        "evidence/18-pass-3c-13-standards-cql2-sensorml.md"
+        "evidence/18-pass-3c-13-standards-cql2-sensorml.md",
+        "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md"
       ],
-      "finish_condition": "Close the carried groups (four of six closed in iterations 12-13; two remain) and the F-13 extension-rule question with supported or bounded unresolved conclusions."
+      "finish_condition": "All six carried groups are closed (iterations 12-14). Close the F-13 extension-rule question (observation-extension-policy) with a supported or bounded unresolved conclusion."
     },
     {
       "area": "research",
@@ -3146,16 +3147,22 @@
     {
       "id": "standards-ats-rows",
       "question": "Remaining IDR-011 section 14.3 abstract-test discrepancy rows",
-      "status": "pending",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Remaining IDR-011 section 14.3 abstract-test discrepancy rows"
+      "status": "closed_supported",
+      "closed_on": "2026-09-19",
+      "evidence": [
+        "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md"
+      ],
+      "conclusion_or_remaining_question": "Confirmed. All nine remaining IDR-011 Section 14.3 rows match the published OGC 23-001/23-002 Annex A text (all thirteen rows are now confirmed; four were confirmed in iteration 1): 23-001 A.65 /conf/advanced-filtering/indirect-prop repeats {api_root}/systems?observedProperty= in its sampling-feature step (recommendation test; warning-only, consistent with IDR-006 line 478); 23-002 A.61 status-by-statuscode iterates 'Command' resources and reads 'currentStatus' although Requirement 61 B filters CommandStatus by statusCode; A.35 feasibility/canonical-url iterates itemType Command (Requirement 39 B: Feasibility; Requirement 35 A: /feasibility/{id}); A.36 feasibility/ref-from-controlstream tests /controlstreams/{dsId}/commands via /conf/controlstream/cmd-resources-endpoint (Requirement 36 A: .../feasibility); A.40 system-event/canonical-url iterates itemType ControlStream and A.42 chains to /conf/controlstream/resources-endpoint (Requirement 44 B: SystemEvent; A.41 exists); A.43 uses /systems/{sysId}/systemEvents (Requirement 43 A and Requirements 78/92, test A.106: /systems/{sysId}/events); A.62 uses lowercase /systemevents and the conceptual 'type' attribute (canonical /systemEvents; tagged systemEvent.json 'definition', Guide Section 13 line 1145); A.50 obs-by-resulttime tests instant/period only, omitting Requirement 50 D 'latest'; A.31/A.33 status and result resource endpoint tests (and A.32/A.34) check only GET/200/media type/schema although Requirement 31 B requires limit and datetime (its clause citation 7.15.2 is a slip; datetime is Features Clause 7.15.4) and Requirement 33 B requires limit. A.6 lists only the eighteen positive filter tests A.45-A.62. Additional published seams recorded as overlay candidates, not findings: Requirement 61 A OpenAPI description copied from Requirement 58 A; A.66 indirect-foi deployments step mislabelled 'transitive base properties'; all Part 2 canonical-URL tests (A.5, A.12, A.19, A.26, A.35, A.40) iterate optional collections and are vacuous when none is exposed. No Guide correction; owning leaves 2.6.1-2.6.3 (#80-#82), 3.5.1-3.5.2 (#121-#122), 5.5.16. Issue bodies not fetched; 'confirmed' means the published text contains the described defect, not that Glaux behaviour was verified."
     },
     {
       "id": "standards-part2-inheritance",
       "question": "Part 2 Annex A.1 inheritance effect",
-      "status": "pending",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Part 2 Annex A.1 inheritance effect"
+      "status": "closed_supported",
+      "closed_on": "2026-09-19",
+      "evidence": [
+        "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md"
+      ],
+      "conclusion_or_remaining_question": "Supported. 23-002 Clause 8 /req/api-common names Part 1 /req/api-common as its prerequisite and 23-002 Annex A.1 /conf/api-common names Part 1 /conf/api-common; every Part 2 resource conformance class (A.2 datastream, A.3 controlstream, A.4 feasibility via A.3, A.5 system-event, A.6 advanced-filtering) lists Part 2 /conf/api-common. Therefore any Part 2 resource-class declaration transitively requires Part 1 /conf/api-common, whose Annex prerequisite list (malformed ogcapi-1 conf/core URI; draft Common Part 2 collections/simple-query; Common JSON omitted) conflicts with the Clause 8 requirements-class statement (Features Core, Common Core, Landing Page, JSON) - the F-08 conflict reconfirmed verbatim. Part 2 adds no further inherited external class, so the Guide Section 1.2 dependency table is complete for the Part 2 foundation; Part 2 Requirements 1-2 (feature-to-resource substitution; Features Part 1 Clauses 7.14-7.16 except 7.15.3/7.15.4 for non-feature collections) are correctly summarised by Guide Section 7.1 rows api-common 1-2, and the Section 7.1 closing paragraph states the transitive rule. Research already records the chain (IDR-008 Section 7.2 'P2-01 through P2-06, directly or transitively | P1-01'; IDR-008 Section 7.3 P1-01 and P2-06 rows; IDR-007 line 246 and P2-INT-008; IDR-006 INT-CS1-001). Consequences: the F-08 disposition extends to every Part 2 declaration and the Section 13 row already requested under F-08 should be worded for both Parts; Part 2 A.1 has no test of its own and A.2 executes eighteen Features Part 1 core tests only for exposed collections whose itemType is not feature - Part 2 collections are optional (Requirements 10/16/24/30/39/44 'If the server exposes collections'), so the evidence record must state whether Glaux exposes any and label A.2 conditional rather than vacuously passed. No new finding; related instance recorded under F-08. No Guide correction required beyond the F-08 row wording. Owning leaves 2.6.1 (#80), 3.5.1 (#121), Phase 9 claim leaves."
     },
     {
       "id": "observation-extension-policy",
@@ -3187,26 +3194,27 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Copilot Pass 3c iteration 13 (standards batch: Features Part 3/CQL2 and SensorML class identifiers)",
+    "last_substantive_checkpoint": "Copilot Pass 3c iteration 14 (standards batch: IDR-011 Section 14.3 abstract-test rows and Part 2 Annex A.1 inheritance)",
     "provider": "GitHub Copilot",
     "model": "self-reported as Claude Fable 5.1",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 13 completed both checks and published this checkpoint. The next batch has not been started.",
+    "unfinished_step": "None. Iteration 14 completed both checks and published this checkpoint. The next batch has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
       "evidence/05-pass-3c-01.txt",
+      "evidence/06-pass-3c-02.txt",
       "evidence/17-pass-3c-12-standards-swe.md",
-      "evidence/18-pass-3c-13-standards-cql2-sensorml.md"
+      "evidence/18-pass-3c-13-standards-cql2-sensorml.md",
+      "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md"
     ],
     "next_batch": {
-      "title": "Resolve the remaining IDR-011 Section 14.3 abstract-test rows and the Part 2 Annex A.1 inheritance question",
+      "title": "Resolve the F-13 controlling extension-rule check: which extra members inbound Observation JSON may carry and how association-style members are distinguished",
       "check_ids": [
-        "standards-ats-rows",
-        "standards-part2-inheritance"
+        "observation-extension-policy"
       ],
-      "source_scope": "IDR-011 Section 14.3 table (13 rows): the nine rows not yet confirmed against published text (Part 1 /conf/advanced-filtering/indirect-prop; Part 2 status-by-statuscode, feasibility/canonical-url, feasibility/ref-from-controlstream, system-event canonical-url/endpoint tests, system-event/ref-from-system, event-by-type, obs-by-resulttime, status/result resource endpoint tests) read in the published OGC 23-001/23-002 Annex A text (iteration 1 already confirmed system-by-parent, system-by-obsprop/controlprop, deployment-by-parent, deployment-by-system; evidence/05-pass-3c-01.txt Section 4); Part 2 (23-002) Annex A.1 /conf/api-common inheritance wording versus 23-001 /conf/api-common and Guide Section 1.2 line 262 bases, Section 7.1 rows 'api-common' (Part 1 requirements 1-3, Part 2 requirements 1-2) and the Section 7.1 closing paragraph on inherited classes; F-09 deployedSystems conflict as context only; owning Roadmap leaves 2.6.1-2.6.3 (#80-#82), 3.5.1-3.5.2 (#121-#122), 5.5.16 and Phase 9 claim leaves (issue bodies optional).",
-      "stop_condition": "Record each of the nine rows as confirmed, corrected or specifically unresolved with exact published test identifiers; record the Annex A.1 inheritance effect on the Part 2 class declaration as supported, corrected or unresolved; note any consequential Guide Section 7/13 or runner-overlay implication; save and publish the checkpoint.",
+      "source_scope": "F-13 as restated in evidence/06-pass-3c-02.txt Section 3 (schema controls; input policy undetermined). Published OGC 23-002 Clause 16 Observation JSON encoding and Requirement 97 /req/json/observation-schema; the tagged (8e03b236a049849f2ccc24b4fd9fdce5ff69bed2) and published observation.json (and any referenced common link/association schema) for additionalProperties/unevaluatedProperties and the @id/@link member pattern; 23-001 Clause 16 general JSON encoding rules and any requirement or recommendation on unknown/extension members (including whether RFC 7946 Section 6.1 foreign-member rules apply only to GeoJSON-encoded resources); OGC 23-000 SensorML 3.0 extension rules (/req/model/coreProcess/extensionIndependence and /extensionRestrictions, Requirements 9/10, tests A.9/A.10) as the nearest published extension policy; Guide Section 4 lines 406 and 410 (preserve permitted extensions; permissive acceptance is not validation) and any other Guide text on unknown members, plus Section 13; the Roadmap observation representation/transaction leaves that own inbound observation validation (identify the exact leaf; issue bodies optional); IDR-023/IDR-027/IDR-029 sections on observation JSON and inbound validation by grep only.",
+      "stop_condition": "Record whether the published texts impose or permit an extension-member rule for Observation JSON (and whether association-style @id/@link members are distinguishable by rule or only by convention) as supported, corrected or specifically unresolved; state the resulting F-13 disposition (documentation gap, project choice to record, or no action) with the owning leaf; do not prescribe unknown-member rejection unless a published rule requires it; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     }
   },
@@ -3260,6 +3268,23 @@
       ],
       "next_work": "standards-ats-rows and standards-part2-inheritance (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-19",
+      "provider": "GitHub Copilot",
+      "model": "self-reported as Claude Fable 5.1",
+      "activity": "Pass 3c iteration 14. Resolved the two remaining carried standards groups against the published OGC 23-001 and 23-002 (Publication Date 2025-07-16) with the tagged publication source used for one truncated Annex cell: standards-ats-rows closed as confirmed (all nine remaining IDR-011 Section 14.3 rows match the published Annex A text with exact test identifiers A.65 [Part 1], A.61, A.35, A.36, A.40/A.42, A.43, A.62, A.50, A.31/A.33; all thirteen rows now confirmed; four additional published seams recorded as overlay candidates); standards-part2-inheritance closed as supported (23-002 Clause 8 and Annex A.1 both inherit Part 1 api-common; the F-08 conflict propagates to every Part 2 declaration; no new inherited class; research IDR-008 Sections 7.2-7.3, IDR-007 P2-INT-008 already record the chain; Part 2 A.2 is conditional on exposed non-feature collections). No Guide correction required beyond wording the F-08 Section 13 row for both Parts. Issue bodies #80-#82, #121-#122 not fetched. Recorded three material follow-up questions without scheduling them. Added evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md and its manifest entry.",
+      "coverage_completed": [
+        "standards-ats-rows",
+        "standards-part2-inheritance"
+      ],
+      "material_points": [
+        "No new finding number; F-08 gains a related Part 2 inheritance/ATS-overlay instance and its 'Part 2 inheritance remains an open check' sentence is closed.",
+        "All six carried standards groups are closed; the only remaining standards check is observation-extension-policy (F-13).",
+        "Follow-up questions recorded (not scheduled): whether the Glaux ATS overlay absorbs the four additional published seams; whether Glaux exposes any Part 2 resource collections (decides vacuity of 23-002 A.2 and the Part 2 canonical-URL tests); Requirement 31 B clause-citation slip and Requirement 61 A description residue as requirement-text siblings of the ATS copy errors."
+      ],
+      "next_work": "observation-extension-policy (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -3301,6 +3326,36 @@
       "status": "noted_not_scheduled",
       "evidence": [
         "evidence/18-pass-3c-13-standards-cql2-sensorml.md"
+      ]
+    },
+    {
+      "id": "fq-05-ats-overlay-additional-seams",
+      "raised": "2026-09-19",
+      "question": "Should the Glaux ATS overlay (IDR-011 Section 14.3 plus the F-09 addition) absorb the four additional published seams observed in iteration 14: Requirement 61 A OpenAPI description copied from Requirement 58 A (says 'command resources' where 61 B says CommandStatus); Requirement 31 B citing Features Clause 7.15.2 for datetime (7.15.4); 23-001 A.66 indirect-foi deployments step labelled 'transitive base properties'; and the Part 2 canonical-URL tests (A.5, A.12, A.19, A.26, A.35, A.40) having no executable path when a server exposes no Part 2 collections, so canonical URLs need a supplemental check from the canonical resources endpoints?",
+      "relevance": "Runner overlay leaves 2.6.1 (#80), 3.5.1 (#121); Phase 9 claim evidence labelling under F-08",
+      "status": "noted_not_scheduled",
+      "evidence": [
+        "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md"
+      ]
+    },
+    {
+      "id": "fq-06-part2-collections-exposed",
+      "raised": "2026-09-19",
+      "question": "Will Glaux expose any Part 2 resource collections (/collections entries with itemType DataStream, Observation, ControlStream, Command, Feasibility or SystemEvent)? Guide Section 6.2 line 722 lists the /collections routes with 'family-appropriate' encoding but does not state which families are exposed as collections. The answer decides whether 23-002 A.2 (eighteen Features Part 1 core tests per non-feature collection) and the Part 2 canonical-URL tests are executable or must be recorded as not applicable (conditional).",
+      "relevance": "Part 2 api-common evidence (Guide Section 7.1 rows api-common 1-2); leaves 2.6.1 (#80), 3.5.1 (#121); Phase 9 claim leaves",
+      "status": "noted_not_scheduled",
+      "evidence": [
+        "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md"
+      ]
+    },
+    {
+      "id": "fq-07-f08-row-wording-both-parts",
+      "raised": "2026-09-19",
+      "question": "When the Section 13 row requested under F-08 is written, should it state explicitly that every Part 2 resource-class declaration inherits the Part 1 /conf/api-common Annex prerequisite conflict through 23-002 Annex A.1, and that Part 2 A.1 has no test of its own so Part 2 api-common evidence is the inherited Part 1 result plus the conditional A.2 collection tests?",
+      "relevance": "Guide Section 13 (F-08 row); conformance-claim evidence for Part 2 classes",
+      "status": "noted_not_scheduled",
+      "evidence": [
+        "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md"
       ]
     }
   ],
