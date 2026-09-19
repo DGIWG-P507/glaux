@@ -1,10 +1,10 @@
 # Section 062: CS-GO Engineering Practices and Development History Study - Research Plan
 
 **Topic ID:** IDR-SRV-062<br>
-**Status:** Planned<br>
+**Status:** Research complete; report in review; project-lead acceptance pending<br>
 **Last Updated:** September 18, 2026<br>
 **Estimated Research Time:** Not yet calibrated; four bounded phases below, with additional research iterations only if needed for the stated coverage.<br>
-**Actual Research Time:** Not started; the preceding conversational assessment is planning input, not completed topic research.<br>
+**Actual Research Time:** Approximately 30 minutes elapsed through research/report review, 00:03–00:33 UTC September 19, 2026 (September 18 EDT), in one AI-assisted iteration; not a human-hours estimate and excluding subsequent publication. No upstream tests executed.<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md`
 
 ---
@@ -13,7 +13,7 @@
 
 Use the existing [Research Plan Template](../../../../../Governance/research-plan-template.md) and, for the later report, the [Research Report Template](../../../../../Governance/research-report-template.md), preserving their section order. The pinned OS4CSAPI exemplars inform question-led investigation, concrete examples and practical recommendations; their client-specific scope, metrics and estimates are not Glaux requirements.
 
-The project lead's September 18, 2026 `proceed` authorizes this plan and its minimal registration in the [overall index](overall-idr-research-plan.md), followed by publication. Research/report execution follows on the next `proceed`. Report acceptance, the synthesis addendum and discussion of planning changes follow separately. No special acceptance phrase is required. This iteration does not execute the study, create its report, publish implementation issues or change the Goal, Guide or Roadmap.
+The project lead's initial September 18, 2026 `proceed` authorized this plan and its minimal registration in the [overall index](overall-idr-research-plan.md), published in `409afdd2ac946b6e9a6455c22fe709a39c59d7e4`. The next `proceed` accepted the plan for execution and authorized the research/report iteration, now complete with the [report in review](../IDR%20Reports/idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md). Report acceptance, the synthesis addendum and discussion of planning changes follow separately. No special acceptance phrase is required. Research completion does not accept the report, publish implementation issues or change the Goal, Guide, Roadmap or final synthesis.
 
 ---
 
@@ -164,15 +164,15 @@ The [Goal v1.7](../../../../../Plans/glaux-server/glaux-server-goal-and-definiti
 
 This topic research is complete when:
 
-- [ ] Q1–Q6 have evidence-backed answers or explicit limitations with their decision consequences.
-- [ ] Repository/history coverage, source pins, sampling rationale and unexamined areas are visible; author and audit-fork contributions are distinguished.
-- [ ] Representative cases explain engineering choices and their evolution, including useful practices/simplifications as well as limitations.
-- [ ] Test examples explain meaningful assertions, fixture/isolation behavior, expected-value independence and the failures they detect; static inspection and actual execution are separate.
-- [ ] TDD is assessed using sequencing evidence or a qualified statement of uncertainty, not inferred from test presence or Glaux's own recommendations.
-- [ ] Tooling, comments, documentation and coding-assistant guidance are compared with executable behavior and available history; private practice is not invented.
-- [ ] Omissions are classified by evidence, and any consequential standards-history checks are authority-qualified and reproducible.
-- [ ] Each material lesson has a justified Glaux disposition and applicable existing Guide/three-level Roadmap task references; no-change is an acceptable outcome.
-- [ ] The report follows the report template, validates these criteria and identifies optional author questions and any remaining implementation proof without creating new project scope.
+- [x] Q1–Q6 have evidence-backed answers or explicit limitations with their decision consequences.
+- [x] Repository/history coverage, source pins, sampling rationale and unexamined areas are visible; author and audit-fork contributions are distinguished.
+- [x] Representative cases explain engineering choices and their evolution, including useful practices/simplifications as well as limitations.
+- [x] Test examples explain meaningful assertions, fixture/isolation behavior, expected-value independence and the failures they detect; static inspection and actual execution are separate.
+- [x] TDD is assessed using sequencing evidence or a qualified statement of uncertainty, not inferred from test presence or Glaux's own recommendations.
+- [x] Tooling, comments, documentation and coding-assistant guidance are compared with executable behavior and available history; private practice is not invented.
+- [x] Omissions are classified by evidence, and any consequential standards-history checks are authority-qualified and reproducible.
+- [x] Each material lesson has a justified Glaux disposition and applicable existing Guide/three-level Roadmap task references; no-change is an acceptable outcome.
+- [x] The report follows the report template, validates these criteria and identifies optional author questions and any remaining implementation proof without creating new project scope.
 
 Completion does not require a maintainer interview, access to private workflow records, every historical diff to be read, a whole-product certification run or all upstream tests to pass. Such limits must narrow the relevant conclusion rather than disappear from the report.
 
@@ -216,16 +216,18 @@ The report supplies evidence for a later addendum to the existing final synthesi
 
 ## 9. Research Status Checklist
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 synthesis complete
+- [x] Deliverable draft complete
+- [x] Deliverable reviewed (source/plan-alignment checks; project-lead acceptance remains pending)
 - [ ] Deliverable accepted
 
-**Actual Research Time:** Not started.<br>
-**Completion Date:** Not completed.
+**Actual Research Time:** Approximately 30 minutes elapsed through research/report review, September 18, 2026 EDT; source analysis only, not human-hours and excluding subsequent publication.<br>
+**Completion Date:** September 18, 2026 (research/report preparation; acceptance pending).
+
+The report inventories 68 default-branch commits, 11 ordinary issues, five PRs, three releases and 76 test files at `b1fd2e0e9bd69e222d05258d659a842ca24502cb`. It distinguishes selected deep review from inventory coverage, does not establish test-first sequencing, and records the unavailable local runtime prerequisites without installing anything. Most lessons reinforce existing planning; two small harness/documentation clarifications are proposed for later discussion. The official Part 3 recheck found no material register change. No downstream planning artifact or implementation issue was changed.
 
 ---
 
