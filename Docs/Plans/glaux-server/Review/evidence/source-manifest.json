@@ -222,6 +222,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Bookkeeping correction (issues #98, #99, #130) and research-deep-read-remainders slice 1: IDR-008 Sections 16-19, IDR-037 Appendices A-D, IDR-038 Appendices A-C, IDR-039 Section 7 and Sections 21-22 (Pass 3c iteration 16)"
+    },
+    {
+      "name": "22-pass-3c-17-research-deep-read-slice2.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the environment's active-model identification at the time of this iteration",
+      "original_sha256": "14F659E5465579759FCD6B36B07D28806DA2C3A91ECB283964F6BA617D8586E5",
+      "original_bytes": 21178,
+      "published_sha256": "14F659E5465579759FCD6B36B07D28806DA2C3A91ECB283964F6BA617D8586E5",
+      "published_bytes": 21178,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Research-deep-read-remainders slice 2: IDR-040 Sections 9-21, including the response cache validator/variant gap recorded under F-03 (Pass 3c iteration 17)"
     }
   ]
 }
