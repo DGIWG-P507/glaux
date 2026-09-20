@@ -619,6 +619,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 43, queue batch 25: the Phases 6 and 7 task assessment of issues #198 to #238, all 41 adequate. Records the delivery-honesty and fail-closed rules the live publication tasks carry, identifies one implementing task for each of the three link-relation forms F-11 names (#212, #214, #228) together with a sensitivity-proven corpus check finding no relation-spelling rule anywhere in the 286 issues, records that F-19 remains consistent with the iteration 42 boundary because audit appears here only as a non-publication rule and the phase retention task excludes the evidence in question, and adds evidence to follow-up questions fq-03 and fq-09 without resolving either"
+    },
+    {
+      "name": "50-pass-3c-44-batch26-task-assessment.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "C845D9405C3A185FB44A1D21169DA1EF23D9F68517D6951C06B592B976E39B1D",
+      "original_bytes": 20338,
+      "published_sha256": "C845D9405C3A185FB44A1D21169DA1EF23D9F68517D6951C06B592B976E39B1D",
+      "published_bytes": 20338,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 44, queue batch 26, the last per-task batch: the Phases 8 and 9 task assessment of issues #239 to #288, all 50 adequate, completing the per-task assessment of the whole backlog at 286 of 286 with none at targeted-only depth. Records the exchange rule that a claim never becomes an authority, decides F-19 at task level because the complete-restore task #251 and the dedicated retention task #254 both omit audit while many tasks require it at commit time, confirms F-22 at task level in #240 and F-21 premise with remedy location #287, closes the F-11 and F-03 carry-forwards with two sensitivity-proven corpus checks, and records that all three iteration 33 scenario assertions now have implementing tasks"
     }
   ]
 }
