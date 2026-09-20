@@ -97,3 +97,21 @@ No count of tasks stating the F-12 boundary was made or is implied, following th
 Evidence reports 31 through 42 are preserved unchanged. Reports 43 and 44 are preserved with corrections appended; their authored bodies are unchanged.
 
 No implementation, Goal, Guide, Roadmap, issue or upstream change was made. Nothing was written to the implementation repository. `review_complete` remains `false`.
+
+---
+
+## Appendix A - Correction appended in iteration 41 (September 20, 2026)
+
+Everything above this rule is the report as authored in iteration 40 and is unchanged.
+
+**What is withdrawn.** Section 3 says the latest-selection task carries Guide line 440 in full "including the tie retention that the peer implementation examined in iteration 26 does not honour". **The clause about the peer is withdrawn.** It restates a claim this review already withdrew.
+
+**Why.** Iteration 27 withdrew it, and the reasoning is recorded in [32-pass-3c-27-batch8-corrections-and-batch9.md](32-pass-3c-27-batch8-corrections-and-batch9.md) Section 1 and in [31-pass-3c-26-batch8-peer-studies-and-source-checks.md](31-pass-3c-26-batch8-peer-studies-and-source-checks.md) Appendix A. The peer fixture examined in iteration 26 seeds a single newest observation, so it never exercises tied result times and cannot show how that implementation behaves when two observations share the greatest result time. Saying it "does not honour" tie retention asserts exactly what the fixture could not establish.
+
+**What the sentence should say.** Issue #112 applies `resultTime=latest` after authorized route scope and all other native predicates and retains ties, which is Guide line 440 in full. Its fixtures seed exact-time ties, a newer excluded feature, a newer denied observation and late-arriving older results, so the discriminating cases are built in. **No comparison with any peer implementation is needed or supported**, and none is made.
+
+**What does not change.** The Glaux task assessment is untouched: all 39 tasks in this batch remain adequate, and #112 remains correct against Guide line 440. No peer research is reopened, and nothing here revisits what the peer does or does not do; the point is that this review has no basis to say either way.
+
+The same clause was carried into the review summaries, the batch queue note and the batch history, and all are corrected in place.
+
+Recorded in [47-pass-3c-41-batch23-task-assessment.md](47-pass-3c-41-batch23-task-assessment.md), Section 1.

@@ -571,11 +571,26 @@
       "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
       "original_sha256": "B8F84D537CD1FBE54C2C700732CDF9AAC01DB3AF9C75232A7A0B607D48E83C6B",
       "original_bytes": 8157,
-      "published_sha256": "B8F84D537CD1FBE54C2C700732CDF9AAC01DB3AF9C75232A7A0B607D48E83C6B",
-      "published_bytes": 8157,
+      "published_sha256": "EFAB978CD3C9D907D4A63266DAFEFC0186ED14D229EE9EEE00C922DA5DB7413D",
+      "published_bytes": 10231,
+      "publication_change": "correction_appended_body_unchanged",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 40, queue batch 22, the Phase 3 per-task assessment of issues #89 to #127, all 39 adequate. Records that the latest-selection task matches Guide line 440 in full including tie retention, that F-19 is confirmed a second time because the Phase 3 restore task also omits audit, and that the counting record is now computed from the per-issue entries rather than maintained as prose arithmetic",
+      "correction_appended": "Appendix A, added in Pass 3c iteration 41. Withdraws the Section 3 clause asserting that the peer implementation examined in iteration 26 does not honour tie retention; that claim was already withdrawn in iteration 27 because the peer fixture seeds a single newest observation and cannot exercise tied result times. The Glaux task assessment is unchanged and no peer research is reopened. The authored body is byte-for-byte unchanged, verified by hashing the first 8157 bytes to original_sha256."
+    },
+    {
+      "name": "47-pass-3c-41-batch23-task-assessment.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "C15FAEEE749BFE7A9DC10FEF1BA74F2C9294BA4A4579FB820D64721CFAF21D7B",
+      "original_bytes": 8971,
+      "published_sha256": "C15FAEEE749BFE7A9DC10FEF1BA74F2C9294BA4A4579FB820D64721CFAF21D7B",
+      "published_bytes": 8971,
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
-      "covers": "Pass 3c iteration 40, queue batch 22, the Phase 3 per-task assessment of issues #89 to #127, all 39 adequate. Records that the latest-selection task matches Guide line 440 in full including tie retention, that F-19 is confirmed a second time because the Phase 3 restore task also omits audit, and that the counting record is now computed from the per-issue entries rather than maintained as prose arithmetic"
+      "covers": "Pass 3c iteration 41: withdraws in five places a claim about peer tie-retention behavior that iteration 40 reintroduced after iteration 27 had withdrawn it, then executes queue batch 23, the Phase 4 codec assessment of issues #128 to #155, all 28 adequate. Records that five codec tasks state in their own terms that a same-path round trip is not proof, and identifies issue #151 as the task implementing Guide line 739 where a corrected F-03 rule would land"
     }
   ]
 }
