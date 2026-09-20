@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 22 (queue batch 4, the committed deep read of IDR-039A, including the required IDR-040 and IDR-042 dependency cross-check)",
+  "latest_report": "Pass 3c iteration 23 (queue batch 5, the committed deep read of IDR-055; all four committed deep reads now complete and research-deep-read-remainders closed)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -639,11 +639,13 @@
     {
       "id": "IDR-055",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-055-security-authorization-and-command-control-test-strategy-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "full",
+      "note": "Full read completed iteration 23 (queue batch 5, the last of the four committed deep reads): all nineteen numbered sections plus the evidence legend, contents, full metadata header and closing block. MATERIAL STATUS: this report is NOT ACCEPTED. Its header carries no Accepted By or Acceptance Date field, unlike IDR-030, IDR-034, IDR-039A and IDR-043, and its closing block states Research Result Complete, report awaiting Glaux Project Lead review, with the acceptance boundary written conditionally. Report Status Final here means drafting complete, not accepted. This is not an F-17 instance, which concerns accepted reports retaining pre-acceptance wording; here the pre-acceptance wording is correct. The Guide never cites it (no R055 reference marker anywhere), which is expected for an unaccepted proposal. Consequence for the queue: batch 16, the verification-quality pass, must treat this content as an unaccepted proposal, may reuse the evidence, and must not record a Guide gap merely because an IDR-055 mechanism is absent. IDR-039A handoff check is consistent on all four handed-over elements: the required fourteen-column matrix is delivered as a test-plan matrix with its own fourteen columns rather than a copy of the enforcement columns, which is the correct consumption; the no-bypass invariant is operationalized as a blocking CI inventory gate (Sections 4 and 14.4 proof 1); negative suites appear as a mandatory column per row and per-gate deny, indeterminate, stale, unavailable and changed-after-admission cases; and deny-by-default answers the boundary that passing positive auth tests is insufficient. Substantially adopted against the Guide: 401/403/concealed-404 discipline (834); authorization pushed into query construction before derived metadata (469, 598); the paired-world non-interference method in substance (975); the security-test family list (612); startup rejection of unsafe profile combinations and secret references (663, 671); the nine statuses with no invented effect (576, 582, 584); independent gates with pre-dispatch recheck (137, 580, 1037); safe problem details and bounded telemetry vocabularies (602, 667, 827); source identity binding and quarantine isolation (574, 598, 635); and the discipline that a clean scan is not assurance (193, 903, 958). Not adopted and correctly not recorded as gaps: the tool portfolio (cargo-audit, cargo-deny, ZAP, k6, testcontainers, conditional OPA; the Guide selects proptest, cargo-fuzz, cargo-mutants and cargo-llvm-cov at line 962 with nextest explicitly optional), the four execution tiers, SecurityTestResultV1, the twelve implementation proofs, the general twin-world harness, the local issuer and JWKS fixture service and the sim:// effect recorder. Fifth corroborating source for the F-03 response-cache instance and the first to express it as a testable leakage surface naming ETags (Sections 8, 9, 5.1 SEC-POLICY-VIEW and 14.4 proof 4); recorded as corroboration only, given the unaccepted status.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/28-pass-3c-23-idr055.md"
+      ],
+      "conclusion_or_remaining_question": "Fully read. No further remainder outstanding for this report. Not accepted by the project lead as of this reading; downstream batches must treat its recommendations as proposals."
     },
     {
       "id": "IDR-056",
@@ -3198,7 +3200,7 @@
     {
       "id": "research-deep-read-remainders",
       "question": "Recorded remaining sections of 008, 037, 038, 039, 040, 042, 043; committed deep reads 030, 034, 039A, 055",
-      "status": "partial",
+      "status": "closed_supported",
       "evidence": [
         "evidence/21-pass-3c-16-research-deep-read-slice1.md",
         "evidence/22-pass-3c-17-research-deep-read-slice2.md",
@@ -3206,16 +3208,18 @@
         "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md",
         "evidence/25-pass-3c-20-idr030-and-queue-corrections.md",
         "evidence/26-pass-3c-21-idr030-completion-and-idr034.md",
-        "evidence/27-pass-3c-22-idr039a.md"
+        "evidence/27-pass-3c-22-idr039a.md",
+        "evidence/28-pass-3c-23-idr055.md"
       ],
-      "conclusion_or_remaining_question": "All four partial-report remainder slices closed (iterations 16-19). Committed deep reads completed: IDR-030 (batch 2, finished in iteration 21), IDR-034 (batch 3, iteration 21) and IDR-039A (batch 4, iteration 22). Exactly what remains in this check: one committed deep read not yet begun, IDR-055, queued as batch_queue entry 5. Next slice selected: IDR-055 (batch 5)."
+      "conclusion_or_remaining_question": "CLOSED. All four partial-report remainder slices were closed in iterations 16-19 (IDR-008, 037, 038, 039, 040, 042, 043), and all four committed deep reads are now complete: IDR-030 (batch 2, finished in iteration 21), IDR-034 (batch 3, iteration 21), IDR-039A (batch 4, iteration 22) and IDR-055 (batch 5, iteration 23). Nothing remains in this specific check. The broader research area continues through the separate research-key-section-sweep check, queued as batches 6-14, which screens the reports whose read depth was never recorded together with the unread sections of the six partial reports. Material carry-forward: IDR-055 is unaccepted, so batch 16 must treat its content as a proposal rather than an accepted baseline.",
+      "closed_on": "2026-09-19"
     },
     {
       "id": "research-key-section-sweep",
       "question": "Systematic topic key-section accounting using the report inventory and prior evidence",
       "status": "partial",
       "evidence": [],
-      "conclusion_or_remaining_question": "Systematic topic key-section accounting using the report inventory and prior evidence"
+      "conclusion_or_remaining_question": "Systematic topic key-section accounting using the report inventory and prior evidence. Now the only open research check after research-deep-read-remainders closed in iteration 23. Scope: the 47 reports whose read depth was never recorded plus the unread key sections of the six partial reports (IDR-006, 007, 010, 014B, 017, 044), grouped into nine topic clusters as batch_queue entries 6-14; batch 8 also absorbs the peer-source spot checks and fq-10."
     },
     {
       "id": "peer-source-spot-checks",
@@ -3226,11 +3230,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 22 (queue batch 4, committed deep read IDR-039A)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 23 (queue batch 5, committed deep read IDR-055; research-deep-read-remainders closed)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the environment's active-model identification at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 22 executed batch 4 in full and published this checkpoint. Batch 5 has not been started.",
+    "unfinished_step": "None. Iteration 23 executed batch 5 in full and published this checkpoint. Batch 6 has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3247,18 +3251,19 @@
       "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md",
       "evidence/25-pass-3c-20-idr030-and-queue-corrections.md",
       "evidence/26-pass-3c-21-idr030-completion-and-idr034.md",
-      "evidence/27-pass-3c-22-idr039a.md"
+      "evidence/27-pass-3c-22-idr039a.md",
+      "evidence/28-pass-3c-23-idr055.md"
     ],
     "next_batch": {
-      "title": "Batch 5 of 27: committed deep read IDR-055, security, authorization and command-control test strategy",
+      "title": "Batch 6 of 27: key-section screen A, standards and obligation baselines",
       "check_ids": [
-        "research-deep-read-remainders"
+        "research-key-section-sweep"
       ],
-      "source_scope": "Full read of IDR-SRV-055 (437 lines), the last of the four committed consequential deep reads and the smallest. Account its key findings, recommendations and open questions against Guide v1.3 (search first, then targeted reads), recording adopted, not-adopted or departure with line references. Raise a finding only where a Guide gap is evidenced; F-12 (independent response interpretation), F-08 (adapted-test labelling), F-15, F-18 and F-20 are the likely homes. Note that IDR-039A Section 20 hands this topic its required fourteen-column enforcement matrix, the no-bypass invariant and the negative-test suites, so check that handoff is consistent with what IDR-055 actually specifies. Read every section in full or state precisely which sections were not read; do not record the report as fully read on the basis of a skim. This batch feeds batch 16, the verification-quality pass, which must reuse this evidence rather than reading the report again.",
-      "stop_condition": "Record IDR-055 with an accurate read depth and its material points accounted against the Guide; update the research-deep-read-remainders conclusion to record that all four committed deep reads are complete and that only the key-section screens remain in the research area; mark batch_queue entry 5 status done and set entry 6 as next; save and publish the checkpoint.",
+      "source_scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation against success criteria) of IDR-001, IDR-002, IDR-003, IDR-004 and IDR-005, whose read depth was never recorded; plus the unread key sections of IDR-006 and IDR-007, whose interpretation and open-question sections were already read (evidence/03-pass-3a.txt) and must be reused rather than re-read. Seven reports, roughly 500-800 lines of key sections. This is a screen to establish coverage, not a full read of each report. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced; F-01, F-02, F-08 and F-10 are plausible homes for baseline and source-link matters. Record read depth accurately: state for each report which sections were screened and do not record any report as fully read on the basis of a screen. Note that IDR-006 and IDR-007 are the CSAPI Part 1 and Part 2 requirement baselines, so their content overlaps standards checks already closed in iterations 12-15; reuse those closed conclusions rather than reopening them.",
+      "stop_condition": "Record each of the seven reports with an accurate read depth and its material points accounted against the Guide; update the research-key-section-sweep conclusion to list exactly which clusters remain; mark batch_queue entry 6 status done and set entry 7 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 5 of 27; 23 remain. Follow the queue in order unless the user selects otherwise."
+    "queue_pointer": "batch_queue.queue entry 6 of 27; 22 remain. Follow the queue in order unless the user selects otherwise."
   },
   "batch_history": [
     {
@@ -3472,6 +3477,27 @@
       ],
       "next_work": "Batch 5 of 27: committed deep read IDR-055 (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 23, queue batch 5: the committed deep read of IDR-055, the last of four. All nineteen numbered sections plus the legend, contents, full metadata header and closing block were read in full. Established a material status fact: IDR-055 is not accepted. Its header carries no acceptance field, unlike the other three deep reads, and its closing block says the report awaits project-lead review with the acceptance boundary written conditionally; Report Status Final means drafting complete. This is not an F-17 instance because the pre-acceptance wording is correct for an unaccepted report, and the Guide correctly never cites it. Carried out the queue-required IDR-039A handoff check, which is consistent on all four handed-over elements: the fourteen-column requirement is met by a test-plan matrix with its own columns rather than a copy of the enforcement columns, the no-bypass invariant is operationalized as a blocking CI inventory gate, negative suites appear per row and per gate, and deny-by-default answers the stated boundary. Accounted the report against the Guide: substantially adopted across denial-status discipline, authorization pushed into query construction, the paired-world method which the Guide already holds in substance at line 975, the Guide own security-test family list at line 612, startup rejection of unsafe profiles, the nine statuses, independent command gates, safe problem details and source identity binding. The tool portfolio, execution tiers, evidence schema, twelve proofs and simulator harness are not adopted and are correctly not recorded as gaps, because the report is unaccepted, the standing instruction forbids adding a tool portfolio because an optional mechanism is absent, and F-02 already owns the enforced-CI question at the right altitude. Preserved five reusable items for batch 16 and recorded the status caveat that governs their use. Closed the research-deep-read-remainders check. Added the iteration evidence report and its manifest entry.",
+      "coverage_completed": [
+        "research-deep-read-remainders (committed deep read IDR-055; queue batch 5) - CHECK NOW CLOSED",
+        "IDR-039A to IDR-055 handoff verification"
+      ],
+      "material_points": [
+        "All four committed deep reads are complete and research-deep-read-remainders is closed. The research area now continues only through the key-section sweep, batches 6-14.",
+        "IDR-055 is NOT ACCEPTED: no acceptance record in its header and a closing block stating it awaits project-lead review. First report in the deep-read set without acceptance. Not an F-17 instance, since its pre-acceptance wording is correct. The Guide never cites it, which is expected.",
+        "Consequence recorded against batch 16: the verification-quality pass must treat IDR-055 as a proposal, may reuse the evidence, and must not record a Guide gap merely because an IDR-055 mechanism is absent. The carry-forward is written into the batch 16 queue note so it cannot be missed.",
+        "IDR-039A handoff is consistent on all four elements. The two reports independently required fourteen-column matrices and the columns differ appropriately, one being an enforcement inventory and the other a test plan; IDR-055 did not reproduce IDR-039A columns, which is the correct consumption.",
+        "The Guide already holds the paired-world non-interference method in substance at line 975 and its own security-test family list at line 612, which match IDR-055 families closely.",
+        "F-03 response-cache instance gained a fifth source, and the first to express the rule as a testable leakage surface naming ETags. Recorded as corroboration only, given the unaccepted status; substance and remedy unchanged.",
+        "No new finding, no new follow-up question, no queue change, no tool selected and no recommendation implemented."
+      ],
+      "next_work": "Batch 6 of 27: key-section screen A, standards and obligation baselines (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -3613,7 +3639,8 @@
       "Iteration 19: 30 batches (1 done, 29 remaining).",
       "Iteration 20: 27 batches (2 done, 25 remaining). Batch 2 (IDR-030) executed. Three issue batches combined: former Phase 5a and 5b merged, Phases 6 and 7 merged, Phases 8 and 9 merged, because batch 17 complete comparison lets matching leaf content be reused rather than reviewed twice. The six partial reports were absorbed into existing cluster batches rather than adding six batches.",
       "Iteration 21: 27 batches (3 done, 24 remaining). Batch 3 executed. No count change; the IDR-030 coverage completion was finishing work already inside batch 2, not a new batch.",
-      "Iteration 22: 27 batches (4 done, 23 remaining). Batch 4 executed. No count change."
+      "Iteration 22: 27 batches (4 done, 23 remaining). Batch 4 executed. No count change.",
+      "Iteration 23: 27 batches (5 done, 22 remaining). Batch 5 executed; research-deep-read-remainders closed. No count change."
     ],
     "reuse_rules": [
       "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
@@ -3638,8 +3665,8 @@
       "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
     "total_batches": 27,
-    "done": 4,
-    "remaining": 23,
+    "done": 5,
+    "remaining": 22,
     "queue": [
       {
         "batch": 1,
@@ -3688,8 +3715,8 @@
         "scope": "Full read of IDR-055 accounted against Guide v1.3. One of the four consequential deep reads the review committed to.",
         "size_basis": "437 lines",
         "coverage_state": "genuinely_unreviewed",
-        "status": "queued",
-        "note": "Smallest of the four. Its test-strategy content is reused by batch 16 (verification-quality pass); do not read it twice."
+        "status": "done_iteration_23",
+        "note": "Executed in iteration 23. All nineteen sections plus legend, contents, header and closing block read in full. The IDR-039A handoff is consistent on all four elements. Material status: the report is NOT ACCEPTED (no acceptance record; awaiting project-lead review), so batch 16 must treat its content as a proposal and must not record a Guide gap merely because an IDR-055 mechanism is absent. Fifth corroborating source for the F-03 cache instance, from the test side. No new finding, no queue change."
       },
       {
         "batch": 6,
@@ -3799,7 +3826,7 @@
         "size_basis": "Guide Section 8 plus batch 5 evidence, roughly 300 lines with cross-checks",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
-        "note": "Reuses batch 5 (IDR-055) and the already-read IDR-052 and IDR-053 material. F-12 is the existing home for oracle-independence questions and F-08 for adapted-test labelling."
+        "note": "Reuses batch 5 (IDR-055) and the already-read IDR-052 and IDR-053 material. F-12 is the existing home for oracle-independence questions and F-08 for adapted-test labelling. CARRY-FORWARD FROM BATCH 5 (iteration 23): IDR-055 is unaccepted, so its recommendations are proposals and the absence of one of its mechanisms from the Guide is not by itself a gap. Reuse evidence/28-pass-3c-23-idr055.md Section 5, which preserves five reusable items: the status caveat, what the Guide already covers (lines 612, 975, 1019, 903, 957-964), the one channel the Guide test list omits (cache validators and ETags, already the F-03 instance, do not re-derive it), the five-form oracle taxonomy as an analytic lens for F-12, and the separations IDR-055 preserves. Do not read IDR-055 again."
       },
       {
         "batch": 17,

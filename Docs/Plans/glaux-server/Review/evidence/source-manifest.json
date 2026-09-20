@@ -306,6 +306,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Queue batch 4, the committed deep read of IDR-039A, including the required IDR-040 and IDR-042 dependency cross-check and a fourth corroborating source for the F-03 response-cache instance (Pass 3c iteration 22)"
+    },
+    {
+      "name": "28-pass-3c-23-idr055.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "9672739B66D375EC433C8C8223C479F9652D4363CD1AFF108D60BC179628D17D",
+      "original_bytes": 16736,
+      "published_sha256": "9672739B66D375EC433C8C8223C479F9652D4363CD1AFF108D60BC179628D17D",
+      "published_bytes": 16736,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Queue batch 5, the committed deep read of IDR-055, including the IDR-039A handoff verification, the finding that IDR-055 is not accepted and its consequence for batch 16, and a fifth corroborating source for the F-03 response-cache instance (Pass 3c iteration 23)"
     }
   ]
 }
