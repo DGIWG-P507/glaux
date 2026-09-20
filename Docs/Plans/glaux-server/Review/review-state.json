@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 20 (queue batch 2, committed deep read IDR-030; plus two corrections to the queue accounting: complete leaf-to-issue comparison and the six partial reports)",
+  "latest_report": "Pass 3c iteration 21 (IDR-030 coverage completion after an overstated record, then queue batch 3, the committed deep read of IDR-034)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -369,10 +369,11 @@
       "id": "IDR-030",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-030-data-lifecycle-retention-archival-and-deletion-strategy-report.md",
       "documented_read_depth": "full",
-      "note": "Full read completed iteration 20 (queue batch 2). Sections carrying decisions, rules, distinctions and recommendations read in full (1-2, 7-11, 13-15, 18-19); Sections 3-6, 12 and 16-17 skimmed for cross-reference. Core posture adopted at Guide line 527: no automatic retention or purge by default, explicitly configured policy only, preserving visible deletion behaviour and dependencies among values, schemas, source documents, pending work and synchronization tombstones. Also adopted: cascade and 409 rules with retained internal evidence (509), no identifier reuse (509), command cancellation is a status not a deletion (509, 582), idempotency-key retention outliving replay horizons (505, 849), derived state rebuildable while accepted observations and command evidence are not (527), no fabricated history removed by retention (523), minimal tombstone fields (711), DDIL anti-resurrection (647, 651), and restore drills including tombstones (529, 533). Not adopted as a recorded scope choice: archive tier, hold overlay, policy registry, disposition receipts, purge automation, cryptographic erase, media sanitization, the five orthogonal lifecycle state dimensions, aggregation and downsampling, and the 202-with-status-link asynchronous deletion contract; IDR-030 itself assigns those to deployment, security or profile authorities and supplies no numeric horizon. One documentation gap recorded as a related instance under F-19: Guide Section 4.7 enumerates what an operational restore does not re-establish (continuity tokens, pending commands, same-key deduplication) but omits that restoring to a pre-deletion point returns the deleted resource to the authoritative store, rolls back the tombstone held in that same store, and re-exposes it to the reads that are re-enabled first.",
+      "note": "Fully read across iterations 20 and 21. Iteration 20 (queue batch 2) read Sections 1-2, 7-11, 13-15 and 18-19 and accounted them; it skimmed Sections 3-6, 12 and 16-17 while recording the report as fully read, which overstated coverage. Iteration 21 corrected the entry to partial, then read the seven outstanding sections in full and restored this entry to full on that basis. Evidence report 25 is preserved unchanged and report 26 appends the completion. Core posture adopted at Guide line 527 (no automatic retention or purge by default, explicitly configured policy only). Also adopted: cascade and 409 rules with retained internal evidence (509), no identifier reuse (509), cancellation as a status (509, 582), idempotency-key retention outliving replay horizons (505, 849), rebuildable derived state (527), no fabricated history removed by retention (523), minimal tombstone fields (711), DDIL anti-resurrection (647, 651), restore drills including tombstones (529, 533). Not adopted as a recorded scope choice: archive tier, hold overlay, policy registry, disposition receipts, purge automation, cryptographic erase, media sanitization, the five orthogonal lifecycle state dimensions, the 30-class copy inventory, aggregation and downsampling, and the 202-with-status-link asynchronous deletion contract. One documentation gap under F-19, sharpened by the finishing read: Section 12.2 specifies an explicit restore sequence (isolated non-serving namespace, then apply the current tombstone and deletion ledger before publication, never expose restored pre-deletion state) and Section 12.1 keeps deletion-ledger bounds in the archive manifest so a gap is detectable, while Guide Section 4.7 enumerates its other restore limitations and omits deletions. Section 16 supplies two ready-made fixtures for it.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/25-pass-3c-20-idr030-and-queue-corrections.md"
+        "evidence/25-pass-3c-20-idr030-and-queue-corrections.md",
+        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md"
       ],
       "conclusion_or_remaining_question": "Fully read. No further remainder outstanding for this report."
     },
@@ -408,11 +409,13 @@
     {
       "id": "IDR-034",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-034-datastream-observation-and-status-update-semantics-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "full",
+      "note": "Full read completed iteration 21 (queue batch 3): all nineteen sections plus the completion checklist. Substantially adopted: filter-and-authorize before resultTime=latest with all ties returned (Guide 440, 469); schema modification rejected after Observations exist with description-only changes permitted and successor streams for incompatible changes (434); live means data availability only (483); optional, nil, uncertain and withheld kept distinct (467, 469); authorization before filtering, selection, counts, extents, paging, caching and publication (469, 598, 975); PostgreSQL first with TimescaleDB conditional (519); publish only after commit with fact revisions, projection changes and delivery attempts distinguished (539, 541); System Events distinct from resource changes and transport notifications (705); no Observation override of stream unit, property or encoding (467, 702); strict unknown-parameter errors (436). Confirmed instance of F-14(c): the report states ascending order twice (Sections 10.3 and 12.2) while Guide line 444 names the sort key and tie-breaker without the direction, and no occurrence of ascending or descending appears anywhere in the Guide. Third corroborating source for the F-03 cache instance (Section 13.4, principal-specific results use partitioned or private caches). Recorded departure the Guide states for itself: the report asks for snapshot-stable paging while Guide lines 444, 471 and 473 deliberately choose a changing-view keyset contract and point to the explicit snapshot and export mechanism instead. Not adopted as scope choices: the current-status projection service with per-dimension selectors, the source-health record family, the admission taxonomy, the materialized-projection metadata contract and the work-package estimates.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md"
+      ],
+      "conclusion_or_remaining_question": "Fully read. No further remainder outstanding for this report."
     },
     {
       "id": "IDR-035",
@@ -3199,9 +3202,10 @@
         "evidence/22-pass-3c-17-research-deep-read-slice2.md",
         "evidence/23-pass-3c-18-research-deep-read-slice3.md",
         "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md",
-        "evidence/25-pass-3c-20-idr030-and-queue-corrections.md"
+        "evidence/25-pass-3c-20-idr030-and-queue-corrections.md",
+        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md"
       ],
-      "conclusion_or_remaining_question": "All four partial-report remainder slices are closed (iterations 16-19). Committed deep read IDR-030 completed in iteration 20 as queue batch 2: core lifecycle posture adopted at Guide line 527, lifecycle machinery not adopted as a recorded scope choice, one documentation gap recorded under F-19 for restore versus deletion. Exactly what remains in this check: three committed deep reads not yet begun, IDR-034, IDR-039A and IDR-055, queued as batch_queue entries 3, 4 and 5. Next slice selected: IDR-034 (batch 3)."
+      "conclusion_or_remaining_question": "All four partial-report remainder slices closed (iterations 16-19). Committed deep reads completed: IDR-030 (batch 2, iteration 20, with its skimmed sections finished in iteration 21) and IDR-034 (batch 3, iteration 21). Exactly what remains in this check: two committed deep reads not yet begun, IDR-039A and IDR-055, queued as batch_queue entries 4 and 5. Next slice selected: IDR-039A (batch 4)."
     },
     {
       "id": "research-key-section-sweep",
@@ -3219,11 +3223,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 20 (batch 2, IDR-030; queue corrected from 30 to 27 batches)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 21 (IDR-030 coverage completion; queue batch 3, IDR-034)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the environment's active-model identification at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 20 executed batch 2 and applied both directed queue corrections, then published this checkpoint. Batch 3 has not been started.",
+    "unfinished_step": "None. Iteration 21 finished the IDR-030 sections that iteration 20 had only skimmed, executed batch 3, and published this checkpoint. Batch 4 has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3238,18 +3242,19 @@
       "evidence/22-pass-3c-17-research-deep-read-slice2.md",
       "evidence/23-pass-3c-18-research-deep-read-slice3.md",
       "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md",
-      "evidence/25-pass-3c-20-idr030-and-queue-corrections.md"
+      "evidence/25-pass-3c-20-idr030-and-queue-corrections.md",
+      "evidence/26-pass-3c-21-idr030-completion-and-idr034.md"
     ],
     "next_batch": {
-      "title": "Batch 3 of 27: committed deep read IDR-034, DataStream, Observation and status update semantics",
+      "title": "Batch 4 of 27: committed deep read IDR-039A, zero-trust architecture alignment and enforcement model",
       "check_ids": [
         "research-deep-read-remainders"
       ],
-      "source_scope": "Full read of IDR-SRV-034 (728 lines), the second of the four committed consequential deep reads. Account its key findings, recommendations and open questions against Guide v1.3 (search first, then targeted reads), recording adopted, not-adopted or departure with line references. Raise a finding only where a Guide gap is evidenced; F-18 (ControlStream live and admission semantics), F-07 (resultTime=latest interpretation) and F-14 (interpretation details) are the likely homes. Expect dense overlap with Guide Sections 4.4-4.5 and with the latest-value semantics already closed in iterations 17 and 18, so reuse that accounting rather than repeating it. Issue bodies optional.",
-      "stop_condition": "Record IDR-034 as fully read with its material points accounted against the Guide; update the research-deep-read-remainders conclusion to list the two deep reads still outstanding (IDR-039A and IDR-055); mark batch_queue entry 3 status done and set entry 4 as next; save and publish the checkpoint.",
+      "source_scope": "Full read of IDR-SRV-039A (786 lines), the third of the four committed consequential deep reads. Account its key findings, recommendations and open questions against Guide v1.3 (search first, then targeted reads), recording adopted, not-adopted or departure with line references. Raise a finding only where a Guide gap is evidenced; F-03 (minimal authorization semantics), F-19 and F-20 are the likely homes. Note specifically that IDR-040 Section 14.1 and IDR-042 Section 14.1 both depend on this report policy and trust bundle model and its bounded offline-authority envelope, so check those dependencies are consistent with what this report actually specifies. Read every section in full or state precisely which sections were not read; do not record the report as fully read on the basis of a skim.",
+      "stop_condition": "Record IDR-039A with an accurate read depth and its material points accounted against the Guide; update the research-deep-read-remainders conclusion to list the one deep read still outstanding (IDR-055); mark batch_queue entry 4 status done and set entry 5 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 3 of 27; 25 remain. Follow the queue in order unless the user selects otherwise."
+    "queue_pointer": "batch_queue.queue entry 4 of 27; 24 remain. Follow the queue in order unless the user selects otherwise."
   },
   "batch_history": [
     {
@@ -3424,6 +3429,27 @@
       ],
       "next_work": "Batch 3 of 27: committed deep read IDR-034 (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 21, two parts. Part 1, coverage correction: evidence report 25 disclosed that IDR-030 Sections 3-6, 12 and 16-17 were skimmed rather than read, while the state entry recorded the report fully read with no remainder. The entry was corrected to partial with the seven sections named before any reading, so the record would be honest at any interruption point, then those sections were read in full and the entry restored to full on that basis. Report 25 is preserved unchanged with its hash intact; report 26 appends the completion rather than rewriting history. Finishing the sections materially improved the F-19 restore instance: Section 12.2 specifies an explicit restore sequence ending in apply the current tombstone and deletion ledger before publication, never expose restored pre-deletion state, Section 12.1 keeps deletion-ledger bounds in the archive manifest so a gap is detectable, Section 6.2 lists the tombstone ledger as a restore gate, and Section 16 supplies two ready-made fixtures. The iteration 20 hedge that there may be nothing to reapply was therefore narrowed. Part 2, batch 3: read all nineteen sections of IDR-034 plus its checklist and accounted them against Guide v1.3. Substantially adopted across latest-value selection, schema evolution, live semantics, nil and quality distinctions, authorization ordering, storage posture, publication ordering and System Event separation. Confirmed an instance of F-14(c): IDR-034 states ascending order twice while Guide line 444 names the sort key and tie-breaker without a direction and the words ascending and descending appear nowhere in the Guide. Added a third corroborating source for the F-03 cache instance. Recorded the snapshot-paging departure that the Guide already states for itself. Added evidence report 26 and its manifest entry.",
+      "coverage_completed": [
+        "IDR-030 coverage completion (Sections 3-6, 12, 16-17; finishing work inside queue batch 2)",
+        "research-deep-read-remainders (committed deep read IDR-034; queue batch 3)"
+      ],
+      "material_points": [
+        "Coverage record corrected before the work, not after: the IDR-030 entry was set to partial with the unread sections named, then restored to full only on the basis of an actual read. Archived report 25 was preserved and report 26 appends the completion.",
+        "Finishing the skimmed sections changed a finding. The F-19 restore instance is sharpened by IDR-030 Section 12 explicit restore sequence and gains two ready-made fixtures, and the earlier hedge about there being nothing to reapply is narrowed.",
+        "IDR-034 fully read. Confirmed instance of F-14(c): Guide line 444 fixes the observation sort key and tie-breaker but leaves the direction unstated, while IDR-034 specifies ascending twice. Two conforming clients could page the same stream in opposite orders. Fix is one word.",
+        "F-03 cache instance now rests on three accepted reports (IDR-040 Section 10.4, IDR-042 Section 7, IDR-034 Section 13.4).",
+        "Snapshot-stable paging is a departure the Guide states for itself at lines 444, 471 and 473, pointing to the explicit snapshot and export mechanism instead. Recorded so it is not later raised as an omission.",
+        "New follow-up question fq-11, deliberately unverified: IDR-034 says a future resultTime is prohibited, the Guide has no such rule, and the report own footnote attributes Requirements 96-98 to parent schemas and UTC time rather than to futurity. Asserting a Guide gap without checking the standard would be an unverified claim.",
+        "Queue unchanged at 27 batches; 3 done, 24 remaining. The IDR-030 completion was finishing work already inside batch 2, not a new batch."
+      ],
+      "next_work": "Batch 4 of 27: committed deep read IDR-039A (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -3517,9 +3543,10 @@
         "evidence/21-pass-3c-16-research-deep-read-slice1.md",
         "evidence/22-pass-3c-17-research-deep-read-slice2.md",
         "evidence/23-pass-3c-18-research-deep-read-slice3.md",
-        "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md"
+        "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md",
+        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md"
       ],
-      "supporting_note": "Iteration 17 added research support: IDR-040 Section 10.3 states that a visible heartbeat or its absence is itself a disclosure and that health endpoints expose only a minimal service-health contract, and Section 15.3 states that public health surfaces reveal only deployment-approved service state. Iteration 18 added a third source: IDR-042 Section 15.3 line 624 requires bounded mode/dependency-class/outcome metric labels and states that telemetry is not public source/System status and is not authoritative audit. Guide line 665 already adopts the liveness/readiness split with protected diagnostics and line 667 adopts the label-cardinality discipline; the open part remains the exposure boundary of the metrics/traces endpoint itself. Iteration 19 added a fourth source: IDR-043 Section 16.3 requires that high-cardinality resource, peer, tenant and command identifiers not become unrestricted metric labels, and that health distinguish the HTTP process, the authoritative store, the mandatory audit path and optional dependencies rather than one global flag. The Guide adopts both at lines 667 and 665."
+      "supporting_note": "Iteration 17 added research support: IDR-040 Section 10.3 states that a visible heartbeat or its absence is itself a disclosure and that health endpoints expose only a minimal service-health contract, and Section 15.3 states that public health surfaces reveal only deployment-approved service state. Iteration 18 added a third source: IDR-042 Section 15.3 line 624 requires bounded mode/dependency-class/outcome metric labels and states that telemetry is not public source/System status and is not authoritative audit. Guide line 665 already adopts the liveness/readiness split with protected diagnostics and line 667 adopts the label-cardinality discipline; the open part remains the exposure boundary of the metrics/traces endpoint itself. Iteration 19 added a fourth source: IDR-043 Section 16.3 requires that high-cardinality resource, peer, tenant and command identifiers not become unrestricted metric labels, and that health distinguish the HTTP process, the authoritative store, the mandatory audit path and optional dependencies rather than one global flag. The Guide adopts both at lines 667 and 665. Iteration 21 added a fifth source: IDR-030 Section 17.4 requires that metrics avoid resource names, payloads, sensitive reasons, tenant leakage and high-cardinality identifiers."
     },
     {
       "id": "fq-10-csgo-repository-url-discrepancy",
@@ -3528,9 +3555,21 @@
       "relevance": "peer-source-spot-checks (CS-Go pins for 014A/014B/062); Guide line 1129 CS-GO citation; research reproducibility",
       "status": "noted_not_scheduled",
       "evidence": [
-        "evidence/22-pass-3c-17-research-deep-read-slice2.md"
+        "evidence/22-pass-3c-17-research-deep-read-slice2.md",
+        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md"
       ],
-      "supporting_note": "Not asserted to be a defect and deliberately not attached to F-10, whose subject is the distinct IDR-011 malformed-commit-hash links. The peer-source-spot-checks batch pins CS-Go anyway and should resolve this in passing."
+      "supporting_note": "Not asserted to be a defect and deliberately not attached to F-10, whose subject is the distinct IDR-011 malformed-commit-hash links. The peer-source-spot-checks batch pins CS-Go anyway and should resolve this in passing. Iteration 21 weight, not a resolution: IDR-034 Section 19.3 also pins SomethingCreativeStudios, so four reports and Guide line 1129 use that organization against a single report using opensensorhub. Still not adjudicated; the peer-source batch owns it."
+    },
+    {
+      "id": "fq-11-future-result-time",
+      "raised": "2026-09-19",
+      "question": "IDR-034 states twice that a future resultTime is prohibited (Sections 1 and 11.1) and includes a future-result reject fixture (Section 14.1), while Guide v1.3 contains no rule rejecting a future resultTime. The report own footnote 8 attributes Requirements 96-98 to parent result and parameter schemas and UTC time, which matches the iteration 15 reading that Requirement 98 constrains time scale and encodings only, so the futurity rule may come from the conceptual model or prose rather than a numbered requirement. Does the approved Part 2 baseline actually prohibit a future resultTime, and if it does, should the Guide state the rejection rule and its status code?",
+      "relevance": "Guide Sections 4.4 and 6.4; observation write leaves; conformance evidence if a numbered requirement is involved",
+      "status": "noted_not_scheduled",
+      "evidence": [
+        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md"
+      ],
+      "supporting_note": "Deliberately not verified in iteration 21. Asserting a Guide omission without checking the published standard would be an unverified claim of a standards obligation. Any future batch touching Part 2 Clause 16 can settle it cheaply."
     }
   ],
   "publication": {
@@ -3548,7 +3587,8 @@
     "sizing_basis": "Each batch is sized against what iterations 16-20 actually absorbed: roughly 350-850 lines of source plus its Guide cross-checks. Research key-section batches group five to eight reports because a screen is lighter per line than a deep-read accounting. Issue batches follow Roadmap phase and group boundaries, which are the functional units.",
     "count_history": [
       "Iteration 19: 30 batches (1 done, 29 remaining).",
-      "Iteration 20: 27 batches (2 done, 25 remaining). Batch 2 (IDR-030) executed. Three issue batches combined: former Phase 5a and 5b merged, Phases 6 and 7 merged, Phases 8 and 9 merged, because batch 17 complete comparison lets matching leaf content be reused rather than reviewed twice. The six partial reports were absorbed into existing cluster batches rather than adding six batches."
+      "Iteration 20: 27 batches (2 done, 25 remaining). Batch 2 (IDR-030) executed. Three issue batches combined: former Phase 5a and 5b merged, Phases 6 and 7 merged, Phases 8 and 9 merged, because batch 17 complete comparison lets matching leaf content be reused rather than reviewed twice. The six partial reports were absorbed into existing cluster batches rather than adding six batches.",
+      "Iteration 21: 27 batches (3 done, 24 remaining). Batch 3 executed. No count change; the IDR-030 coverage completion was finishing work already inside batch 2, not a new batch."
     ],
     "reuse_rules": [
       "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
@@ -3573,8 +3613,8 @@
       "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
     "total_batches": 27,
-    "done": 2,
-    "remaining": 25,
+    "done": 3,
+    "remaining": 24,
     "queue": [
       {
         "batch": 1,
@@ -3594,7 +3634,7 @@
         "size_basis": "841 lines",
         "coverage_state": "genuinely_unreviewed",
         "status": "done_iteration_20",
-        "note": "Executed in iteration 20. Guide line 527 adopts the core posture (no automatic retention or purge by default, explicit configured policy only). One documentation gap recorded as a related instance under F-19: Section 4.7 enumerates what an operational restore does not re-establish but omits that restoring to a pre-deletion point re-exposes deleted resources locally."
+        "note": "Executed in iteration 20. Guide line 527 adopts the core posture (no automatic retention or purge by default, explicit configured policy only). One documentation gap recorded as a related instance under F-19: Section 4.7 enumerates what an operational restore does not re-establish but omits that restoring to a pre-deletion point re-exposes deleted resources locally. COVERAGE CORRECTION (iteration 21): iteration 20 skimmed Sections 3-6, 12 and 16-17 while recording the report fully read. Those sections were read in full in iteration 21 and the entry restored to full on that basis; evidence report 25 is preserved unchanged and report 26 appends the completion."
       },
       {
         "batch": 3,
@@ -3603,8 +3643,8 @@
         "scope": "Full read of IDR-034 accounted against Guide v1.3. One of the four consequential deep reads the review committed to.",
         "size_basis": "728 lines",
         "coverage_state": "genuinely_unreviewed",
-        "status": "queued",
-        "note": "Overlaps Guide Sections 4.4-4.5 and the already-closed latest-value semantics; expect dense adopted comparison and reuse rather than new ground."
+        "status": "done_iteration_21",
+        "note": "Executed in iteration 21. All nineteen sections plus the checklist read in full. Substantially adopted; confirmed an F-14(c) instance (Guide line 444 omits the ordering direction), added a third source for the F-03 cache instance, and recorded the snapshot-paging departure that the Guide states for itself."
       },
       {
         "batch": 4,
