@@ -605,6 +605,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 42, queue batch 24: the Phase 5 tasking assessment of issues #156 to #197, the largest per-task batch at 42 issues, all 42 adequate. Records the Guide safety rules reproduced in named tasks for the only phase that can cause a physical effect, gives F-19 a third task-level confirmation across three restore tasks while narrowing the gap to restore and retention because issue #163 shows audit is verified where it is written, and records four further oracle-discipline examples qualitatively"
+    },
+    {
+      "name": "49-pass-3c-43-batch25-task-assessment.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "5F87DBDA3D7E326FAB576A0E882E4B6193E1950CDAF8B98440BB05262175E6E5",
+      "original_bytes": 16195,
+      "published_sha256": "5F87DBDA3D7E326FAB576A0E882E4B6193E1950CDAF8B98440BB05262175E6E5",
+      "published_bytes": 16195,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 43, queue batch 25: the Phases 6 and 7 task assessment of issues #198 to #238, all 41 adequate. Records the delivery-honesty and fail-closed rules the live publication tasks carry, identifies one implementing task for each of the three link-relation forms F-11 names (#212, #214, #228) together with a sensitivity-proven corpus check finding no relation-spelling rule anywhere in the 286 issues, records that F-19 remains consistent with the iteration 42 boundary because audit appears here only as a non-publication rule and the phase retention task excludes the evidence in question, and adds evidence to follow-up questions fq-03 and fq-09 without resolving either"
     }
   ]
 }
