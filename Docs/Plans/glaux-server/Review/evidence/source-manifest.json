@@ -518,6 +518,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 36, queue batch 18, the whole-backlog dependency graph, coverage and sizing analysis. Corrects the phase-batch reuse rule before the analysis, records a clean dependency graph with every check proven sensitive, establishes phase prerequisite consistency under transitive closure, and records three check artifacts caught by inspection rather than reported as backlog defects"
+    },
+    {
+      "name": "43-pass-3c-37-batch19-phase1-task-assessment.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "1721214C1668F042B9A362983E7526BA92489074472699F7F058B378332F3A99",
+      "original_bytes": 12963,
+      "published_sha256": "1721214C1668F042B9A362983E7526BA92489074472699F7F058B378332F3A99",
+      "published_bytes": 12963,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 37, queue batch 19, the Phase 1 per-task semantic assessment of issues #3 to #26. All 24 adequate. Assesses the shared version-pinning passage once for all 286, gives F-12 its first quantified support with the actual-side independence boundary measured at a lower bound of 24 of 286, corrects the iteration 35 claim about what the shared boilerplate carries, and confirms F-19 and the UUIDv7 observation at task level"
     }
   ]
 }

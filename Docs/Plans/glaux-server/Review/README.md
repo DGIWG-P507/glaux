@@ -10,7 +10,17 @@
 2. Read **instructions.md**, especially the rule for recording disagreements without interrupting coverage.
 3. Use **current_work** in **review-state.json** to resume the exact unfinished step or next batch, and **batch_queue** in the same file to see the whole numbered remainder. Do not reload every archived response.
 
-The last substantive reviewer response is **Pass 3c, iteration 36**, which executed queue batch 18, the whole-backlog dependency, coverage and sizing analysis.
+The last substantive reviewer response is **Pass 3c, iteration 37**, which executed queue batch 19, the first assessment of what the implementation tasks actually say.
+
+**All 24 Phase 1 tasks are adequate.** Each was judged as one unit, with its scope, exclusions, prerequisites, acceptance criteria and verification approach read together rather than separately. The tasks are disciplined in ways worth naming: every exclusion points at the sibling that owns what it defers, several forbid a specific wrong shortcut rather than only stating the goal, and one records an honest limitation instead of overclaiming.
+
+**The response-interpretation finding gained its first quantified support.** Six of the 24 tasks state, in their own words, the exact boundary the Guide leaves open: that expected values must not be taken from the server's own serialization. One puts it precisely, that a successful round trip through the same faulty conversion proves nothing. Across all 286 issues the boundary appears at least 24 times, and that is a lower bound, demonstrated twice inside one batch as the search was widened. So the rule is real and the project believes in it, but it is written where an author happened to think of it rather than stated once as a rule. That is exactly what the recorded one-clause fix would change.
+
+One earlier claim was corrected. A previous response said the shared checklist carries the Guide's verification practices into every issue. That holds for the false-green rule and for independent expected results, and not for this boundary.
+
+The reviewer-read issue count rises from 18 to 42. The other 262 have been fetched and compared, which is not the same as read.
+
+The previous response, **iteration 36**, completed the whole-backlog dependency, coverage and sizing analysis.
 
 One correction came first. The previous response claimed the remaining issue batches reduce to the content the issues add beyond their leaves. That is **withdrawn**. Matching Roadmap content is reused as one shared copy and still receives semantic review, because the leaf text *is* each task's scope and acceptance criteria, and establishing that it was copied faithfully says nothing about whether it is adequate. What the comparison genuinely removed is re-reading the same text 286 times, not judging it.
 
@@ -118,15 +128,15 @@ Batch 9 then produced the strongest result the relation-spelling finding has had
 
 The batch also produced a useful negative result. All six reports screened record their acceptance correctly, which bounds **F-17** as a residue in particular reports rather than a systemic practice. And it produced the clearest example yet of accepted research whose central mechanism is deliberately not adopted: the provenance report asks for a PROV evidence graph, and the project declines it three times on the record while adopting the obligations the report derives. No new finding number and no new follow-up question.
 
-Every remaining finish condition is mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, 18 done, 9 remaining.** Baseline, standards, research, scenarios and verification are complete; the rest cover the issue backlog and the final assessment. It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
+Every remaining finish condition is mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, 19 done, 8 remaining.** Baseline, standards, research, scenarios and verification are complete; the rest cover the issue backlog and the final assessment. It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
 
 Iteration 20 corrected two accounting problems in that queue. Issue fidelity is now established by comparing all 286 issues against their Roadmap leaves rather than by sampling 18 of them, since a sample cannot establish complete coverage; the environment was checked first to confirm a complete comparison is achievable. The six partial reports left out of the first version are now assigned to the cluster batches that already cover their topics, reusing their recorded evidence and screening only unread sections, with no batch added for them. Three issue batches were combined because the complete comparison lets matching leaf content be reused instead of reviewed twice, which is what moved the count from 30 to 27. The count is a workload estimate with six recorded uncertainties, not a quota and not a completion guarantee.
 
 The one evidenced Guide gap from the research remainder slices remains the response-cache instance under **F-03**, which now rests on six accepted reports and, since iteration 25, reads as a partial adoption of one numbered recommendation rather than an unspecified area. Everything else in those four slices was either adopted or a recorded scope choice.
 
-The record has **22 finding IDs, including two withdrawals**, with subsequent qualifications preserved. No standards check is outstanding, and **18 of 286** issue bodies are documented as read.
+The record has **22 finding IDs, including two withdrawals**, with subsequent qualifications preserved. No standards check is outstanding, and **42 of 286** issue bodies are documented as read by a reviewer; all 286 have been fetched and compared mechanically.
 
-The next selected batch is **batch 19 of 27**: the first phase batch, and the first to judge task content rather than compare or count it. The machine state is authoritative for that cursor as review continues.
+The next selected batch is **batch 20 of 27**: the Phase 2 task assessment, continuing from issue #27. The machine state is authoritative for that cursor as review continues.
 
 ## What lives here
 
