@@ -504,6 +504,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 35, queue batch 17, the complete leaf-to-issue comparison across all 286 issues. Records that the saved scope named no repository and that the issues live in DGIWG-P507/glaux-server rather than the planning repository, verifies the target set by following pagination to exhaustion, reviews the shared boilerplate once with one variant each, and reports an empty difference inventory confirmed by verbatim containment of every leaf Scope and Done in its issue"
+    },
+    {
+      "name": "42-pass-3c-36-batch18-dependency-coverage-sizing.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "751509AC23CC5885F77F206E0C35B3CDCFDDF894E3C0A9818EB9D783210AF372",
+      "original_bytes": 13898,
+      "published_sha256": "751509AC23CC5885F77F206E0C35B3CDCFDDF894E3C0A9818EB9D783210AF372",
+      "published_bytes": 13898,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 36, queue batch 18, the whole-backlog dependency graph, coverage and sizing analysis. Corrects the phase-batch reuse rule before the analysis, records a clean dependency graph with every check proven sensitive, establishes phase prerequisite consistency under transitive closure, and records three check artifacts caught by inspection rather than reported as backlog defects"
     }
   ]
 }

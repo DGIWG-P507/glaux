@@ -10,7 +10,19 @@
 2. Read **instructions.md**, especially the rule for recording disagreements without interrupting coverage.
 3. Use **current_work** in **review-state.json** to resume the exact unfinished step or next batch, and **batch_queue** in the same file to see the whole numbered remainder. Do not reload every archived response.
 
-The last substantive reviewer response is **Pass 3c, iteration 35**, which executed queue batch 17, the complete comparison of all 286 implementation issues against their Roadmap leaves.
+The last substantive reviewer response is **Pass 3c, iteration 36**, which executed queue batch 18, the whole-backlog dependency, coverage and sizing analysis.
+
+One correction came first. The previous response claimed the remaining issue batches reduce to the content the issues add beyond their leaves. That is **withdrawn**. Matching Roadmap content is reused as one shared copy and still receives semantic review, because the leaf text *is* each task's scope and acceptance criteria, and establishing that it was copied faithfully says nothing about whether it is adequate. What the comparison genuinely removed is re-reading the same text 286 times, not judging it.
+
+**The backlog analysis is clean.** The dependency graph across nine phases, 41 capability groups and 286 tasks has 1,676 edges, a single starting task matching the Roadmap's own handoff, and a longest chain of 136. There is no cycle, no dangling reference, no self-dependency and no dependency running backwards in time. Phase counts reconcile exactly. Phase prerequisites are consistent for all nine phases once compared against the transitive closure, which is the right test because the phase table lists proximate prerequisites rather than the full set.
+
+Every mechanical check was proven able to detect an injected defect before its clean result was accepted, and the parser that reads the Roadmap's dependency prose was validated on six shapes, including a trailing explanatory clause that must not be mistaken for further dependencies.
+
+Scope coverage is complete, and sizing is coherent, with the three outliers inspected and explained rather than reported as defects.
+
+**Three apparent problems turned out to be artifacts of the analysis, not defects in the backlog**, and are recorded as such. The discipline cuts both ways: a sensitive check asking the wrong question produces confident nonsense, so every non-zero result was inspected before being reported, just as every zero was tested for sensitivity before being accepted.
+
+The previous response, **iteration 35**, compared all 286 issues against their leaves and found no difference.
 
 **The difference inventory is empty**, and the result rests on exact containment rather than a similarity score: every leaf's scope text and every leaf's acceptance text appears verbatim in its linked issue, on all 286. A zero from a mechanical check is worth nothing unless the check can detect a difference, so before accepting it every check was run against an injected difference and all of them fired, and a deliberately wrong pairing was correctly flagged. One reviewer error was caught during the run and is recorded rather than quietly fixed: an initial report of 286 title mismatches turned out to be a defect in the comparison's own text handling, not in the data.
 
@@ -106,7 +118,7 @@ Batch 9 then produced the strongest result the relation-spelling finding has had
 
 The batch also produced a useful negative result. All six reports screened record their acceptance correctly, which bounds **F-17** as a residue in particular reports rather than a systemic practice. And it produced the clearest example yet of accepted research whose central mechanism is deliberately not adopted: the provenance report asks for a PROV evidence graph, and the project declines it three times on the record while adopting the obligations the report derives. No new finding number and no new follow-up question.
 
-Every remaining finish condition is mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, 17 done, 10 remaining.** Baseline, standards, research, scenarios and verification are complete; the rest cover the issue backlog and the final assessment. It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
+Every remaining finish condition is mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, 18 done, 9 remaining.** Baseline, standards, research, scenarios and verification are complete; the rest cover the issue backlog and the final assessment. It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
 
 Iteration 20 corrected two accounting problems in that queue. Issue fidelity is now established by comparing all 286 issues against their Roadmap leaves rather than by sampling 18 of them, since a sample cannot establish complete coverage; the environment was checked first to confirm a complete comparison is achievable. The six partial reports left out of the first version are now assigned to the cluster batches that already cover their topics, reusing their recorded evidence and screening only unread sections, with no batch added for them. Three issue batches were combined because the complete comparison lets matching leaf content be reused instead of reviewed twice, which is what moved the count from 30 to 27. The count is a workload estimate with six recorded uncertainties, not a quota and not a completion guarantee.
 
@@ -114,7 +126,7 @@ The one evidenced Guide gap from the research remainder slices remains the respo
 
 The record has **22 finding IDs, including two withdrawals**, with subsequent qualifications preserved. No standards check is outstanding, and **18 of 286** issue bodies are documented as read.
 
-The next selected batch is **batch 18 of 27**: the whole-backlog dependency graph, coverage and sizing analysis. It reuses the preserved issue snapshot rather than re-fetching. The machine state is authoritative for that cursor as review continues.
+The next selected batch is **batch 19 of 27**: the first phase batch, and the first to judge task content rather than compare or count it. The machine state is authoritative for that cursor as review continues.
 
 ## What lives here
 
@@ -139,7 +151,7 @@ The purpose is to finish the review, not maintain an endless reading queue. Reus
 | 3. Research and peer evidence | **Complete for the recorded scope.** All 71 reports accounted: 18 fully read including all four committed deep reads, 53 screened at their key sections; no partial reads remain; pinned CS-GO/OSH checks complete and closed | **Met.** Executive summaries, bodies, appendices and validation sections were deliberately outside the screen, and each report's entry records what was and was not covered |
 | 4. End-to-end scenarios | **Complete for the recorded scope.** All nine Goal capability areas reachable from both a representative scenario and a walkthrough path; no scenario over-promises; four findings given named remedy locations | **Met.** The assessment covers a design artifact: the Guide states these scenarios record a design review, not executed verification |
 | 5. Verification quality | **Complete for the recorded scope.** All three criteria strongly established; every planned capability has a layer that can observe its claims; no gap between what the strategy promises and what its layers deliver | **Met.** The assessment covers a written strategy: nothing establishes that any test exists, runs or passes, which the Guide states for itself |
-| 6. Implementation issues | Partially complete. The leaf-to-issue comparison is done across all 286 with an empty difference inventory, and the shared boilerplate is reviewed once. Still 18 of 286 bodies documented as read by a reviewer; the dependency/coverage/sizing analysis and the per-issue content review remain | Account for all issue-specific scope/acceptance checks and the complete dependency/coverage/sizing analysis; identical boilerplate is now deduplicated |
+| 6. Implementation issues | Partially complete. The leaf-to-issue comparison is done across all 286 with an empty difference inventory, the shared boilerplate is reviewed once, and the dependency, coverage and sizing analysis is complete and clean. Still 18 of 286 bodies documented as read by a reviewer; the per-task semantic assessment remains | Account for all issue-specific scope/acceptance checks and the complete dependency/coverage/sizing analysis; identical boilerplate is now deduplicated |
 | Final assessment | Not complete | Publish supported findings, withdrawals, bounded uncertainties, coverage accounting and implementation advice |
 
 These are coverage criteria, not a prediction of cost or iterations. An explicitly agreed scope exception must remain visible. A subscription limit produces a checkpoint, not a false completion declaration.

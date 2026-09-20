@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-20",
-  "latest_report": "Pass 3c iteration 35 (queue batch 17; target set verified at 286 issues in DGIWG-P507/glaux-server, difference inventory empty and confirmed by verbatim containment)",
+  "latest_report": "Pass 3c iteration 36 (queue batch 18; dependency graph, coverage and sizing clean with every check proven sensitive, and the phase-batch reuse rule corrected before the analysis)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -3163,20 +3163,21 @@
   "completion_objective": "Finish the original six-area review and publish its final assessment; recommendations need not be implemented. Budget/provider stops are checkpoints, not completion.",
   "authorization": "Maintain and publish review artifacts. Continue the next bounded review iteration on the user's proceed. No automatic implementation or alteration of approved project decisions.",
   "backlog_analysis": {
-    "status": "not_complete",
+    "status": "analysis_complete_iteration_36",
     "issue_count": 286,
     "issue_range": {
       "first": 3,
       "last": 288
     },
-    "whole_dependency_graph_checked": false,
-    "scope_coverage_checked": false,
-    "sizing_checked": false,
+    "whole_dependency_graph_checked": true,
+    "scope_coverage_checked": true,
+    "sizing_checked": true,
     "evidence": [
       "evidence/01-pass-1.txt",
-      "evidence/41-pass-3c-35-batch17-leaf-to-issue-comparison.md"
+      "evidence/41-pass-3c-35-batch17-leaf-to-issue-comparison.md",
+      "evidence/42-pass-3c-36-batch18-dependency-coverage-sizing.md"
     ],
-    "remaining_question": "Batch 18 owns the whole dependency graph, scope coverage against the Guide capability set, and sizing. Batches 19 to 26 own the per-issue content that has no Roadmap counterpart, principally the verification approach and the exclusion list, since the leaf-to-issue difference inventory is empty and matching content need not be reviewed twice. Inventory counts alone remain insufficient, and the documented issue read count stays at 18 because fetching a body is not reading it.",
+    "remaining_question": "Batch 18 owns the whole dependency graph, scope coverage against the Guide capability set, and sizing. Batches 19 to 26 assess each task as one unit: scope, acceptance criteria and added fields together, against the Guide and the recorded findings. The empty difference inventory means matching Roadmap content is reviewed once as a shared copy and its assessment carried forward, NOT that it is exempt from semantic review; mechanical equality does not establish adequacy. Inventory counts alone remain insufficient, and the documented issue read count stays at 18 because fetching a body is not reading it.",
     "issue_repository": "DGIWG-P507/glaux-server",
     "planning_repository": "DGIWG-P507/glaux",
     "repository_note": "ESTABLISHED IN ITERATION 35. The implementation issues live in DGIWG-P507/glaux-server. The planning repository that holds this review is DGIWG-P507/glaux, which contains 74 pull requests and NO issues. The saved batch 17 scope never named the repository, so the first fetch went to the git remote of the planning repository and returned nothing usable. Any later batch touching issues must use glaux-server.",
@@ -3223,6 +3224,46 @@
       "reviewer_error_corrected": "The first run reported 286 title mismatches. Inspection showed the issue titles carry a bracketed leaf ID prefix that the normalization did not strip. The defect was in the comparison, not the data; it was corrected and the check re-run.",
       "boilerplate": "All 286 bodies share exactly one heading shape with seven sections. Common completion checklist and Execution record have exactly ONE distinct value each across all 286, so the boilerplate was reviewed once with one variant each. The other five sections have 286 distinct values each.",
       "issue_superset": "Issues are a strict superset of their leaves. Ten labelled fields appear in all 286: Roadmap task, Parent capability group, Deliverable, Parent context, Not included, Roadmap task and planning baseline, Applicable Guide sections and controlling standards, Supporting research or examples, Environment or other constraints, and Verification approach and independently expected results. Body lengths 7053 to 11891 bytes, median 8248."
+    },
+    "dependency_graph": {
+      "checked_iteration": 36,
+      "source": "Roadmap phase table, 41 group entries and 286 leaf entries; capability-group references expanded to their member leaves. No network request; the preserved snapshot was reused and nothing was re-fetched.",
+      "phases": 9,
+      "groups": 41,
+      "leaves": 286,
+      "edges": 1676,
+      "roots": [
+        "1.1.1"
+      ],
+      "leaves_nothing_depends_on": 1,
+      "isolated": 0,
+      "longest_chain": "136, ending at 9.4.3",
+      "leaves_depending_on_a_group_rather_than_a_leaf": 87,
+      "leaves_with_depends_none": 1,
+      "problems": "NONE. No cycle, no dangling dependency, no self-dependency, no forward dependency where a task depends on one executing later, and no cross-phase dependency running backwards. Phase group and subtask counts reconcile to the phase table exactly at 41 and 286.",
+      "phase_prerequisites": "Consistent for all nine phases under TRANSITIVE CLOSURE, which is the correct test because the phase table names proximate prerequisites rather than the full closure. Compared naively, Phase 5 and Phase 6 appear to reach undeclared phases; under closure both are consistent and zero phases have leaf dependencies outside their closure.",
+      "sensitivity": "Six of six checks detect injected defects: dangling, cycle, forward, cross-phase-backward, self, and phase-subtask-count. The closure check was probed separately, detecting an injected Phase 5 dependency on Phase 8 while correctly accepting the Phase 3 control. The dependency-text parser was validated on six shapes including an en-dash range, a comma list, a mixed group-and-leaf list, and an ID followed by explanatory prose that must not be read as further dependencies."
+    },
+    "scope_coverage": {
+      "checked_iteration": 36,
+      "guide_references_cited": 37,
+      "bogus_references": 0,
+      "guide_capability_sections": 20,
+      "uncited_capability_sections": 0,
+      "features_cql2_classes": "All six covered. A literal search for basic-spatial-functions and basic-spatial-functions-plus returned nothing, which was a MATCHING ARTIFACT resolved by inspection: task 7.3.3 compiles s_intersects to exact PostGIS predicates and validates the complete spatial-plus literal set, and task 7.4.3 completes basic-spatial and spatial-plus fixtures. The leaves use the short forms.",
+      "goal_areas": "All nine Goal Section 5 areas represented. Matching leaf counts, which overlap and indicate distribution rather than partition: 5.1=26, 5.2=48, 5.3=109, 5.4=90, 5.5=60, 5.6=34, 5.7=74, 5.8=49, 5.9=137. Security appears in 74 tasks rather than being confined to a security phase, matching the cross-cutting treatment recorded in the batch 15 scenario pass."
+    },
+    "sizing": {
+      "checked_iteration": 36,
+      "leaves_per_group": "min 3, median 6, max 17, across 41 groups",
+      "groups_15_or_more": [
+        "5.5 at 17"
+      ],
+      "scope_length": "median 126, range 76 to 228",
+      "done_length": "median 167, range 115 to 507",
+      "dependencies_per_leaf": "median 1, max 53; 25 leaves exceed 20, all from capability-group expansion",
+      "outliers_inspected": "Group 5.5 has seventeen narrow and distinct children covering tasking mutations, filtering, encoding interoperability and recovery; large group, not oversized children. Task 1.1.4 has the longest acceptance text because it is the CI false-green proof matching Guide Section 8.1.1. Task 2.6.1 has 53 dependencies because its Depends names five whole capability groups, correct for prerequisite HTTP tests.",
+      "assessment": "Coherent. No task was found whose scope or acceptance text suggests it could not be completed in one iteration once its dependencies are ready, which is the Roadmap stated intent. This is a judgement from scope text, acceptance text and dependency shape; it is not a measured effort estimate and none is available."
     }
   },
   "review_areas": [
@@ -3289,9 +3330,10 @@
       "area": "issues",
       "status": "partial",
       "evidence": [
-        "evidence/15-pass-3c-11.txt"
+        "evidence/15-pass-3c-11.txt",
+        "evidence/42-pass-3c-36-batch18-dependency-coverage-sizing.md"
       ],
-      "finish_condition": "Account for all unique implementation-issue content and complete whole-backlog dependency, coverage and sizing analysis."
+      "finish_condition": "Account for all unique implementation-issue content and complete whole-backlog dependency, coverage and sizing analysis. PROGRESS: the leaf-to-issue comparison is complete across all 286 with an empty difference inventory (iteration 35), and the whole-backlog dependency graph, scope coverage and sizing analysis are complete and clean (iteration 36), with every mechanical check proven sensitive. REMAINING: the per-task semantic assessment in batches 19 to 26, where each task is judged as one unit, scope and acceptance criteria and added fields together, against the Guide and the recorded findings. Matching Roadmap content is assessed once as a shared copy and carried forward, not skipped; mechanical equality does not establish adequacy. The documented issue read count remains 18 of 286 because no issue body has been read by a reviewer."
     },
     {
       "area": "final_assessment",
@@ -3417,11 +3459,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 35 (queue batch 17, the complete leaf-to-issue comparison)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 36 (queue batch 18, dependency graph, coverage and sizing; phase-batch reuse rule corrected)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 35 verified the target set, preserved the snapshot, completed the comparison across all 286 issues and published this checkpoint. Batch 18 has not been started.",
+    "unfinished_step": "None. Iteration 36 corrected the phase-batch reuse rule, completed the whole-backlog dependency, coverage and sizing analysis, and published this checkpoint. Batch 19 has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3451,16 +3493,17 @@
       "evidence/37-pass-3c-32-batch14-final-research-cluster.md",
       "evidence/38-pass-3c-33-batch15-scenario-pass.md",
       "evidence/39-pass-3c-34-batch16-verification-quality.md",
-      "evidence/41-pass-3c-35-batch17-leaf-to-issue-comparison.md"
+      "evidence/41-pass-3c-35-batch17-leaf-to-issue-comparison.md",
+      "evidence/42-pass-3c-36-batch18-dependency-coverage-sizing.md"
     ],
     "next_batch": {
-      "title": "Batch 18 of 27: whole-backlog dependency graph, coverage and sizing",
+      "title": "Batch 19 of 27: first phase batch, per-task semantic assessment",
       "check_ids": [],
-      "source_scope": "Resolve Roadmap leaf and group prerequisites across all 286 issues, check the whole dependency graph for cycles and ordering defects, confirm scope coverage against the Guide capability set, and assess sizing. Sets backlog_analysis.whole_dependency_graph_checked, scope_coverage_checked and sizing_checked. REUSE THE PRESERVED SNAPSHOT at evidence/40-batch17-issue-snapshot.json rather than re-fetching; it holds all 286 issue bodies with provenance, and re-fetching spends API budget and risks drift against a point-in-time copy. The repository is DGIWG-P507/glaux-server, NOT the planning repository. Batch 17 established that leaf Scope and Done text appear verbatim in every issue, so dependency data may be taken from either the Roadmap leaves or the issue Prerequisites; state which was used. Resolve prerequisites across all 286, check the whole graph for cycles and ordering defects, confirm scope coverage against the Guide capability set, and assess sizing. Apply the same standard batch 17 applied to itself: if a check reports no defect, prove the check can detect one before accepting the result.",
-      "stop_condition": "Resolve leaf and group prerequisites across all 286 issues; check the whole dependency graph for cycles and ordering defects; confirm scope coverage against the Guide capability set; assess sizing; prove each check sensitive before accepting a clean result; set backlog_analysis.whole_dependency_graph_checked, scope_coverage_checked and sizing_checked; update review_areas for the issues area; mark batch_queue entry 18 done and set entry 19 as next; save and publish the checkpoint.",
+      "source_scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #3-#26 (24 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it. REUSE the preserved snapshot at evidence/40-batch17-issue-snapshot.json; do not re-fetch. Batch 17 established that leaf Scope and Done appear verbatim in every issue, and batch 18 established that the dependency graph, coverage and sizing are clean, so neither reconciliation nor graph work is repeated here. THIS BATCH IS THE FIRST TO JUDGE CONTENT. Assess each task as one unit: its scope, its acceptance criteria and its added fields together, against Guide v1.3 and the recorded findings. The Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Assess a shared passage once and carry that assessment to every task sharing it. Reuse any substantive assessment already recorded, including the shared boilerplate reviewed in batch 17 and the verification practices assessed in batch 16, without repeating them. Raise a finding only where a gap is evidenced against a named Guide line or a recorded finding. Likely homes: F-12 for the Verification approach field, F-03 for any disclosure boundary a task crosses, F-07 and F-14 for query and selection tasks, F-18 for stream and command tasks, F-19 for recovery tasks.",
+      "stop_condition": "Record which tasks were assessed and which were not; state for each assessed task whether its scope and acceptance criteria are adequate against the Guide, reusing shared-passage assessments rather than repeating them; state whether any carried follow-up question gained evidence; update the documented issue read count honestly, distinguishing bodies read by a reviewer from bodies compared mechanically; mark batch_queue entry 19 done and set entry 20 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 18 of 27; 10 remain. Batch 18 completes the backlog analysis; batches 19 to 26 review the per-issue content the issues add beyond their leaves; batch 27 is the final assessment."
+    "queue_pointer": "batch_queue.queue entry 19 of 27; 9 remain. The whole-backlog analysis is complete. Batches 19 to 26 are the per-task semantic assessment and batch 27 is the final assessment."
   },
   "batch_history": [
     {
@@ -3977,11 +4020,36 @@
         "THE ZERO WAS MADE TRUSTWORTHY BEFORE BEING ACCEPTED, applying the Guide own Section 8.1.1 rule to the reviewer own check. All nine checks were run against injected differences and all nine fired. A cross-pair control, leaf 1.1.1 scope against issue #153, scored 0.231 against a 0.5 threshold and was correctly flagged, while genuine pairs score 0.900 to 3.333. Decisively, leaf Scope text was found VERBATIM in its issue body in 286 of 286, and leaf Done text in 286 of 286, which is exact rather than fuzzy and makes the threshold moot.",
         "REVIEWER ERROR CAUGHT AND CORRECTED DURING THE RUN. The first execution reported 286 title mismatches. Inspecting the first twelve showed the issue titles carry a bracketed leaf-ID prefix that the normalization stripped only in unbracketed form. The reported difference was in the comparison, not the data. Corrected and re-run, and recorded rather than silently fixed.",
         "ISSUES ARE A STRICT SUPERSET of their leaves, adding ten labelled fields present in all 286. Two matter to existing findings: Not included gives every task an explicit exclusion list, and Verification approach and independently expected results is the per-issue counterpart to Guide line 901, where the F-12 independence requirement would be satisfied or violated per task.",
-        "LARGEST SIZING UNCERTAINTY RESOLVED FAVOURABLY. The queue recorded that a large difference inventory would make batches 19 to 26 heavier and could raise the total. The inventory is empty, so matching content genuinely need not be reviewed twice and those batches reduce to the issues own added content. The total does not rise.",
+        "LARGEST SIZING UNCERTAINTY RESOLVED FAVOURABLY. The queue recorded that a large difference inventory would make batches 19 to 26 heavier and could raise the total. The inventory is empty, so matching content genuinely need not be reviewed twice and those batches reduce to the issues own added content. The total does not rise. CORRECTED IN ITERATION 36: the phrase that those batches reduce to the issues own added content is withdrawn. Matching content is reused as one shared copy and still receives semantic review; what is removed is re-reading the same text 286 times and reconciling issue against leaf, not judging whether the scope and acceptance are adequate.",
         "READ COUNT UNCHANGED AT 18. The 286 bodies were fetched and compared mechanically; eighteen are documented as read by a reviewer, from iterations 12 and 15. Fetching a body is not reading it, and this batch claims only the comparison.",
         "No new finding number and no new follow-up question."
       ],
       "next_work": "Batch 18 of 27: the whole-backlog dependency graph, coverage and sizing analysis (see current_work.next_batch).",
+      "review_complete": false
+    },
+    {
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 36, queue batch 18: the whole-backlog dependency graph, coverage and sizing analysis, preceded by a correction to the phase-batch reuse rule applied to all eight phase batches before any analysis ran. Built the dependency graph from the Roadmap three levels with capability-group references expanded to member leaves, checked it for cycles, dangling, forward, self and backward cross-phase dependencies, reconciled phase counts, tested phase prerequisites under transitive closure, proved every check sensitive against injected defects, validated the dependency-text parser on six shapes, assessed scope coverage against the Guide capability sections and the Goal areas, and assessed sizing with the outliers inspected. Reused the preserved snapshot; made no network request and re-fetched nothing. Added the iteration evidence report and its manifest entry.",
+      "coverage_completed": [
+        "backlog_analysis.whole_dependency_graph_checked set true",
+        "backlog_analysis.scope_coverage_checked set true",
+        "backlog_analysis.sizing_checked set true",
+        "Phase-batch reuse rule corrected in all eight phase batches and in batch_queue.reuse_rules"
+      ],
+      "material_points": [
+        "PHASE-BATCH REUSE RULE CORRECTED BEFORE ANALYSIS. The iteration 35 phrase that batches 19 to 26 reduce to the content the issues add beyond their leaves is withdrawn. Matching Roadmap content is reused as one shared copy and still receives semantic review, because the leaf Scope and Done text IS each task scope and acceptance criteria. Batch 17 established only that it was copied faithfully; mechanical equality does not establish adequacy. What batch 17 removed is re-reading the same text 286 times and reconciling issue against leaf, not judging the content. Each task is now to be assessed as one unit with scope, acceptance criteria and added fields together, since the Verification approach and Not included fields qualify the acceptance text.",
+        "DEPENDENCY GRAPH CLEAN. 9 phases, 41 groups, 286 leaves, 1676 resolved edges. Exactly one root, task 1.1.1, matching the Roadmap statement that implementation begins there with issue #3. Longest chain 136 ending at 9.4.3. One leaf has Depends none and 87 depend on a capability group rather than an individual leaf. No cycle, no dangling dependency, no self-dependency, no forward dependency, no backward cross-phase dependency. Phase group and subtask counts reconcile to the phase table exactly at 41 and 286.",
+        "PHASE PREREQUISITES CONSISTENT UNDER TRANSITIVE CLOSURE for all nine phases. The phase table names proximate prerequisites, so a naive comparison flags Phase 5, which declares Phase 2 and Phase 4 while reaching 1 and 3, and Phase 6, which declares Phases 3 to 5 while reaching 1 and 2. Under closure both are consistent and zero phases have dependencies outside their closure.",
+        "SENSITIVITY PROVEN BEFORE ACCEPTING THE CLEAN RESULT. Six of six graph checks detect injected defects. The closure check detects an injected Phase 5 dependency on Phase 8 while correctly accepting a Phase 3 control. The dependency parser was validated on six shapes including an en-dash range, a comma list, a mixed group-and-leaf list, and an ID followed by explanatory prose; a parser that silently dropped a trailing clause would under-report edges and could hide a cycle.",
+        "THREE CHECK ARTIFACTS CAUGHT BY INSPECTION, all in the analysis and none in the backlog. First, the two spatial filtering classes appeared uncovered under literal string matching; tasks 7.3.3 and 7.4.3 cover them using the short forms basic-spatial and spatial-plus. Second, the phase prerequisite check initially read the Main result column instead of Prerequisites. Third, comparing actual dependencies against declared rather than closure prerequisites was the wrong question. Recorded because the discipline cuts both ways: batch 17 proved checks sensitive so a zero could be trusted, and this batch had to inspect every non-zero before reporting it, since a sensitive check asking the wrong question produces confident nonsense.",
+        "SCOPE COVERAGE COMPLETE. 37 distinct Guide references cited across the leaves and all 37 are real section headings, zero bogus. All 20 Guide capability sections, the numbered subsections of Sections 4 and 6, are cited by at least one leaf. All six selected Features and CQL2 classes are covered. All nine Goal Section 5 areas are represented, with security appearing in 74 tasks rather than being confined to a phase, matching the cross-cutting treatment recorded in batch 15.",
+        "SIZING COHERENT. 3 to 17 leaves per group with median 6 across 41 groups; one group at 15 or more, namely 5.5 at 17, whose children are each narrow and distinct. Leaf Scope length median 126 and Done length median 167. Dependencies per leaf median 1 with max 53. All three outliers were inspected rather than reported: group 5.5 is a large group with atomic children, task 1.1.4 has the longest acceptance text because it is the CI false-green proof matching Guide Section 8.1.1, and task 2.6.1 depends on five whole capability groups which is correct for prerequisite HTTP tests. No task appears unable to be completed in one iteration once dependencies are ready. This is a judgement from text and dependency shape, not a measured effort estimate.",
+        "Read count unchanged at 18 of 286. This batch read Roadmap leaf text and structured snapshot fields mechanically; no issue body was read by a reviewer.",
+        "No new finding number and no new follow-up question."
+      ],
+      "next_work": "Batch 19 of 27: the first phase batch, under the corrected reuse rule (see current_work.next_batch).",
       "review_complete": false
     }
   ],
@@ -4154,7 +4222,7 @@
   "batch_queue": {
     "created": "2026-09-19",
     "created_by": "Claude Code (Claude Opus 5) during Pass 3c iteration 19",
-    "revised": "2026-09-20 (iteration 35): batch 17 executed. Count unchanged at 27.",
+    "revised": "2026-09-20 (iteration 36): batch 18 executed and the phase-batch reuse rule corrected. Count unchanged at 27.",
     "purpose": "Finite numbered queue covering every remaining finish condition recorded in review_areas, remaining_checks and backlog_analysis. It is a cursor structure inside this state file, not a separate planning document, and it adds no scope.",
     "status_note": "This queue is a workload estimate, not a quota. Compatible batches are combined where feasible and the count is expected to move as evidence arrives.",
     "sizing_basis": "Each batch is sized against what iterations 16-20 actually absorbed: roughly 350-850 lines of source plus its Guide cross-checks. Research key-section batches group five to eight reports because a screen is lighter per line than a deep-read accounting. Issue batches follow Roadmap phase and group boundaries, which are the functional units.",
@@ -4176,16 +4244,18 @@
       "Iteration 32: 27 batches (14 done, 13 remaining). Batch 14 executed. This completes every research batch; batches 15 to 27 cover scenarios, verification quality, the issue backlog and the final assessment. Count unchanged; no batch added or removed.",
       "Iteration 33: 27 batches (15 done, 12 remaining). Batch 15 executed, the first non-research batch, completing review area 4 (scenarios). Count unchanged; no batch added or removed.",
       "Iteration 34: 27 batches (16 done, 11 remaining). Batch 16 executed, completing review area 5 (verification quality). Baseline, standards, research, scenarios and verification are now complete; the issue backlog and the final assessment remain. Count unchanged; no batch added or removed.",
-      "Iteration 35: 27 batches (17 done, 10 remaining). Batch 17 executed. The recorded largest sizing uncertainty is RESOLVED FAVOURABLY: the leaf-to-issue difference inventory is empty, so batches 19 to 26 are lighter than allowed for rather than heavier, and no batch is added."
+      "Iteration 35: 27 batches (17 done, 10 remaining). Batch 17 executed. The recorded largest sizing uncertainty is RESOLVED FAVOURABLY: the leaf-to-issue difference inventory is empty, so batches 19 to 26 are lighter than allowed for rather than heavier, and no batch is added.",
+      "Iteration 36: 27 batches (18 done, 9 remaining). Batch 18 executed, completing the whole-backlog analysis. The phase-batch reuse rule was corrected before the analysis: batches 19 to 26 assess each task as one unit against the Guide and findings, reusing matching content as one shared copy rather than skipping it. Count unchanged; no batch added or removed."
     ],
     "reuse_rules": [
       "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
-      "Batch 17 compares all 286 issues task-specific content against their Roadmap leaves mechanically. Content that matches an already-read leaf is reused by batches 19-26, not reviewed twice; only the difference inventory and the scope and acceptance accounting carry forward.",
+      "Batch 17 compares all 286 issues task-specific content against their Roadmap leaves mechanically. Content that matches an already-read leaf is reused by batches 19-26, not reviewed twice; only the difference inventory and the scope and acceptance accounting carry forward. CLARIFIED IN ITERATION 36: reuse means one shared copy of the matching text is assessed once and its assessment carried to every task that shares it. It does NOT mean matching content is exempt from semantic review. Mechanical equality established in batch 17 shows the text was copied faithfully; it says nothing about whether the scope and acceptance are adequate against the Guide and the findings.",
       "For the six partial reports (IDR-006, IDR-007, IDR-010, IDR-014B, IDR-017, IDR-044), the existing evidence is reused and only the unread key sections are screened, inside the cluster batch that already covers their topic. A partial read does not establish complete coverage.",
       "Batch 5 (IDR-055) evidence is reused by batch 16 rather than read twice.",
       "Batch 8 merges the peer-source spot checks and fq-10 with the 014-series studies because both need the same external sources open.",
       "The 18 issue bodies already read are reused, not re-read.",
-      "Research key-section screens cover recommendations, risks and open questions, and any decision register, each in full including every subsection. Before a screen batch is marked done, its recorded coverage is compared section by section against this scope, report by report, and the comparison result is published. Executive summaries and validation-against-plan sections are out of scope and are recorded as not read."
+      "Research key-section screens cover recommendations, risks and open questions, and any decision register, each in full including every subsection. Before a screen batch is marked done, its recorded coverage is compared section by section against this scope, report by report, and the comparison result is published. Executive summaries and validation-against-plan sections are out of scope and are recorded as not read.",
+      "Phase batches 19 to 26 assess each task as one unit: its scope, its acceptance criteria and its added fields together, against the Guide and the recorded findings. Matching Roadmap content is reviewed once as a shared copy and its assessment is carried forward, never skipped. Mechanical equality is not adequacy."
     ],
     "coverage_state_legend": {
       "genuinely_unreviewed": "No recorded review of this content exists.",
@@ -4203,8 +4273,8 @@
       "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
     "total_batches": 27,
-    "done": 17,
-    "remaining": 10,
+    "done": 18,
+    "remaining": 9,
     "queue": [
       {
         "batch": 1,
@@ -4383,14 +4453,14 @@
         "scope": "Resolve Roadmap leaf and group prerequisites across all 286 issues, check the whole dependency graph for cycles and ordering defects, confirm scope coverage against the Guide capability set, and assess sizing. Sets backlog_analysis.whole_dependency_graph_checked, scope_coverage_checked and sizing_checked.",
         "size_basis": "All 286 leaves via mechanical extraction plus targeted reading",
         "coverage_state": "genuinely_unreviewed",
-        "status": "queued",
-        "note": "Uses the Roadmap phase, group and issue mapping already extracted in iteration 19: nine phases, 41 groups, issues 3 through 288, contiguous within each phase. F-04 (issue size) and F-05 (tasking sequence) are the existing homes."
+        "status": "done_iteration_36",
+        "note": "Executed in iteration 36, preceded by a correction to the phase-batch reuse rule applied before any analysis. THE ITERATION 35 PHRASE that batches 19 to 26 reduce to the issues own added content is WITHDRAWN: matching Roadmap content is reused as ONE SHARED COPY and still receives semantic review, because the leaf Scope and Done text IS each task scope and acceptance criteria and mechanical equality does not establish adequacy. DEPENDENCY GRAPH CLEAN: 9 phases, 41 groups, 286 leaves, 1676 edges, exactly one root at task 1.1.1 matching the Roadmap own handoff statement, longest chain 136 ending at 9.4.3, no cycle, no dangling dependency, no self-dependency, no forward dependency and no backward cross-phase dependency; phase group and subtask counts reconcile to the phase table exactly. PHASE PREREQUISITES consistent for all nine phases under transitive closure, which is the correct test; a naive declared-versus-actual comparison flags phases 5 and 6 and is the wrong question. SENSITIVITY PROVEN: six of six graph checks detect injected defects, the closure check detects an injected Phase 5 to Phase 8 dependency while accepting the Phase 3 control, and the dependency-text parser passes six shapes including trailing prose that must not be read as further dependencies. THREE CHECK ARTIFACTS caught by inspection, all in the analysis and none in the backlog: the two spatial filtering classes appeared uncovered under literal matching but are covered by tasks 7.3.3 and 7.4.3 using short forms; the phase prerequisite check first read the Main result column; and the declared-versus-actual comparison was the wrong test. SCOPE COVERAGE COMPLETE: 37 cited Guide references all real, zero uncited capability sections of 20, all six Features and CQL2 classes covered, all nine Goal areas represented. SIZING COHERENT: 3 to 17 leaves per group with median 6, one group at 17 whose children are narrow, and the three outliers inspected and explained. Read count unchanged at 18 of 286. No new finding number and no new follow-up question."
       },
       {
         "batch": 19,
         "area": "issues",
         "title": "Issue scope and acceptance: Phase 1 - Running foundation and first registration",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #3-#26 (24 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #3-#26 (24 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it.",
         "size_basis": "24 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -4400,7 +4470,7 @@
         "batch": 20,
         "area": "issues",
         "title": "Issue scope and acceptance: Phase 2a - Complete Part 1 resources, groups 2.1-2.3",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #27-#57 (31 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #27-#57 (31 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it.",
         "size_basis": "31 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -4410,7 +4480,7 @@
         "batch": 21,
         "area": "issues",
         "title": "Issue scope and acceptance: Phase 2b - Complete Part 1 resources, groups 2.4-2.6",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #58-#88 (31 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #58-#88 (31 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it.",
         "size_basis": "31 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -4420,7 +4490,7 @@
         "batch": 22,
         "area": "issues",
         "title": "Issue scope and acceptance: Phase 3 - Observations, status and System Events",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #89-#127 (39 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #89-#127 (39 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it.",
         "size_basis": "39 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -4430,7 +4500,7 @@
         "batch": 23,
         "area": "issues",
         "title": "Issue scope and acceptance: Phase 4 - Complete SWE payload encodings",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #128-#155 (28 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #128-#155 (28 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it.",
         "size_basis": "28 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -4440,7 +4510,7 @@
         "batch": 24,
         "area": "issues",
         "title": "Issue scope and acceptance: Phase 5 - Commands and feasibility",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #156-#197 (42 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #156-#197 (42 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it.",
         "size_basis": "42 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -4450,7 +4520,7 @@
         "batch": 25,
         "area": "issues",
         "title": "Issue scope and acceptance: Phases 6 and 7 - Live publication; experimental sampling and enhanced filtering",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #198-#238 (41 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #198-#238 (41 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it.",
         "size_basis": "41 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -4460,7 +4530,7 @@
         "batch": 26,
         "area": "issues",
         "title": "Issue scope and acceptance: Phases 8 and 9 - Exchange, interrupted operation and restore; integrated verification and release readiness",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #239-#288 (50 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #239-#288 (50 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it.",
         "size_basis": "50 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
