@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-20",
-  "latest_report": "Pass 3c iteration 33 (queue batch 15, the end-to-end scenario pass; review area 4 complete, four findings given named remedy locations)",
+  "latest_report": "Pass 3c iteration 34 (queue batch 16, the verification-quality pass; review area 5 complete, F-12 relocated to Guide line 901 and F-09 general half found already adopted)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -3229,12 +3229,13 @@
     },
     {
       "area": "verification",
-      "status": "partial",
+      "status": "complete_for_recorded_scope",
       "evidence": [
         "evidence/05-pass-3c-01.txt",
-        "evidence/06-pass-3c-02.txt"
+        "evidence/06-pass-3c-02.txt",
+        "evidence/39-pass-3c-34-batch16-verification-quality.md"
       ],
-      "finish_condition": "Assess independent expectations, meaningful negative/fault detection and appropriate runtime boundaries of planned verification."
+      "finish_condition": "MET for the recorded scope, in iteration 34. Assessed independent expected answers, meaningful failure detection and appropriate real-system checks across the planned capabilities, against Guide Sections 8.1 including 8.1.1, 8.3, 10 and 7.2 with the surrounding verification rules. All three criteria are strongly established. Independent expectations are stated in three places, with Guide line 901 the controlling rule, which forbids importing server selection logic, serializers or fixture-derived expected responses as the sole oracle while permitting ordinary HTTP and format libraries and pinned schemas. Meaningful failure detection is the most developed part of the strategy, requiring demonstration that a test can detect the intended mistake and refusing test counts, coverage thresholds and mutation scores as substitutes. Real-system checks are governed by a rule about which layer may support which claim, closing the mock, sleep and paused-clock loopholes. Capability coverage is complete: every Goal Section 5 area has a layer that can observe its claims. No gap was found between what the strategy promises and what its layers can deliver. LIMIT ON THE RECORD: this assesses a written strategy, not executed verification. Nothing here establishes that any test exists, runs or passes, and the Guide states the same at Section 10, where only the document-finalization condition is met. The capability matrix maps each capability to a layer that COULD observe its claims, which is a design property rather than evidence a layer has been built."
     },
     {
       "area": "issues",
@@ -3368,11 +3369,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 33 (queue batch 15, the end-to-end scenario pass; review area 4 complete)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 34 (queue batch 16, the verification-quality pass; review area 5 complete)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 33 corrected the batch 15 saved references before reading, executed the scenario pass, completed review area 4 and published this checkpoint. Batch 16 has not been started.",
+    "unfinished_step": "None. Iteration 34 verified the batch 16 references, executed the verification-quality pass, completed review area 5 and published this checkpoint. Batch 17 has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3400,16 +3401,17 @@
       "evidence/35-pass-3c-30-batch12-platform-streaming-and-deployment.md",
       "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md",
       "evidence/37-pass-3c-32-batch14-final-research-cluster.md",
-      "evidence/38-pass-3c-33-batch15-scenario-pass.md"
+      "evidence/38-pass-3c-33-batch15-scenario-pass.md",
+      "evidence/39-pass-3c-34-batch16-verification-quality.md"
     ],
     "next_batch": {
-      "title": "Batch 16 of 27: verification-quality pass",
+      "title": "Batch 17 of 27: complete leaf-to-issue comparison across all 286 issues",
       "check_ids": [],
-      "source_scope": "Assess independent expected answers, meaningful failure detection and appropriate real-system checks across the planned capabilities, against Guide Section 8. VERIFY THE SAVED REFERENCES FIRST, before reading: two reference defects have now been found in this queue, both dating from the iteration 19 drafting. Guide Section 8 is Testing Strategy, with 8.1 Test layers and fixtures at lines 934-965, 8.2 Representative end-to-end scenarios at 966-986 already read in batch 15, 8.3 Performance and regression expectations at 987-992, and 8.4 Whole-guide walkthrough at 993-1009 already read. This batch owns 8.1 and 8.3, which batch 15 deliberately left unread, plus Section 10 Quality Gates and Exit Criteria at 1047 onward if the assessment needs it. Assess independent expected answers, meaningful failure detection and appropriate real-system checks. Research is complete and is a REUSE source: the verification-relevant screens are IDR-050, IDR-052, IDR-053, IDR-054 and IDR-056, plus the IDR-051 traceability non-adoption. Reopen a specific unread section only where needed and record which and why. Likely homes: F-12 for the independence boundary, which now rests on four accepted sources, and F-09 for any abstract-test-suite overlay question.",
-      "stop_condition": "Verify the saved references and record any correction; assess independent expected answers, meaningful failure detection and appropriate real-system checks against Guide Sections 8.1 and 8.3; record which Guide subsections were read and which were not; state whether any carried follow-up question gained evidence; update review_areas for the verification area; mark batch_queue entry 16 done and set entry 17 as next; save and publish the checkpoint.",
+      "source_scope": "Fetch all 286 issue bodies (the GitHub REST issues list endpoint returns bodies, so per_page=100 covers the backlog in three requests; the repository is public and reachable unauthenticated, verified in iteration 20). Separate each body into its shared sections and its task-specific sections; issue bodies carry the headings Task and intended result, Scope and boundaries, Sources and applicable rules, Prerequisites, Acceptance and verification, then the shared Common completion checklist and Execution record. Review the common boilerplate once and every distinct variant of it, recording each variant. Then compare every issue task-specific content mechanically against its Roadmap leaf Scope, Done, Guide and Depends text for all 286 issues, and inspect every difference the comparison reports. Produce a difference inventory keyed by issue number. THIS IS THE LARGEST SINGLE BATCH IN THE QUEUE and the recorded largest sizing uncertainty. Verify the environment assumption FIRST, before fetching: iteration 20 recorded that the repository is public and reachable unauthenticated and that the issues list endpoint returns bodies, so three requests at per_page=100 cover the backlog within the 60-per-hour unauthenticated limit. Re-verify reachability and the rate limit before relying on it, and if the assumption no longer holds, record that and stop rather than improvising. Reuse rules already recorded in batch_queue.reuse_rules apply: review the common boilerplate ONCE and every distinct variant, then compare only task-specific content against the Roadmap leaves, and reuse matching content rather than reviewing it twice. The 18 issue bodies already documented as read must be reused, not re-fetched for their own sake. Produce the difference inventory that batches 19 to 26 depend on. If the batch cannot be completed in one iteration, record the exact unfinished portion and the fetch state rather than declaring partial coverage complete.",
+      "stop_condition": "Verify and record the environment assumption; review the shared boilerplate once and every distinct variant; compare all 286 issues task-specific content against their Roadmap leaves; publish the difference inventory; record the displayed read count accurately and do not claim a complete issue review where only the comparison was performed; update backlog_analysis and review_areas for the issues area; mark batch_queue entry 17 done and set entry 18 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 16 of 27; 12 remain. Research and scenarios are complete. Batches 16 to 27 cover verification quality, the issue backlog and the final assessment."
+    "queue_pointer": "batch_queue.queue entry 17 of 27; 11 remain. Baseline, standards, research, scenarios and verification are complete. Batches 17 to 26 cover the issue backlog and batch 27 is the final assessment."
   },
   "batch_history": [
     {
@@ -3882,6 +3884,30 @@
       ],
       "next_work": "Batch 16 of 27: the verification-quality pass, against Guide Section 8 (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 34, queue batch 16: the verification-quality pass. Verified the saved section references first, as the batch scope required after two consecutive reference defects; all five were correct and no correction was needed. Read Guide Section 8.1 including 8.1.1, Section 8.3, Section 10, and Section 7.2 with the surrounding verification rules at lines 893-931. Assessed independent expected answers, meaningful failure detection and appropriate real-system checks, and built a capability-to-layer matrix. Reused the completed research screens without reopening any report. Added the iteration evidence report and its manifest entry.",
+      "coverage_completed": [
+        "review_areas verification area COMPLETE for the recorded scope",
+        "Guide Sections 8.1 with 8.1.1, 8.3, 10 and 7.2 with lines 893-931 read in full"
+      ],
+      "material_points": [
+        "SAVED REFERENCES VERIFIED CLEAN. All five line references matched their actual headings, so no correction was needed. This is the first batch in three without a reference defect, and the difference is that these references were written in iteration 30 after the sections had been read, while the two defective ones date from the iteration 19 queue drafting.",
+        "ALL THREE CRITERIA STRONGLY ESTABLISHED. Independent expected answers appear in three places, with Guide line 901 the controlling rule. Meaningful failure detection is the most developed part of the strategy: Section 8.1.1 requires showing that a test can detect the intended mistake, observing failure for that behavioral reason, and states that a setup, compilation or unrelated failure is not that proof; it requires mutation or controlled-fault sampling at critical logic from a passing baseline, prevents false-green execution, and Guide line 902 refuses test counts, coverage thresholds and mutation scores as establishing conformance. Real-system checks are governed by use the layer that can observe the claim, with database mocks not proving SQL, PostGIS or transaction behavior and a recording publisher not proving broker delivery or crash recovery, plus barriers rather than sleeps and the note that a paused application clock does not control database or operating-system time.",
+        "CAPABILITY COVERAGE COMPLETE. Every Goal Section 5 capability has a layer that can observe its claims across the five layers: domain and codec, database integration, HTTP contract and conformance, external-client interoperability, and recovery, security and performance. No capability is left with only a layer that cannot see its claim.",
+        "F-12 REFINED AND RELOCATED. Its home is Guide line 901, not Section 8. Line 901 forbids importing server selection logic, SERIALIZERS, or fixture-derived expected responses AS THE SOLE ORACLE, and permits ordinary HTTP and format libraries and pinned schemas. That sharpens the residual to a narrow question: whether the runner may deserialize a response into the PRODUCTION CRATE typed structures while holding independently authored expected values. A production DTO is neither the sole oracle nor an ordinary format library, so neither clause plainly reaches it. The consequence is concrete: a field the production types silently drop or coerce becomes invisible to the check, and the independent expectation is compared against an already-normalized value. Section 8.1.1 states the same logic for codecs. Disposition unchanged at narrowed optional hardening, Low; the finding is better supported and more precisely located than the review summary conveyed, and its remedy is one clause on an existing sentence.",
+        "F-09 REFINED. Its general half is already adopted at Guide line 909: implement published abstract tests as independent HTTP checks, extend them when weak, ambiguous or copied incorrectly, preserve both the source procedure and the documented correction, and never silently turn a server defect into a passed standard test, with a worked Part 4 example at line 930 and the rule at 919 that passing extension tests adds no approved conformance URI. What remains is the specific documented adaptation for the deployedSystems abstract-test steps, which is fixture content owned by issue #81 rather than a Guide gap. Disposition unchanged.",
+        "fq-05 gains the mechanism rather than an answer: line 909 is where any further abstract-test seam would be recorded. Still open and unscheduled.",
+        "F-03 gains the owning layer. The Section 8.1 recovery and security row covers access isolation, which is the layer a cache serving one authorized view to another context would fail. No cache or validator channel is named there either, a fourth independent place, which is consistent rather than contradictory because the Guide does not carry the rule anywhere. Complements the batch 15 scenario location. Disposition unchanged.",
+        "NO GAP FOUND between what the verification strategy promises and what its layers can deliver. The strategy is unusually explicit about its own insufficiency conditions, which is the property this batch was asked to assess.",
+        "LIMIT RECORDED: this assesses a written strategy, not executed verification. Nothing establishes that any test exists, runs or passes, and the Guide says the same at Section 10, where only the document-finalization condition is met.",
+        "No new finding number and no new follow-up question."
+      ],
+      "next_work": "Batch 17 of 27: the complete leaf-to-issue comparison across all 286 issues (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -4053,7 +4079,7 @@
   "batch_queue": {
     "created": "2026-09-19",
     "created_by": "Claude Code (Claude Opus 5) during Pass 3c iteration 19",
-    "revised": "2026-09-20 (iteration 33): batch 15 executed, completing the scenarios review area. Count unchanged at 27.",
+    "revised": "2026-09-20 (iteration 34): batch 16 executed, completing the verification review area. Count unchanged at 27.",
     "purpose": "Finite numbered queue covering every remaining finish condition recorded in review_areas, remaining_checks and backlog_analysis. It is a cursor structure inside this state file, not a separate planning document, and it adds no scope.",
     "status_note": "This queue is a workload estimate, not a quota. Compatible batches are combined where feasible and the count is expected to move as evidence arrives.",
     "sizing_basis": "Each batch is sized against what iterations 16-20 actually absorbed: roughly 350-850 lines of source plus its Guide cross-checks. Research key-section batches group five to eight reports because a screen is lighter per line than a deep-read accounting. Issue batches follow Roadmap phase and group boundaries, which are the functional units.",
@@ -4073,7 +4099,8 @@
       "Iteration 30: 27 batches (12 done, 15 remaining). Batch 12 executed. Count unchanged; no batch added or removed.",
       "Iteration 31: 27 batches (13 done, 14 remaining). Batch 13 executed. Count unchanged; no batch added or removed. Batch 14 is the last research key-section batch; completing it closes research-key-section-sweep and leaves the issue, scenario, verification and final-assessment batches.",
       "Iteration 32: 27 batches (14 done, 13 remaining). Batch 14 executed. This completes every research batch; batches 15 to 27 cover scenarios, verification quality, the issue backlog and the final assessment. Count unchanged; no batch added or removed.",
-      "Iteration 33: 27 batches (15 done, 12 remaining). Batch 15 executed, the first non-research batch, completing review area 4 (scenarios). Count unchanged; no batch added or removed."
+      "Iteration 33: 27 batches (15 done, 12 remaining). Batch 15 executed, the first non-research batch, completing review area 4 (scenarios). Count unchanged; no batch added or removed.",
+      "Iteration 34: 27 batches (16 done, 11 remaining). Batch 16 executed, completing review area 5 (verification quality). Baseline, standards, research, scenarios and verification are now complete; the issue backlog and the final assessment remain. Count unchanged; no batch added or removed."
     ],
     "reuse_rules": [
       "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
@@ -4099,8 +4126,8 @@
       "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
     "total_batches": 27,
-    "done": 15,
-    "remaining": 12,
+    "done": 16,
+    "remaining": 11,
     "queue": [
       {
         "batch": 1,
@@ -4259,8 +4286,8 @@
         "scope": "Assess independent expected answers, meaningful failure detection and appropriate real-system checks across the planned capabilities, against Guide Section 8.",
         "size_basis": "Guide Section 8 plus batch 5 evidence, roughly 300 lines with cross-checks",
         "coverage_state": "genuinely_unreviewed",
-        "status": "queued",
-        "note": "Reuses batch 5 (IDR-055) and the already-read IDR-052 and IDR-053 material. F-12 is the existing home for oracle-independence questions and F-08 for adapted-test labelling. CARRY-FORWARD FROM BATCH 5, CORRECTED IN ITERATION 24: IDR-055 is ACCEPTED research (2026-09-16), on the same footing as IDR-052, IDR-053 and IDR-054, and may be used as an accepted project baseline. The iteration 23 instruction to treat it as an unaccepted proposal is withdrawn. The distinction to preserve is different: accepted research is not the same as a mechanism adopted into the approved implementation plan, so an accepted recommendation the Guide did not adopt is a recorded scope choice assessed on its merits, not automatically a defect. Reuse evidence/28-pass-3c-23-idr055.md Section 5 (five reusable items: what the Guide already covers at lines 612, 975, 1019, 903 and 957-964; the cache-validator channel already recorded as the F-03 instance, do not re-derive it; the five-form oracle taxonomy as a lens for F-12; and the separations IDR-055 preserves) together with evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md Part A. Do not read IDR-055 again."
+        "status": "done_iteration_34",
+        "note": "Executed in iteration 34. SAVED REFERENCES VERIFIED CLEAN, the first batch in three with no reference defect; all five line references matched their actual headings, and these were written in iteration 30 after the sections had been read, unlike the two defective ones written during the iteration 19 queue drafting. Read Guide Sections 8.1 with 8.1.1, 8.3, 10 and 7.2 with the surrounding verification rules; Sections 8.2 and 8.4 were read in batch 15 and were not re-read. RESULT: all three assessment criteria strongly established, capability coverage complete, and no gap between what the strategy promises and what its layers can deliver. TWO FINDINGS MATERIALLY REFINED, neither disposition changed. F-12 RELOCATED: its home is Guide line 901, not Section 8. That line forbids importing server selection logic, serializers or fixture-derived expected responses AS THE SOLE ORACLE and permits ordinary HTTP and format libraries and pinned schemas, which sharpens the residual to a narrow question the text does not settle, whether the runner may deserialize a response into the production crate typed structures while holding independently authored expectations. A production DTO is neither the sole oracle nor an ordinary format library, so neither the prohibition nor the permission plainly reaches it. The consequence is that a field the production types silently drop or coerce becomes invisible to the check. Section 8.1.1 states the same logic for codecs, that encoder and decoder agreement alone cannot exclude a shared bug; what is missing is its application to the HTTP runner. The recorded next consideration is one clause on an existing sentence. F-09 REFINED: its general half is ALREADY ADOPTED at Guide line 909, which requires extending weak or incorrectly copied abstract tests, preserving both the source procedure and the documented correction, and never silently turning a server defect into a passed standard test, with a worked example for Part 4 at line 930 and the extension-tests rule at 919. What remains under F-09 is the specific documented adaptation for the deployedSystems abstract-test steps, which is fixture content owned by issue #81 rather than a Guide gap. fq-05 gains the mechanism at line 909 rather than an answer. F-03 gains the owning layer, access isolation in the Section 8.1 recovery and security row, complementing the batch 15 scenario location; the cache channel is unlisted there too, a fourth independent place, which is consistent rather than contradictory because the Guide does not carry the rule anywhere. No research report reopened. No new finding number and no new follow-up question."
       },
       {
         "batch": 17,
