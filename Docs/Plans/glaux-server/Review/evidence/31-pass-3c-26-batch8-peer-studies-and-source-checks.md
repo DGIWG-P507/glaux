@@ -119,3 +119,22 @@ IDR-062, the CS-GO engineering-practices and development-history study, has not 
 ## 7. Statement of limits
 
 This iteration read the recommendation and risk sections of eight research reports, the Guide text needed for comparison, and four pinned external sources through public read-only endpoints. It did not read those reports' bodies, screen IDR-062, execute any peer implementation, reproduce any peer test run, or begin any batch other than batch 8. The peer-source verifications establish that the recorded pins and the Guide's one source claim are accurate as of this retrieval; upstream repositories remain mutable and the studies' own temporal caveats continue to apply. `review_complete` remains `false`.
+
+---
+
+## Appendix A - Correction appended in iteration 27 (September 20, 2026)
+
+Everything above this rule is the report as authored in iteration 26 and is unchanged. This appendix is added so that a reader consulting this report alone can discover the correction.
+
+**What is withdrawn.** Section 2.4 concluded, at the paragraph beginning "This directly corroborates, in the pinned source," that the CS-GO latest-observation fixture corroborates IDR-014B Section 17.2 open question 6 and IDR-034 Section 14.4's broader criticism of that peer's `latest` selector. That conclusion overstated what the fixture can show and is withdrawn.
+
+**Why.** The fixture seeds a single newest observation. Section 2.4 says so itself: "The fixture happens to seed only one newest observation, so the assertion passes either way." A fixture with a unique newest record cannot exercise tied result times at all. It therefore cannot establish how the peer behaves when two observations share the greatest result time, which is the behavior IDR-034 Section 10.1 says `resultTime=latest` must preserve. It also cannot corroborate the broader criticism of that peer's `latest` selector, because nothing in the fixture distinguishes a correct implementation from an incorrect one. The assertion `require.Equal(t, 1, len(items), ...)` records an author's expectation; an expectation in a test that cannot fail on the point at issue is not evidence about behavior.
+
+**What stands.** Two things in Section 2.4 are independently supported and are retained without change.
+
+1. The **time-range test** observation at Section 2.4's first bullet. `TestObservation_List_ValidResultTimeRange_Filters` seeds a 2025 and a 2027 observation, queries the 2025 window, and asserts only `assert.Equal(t, 1, len(items), ...)`. It never asserts which observation was returned, so it would pass if the server returned the 2027 observation instead. That is a count-only assertion where a discriminating one is available, it is visible in the pinned source, and it needs no assumption about tied timestamps. This is the observation that supports Guide line 446, which requires seeding distinguishable records and asserting exact identities.
+2. The **verification of Guide line 1129** in Section 2.3, including both of its specific claims and its own qualification that it reports source analysis rather than an observed defect. That verification never depended on the withdrawn inference.
+
+**What does not change.** Guide line 440 remains the correct rule and was never at issue. No finding was raised on the withdrawn basis, so no finding changes. The two accepted research claims that were said to be corroborated are unaffected in their own right: they remain accepted research, neither strengthened nor weakened by this fixture. The pin verifications, the `fq-10` resolution and the closure of `peer-source-spot-checks` are independent of this paragraph and stand.
+
+Recorded in [32-pass-3c-27-batch8-corrections-and-batch9.md](32-pass-3c-27-batch8-corrections-and-batch9.md), Section 1.

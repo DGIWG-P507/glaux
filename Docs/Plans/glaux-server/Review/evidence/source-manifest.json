@@ -1,12 +1,13 @@
 {
-  "snapshot_date": "2026-09-19",
+  "snapshot_date": "2026-09-20",
   "purpose": "Archived user-supplied review reports and one superseded instruction. Hashes establish source/copy integrity, not correctness of claims. Archived instructions are historical evidence, not active instructions.",
   "path_base": "Review/evidence",
   "privacy_transformations": [
     "Replace the local workspace root with <workspace>.",
     "Replace the personal Copilot cache/session location with <local-copilot-session-cache>.",
     "Replace local attachment paths with <local-attachment>/pasted-text.txt.",
-    "Path-normalized text files use LF line endings and a terminal newline; logical line positions and substantive review text are preserved. Unchanged files retain original bytes."
+    "Path-normalized text files use LF line endings and a terminal newline; logical line positions and substantive review text are preserved. Unchanged files retain original bytes.",
+    "publication_change value correction_appended_body_unchanged means a dated correction was appended after the end of the authored text, the authored body is byte-for-byte unchanged, original_sha256 hashes the authored bytes and published_sha256 hashes the whole published file."
   ],
   "sources": [
     {
@@ -357,11 +358,26 @@
       "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
       "original_sha256": "1AAF4EB99E5053C8BD360C9D6C1651F568592256FDF2ECA2AEA0D9EEF7F3E400",
       "original_bytes": 15830,
-      "published_sha256": "1AAF4EB99E5053C8BD360C9D6C1651F568592256FDF2ECA2AEA0D9EEF7F3E400",
-      "published_bytes": 15830,
+      "published_sha256": "2D981A11B276F164C9C9E22B41EE6A7BBDF1F8D074BDE317E20F7A27F108C1BC",
+      "published_bytes": 18876,
+      "publication_change": "correction_appended_body_unchanged",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Queue batch 8, key-section screen C over IDR-014A to IDR-014H combined with the peer-source spot checks: both recorded pins verified, the Guide line 1129 CS-GO citation verified in full, fq-10 resolved and peer-source-spot-checks closed (Pass 3c iteration 26)",
+      "correction_appended": "Appendix A, added in Pass 3c iteration 27 on 2026-09-20. The authored body is unchanged: hashing the first 15830 bytes of the published file reproduces original_sha256 exactly. The appendix withdraws the Section 2.4 claim that the unique-newest CS-GO fixture corroborates IDR-014B open question 6 and the IDR-034 broad-latest criticism, and retains the independently supported time-range-test observation and the Guide line 1129 verification. Recorded in 32-pass-3c-27-batch8-corrections-and-batch9.md Section 1."
+    },
+    {
+      "name": "32-pass-3c-27-batch8-corrections-and-batch9.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "AE6A5F0B70A43F691E443DA44E9D0BEC1BEDD6DEE4FF78C14DD7C0AEFB87E364",
+      "original_bytes": 28500,
+      "published_sha256": "AE6A5F0B70A43F691E443DA44E9D0BEC1BEDD6DEE4FF78C14DD7C0AEFB87E364",
+      "published_bytes": 28500,
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
-      "covers": "Queue batch 8, key-section screen C over IDR-014A to IDR-014H combined with the peer-source spot checks: both recorded pins verified, the Guide line 1129 CS-GO citation verified in full, fq-10 resolved and peer-source-spot-checks closed (Pass 3c iteration 26)"
+      "covers": "Pass 3c iteration 27: two bounded batch-8 corrections followed by queue batch 9. Correction A withdraws the iteration 26 claim that the unique-newest CS-GO latest fixture corroborates the broad-latest criticism. Correction B completes the omitted 102-line open-question screening of IDR-014C to IDR-014G. Batch 9 is key-section screen D over IDR-015 to IDR-020, whose material result is that IDR-017 R-017-08 states the relation-spelling rule F-11 asks for while Guide line 485 diverges from it"
     }
   ]
 }

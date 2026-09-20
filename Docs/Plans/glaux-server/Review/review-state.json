@@ -1,6 +1,6 @@
 {
-  "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 26 (queue batch 8, key-section screen C plus the peer-source spot checks; fq-10 resolved and peer-source-spot-checks closed)",
+  "snapshot_date": "2026-09-20",
+  "latest_report": "Pass 3c iteration 27 (two bounded batch-8 corrections, then queue batch 9, key-section screen D; IDR-017 R-017-08 recorded under F-11)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -202,10 +202,11 @@
       "id": "IDR-014C",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014c-pygeoapi-csapi-server-implementation-study-report.md",
       "documented_read_depth": "key_sections_screened",
-      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 16 Recommendations (10 items) and Section 17.1 Risks and Constraints read in iteration 26. Sections 1-15, 17.2-19 and appendices not read. Recommendation 4 (versioned typed configuration; parse by schema, reject unknowns, reference secrets, publish a redacted effective view) is adopted near-verbatim at Guide 663; recommendation 9 (Basic authentication as a development boundary only) at 596; recommendation 1 (cross-format equivalence as a release gate) at 446. This is a screen; the report is NOT recorded as fully read.",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 16 Recommendations (10 items) and Section 17.1 Risks and Constraints read in iteration 26. Section 17.2 Open Questions read in iteration 27 (Correction B), completing Section 17. Sections 1-15, 18-19 and appendices not read. Recommendation 4 (versioned typed configuration; parse by schema, reject unknowns, reference secrets, publish a redacted effective view) is adopted near-verbatim at Guide 663; recommendation 9 (Basic authentication as a development boundary only) at 596; recommendation 1 (cross-format equivalence as a release gate) at 446. This is a screen; the report is NOT recorded as fully read. Correction B (iteration 27): Section 17.2 screened. Its questions are asked about the pygeoapi prototype, not about Glaux. Question 5, the intended canonical source when SensorML and GeoJSON representations disagree, is partly addressed by Guide 991, which requires regression tests for different identities across formats; the Guide states no rule naming which representation is canonical when they disagree, recorded as an observation and not raised, because settling it would need the published Part 1 encoding text that a key-section screen does not read.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md",
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
       ],
       "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
@@ -213,10 +214,11 @@
       "id": "IDR-014D",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014d-secd-csapi-server-implementation-study-report.md",
       "documented_read_depth": "key_sections_screened",
-      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 16 Recommendations (10 items) and Section 17.1 Risks and Constraints read in iteration 26. Sections 1-15, 17.2-19 and appendices not read. R-014D-003 (reject silent wrong-result behavior; unsupported filters return deterministic errors) is adopted at Guide 436. R-014D-004 (preserve canonical relationship semantics; use typed relation identifiers) adds supporting material to F-11, where the Guide still states no relation-spelling rule. This is a screen; the report is NOT recorded as fully read.",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 16 Recommendations (10 items) and Section 17.1 Risks and Constraints read in iteration 26. Sections 17.2 Resolved Open Questions and 17.3 Remaining Open Questions read in iteration 27 (Correction B), completing Section 17. Sections 1-15, 18-19 and appendices not read. R-014D-003 (reject silent wrong-result behavior; unsupported filters return deterministic errors) is adopted at Guide 436. R-014D-004 (preserve canonical relationship semantics; use typed relation identifiers) adds supporting material to F-11, where the Guide still states no relation-spelling rule. This is a screen; the report is NOT recorded as fully read. Correction B (iteration 27): Sections 17.2 and 17.3 screened. All ten remaining questions ask what the SECD prototype intends, from its repository and licence to its deployment posture. None can create a Glaux obligation and none is a Guide gap.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md",
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
       ],
       "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
@@ -224,10 +226,11 @@
       "id": "IDR-014E",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014e-os4csapi-client-smoke-test-findings-study-report.md",
       "documented_read_depth": "key_sections_screened",
-      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 14 Recommendations (12 items) and Section 15.1 Constraints read in iteration 26. Sections 1-13, 15.2-16 and appendices not read. Recommendation 6 (discriminating seeded data and negative assertions; never status-only success criteria) is adopted near-verbatim at Guide 446; recommendation 9 (two implementation families and two independent clients) is consistent with Guide 991. Recommendation 3 (preserve raw request and response evidence before any SDK transformation) sits in F-12 territory alongside Guide 901. This is a screen; the report is NOT recorded as fully read.",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 14 Recommendations (12 items) and Section 15.1 Constraints read in iteration 26. Sections 15.2 Open Questions and 15.3 Resolved Open Questions read in iteration 27 (Correction B), completing Section 15. Sections 1-13, 16 and appendices not read. Recommendation 6 (discriminating seeded data and negative assertions; never status-only success criteria) is adopted near-verbatim at Guide 446; recommendation 9 (two implementation families and two independent clients) is consistent with Guide 991. Recommendation 3 (preserve raw request and response evidence before any SDK transformation) sits in F-12 territory alongside Guide 901. This is a screen; the report is NOT recorded as fully read. Correction B (iteration 27): Sections 15.2 and 15.3 screened. Section 15.3 states that no open question blocks the report. Two Section 15.2 rows are already adopted: line 511, client assumptions become server requirements controlled by the normative baseline, matches Guide 991, a client workaround is evidence of interoperability behavior and not permission to change the standard contract; line 516, public-server drift destabilizes CI controlled by self-hosted pinned gates, matches Guide 944. Line 514, parsed tools create false findings controlled by raw transport capture as the primary oracle, is the first peer-study support for F-12.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md",
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
       ],
       "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
@@ -235,10 +238,11 @@
       "id": "IDR-014F",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014f-secd-interoperability-findings-study-report.md",
       "documented_read_depth": "key_sections_screened",
-      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 14 Recommendations (10 items) and Section 15.1 Constraints read in iteration 26. Sections 1-13, 15.2-16 and appendices not read. Recommendation 1 (a supported parameter changes or validates results; an unsupported parameter follows explicit policy) is adopted at Guide 436 and recommendation 8 (normalize errors; keep storage-engine detail from clients) at 827. Recommendation 3 (use canonical typed link relations even where generic data is permitted) adds supporting material to F-11. This is a screen; the report is NOT recorded as fully read.",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 14 Recommendations (10 items) and Section 15.1 Constraints read in iteration 26. Sections 15.2 Open Questions and 15.3 Resolved Open Questions read in iteration 27 (Correction B), completing Section 15. Sections 1-13, 16 and appendices not read. Recommendation 1 (a supported parameter changes or validates results; an unsupported parameter follows explicit policy) is adopted at Guide 436 and recommendation 8 (normalize errors; keep storage-engine detail from clients) at 827. Recommendation 3 (use canonical typed link relations even where generic data is permitted) adds supporting material to F-11. This is a screen; the report is NOT recorded as fully read. Correction B (iteration 27): Sections 15.2 and 15.3 screened. Section 15.3 states that no open question blocks the report and that later design topics choose within the accepted normative baseline. Line 502, server blamed for client or harness error controlled by preserving raw wire, parser output, code expectation and standard anchor, is the second independent peer-study support for F-12.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md",
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
       ],
       "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
@@ -246,10 +250,11 @@
       "id": "IDR-014G",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014g-os4csapi-discussions-lessons-learned-study-report.md",
       "documented_read_depth": "key_sections_screened",
-      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 13 Recommendations (12 items) and Section 14.1 Constraints read in iteration 26. Sections 1-12, 14.2-15 and appendices not read. Recommendation 5 (an external reverse-proxy acceptance environment verifying emitted URLs and the authentication boundary) is adopted at Guide 366; recommendation 9 (route Records federation, materialization and BFF proposals outside core scope) at 165 and 620; recommendation 3 (generate OpenAPI from the implementation contract with runtime parity) at 362 and 907. This is a screen; the report is NOT recorded as fully read.",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 13 Recommendations (12 items) and Section 14.1 Constraints read in iteration 26. Sections 14.2 Resolved Plan Questions and 14.3 Open but Non-Blocking read in iteration 27 (Correction B), completing Section 14. Sections 1-12, 15 and appendices not read. Recommendation 5 (an external reverse-proxy acceptance environment verifying emitted URLs and the authentication boundary) is adopted at Guide 366; recommendation 9 (route Records federation, materialization and BFF proposals outside core scope) at 165 and 620; recommendation 3 (generate OpenAPI from the implementation contract with runtime parity) at 362 and 907. This is a screen; the report is NOT recorded as fully read. Correction B (iteration 27): Sections 14.2 and 14.3 screened. Section 14.2 records that existing issue #186 and the upstream-history entries already cover the current OpenAPI and Part 3 questions, and that no new escalation blocks Glaux. Section 14.3 line 474 asks whether Glaux will provide an explicitly noncanonical compatibility adapter and under what namespace or profile; that is the F-11 question asked from the peer-study side and is recorded as support for F-11.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md",
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
       ],
       "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
@@ -267,58 +272,69 @@
     {
       "id": "IDR-015",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-015-canonical-glaux-server-resource-model-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen D completed iteration 27 (queue batch 9). Section 16 Recommendations (12 items), Section 16.1 relative complexity and Section 17 Risks, Constraints and Open Questions read in iteration 27. Sections 1-15 and 18-21 including all appendices not read. Accepted: final-idr-research-report.md line 153 records Complete and Accepted, and the report header records Accepted By Glaux Project Lead with Acceptance Date September 3, 2026, so no F-17 instance. R-015-12, keep published conflicts in an interpretation registry, is adopted: Guide Section 13 is that registry. R-015-01 to R-015-11 are architectural framing that the Guide carries through its own family-specific sections. Section 17.2 routes its open questions to named downstream topics.",
+      "review_status": "key_sections_screened",
+      "evidence": [
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
+      ],
+      "conclusion_or_remaining_question": "Screened, not fully read. No new finding. Recommendations substantially adopted; R-015-12 is the interpretation registry the Guide implements as Section 13."
     },
     {
       "id": "IDR-016",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-016-identifier-uri-and-resource-lifecycle-strategy-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen D completed iteration 27 (queue batch 9). Section 16 Recommendations table, R-016-01 to R-016-14 at lines 773-786, read in iteration 27. Sections 1-15 and 17-21 not read. Accepted: final-idr-research-report.md line 154 and the report header, Acceptance Date September 13, 2026, so no F-17 instance. Adoption is unusually close. R-016-09 never reuse IDs matches Guide 509 Do not reuse a deleted ID. R-016-11 cancellation is a status transition not DELETE matches Guide 582 and Guide 509 Deleting a Command is not a request to cancel device execution. R-016-10 new stream ID for incompatible populated schema replacement matches Guide 408 and 434. R-016-04 and R-016-05 match Guide 364. R-016-07, no automatic mutation or tasking redirects, matches the Guide Section 13 unsafe-method-alias row. The Guide defines no R016 reference marker and cites this report nowhere; recorded under fq-12, not as a finding.",
+      "review_status": "key_sections_screened",
+      "evidence": [
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
+      ],
+      "conclusion_or_remaining_question": "Screened, not fully read. No new finding. Recommendations adopted, several near-verbatim at Guide 364, 408, 434, 509 and 582."
     },
     {
       "id": "IDR-017",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-017-relationship-and-linkage-model-report.md",
-      "documented_read_depth": "partial",
-      "note": "Section 9.1 mentioned in the coverage record.",
-      "review_status": "targeted_prior_review",
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen D completed iteration 27 (queue batch 9). Section 16 Recommendations table, Section 9.3 CSAPI ogc-rel vocabulary at lines 460-470, and relationship register rows at lines 227 and 346 read in iteration 27. Section 9.1 was REUSED from evidence/12-pass-3c-08.txt, not re-read. Sections 1-8, 10-15 and 17-21 not read. Accepted: final-idr-research-report.md line 155 and the report header, Acceptance Date September 13, 2026, so no F-17 instance. MATERIAL RESULT FOR F-11: R-017-08 at line 764 states the rule F-11 asks for, Emit exact Part 1 Table 3 ogc-rel spellings, compare extension relation URIs case-insensitively, and confine bare values to a named compatibility adapter, priority High, basis N/X/IDR-010; and Section 9.3 line 464 adds that known bare forms may be accepted only by a named compatibility adapter with telemetry and fixtures and that Glaux does not emit duplicate bare and prefixed links. The Guide contains no occurrence of ogc-rel, states no spelling rule, has no Section 13 row for it, and emits a bare rel system at line 485. R-017-09 is half adopted: Guide 560 carries never a fabricated OGC relation but uses a URN rather than the versioned HTTPS namespace the recommendation asks for. R-017-13 edge-level authorization before link, count, page, reverse, cache, error or timing disclosure is adopted at Guide 469 and 610. R-017-14 SSRF-safe async external resolution is adopted in substance at Guide 420. REL-005 at line 346 records systemKind as an accepted System-to-Procedure relationship, 0..1, direct systemKind@link mapped to SensorML typeOf; line 470 lists the four Part 1 direct link members. None appears in the Guide; recorded under fq-13 as an observation. The Guide defines no R017 reference marker and cites this report nowhere; recorded under fq-12.",
+      "review_status": "key_sections_screened_plus_prior_targeted_review",
       "evidence": [
-        "evidence/12-pass-3c-08.txt"
+        "evidence/12-pass-3c-08.txt",
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
       ],
-      "conclusion_or_remaining_question": "Section 9.1 mentioned in the coverage record."
+      "conclusion_or_remaining_question": "Screened, not fully read; Section 9.1 reused. R-017-08 states the relation-spelling rule F-11 asks for and Guide line 485 diverges from it. Recorded under F-11, no new finding number."
     },
     {
       "id": "IDR-018",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-018-temporal-validity-and-freshness-model-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen D completed iteration 27 (queue batch 9). Section 15 Recommendations table, Section 15.1 rejected simplifications, the property tables at lines 246-248 and 590-591, and lines 373 and 442 read in iteration 27. Sections 1-14 and 16-21 not read. Accepted: final-idr-research-report.md line 156 and the report header, Acceptance Date September 13, 2026, so no F-17 instance. R-018-05, apply the IDR-011 field mapping, inclusive intersection, deterministic ordering and latest operator order exactly, is adopted at Guide 440 and 444. R-018-09, keep issue, execution, report, receipt, commit and publication time distinct, is adopted at Guide 376, 442-444 and the Section 6.1 table. R-018-12, never use HTTP Age, Expires or Cache-Control as domain freshness, is satisfied by silence: neither appears in the Guide as domain metadata. R-018-13 authorize before latest, aggregates, counts, current projection and freshness is adopted at Guide 469. STATED NON-ADOPTION: R-018-03 asks for one evaluation time and a snapshot or watermark per request bound to cursors; Guide 444 instead documents keyset paging as a changing view rather than claiming a cross-request snapshot, while Guide 471 adopts the cursor-binding half. The Guide states that departure for itself, so it is a non-adoption, not a defect. fq-13 evidence: line 248 gives the issueTime semantic, time the command was received by the target System, required on server response, ignored if the client supplies it on create or update; line 373 server-owned issueTime; line 442 the full clock chain.",
+      "review_status": "key_sections_screened",
+      "evidence": [
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
+      ],
+      "conclusion_or_remaining_question": "Screened, not fully read. No new finding. One stated non-adoption at Guide 444 regarding snapshot paging; supplies the issueTime semantic that fq-13 asked for."
     },
     {
       "id": "IDR-019",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-019-provenance-lineage-quality-and-trust-metadata-model-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen D completed iteration 27 (queue batch 9). Section 17 read in full in iteration 27: 17.1 Recommendations (20 items), 17.2 Rejected Options (13 rows), 17.3 Open Questions Routed Downstream and 17.4 Review Triggers; plus the Section 18 validation table. Sections 1-16 and 19-21 not read. Accepted: final-idr-research-report.md line 157 and the report header, Acceptance Date September 13, 2026, so no F-17 instance. EXPLICITLY GOVERNED NON-ADOPTION: R-019-01 asks for a W3C PROV-compatible Entity-Activity-Agent model with optional PROV-O export and R-019-18 for a validated provenance graph. The Guide adopts neither, and the decision is published three times: Guide Section 1.5 line 282, no second observation model, public PROV API, graph database, universal confidence score or security-marking regime is adopted; Guide line 1118 in the non-adoption list; and final-idr-research-report.md line 1288, which records that the historical PROV-compatible evidence graph wording is not a mandatory graph database or public PROV service and that Guide Section 4.10 practical records remain the starting point. Not a finding; the clearest example so far of accepted research whose central mechanism is deliberately not adopted. The derived obligations are adopted: R-019-11 no canonical scalar trust score at Guide 602 near-verbatim; R-019-09 and R-019-10 scoped attributed quality with uncertainty kept separate from evaluator confidence at Guide 608 near-verbatim; R-019-14 redaction as accountable derivation at Guide 600; R-019-16 provenance and audit distinct but correlated at Guide 107-109 and 602; R-019-05 and R-019-06 raw-source preservation with digests at Guide 406 and 517; R-019-15 authorize before traversal, count and aggregate at Guide 469 and 610; R-019-19 no core CSAPI provenance endpoint at Guide 1006. The Guide defines no R019 reference marker and cites this report nowhere, reaching its content through R061 instead; recorded under fq-12.",
+      "review_status": "key_sections_screened",
+      "evidence": [
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
+      ],
+      "conclusion_or_remaining_question": "Screened, not fully read. No new finding. Central PROV graph mechanism is an explicitly governed non-adoption recorded in the Guide and in the governance record; derived obligations adopted, several near-verbatim."
     },
     {
       "id": "IDR-020",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-020-status-availability-and-system-event-model-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen D completed iteration 27 (queue batch 9). Section 16 Recommendations table read in iteration 27. Sections 1-15 and 17-21 not read. Accepted: final-idr-research-report.md line 158 and the report header, Acceptance Date September 13, 2026, so no F-17 instance. R-020-01, model operational truth as independent status dimensions and never use a universal status, health or readiness scalar, is adopted near-verbatim at Guide 483, Do not invent a universal readiness score or a new mandatory status API. R-020-07, public System Events only for genuine operational occurrences and not every CRUD, data, command, audit, service or transport event, is adopted near-verbatim at Guide 485. R-020-05, treat live narrowly, is the territory of F-18. R-020-06, preserve last-known values and use unknown when failure cannot be established, is adopted at Guide 481. R-020-09, resolve the System Event prose and schema mismatch in an explicit version-pinned adapter with golden compatibility tests, is adopted at Guide 485 and the Section 13 System Event JSON row.",
+      "review_status": "key_sections_screened",
+      "evidence": [
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
+      ],
+      "conclusion_or_remaining_question": "Screened, not fully read. No new finding. Recommendations adopted, two near-verbatim at Guide 483 and 485."
     },
     {
       "id": "IDR-021",
@@ -3129,9 +3145,13 @@
       "status": "partial",
       "evidence": [
         "evidence/03-pass-3a.txt",
-        "evidence/15-pass-3c-11.txt"
+        "evidence/15-pass-3c-11.txt",
+        "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md",
+        "evidence/30-pass-3c-25-batch7-key-section-screen-b.md",
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md",
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
       ],
-      "finish_condition": "Account for key findings/recommendations/open questions across all topic reports, committed consequential deep reads and remaining peer-source checks; reuse previous work."
+      "finish_condition": "Account for key findings/recommendations/open questions across all topic reports, committed consequential deep reads and remaining peer-source checks; reuse previous work. Progress: 18 reports fully read including all four committed deep reads; 27 reports screened at their key sections through clusters A to D; the pinned CS-GO and OpenSensorHub peer-source checks complete and closed. Remaining: key-section clusters E to I, queue batches 10 to 14."
     },
     {
       "area": "scenarios",
@@ -3260,9 +3280,10 @@
       "evidence": [
         "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md",
         "evidence/30-pass-3c-25-batch7-key-section-screen-b.md",
-        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md",
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
       ],
-      "conclusion_or_remaining_question": "Systematic topic key-section accounting. Cluster A closed in iteration 24 (batch 6): IDR-001 to IDR-007. Cluster B closed in iteration 25 (batch 7): IDR-009, IDR-010, IDR-010A, IDR-012, IDR-013, IDR-014. Cluster C closed in iteration 26 (batch 8): the eight peer and client implementation studies IDR-014A through IDR-014H, screened at their recommendation and risk sections, with the IDR-014B prior references reused; the same batch closed peer-source-spot-checks and resolved fq-10. Remaining clusters: D (batch 9, resource model and temporal validity: IDR-015, 016, 018, 019, 020 plus the unread key sections of IDR-017), E (batch 10), F (batch 11), G (batch 12), H (batch 13) and I (batch 14, which includes IDR-062). Next: cluster D, batch 9."
+      "conclusion_or_remaining_question": "Systematic topic key-section accounting. Cluster A closed in iteration 24 (batch 6): IDR-001 to IDR-007. Cluster B closed in iteration 25 (batch 7): IDR-009, IDR-010, IDR-010A, IDR-012, IDR-013, IDR-014. Cluster C closed in iteration 26 (batch 8) and completed in iteration 27 (Correction B): the eight peer and client implementation studies IDR-014A through IDR-014H; iteration 26 screened their recommendation and risk sections and omitted the Open Questions subsections, and iteration 27 read the omitted 102 lines in IDR-014C, IDR-014D, IDR-014E, IDR-014F and IDR-014G, so the cluster is now screened as recorded. Cluster D closed in iteration 27 (batch 9): IDR-015, IDR-016, IDR-018, IDR-019, IDR-020 and the unread key sections of IDR-017, whose Section 9.1 was reused rather than re-read. Remaining clusters: E (batch 10, encoding, schema and validation: IDR-021 to IDR-025), F (batch 11), G (batch 12), H (batch 13) and I (batch 14, which includes IDR-062). Next: cluster E, batch 10. This is the only open research check; peer-source-spot-checks closed in iteration 26."
     },
     {
       "id": "peer-source-spot-checks",
@@ -3276,11 +3297,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 26 (queue batch 8, key-section screen C and the peer-source spot checks)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 27 (two bounded batch-8 corrections, then queue batch 9, key-section screen D)",
     "provider": "Claude Code",
-    "model": "Claude Opus 5 (model ID claude-opus-5), per the environment's active-model identification at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
+    "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 26 executed batch 8, closed peer-source-spot-checks and resolved fq-10, then published this checkpoint. Batch 9 has not been started.",
+    "unfinished_step": "None. Iteration 27 applied Correction A and Correction B to batch 8, executed batch 9, and published this checkpoint. Batch 10 has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3301,18 +3322,19 @@
       "evidence/28-pass-3c-23-idr055.md",
       "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md",
       "evidence/30-pass-3c-25-batch7-key-section-screen-b.md",
-      "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+      "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md",
+      "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
     ],
     "next_batch": {
-      "title": "Batch 9 of 27: key-section screen D, resource model, temporal validity and status",
+      "title": "Batch 10 of 27: key-section screen E, encoding, schema and validation",
       "check_ids": [
         "research-key-section-sweep"
       ],
-      "source_scope": "Screen the decision-usable key sections (recommendations, risks and open questions, and any decision register) of IDR-015, IDR-016, IDR-018, IDR-019 and IDR-020, whose read depth was never recorded; plus the unread key sections of IDR-017, whose Section 9.1 was already read (evidence/12-pass-3c-08.txt) and must be reused rather than re-read. Six reports. This is a screen: state for each report exactly which sections were screened and which were not, and do not record any report as fully read. Check acceptance status in the governance record rather than inferring it from report metadata, following the iteration 24 correction, and record any further F-17 instance found. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. Likely homes and comparison points: F-07 (resultTime=latest interpretation) and F-14 (interpretation details, including the confirmed ordering-direction instance) for IDR-018 and IDR-020; F-11 for IDR-017, which is the relationship and linkage model and therefore the natural place for any further relation-spelling material; F-19 and F-21 for IDR-019 provenance and trust content. Carry-forward: fq-13 asks whether the Guide should address systemType and systemKind, which are resource-model attributes, so IDR-015 and IDR-017 are the reports most likely to bear on it.",
-      "stop_condition": "Record each of the six reports with an accurate screened-section list; state whether fq-13 gained evidence; update the research-key-section-sweep conclusion to list exactly which clusters remain; mark batch_queue entry 9 status done and set entry 10 as next; save and publish the checkpoint.",
+      "source_scope": "Screen the decision-usable key sections (recommendations, risks and open questions, and any decision register) of IDR-021, IDR-022, IDR-023, IDR-024 and IDR-025, whose read depth was never recorded. Five reports. This is a screen: state for each report exactly which sections were screened and which were not, and do not record any report as fully read. Screen the whole risks-and-open-questions section of each report, not only its first subsection; the iteration 26 omission that Correction B repaired came from stopping at the first subsection. Check acceptance status in the governance record rather than inferring it from report metadata, following the iteration 24 correction, and record any further F-17 instance found. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced at a named Guide line. Likely homes and comparison points: F-13 (foi@id versus samplingFeature@id) and F-14 (interpretation details) for the encoding and schema reports; F-08 and the Section 13 rows for any further published-source contradiction; Guide lines 406-412 on the quality JSON interpretation, 418-420 on projections and the schema allowlist, 890 on swecommon-text, and Section 13 rows 1152 and 1159. Carry-forward: fq-01, fq-02 and fq-08 all concern SWE and GeoJSON schema questions and IDR-022, IDR-023 and IDR-024 are their natural reports, so state whether any of the three gained evidence.",
+      "stop_condition": "Record each of the five reports with an accurate screened-section list; state whether fq-01, fq-02 and fq-08 gained evidence; update the research-key-section-sweep conclusion to list exactly which clusters remain; mark batch_queue entry 10 status done and set entry 11 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 9 of 27; 19 remain. Follow the queue in order unless the user selects otherwise."
+    "queue_pointer": "batch_queue.queue entry 10 of 27; 18 remain. Follow the queue in order unless the user selects otherwise."
   },
   "batch_history": [
     {
@@ -3596,19 +3618,47 @@
       "coverage_completed": [
         "research-key-section-sweep cluster C (queue batch 8): IDR-014A through IDR-014H",
         "peer-source-spot-checks - CHECK NOW CLOSED",
-        "fq-10 resolved"
+        "fq-10 resolved",
+        "INCOMPLETE AS RECORDED: the Open Questions subsections of IDR-014C to IDR-014G were omitted from this screen and were completed in iteration 27 (Correction B)."
       ],
       "material_points": [
         "fq-10 resolved with a definite answer: the IDR-040 CS-Go URL does not exist. Recorded as a verified instance under F-10, a citation defect in one accepted report and not a Guide defect.",
         "Both recorded peer pins verify exactly, and the OSH result independently corroborates the IDR-014A lightweight-tag claim.",
         "The Guide own CS-GO source citation at line 1129 verifies in full, including both specific claims about the two test ranges and its own qualification. No correction needed.",
-        "Incidental verification in the pinned source: the CS-GO latest test asserts exactly one item for resultTime=latest, which IDR-034 states is wrong, corroborating IDR-014B open question 6 and IDR-034 Section 14.4 from the source itself. The Guide rule at line 440 is the correct one and is unaffected.",
+        "WITHDRAWN IN ITERATION 27. This iteration recorded that the CS-GO latest test asserting exactly one item for resultTime=latest corroborates IDR-014B open question 6 and IDR-034 Section 14.4. The fixture seeds a single newest observation, so it never exercises tied result times and cannot establish the peer behavior those claims describe. The claim is withdrawn; evidence report 31 is preserved with the correction appended as its Appendix A, and the reasoning is in evidence/32-pass-3c-27-batch8-corrections-and-batch9.md Section 1. The independently supported time-range-test observation, that the adjacent test asserts only the item count and never which item, is retained, as is the Guide line 1129 verification. Guide line 440 was never at issue and is unaffected.",
         "Screen: recommendations substantially adopted, several near-verbatim, including no startup AutoMigrate at Guide 529, cursor binding at 547, typed configuration at 663, discriminating seeded data at 446, the outbox seam at 119 and 539, configuration-true AsyncAPI at 560 and QoS separation at 564.",
         "F-11 gained supporting material from two further studies calling for canonical typed relations; F-01 gained context from two studies recording peer licence constraints on reuse. Neither disposition changed.",
         "peer-source-spot-checks closed. IDR-062 remains unscreened but sits in cluster I, batch 14, and uses the same repository whose pins are now verified, so no new pin check is expected from it.",
         "No new finding number and no new follow-up question."
       ],
       "next_work": "Batch 9 of 27: key-section screen D, resource model, temporal validity and status (see current_work.next_batch).",
+      "review_complete": false
+    },
+    {
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 27: two bounded batch-8 corrections, then queue batch 9. Correction A withdrew the iteration 26 claim that the CS-GO unique-newest latest fixture corroborates IDR-014B open question 6 and the IDR-034 broad-latest criticism; because the fixture seeds a single newest observation it never exercises tied result times and cannot establish the peer behavior those claims describe. Evidence report 31 was preserved, its authored body verified byte-for-byte by hashing its first 15830 bytes to the recorded original_sha256, and the correction was appended as its Appendix A so that a reader consulting report 31 alone discovers it; the manifest records both hashes under the new publication_change value correction_appended_body_unchanged. Correction B completed the omitted batch-8 screening: all 102 lines of IDR-014C Section 17.2, IDR-014D Sections 17.2 and 17.3, IDR-014E and IDR-014F Sections 15.2 and 15.3, and IDR-014G Sections 14.2 and 14.3 were read and accounted against existing findings and decisions. Batch 9 then screened IDR-015, IDR-016, IDR-017, IDR-018, IDR-019 and IDR-020 at their decision-usable sections, reusing IDR-017 Section 9.1 from evidence/12-pass-3c-08.txt rather than re-reading it, and checking acceptance in the governance record rather than in report metadata. Added the iteration evidence report and its manifest entry.",
+      "coverage_completed": [
+        "Correction A: the withdrawn latest corroboration claim, with the correction appended to the preserved evidence report 31",
+        "Correction B: research-key-section-sweep cluster C completed - the omitted Open Questions subsections of IDR-014C, IDR-014D, IDR-014E, IDR-014F and IDR-014G, 102 lines",
+        "research-key-section-sweep cluster D (queue batch 9): IDR-015, IDR-016, IDR-017, IDR-018, IDR-019, IDR-020"
+      ],
+      "material_points": [
+        "Correction A: the unique-newest fixture cannot establish tied-timestamp behavior or corroborate the broad latest criticism, because nothing in it distinguishes a correct implementation from an incorrect one. Withdrawn. The independently supported time-range-test observation is retained, as is the Guide line 1129 verification. No finding rested on the withdrawn claim, so no finding changes, and Guide line 440 was never at issue.",
+        "Correction B: the omitted open questions are overwhelmingly about the peer projects and the studies own method, not about Glaux obligations. All ten IDR-014D remaining questions ask what the SECD prototype intends. IDR-014E and IDR-014F both state that no open question blocks their report, and IDR-014G records that no new escalation blocks Glaux. Nothing in the 102 lines changes any iteration 26 accounting.",
+        "F-12 gains its first peer-study support, from two independent studies: IDR-014E line 514 makes raw transport capture the primary oracle against parsed tools creating false findings, and IDR-014F line 502 requires preserving raw wire, parser output, code expectation and standard anchor. F-12 stays a narrowed optional hardening at Low severity.",
+        "F-11 gains the IDR-014G Section 14.3 line 474 question, whether Glaux will provide an explicitly noncanonical compatibility adapter and under what namespace or profile, which is the F-11 question asked from the peer-study side.",
+        "MATERIAL BATCH 9 RESULT, under F-11: IDR-017 R-017-08 at line 764 states the rule F-11 asks for, emit exact Part 1 Table 3 ogc-rel spellings, compare extension relation URIs case-insensitively, and confine bare values to a named compatibility adapter; Section 9.3 line 464 adds that Glaux does not emit duplicate bare and prefixed links. The Guide contains no occurrence of ogc-rel, states no spelling rule, and emits a bare rel system at line 485. Same shape as the iteration 25 F-03 result: a specific numbered accepted recommendation the Guide neither carries nor mentions, with an observable divergence at a named Guide line. No new finding number.",
+        "R-017-09 is half adopted: Guide 560 carries never a fabricated OGC relation but uses urn:glaux:rel:experimental-asyncapi rather than the versioned HTTPS Glaux namespace the recommendation asks for. Recorded under F-11 with R-017-08.",
+        "No new F-17 instance: all six batch-9 reports record Accepted By and an acceptance date in their headers and are Complete and Accepted in the governance record. A useful negative result that bounds F-17 as a residue in particular reports, consistent with the four correctly recorded reports found in iteration 25.",
+        "IDR-019 is an explicitly governed non-adoption, not a gap. Its central PROV graph mechanism is declined three times on the record: Guide 282, Guide 1118 and final-idr-research-report.md line 1288, which states the PROV-compatible evidence graph wording is not a mandatory graph database or public PROV service. Its derived obligations are adopted, several near-verbatim at Guide 600, 602 and 608. The clearest example so far of the distinction between accepted research and mechanisms adopted into the approved plan.",
+        "One stated non-adoption in IDR-018: R-018-03 asks for snapshot or watermark paging bound to cursors; Guide 444 documents keyset paging as a changing view rather than claiming a cross-request snapshot, while Guide 471 adopts the cursor-binding half. The Guide states the departure for itself.",
+        "fq-13 narrowed substantially: IDR-018 line 248 supplies the issueTime semantic the question asked for, and IDR-017 REL-005 records systemKind as an accepted relationship absent from the Guide, while systemType appears in no batch-9 report. Recorded as observations, not raised, because settling them needs the published Part 1 text and the Guide Section 7 requirement tables.",
+        "fq-12 extended from one uncited accepted report to four: the Guide defines no reference marker for IDR-016, IDR-017 or IDR-019 and cites none of them, though it reaches IDR-019 content through R061. Character unchanged: reference completeness, not a substantive gap.",
+        "No new finding number and no new follow-up question."
+      ],
+      "next_work": "Batch 10 of 27: key-section screen E, encoding, schema and validation, covering IDR-021 to IDR-025 (see current_work.next_batch).",
       "review_complete": false
     }
   ],
@@ -3739,24 +3789,26 @@
     {
       "id": "fq-12-guide-does-not-cite-idr-055",
       "raised": "2026-09-20",
-      "question": "The Guide defines and cites reference markers for the neighbouring accepted test-strategy reports (R050 conformance, R052 TDD and layers at lines 903 and 952, R053 fixtures at 944 and 952, R054 performance at 989, R056 interoperability at 991) but defines no R055 marker and cites IDR-055 nowhere, although that report is accepted and is the project security and command-control test strategy. R051 and R057 are likewise undefined, so IDR-055 is not uniquely uncited. Should the Guide cite IDR-055 for its security-test content at line 612 and in Section 8, or is the existing lineage through R039 and R039a at line 592 sufficient?",
-      "relevance": "Guide Sections 4.10 and 8 reference completeness; final consolidation sweep",
+      "question": "The Guide defines and cites reference markers for the neighbouring accepted test-strategy reports (R050 conformance, R052 TDD and layers at lines 903 and 952, R053 fixtures at 944 and 952, R054 performance at 989, R056 interoperability at 991) but defines no R055 marker and cites IDR-055 nowhere, although that report is accepted and is the project security and command-control test strategy. R051 and R057 are likewise undefined, so IDR-055 is not uniquely uncited. Should the Guide cite IDR-055 for its security-test content at line 612 and in Section 8, or is the existing lineage through R039 and R039a at line 592 sufficient? EXTENDED IN ITERATION 27: batch 9 found three more accepted reports in the same position. The Guide defines reference markers for R015, R018 and R020 but defines none for IDR-016, IDR-017 or IDR-019 and cites none of the three anywhere, although all three are accepted and all three own subject matter the Guide relies on. The Guide defines 47 report markers in total. The provenance case has an explanation on the record, since the Guide reaches IDR-019 through R061, whose Section 4.6 reconciliation the final research report line 1296 says links the IDR-019 findings; IDR-016 and IDR-017 have no such intermediary. The question is therefore whether the Guide reference list should be completed at consolidation, not whether any individual report was overlooked in substance.",
+      "relevance": "Guide Sections 4.10 and 8 reference completeness, now also Guide Sections 4.2, 4.6 and 4.10 for the identifier, relationship and provenance reports; final consolidation sweep",
       "status": "noted_not_scheduled",
       "evidence": [
-        "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md"
+        "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md",
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
       ],
-      "supporting_note": "Reference-completeness observation, not a substantive gap: iteration 23 established that the Guide security-test families at line 612 match IDR-055 closely. Raised only because the iteration 23 explanation for the absence (that the report was an unaccepted proposal) was withdrawn when the acceptance was confirmed."
+      "supporting_note": "Reference-completeness observation, not a substantive gap: iteration 23 established that the Guide security-test families at line 612 match IDR-055 closely. Raised only because the iteration 23 explanation for the absence (that the report was an unaccepted proposal) was withdrawn when the acceptance was confirmed. Iteration 27 broadened the subject from one report to four and confirmed the character is unchanged: in every case checked so far the Guide carries the substance. Batch 9 verified that for IDR-016, IDR-017 and IDR-019 by accounting their recommendations against named Guide lines."
     },
     {
       "id": "fq-13-issuetime-systemtype-systemkind",
       "raised": "2026-09-20",
-      "question": "IDR-004 Section 6.1 flags Command.issueTime as pending resolution of a published received-versus-issued/request-receipt conflict, and its Section 8.2 defers each published prose-versus-schema defect to IDR-006-008 and the test topics. Guide v1.3 mentions issueTime once, as a filter parameter name at line 755, and states no semantics, while IDR-042 Section 6.3 separately reads it as when the receiving System received a Command. Separately, IDR-004 describes systemType as a required conceptual URI for a System primary activity and systemKind as a distinct optional link to a Procedure, and neither string appears anywhere in the Guide, whose only featureType treatment at line 386 concerns specialized sampling-feature types. Does the published Part 1 text require systemType and systemKind handling that the Guide should state, and should the Guide record an issueTime semantic decision and its Section 13 row?",
+      "question": "IDR-004 Section 6.1 flags Command.issueTime as pending resolution of a published received-versus-issued/request-receipt conflict, and its Section 8.2 defers each published prose-versus-schema defect to IDR-006-008 and the test topics. Guide v1.3 mentions issueTime once, as a filter parameter name at line 755, and states no semantics, while IDR-042 Section 6.3 separately reads it as when the receiving System received a Command. Separately, IDR-004 describes systemType as a required conceptual URI for a System primary activity and systemKind as a distinct optional link to a Procedure, and neither string appears anywhere in the Guide, whose only featureType treatment at line 386 concerns specialized sampling-feature types. Does the published Part 1 text require systemType and systemKind handling that the Guide should state, and should the Guide record an issueTime semantic decision and its Section 13 row? NARROWED IN ITERATION 27 on both halves. issueTime: IDR-018 line 248 supplies the semantic, time the command was received by the target System, required on the server response and ignored if the client supplies it on create or update, confirmed as server-owned at line 373 and placed in the clock chain at line 442. That agrees with IDR-042 Section 6.3 and settles the received-versus-issued conflict IDR-004 flagged. The Guide covers the handling generically at lines 418 and 495 but states no issueTime semantic and carries no Section 13 row for it, so only the question of whether it should record one remains. systemKind: IDR-017 line 227 and REL-005 at line 346 record it as an accepted System-to-Procedure relationship, 0..1, direct systemKind@link mapped to SensorML typeOf, and line 470 lists the four Part 1 direct link members systemKind@link, platform@link, deployedSystems@link and sampledFeature@link. None of those, nor typeOf, nor systemType, appears anywhere in the Guide. systemType: it appears in none of the six batch-9 reports, including the resource-model and relationship reports, and only in IDR-004, so on this evidence it is most likely IDR-004 conceptual name for the GeoJSON feature type rather than a separately tracked obligation, consistent with Guide 386 treating properties.featureType for sampling features only.",
       "relevance": "Guide Sections 4.9, 6.2 and 13; the Guide Section 7 Part 1 requirement tables; the batch that accounts Part 1 requirement coverage",
       "status": "noted_not_scheduled",
       "evidence": [
-        "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md"
+        "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md",
+        "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md"
       ],
-      "supporting_note": "Deliberately not asserted as a Guide gap in iteration 24. Establishing either would require checking the published Part 1 text and the Guide Section 7 requirement tables, neither of which a key-section screen does. IDR-004 itself defers these defects downstream."
+      "supporting_note": "Deliberately not asserted as a Guide gap in iteration 24. Establishing either would require checking the published Part 1 text and the Guide Section 7 requirement tables, neither of which a key-section screen does. IDR-004 itself defers these defects downstream. Still deliberately not asserted as a Guide gap after iteration 27. The Guide is a design guide and does not enumerate wire member names generally, so the absence of a member name is not by itself a gap, and establishing whether published Part 1 requires handling the Guide should state would need the Part 1 text and the Guide Section 7 requirement tables, which a key-section screen does not read. The batch that accounts Part 1 requirement coverage remains the right home."
     }
   ],
   "publication": {
@@ -3768,7 +3820,7 @@
   "batch_queue": {
     "created": "2026-09-19",
     "created_by": "Claude Code (Claude Opus 5) during Pass 3c iteration 19",
-    "revised": "2026-09-19 (iteration 20): complete leaf-to-issue comparison replaces the sample; the six partial reports are assigned to existing cluster batches; three issue batches combined. Total 30 to 27.",
+    "revised": "2026-09-20 (iteration 27): batch 9 executed alongside two bounded batch-8 corrections. Count unchanged at 27.",
     "purpose": "Finite numbered queue covering every remaining finish condition recorded in review_areas, remaining_checks and backlog_analysis. It is a cursor structure inside this state file, not a separate planning document, and it adds no scope.",
     "status_note": "This queue is a workload estimate, not a quota. Compatible batches are combined where feasible and the count is expected to move as evidence arrives.",
     "sizing_basis": "Each batch is sized against what iterations 16-20 actually absorbed: roughly 350-850 lines of source plus its Guide cross-checks. Research key-section batches group five to eight reports because a screen is lighter per line than a deep-read accounting. Issue batches follow Roadmap phase and group boundaries, which are the functional units.",
@@ -3780,7 +3832,8 @@
       "Iteration 23: 27 batches (5 done, 22 remaining). Batch 5 executed; research-deep-read-remainders closed. No count change.",
       "Iteration 24: 27 batches (6 done, 21 remaining). Batch 6 executed; IDR-055 acceptance corrected without adding a batch. No count change.",
       "Iteration 25: 27 batches (7 done, 20 remaining). Batch 7 executed. No count change.",
-      "Iteration 26: 27 batches (8 done, 19 remaining). Batch 8 executed; peer-source-spot-checks closed and fq-10 resolved without adding a batch. No count change."
+      "Iteration 26: 27 batches (8 done, 19 remaining). Batch 8 executed; peer-source-spot-checks closed and fq-10 resolved without adding a batch. No count change.",
+      "Iteration 27: 27 batches (9 done, 18 remaining). Batch 9 executed together with two batch-8 corrections in the same iteration. Count unchanged; no batch added or removed. The batch-8 correction was absorbed into this iteration rather than becoming its own batch, which is what the queue reuse rules intend."
     ],
     "reuse_rules": [
       "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
@@ -3805,8 +3858,8 @@
       "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
     "total_batches": 27,
-    "done": 8,
-    "remaining": 19,
+    "done": 9,
+    "remaining": 18,
     "queue": [
       {
         "batch": 1,
@@ -3895,8 +3948,8 @@
         "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-015, IDR-016, IDR-018, IDR-019, IDR-020 (coverage not established); plus the unread key sections of IDR-017 (partial: Section 9.1 already read, evidence/12-pass-3c-08.txt). Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
         "size_basis": "6 reports, roughly 500-800 lines of key sections",
         "coverage_state": "coverage_not_established_plus_partial",
-        "status": "queued",
-        "note": "Partial-report handling: reuse the existing evidence for the partial reports named here and screen only their unread key sections. A partial read does not establish complete coverage, and these reports do not get batches of their own. IDR-017 is the relationship and linkage model; only Section 9.1 is recorded as read."
+        "status": "done_iteration_27",
+        "note": "Executed in iteration 27, after two bounded batch-8 corrections in the same iteration. Six reports screened at their decision-usable sections; IDR-017 Section 9.1 reused from evidence/12-pass-3c-08.txt rather than re-read; none recorded as fully read and each entry lists exactly which sections were screened. Acceptance was checked in the governance record, not inferred from report metadata: all six are Complete and Accepted and all six record it correctly in their own headers, so no new F-17 instance, which bounds F-17 as a residue in particular reports rather than a systemic practice. Recommendations substantially adopted, several near-verbatim at Guide 364, 408, 434, 481, 483, 485, 509, 582, 600, 602 and 608. One stated non-adoption: R-018-03 asks for snapshot or watermark paging and Guide 444 documents keyset paging as a changing view instead, a departure the Guide states for itself. One explicitly governed non-adoption: the IDR-019 PROV graph, declined at Guide 282, Guide 1118 and final-idr-research-report.md line 1288. MATERIAL RESULT: IDR-017 R-017-08 states the relation-spelling rule F-11 asks for and Guide line 485 diverges from it; recorded under F-11 with no new finding number. fq-13 narrowed substantially on both halves; fq-12 extended to IDR-016, IDR-017 and IDR-019. No new finding number and no new follow-up question."
       },
       {
         "batch": 10,
