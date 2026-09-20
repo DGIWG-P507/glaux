@@ -448,6 +448,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 32, queue batch 14, the final research cluster, key-section screen I over IDR-058 to IDR-062. Closes research-key-section-sweep and completes review area 3, with final coverage of 18 reports fully read and 53 screened. Identifies an F-17 false positive and records the line-by-line verification of all sixteen stale-wording matches, leaving the population at 20 on a verified basis. Records that the Guide took IDR-058 conditional recommendation and discharged all three preconditions, and that IDR-061 and IDR-062 independently confirm the batch 9 and batch 8 conclusions"
+    },
+    {
+      "name": "38-pass-3c-33-batch15-scenario-pass.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "0CFF8E658708BAAFFFEC0C68CE54DA078E557F4F3CBB3B2F1DAF8A0A592D832A",
+      "original_bytes": 13426,
+      "published_sha256": "0CFF8E658708BAAFFFEC0C68CE54DA078E557F4F3CBB3B2F1DAF8A0A592D832A",
+      "published_bytes": 13426,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 33, queue batch 15, the end-to-end scenario pass, completing review area 4. Corrects the batch saved references before reading, maps Goal Section 5 against Guide Sections 8.2 and 8.4, establishes that no scenario over-promises, and gives four existing findings a named remedy location in specific scenarios"
     }
   ]
 }

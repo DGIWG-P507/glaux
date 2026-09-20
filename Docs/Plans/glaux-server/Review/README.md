@@ -10,7 +10,19 @@
 2. Read **instructions.md**, especially the rule for recording disagreements without interrupting coverage.
 3. Use **current_work** in **review-state.json** to resume the exact unfinished step or next batch, and **batch_queue** in the same file to see the whole numbered remainder. Do not reload every archived response.
 
-The last substantive reviewer response is **Pass 3c, iteration 32**, which executed queue batch 14, the final research cluster.
+The last substantive reviewer response is **Pass 3c, iteration 33**, which executed queue batch 15, the end-to-end scenario pass, and completed the scenarios review area.
+
+The saved references for this batch were wrong and were corrected before anything was read. They named one Guide section as holding the walkthroughs; that section holds risks and checks, and the scenarios and walkthrough live in two subsections of the testing strategy. This is the second reference defect found in the review's own saved state, and both date from when the batch queue was first drafted, before the named sections had been read.
+
+Coverage is complete. Every capability area in the Goal is reachable from both a representative scenario and a whole-guide walkthrough path. Security and verification have no dedicated path and are cross-cutting by the Guide's own stated design, which is recorded as a choice rather than a gap, and is arguably stronger than isolating security in one scenario.
+
+Every consequential assertion in the scenarios was checked against the design line that has to deliver it, and all are supported. No scenario promises a guarantee the design never establishes. That is worth stating because the opposite is a common defect in scenario sets.
+
+The batch's main product is that **four existing findings gained a named remedy location**. Each now points at the specific scenario where its recorded remedy would go: the cache item belongs in the indirect-disclosure clauses that already close two scenarios, the audit item in the backup-restore scenario, the stream-state item in the live-delivery scenario, and the relation-spelling item in the link-navigation scenario. No disposition changed. That converts four general remedies into specific edits at named lines, which is what a consolidation owner needs.
+
+No research report was reopened, and no new finding number or follow-up question resulted.
+
+The previous response, **iteration 32**, executed queue batch 14 and closed the research key-section sweep.
 
 **The research area is complete.** All 71 topic reports are accounted: 18 read in full, including all four committed deep reads, and 53 screened at their recommendations, risks and open questions, and decision registers. No partial read remains and no report is left with unrecorded read depth. Two limits stay on the record and are worth stating: a screen is not a full read, so executive summaries, bodies, appendices and validation sections were deliberately not read, and each report's entry lists exactly what was and was not covered, so a later pass can reopen one report without re-deriving coverage.
 
@@ -74,7 +86,7 @@ Batch 9 then produced the strongest result the relation-spelling finding has had
 
 The batch also produced a useful negative result. All six reports screened record their acceptance correctly, which bounds **F-17** as a residue in particular reports rather than a systemic practice. And it produced the clearest example yet of accepted research whose central mechanism is deliberately not adopted: the provenance report asks for a PROV evidence graph, and the project declines it three times on the record while adopting the obligations the report derives. No new finding number and no new follow-up question.
 
-Every remaining finish condition is mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, 14 done, 13 remaining.** Every research batch is complete; the rest cover scenarios, verification quality, the issue backlog and the final assessment. It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
+Every remaining finish condition is mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, 15 done, 12 remaining.** Research and scenarios are complete; the rest cover verification quality, the issue backlog and the final assessment. It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
 
 Iteration 20 corrected two accounting problems in that queue. Issue fidelity is now established by comparing all 286 issues against their Roadmap leaves rather than by sampling 18 of them, since a sample cannot establish complete coverage; the environment was checked first to confirm a complete comparison is achievable. The six partial reports left out of the first version are now assigned to the cluster batches that already cover their topics, reusing their recorded evidence and screening only unread sections, with no batch added for them. Three issue batches were combined because the complete comparison lets matching leaf content be reused instead of reviewed twice, which is what moved the count from 30 to 27. The count is a workload estimate with six recorded uncertainties, not a quota and not a completion guarantee.
 
@@ -82,7 +94,7 @@ The one evidenced Guide gap from the research remainder slices remains the respo
 
 The record has **22 finding IDs, including two withdrawals**, with subsequent qualifications preserved. No standards check is outstanding, and **18 of 286** issue bodies are documented as read.
 
-The next selected batch is **batch 15 of 27**: the end-to-end scenario pass, and the first non-research batch. Research reports are now a reuse source rather than a reading target. The machine state is authoritative for that cursor as review continues.
+The next selected batch is **batch 16 of 27**: the verification-quality pass, against the testing-strategy subsections that batch 15 deliberately left unread. The machine state is authoritative for that cursor as review continues.
 
 ## What lives here
 
@@ -105,7 +117,7 @@ The purpose is to finish the review, not maintain an endless reading queue. Reus
 | 1. Baseline/planning documents | Completed at the recorded baseline | Reuse it; check relevant subsequent changes only |
 | 2. Standards | Complete for the carried checks: six carried groups closed (SWE quality, array flags, Features Part 3/CQL2 identifiers, SensorML class identifiers, IDR-011 Section 14.3 abstract-test rows, Part 2 Annex A.1 inheritance) and the F-13 extension question resolved | Met; later passes may raise targeted standards questions, each recorded in `remaining_checks` with evidence |
 | 3. Research and peer evidence | **Complete for the recorded scope.** All 71 reports accounted: 18 fully read including all four committed deep reads, 53 screened at their key sections; no partial reads remain; pinned CS-GO/OSH checks complete and closed | **Met.** Executive summaries, bodies, appendices and validation sections were deliberately outside the screen, and each report's entry records what was and was not covered |
-| 4. End-to-end scenarios | Selected analysis exists | Account for the approved capability workflows and consequential failures/security/provenance boundaries |
+| 4. End-to-end scenarios | **Complete for the recorded scope.** All nine Goal capability areas reachable from both a representative scenario and a walkthrough path; no scenario over-promises; four findings given named remedy locations | **Met.** The assessment covers a design artifact: the Guide states these scenarios record a design review, not executed verification |
 | 5. Verification quality | Selected checks exist | Assess independent expected answers, meaningful failure detection and appropriate real-system checks across the planned capabilities |
 | 6. Implementation issues | 18 of 286 bodies documented as read; targeted reviews only | Account for all issue-specific scope/acceptance checks and the complete dependency/coverage/sizing analysis; deduplicate identical boilerplate |
 | Final assessment | Not complete | Publish supported findings, withdrawals, bounded uncertainties, coverage accounting and implementation advice |
