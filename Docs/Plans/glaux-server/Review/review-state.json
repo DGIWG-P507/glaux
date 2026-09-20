@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 17 (research-deep-read-remainders slice 2: IDR-040 Sections 9-21; response cache validator/variant gap recorded under F-03)",
+  "latest_report": "Pass 3c iteration 18 (research-deep-read-remainders slice 3: IDR-042 unread sections; the F-03 cache gap re-tested as instructed and found reinforced)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -503,13 +503,14 @@
     {
       "id": "IDR-042",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-042-ddil-informed-server-semantics-report.md",
-      "documented_read_depth": "partial",
-      "note": "Sections 1-2, 5, 8, 11-14, 17-18 read; other sections/end matter not established complete.",
+      "documented_read_depth": "full",
+      "note": "Full read completed iteration 18: Sections 3-4, 6, 7, 9, 10, 15, 16 and 19-20 read and accounted against Guide v1.3. Freshness/last-known/stale vocabulary, the non-collapse rules, resultTime=latest semantics, delayed and replayed input handling, opaque policy-bound cursors, MQTT-session-is-not-a-cursor and reconnect/resnapshot behavior are substantially adopted, several passages near-verbatim (Guide lines 147, 175, 232, 348, 440, 473, 481, 483, 539, 547, 564, 635-647, 840, 970-975). RepresentationAssessmentV1, the Glaux-specific time fields, the DDIL mode taxonomy and numeric thresholds are not adopted; recorded scope choice consistent with the report's own Section 3.2 and Section 19. Section 7 line 341 independently states the cache rule the Guide lacks, reinforcing the F-03 cache instance.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/15-pass-3c-11.txt"
+        "evidence/15-pass-3c-11.txt",
+        "evidence/23-pass-3c-18-research-deep-read-slice3.md"
       ],
-      "conclusion_or_remaining_question": "Sections 1-2, 5, 8, 11-14, 17-18 read; other sections/end matter not established complete."
+      "conclusion_or_remaining_question": "Fully read. No further remainder outstanding for this report."
     },
     {
       "id": "IDR-043",
@@ -3192,9 +3193,10 @@
       "status": "partial",
       "evidence": [
         "evidence/21-pass-3c-16-research-deep-read-slice1.md",
-        "evidence/22-pass-3c-17-research-deep-read-slice2.md"
+        "evidence/22-pass-3c-17-research-deep-read-slice2.md",
+        "evidence/23-pass-3c-18-research-deep-read-slice3.md"
       ],
-      "conclusion_or_remaining_question": "Slice 1 closed (iteration 16): IDR-008 Sections 16-19, IDR-037 Appendices A-D, IDR-038 Appendices A-C, and IDR-039 Section 7 and Sections 21-22 fully read (three related instances under F-03/F-19/F-20; follow-up question fq-09; no new finding). Slice 2 closed (iteration 17): IDR-040 Sections 9-21 fully read; invariants substantially adopted, typed policy machinery not adopted as a recorded scope choice, and one evidenced gap recorded as a related instance under F-03 (response cache validators/variants have no Guide rule, no Cache-Control directive and no disclosure test, while RFC 9111 Section 3.5 protects only Authorization-header requests). Exactly what remains: IDR-042 and IDR-043 remaining sections beyond those already read (evidence/15-pass-3c-11.txt; IDR-042 Sections 1-2, 5, 8, 11-14, 17-18 read; IDR-043 Sections 15, 19-20 plus selected rows of 6, 7, 11.4 read); and the four committed deep reads not yet begun, IDR-030, IDR-034, IDR-039A and IDR-055. Next slice selected: IDR-042 and IDR-043 remaining sections (see current_work.next_batch)."
+      "conclusion_or_remaining_question": "Slice 1 closed (iteration 16): IDR-008 Sections 16-19, IDR-037 Appendices A-D, IDR-038 Appendices A-C, and IDR-039 Section 7 and Sections 21-22 fully read (three related instances under F-03/F-19/F-20; follow-up question fq-09; no new finding). Slice 2 closed (iteration 17): IDR-040 Sections 9-21 fully read; invariants substantially adopted, typed policy machinery not adopted as a recorded scope choice, and one evidenced gap recorded as a related instance under F-03 (response cache validators/variants have no Guide rule, no Cache-Control directive and no disclosure test, while RFC 9111 Section 3.5 protects only Authorization-header requests). Slice 3 closed (iteration 18): IDR-042's unread sections (3-4, 6, 7, 9, 10, 15, 16, 19-20) fully read; freshness/last-known semantics, cursor and reconnect behavior substantially adopted; RepresentationAssessmentV1 and the DDIL mode taxonomy not adopted as a recorded scope choice; the instructed re-test of the F-03 cache gap found it reinforced rather than qualified, because IDR-042 Section 7 line 341 independently states the policy-partitioned private/no-store rule and Sections 4.2/6.4/15.1 add a cache-freshness-versus-domain-freshness dimension with two fixtures. Exactly what remains: IDR-043's unread sections (Sections 1-5, 8-14, 16-18, 21-22 plus completion of 6, 7 and 11; Sections 15 and 19-20 already read per evidence/15-pass-3c-11.txt; roughly 625 lines); and the four committed deep reads not yet begun, IDR-030, IDR-034, IDR-039A and IDR-055. Next slice selected: IDR-043's unread sections (see current_work.next_batch)."
     },
     {
       "id": "research-key-section-sweep",
@@ -3212,11 +3214,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 17 (research-deep-read-remainders slice 2: IDR-040 Sections 9-21; response cache validator/variant gap recorded under F-03)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 18 (research-deep-read-remainders slice 3: IDR-042 unread sections; the F-03 cache gap was re-tested as instructed and found reinforced)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the environment's active-model identification at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 17 completed slice 2 of research-deep-read-remainders and published this checkpoint. The next batch has not been started.",
+    "unfinished_step": "None. Iteration 18 completed slice 3 of research-deep-read-remainders and published this checkpoint. The next batch has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3228,15 +3230,16 @@
       "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md",
       "evidence/20-pass-3c-15-observation-extension-policy.md",
       "evidence/21-pass-3c-16-research-deep-read-slice1.md",
-      "evidence/22-pass-3c-17-research-deep-read-slice2.md"
+      "evidence/22-pass-3c-17-research-deep-read-slice2.md",
+      "evidence/23-pass-3c-18-research-deep-read-slice3.md"
     ],
     "next_batch": {
-      "title": "Research deep-read remainders, slice 3: IDR-042 remaining sections",
+      "title": "Research deep-read remainders, slice 4: IDR-043 remaining sections",
       "check_ids": [
         "research-deep-read-remainders"
       ],
-      "source_scope": "Read and account for the unread sections of IDR-042 (DDIL-informed server semantics): Sections 3-4 (lines 125-204, evidence base and methodology), Section 6 (lines 251-316, the freshness/validity/last-known/cached/tentative/delayed/unavailable/unknown/stale state model), Section 7 (lines 317-342, resource family behavior), Section 9 (lines 383-416, observation/status/latest-value/source-health/delayed-update findings), Section 10 (lines 417-442, streaming/event/cursor/reconnect/latest-state snapshot findings), Section 15 (lines 565-633, test implications), Section 16 (lines 634-650, downstream handoff matrix), and Sections 19-20 (lines 704-765, validation and references). Sections 1-2, 5, 8, 11-14 and 17-18 were already read (evidence/15-pass-3c-11.txt). Roughly 380 lines. For each section: check its key findings, recommendations and open questions against the current Guide v1.3 text (grep first, then targeted reads), record adopted/not-adopted/departure with line references, and raise a finding only where a Guide gap is evidenced (existing findings F-03, F-08, F-15, F-18, F-19, F-20 and F-22 are the likely homes; do not create competing numbers). Note specifically: Sections 9-10 cover latest-value, cursor, reconnect and snapshot behavior that overlaps the F-03 response-cache-validator gap recorded in iteration 17 (evidence/22-pass-3c-17-research-deep-read-slice2.md, Section 5); check whether IDR-042 reinforces, qualifies or bounds that gap and extend the existing F-03 instance rather than opening a new one. Issue bodies optional.",
-      "stop_condition": "Record the listed IDR-042 sections as read with material points accounted for against the Guide; update the research-deep-read-remainders conclusion so it lists exactly what remains (IDR-043 remaining sections; committed deep reads 030, 034, 039A, 055) and name the next slice, which is expected to be IDR-043's remaining sections (Sections 1-5, 8-14, 16-18, 21-22 plus completion of 6, 7 and 11, about 625 lines); save and publish the checkpoint.",
+      "source_scope": "Read and account for the unread sections of IDR-043 (server synchronization and conflict-handling boundary): Sections 1-5 (lines 66-213, executive summary, scope, evidence base, methodology, synchronization scope boundary), Sections 6-7 (lines 214-268, scenario taxonomy and synchronizable resource/record inventory; only selected rows of 6 and 7 were previously read, so complete them), Sections 8-14 (lines 269-518, authority/identifier/versioning/tombstone/supersession/idempotency findings; synchronization state model; replay, duplicate detection, delayed update and event order; conflict taxonomy and detection, completing the selected rows of 11.4; conflict record/quarantine/operator review/resolution; source trust, provenance, policy/releasability and federation; command lifecycle, status reconciliation, unknown outcome and command audit), Sections 16-18 (lines 538-635, API response/error/event/observability implications; test implications; downstream handoff matrix), and Sections 21-22 plus the completion checklist (lines 689-765). Sections 15 and 19-20 were already read (evidence/15-pass-3c-11.txt). Roughly 625 lines, the largest remaining slice. For each section: check its key findings, recommendations and open questions against the current Guide v1.3 text (grep first, then targeted reads), record adopted/not-adopted/departure with line references, and raise a finding only where a Guide gap is evidenced (existing findings F-03, F-08, F-15, F-18, F-19, F-20, F-21 and F-22 are the likely homes; do not create competing numbers). Note specifically: Sections 8-12 cover revision/tombstone/conflict mechanics that Guide Section 4.11 (lines 620-649) states in detail, so expect dense adopted/not-adopted comparison there; Section 15 of IDR-042 handed this report mandatory semantic inputs (modes/states, epochs, watermarks/gaps, tentative/quarantine/conflict outcomes, no-arrival-wins, queued-effect recheck), so check that handoff is consistent; and Section 15 of IDR-043 (audit synchronization, audit gap and accountability findings, already read) is the home of F-21, so any new audit-synchronization material belongs there rather than in a new number. Issue bodies optional.",
+      "stop_condition": "Record the listed IDR-043 sections as read with material points accounted for against the Guide; update the research-deep-read-remainders conclusion so it lists exactly what remains (only the four committed deep reads 030, 034, 039A and 055) and name the next slice, which is expected to be the first of those four; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     }
   },
@@ -3358,6 +3361,23 @@
       ],
       "next_work": "research-deep-read-remainders slice 3: IDR-042 remaining sections (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the environment's active-model identification at the time of this iteration",
+      "activity": "Pass 3c iteration 18 (resumed from the published iteration 17 checkpoint at commit 814f060f38851ebabb167b60ec08b545389ec9b9). Executed research-deep-read-remainders slice 3: read IDR-042's unread sections (3-4, 6, 7, 9, 10, 15, 16, 19-20; about 380 lines) and accounted them against Guide v1.3. Carried out the batch's explicit instruction to re-test the F-03 response-cache-validator gap recorded in iteration 17 against IDR-042 Sections 9-10. Result: the gap is reinforced, not qualified or bounded. IDR-042 Section 7 line 341 independently states the rule the Guide lacks ('Cache-safe means policy-partitioned, integrity/version checked and accompanied by correct validators; it does not mean publicly cacheable. Protected or principal-specific responses use appropriate private/no-store controls', tagged N/A/P), and Section 3.1 line 136 cites RFC 9111 Sections 4.2-4.2.4 and 5.1-5.2 as a normative source. A second dimension was added that iteration 17 did not cover: HTTP cache freshness is not domain freshness (Section 4.2 line 197; Section 6.4 line 313 'ageSeconds is domain-evidence age under the named rule, not HTTP Age'), with two ready-made API fixtures at Section 15.1 lines 577-578. The Guide establishes the underlying domain distinction thoroughly (147, 481, 970) but states no HTTP-layer caching rules at all, so this is the same single omission showing a second consequence. Otherwise the report is substantially adopted: non-collapse rules at 147/175/348/483; freshness and last-known vocabulary at 145/232/479/481/618/970/1001; resultTime=latest semantics effectively verbatim at 440; delayed and replayed input at 473/511/635/637/641/647; opaque policy-bound cursor and reconnect behavior near-verbatim at 547; MQTT-session-is-not-a-cursor near-verbatim at 564; broker disconnect does not discard committed change at 119/539; safe 503 for temporary dependency failure at 840; metric label discipline at 667/602. Not adopted as a recorded scope choice: RepresentationAssessmentV1 as a named object (the Guide adopts its posture at 483 and 481), the Glaux-specific time fields, the DDIL mode taxonomy with its hysteresis fixture, and numeric thresholds. Two items recorded as consistent by silence so a successor does not re-raise them: the 206 prohibition (the Guide never mentions 206) and the empty-versus-source-loss rule (not applicable to a server reading its own committed store; the analogue appears in the exchange path at 641/649). Added evidence/23-pass-3c-18-research-deep-read-slice3.md and its manifest entry.",
+      "coverage_completed": [
+        "research-deep-read-remainders (slice 3 of the remainder set)"
+      ],
+      "material_points": [
+        "The F-03 cache gap is now supported by two accepted reports rather than one, and partly on a normative-derived basis rather than a purely project-chosen one. Its recorded instance was extended with that corroboration, the cache-freshness-versus-domain-freshness dimension and the two IDR-042 fixtures that would test it. No new finding number; no qualification or narrowing of the iteration 17 statement was found.",
+        "No new finding number and no new follow-up question. fq-09 (metrics/traces exposure) gained further supporting research from IDR-042 Section 15.3 line 624.",
+        "IDR-042 is now fully read. Only IDR-043's unread sections and the four committed deep reads (030, 034, 039A, 055) remain in this check.",
+        "IDR-043's remainder is roughly 625 lines and is the largest single slice so far; its Sections 8-12 overlap Guide Section 4.11 densely, and its Section 15 is the home of F-21."
+      ],
+      "next_work": "research-deep-read-remainders slice 4: IDR-043 remaining sections (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -3449,9 +3469,10 @@
       "status": "noted_not_scheduled",
       "evidence": [
         "evidence/21-pass-3c-16-research-deep-read-slice1.md",
-        "evidence/22-pass-3c-17-research-deep-read-slice2.md"
+        "evidence/22-pass-3c-17-research-deep-read-slice2.md",
+        "evidence/23-pass-3c-18-research-deep-read-slice3.md"
       ],
-      "supporting_note": "Iteration 17 added research support: IDR-040 Section 10.3 states that a visible heartbeat or its absence is itself a disclosure and that health endpoints expose only a minimal service-health contract, and Section 15.3 states that public health surfaces reveal only deployment-approved service state. Guide line 665 already adopts the liveness/readiness split with protected diagnostics; the open part remains the metrics/traces endpoint specifically."
+      "supporting_note": "Iteration 17 added research support: IDR-040 Section 10.3 states that a visible heartbeat or its absence is itself a disclosure and that health endpoints expose only a minimal service-health contract, and Section 15.3 states that public health surfaces reveal only deployment-approved service state. Iteration 18 added a third source: IDR-042 Section 15.3 line 624 requires bounded mode/dependency-class/outcome metric labels and states that telemetry is not public source/System status and is not authoritative audit. Guide line 665 already adopts the liveness/readiness split with protected diagnostics and line 667 adopts the label-cardinality discipline; the open part remains the exposure boundary of the metrics/traces endpoint itself."
     },
     {
       "id": "fq-10-csgo-repository-url-discrepancy",
