@@ -348,6 +348,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Queue batch 7, key-section screen B over IDR-009, IDR-010, IDR-010A, IDR-012, IDR-013 and IDR-014, including the F-03 cache instance strengthening from accepted IDR-012, the F-11 confirmation at Guide v1.3 and a third F-17 instance (Pass 3c iteration 25)"
+    },
+    {
+      "name": "31-pass-3c-26-batch8-peer-studies-and-source-checks.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "1AAF4EB99E5053C8BD360C9D6C1651F568592256FDF2ECA2AEA0D9EEF7F3E400",
+      "original_bytes": 15830,
+      "published_sha256": "1AAF4EB99E5053C8BD360C9D6C1651F568592256FDF2ECA2AEA0D9EEF7F3E400",
+      "published_bytes": 15830,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Queue batch 8, key-section screen C over IDR-014A to IDR-014H combined with the peer-source spot checks: both recorded pins verified, the Guide line 1129 CS-GO citation verified in full, fq-10 resolved and peer-source-spot-checks closed (Pass 3c iteration 26)"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 25 (queue batch 7, key-section screen B: conformance, API definition and documentation)",
+  "latest_report": "Pass 3c iteration 26 (queue batch 8, key-section screen C plus the peer-source spot checks; fq-10 resolved and peer-source-spot-checks closed)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -178,76 +178,91 @@
     {
       "id": "IDR-014A",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014a-osh-csapi-server-implementation-study-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 16 Recommendations (14 items) and Section 17 Risks, Constraints and Open Questions read in iteration 26. Sections 1-15, 18-19 and Appendices A-C not read. R-014A-005 (derive conformance from enabled tested capabilities, never a fixed aspirational list) is adopted at Guide 907; R-014A-010 (upstream examples are provenance and negative fixtures, not the deployed contract) at 362; R-014A-009 (historical/live separation with backpressure, resume, disconnect and authorization-expiry) at 547; R-014A-007 (do not inherit the two-field error object or 400 catch-all) at 827 and 834-840. Its Section 17.1 claim that OSH v2.0.2 is a lightweight tag was independently corroborated this iteration: the ref resolves straight to a commit with no intervening tag object, unlike the annotated CS-Go v1.0.4. R-014A-014 records MPL-2.0 reuse obligations, noted as context under F-01. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-014B",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014b-connected-systems-go-csapi-server-implementation-study-report.md",
-      "documented_read_depth": "partial",
-      "note": "Targeted acceptance/history references; a full report read is not established.",
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 16 Recommendations (10 items) and Section 17 Risks and Open Questions read in iteration 26. The targeted acceptance and history references already recorded in evidence/08-pass-3c-04.txt were REUSED not re-read. Sections 1-15, 18-19 and Appendices A-C not read. Recommendation 4 (explicit versioned migrations; do not depend on startup AutoMigrate) is adopted near-verbatim at Guide 529 and recommendation 6 (cursors bound to version, query, ordering, principal or tenant and expiry) near-verbatim at 547. Its Section 17.2 open question 6 about CS-GO broad latest was corroborated directly in the pinned source this iteration. Section 17.1 records that absent license text blocks confident reuse, noted as context under F-01. This is a screen; the report is NOT recorded as fully read.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/08-pass-3c-04.txt"
+        "evidence/08-pass-3c-04.txt",
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
       ],
-      "conclusion_or_remaining_question": "Targeted acceptance/history references; a full report read is not established."
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-014C",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014c-pygeoapi-csapi-server-implementation-study-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 16 Recommendations (10 items) and Section 17.1 Risks and Constraints read in iteration 26. Sections 1-15, 17.2-19 and appendices not read. Recommendation 4 (versioned typed configuration; parse by schema, reject unknowns, reference secrets, publish a redacted effective view) is adopted near-verbatim at Guide 663; recommendation 9 (Basic authentication as a development boundary only) at 596; recommendation 1 (cross-format equivalence as a release gate) at 446. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-014D",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014d-secd-csapi-server-implementation-study-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 16 Recommendations (10 items) and Section 17.1 Risks and Constraints read in iteration 26. Sections 1-15, 17.2-19 and appendices not read. R-014D-003 (reject silent wrong-result behavior; unsupported filters return deterministic errors) is adopted at Guide 436. R-014D-004 (preserve canonical relationship semantics; use typed relation identifiers) adds supporting material to F-11, where the Guide still states no relation-spelling rule. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-014E",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014e-os4csapi-client-smoke-test-findings-study-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 14 Recommendations (12 items) and Section 15.1 Constraints read in iteration 26. Sections 1-13, 15.2-16 and appendices not read. Recommendation 6 (discriminating seeded data and negative assertions; never status-only success criteria) is adopted near-verbatim at Guide 446; recommendation 9 (two implementation families and two independent clients) is consistent with Guide 991. Recommendation 3 (preserve raw request and response evidence before any SDK transformation) sits in F-12 territory alongside Guide 901. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-014F",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014f-secd-interoperability-findings-study-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 14 Recommendations (10 items) and Section 15.1 Constraints read in iteration 26. Sections 1-13, 15.2-16 and appendices not read. Recommendation 1 (a supported parameter changes or validates results; an unsupported parameter follows explicit policy) is adopted at Guide 436 and recommendation 8 (normalize errors; keep storage-engine detail from clients) at 827. Recommendation 3 (use canonical typed link relations even where generic data is permitted) adds supporting material to F-11. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-014G",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014g-os4csapi-discussions-lessons-learned-study-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 13 Recommendations (12 items) and Section 14.1 Constraints read in iteration 26. Sections 1-12, 14.2-15 and appendices not read. Recommendation 5 (an external reverse-proxy acceptance environment verifying emitted URLs and the authentication boundary) is adopted at Guide 366; recommendation 9 (route Records federation, materialization and BFF proposals outside core scope) at 165 and 620; recommendation 3 (generate OpenAPI from the implementation contract with runtime parity) at 362 and 907. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-014H",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014h-draft-csapi-part-3-publish-subscribe-and-implementation-study-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen C completed iteration 26 (queue batch 8). Section 14 Recommendations (12 items) and Section 15 Risks, Open Questions and Monitoring Triggers read in iteration 26. Sections 1-13, 16-22 and appendices not read. R-014H-03 (an outbox-capable transaction seam so a committed mutation cannot silently lose its publishable event) is adopted at Guide 119 and 539; R-014H-05 (configuration-true generated discovery, not an unbounded wildcard as an authorization promise) near-verbatim at 560; R-014H-11 (separate delivery claims from MQTT QoS) near-verbatim at 564; R-014H-04 (experimental capabilities disabled by default and independently gated) at 362 and 543; R-014H-01 (Part 3 experimental, not adopted) at 362, 543 and 547. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-015",
@@ -3244,24 +3259,28 @@
       "status": "partial",
       "evidence": [
         "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md",
-        "evidence/30-pass-3c-25-batch7-key-section-screen-b.md"
+        "evidence/30-pass-3c-25-batch7-key-section-screen-b.md",
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
       ],
-      "conclusion_or_remaining_question": "Systematic topic key-section accounting. Cluster A closed in iteration 24 (batch 6): IDR-001 to IDR-007. Cluster B closed in iteration 25 (batch 7): IDR-009, IDR-010, IDR-010A, IDR-012, IDR-013 and IDR-014, screened at their decision registers with the IDR-010 link sections reused. Cluster B produced a material strengthening of the F-03 cache instance, a confirmed F-11 instance at Guide v1.3 and a third F-17 instance. Remaining clusters: C (batch 8, peer studies plus the peer-source spot checks and fq-10), D (batch 9), E (batch 10), F (batch 11), G (batch 12), H (batch 13) and I (batch 14). Next: cluster C, batch 8."
+      "conclusion_or_remaining_question": "Systematic topic key-section accounting. Cluster A closed in iteration 24 (batch 6): IDR-001 to IDR-007. Cluster B closed in iteration 25 (batch 7): IDR-009, IDR-010, IDR-010A, IDR-012, IDR-013, IDR-014. Cluster C closed in iteration 26 (batch 8): the eight peer and client implementation studies IDR-014A through IDR-014H, screened at their recommendation and risk sections, with the IDR-014B prior references reused; the same batch closed peer-source-spot-checks and resolved fq-10. Remaining clusters: D (batch 9, resource model and temporal validity: IDR-015, 016, 018, 019, 020 plus the unread key sections of IDR-017), E (batch 10), F (batch 11), G (batch 12), H (batch 13) and I (batch 14, which includes IDR-062). Next: cluster D, batch 9."
     },
     {
       "id": "peer-source-spot-checks",
       "question": "Remaining promised CS-GO/OSH checks associated with 014A, 014B, 062 at the recorded pins; no new whole-history study",
-      "status": "partial",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Remaining promised CS-GO/OSH checks associated with 014A, 014B, 062 at the recorded pins; no new whole-history study"
+      "status": "closed_supported",
+      "evidence": [
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
+      ],
+      "conclusion_or_remaining_question": "CLOSED in iteration 26 (queue batch 8). All pin-verification obligations are complete, verified against live public endpoints. CS-Go v1.0.4 is an annotated tag dereferencing to commit 244f4dd586da685d4d9b75e43f73001028b5bd0e, matching the corpus pin exactly. OSH v2.0.2 resolves directly to commit 235c0eabf24b6d6137b499b4402943d2794b70e6, matching exactly and independently corroborating the IDR-014A Section 17.1 claim that it is a lightweight tag, since the ref carries no intervening tag object unlike the annotated CS-Go tag. Guide line 1129 citation verifies in full: commit b1fd2e0e9bd69e222d05258d659a842ca24502cb exists, its latest-observation test at lines 465-500 does assert the expected observation ID, and its adjacent time-range test at lines 506-539 asserts only the item count and never which item, exactly as the Guide states, and the Guide own qualification that this is source analysis rather than an observed runtime defect is also correct. fq-10 resolved: opensensorhub/connected-systems-go returns Not Found while SomethingCreativeStudios/connected-systems-go exists, so the single IDR-040 Section 21.3 citation is wrong and the five other reports and Guide line 1129 are correct; recorded as a verified instance under F-10. IDR-062 has not been screened and sits in cluster I, queue batch 14; it uses the same CS-GO repository whose pins are now verified, so no new pin check is expected from it and its key-section screen is tracked under research-key-section-sweep rather than under this check. No new whole-history study was performed, as this check own wording required.",
+      "closed_on": "2026-09-20"
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 25 (queue batch 7, key-section screen B)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 26 (queue batch 8, key-section screen C and the peer-source spot checks)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the environment's active-model identification at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 25 executed batch 7 and published this checkpoint. Batch 8 has not been started.",
+    "unfinished_step": "None. Iteration 26 executed batch 8, closed peer-source-spot-checks and resolved fq-10, then published this checkpoint. Batch 9 has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3281,19 +3300,19 @@
       "evidence/27-pass-3c-22-idr039a.md",
       "evidence/28-pass-3c-23-idr055.md",
       "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md",
-      "evidence/30-pass-3c-25-batch7-key-section-screen-b.md"
+      "evidence/30-pass-3c-25-batch7-key-section-screen-b.md",
+      "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
     ],
     "next_batch": {
-      "title": "Batch 8 of 27: key-section screen C, peer and client implementation studies, plus the peer-source spot checks",
+      "title": "Batch 9 of 27: key-section screen D, resource model, temporal validity and status",
       "check_ids": [
-        "research-key-section-sweep",
-        "peer-source-spot-checks"
+        "research-key-section-sweep"
       ],
-      "source_scope": "Screen the decision-usable key sections (recommendations, risks and open questions, and any decision register) of IDR-014A, IDR-014C, IDR-014D, IDR-014E, IDR-014F, IDR-014G and IDR-014H, whose read depth was never recorded; plus the unread key sections of IDR-014B, whose targeted acceptance and history references were already read (evidence/08-pass-3c-04.txt) and must be reused rather than re-read. Eight reports. This is a screen: state for each report exactly which sections were screened and which were not, and do not record any report as fully read. Check acceptance status in the governance record rather than inferring it from report metadata, following the iteration 24 correction, and record any further F-17 instance found. Additionally, and in the same batch because the same external sources must be open: complete the outstanding peer-source spot checks associated with 014A, 014B and 062 at the recorded pins, and resolve fq-10, the CS-Go repository URL discrepancy, where five reports and Guide line 1129 use SomethingCreativeStudios against IDR-040 single use of opensensorhub. Account each report against Guide v1.3 and raise a finding only where a Guide gap is evidenced; F-12 (independent response interpretation), F-11 and F-08 are plausible homes, and Guide lines 991 and 1129 already carry client-research and CS-GO observations.",
-      "stop_condition": "Record each of the eight reports with an accurate screened-section list; resolve or explicitly bound fq-10; close the peer-source-spot-checks remaining check if the pinned checks are complete, or state precisely what remains; update the research-key-section-sweep conclusion; mark batch_queue entry 8 status done and set entry 9 as next; save and publish the checkpoint.",
+      "source_scope": "Screen the decision-usable key sections (recommendations, risks and open questions, and any decision register) of IDR-015, IDR-016, IDR-018, IDR-019 and IDR-020, whose read depth was never recorded; plus the unread key sections of IDR-017, whose Section 9.1 was already read (evidence/12-pass-3c-08.txt) and must be reused rather than re-read. Six reports. This is a screen: state for each report exactly which sections were screened and which were not, and do not record any report as fully read. Check acceptance status in the governance record rather than inferring it from report metadata, following the iteration 24 correction, and record any further F-17 instance found. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. Likely homes and comparison points: F-07 (resultTime=latest interpretation) and F-14 (interpretation details, including the confirmed ordering-direction instance) for IDR-018 and IDR-020; F-11 for IDR-017, which is the relationship and linkage model and therefore the natural place for any further relation-spelling material; F-19 and F-21 for IDR-019 provenance and trust content. Carry-forward: fq-13 asks whether the Guide should address systemType and systemKind, which are resource-model attributes, so IDR-015 and IDR-017 are the reports most likely to bear on it.",
+      "stop_condition": "Record each of the six reports with an accurate screened-section list; state whether fq-13 gained evidence; update the research-key-section-sweep conclusion to list exactly which clusters remain; mark batch_queue entry 9 status done and set entry 10 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 8 of 27; 20 remain. Follow the queue in order unless the user selects otherwise."
+    "queue_pointer": "batch_queue.queue entry 9 of 27; 19 remain. Follow the queue in order unless the user selects otherwise."
   },
   "batch_history": [
     {
@@ -3568,6 +3587,29 @@
       ],
       "next_work": "Batch 8 of 27: key-section screen C, peer studies plus the peer-source spot checks and fq-10 (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 26, queue batch 8: key-section screen C over the eight peer and client implementation studies, combined with the outstanding peer-source spot checks because the same external sources had to be open. Screened IDR-014A through IDR-014H at their recommendation and risk sections, reusing the IDR-014B targeted references already recorded in evidence/08-pass-3c-04.txt. None recorded as fully read and each entry lists exactly which sections were screened. Four spot checks were run against live public read-only endpoints and all four produced definite results. fq-10 resolved: opensensorhub/connected-systems-go returns Not Found while SomethingCreativeStudios/connected-systems-go exists, so the single IDR-040 citation is wrong and the five other reports and Guide line 1129 are correct; recorded as a verified instance under F-10, where iteration 17 had deliberately declined to attach it while unverified. Both recorded pins verify exactly, CS-Go v1.0.4 through an annotated tag to commit 244f4dd and OSH v2.0.2 directly to commit 235c0ea, and the OSH result independently corroborates the IDR-014A claim that v2.0.2 is a lightweight tag. The Guide own CS-GO citation at line 1129 verifies in full: the commit exists and both cited line ranges say exactly what the Guide says, the latest-observation test asserting the expected ID and the adjacent time-range test asserting only the item count and never which item, with the Guide qualification that this is source analysis also correct. One incidental verification recorded: the same test asserts exactly one item for resultTime=latest, encoding an assumption IDR-034 states is wrong, which corroborates in the pinned source two accepted research claims made from the outside. Screen result: recommendations substantially adopted, several near-verbatim. Closed the peer-source-spot-checks remaining check on an explicit basis. Added the iteration evidence report and its manifest entry.",
+      "coverage_completed": [
+        "research-key-section-sweep cluster C (queue batch 8): IDR-014A through IDR-014H",
+        "peer-source-spot-checks - CHECK NOW CLOSED",
+        "fq-10 resolved"
+      ],
+      "material_points": [
+        "fq-10 resolved with a definite answer: the IDR-040 CS-Go URL does not exist. Recorded as a verified instance under F-10, a citation defect in one accepted report and not a Guide defect.",
+        "Both recorded peer pins verify exactly, and the OSH result independently corroborates the IDR-014A lightweight-tag claim.",
+        "The Guide own CS-GO source citation at line 1129 verifies in full, including both specific claims about the two test ranges and its own qualification. No correction needed.",
+        "Incidental verification in the pinned source: the CS-GO latest test asserts exactly one item for resultTime=latest, which IDR-034 states is wrong, corroborating IDR-014B open question 6 and IDR-034 Section 14.4 from the source itself. The Guide rule at line 440 is the correct one and is unaffected.",
+        "Screen: recommendations substantially adopted, several near-verbatim, including no startup AutoMigrate at Guide 529, cursor binding at 547, typed configuration at 663, discriminating seeded data at 446, the outbox seam at 119 and 539, configuration-true AsyncAPI at 560 and QoS separation at 564.",
+        "F-11 gained supporting material from two further studies calling for canonical typed relations; F-01 gained context from two studies recording peer licence constraints on reuse. Neither disposition changed.",
+        "peer-source-spot-checks closed. IDR-062 remains unscreened but sits in cluster I, batch 14, and uses the same repository whose pins are now verified, so no new pin check is expected from it.",
+        "No new finding number and no new follow-up question."
+      ],
+      "next_work": "Batch 9 of 27: key-section screen D, resource model, temporal validity and status (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -3673,13 +3715,15 @@
       "raised": "2026-09-19",
       "question": "IDR-040 Section 21.3 cites Connected Systems Go as https://github.com/opensensorhub/connected-systems-go, whereas IDR-037 Appendix B, IDR-038 Appendix C, IDR-039 Section 22.2 and Guide line 1129 all pin https://github.com/SomethingCreativeStudios/connected-systems-go. Which URL is the correct pinned source, and did the project move organizations or is one citation wrong? This was deliberately not verified in iteration 17 to avoid expanding that batch's scope.",
       "relevance": "peer-source-spot-checks (CS-Go pins for 014A/014B/062); Guide line 1129 CS-GO citation; research reproducibility",
-      "status": "noted_not_scheduled",
+      "status": "resolved",
       "evidence": [
         "evidence/22-pass-3c-17-research-deep-read-slice2.md",
         "evidence/26-pass-3c-21-idr030-completion-and-idr034.md",
-        "evidence/27-pass-3c-22-idr039a.md"
+        "evidence/27-pass-3c-22-idr039a.md",
+        "evidence/31-pass-3c-26-batch8-peer-studies-and-source-checks.md"
       ],
-      "supporting_note": "Not asserted to be a defect and deliberately not attached to F-10, whose subject is the distinct IDR-011 malformed-commit-hash links. The peer-source-spot-checks batch pins CS-Go anyway and should resolve this in passing. Iteration 21 weight, not a resolution: IDR-034 Section 19.3 also pins SomethingCreativeStudios, so four reports and Guide line 1129 use that organization against a single report using opensensorhub. Still not adjudicated; the peer-source batch owns it. Iteration 22: IDR-039A Section 25.3 is a fifth pin at SomethingCreativeStudios, against IDR-040 single use of opensensorhub. Still not adjudicated."
+      "supporting_note": "Not asserted to be a defect and deliberately not attached to F-10, whose subject is the distinct IDR-011 malformed-commit-hash links. The peer-source-spot-checks batch pins CS-Go anyway and should resolve this in passing. Iteration 21 weight, not a resolution: IDR-034 Section 19.3 also pins SomethingCreativeStudios, so four reports and Guide line 1129 use that organization against a single report using opensensorhub. Still not adjudicated; the peer-source batch owns it. Iteration 22: IDR-039A Section 25.3 is a fifth pin at SomethingCreativeStudios, against IDR-040 single use of opensensorhub. Still not adjudicated. RESOLVED in iteration 26 (queue batch 8): opensensorhub/connected-systems-go returns Not Found from the public GitHub API, while SomethingCreativeStudios/connected-systems-go exists, is not a fork and was last pushed 2026-09-02. The single IDR-040 Section 21.3 citation is therefore wrong; IDR-034, IDR-037, IDR-038, IDR-039, IDR-055 and Guide line 1129 are correct. Recorded as a verified related instance under F-10. This is a citation defect in one accepted report, not a Guide defect.",
+      "resolved_on": "2026-09-20"
     },
     {
       "id": "fq-11-future-result-time",
@@ -3735,7 +3779,8 @@
       "Iteration 22: 27 batches (4 done, 23 remaining). Batch 4 executed. No count change.",
       "Iteration 23: 27 batches (5 done, 22 remaining). Batch 5 executed; research-deep-read-remainders closed. No count change.",
       "Iteration 24: 27 batches (6 done, 21 remaining). Batch 6 executed; IDR-055 acceptance corrected without adding a batch. No count change.",
-      "Iteration 25: 27 batches (7 done, 20 remaining). Batch 7 executed. No count change."
+      "Iteration 25: 27 batches (7 done, 20 remaining). Batch 7 executed. No count change.",
+      "Iteration 26: 27 batches (8 done, 19 remaining). Batch 8 executed; peer-source-spot-checks closed and fq-10 resolved without adding a batch. No count change."
     ],
     "reuse_rules": [
       "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
@@ -3760,8 +3805,8 @@
       "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
     "total_batches": 27,
-    "done": 7,
-    "remaining": 20,
+    "done": 8,
+    "remaining": 19,
     "queue": [
       {
         "batch": 1,
@@ -3840,8 +3885,8 @@
         "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-014A, IDR-014C, IDR-014D, IDR-014E, IDR-014F, IDR-014G, IDR-014H (coverage not established); plus the unread key sections of IDR-014B (partial: targeted acceptance and history references already read, evidence/08-pass-3c-04.txt). Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
         "size_basis": "8 reports, roughly 500-800 lines of key sections",
         "coverage_state": "coverage_not_established_plus_partial",
-        "status": "queued",
-        "note": "Partial-report handling: reuse the existing evidence for the partial reports named here and screen only their unread key sections. A partial read does not establish complete coverage, and these reports do not get batches of their own. Also merge the outstanding peer-source spot checks (the CS-GO and OSH pins associated with 014A, 014B and 062) into this batch and resolve fq-10, the CS-Go repository URL discrepancy, while those sources are open. Completing this batch closes the peer-source-spot-checks remaining check."
+        "status": "done_iteration_26",
+        "note": "Executed in iteration 26. Eight studies screened at their recommendation and risk sections; IDR-014B prior references reused. None recorded as fully read. Spot checks all verified against live public endpoints: both recorded pins match exactly, the Guide line 1129 citation verifies in full including both of its specific claims, and fq-10 is resolved because opensensorhub/connected-systems-go does not exist. peer-source-spot-checks closed. Recommendations substantially adopted, several near-verbatim. Supporting material added to F-11 and context to F-01. A verified instance added to F-10. No new finding number."
       },
       {
         "batch": 9,
