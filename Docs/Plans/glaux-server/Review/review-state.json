@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 21 (IDR-030 coverage completion after an overstated record, then queue batch 3, the committed deep read of IDR-034)",
+  "latest_report": "Pass 3c iteration 22 (queue batch 4, the committed deep read of IDR-039A, including the required IDR-040 and IDR-042 dependency cross-check)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -476,11 +476,13 @@
     {
       "id": "IDR-039A",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-039a-zero-trust-architecture-alignment-and-enforcement-model-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "full",
+      "note": "Full read completed iteration 22 (queue batch 4): all twenty-five numbered sections plus the evidence and decision legend read in full; the table of contents was excluded as navigational. The queue-required cross-check is confirmed: IDR-040 Section 14.1 and IDR-042 Section 14.1 both cite this report for signed versioned anti-rollback policy and trust bundles, a bounded local authorization envelope, disconnection never expanding authority, and INDETERMINATE on absent or stale mandatory inputs. Every cited element exists in Sections 1, 11.1, 16.1 and 16.2 and says what the citing reports say, so no correction is needed in any of the three reports. Guide v1.3 uses none of the ZTA vocabulary (no zero trust, ZTA, PEP, PDP, policy engine, least privilege or workload identity) and cites this report once at line 592; that absence is compliance with the report own claim discipline (Section 22 recommendation 1 and Section 17.3 prohibit any enterprise ZTA, maturity or accreditation claim), not an omission. Substantially adopted: no privileged fetch with optional filtering (469, 598); authorized-view artifacts for counts, extents, cursors and errors (471, 975, 1019); fail-closed on policy-service failure (598); anonymous as an explicit subject class (596); forwarded-header restriction (364); per-event stream authorization with revocation-driven close (543, 547, 564); distinct command actions with an immediate pre-dispatch gate and acknowledgement that is not execution proof (574, 580, 1037); registration separated from trust (574, 598); redaction before sink with low-cardinality metrics (602, 663, 667); loopback-only development identities with unsafe combinations rejected at startup (596, 663); concealed 404 and protected schema disclosure (600, 834). Not adopted as a recorded scope choice, in the F-03 family: the PE and PA split, the PEP registry and no-bypass invariant, typed PIP adapters, the PAP bundle lifecycle, the three-state decision envelope with obligations, the granted-action zone, the seven deployment profiles, the ZTA alignment manifest and general per-workload identities; the report itself defers these in Sections 6.2, 9.4, 18.2 and 20.4. Fourth corroborating source for the F-03 response-cache instance, and the first to name ETags explicitly (Sections 9.5 and 11.3 bind cache keys, cursors and ETags to the authorized view and to policy and evidence versions).",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/27-pass-3c-22-idr039a.md"
+      ],
+      "conclusion_or_remaining_question": "Fully read. No further remainder outstanding for this report."
     },
     {
       "id": "IDR-040",
@@ -3203,9 +3205,10 @@
         "evidence/23-pass-3c-18-research-deep-read-slice3.md",
         "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md",
         "evidence/25-pass-3c-20-idr030-and-queue-corrections.md",
-        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md"
+        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md",
+        "evidence/27-pass-3c-22-idr039a.md"
       ],
-      "conclusion_or_remaining_question": "All four partial-report remainder slices closed (iterations 16-19). Committed deep reads completed: IDR-030 (batch 2, iteration 20, with its skimmed sections finished in iteration 21) and IDR-034 (batch 3, iteration 21). Exactly what remains in this check: two committed deep reads not yet begun, IDR-039A and IDR-055, queued as batch_queue entries 4 and 5. Next slice selected: IDR-039A (batch 4)."
+      "conclusion_or_remaining_question": "All four partial-report remainder slices closed (iterations 16-19). Committed deep reads completed: IDR-030 (batch 2, finished in iteration 21), IDR-034 (batch 3, iteration 21) and IDR-039A (batch 4, iteration 22). Exactly what remains in this check: one committed deep read not yet begun, IDR-055, queued as batch_queue entry 5. Next slice selected: IDR-055 (batch 5)."
     },
     {
       "id": "research-key-section-sweep",
@@ -3223,11 +3226,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 21 (IDR-030 coverage completion; queue batch 3, IDR-034)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 22 (queue batch 4, committed deep read IDR-039A)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the environment's active-model identification at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 21 finished the IDR-030 sections that iteration 20 had only skimmed, executed batch 3, and published this checkpoint. Batch 4 has not been started.",
+    "unfinished_step": "None. Iteration 22 executed batch 4 in full and published this checkpoint. Batch 5 has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3243,18 +3246,19 @@
       "evidence/23-pass-3c-18-research-deep-read-slice3.md",
       "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md",
       "evidence/25-pass-3c-20-idr030-and-queue-corrections.md",
-      "evidence/26-pass-3c-21-idr030-completion-and-idr034.md"
+      "evidence/26-pass-3c-21-idr030-completion-and-idr034.md",
+      "evidence/27-pass-3c-22-idr039a.md"
     ],
     "next_batch": {
-      "title": "Batch 4 of 27: committed deep read IDR-039A, zero-trust architecture alignment and enforcement model",
+      "title": "Batch 5 of 27: committed deep read IDR-055, security, authorization and command-control test strategy",
       "check_ids": [
         "research-deep-read-remainders"
       ],
-      "source_scope": "Full read of IDR-SRV-039A (786 lines), the third of the four committed consequential deep reads. Account its key findings, recommendations and open questions against Guide v1.3 (search first, then targeted reads), recording adopted, not-adopted or departure with line references. Raise a finding only where a Guide gap is evidenced; F-03 (minimal authorization semantics), F-19 and F-20 are the likely homes. Note specifically that IDR-040 Section 14.1 and IDR-042 Section 14.1 both depend on this report policy and trust bundle model and its bounded offline-authority envelope, so check those dependencies are consistent with what this report actually specifies. Read every section in full or state precisely which sections were not read; do not record the report as fully read on the basis of a skim.",
-      "stop_condition": "Record IDR-039A with an accurate read depth and its material points accounted against the Guide; update the research-deep-read-remainders conclusion to list the one deep read still outstanding (IDR-055); mark batch_queue entry 4 status done and set entry 5 as next; save and publish the checkpoint.",
+      "source_scope": "Full read of IDR-SRV-055 (437 lines), the last of the four committed consequential deep reads and the smallest. Account its key findings, recommendations and open questions against Guide v1.3 (search first, then targeted reads), recording adopted, not-adopted or departure with line references. Raise a finding only where a Guide gap is evidenced; F-12 (independent response interpretation), F-08 (adapted-test labelling), F-15, F-18 and F-20 are the likely homes. Note that IDR-039A Section 20 hands this topic its required fourteen-column enforcement matrix, the no-bypass invariant and the negative-test suites, so check that handoff is consistent with what IDR-055 actually specifies. Read every section in full or state precisely which sections were not read; do not record the report as fully read on the basis of a skim. This batch feeds batch 16, the verification-quality pass, which must reuse this evidence rather than reading the report again.",
+      "stop_condition": "Record IDR-055 with an accurate read depth and its material points accounted against the Guide; update the research-deep-read-remainders conclusion to record that all four committed deep reads are complete and that only the key-section screens remain in the research area; mark batch_queue entry 5 status done and set entry 6 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 4 of 27; 24 remain. Follow the queue in order unless the user selects otherwise."
+    "queue_pointer": "batch_queue.queue entry 5 of 27; 23 remain. Follow the queue in order unless the user selects otherwise."
   },
   "batch_history": [
     {
@@ -3450,6 +3454,24 @@
       ],
       "next_work": "Batch 4 of 27: committed deep read IDR-039A (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 22, queue batch 4: the committed deep read of IDR-039A. All twenty-five numbered sections plus the evidence and decision legend were read in full; the table of contents was excluded as navigational and that exclusion is stated. Carried out the cross-check the recorded scope required: IDR-040 Section 14.1 and IDR-042 Section 14.1 both cite this report for signed versioned anti-rollback bundles, a bounded local authorization envelope, disconnection never expanding authority, and INDETERMINATE on absent or stale mandatory inputs, and every one of those elements exists in Sections 1, 11.1, 16.1 and 16.2 saying what the citing reports say. The handoff matrix at Section 21 confirms the direction from the source side. No correction is needed in any of the three reports. Guide v1.3 contains none of the ZTA vocabulary and cites the report once at line 592; that absence is compliance with the report own claim discipline rather than an omission, since Section 22 recommendation 1 and Section 17.3 prohibit any enterprise ZTA, maturity, certification or accreditation claim without a competent external authority. The enforcement substance is substantially adopted across authorization ordering, authorized-view artifacts, fail-closed behaviour, anonymous handling, proxy trust, streaming, commands, source separation, telemetry redaction and profile safety. The named logical architecture is not adopted, a recorded scope choice in the F-03 family that the report itself supports through its deferrals in Sections 6.2, 9.4, 18.2 and 20.4. Added the iteration evidence report and its manifest entry.",
+      "coverage_completed": [
+        "research-deep-read-remainders (committed deep read IDR-039A; queue batch 4)"
+      ],
+      "material_points": [
+        "The queue-required dependency cross-check passed. IDR-040 and IDR-042 accurately represent IDR-039A offline model element by element, so no correction is needed in any of the three reports.",
+        "The Guide making no zero-trust claim at all is the conservative position the report prescribes, not a gap. Its claim discipline matches the Guide existing practice in the conformance domain at lines 193 and 907.",
+        "F-03 response-cache instance now rests on four accepted reports, and IDR-039A is the first to name ETags explicitly: Sections 9.5 and 11.3 bind cache keys, cursors and ETags to the authorized view and to policy and evidence versions. Iteration 17 had derived that validator half from RFC 9111 mechanics rather than from any research statement, so this removes the ambiguity from the research side. Substance and fix unchanged.",
+        "fq-09 gained a sixth source (Section 17.2) and fq-10 a fifth pin at SomethingCreativeStudios (Section 25.3); neither is resolved here.",
+        "No new finding, no new follow-up question, no queue change. Three committed deep reads are complete and only IDR-055 remains."
+      ],
+      "next_work": "Batch 5 of 27: committed deep read IDR-055 (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -3544,9 +3566,10 @@
         "evidence/22-pass-3c-17-research-deep-read-slice2.md",
         "evidence/23-pass-3c-18-research-deep-read-slice3.md",
         "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md",
-        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md"
+        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md",
+        "evidence/27-pass-3c-22-idr039a.md"
       ],
-      "supporting_note": "Iteration 17 added research support: IDR-040 Section 10.3 states that a visible heartbeat or its absence is itself a disclosure and that health endpoints expose only a minimal service-health contract, and Section 15.3 states that public health surfaces reveal only deployment-approved service state. Iteration 18 added a third source: IDR-042 Section 15.3 line 624 requires bounded mode/dependency-class/outcome metric labels and states that telemetry is not public source/System status and is not authoritative audit. Guide line 665 already adopts the liveness/readiness split with protected diagnostics and line 667 adopts the label-cardinality discipline; the open part remains the exposure boundary of the metrics/traces endpoint itself. Iteration 19 added a fourth source: IDR-043 Section 16.3 requires that high-cardinality resource, peer, tenant and command identifiers not become unrestricted metric labels, and that health distinguish the HTTP process, the authoritative store, the mandatory audit path and optional dependencies rather than one global flag. The Guide adopts both at lines 667 and 665. Iteration 21 added a fifth source: IDR-030 Section 17.4 requires that metrics avoid resource names, payloads, sensitive reasons, tenant leakage and high-cardinality identifiers."
+      "supporting_note": "Iteration 17 added research support: IDR-040 Section 10.3 states that a visible heartbeat or its absence is itself a disclosure and that health endpoints expose only a minimal service-health contract, and Section 15.3 states that public health surfaces reveal only deployment-approved service state. Iteration 18 added a third source: IDR-042 Section 15.3 line 624 requires bounded mode/dependency-class/outcome metric labels and states that telemetry is not public source/System status and is not authoritative audit. Guide line 665 already adopts the liveness/readiness split with protected diagnostics and line 667 adopts the label-cardinality discipline; the open part remains the exposure boundary of the metrics/traces endpoint itself. Iteration 19 added a fourth source: IDR-043 Section 16.3 requires that high-cardinality resource, peer, tenant and command identifiers not become unrestricted metric labels, and that health distinguish the HTTP process, the authoritative store, the mandatory audit path and optional dependencies rather than one global flag. The Guide adopts both at lines 667 and 665. Iteration 21 added a fifth source: IDR-030 Section 17.4 requires that metrics avoid resource names, payloads, sensitive reasons, tenant leakage and high-cardinality identifiers. Iteration 22 added a sixth source: IDR-039A Section 17.2 requires low-cardinality metrics using safe reason, action and profile classes, with redaction before the formatter, buffer and exporter."
     },
     {
       "id": "fq-10-csgo-repository-url-discrepancy",
@@ -3556,9 +3579,10 @@
       "status": "noted_not_scheduled",
       "evidence": [
         "evidence/22-pass-3c-17-research-deep-read-slice2.md",
-        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md"
+        "evidence/26-pass-3c-21-idr030-completion-and-idr034.md",
+        "evidence/27-pass-3c-22-idr039a.md"
       ],
-      "supporting_note": "Not asserted to be a defect and deliberately not attached to F-10, whose subject is the distinct IDR-011 malformed-commit-hash links. The peer-source-spot-checks batch pins CS-Go anyway and should resolve this in passing. Iteration 21 weight, not a resolution: IDR-034 Section 19.3 also pins SomethingCreativeStudios, so four reports and Guide line 1129 use that organization against a single report using opensensorhub. Still not adjudicated; the peer-source batch owns it."
+      "supporting_note": "Not asserted to be a defect and deliberately not attached to F-10, whose subject is the distinct IDR-011 malformed-commit-hash links. The peer-source-spot-checks batch pins CS-Go anyway and should resolve this in passing. Iteration 21 weight, not a resolution: IDR-034 Section 19.3 also pins SomethingCreativeStudios, so four reports and Guide line 1129 use that organization against a single report using opensensorhub. Still not adjudicated; the peer-source batch owns it. Iteration 22: IDR-039A Section 25.3 is a fifth pin at SomethingCreativeStudios, against IDR-040 single use of opensensorhub. Still not adjudicated."
     },
     {
       "id": "fq-11-future-result-time",
@@ -3588,7 +3612,8 @@
     "count_history": [
       "Iteration 19: 30 batches (1 done, 29 remaining).",
       "Iteration 20: 27 batches (2 done, 25 remaining). Batch 2 (IDR-030) executed. Three issue batches combined: former Phase 5a and 5b merged, Phases 6 and 7 merged, Phases 8 and 9 merged, because batch 17 complete comparison lets matching leaf content be reused rather than reviewed twice. The six partial reports were absorbed into existing cluster batches rather than adding six batches.",
-      "Iteration 21: 27 batches (3 done, 24 remaining). Batch 3 executed. No count change; the IDR-030 coverage completion was finishing work already inside batch 2, not a new batch."
+      "Iteration 21: 27 batches (3 done, 24 remaining). Batch 3 executed. No count change; the IDR-030 coverage completion was finishing work already inside batch 2, not a new batch.",
+      "Iteration 22: 27 batches (4 done, 23 remaining). Batch 4 executed. No count change."
     ],
     "reuse_rules": [
       "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
@@ -3613,8 +3638,8 @@
       "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
     "total_batches": 27,
-    "done": 3,
-    "remaining": 24,
+    "done": 4,
+    "remaining": 23,
     "queue": [
       {
         "batch": 1,
@@ -3653,8 +3678,8 @@
         "scope": "Full read of IDR-039A accounted against Guide v1.3. One of the four consequential deep reads the review committed to.",
         "size_basis": "786 lines",
         "coverage_state": "genuinely_unreviewed",
-        "status": "queued",
-        "note": "IDR-040 Section 14.1 and IDR-042 Section 14.1 both depend on this report policy and trust bundle model and its bounded offline-authority envelope; check those dependencies are consistent."
+        "status": "done_iteration_22",
+        "note": "Executed in iteration 22. All twenty-five sections plus the legend read in full. The required cross-check confirmed that the IDR-040 and IDR-042 citations accurately represent this report offline model. Substantially adopted; the named ZTA logical architecture is a recorded scope choice in the F-03 family; a fourth corroborating source for the F-03 cache instance, and the first naming ETags. No new finding and no queue change."
       },
       {
         "batch": 5,

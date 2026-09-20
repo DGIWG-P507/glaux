@@ -292,6 +292,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "IDR-030 coverage completion after an overstated read-depth record (Sections 3-6, 12, 16-17; appends to report 25 without rewriting it) and queue batch 3, the committed deep read of IDR-034 including the confirmed F-14(c) ordering-direction instance (Pass 3c iteration 21)"
+    },
+    {
+      "name": "27-pass-3c-22-idr039a.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "B7A5291C5035CF33C9C91684313F510407B083B62E985FDC998A3F844096AC3B",
+      "original_bytes": 14756,
+      "published_sha256": "B7A5291C5035CF33C9C91684313F510407B083B62E985FDC998A3F844096AC3B",
+      "published_bytes": 14756,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Queue batch 4, the committed deep read of IDR-039A, including the required IDR-040 and IDR-042 dependency cross-check and a fourth corroborating source for the F-03 response-cache instance (Pass 3c iteration 22)"
     }
   ]
 }
