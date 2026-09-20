@@ -1,6 +1,6 @@
 # Glaux Server pre-implementation review
 
-**Status: in progress.** This is the shared record for finishing the existing review across Copilot and other AI providers. A provider change resumes the saved work; it does not restart the review.
+**Status: complete.** The pre-implementation review finished on September 20, 2026. Start with [the final consolidated assessment](evidence/51-pass-3c-45-final-consolidated-assessment.md). This folder remains the shared record of how that conclusion was reached, across Copilot and other AI providers; it is no longer an open queue, and further review would be a new authorization with its own scope.
 
 [Planning documents](../README.md) · [Findings and current assessment](findings.md) · [Review instructions](instructions.md) · [Coverage and handoff state](review-state.json) · [Evidence manifest](evidence/source-manifest.json)
 
@@ -10,7 +10,17 @@
 2. Read **instructions.md**, especially the rule for recording disagreements without interrupting coverage.
 3. Use **current_work** in **review-state.json** to resume the exact unfinished step or next batch, and **batch_queue** in the same file to see the whole numbered remainder. Do not reload every archived response.
 
-The last substantive reviewer response is **Pass 3c, iteration 44**, which executed queue batch 26, the last per-task batch.
+The review is finished. The last response, **Pass 3c, iteration 45**, published [the final consolidated assessment](evidence/51-pass-3c-45-final-consolidated-assessment.md), which is where to start.
+
+**The plan is sound.** All 286 planned tasks were read and assessed as whole units and every one of them is adequate. The findings that stand are about the Guide, the research record and the repository baseline - not about the work itself.
+
+**Only two things are recommended before implementation starts, and both are decisions only the project can make.** First, confirm what required-check enforcement actually exists on the server repository and decide what continuous-integration enforcement should be required; the review saw none at the baseline it inspected and cannot claim to know the current settings. Second, choose the project licence. The apparent obstacle there is already gone, because no reuse of another project's source or fixtures is planned, so what is left is simply the act of choosing.
+
+**Everything else is scheduled, optional, or an open question.** Thirteen further decisions are each tied to a named later issue or a specific Guide line - one of them is a single missing word about sort direction. Seven items are optional improvements. Twelve questions remain genuinely open, and the assessment says where each of them lands rather than leaving them floating. None of this has to be done for the review to be finished, which is the review's own published rule.
+
+**Two findings were reconsidered for escalation and neither was escalated.** The audit-boundary finding now has complete evidence - the task that restores everything and the task that implements retention both list every other kind of evidence and leave audit out - but the Guide expressly declines to require a tamper-proof ledger, so what the evidence shows is a question nobody has answered rather than a rule anyone has broken. Raising the severity would turn an honest silence into an accusation the evidence does not support. The related export-accountability finding keeps its severity for the simpler reason that nothing has been built yet. What both gained is a concrete place and time to be decided.
+
+The previous response, **iteration 44**, assessed the 50 exchange, restore and release tasks and completed the per-task assessment.
 
 **Every one of the 286 planned tasks has now been read and assessed, and every one is adequate.** No task's scope or acceptance criteria was found wanting anywhere in the backlog, and the whole per-task pass raised no new finding and no new question. What it produced instead is evidence for findings already recorded, which is the more useful outcome: it shows where each recorded gap would actually land in the work.
 
@@ -64,7 +74,7 @@ The previous response, **iteration 38**, assessed the 31 Phase 2a tasks.
 
 **The issue read count published last time was wrong.** It reported 42, which came from adding one batch's 24 to the 18 recorded before it without removing the five issues counted twice. The correct figure is **37**. It is now derived from distinct issue IDs rather than from adding batch totals, and that derivation earned its keep immediately: it caught a second overlap in this batch before publication rather than after.
 
-Two measures are now kept apart, because they answer different questions. Sixty-seven issues have been read by a reviewer. Fifty-five tasks have been assessed for whether their scope and acceptance criteria are adequate. Neither substitutes for the other.
+Two measures were kept apart from this point on, because they answer different questions. At that iteration, sixty-seven issues had been read by a reviewer and fifty-five tasks had been assessed for whether their scope and acceptance criteria are adequate. Neither substitutes for the other. (Both reached 286 by iteration 44.)
 
 **All 31 Phase 2a tasks are adequate**, bringing the assessed total to 55 with none found inadequate. Three habits recur and each answers a concern this review holds: the tasks refuse to invent rules the source does not contain, they construct discriminating rather than confirming test cases, and they tie to specific Guide lines rather than gesturing at sections.
 
@@ -190,15 +200,15 @@ Batch 9 then produced the strongest result the relation-spelling finding has had
 
 The batch also produced a useful negative result. All six reports screened record their acceptance correctly, which bounds **F-17** as a residue in particular reports rather than a systemic practice. And it produced the clearest example yet of accepted research whose central mechanism is deliberately not adopted: the provenance report asks for a PROV evidence graph, and the project declines it three times on the record while adopting the obligations the report derives. No new finding number and no new follow-up question.
 
-Every remaining finish condition is mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, 26 done, 1 remaining.** Baseline, standards, research, scenarios and verification are complete; the rest cover the issue backlog and the final assessment. It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
+Every finish condition was mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, all 27 done, none remaining.** All seven review areas are closed. It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
 
 Iteration 20 corrected two accounting problems in that queue. Issue fidelity is now established by comparing all 286 issues against their Roadmap leaves rather than by sampling 18 of them, since a sample cannot establish complete coverage; the environment was checked first to confirm a complete comparison is achievable. The six partial reports left out of the first version are now assigned to the cluster batches that already cover their topics, reusing their recorded evidence and screening only unread sections, with no batch added for them. Three issue batches were combined because the complete comparison lets matching leaf content be reused instead of reviewed twice, which is what moved the count from 30 to 27. The count is a workload estimate with six recorded uncertainties, not a quota and not a completion guarantee.
 
-The one evidenced Guide gap from the research remainder slices remains the response-cache instance under **F-03**, which now rests on six accepted reports and, since iteration 25, reads as a partial adoption of one numbered recommendation rather than an unspecified area. Everything else in those four slices was either adopted or a recorded scope choice.
+The one evidenced Guide gap from the research remainder slices remains the response-cache instance under **F-03**, which by the end of the review rested on **14 accepted sources across seven subject areas** and reads as a partial adoption of one numbered recommendation rather than an unspecified area. Its implementing task is #151, and no issue in the backlog contains a cache directive, an `ETag` or a conditional-request header. Everything else in those four slices was either adopted or a recorded scope choice.
 
 The record has **22 finding IDs, including two withdrawals**, with subsequent qualifications preserved. No standards check is outstanding. **All 286 of 286** issue bodies are documented as read by a reviewer and **all 286** tasks have been assessed for scope and acceptance adequacy, with none left at targeted-check depth. These figures are computed from the per-issue records, not maintained by hand. All 286 have been fetched and compared mechanically.
 
-The next selected batch is **batch 27 of 27**: the final consolidated assessment. It is the only remaining batch. The machine state is authoritative for that cursor as review continues.
+No batch remains. The machine state records the completion and carries `review_complete: true`.
 
 ## What lives here
 
@@ -206,8 +216,8 @@ The next selected batch is **batch 27 of 27**: the final consolidated assessment
 |---|---|
 | [findings.md](findings.md) | Authoritative finding dispositions, current assessment, evidence and implementation implications |
 | [instructions.md](instructions.md) | Bounded iterations, independent review, disagreement handling, publication and provider handoff |
-| [review-state.json](review-state.json) | Reading versus review coverage, unresolved checks, active cursor, batch history and the numbered remaining-batch queue; no duplicate finding text |
-| [evidence/](evidence/) | Archived responses and historical instructions, clearly separate from active instructions. Includes the preserved point-in-time snapshot of all 286 implementation issues retrieved in iteration 35 |
+| [review-state.json](review-state.json) | Reading versus review coverage, closed checks, the completed batch queue and full batch history, and `review_complete`; no duplicate finding text |
+| [evidence/](evidence/) | Archived responses and historical instructions, clearly separate from active instructions. Includes the final consolidated assessment and the preserved point-in-time snapshot of all 286 implementation issues retrieved in iteration 35 |
 | [evidence/source-manifest.json](evidence/source-manifest.json) | Provenance, original/published hashes and privacy transformations |
 
 This is review working material, not a replacement Goal, Implementation Guide, Roadmap or research program. Changes suggested by the review are not approved merely by appearing here.
@@ -223,8 +233,8 @@ The purpose is to finish the review, not maintain an endless reading queue. Reus
 | 3. Research and peer evidence | **Complete for the recorded scope.** All 71 reports accounted: 18 fully read including all four committed deep reads, 53 screened at their key sections; no partial reads remain; pinned CS-GO/OSH checks complete and closed | **Met.** Executive summaries, bodies, appendices and validation sections were deliberately outside the screen, and each report's entry records what was and was not covered |
 | 4. End-to-end scenarios | **Complete for the recorded scope.** All nine Goal capability areas reachable from both a representative scenario and a walkthrough path; no scenario over-promises; four findings given named remedy locations | **Met.** The assessment covers a design artifact: the Guide states these scenarios record a design review, not executed verification |
 | 5. Verification quality | **Complete for the recorded scope.** All three criteria strongly established; every planned capability has a layer that can observe its claims; no gap between what the strategy promises and what its layers deliver | **Met.** The assessment covers a written strategy: nothing establishes that any test exists, runs or passes, which the Guide states for itself |
-| 6. Implementation issues | Partially complete. The leaf-to-issue comparison is done across all 286 with an empty difference inventory, the shared boilerplate is reviewed once, and the dependency, coverage and sizing analysis is complete and clean. Still 18 of 286 bodies documented as read by a reviewer; the per-task semantic assessment remains | Account for all issue-specific scope/acceptance checks and the complete dependency/coverage/sizing analysis; identical boilerplate is now deduplicated |
-| Final assessment | Not complete | Publish supported findings, withdrawals, bounded uncertainties, coverage accounting and implementation advice |
+| 6. Implementation issues | **Complete.** All 286 compared against their Roadmap leaves with an empty difference inventory; the whole dependency graph checked (1,676 edges, no cycle, no dangling reference, single root); and **all 286 tasks read and assessed as whole units - all 286 adequate**, with none left at targeted-check depth | **Met.** The assessment covers written scope and acceptance criteria: all 286 issues remain open with an Execution record reading "Not started", so nothing here establishes that any task was executed correctly |
+| Final assessment | **Complete.** Published as [the final consolidated assessment](evidence/51-pass-3c-45-final-consolidated-assessment.md) | **Met.** Findings, withdrawals, recommendations sorted by when they matter, twelve open questions, coverage accounting and eight stated limits. Recommendations remain unimplemented, which these criteria expressly permit |
 
 These are coverage criteria, not a prediction of cost or iterations. An explicitly agreed scope exception must remain visible. A subscription limit produces a checkpoint, not a false completion declaration.
 
@@ -232,19 +242,19 @@ A finding can finish as supported, withdrawn, optional or explicitly unresolved 
 
 ## Using the outcome
 
-The final assessment must distinguish:
+The published [final consolidated assessment](evidence/51-pass-3c-45-final-consolidated-assessment.md) distinguishes:
 
 - Actions needed before initial implementation work.
 - Decisions or fixes needed before a named later issue or milestone.
 - Optional improvements.
 - Remaining uncertainty and coverage limits.
 
-Keep those recommendations tied to existing Guide/Roadmap/issue owners. Do not turn every finding into a new blanket prerequisite, a new project, or another research cycle.
+Every recommendation is tied to an existing Guide, Roadmap or issue owner. None was turned into a blanket prerequisite, a new project or another research cycle: exactly two items are recommended before implementation starts, and both are decisions the project must make for itself.
 
 ## Cross-provider continuation
 
-Give the next reviewer this folder's URL and say:
+The review is complete, so there is no iteration to resume. If the project authorizes further work later, give that reviewer this folder's URL and say:
 
-> Read README.md, instructions.md and the current findings. Resume current_work from review-state.json for one authorized iteration. Record disagreements and continue substantive coverage. Update and publish this review checkpoint before handing back.
+> Read the final consolidated assessment in evidence/, then README.md, instructions.md and findings.md. This review is closed: `review_complete` is true and the batch queue is exhausted. Do not treat it as an open queue or restart it. Work only within the new scope you have been given, record disagreements against the existing finding IDs rather than creating competing ones, and publish before handing back.
 
 The provider/model and actual evidence should be recorded when known. Unknown model names stay unknown. Repository commits are the durable handoff; private model memory and old ZIP exports are not the authority.
