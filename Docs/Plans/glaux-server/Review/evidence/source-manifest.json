@@ -264,6 +264,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Research-deep-read-remainders slice 4: IDR-043 unread sections, with a confirmed F-17 instance; plus the construction of the complete 30-batch remaining queue recorded in batch_queue (Pass 3c iteration 19)"
+    },
+    {
+      "name": "25-pass-3c-20-idr030-and-queue-corrections.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "7307494714CCC59A18C5636A8059B55631510A122011604FBC1229AF4D04204F",
+      "original_bytes": 18623,
+      "published_sha256": "7307494714CCC59A18C5636A8059B55631510A122011604FBC1229AF4D04204F",
+      "published_bytes": 18623,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Queue batch 2, committed deep read IDR-030, including the restore-versus-deletion gap recorded under F-19; plus the two queue-accounting corrections that replaced sample-based leaf-to-issue fidelity with a complete comparison and accounted for the six partial reports (Pass 3c iteration 20)"
     }
   ]
 }

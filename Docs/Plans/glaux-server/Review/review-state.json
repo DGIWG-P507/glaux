@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 19 (research-deep-read-remainders slice 4: IDR-043; plus the complete 30-batch remaining queue written to batch_queue)",
+  "latest_report": "Pass 3c iteration 20 (queue batch 2, committed deep read IDR-030; plus two corrections to the queue accounting: complete leaf-to-issue comparison and the six partial reports)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -368,11 +368,13 @@
     {
       "id": "IDR-030",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-030-data-lifecycle-retention-archival-and-deletion-strategy-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "full",
+      "note": "Full read completed iteration 20 (queue batch 2). Sections carrying decisions, rules, distinctions and recommendations read in full (1-2, 7-11, 13-15, 18-19); Sections 3-6, 12 and 16-17 skimmed for cross-reference. Core posture adopted at Guide line 527: no automatic retention or purge by default, explicitly configured policy only, preserving visible deletion behaviour and dependencies among values, schemas, source documents, pending work and synchronization tombstones. Also adopted: cascade and 409 rules with retained internal evidence (509), no identifier reuse (509), command cancellation is a status not a deletion (509, 582), idempotency-key retention outliving replay horizons (505, 849), derived state rebuildable while accepted observations and command evidence are not (527), no fabricated history removed by retention (523), minimal tombstone fields (711), DDIL anti-resurrection (647, 651), and restore drills including tombstones (529, 533). Not adopted as a recorded scope choice: archive tier, hold overlay, policy registry, disposition receipts, purge automation, cryptographic erase, media sanitization, the five orthogonal lifecycle state dimensions, aggregation and downsampling, and the 202-with-status-link asynchronous deletion contract; IDR-030 itself assigns those to deployment, security or profile authorities and supplies no numeric horizon. One documentation gap recorded as a related instance under F-19: Guide Section 4.7 enumerates what an operational restore does not re-establish (continuity tokens, pending commands, same-key deduplication) but omits that restoring to a pre-deletion point returns the deleted resource to the authoritative store, rolls back the tombstone held in that same store, and re-exposes it to the reads that are re-enabled first.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/25-pass-3c-20-idr030-and-queue-corrections.md"
+      ],
+      "conclusion_or_remaining_question": "Fully read. No further remainder outstanding for this report."
     },
     {
       "id": "IDR-031",
@@ -3196,9 +3198,10 @@
         "evidence/21-pass-3c-16-research-deep-read-slice1.md",
         "evidence/22-pass-3c-17-research-deep-read-slice2.md",
         "evidence/23-pass-3c-18-research-deep-read-slice3.md",
-        "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md"
+        "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md",
+        "evidence/25-pass-3c-20-idr030-and-queue-corrections.md"
       ],
-      "conclusion_or_remaining_question": "All four partial-report remainder slices are now closed. Slice 1 (iteration 16): IDR-008, IDR-037, IDR-038 and IDR-039 remainders. Slice 2 (iteration 17): IDR-040 Sections 9-21, which produced the F-03 response-cache gap. Slice 3 (iteration 18): IDR-042 unread sections, which reinforced that gap. Slice 4 (iteration 19): IDR-043 unread sections, substantially adopted with a confirmed F-17 instance. Exactly what remains in this check: the four committed deep reads not yet begun, IDR-030, IDR-034, IDR-039A and IDR-055, now queued as batch_queue entries 2-5. Next slice selected: IDR-030 (batch 2)."
+      "conclusion_or_remaining_question": "All four partial-report remainder slices are closed (iterations 16-19). Committed deep read IDR-030 completed in iteration 20 as queue batch 2: core lifecycle posture adopted at Guide line 527, lifecycle machinery not adopted as a recorded scope choice, one documentation gap recorded under F-19 for restore versus deletion. Exactly what remains in this check: three committed deep reads not yet begun, IDR-034, IDR-039A and IDR-055, queued as batch_queue entries 3, 4 and 5. Next slice selected: IDR-034 (batch 3)."
     },
     {
       "id": "research-key-section-sweep",
@@ -3216,11 +3219,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 19 (batch queue mapped into batch_queue; research-deep-read-remainders slice 4: IDR-043 unread sections)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 20 (batch 2, IDR-030; queue corrected from 30 to 27 batches)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the environment's active-model identification at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 19 wrote the complete remaining batch queue and executed batch 1 (IDR-043), then published this checkpoint. Batch 2 has not been started.",
+    "unfinished_step": "None. Iteration 20 executed batch 2 and applied both directed queue corrections, then published this checkpoint. Batch 3 has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3234,18 +3237,19 @@
       "evidence/21-pass-3c-16-research-deep-read-slice1.md",
       "evidence/22-pass-3c-17-research-deep-read-slice2.md",
       "evidence/23-pass-3c-18-research-deep-read-slice3.md",
-      "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md"
+      "evidence/24-pass-3c-19-research-slice4-and-batch-queue.md",
+      "evidence/25-pass-3c-20-idr030-and-queue-corrections.md"
     ],
     "next_batch": {
-      "title": "Batch 2 of 30: committed deep read IDR-030, data lifecycle, retention, archival and deletion",
+      "title": "Batch 3 of 27: committed deep read IDR-034, DataStream, Observation and status update semantics",
       "check_ids": [
         "research-deep-read-remainders"
       ],
-      "source_scope": "Full read of IDR-SRV-030 (841 lines), the first of the four committed consequential deep reads. Account its key findings, recommendations and open questions against Guide v1.3 (search first, then targeted reads), recording adopted, not-adopted or departure with line references. Raise a finding only where a Guide gap is evidenced; existing findings F-19 (audit modification and retention boundary), F-21 (node-local versus exchanged audit history) and F-03 are the likely homes, and F-19 is the specific home for retention-horizon questions. Note that IDR-043 Section 8.4 deferred tombstone retention horizons to a later topic and that Guide lines 647-649 set a configured recovery window with an explicit recovery-retention setting, so check whether IDR-030 supplies or bounds those horizons. Issue bodies optional.",
-      "stop_condition": "Record IDR-030 as fully read with its material points accounted against the Guide; update the research-deep-read-remainders conclusion to list the three deep reads still outstanding (IDR-034, IDR-039A, IDR-055); mark batch_queue entry 2 status done and set entry 3 as next; save and publish the checkpoint.",
+      "source_scope": "Full read of IDR-SRV-034 (728 lines), the second of the four committed consequential deep reads. Account its key findings, recommendations and open questions against Guide v1.3 (search first, then targeted reads), recording adopted, not-adopted or departure with line references. Raise a finding only where a Guide gap is evidenced; F-18 (ControlStream live and admission semantics), F-07 (resultTime=latest interpretation) and F-14 (interpretation details) are the likely homes. Expect dense overlap with Guide Sections 4.4-4.5 and with the latest-value semantics already closed in iterations 17 and 18, so reuse that accounting rather than repeating it. Issue bodies optional.",
+      "stop_condition": "Record IDR-034 as fully read with its material points accounted against the Guide; update the research-deep-read-remainders conclusion to list the two deep reads still outstanding (IDR-039A and IDR-055); mark batch_queue entry 3 status done and set entry 4 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 2 of 30; 29 remain. Follow the queue in order unless the user selects otherwise."
+    "queue_pointer": "batch_queue.queue entry 3 of 27; 25 remain. Follow the queue in order unless the user selects otherwise."
   },
   "batch_history": [
     {
@@ -3401,6 +3405,25 @@
       ],
       "next_work": "Batch 2 of 30: committed deep read IDR-030 (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 20, executed queue batch 2 and applied two directed corrections to the queue accounting in the same iteration. Correction 1: batch 17 was specified in iteration 19 as a fidelity check on a sample of about 18 issues, which cannot establish complete issue coverage. It is now a complete mechanical comparison of all 286 issues against their Roadmap leaves, reviewing the common boilerplate once and every distinct variant, inspecting every difference and producing a difference inventory. Feasibility was verified rather than assumed: the GitHub CLI is absent, but the repository is public and the REST API is reachable unauthenticated (metadata HTTP 200; issue 98 returned a full 8,925-character body), the list endpoint returns bodies so three requests cover the backlog, and issue bodies split cleanly into task-specific headings and shared sections. Correction 2: the six partial reports omitted from the iteration 19 queue (IDR-006, IDR-007, IDR-010, IDR-014B, IDR-017, IDR-044) are assigned to the cluster batches that already cover their topics (6, 7, 8, 9 and 12), reusing their recorded evidence and screening only unread key sections, with the governing rule recorded that a partial read does not establish complete coverage. No batch was added for them; a mechanical check confirms the queue now names every research report not already fully read. Count moved from 30 to 27: batch 2 done, and three issue batches combined (former Phases 5a and 5b, Phases 6 and 7, Phases 8 and 9) because the complete comparison in batch 17 lets matching leaf content be reused rather than reviewed twice in the per-phase batches. Batch 2 substance: read IDR-030 and accounted it against Guide v1.3. Added the iteration evidence report and its manifest entry.",
+      "coverage_completed": [
+        "research-deep-read-remainders (committed deep read IDR-030; queue batch 2)",
+        "batch_queue corrections: complete leaf-to-issue comparison and partial-report accounting"
+      ],
+      "material_points": [
+        "Queue is now 27 batches, 2 done, 25 remaining. It is a workload estimate with six recorded uncertainties, not a quota or a completion guarantee.",
+        "Batch 17 now measures fidelity across all 286 issues instead of inferring it from a sample. Feasibility was checked against the live public API before the change was recorded.",
+        "The six partial reports are accounted for inside existing batches rather than adding six batches; their recorded evidence is reused and only unread key sections are screened.",
+        "IDR-030 core posture is adopted at Guide line 527 (no automatic retention or purge by default, explicitly configured policy only). Its archive tier, holds, policy registry, purge automation, cryptographic erase, media sanitization, five orthogonal lifecycle states and aggregation rules are not adopted, a recorded scope choice the report itself supports by assigning those to deployment and security authorities and supplying no numeric horizon.",
+        "One documentation gap found and recorded as a related instance under F-19: Guide Section 4.7 enumerates what an operational restore does not re-establish but omits deletions. Restoring to a pre-deletion point returns the resource to the authoritative store and rolls back the tombstone held in that same store, while reads are the part re-enabled first. Partly inherent to point-in-time restore and mitigated at a peer by the existing anti-resurrection rule at line 647, so the exposure is local reads and re-export. Fix is one sentence in Section 4.7 plus one restore check in Section 8."
+      ],
+      "next_work": "Batch 3 of 27: committed deep read IDR-034 (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -3519,30 +3542,39 @@
   "batch_queue": {
     "created": "2026-09-19",
     "created_by": "Claude Code (Claude Opus 5) during Pass 3c iteration 19",
+    "revised": "2026-09-19 (iteration 20): complete leaf-to-issue comparison replaces the sample; the six partial reports are assigned to existing cluster batches; three issue batches combined. Total 30 to 27.",
     "purpose": "Finite numbered queue covering every remaining finish condition recorded in review_areas, remaining_checks and backlog_analysis. It is a cursor structure inside this state file, not a separate planning document, and it adds no scope.",
-    "sizing_basis": "Each batch is sized against what iterations 16-19 actually absorbed: roughly 350-650 lines of source plus its Guide cross-checks. Research key-section batches group five to seven reports because a screen is lighter per line than a deep-read accounting. Issue batches follow Roadmap phase and group boundaries, which are the functional units. These are planning estimates, not a completion guarantee.",
+    "status_note": "This queue is a workload estimate, not a quota. Compatible batches are combined where feasible and the count is expected to move as evidence arrives.",
+    "sizing_basis": "Each batch is sized against what iterations 16-20 actually absorbed: roughly 350-850 lines of source plus its Guide cross-checks. Research key-section batches group five to eight reports because a screen is lighter per line than a deep-read accounting. Issue batches follow Roadmap phase and group boundaries, which are the functional units.",
+    "count_history": [
+      "Iteration 19: 30 batches (1 done, 29 remaining).",
+      "Iteration 20: 27 batches (2 done, 25 remaining). Batch 2 (IDR-030) executed. Three issue batches combined: former Phase 5a and 5b merged, Phases 6 and 7 merged, Phases 8 and 9 merged, because batch 17 complete comparison lets matching leaf content be reused rather than reviewed twice. The six partial reports were absorbed into existing cluster batches rather than adding six batches."
+    ],
     "reuse_rules": [
-      "Shared issue boilerplate and the issue template are checked once in batch 17 and never re-checked in batches 19-29.",
-      "Every one of the 286 issues corresponds to a Roadmap leaf whose Scope, Done, Guide and Depends text is already in Roadmap v1.18, a baseline document already read. Batches 19-29 account that leaf text and verify issue fidelity by sample rather than reading 268 issue bodies cold.",
+      "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
+      "Batch 17 compares all 286 issues task-specific content against their Roadmap leaves mechanically. Content that matches an already-read leaf is reused by batches 19-26, not reviewed twice; only the difference inventory and the scope and acceptance accounting carry forward.",
+      "For the six partial reports (IDR-006, IDR-007, IDR-010, IDR-014B, IDR-017, IDR-044), the existing evidence is reused and only the unread key sections are screened, inside the cluster batch that already covers their topic. A partial read does not establish complete coverage.",
       "Batch 5 (IDR-055) evidence is reused by batch 16 rather than read twice.",
-      "Batch 8 merges the peer-source spot checks with the 014-series studies because both need the same external sources open.",
-      "The 18 issue bodies already read (iterations 1-15 plus the iteration 16 correction) are reused, not re-read."
+      "Batch 8 merges the peer-source spot checks and fq-10 with the 014-series studies because both need the same external sources open.",
+      "The 18 issue bodies already read are reused, not re-read."
     ],
     "coverage_state_legend": {
       "genuinely_unreviewed": "No recorded review of this content exists.",
       "coverage_not_established": "Read depth was never recorded. Neither a full read nor the absence of any incidental excerpt may be inferred; a key-section screen establishes coverage.",
+      "coverage_not_established_plus_partial": "Cluster mixes reports whose read depth was never recorded with partial reports whose recorded sections are reused and whose unread key sections are screened.",
       "bookkeeping_corrected": "Coverage existed but was mis-recorded. Corrected in iteration 16 for issues #98, #99 and #130. No bookkeeping-only work remains queued."
     },
     "sizing_uncertainties": [
-      "Batch 17 (leaf-to-issue fidelity) is the largest swing factor. Faithful issue bodies keep batches 19-29 at eleven; unfaithful bodies could add several.",
-      "Phase 3 at 39 leaves in one batch (batch 22) is the tightest fit and may need to split, adding one batch.",
+      "Batch 17 remains the largest swing factor, though it now measures fidelity across all 286 issues rather than inferring it from a sample. A large difference inventory would make batches 19-26 heavier and could raise the total.",
+      "Batch 26 at 50 leaves and batch 22 at 39 are the largest issue batches; either may need to split, adding one batch each.",
       "Any key-section screen in batches 6-14 that surfaces a substantive Guide question may need a targeted follow-on read, adding batches that cannot be predicted now.",
       "Batch 8 depends on external peer repositories whose availability and size are not known in advance.",
-      "Batch 30 assumes a stable findings register; a late material finding could require another consolidation pass."
+      "Batch 27 assumes a stable findings register; a late material finding could require another consolidation pass.",
+      "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
-    "total_batches": 30,
-    "done": 1,
-    "remaining": 29,
+    "total_batches": 27,
+    "done": 2,
+    "remaining": 25,
     "queue": [
       {
         "batch": 1,
@@ -3552,17 +3584,17 @@
         "size_basis": "about 625 lines",
         "coverage_state": "genuinely_unreviewed",
         "status": "done_iteration_19",
-        "note": "Executed in iteration 19. Report fully read; all partial-report remainders are now closed. A concrete F-17 instance was confirmed."
+        "note": "Executed in iteration 19. Report fully read; a concrete F-17 instance was confirmed."
       },
       {
         "batch": 2,
         "area": "research",
         "title": "Committed deep read: IDR-030 - Data lifecycle, retention, archival and deletion",
-        "scope": "Full read of IDR-030 accounted against Guide v1.3. One of the four consequential deep reads the review committed to.",
+        "scope": "Full read accounted against Guide v1.3.",
         "size_basis": "841 lines",
         "coverage_state": "genuinely_unreviewed",
-        "status": "queued",
-        "note": "Retention and deletion horizons bear on F-19 (audit retention boundary) and on the tombstone horizons IDR-043 Section 8.4 deferred."
+        "status": "done_iteration_20",
+        "note": "Executed in iteration 20. Guide line 527 adopts the core posture (no automatic retention or purge by default, explicit configured policy only). One documentation gap recorded as a related instance under F-19: Section 4.7 enumerates what an operational restore does not re-establish but omits that restoring to a pre-deletion point re-exposes deleted resources locally."
       },
       {
         "batch": 3,
@@ -3582,7 +3614,7 @@
         "size_basis": "786 lines",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
-        "note": "IDR-040 Section 14.1 and IDR-042 Section 14.1 both depend on this report policy/trust bundle and bounded offline-authority model; check those dependencies are consistent."
+        "note": "IDR-040 Section 14.1 and IDR-042 Section 14.1 both depend on this report policy and trust bundle model and its bounded offline-authority envelope; check those dependencies are consistent."
       },
       {
         "batch": 5,
@@ -3598,91 +3630,91 @@
         "batch": 6,
         "area": "research",
         "title": "Key-section screen A: Standards and obligation baselines",
-        "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-001, IDR-002, IDR-003, IDR-004, IDR-005. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
-        "size_basis": "5 reports, roughly 500-700 lines of key sections",
-        "coverage_state": "coverage_not_established",
+        "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-001, IDR-002, IDR-003, IDR-004, IDR-005 (coverage not established); plus the unread key sections of IDR-006 and IDR-007 (partial: interpretation and open-question sections already read, evidence/03-pass-3a.txt). Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
+        "size_basis": "7 reports, roughly 500-800 lines of key sections",
+        "coverage_state": "coverage_not_established_plus_partial",
         "status": "queued",
-        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage rather than repeating a cold read."
+        "note": "Partial-report handling: reuse the existing evidence for the partial reports named here and screen only their unread key sections. A partial read does not establish complete coverage, and these reports do not get batches of their own. IDR-006 and IDR-007 are the CSAPI Part 1 and Part 2 requirement baselines; their interpretation and open-question sections were already read, so screen only the remaining key sections."
       },
       {
         "batch": 7,
         "area": "research",
         "title": "Key-section screen B: Conformance, API definition and documentation",
-        "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-009, IDR-010A, IDR-012, IDR-013, IDR-014. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
-        "size_basis": "5 reports, roughly 500-700 lines of key sections",
-        "coverage_state": "coverage_not_established",
+        "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-009, IDR-010A, IDR-012, IDR-013, IDR-014 (coverage not established); plus the unread key sections of IDR-010 (partial: link sections already read, evidence/03-pass-3a.txt). Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
+        "size_basis": "6 reports, roughly 500-800 lines of key sections",
+        "coverage_state": "coverage_not_established_plus_partial",
         "status": "queued",
-        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage rather than repeating a cold read."
+        "note": "Partial-report handling: reuse the existing evidence for the partial reports named here and screen only their unread key sections. A partial read does not establish complete coverage, and these reports do not get batches of their own. IDR-010 covers collections, resources, links and navigation behavior; its link sections were already read."
       },
       {
         "batch": 8,
         "area": "research",
         "title": "Key-section screen C: Peer and client implementation studies",
-        "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-014A, IDR-014C, IDR-014D, IDR-014E, IDR-014F, IDR-014G, IDR-014H. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
-        "size_basis": "7 reports, roughly 500-700 lines of key sections",
-        "coverage_state": "coverage_not_established",
+        "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-014A, IDR-014C, IDR-014D, IDR-014E, IDR-014F, IDR-014G, IDR-014H (coverage not established); plus the unread key sections of IDR-014B (partial: targeted acceptance and history references already read, evidence/08-pass-3c-04.txt). Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
+        "size_basis": "8 reports, roughly 500-800 lines of key sections",
+        "coverage_state": "coverage_not_established_plus_partial",
         "status": "queued",
-        "note": "Merge the outstanding peer-source spot checks (the CS-GO and OSH pins associated with 014A, 014B and 062) into this batch and resolve fq-10, the CS-Go repository URL discrepancy, while those sources are open. Completing this batch closes the peer-source-spot-checks remaining check."
+        "note": "Partial-report handling: reuse the existing evidence for the partial reports named here and screen only their unread key sections. A partial read does not establish complete coverage, and these reports do not get batches of their own. Also merge the outstanding peer-source spot checks (the CS-GO and OSH pins associated with 014A, 014B and 062) into this batch and resolve fq-10, the CS-Go repository URL discrepancy, while those sources are open. Completing this batch closes the peer-source-spot-checks remaining check."
       },
       {
         "batch": 9,
         "area": "research",
         "title": "Key-section screen D: Resource model, temporal validity and status",
-        "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-015, IDR-016, IDR-018, IDR-019, IDR-020. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
-        "size_basis": "5 reports, roughly 500-700 lines of key sections",
-        "coverage_state": "coverage_not_established",
+        "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-015, IDR-016, IDR-018, IDR-019, IDR-020 (coverage not established); plus the unread key sections of IDR-017 (partial: Section 9.1 already read, evidence/12-pass-3c-08.txt). Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
+        "size_basis": "6 reports, roughly 500-800 lines of key sections",
+        "coverage_state": "coverage_not_established_plus_partial",
         "status": "queued",
-        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage rather than repeating a cold read."
+        "note": "Partial-report handling: reuse the existing evidence for the partial reports named here and screen only their unread key sections. A partial read does not establish complete coverage, and these reports do not get batches of their own. IDR-017 is the relationship and linkage model; only Section 9.1 is recorded as read."
       },
       {
         "batch": 10,
         "area": "research",
         "title": "Key-section screen E: Encoding, schema and validation",
         "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-021, IDR-022, IDR-023, IDR-024, IDR-025. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
-        "size_basis": "5 reports, roughly 500-700 lines of key sections",
-        "coverage_state": "coverage_not_established",
+        "size_basis": "5 reports, roughly 500-800 lines of key sections",
+        "coverage_state": "coverage_not_established_plus_partial",
         "status": "queued",
-        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage rather than repeating a cold read."
+        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage."
       },
       {
         "batch": 11,
         "area": "research",
         "title": "Key-section screen F: Storage, query and write boundaries",
         "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-026, IDR-027, IDR-028, IDR-032, IDR-033. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
-        "size_basis": "5 reports, roughly 500-700 lines of key sections",
-        "coverage_state": "coverage_not_established",
+        "size_basis": "5 reports, roughly 500-800 lines of key sections",
+        "coverage_state": "coverage_not_established_plus_partial",
         "status": "queued",
-        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage rather than repeating a cold read."
+        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage."
       },
       {
         "batch": 12,
         "area": "research",
-        "title": "Key-section screen G: Streaming, architecture, deployment and configuration",
-        "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-035, IDR-045, IDR-046, IDR-047, IDR-048. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
-        "size_basis": "5 reports, roughly 500-700 lines of key sections",
-        "coverage_state": "coverage_not_established",
+        "title": "Key-section screen G: Platform, streaming, architecture, deployment and configuration",
+        "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-035, IDR-045, IDR-046, IDR-047, IDR-048 (coverage not established); plus the unread key sections of IDR-044 (partial: Section 22.2 already read, evidence/04-pass-3b.txt). Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
+        "size_basis": "6 reports, roughly 500-800 lines of key sections",
+        "coverage_state": "coverage_not_established_plus_partial",
         "status": "queued",
-        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage rather than repeating a cold read."
+        "note": "Partial-report handling: reuse the existing evidence for the partial reports named here and screen only their unread key sections. A partial read does not establish complete coverage, and these reports do not get batches of their own. IDR-044 is the Rust implementation language and framework strategy; only Section 22.2 is recorded as read."
       },
       {
         "batch": 13,
         "area": "research",
         "title": "Key-section screen H: Operations, conformance harness, fixtures, performance and interoperability",
         "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-049, IDR-051, IDR-053, IDR-054, IDR-056. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
-        "size_basis": "5 reports, roughly 500-700 lines of key sections",
-        "coverage_state": "coverage_not_established",
+        "size_basis": "5 reports, roughly 500-800 lines of key sections",
+        "coverage_state": "coverage_not_established_plus_partial",
         "status": "queued",
-        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage rather than repeating a cold read."
+        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage."
       },
       {
         "batch": 14,
         "area": "research",
         "title": "Key-section screen I: Spatial, provenance and final synthesis",
         "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-058, IDR-059, IDR-060, IDR-061, IDR-062. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
-        "size_basis": "5 reports, roughly 500-700 lines of key sections",
-        "coverage_state": "coverage_not_established",
+        "size_basis": "5 reports, roughly 500-800 lines of key sections",
+        "coverage_state": "coverage_not_established_plus_partial",
         "status": "queued",
-        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage rather than repeating a cold read."
+        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage."
       },
       {
         "batch": 15,
@@ -3707,12 +3739,12 @@
       {
         "batch": 17,
         "area": "issues",
-        "title": "Issue boilerplate, template and leaf-to-issue fidelity",
-        "scope": "Check the shared issue boilerplate and the issue template once, then verify on a sample spanning all nine phases that each issue body faithfully carries its Roadmap leaf Scope, Done, Guide and Depends text. Record every boilerplate variant found.",
-        "size_basis": "Template plus a sample of roughly 18 issues, two per phase",
+        "title": "Complete leaf-to-issue comparison, boilerplate and every variant",
+        "scope": "Fetch all 286 issue bodies (the GitHub REST issues list endpoint returns bodies, so per_page=100 covers the backlog in three requests; the repository is public and reachable unauthenticated, verified in iteration 20). Separate each body into its shared sections and its task-specific sections; issue bodies carry the headings Task and intended result, Scope and boundaries, Sources and applicable rules, Prerequisites, Acceptance and verification, then the shared Common completion checklist and Execution record. Review the common boilerplate once and every distinct variant of it, recording each variant. Then compare every issue task-specific content mechanically against its Roadmap leaf Scope, Done, Guide and Depends text for all 286 issues, and inspect every difference the comparison reports. Produce a difference inventory keyed by issue number.",
+        "size_basis": "All 286 issue bodies; mechanical comparison is cheap, and the reviewable work is the boilerplate variants plus the inspected differences",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
-        "note": "Checked ONCE for the whole backlog; batches 19-29 must not repeat it. Iteration 15 already confirmed fidelity for #98 and #99. This is the largest swing factor in the remaining count: if issue bodies do not faithfully carry their leaves, batches 19-29 become substantially heavier and the total rises."
+        "note": "Corrected in iteration 20: this batch was previously specified as a sample of roughly 18 issues, which cannot establish complete issue coverage. It is now a complete mechanical comparison of all 286. Sampling alone must not establish complete coverage. Matching content is reused by batches 19-26 and must not be reviewed twice there; only the difference inventory and the task-specific content accounting carry forward. If the comparison shows issues faithfully carry their leaves, batches 19-26 stay as sized; a large difference count would make them heavier and could raise the total."
       },
       {
         "batch": 18,
@@ -3722,13 +3754,13 @@
         "size_basis": "All 286 leaves via mechanical extraction plus targeted reading",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
-        "note": "Uses the Roadmap phase, group and issue mapping already extracted in iteration 19: nine phases, 41 groups, issues #3-#288, contiguous within each phase. F-04 (issue size) and F-05 (tasking sequence) are the existing homes."
+        "note": "Uses the Roadmap phase, group and issue mapping already extracted in iteration 19: nine phases, 41 groups, issues 3 through 288, contiguous within each phase. F-04 (issue size) and F-05 (tasking sequence) are the existing homes."
       },
       {
         "batch": 19,
         "area": "issues",
         "title": "Issue scope and acceptance: Phase 1 - Running foundation and first registration",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #3-#26 (24 issues) against the Guide and the findings register. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #3-#26 (24 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
         "size_basis": "24 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -3738,7 +3770,7 @@
         "batch": 20,
         "area": "issues",
         "title": "Issue scope and acceptance: Phase 2a - Complete Part 1 resources, groups 2.1-2.3",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #27-#57 (31 issues) against the Guide and the findings register. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #27-#57 (31 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
         "size_basis": "31 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -3748,7 +3780,7 @@
         "batch": 21,
         "area": "issues",
         "title": "Issue scope and acceptance: Phase 2b - Complete Part 1 resources, groups 2.4-2.6",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #58-#88 (31 issues) against the Guide and the findings register. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #58-#88 (31 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
         "size_basis": "31 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -3758,7 +3790,7 @@
         "batch": 22,
         "area": "issues",
         "title": "Issue scope and acceptance: Phase 3 - Observations, status and System Events",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #89-#127 (39 issues) against the Guide and the findings register. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #89-#127 (39 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
         "size_basis": "39 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -3768,7 +3800,7 @@
         "batch": 23,
         "area": "issues",
         "title": "Issue scope and acceptance: Phase 4 - Complete SWE payload encodings",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #128-#155 (28 issues) against the Guide and the findings register. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #128-#155 (28 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
         "size_basis": "28 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
@@ -3777,65 +3809,35 @@
       {
         "batch": 24,
         "area": "issues",
-        "title": "Issue scope and acceptance: Phase 5a - Commands and feasibility, first half",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #156-#176 (21 issues) against the Guide and the findings register. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
-        "size_basis": "21 leaves, split at Roadmap group boundaries",
+        "title": "Issue scope and acceptance: Phase 5 - Commands and feasibility",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #156-#197 (42 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "size_basis": "42 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
-        "note": "Four already read: #156, #163, #164, #168. Reuse those recorded reads rather than repeating them."
+        "note": "Five already read: #156, #163, #164, #168, #174. Reuse those recorded reads rather than repeating them."
       },
       {
         "batch": 25,
         "area": "issues",
-        "title": "Issue scope and acceptance: Phase 5b - Commands and feasibility, second half",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #177-#197 (21 issues) against the Guide and the findings register. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
-        "size_basis": "21 leaves, split at Roadmap group boundaries",
+        "title": "Issue scope and acceptance: Phases 6 and 7 - Live publication; experimental sampling and enhanced filtering",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #198-#238 (41 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "size_basis": "41 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
-        "note": "One already read: #174. Reuse those recorded reads rather than repeating them."
+        "note": "None read. Reuse those recorded reads rather than repeating them."
       },
       {
         "batch": 26,
         "area": "issues",
-        "title": "Issue scope and acceptance: Phase 6 - Live publication",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #198-#218 (21 issues) against the Guide and the findings register. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
-        "size_basis": "21 leaves, split at Roadmap group boundaries",
-        "coverage_state": "genuinely_unreviewed",
-        "status": "queued",
-        "note": "None read. Reuse those recorded reads rather than repeating them."
-      },
-      {
-        "batch": 27,
-        "area": "issues",
-        "title": "Issue scope and acceptance: Phase 7 - Experimental sampling and enhanced filtering",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #219-#238 (20 issues) against the Guide and the findings register. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
-        "size_basis": "20 leaves, split at Roadmap group boundaries",
-        "coverage_state": "genuinely_unreviewed",
-        "status": "queued",
-        "note": "None read. Reuse those recorded reads rather than repeating them."
-      },
-      {
-        "batch": 28,
-        "area": "issues",
-        "title": "Issue scope and acceptance: Phase 8 - Exchange, interrupted operation and restore",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #239-#262 (24 issues) against the Guide and the findings register. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
-        "size_basis": "24 leaves, split at Roadmap group boundaries",
+        "title": "Issue scope and acceptance: Phases 8 and 9 - Exchange, interrupted operation and restore; integrated verification and release readiness",
+        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #239-#288 (50 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
+        "size_basis": "50 leaves, split at Roadmap group boundaries",
         "coverage_state": "genuinely_unreviewed",
         "status": "queued",
         "note": "One already read: #240. Reuse those recorded reads rather than repeating them."
       },
       {
-        "batch": 29,
-        "area": "issues",
-        "title": "Issue scope and acceptance: Phase 9 - Integrated verification and release readiness",
-        "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #263-#288 (26 issues) against the Guide and the findings register. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18).",
-        "size_basis": "26 leaves, split at Roadmap group boundaries",
-        "coverage_state": "genuinely_unreviewed",
-        "status": "queued",
-        "note": "None read. Reuse those recorded reads rather than repeating them."
-      },
-      {
-        "batch": 30,
+        "batch": 27,
         "area": "final_assessment",
         "title": "Final consolidated assessment",
         "scope": "Publish supported findings, withdrawals, bounded uncertainties, coverage accounting and implementation advice, and link consequential findings to their owning implementation issues. Set review_complete only if the published completion criteria are satisfied.",
