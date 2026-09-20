@@ -334,6 +334,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "IDR-055 acceptance correction appended to report 28 without rewriting it, including the reversal into a second F-17 instance and the replaced batch 16 caveat; and queue batch 6, key-section screen A over IDR-001 to IDR-007 (Pass 3c iteration 24)"
+    },
+    {
+      "name": "30-pass-3c-25-batch7-key-section-screen-b.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "92EF6511CC22D0419D9CE39EFCE7B0D459472FA4C8BC75E0648F415A1D7D451E",
+      "original_bytes": 15871,
+      "published_sha256": "92EF6511CC22D0419D9CE39EFCE7B0D459472FA4C8BC75E0648F415A1D7D451E",
+      "published_bytes": 15871,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Queue batch 7, key-section screen B over IDR-009, IDR-010, IDR-010A, IDR-012, IDR-013 and IDR-014, including the F-03 cache instance strengthening from accepted IDR-012, the F-11 confirmation at Guide v1.3 and a third F-17 instance (Pass 3c iteration 25)"
     }
   ]
 }

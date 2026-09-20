@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 24 (IDR-055 acceptance correction; queue batch 6, key-section screen A)",
+  "latest_report": "Pass 3c iteration 25 (queue batch 7, key-section screen B: conformance, API definition and documentation)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -100,31 +100,36 @@
     {
       "id": "IDR-009",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-009-landing-page-api-definition-and-conformance-declaration-behavior-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen B completed iteration 25 (queue batch 7). Section 14 Decision Analysis and Recommendations read in iteration 25, including the 14.1 options table and 14.3 acceptance scope. Sections 1-13 and 15-21 not read. Recommendation 3 (publish a Glaux-owned deployment API definition, not the official example) and recommendation 4 (generate /conformance from evidence-complete classes, keeping planned or experimental state outside conformsTo) are adopted near-verbatim at Guide lines 362 and 907. Recommendation 1 (capability registry as the single source for landing links, conformance output and the API definition) is adopted in function at Guide line 360, which narrows the framing to ordinary shared metadata rather than a registry service. Acceptance status was checked in the governance record rather than inferred from report metadata: the final research report lists this topic as Complete and Accepted. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/30-pass-3c-25-batch7-key-section-screen-b.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-010",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-010-collections-resources-links-and-navigation-behavior-report.md",
-      "documented_read_depth": "partial",
-      "note": "Link sections; not a full read.",
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen B completed iteration 25 (queue batch 7). Appendix C Publication and Artifact Contradiction Register (17 rows) read in iteration 25. The link sections at lines 433, 747 and 770, already read and recorded in evidence/03-pass-3a.txt, were REUSED not re-read. Sections 1-18 and Appendices A, B, D and E not read. Row C-12 supplies the controlling interpretation behind F-11: prefixed table-first output, with bare input accepted only as compatibility. Rows C-01 to C-04 (plural paths primary) are adopted at Guide lines 1142-1143. Rows C-06, C-07 and C-17 independently restate defects already confirmed in iteration 14 and recorded under F-08 and fq-05. Acceptance status was checked in the governance record rather than inferred from report metadata: the final research report lists this topic as Complete and Accepted. This is a screen; the report is NOT recorded as fully read.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/03-pass-3a.txt"
+        "evidence/03-pass-3a.txt",
+        "evidence/30-pass-3c-25-batch7-key-section-screen-b.md"
       ],
-      "conclusion_or_remaining_question": "Link sections; not a full read."
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-010A",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-010a-api-versioning-backward-compatibility-and-deprecation-strategy-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen B completed iteration 25 (queue batch 7). Appendix C Decision and Evidence Register (9 rows) read in iteration 25. Sections 1-18 and Appendices A, B and D not read. P-010A-01 (one stable root; release version is not a resource version) is adopted near-verbatim at Guide line 364 and P-010A-06 (no unsafe-method aliases) at Guide line 1142. P-010A-03 (a two-release, twelve-month retirement floor) is explicitly NOT adopted: Guide line 857 declines the proposed calendar duration while adopting the surrounding obligations. THIRD F-17 INSTANCE: this register marks all nine decisions Pending plan-owner acceptance although the final research report lists IDR-SRV-010A as Complete and Accepted. Acceptance status was checked in the governance record rather than inferred from report metadata: the final research report lists this topic as Complete and Accepted. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/30-pass-3c-25-batch7-key-section-screen-b.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-011",
@@ -140,29 +145,35 @@
     {
       "id": "IDR-012",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-012-content-negotiation-media-types-and-encoding-selection-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen B completed iteration 25 (queue batch 7). Appendix C Proposed Decision Register (17 rows), Section 7.6 content coding, caches and validators at lines 395-397, recommendation 9 at line 621 and the cache/coding test row at line 556 read in iteration 25. Sections 1-6, 8-18 and Appendices A, B and D not read. Acceptance correctly recorded in the report: the Project Lead accepted every entry on 2026-08-02. MATERIAL RESULT for the F-03 cache instance: this accepted report owns the subject matter of Guide line 739, and its recommendation 9 is a single instruction to use correct Vary and representation/coding-specific validators AND default protected variants to Cache-Control private, no-store. Guide line 739 adopts the first half and omits the second, so the instance moves from unspecified to a partial adoption of one accepted recommendation. Section 7.6 also states directly that Vary is not an authorization control, the point iteration 17 had to derive from RFC 9111 Section 4.1. Acceptance status was checked in the governance record rather than inferred from report metadata: the final research report lists this topic as Complete and Accepted. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/30-pass-3c-25-batch7-key-section-screen-b.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-013",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-013-error-model-http-status-codes-and-failure-semantics-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen B completed iteration 25 (queue batch 7). Appendix C Proposed Decision Register (18 rows) read in iteration 25. Sections 1-18 and Appendices A, B and D not read. Acceptance correctly recorded: the Project Lead accepted every entry on 2026-08-31, with a per-decision acceptance owner. Substantially adopted: the 401/403/concealed-404 boundary (Guide 834), the 400/415/422 and 429/503 boundaries (839-840), empty query as success near-verbatim (436), retry never implying unsafe replay (849, 851) and sanitized detail with opaque correlation (827). P-013-08 headers and conservative caching is consistent with the IDR-012 cache material and is not counted as a separate F-03 source. Acceptance status was checked in the governance record rather than inferred from report metadata: the final research report lists this topic as Complete and Accepted. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/30-pass-3c-25-batch7-key-section-screen-b.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-014",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-014-openapi-description-and-api-documentation-strategy-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen B completed iteration 25 (queue batch 7). Appendix C Proposed Decision Register (20 rows) read in iteration 25. Sections 1-18 and Appendices A, B and D not read. Acceptance correctly recorded: the Project Lead accepted every entry on 2026-08-31. P-014-003 and P-014-005 are adopted near-verbatim at Guide line 362 and P-014-006 in function at Guide line 360. P-014-015 (Redoc CE 3.x with Swagger UI and Scalar) is explicitly NOT adopted; Guide line 362 defers the renderer choice to implementation. P-014-018 (no ordinary per-user OAD; named policy profiles instead) reconciles the iteration 17 accounting that the Guide does not adopt IDR-040 Section 15.2 per-profile documents: the Guide single-document choice matches this later accepted decision. Acceptance status was checked in the governance record rather than inferred from report metadata: the final research report lists this topic as Complete and Accepted. This is a screen; the report is NOT recorded as fully read.",
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/30-pass-3c-25-batch7-key-section-screen-b.md"
+      ],
+      "conclusion_or_remaining_question": "Key sections screened; coverage established. Not a full read. Remaining sections are not queued for this review."
     },
     {
       "id": "IDR-014A",
@@ -3232,9 +3243,10 @@
       "question": "Systematic topic key-section accounting using the report inventory and prior evidence",
       "status": "partial",
       "evidence": [
-        "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md"
+        "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md",
+        "evidence/30-pass-3c-25-batch7-key-section-screen-b.md"
       ],
-      "conclusion_or_remaining_question": "Systematic topic key-section accounting. Cluster A closed in iteration 24 (queue batch 6): IDR-001 through IDR-005 screened at their recommendation and risk sections, plus IDR-006 and IDR-007 recommendation sections with their already-read Section 13 registers reused. Recommendations substantially adopted; no new finding; two candidates recorded (fq-13 new, fq-05 extended). Remaining clusters: B (batch 7, conformance/API definition: IDR-009, 010A, 012, 013, 014 plus the unread key sections of IDR-010), C (batch 8, peer studies plus the peer-source spot checks and fq-10), D (batch 9), E (batch 10), F (batch 11), G (batch 12), H (batch 13) and I (batch 14). Next: cluster B, batch 7."
+      "conclusion_or_remaining_question": "Systematic topic key-section accounting. Cluster A closed in iteration 24 (batch 6): IDR-001 to IDR-007. Cluster B closed in iteration 25 (batch 7): IDR-009, IDR-010, IDR-010A, IDR-012, IDR-013 and IDR-014, screened at their decision registers with the IDR-010 link sections reused. Cluster B produced a material strengthening of the F-03 cache instance, a confirmed F-11 instance at Guide v1.3 and a third F-17 instance. Remaining clusters: C (batch 8, peer studies plus the peer-source spot checks and fq-10), D (batch 9), E (batch 10), F (batch 11), G (batch 12), H (batch 13) and I (batch 14). Next: cluster C, batch 8."
     },
     {
       "id": "peer-source-spot-checks",
@@ -3245,11 +3257,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 24 (IDR-055 acceptance correction; queue batch 6, key-section screen A)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 25 (queue batch 7, key-section screen B)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the environment's active-model identification at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 24 applied the IDR-055 acceptance correction and executed batch 6, then published this checkpoint. Batch 7 has not been started.",
+    "unfinished_step": "None. Iteration 25 executed batch 7 and published this checkpoint. Batch 8 has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3268,18 +3280,20 @@
       "evidence/26-pass-3c-21-idr030-completion-and-idr034.md",
       "evidence/27-pass-3c-22-idr039a.md",
       "evidence/28-pass-3c-23-idr055.md",
-      "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md"
+      "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md",
+      "evidence/30-pass-3c-25-batch7-key-section-screen-b.md"
     ],
     "next_batch": {
-      "title": "Batch 7 of 27: key-section screen B, conformance, API definition and documentation",
+      "title": "Batch 8 of 27: key-section screen C, peer and client implementation studies, plus the peer-source spot checks",
       "check_ids": [
-        "research-key-section-sweep"
+        "research-key-section-sweep",
+        "peer-source-spot-checks"
       ],
-      "source_scope": "Screen the decision-usable key sections (recommendations, risks and open questions, and the executive summary where it carries decisions) of IDR-009, IDR-010A, IDR-012, IDR-013 and IDR-014, whose read depth was never recorded; plus the unread key sections of IDR-010, whose link sections were already read (evidence/03-pass-3a.txt) and must be reused rather than re-read. Six reports. This is a screen to establish coverage, not a full read: state for each report exactly which sections were screened and which were not, and do not record any report as fully read on the basis of a screen. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced; F-11 (relation wire spelling) and F-08 are plausible homes, and Guide lines 362, 364, 444 and 907 are the likely comparison points for OpenAPI, links, paging and conformance-declaration content. Two carry-forwards from batch 6: fq-13 asks whether the Guide should address Command.issueTime semantics and systemType/systemKind, and IDR-010 is the report that adopted the ogc-rel link-relation rule recorded under F-11, so check both against this cluster where they arise.",
-      "stop_condition": "Record each of the six reports with an accurate screened-section list; update the research-key-section-sweep conclusion to list exactly which clusters remain; mark batch_queue entry 7 status done and set entry 8 as next; save and publish the checkpoint.",
+      "source_scope": "Screen the decision-usable key sections (recommendations, risks and open questions, and any decision register) of IDR-014A, IDR-014C, IDR-014D, IDR-014E, IDR-014F, IDR-014G and IDR-014H, whose read depth was never recorded; plus the unread key sections of IDR-014B, whose targeted acceptance and history references were already read (evidence/08-pass-3c-04.txt) and must be reused rather than re-read. Eight reports. This is a screen: state for each report exactly which sections were screened and which were not, and do not record any report as fully read. Check acceptance status in the governance record rather than inferring it from report metadata, following the iteration 24 correction, and record any further F-17 instance found. Additionally, and in the same batch because the same external sources must be open: complete the outstanding peer-source spot checks associated with 014A, 014B and 062 at the recorded pins, and resolve fq-10, the CS-Go repository URL discrepancy, where five reports and Guide line 1129 use SomethingCreativeStudios against IDR-040 single use of opensensorhub. Account each report against Guide v1.3 and raise a finding only where a Guide gap is evidenced; F-12 (independent response interpretation), F-11 and F-08 are plausible homes, and Guide lines 991 and 1129 already carry client-research and CS-GO observations.",
+      "stop_condition": "Record each of the eight reports with an accurate screened-section list; resolve or explicitly bound fq-10; close the peer-source-spot-checks remaining check if the pinned checks are complete, or state precisely what remains; update the research-key-section-sweep conclusion; mark batch_queue entry 8 status done and set entry 9 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 7 of 27; 21 remain. Follow the queue in order unless the user selects otherwise."
+    "queue_pointer": "batch_queue.queue entry 8 of 27; 20 remain. Follow the queue in order unless the user selects otherwise."
   },
   "batch_history": [
     {
@@ -3535,6 +3549,25 @@
       ],
       "next_work": "Batch 7 of 27: key-section screen B, conformance, API definition and documentation (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 25, queue batch 7: key-section screen B over six accepted reports covering conformance, API definition and documentation. Screened their decision registers and equivalent decision-usable sections, reusing the IDR-010 link sections already recorded in evidence/03-pass-3a.txt rather than re-reading them. Acceptance status was checked in the final research report inventory rather than inferred from report metadata, following the iteration 24 correction; all six are Complete and Accepted. Three results. First, the F-03 cache instance changes character: accepted IDR-012 owns the subject matter of Guide line 739 and its numbered recommendation 9 is a single instruction pairing correct Vary and representation/coding-specific validators with a default of Cache-Control private, no-store for protected variants, while Guide line 739 adopts the first half and omits the second; IDR-012 Section 7.6 also states directly that Vary is not an authorization control, the point iteration 17 derived from RFC 9111. The instance now rests on six accepted reports and is a partial adoption of one accepted recommendation rather than an unspecified area. Second, F-11 is confirmed at Guide v1.3: the Guide contains no ogc-rel occurrence and no relation-spelling rule, yet emits three different forms, a bare rel system at line 485, a Glaux URN at 560 and a full OGC URI at 774, and the bare form diverges from IDR-010 row C-12 which sets prefixed table-first output with bare accepted only as input compatibility. Third, a third F-17 instance: IDR-010A Appendix C marks all nine decisions Pending plan-owner acceptance although the report is accepted, while IDR-012, IDR-013 and IDR-014 all record their acceptance correctly with dates and per-decision owners, so the corpus contains both the defect and a template for fixing it. Also recorded three non-adoptions the Guide states for itself and one cross-report reconciliation. Added the iteration evidence report and its manifest entry.",
+      "coverage_completed": [
+        "research-key-section-sweep cluster B (queue batch 7): IDR-009, IDR-010, IDR-010A, IDR-012, IDR-013, IDR-014"
+      ],
+      "material_points": [
+        "F-03 cache instance materially strengthened and changed in character. Accepted IDR-012 recommendation 9 pairs Vary and per-representation validators with a private, no-store default for protected variants; Guide line 739 takes the first half only. This is a partial adoption of one accepted recommendation at the exact Guide line involved, not an unspecified area. Six accepted sources now.",
+        "F-11 confirmed at Guide v1.3. No ogc-rel occurrence and no stated relation rule, but three different emitted forms (bare rel system at 485, Glaux URN at 560, full OGC URI at 774). The bare form diverges from IDR-010 row C-12 controlling interpretation. The underlying published ambiguity was not resolved here.",
+        "Third F-17 instance: IDR-010A marks all nine decisions Pending plan-owner acceptance although accepted. IDR-012, IDR-013 and IDR-014 show the correct practice with dates and per-decision owners, so a template exists inside the corpus.",
+        "Three non-adoptions the Guide states for itself: the deprecation calendar duration declined at line 857, the documentation renderer deferred at 362, and the registry framing narrowed to ordinary shared metadata at 360. These are the accepted-research-versus-adopted-mechanism distinction in the Guide own words.",
+        "Cross-report reconciliation: IDR-014 P-014-018 rules out per-user OpenAPI documents, so the Guide single-document choice recorded in iteration 17 as not adopting IDR-040 Section 15.2 matches the later accepted decision.",
+        "No new finding number, no new follow-up question, no batch added. fq-13 gained no evidence in this cluster; fq-05 was corroborated by IDR-010 row C-17 without extension."
+      ],
+      "next_work": "Batch 8 of 27: key-section screen C, peer studies plus the peer-source spot checks and fq-10 (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -3701,7 +3734,8 @@
       "Iteration 21: 27 batches (3 done, 24 remaining). Batch 3 executed. No count change; the IDR-030 coverage completion was finishing work already inside batch 2, not a new batch.",
       "Iteration 22: 27 batches (4 done, 23 remaining). Batch 4 executed. No count change.",
       "Iteration 23: 27 batches (5 done, 22 remaining). Batch 5 executed; research-deep-read-remainders closed. No count change.",
-      "Iteration 24: 27 batches (6 done, 21 remaining). Batch 6 executed; IDR-055 acceptance corrected without adding a batch. No count change."
+      "Iteration 24: 27 batches (6 done, 21 remaining). Batch 6 executed; IDR-055 acceptance corrected without adding a batch. No count change.",
+      "Iteration 25: 27 batches (7 done, 20 remaining). Batch 7 executed. No count change."
     ],
     "reuse_rules": [
       "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
@@ -3726,8 +3760,8 @@
       "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
     "total_batches": 27,
-    "done": 6,
-    "remaining": 21,
+    "done": 7,
+    "remaining": 20,
     "queue": [
       {
         "batch": 1,
@@ -3796,8 +3830,8 @@
         "scope": "Screen the key sections (executive summary, recommendations, risks and open questions, validation) of: IDR-009, IDR-010A, IDR-012, IDR-013, IDR-014 (coverage not established); plus the unread key sections of IDR-010 (partial: link sections already read, evidence/03-pass-3a.txt). Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report.",
         "size_basis": "6 reports, roughly 500-800 lines of key sections",
         "coverage_state": "coverage_not_established_plus_partial",
-        "status": "queued",
-        "note": "Partial-report handling: reuse the existing evidence for the partial reports named here and screen only their unread key sections. A partial read does not establish complete coverage, and these reports do not get batches of their own. IDR-010 covers collections, resources, links and navigation behavior; its link sections were already read."
+        "status": "done_iteration_25",
+        "note": "Executed in iteration 25. Six reports screened at their decision registers; IDR-010 link sections reused from evidence/03-pass-3a.txt. None recorded as fully read. Results: the F-03 cache instance moves from unspecified to a partial adoption of one accepted recommendation, because accepted IDR-012 recommendation 9 pairs Vary and per-representation validators with a private, no-store default and Guide line 739 takes only the first half; F-11 confirmed at Guide v1.3 with three different emitted relation forms and no stated rule; third F-17 instance in IDR-010A. Three non-adoptions the Guide states for itself were recorded. No new finding number and no new follow-up question."
       },
       {
         "batch": 8,
