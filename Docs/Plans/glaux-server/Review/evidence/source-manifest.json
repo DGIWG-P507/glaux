@@ -591,6 +591,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 41: withdraws in five places a claim about peer tie-retention behavior that iteration 40 reintroduced after iteration 27 had withdrawn it, then executes queue batch 23, the Phase 4 codec assessment of issues #128 to #155, all 28 adequate. Records that five codec tasks state in their own terms that a same-path round trip is not proof, and identifies issue #151 as the task implementing Guide line 739 where a corrected F-03 rule would land"
+    },
+    {
+      "name": "48-pass-3c-42-batch24-task-assessment.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "6CEA9DC188006B90D60B93FC89890491089C1CFD14CB748BDE356725EBCE03F1",
+      "original_bytes": 8202,
+      "published_sha256": "6CEA9DC188006B90D60B93FC89890491089C1CFD14CB748BDE356725EBCE03F1",
+      "published_bytes": 8202,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 42, queue batch 24: the Phase 5 tasking assessment of issues #156 to #197, the largest per-task batch at 42 issues, all 42 adequate. Records the Guide safety rules reproduced in named tasks for the only phase that can cause a physical effect, gives F-19 a third task-level confirmation across three restore tasks while narrowing the gap to restore and retention because issue #163 shows audit is verified where it is written, and records four further oracle-discipline examples qualitatively"
     }
   ]
 }
