@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-19",
-  "latest_report": "Pass 3c iteration 15 (F-13 extension-rule check: observation-extension-policy)",
+  "latest_report": "Pass 3c iteration 16 (bookkeeping correction for #98/#99/#130; research-deep-read-remainders slice 1: IDR-008/037/038/039 remainders)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -76,13 +76,14 @@
     {
       "id": "IDR-008",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-008-conformance-class-and-requirement-mapping-report.md",
-      "documented_read_depth": "partial",
-      "note": "Substantial read; sections 16-17 still recorded as outstanding.",
+      "documented_read_depth": "full",
+      "note": "Full read completed iteration 16: Sections 16-19 (lines 752-989, through end of file, including Appendices A-E) read and accounted against Guide v1.3. Validation tables, references, the single-topic-authorization record and the identifier/count/checklist appendices contain no key finding, recommendation or open question beyond what was already synthesized into Guide Section 7 when Sections 5-9 were read. No Guide correction; no new finding.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/05-pass-3c-01.txt"
+        "evidence/05-pass-3c-01.txt",
+        "evidence/21-pass-3c-16-research-deep-read-slice1.md"
       ],
-      "conclusion_or_remaining_question": "Substantial read; sections 16-17 still recorded as outstanding."
+      "conclusion_or_remaining_question": "Fully read. No further remainder outstanding for this report."
     },
     {
       "id": "IDR-009",
@@ -434,35 +435,38 @@
     {
       "id": "IDR-037",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-037-feasibility-and-asynchronous-tasking-strategy-report.md",
-      "documented_read_depth": "partial",
-      "note": "Main body read; appendices A-D outstanding.",
+      "documented_read_depth": "full",
+      "note": "Full read completed iteration 16: Appendices A-D (lines 693-821) read and accounted against Guide v1.3. The lifecycle/ownership matrix, requirement-disposition ledger and singular/plural-path and missing-nested-ID defects are adopted, several explicitly sourced to this report at Guide Section 13 (lines 1142-1145). No contradiction found; no Guide correction; no new finding.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/09-pass-3c-05.txt"
+        "evidence/09-pass-3c-05.txt",
+        "evidence/21-pass-3c-16-research-deep-read-slice1.md"
       ],
-      "conclusion_or_remaining_question": "Main body read; appendices A-D outstanding."
+      "conclusion_or_remaining_question": "Fully read. No further remainder outstanding for this report."
     },
     {
       "id": "IDR-038",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-038-command-authorization-safety-and-audit-strategy-report.md",
-      "documented_read_depth": "partial",
-      "note": "Main body read; appendices A-C outstanding.",
+      "documented_read_depth": "full",
+      "note": "Full read completed iteration 16: Appendices A-C (lines 675-776) read and accounted against Guide v1.3. Operator-approval/override/control-lease machinery remains unadopted, consistent with F-03's existing 'not automatically needed' disposition (related instance recorded). The 37-name minimum audit-event catalog and the audit-immutability invariant are not adopted verbatim; related instances recorded under F-20 and F-19 respectively. No new finding number.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/11-pass-3c-07.txt"
+        "evidence/11-pass-3c-07.txt",
+        "evidence/21-pass-3c-16-research-deep-read-slice1.md"
       ],
-      "conclusion_or_remaining_question": "Main body read; appendices A-C outstanding."
+      "conclusion_or_remaining_question": "Fully read. No further remainder outstanding for this report."
     },
     {
       "id": "IDR-039",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-039-authentication-authorization-and-api-security-threat-model-report.md",
-      "documented_read_depth": "partial",
-      "note": "Sections 1-6, 8-20 read; section 7 and 21-22 outstanding.",
+      "documented_read_depth": "full",
+      "note": "Full read completed iteration 16: Section 7 (lines 242-274, API surface/trust-boundary inventory) and Sections 21-22 (lines 625-688, validation/references) read and accounted against Guide v1.3. Surface classification and trust-boundary invariants are substantially adopted (schema-reference allowlisting, forwarded-header trust, policy-failure-closed). One follow-up question recorded (fq-09, whether metrics/traces exposure should be stated as explicitly internal/access-restricted); not a finding.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/12-pass-3c-08.txt"
+        "evidence/12-pass-3c-08.txt",
+        "evidence/21-pass-3c-16-research-deep-read-slice1.md"
       ],
-      "conclusion_or_remaining_question": "Sections 1-6, 8-20 read; section 7 and 21-22 outstanding."
+      "conclusion_or_remaining_question": "Fully read. No further remainder outstanding for this report."
     },
     {
       "id": "IDR-039A",
@@ -1466,18 +1470,22 @@
     {
       "number": 98,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/98",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/20-pass-3c-15-observation-extension-policy.md"
+      ],
+      "conclusion_or_remaining_question": "Full body read in Pass 3c iteration 15 as part of the observation-extension-policy check (leaf 3.2.1, Observation admission and exact persistence). No unknown-member/foi@id statement found. Bookkeeping-corrected in iteration 16; not reread. Complete issue-specific scope/dependency/acceptance assessment is not established; reuse this targeted read rather than rereading identical boilerplate."
     },
     {
       "number": 99,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/99",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/20-pass-3c-15-observation-extension-policy.md"
+      ],
+      "conclusion_or_remaining_question": "Full body read in Pass 3c iteration 15 as part of the observation-extension-policy check (leaf 3.2.2, Observation time and feature context). Its verification compares supplied sampling-feature/Procedure/parameter references against authorized typed fixtures, including an incompatible parameter and a denied local feature; no fixture supplies the association under a wrong member name. Bookkeeping-corrected in iteration 16; not reread. Complete issue-specific scope/dependency/acceptance assessment is not established; reuse this targeted read rather than rereading identical boilerplate."
     },
     {
       "number": 100,
@@ -1724,10 +1732,12 @@
     {
       "number": 130,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/130",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "targeted_prior_review",
+      "evidence": [
+        "evidence/17-pass-3c-12-standards-swe.md"
+      ],
+      "conclusion_or_remaining_question": "Full body read in Pass 3c iteration 12 as part of the standards-array-flags check (leaf 4.1.3, recordsAsArrays/vectorsAsArrays codec tests). Instructs retaining the contradictory source wording and interpretation qualification rather than presenting the array-flag interpretation as an upstream correction; tests omitted/false/true independently and mixed, with a reversal required to fail. Bookkeeping-corrected in iteration 16; not reread. Complete issue-specific scope/dependency/acceptance assessment is not established; reuse this targeted read rather than rereading identical boilerplate."
     },
     {
       "number": 131,
@@ -3179,8 +3189,10 @@
       "id": "research-deep-read-remainders",
       "question": "Recorded remaining sections of 008, 037, 038, 039, 040, 042, 043; committed deep reads 030, 034, 039A, 055",
       "status": "partial",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Recorded remaining sections of 008, 037, 038, 039, 040, 042, 043; committed deep reads 030, 034, 039A, 055"
+      "evidence": [
+        "evidence/21-pass-3c-16-research-deep-read-slice1.md"
+      ],
+      "conclusion_or_remaining_question": "Slice 1 closed (iteration 16): IDR-008 Sections 16-19, IDR-037 Appendices A-D, IDR-038 Appendices A-C, and IDR-039 Section 7 and Sections 21-22 are fully read and accounted against Guide v1.3 (three related instances under F-03/F-19/F-20; one new follow-up question fq-09; no new finding). Exactly what remains: IDR-040 Sections 9-21 (report lines 344-686; Sections 1-8 already read); IDR-042 and IDR-043 remaining sections beyond those already read (evidence/15-pass-3c-11.txt); and the four committed deep reads not yet begun, IDR-030, IDR-034, IDR-039A and IDR-055. Next slice selected: IDR-040 Sections 9-21 (see current_work.next_batch)."
     },
     {
       "id": "research-key-section-sweep",
@@ -3198,11 +3210,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Copilot Pass 3c iteration 15 (F-13 extension-rule check: observation-extension-policy)",
-    "provider": "GitHub Copilot",
-    "model": "self-reported as Claude Fable 5.1",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 16 (bookkeeping correction for issues #98/#99/#130; research-deep-read-remainders slice 1: IDR-008 Sections 16-19, IDR-037 Appendices A-D, IDR-038 Appendices A-C, IDR-039 Section 7 and Sections 21-22)",
+    "provider": "Claude Code",
+    "model": "Claude Sonnet 5 (model ID claude-sonnet-5), per the environment's active-model identification at the time of this iteration",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 15 completed the check and published this checkpoint. The next batch has not been started.",
+    "unfinished_step": "None. Iteration 16 completed the bookkeeping correction and slice 1 of research-deep-read-remainders, and published this checkpoint. The next batch has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3212,15 +3224,16 @@
       "evidence/17-pass-3c-12-standards-swe.md",
       "evidence/18-pass-3c-13-standards-cql2-sensorml.md",
       "evidence/19-pass-3c-14-standards-ats-rows-part2-inheritance.md",
-      "evidence/20-pass-3c-15-observation-extension-policy.md"
+      "evidence/20-pass-3c-15-observation-extension-policy.md",
+      "evidence/21-pass-3c-16-research-deep-read-slice1.md"
     ],
     "next_batch": {
-      "title": "Research deep-read remainders, slice 1: the small unread remainders of reports already read in full",
+      "title": "Research deep-read remainders, slice 2: IDR-040 Sections 9-21",
       "check_ids": [
         "research-deep-read-remainders"
       ],
-      "source_scope": "Read and account for: IDR-008 Sections 16-17 (report lines 752-end: validation against the research plan; references); IDR-037 Appendices A-D (lines 693-end: lifecycle/ownership matrix, reproducibility record, requirement-by-requirement disposition, completion checklist); IDR-038 Appendices A-C (lines 675-end: authorization/safety/audit matrix, audit event catalog and decision invariants, reproducible evidence record); IDR-039 Section 7 (lines 242-end of section: API surface and trust-boundary inventory) and Sections 21-22 (lines 625-end). For each section: check its key findings, recommendations and open questions against the current Guide v1.3 text (grep first, then targeted reads), record adopted/not-adopted/departure with line references, and raise a finding only where a Guide gap is evidenced (existing findings F-03, F-15, F-18, F-19, F-20 and F-22 are the likely homes for anything command-safety, audit or security related; do not create competing numbers). Issue bodies optional.",
-      "stop_condition": "Record each listed section as read with its material points accounted for against the Guide; update the research-deep-read-remainders conclusion so that it lists exactly what remains (IDR-040 Sections 9-21; IDR-042/043 remaining sections; committed deep reads 030, 034, 039A, 055) and name the next slice; save and publish the checkpoint.",
+      "source_scope": "Read and account for IDR-040 Sections 9-21 (report lines 344-686: Metadata/SensorML/SWE Common redaction findings; Observation/status/event/latest-value/dynamic-data policy findings; Streaming/event publication policy findings; Command/control, Feasibility and command-affordance policy findings; Source trust/provenance/ownership/caveat/federation policy findings; DDIL/cached-policy/stale-policy/synchronization findings; error/OpenAPI/conformance/observability/logging/metrics/tracing/audit implications; fixture/conformance/security/performance/interoperability test implications; downstream topic handoff matrix; recommendations; risks/open questions; validation against success criteria; references). Sections 1-8 were already read (evidence/13-pass-3c-09.txt). For each section: check its key findings, recommendations and open questions against the current Guide v1.3 text (grep first, then targeted reads), record adopted/not-adopted/departure with line references, and raise a finding only where a Guide gap is evidenced (existing findings F-03, F-08, F-15, F-18, F-19, F-20 and F-22 are the likely homes for anything policy/releasability, audit or security related; do not create competing numbers). Issue bodies optional.",
+      "stop_condition": "Record IDR-040 Sections 9-21 as read with material points accounted for against the Guide; update the research-deep-read-remainders conclusion so it lists exactly what remains (IDR-042/043 remaining sections; committed deep reads 030, 034, 039A, 055) and name the next slice; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     }
   },
@@ -3307,6 +3320,23 @@
       ],
       "next_work": "research-deep-read-remainders slice 1 (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Sonnet 5 (model ID claude-sonnet-5), per the environment's active-model identification at the time of this iteration",
+      "activity": "Pass 3c iteration 16 (provider handoff from GitHub Copilot after a subscription-budget stop; resumed from the published iteration 15 checkpoint at commit 74f717ce1f55dea029cf5ede450e41723c748c6e). Bookkeeping correction: issues #98 and #99 (read in full during iteration 15, evidence/20-pass-3c-15-observation-extension-policy.md) and #130 (read in full during iteration 12, evidence/17-pass-3c-12-standards-swe.md) were still marked full_body_read_reported false / review_status not_recorded; corrected to true / targeted_prior_review with the correct evidence pointers, without rereading the issues or claiming a complete issue-specific review. The displayed read count moves from 15 to 18 of 286. Then executed research-deep-read-remainders slice 1: read and accounted against Guide v1.3 IDR-008 Sections 16-19 (lines 752-989: validation tables, references, single-topic authorization record, identifier/count/checklist appendices; no new item beyond what Sections 5-9 already synthesized into Guide Section 7); IDR-037 Appendices A-D (lines 693-821: lifecycle/ownership matrix and requirement-disposition ledger adopted in Guide Sections 4.6/4.9/6.4/7 and Section 13 rows 1142-1145, several explicitly sourced to this report); IDR-038 Appendices A-C (lines 675-776: operator-approval/override/control-lease machinery remains unadopted, consistent with F-03's existing disposition; the 37-name minimum audit-event catalog and the audit-immutability invariant are not adopted verbatim, related instances recorded under F-20 and F-19); IDR-039 Section 7 and Sections 21-22 (lines 242-274, 625-688: surface classification and trust-boundary invariants substantially adopted via Guide Sections 4.10-4.12, e.g. schema-reference allowlisting at line 420, forwarded-header trust at line 364, policy-failure-closed at line 598; one new follow-up question recorded on metrics/traces exposure). No new finding number created; three related instances added (F-03, F-19, F-20). All four reports move from partial to full documented_read_depth. Added evidence/21-pass-3c-16-research-deep-read-slice1.md and its manifest entry.",
+      "coverage_completed": [
+        "research-deep-read-remainders (slice 1 of the remainder set)"
+      ],
+      "material_points": [
+        "Bookkeeping correction only for #98/#99/#130; not new issue-specific reviews.",
+        "No new finding number. Related instances added under F-03 (operator-approval/override/control-lease machinery remains optional, matching the existing disposition), F-19 (audit-evidence-immutability candidate rule sharpened but not itself adopted by the Guide's durable-record floor) and F-20 (IDR-038's 37-name event catalog is a concrete candidate for F-20's 'selected categories', not an adopted requirement).",
+        "New follow-up question recorded (not scheduled): fq-09, whether Guide Section 4.12 should state that metrics/traces exposure is internal/access-restricted by default.",
+        "IDR-008, IDR-037, IDR-038 and IDR-039 are now fully read; no further remainder outstanding for those four reports."
+      ],
+      "next_work": "research-deep-read-remainders slice 2: IDR-040 Sections 9-21 (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -3388,6 +3418,16 @@
       "status": "noted_not_scheduled",
       "evidence": [
         "evidence/20-pass-3c-15-observation-extension-policy.md"
+      ]
+    },
+    {
+      "id": "fq-09-metrics-traces-exposure",
+      "raised": "2026-09-19",
+      "question": "IDR-039 Section 7.1 classifies the health/readiness/metrics/traces surface with metrics/traces as internal-only signals, distinct from minimal public liveness. Guide Section 4.12 (line 667) specifies what to collect but does not state that the metrics/traces endpoint itself must be non-public or access-restricted, the way line 665 calls readiness detail 'protected diagnostics.' Should Guide Section 4.12 add one sentence stating metrics/traces exposure is internal/access-restricted by default, or is this left to deployment network topology (reverse proxy / separate listener), consistent with how Section 4.10 already treats administration as 'internal/privileged, separate audience'?",
+      "relevance": "Guide Section 4.12; no owning issue identified yet",
+      "status": "noted_not_scheduled",
+      "evidence": [
+        "evidence/21-pass-3c-16-research-deep-read-slice1.md"
       ]
     }
   ],

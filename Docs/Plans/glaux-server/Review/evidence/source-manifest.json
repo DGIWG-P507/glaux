@@ -208,6 +208,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "CRLF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "F-13 extension-rule check: observation-extension-policy (Pass 3c iteration 15)"
+    },
+    {
+      "name": "21-pass-3c-16-research-deep-read-slice1.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Sonnet 5 (model ID claude-sonnet-5), per the environment's active-model identification at the time of this iteration",
+      "original_sha256": "E63B3DE22EED8BD092E31A7D5824D6581DB2AB356E3531B75EEFFD6E026664D9",
+      "original_bytes": 23844,
+      "published_sha256": "E63B3DE22EED8BD092E31A7D5824D6581DB2AB356E3531B75EEFFD6E026664D9",
+      "published_bytes": 23844,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Bookkeeping correction (issues #98, #99, #130) and research-deep-read-remainders slice 1: IDR-008 Sections 16-19, IDR-037 Appendices A-D, IDR-038 Appendices A-C, IDR-039 Section 7 and Sections 21-22 (Pass 3c iteration 16)"
     }
   ]
 }
