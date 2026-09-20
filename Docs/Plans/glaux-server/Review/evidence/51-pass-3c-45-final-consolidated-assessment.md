@@ -213,3 +213,43 @@ No count of tasks stating the F-12 boundary was made, following the iteration 39
 Evidence reports 31 through 50 are preserved unchanged except where corrections were appended in earlier iterations; those bodies remain byte-for-byte intact.
 
 No implementation, Goal, Guide, Roadmap, issue or upstream change was made. Nothing was written to the implementation repository. No fixes were begun and no code was written.
+
+---
+
+## Erratum A - two statements corrected
+
+**Appended September 20, 2026, after publication, by the same provider and model.** The body above is preserved unchanged. Where it conflicts with this erratum, this erratum controls. No review area was reopened to write it.
+
+### A1. Section 4.3, row C2, misstates what F-12 leaves open
+
+The row says that a clause would close the finding by establishing that "expected answers must not be derived from server output, and interpreting an actual response through production types is a separate, permitted thing."
+
+**The second half declares settled exactly what this finding records as open.** Guide line 901 forbids the server's serializers *as the sole oracle* and permits *ordinary* HTTP and format libraries. A production crate's typed structures are neither: not the sole oracle, because the expected values are still independently authored, and not an ordinary format library either. Whether a runner may deserialize an actual response into them is therefore **left open by both halves of that sentence**, and that open question *is* the finding's residual. Saying it is permitted does not state the boundary; it picks a side of it, and not the side the register records.
+
+**Corrected row C2.** The recorded remedy is to *state* the response-interpretation boundary, not to assert an answer to it: clarify in one clause whether a runner may interpret an actual response by deserializing it into the production wire types while holding an independently authored expectation, and add the discriminating negative fixture the finding already asks for. The concern is concrete and small: a field those production types silently drop or coerce becomes invisible to the check, and the independently authored expectation is then compared against an already-normalized value. Guide §8.1.1 states the same logic one layer down - encoder and decoder agreement alone cannot exclude a shared bug - and what is missing is its application to the HTTP runner's response interpretation.
+
+The rest of the row stands unchanged: two accepted client studies state the boundary in operational terms, keeping the raw wire, the parser output, the test expectation and the standard anchor apart; and **no corpus census is needed or meaningful**, per the iteration 39 withdrawal. F-12 keeps its status (narrowed optional hardening), severity (Low), owner (Guide line 901, affected work #19 and runner extensions such as #80) and its place among the optional improvements.
+
+### A2. Section 5.1 rests the F-19 decision on a false equivalence
+
+The paragraph headed "Why the status does not change" argues from Guide line 602's explicit disclaimer of a mandatory tamper-proof ledger, and adds that the append-only and hash-chain machinery the research proposes is the kind of mechanism the Guide declines deliberately elsewhere.
+
+**That is a different question from the one this finding asks.** F-19 has two separable components, and the register has always kept them apart:
+
+1. **Audit durability, recovery and retention.** Are audit records inside the restore comparison, and may a configured retention policy remove them? This is the component the evidence in the body above speaks to, and it is what the four restore tasks and the dedicated retention task do not say.
+2. **Optional tamper-evidence machinery.** Append-only storage, hash chains, an integrity ledger. This is what Guide line 602 disclaims and what the register already records as "not automatically required."
+
+**Declining the second says nothing about the first.** A durable audit record can be entirely inside the restore and retention envelope with no tamper-proofing whatsoever, and line 602's disclaimer does not answer whether it is. Treating the disclaimer as an answer to the durability question was a false equivalence, and the conclusion should not have rested on it.
+
+**The clarification disposition is retained, on the correct basis.** Guide line 602 states a durable-record floor. Guide §4.7 and the §8 restore verification enumerate what a restore re-establishes and what a configured retention policy may remove, and audit records appear in neither enumeration. No task names them either, which is what the body above establishes across all 286. The outcome is therefore **unstated for durability, recovery and retention specifically** - a question the Guide has not been asked rather than a rule it has broken - and that is what a clarification candidate is. This reasoning needs no appeal to tamper-proofing and does not depend on it.
+
+Two things follow, and both were already true in the body above:
+
+- The recorded next consideration is unaffected, and it already separates the two components: it asks for the boundary between serving access, owner or migration roles and authorized retention, while noting that append-only recommendations must account for permitted disposition and that hash chains are not automatically required.
+- The recommended wording in "What does change" is unaffected, because it only ever addressed the first component: state whether audit records are within the restore comparison and whether a configured retention policy may remove them, and if they are protected, say so where the other retained evidence is enumerated. Its named homes remain Guide §4.7 or §8.2 scenario 6 and the acceptance criteria of **#251** and **#254**, and its timing remains B9, before Phase 8.
+
+F-19 keeps its status (clarification candidate), its severity (Low-Medium), its evidence and its disposition. Nothing about the finding changes; what changes is the reason given in §5.1 for not escalating it.
+
+### Scope of this erratum
+
+No review area was reopened, no research was re-read and no issue was re-fetched. No finding was introduced, renumbered, withdrawn, re-severitied or re-dispositioned. No implementation requirement was added or altered, and no recommendation became a prerequisite it was not already. Sections 4.1, 4.2, 6, 7, 8 and 9 of the body above are unaffected. `review_complete` remains `true` and the review remains closed.
