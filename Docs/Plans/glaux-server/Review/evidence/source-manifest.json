@@ -434,6 +434,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 31, queue batch 13, key-section screen H over IDR-049, IDR-051, IDR-053, IDR-054 and IDR-056. Enumerates a second F-17 sub-form, reports with no acceptance header fields at all, which no earlier scan could detect and which is the form that misled the review in iteration 23. Complete two-form population is 20 of 67 with a changed severity ordering, IDR-053 and IDR-054 being the worst case. Corrects the F-17 record for IDR-052. Records two stated non-adoptions and adds two accepted sources to F-12"
+    },
+    {
+      "name": "37-pass-3c-32-batch14-final-research-cluster.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "E9B69872C737214EB29B0F7D7ECF97D372091B058348C1A476B45E034A8CA1F0",
+      "original_bytes": 16551,
+      "published_sha256": "E9B69872C737214EB29B0F7D7ECF97D372091B058348C1A476B45E034A8CA1F0",
+      "published_bytes": 16551,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 32, queue batch 14, the final research cluster, key-section screen I over IDR-058 to IDR-062. Closes research-key-section-sweep and completes review area 3, with final coverage of 18 reports fully read and 53 screened. Identifies an F-17 false positive and records the line-by-line verification of all sixteen stale-wording matches, leaving the population at 20 on a verified basis. Records that the Guide took IDR-058 conditional recommendation and discharged all three preconditions, and that IDR-061 and IDR-062 independently confirm the batch 9 and batch 8 conclusions"
     }
   ]
 }
