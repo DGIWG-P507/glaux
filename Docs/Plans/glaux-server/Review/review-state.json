@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-20",
-  "latest_report": "Pass 3c iteration 34 (queue batch 16, the verification-quality pass; review area 5 complete, F-12 relocated to Guide line 901 and F-09 general half found already adopted)",
+  "latest_report": "Pass 3c iteration 35 (queue batch 17; target set verified at 286 issues in DGIWG-P507/glaux-server, difference inventory empty and confirmed by verbatim containment)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -3173,9 +3173,57 @@
     "scope_coverage_checked": false,
     "sizing_checked": false,
     "evidence": [
-      "evidence/01-pass-1.txt"
+      "evidence/01-pass-1.txt",
+      "evidence/41-pass-3c-35-batch17-leaf-to-issue-comparison.md"
     ],
-    "remaining_question": "Resolve Roadmap leaf/group prerequisites, check the whole graph and account for unique issue scope/acceptance/sizing; inventory counts alone are insufficient."
+    "remaining_question": "Batch 18 owns the whole dependency graph, scope coverage against the Guide capability set, and sizing. Batches 19 to 26 own the per-issue content that has no Roadmap counterpart, principally the verification approach and the exclusion list, since the leaf-to-issue difference inventory is empty and matching content need not be reviewed twice. Inventory counts alone remain insufficient, and the documented issue read count stays at 18 because fetching a body is not reading it.",
+    "issue_repository": "DGIWG-P507/glaux-server",
+    "planning_repository": "DGIWG-P507/glaux",
+    "repository_note": "ESTABLISHED IN ITERATION 35. The implementation issues live in DGIWG-P507/glaux-server. The planning repository that holds this review is DGIWG-P507/glaux, which contains 74 pull requests and NO issues. The saved batch 17 scope never named the repository, so the first fetch went to the git remote of the planning repository and returned nothing usable. Any later batch touching issues must use glaux-server.",
+    "target_set_verified": {
+      "verified_iteration": 35,
+      "method": "Unauthenticated GitHub REST issues list, state=all, per_page=100, following the Link header rel=next chain to exhaustion rather than assuming a page count.",
+      "pages": 3,
+      "entries_per_page": [
+        100,
+        100,
+        89
+      ],
+      "total_entries": 289,
+      "pull_requests_excluded": [
+        289,
+        2,
+        1
+      ],
+      "issues": 286,
+      "range": "#3 to #288 inclusive",
+      "gaps": "none",
+      "outside_range": "none",
+      "states": "all 286 open",
+      "snapshot": "evidence/40-batch17-issue-snapshot.json"
+    },
+    "leaf_to_issue_comparison": {
+      "status": "complete_iteration_35",
+      "leaves_extracted": 286,
+      "duplicate_leaf_ids": 0,
+      "dimensions_checked": [
+        "title text after leaf-ID normalization",
+        "title carries the leaf ID",
+        "issue Prerequisites contain every leaf Depends entry",
+        "issue Sources contain every leaf Guide reference",
+        "scope coverage",
+        "acceptance coverage",
+        "link repository",
+        "link text matches link target",
+        "coverage in both directions"
+      ],
+      "differences_found": 0,
+      "verbatim_containment": "Leaf Scope text found verbatim in its issue body in 286 of 286. Leaf Done text found verbatim in 286 of 286. This exact result is what the zero rests on; the fuzzy overlap checks are a second net.",
+      "sensitivity": "All nine checks were run against an injected difference and all nine fired. A cross-pair control, leaf 1.1.1 scope against issue #153, scored 0.231 against a 0.5 threshold and was correctly flagged, while genuine pairs score 0.900 to 3.333.",
+      "reviewer_error_corrected": "The first run reported 286 title mismatches. Inspection showed the issue titles carry a bracketed leaf ID prefix that the normalization did not strip. The defect was in the comparison, not the data; it was corrected and the check re-run.",
+      "boilerplate": "All 286 bodies share exactly one heading shape with seven sections. Common completion checklist and Execution record have exactly ONE distinct value each across all 286, so the boilerplate was reviewed once with one variant each. The other five sections have 286 distinct values each.",
+      "issue_superset": "Issues are a strict superset of their leaves. Ten labelled fields appear in all 286: Roadmap task, Parent capability group, Deliverable, Parent context, Not included, Roadmap task and planning baseline, Applicable Guide sections and controlling standards, Supporting research or examples, Environment or other constraints, and Verification approach and independently expected results. Body lengths 7053 to 11891 bytes, median 8248."
+    }
   },
   "review_areas": [
     {
@@ -3369,11 +3417,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 34 (queue batch 16, the verification-quality pass; review area 5 complete)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 35 (queue batch 17, the complete leaf-to-issue comparison)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 34 verified the batch 16 references, executed the verification-quality pass, completed review area 5 and published this checkpoint. Batch 17 has not been started.",
+    "unfinished_step": "None. Iteration 35 verified the target set, preserved the snapshot, completed the comparison across all 286 issues and published this checkpoint. Batch 18 has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3402,16 +3450,17 @@
       "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md",
       "evidence/37-pass-3c-32-batch14-final-research-cluster.md",
       "evidence/38-pass-3c-33-batch15-scenario-pass.md",
-      "evidence/39-pass-3c-34-batch16-verification-quality.md"
+      "evidence/39-pass-3c-34-batch16-verification-quality.md",
+      "evidence/41-pass-3c-35-batch17-leaf-to-issue-comparison.md"
     ],
     "next_batch": {
-      "title": "Batch 17 of 27: complete leaf-to-issue comparison across all 286 issues",
+      "title": "Batch 18 of 27: whole-backlog dependency graph, coverage and sizing",
       "check_ids": [],
-      "source_scope": "Fetch all 286 issue bodies (the GitHub REST issues list endpoint returns bodies, so per_page=100 covers the backlog in three requests; the repository is public and reachable unauthenticated, verified in iteration 20). Separate each body into its shared sections and its task-specific sections; issue bodies carry the headings Task and intended result, Scope and boundaries, Sources and applicable rules, Prerequisites, Acceptance and verification, then the shared Common completion checklist and Execution record. Review the common boilerplate once and every distinct variant of it, recording each variant. Then compare every issue task-specific content mechanically against its Roadmap leaf Scope, Done, Guide and Depends text for all 286 issues, and inspect every difference the comparison reports. Produce a difference inventory keyed by issue number. THIS IS THE LARGEST SINGLE BATCH IN THE QUEUE and the recorded largest sizing uncertainty. Verify the environment assumption FIRST, before fetching: iteration 20 recorded that the repository is public and reachable unauthenticated and that the issues list endpoint returns bodies, so three requests at per_page=100 cover the backlog within the 60-per-hour unauthenticated limit. Re-verify reachability and the rate limit before relying on it, and if the assumption no longer holds, record that and stop rather than improvising. Reuse rules already recorded in batch_queue.reuse_rules apply: review the common boilerplate ONCE and every distinct variant, then compare only task-specific content against the Roadmap leaves, and reuse matching content rather than reviewing it twice. The 18 issue bodies already documented as read must be reused, not re-fetched for their own sake. Produce the difference inventory that batches 19 to 26 depend on. If the batch cannot be completed in one iteration, record the exact unfinished portion and the fetch state rather than declaring partial coverage complete.",
-      "stop_condition": "Verify and record the environment assumption; review the shared boilerplate once and every distinct variant; compare all 286 issues task-specific content against their Roadmap leaves; publish the difference inventory; record the displayed read count accurately and do not claim a complete issue review where only the comparison was performed; update backlog_analysis and review_areas for the issues area; mark batch_queue entry 17 done and set entry 18 as next; save and publish the checkpoint.",
+      "source_scope": "Resolve Roadmap leaf and group prerequisites across all 286 issues, check the whole dependency graph for cycles and ordering defects, confirm scope coverage against the Guide capability set, and assess sizing. Sets backlog_analysis.whole_dependency_graph_checked, scope_coverage_checked and sizing_checked. REUSE THE PRESERVED SNAPSHOT at evidence/40-batch17-issue-snapshot.json rather than re-fetching; it holds all 286 issue bodies with provenance, and re-fetching spends API budget and risks drift against a point-in-time copy. The repository is DGIWG-P507/glaux-server, NOT the planning repository. Batch 17 established that leaf Scope and Done text appear verbatim in every issue, so dependency data may be taken from either the Roadmap leaves or the issue Prerequisites; state which was used. Resolve prerequisites across all 286, check the whole graph for cycles and ordering defects, confirm scope coverage against the Guide capability set, and assess sizing. Apply the same standard batch 17 applied to itself: if a check reports no defect, prove the check can detect one before accepting the result.",
+      "stop_condition": "Resolve leaf and group prerequisites across all 286 issues; check the whole dependency graph for cycles and ordering defects; confirm scope coverage against the Guide capability set; assess sizing; prove each check sensitive before accepting a clean result; set backlog_analysis.whole_dependency_graph_checked, scope_coverage_checked and sizing_checked; update review_areas for the issues area; mark batch_queue entry 18 done and set entry 19 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 17 of 27; 11 remain. Baseline, standards, research, scenarios and verification are complete. Batches 17 to 26 cover the issue backlog and batch 27 is the final assessment."
+    "queue_pointer": "batch_queue.queue entry 18 of 27; 10 remain. Batch 18 completes the backlog analysis; batches 19 to 26 review the per-issue content the issues add beyond their leaves; batch 27 is the final assessment."
   },
   "batch_history": [
     {
@@ -3908,6 +3957,32 @@
       ],
       "next_work": "Batch 17 of 27: the complete leaf-to-issue comparison across all 286 issues (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 35, queue batch 17: the complete leaf-to-issue comparison. Verified the rate limit, discovered that the saved scope named no repository and that the planning repository holds no issues, identified the implementation repository from the Roadmap leaf links, and fetched the target set from DGIWG-P507/glaux-server following the Link header pagination chain to exhaustion. Preserved the snapshot. Reviewed the shared boilerplate once, established that each shared section has exactly one variant, extracted all 286 Roadmap leaves and compared every one against its linked issue on nine dimensions. Proved each check sensitive before accepting a zero result, and confirmed the zero by exact verbatim containment. Added the iteration evidence report, the preserved snapshot and their manifest entries.",
+      "coverage_completed": [
+        "backlog_analysis.target_set_verified: 286 issues, #3 to #288, pagination followed to exhaustion, 3 pull requests excluded",
+        "backlog_analysis.leaf_to_issue_comparison: complete across all 286, difference inventory empty",
+        "Shared issue boilerplate reviewed once; one variant of each shared section"
+      ],
+      "material_points": [
+        "SAVED ENVIRONMENT ASSUMPTION WRONG ABOUT THE REPOSITORY. The scope never named one. The planning repository DGIWG-P507/glaux holds 74 entries, all pull requests, and no issues. The implementation issues live in DGIWG-P507/glaux-server, stated in every Roadmap leaf link. Third saved-state defect, and the most consequential: an unverified run would have found no issues and could have been misreported as a backlog problem rather than a reviewer error.",
+        "TARGET SET VERIFIED EXACTLY, not assumed. Followed the Link header rel=next chain to exhaustion: 3 pages of 100, 100 and 89, 289 entries total, no next link after page 3. Excluded 3 pull requests, #289, #2 and #1, by the pull_request key. Result: 286 issues numbered #3 to #288 inclusive, no gaps, none outside the range, all open, all with non-empty bodies. Four unauthenticated requests used against a 60 per hour limit.",
+        "SNAPSHOT PRESERVED as evidence/40-batch17-issue-snapshot.json, 2502030 bytes, with a provenance block recording the repository, the pagination method and result, the exclusions and the retrieval conditions. Later batches reusing it should note it is a point-in-time copy of mutable data.",
+        "BOILERPLATE REVIEWED ONCE, WITH ONE VARIANT EACH. All 286 bodies share exactly one heading shape of seven sections. Hashing each section across all 286 shows the two shared sections, Common completion checklist and Execution record, have exactly ONE distinct value each, while the five task-specific sections have 286 each. The boilerplate carries the Guide Section 8.1.1 practices into every unit of work: required checks actually executed and not relabeled as success, independent expected results with behavioral red-green evidence, honest reporting of failures and unrun checks, and no implicit software installation. A positive result for the verification area completed in iteration 34.",
+        "DIFFERENCE INVENTORY EMPTY across nine dimensions: title text, title leaf-ID, prerequisites against Depends, Guide references against Sources, scope coverage, acceptance coverage, link repository, link text against target, and coverage in both directions. No leaf lacks an issue, no issue lacks a leaf, no issue is linked twice.",
+        "THE ZERO WAS MADE TRUSTWORTHY BEFORE BEING ACCEPTED, applying the Guide own Section 8.1.1 rule to the reviewer own check. All nine checks were run against injected differences and all nine fired. A cross-pair control, leaf 1.1.1 scope against issue #153, scored 0.231 against a 0.5 threshold and was correctly flagged, while genuine pairs score 0.900 to 3.333. Decisively, leaf Scope text was found VERBATIM in its issue body in 286 of 286, and leaf Done text in 286 of 286, which is exact rather than fuzzy and makes the threshold moot.",
+        "REVIEWER ERROR CAUGHT AND CORRECTED DURING THE RUN. The first execution reported 286 title mismatches. Inspecting the first twelve showed the issue titles carry a bracketed leaf-ID prefix that the normalization stripped only in unbracketed form. The reported difference was in the comparison, not the data. Corrected and re-run, and recorded rather than silently fixed.",
+        "ISSUES ARE A STRICT SUPERSET of their leaves, adding ten labelled fields present in all 286. Two matter to existing findings: Not included gives every task an explicit exclusion list, and Verification approach and independently expected results is the per-issue counterpart to Guide line 901, where the F-12 independence requirement would be satisfied or violated per task.",
+        "LARGEST SIZING UNCERTAINTY RESOLVED FAVOURABLY. The queue recorded that a large difference inventory would make batches 19 to 26 heavier and could raise the total. The inventory is empty, so matching content genuinely need not be reviewed twice and those batches reduce to the issues own added content. The total does not rise.",
+        "READ COUNT UNCHANGED AT 18. The 286 bodies were fetched and compared mechanically; eighteen are documented as read by a reviewer, from iterations 12 and 15. Fetching a body is not reading it, and this batch claims only the comparison.",
+        "No new finding number and no new follow-up question."
+      ],
+      "next_work": "Batch 18 of 27: the whole-backlog dependency graph, coverage and sizing analysis (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -4079,7 +4154,7 @@
   "batch_queue": {
     "created": "2026-09-19",
     "created_by": "Claude Code (Claude Opus 5) during Pass 3c iteration 19",
-    "revised": "2026-09-20 (iteration 34): batch 16 executed, completing the verification review area. Count unchanged at 27.",
+    "revised": "2026-09-20 (iteration 35): batch 17 executed. Count unchanged at 27.",
     "purpose": "Finite numbered queue covering every remaining finish condition recorded in review_areas, remaining_checks and backlog_analysis. It is a cursor structure inside this state file, not a separate planning document, and it adds no scope.",
     "status_note": "This queue is a workload estimate, not a quota. Compatible batches are combined where feasible and the count is expected to move as evidence arrives.",
     "sizing_basis": "Each batch is sized against what iterations 16-20 actually absorbed: roughly 350-850 lines of source plus its Guide cross-checks. Research key-section batches group five to eight reports because a screen is lighter per line than a deep-read accounting. Issue batches follow Roadmap phase and group boundaries, which are the functional units.",
@@ -4100,7 +4175,8 @@
       "Iteration 31: 27 batches (13 done, 14 remaining). Batch 13 executed. Count unchanged; no batch added or removed. Batch 14 is the last research key-section batch; completing it closes research-key-section-sweep and leaves the issue, scenario, verification and final-assessment batches.",
       "Iteration 32: 27 batches (14 done, 13 remaining). Batch 14 executed. This completes every research batch; batches 15 to 27 cover scenarios, verification quality, the issue backlog and the final assessment. Count unchanged; no batch added or removed.",
       "Iteration 33: 27 batches (15 done, 12 remaining). Batch 15 executed, the first non-research batch, completing review area 4 (scenarios). Count unchanged; no batch added or removed.",
-      "Iteration 34: 27 batches (16 done, 11 remaining). Batch 16 executed, completing review area 5 (verification quality). Baseline, standards, research, scenarios and verification are now complete; the issue backlog and the final assessment remain. Count unchanged; no batch added or removed."
+      "Iteration 34: 27 batches (16 done, 11 remaining). Batch 16 executed, completing review area 5 (verification quality). Baseline, standards, research, scenarios and verification are now complete; the issue backlog and the final assessment remain. Count unchanged; no batch added or removed.",
+      "Iteration 35: 27 batches (17 done, 10 remaining). Batch 17 executed. The recorded largest sizing uncertainty is RESOLVED FAVOURABLY: the leaf-to-issue difference inventory is empty, so batches 19 to 26 are lighter than allowed for rather than heavier, and no batch is added."
     ],
     "reuse_rules": [
       "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
@@ -4118,6 +4194,7 @@
       "bookkeeping_corrected": "Coverage existed but was mis-recorded. Corrected in iteration 16 for issues #98, #99 and #130. No bookkeeping-only work remains queued."
     },
     "sizing_uncertainties": [
+      "RESOLVED in iteration 35: batch 17 was the largest swing factor. Its difference inventory is empty, verified by verbatim containment of every leaf Scope and Done in its issue. Batches 19 to 26 therefore review only the content the issues add beyond their leaves, which is lighter than a reconciliation workload, and the total does not rise.",
       "Batch 17 remains the largest swing factor, though it now measures fidelity across all 286 issues rather than inferring it from a sample. A large difference inventory would make batches 19-26 heavier and could raise the total.",
       "Batch 26 at 50 leaves and batch 22 at 39 are the largest issue batches; either may need to split, adding one batch each.",
       "Any key-section screen in batches 6-14 that surfaces a substantive Guide question may need a targeted follow-on read, adding batches that cannot be predicted now.",
@@ -4126,8 +4203,8 @@
       "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
     "total_batches": 27,
-    "done": 16,
-    "remaining": 11,
+    "done": 17,
+    "remaining": 10,
     "queue": [
       {
         "batch": 1,
@@ -4296,8 +4373,8 @@
         "scope": "Fetch all 286 issue bodies (the GitHub REST issues list endpoint returns bodies, so per_page=100 covers the backlog in three requests; the repository is public and reachable unauthenticated, verified in iteration 20). Separate each body into its shared sections and its task-specific sections; issue bodies carry the headings Task and intended result, Scope and boundaries, Sources and applicable rules, Prerequisites, Acceptance and verification, then the shared Common completion checklist and Execution record. Review the common boilerplate once and every distinct variant of it, recording each variant. Then compare every issue task-specific content mechanically against its Roadmap leaf Scope, Done, Guide and Depends text for all 286 issues, and inspect every difference the comparison reports. Produce a difference inventory keyed by issue number.",
         "size_basis": "All 286 issue bodies; mechanical comparison is cheap, and the reviewable work is the boilerplate variants plus the inspected differences",
         "coverage_state": "genuinely_unreviewed",
-        "status": "queued",
-        "note": "Corrected in iteration 20: this batch was previously specified as a sample of roughly 18 issues, which cannot establish complete issue coverage. It is now a complete mechanical comparison of all 286. Sampling alone must not establish complete coverage. Matching content is reused by batches 19-26 and must not be reviewed twice there; only the difference inventory and the task-specific content accounting carry forward. If the comparison shows issues faithfully carry their leaves, batches 19-26 stay as sized; a large difference count would make them heavier and could raise the total."
+        "status": "done_iteration_35",
+        "note": "Executed in iteration 35. THE SAVED ENVIRONMENT ASSUMPTION WAS WRONG ABOUT THE REPOSITORY: it never named one, so the first fetch went to the planning repository git remote, DGIWG-P507/glaux, which returned 74 entries all of them pull requests and no issues at all. The implementation issues live in DGIWG-P507/glaux-server, which every Roadmap leaf link states. Third saved-state defect after the iteration 28 scope wording and the iteration 33 section references, and the most consequential, because an unverified run would have found no issues and could have been misreported as a backlog problem rather than a reviewer error. TARGET SET VERIFIED EXACTLY by following the Link header rel=next chain to exhaustion rather than assuming three requests: 3 pages of 100, 100 and 89, 289 entries, 3 pull requests excluded (#289, #2, #1), 286 issues numbered #3 to #288 with no gaps and none outside the range, all open, all with non-empty bodies. Snapshot preserved as evidence/40-batch17-issue-snapshot.json with full provenance. BOILERPLATE REVIEWED ONCE: all 286 share exactly one heading shape of seven sections, and the two shared sections have exactly ONE distinct value each, so there is one variant of each rather than several. The boilerplate carries the Guide Section 8.1.1 verification practices into every issue, including the false-green rule and the independent-expected-results requirement. COMPARISON RESULT: the difference inventory is EMPTY on all nine dimensions. The zero was made trustworthy three ways: all nine checks proven sensitive against injected differences, a cross-pair control correctly flagged at 0.231 against a 0.5 threshold while genuine pairs score 0.900 to 3.333, and decisively, leaf Scope and leaf Done text found VERBATIM in the linked issue body in 286 of 286 each. One reviewer error was caught during the run: an initial 286 title mismatches were a normalization defect that did not strip the bracketed leaf-ID prefix, corrected and re-run. CONSEQUENCE FOR BATCHES 19-26: lighter than the recorded sizing uncertainty allowed for, not heavier. Matching content genuinely need not be reviewed twice, so those batches reduce to the ten labelled fields the issues add beyond their leaves, principally the verification approach and the exclusion list. READ COUNT UNCHANGED AT 18: fetching a body is not reading it. No new finding number and no new follow-up question."
       },
       {
         "batch": 18,

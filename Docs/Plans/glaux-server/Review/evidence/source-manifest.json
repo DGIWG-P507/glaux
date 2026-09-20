@@ -476,6 +476,34 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 34, queue batch 16, the verification-quality pass, completing review area 5. Verifies the saved references as clean, assesses independent expected answers, meaningful failure detection and appropriate real-system checks against Guide Sections 8.1, 8.3, 10 and 7.2, relocates F-12 to Guide line 901 with a sharpened residual, and finds the general half of F-09 already adopted at Guide line 909"
+    },
+    {
+      "name": "40-batch17-issue-snapshot.json",
+      "source_kind": "retrieved_external_source_snapshot",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "3D71EDDF6496E9847E3C9682BF587F3F49868BCAB55C6247BC12F0500D6A43AD",
+      "original_bytes": 2502030,
+      "published_sha256": "3D71EDDF6496E9847E3C9682BF587F3F49868BCAB55C6247BC12F0500D6A43AD",
+      "published_bytes": 2502030,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Point-in-time snapshot of all 286 open implementation issues, #3 to #288, retrieved unauthenticated from the GitHub REST issues list for DGIWG-P507/glaux-server on 2026-09-20, following the Link header rel=next chain to exhaustion over 3 pages and excluding the 3 pull requests #289, #2 and #1. Fields kept: number, title, state, body, labels, milestone. Its _provenance block records the repository, method, exclusions and retrieval conditions. Preserved for reuse by batches 18 to 26 so they need not re-fetch mutable data; hashes establish copy integrity, not correctness of the issues themselves"
+    },
+    {
+      "name": "41-pass-3c-35-batch17-leaf-to-issue-comparison.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "1770B11A4275C93D8DF7BA62B7491E97457BCB704BC2D8ADDCFF7F4F667F104B",
+      "original_bytes": 13499,
+      "published_sha256": "1770B11A4275C93D8DF7BA62B7491E97457BCB704BC2D8ADDCFF7F4F667F104B",
+      "published_bytes": 13499,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 35, queue batch 17, the complete leaf-to-issue comparison across all 286 issues. Records that the saved scope named no repository and that the issues live in DGIWG-P507/glaux-server rather than the planning repository, verifies the target set by following pagination to exhaustion, reviews the shared boilerplate once with one variant each, and reports an empty difference inventory confirmed by verbatim containment of every leaf Scope and Done in its issue"
     }
   ]
 }
