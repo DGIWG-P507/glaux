@@ -527,11 +527,26 @@
       "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
       "original_sha256": "1721214C1668F042B9A362983E7526BA92489074472699F7F058B378332F3A99",
       "original_bytes": 12963,
-      "published_sha256": "1721214C1668F042B9A362983E7526BA92489074472699F7F058B378332F3A99",
-      "published_bytes": 12963,
+      "published_sha256": "A8B80C56DEFB2E9B6221F8B30331367C539017A861C2A8C97F05C677ABB9B6A1",
+      "published_bytes": 15415,
+      "publication_change": "correction_appended_body_unchanged",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 37, queue batch 19, the Phase 1 per-task semantic assessment of issues #3 to #26. All 24 adequate. Assesses the shared version-pinning passage once for all 286, gives F-12 its first quantified support with the actual-side independence boundary measured at a lower bound of 24 of 286, corrects the iteration 35 claim about what the shared boilerplate carries, and confirms F-19 and the UUIDv7 observation at task level",
+      "correction_appended": "Appendix A, added in Pass 3c iteration 38 on 2026-09-20. The authored body is unchanged: hashing the first 12963 bytes reproduces original_sha256 exactly. The appendix corrects the Section 7 statement that the read count rises from 18 to 42; the correct figure is 37, derived from distinct issue IDs, because five of the eighteen prior-evidence issues fall inside #3-#26. Every substantive result in the report stands."
+    },
+    {
+      "name": "44-pass-3c-38-batch20-phase2-task-assessment.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "2495F77EDB7AB7C567AB90F81CCBB299D5D0A9FCE93CDE9166068C248E2E051A",
+      "original_bytes": 10648,
+      "published_sha256": "2495F77EDB7AB7C567AB90F81CCBB299D5D0A9FCE93CDE9166068C248E2E051A",
+      "published_bytes": 10648,
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
-      "covers": "Pass 3c iteration 37, queue batch 19, the Phase 1 per-task semantic assessment of issues #3 to #26. All 24 adequate. Assesses the shared version-pinning passage once for all 286, gives F-12 its first quantified support with the actual-side independence boundary measured at a lower bound of 24 of 286, corrects the iteration 35 claim about what the shared boilerplate carries, and confirms F-19 and the UUIDv7 observation at task level"
+      "covers": "Pass 3c iteration 38: reconciliation of the batch 19 per-issue records, correction of the issue read count from 42 to 37 onto a unique-ID derivation, correction of an inaccurate batch 20 group-boundary claim with a contiguity check across all eight issue batches, and queue batch 20, the Phase 2a assessment of issues #27 to #57, all 31 adequate. Records that the unique-ID derivation caught a second overlap before publication, and tightens the F-12 measurement to 12 of 55 assessed against 28 of 286 by pattern"
     }
   ]
 }

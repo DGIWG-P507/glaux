@@ -127,3 +127,28 @@ The corpus-wide counts in §4 come from pattern searches whose limits are record
 Evidence reports 31 through 42 are preserved unchanged.
 
 No implementation, Goal, Guide, Roadmap, issue or upstream change was made. Nothing was written to the implementation repository. `review_complete` remains `false`.
+
+---
+
+## Appendix A - Correction appended in iteration 38 (September 20, 2026)
+
+Everything above this rule is the report as authored in iteration 37 and is unchanged. This appendix is added so that a reader consulting this report alone finds the correction.
+
+**What is corrected.** Section 7 states: "The documented issue read count rises from 18 to 42." That figure is wrong. It was produced by adding the 24 issues read in this batch to the 18 recorded before it, without removing the issues counted twice.
+
+**The correct figure is 37, derived from distinct issue IDs rather than from batch totals.** Eighteen issues carried a reviewer evidence pointer before this batch: #3, #15, #19, #21, #22, #56, #71, #72, #98, #99, #104, #130, #156, #163, #164, #168, #174 and #240. Batch 19 read #3 to #26. **Five of those eighteen fall inside that range: #3, #15, #19, #21 and #22.** So the unique count is 18 + 24 − 5 = 37.
+
+**Two measures must stay distinct, and Section 7 blurred them.**
+
+| Measure | Value | Meaning |
+|---|---|---|
+| Unique issues read by a reviewer | **37** | Distinct issue IDs carrying any reviewer evidence pointer |
+| Phase 1 tasks fully assessed | **24** | Issues #3-#26, assessed for scope and acceptance adequacy in this batch |
+
+These are not the same thing and neither substitutes for the other. The thirteen issues read in earlier passes outside #3-#26 were read for targeted checks, not assessed for scope and acceptance adequacy. The five inside the range had prior targeted checks that this batch reused rather than repeated, and they are now also fully assessed.
+
+**What does not change.** Every substantive result in this report stands: all 24 Phase 1 tasks are adequate, the shared version-pinning passage is sound, the F-12 measurement in Section 4 is unaffected, and the F-19 and UUIDv7 observations in Section 5 are unaffected. The error was in one arithmetic sentence about coverage bookkeeping, not in any assessment.
+
+**Where the corrected figures are recorded.** `backlog_analysis.issue_read_count` in the review state now carries the unique count, its derivation from IDs, the named overlap, and the separate fully-assessed count. The 24 per-issue entries for #3-#26 carry this report as an evidence pointer, with the five overlapping entries retaining their earlier pointers alongside.
+
+Recorded in [44-pass-3c-38-batch20-phase2-task-assessment.md](44-pass-3c-38-batch20-phase2-task-assessment.md), Section 1.
