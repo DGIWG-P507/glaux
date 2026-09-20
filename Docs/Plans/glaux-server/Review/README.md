@@ -8,15 +8,17 @@
 
 1. Read the current assessment in **findings.md**.
 2. Read **instructions.md**, especially the rule for recording disagreements without interrupting coverage.
-3. Use **current_work** in **review-state.json** to resume the exact unfinished step or next batch. Do not reload every archived response.
+3. Use **current_work** in **review-state.json** to resume the exact unfinished step or next batch, and **batch_queue** in the same file to see the whole numbered remainder. Do not reload every archived response.
 
-The last substantive reviewer response is **Pass 3c, iteration 18**, which closed the third slice of the research deep-read remainders: IDR-042's unread sections, accounted for against Guide v1.3. Its freshness and last-known vocabulary, `resultTime=latest` semantics, delayed-input handling, opaque cursors and reconnect behavior are substantially adopted, several passages near-verbatim; its assessment profile object, mode taxonomy and numeric thresholds are a recorded scope choice.
+The last substantive reviewer response is **Pass 3c, iteration 19**, which did two things. It closed the fourth and final partial-report slice, IDR-043's unread sections: substantially adopted, several passages near-verbatim, with the Guide citing that report directly, while its envelope taxonomy, state machines, conflict record, quarantine subsystem and federation profiles are a recorded scope choice. It also confirmed the first concretely evidenced instance of **F-17**, where a report's header records acceptance while its closing section and checklist still carry pre-acceptance wording.
 
-That iteration also carried out a planned re-test. The response-cache gap recorded under **F-03** in iteration 17 — the Guide binds cursors, subscriptions and queued decisions to their authorization bounds but states no rule binding a response cache validator or cache key to the authorized view — was checked against IDR-042 and found **reinforced**. A second accepted report states the missing rule, partly on a normative basis, and adds a second consequence: HTTP cache freshness must not be read as domain freshness. That gap now rests on two reports and has two ready-made test fixtures. It remains the one evidenced Guide gap from the research remainder slices; everything else in them was either adopted or a recorded scope choice.
+The same iteration mapped every remaining finish condition into a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **30 batches, 1 done, 29 remaining.** The queue covers the four committed deep reads, a key-section screen of the 47 reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog, and the final assessment. It separates genuinely unreviewed work from coverage that was simply never recorded, and from bookkeeping already corrected. Issue batches follow Roadmap phase and group boundaries, shared boilerplate is checked once, and evidence is reused across batches rather than re-read. The batch count is a planning estimate with five recorded uncertainties, not a completion guarantee.
+
+The one evidenced Guide gap from the research remainder slices remains the response-cache instance under **F-03**, now resting on two accepted reports. Everything else in those four slices was either adopted or a recorded scope choice.
 
 The record has **22 finding IDs, including two withdrawals**, with subsequent qualifications preserved. No standards check is outstanding, and **18 of 286** issue bodies are documented as read.
 
-The next selected batch is the fourth slice: **IDR-043's unread sections** (roughly 625 lines, the largest remaining). After it, the only research work left in this check is the four committed deep reads not yet begun (IDR-030, IDR-034, IDR-039A, IDR-055). The machine state is authoritative for that cursor as review continues.
+The next selected batch is **batch 2 of 30**: the committed deep read of IDR-030. The machine state is authoritative for that cursor as review continues.
 
 ## What lives here
 
@@ -24,7 +26,7 @@ The next selected batch is the fourth slice: **IDR-043's unread sections** (roug
 |---|---|
 | [findings.md](findings.md) | Authoritative finding dispositions, current assessment, evidence and implementation implications |
 | [instructions.md](instructions.md) | Bounded iterations, independent review, disagreement handling, publication and provider handoff |
-| [review-state.json](review-state.json) | Reading versus review coverage, unresolved checks, active cursor and batch history; no duplicate finding text |
+| [review-state.json](review-state.json) | Reading versus review coverage, unresolved checks, active cursor, batch history and the numbered remaining-batch queue; no duplicate finding text |
 | [evidence/](evidence/) | Archived responses and historical instructions, clearly separate from active instructions |
 | [evidence/source-manifest.json](evidence/source-manifest.json) | Provenance, original/published hashes and privacy transformations |
 
@@ -38,7 +40,7 @@ The purpose is to finish the review, not maintain an endless reading queue. Reus
 |---|---|---|
 | 1. Baseline/planning documents | Completed at the recorded baseline | Reuse it; check relevant subsequent changes only |
 | 2. Standards | Complete for the carried checks: six carried groups closed (SWE quality, array flags, Features Part 3/CQL2 identifiers, SensorML class identifiers, IDR-011 Section 14.3 abstract-test rows, Part 2 Annex A.1 inheritance) and the F-13 extension question resolved | Met; later passes may raise targeted standards questions, each recorded in `remaining_checks` with evidence |
-| 3. Research and peer evidence | Partially complete; deep-read remainders slices 1-3 closed (IDR-008, IDR-037, IDR-038, IDR-039, IDR-040 and IDR-042 remainders; all six now fully read); next slice selected (IDR-043's unread sections) | Account for key findings/recommendations/open questions across 71 reports, finish consequential committed deep reads (IDR-030, 034, 039A, 055) and remaining pinned CS-GO/OSH checks; not blanket full reads of every plan/report |
+| 3. Research and peer evidence | Partially complete; all four deep-read remainder slices closed (IDR-008, 037, 038, 039, 040, 042 and 043 now fully read); remaining work queued as batches 2-14 | Account for key findings/recommendations/open questions across 71 reports, finish the four committed deep reads (IDR-030, 034, 039A, 055) and the pinned CS-GO/OSH checks; not blanket full reads of every plan/report |
 | 4. End-to-end scenarios | Selected analysis exists | Account for the approved capability workflows and consequential failures/security/provenance boundaries |
 | 5. Verification quality | Selected checks exist | Assess independent expected answers, meaningful failure detection and appropriate real-system checks across the planned capabilities |
 | 6. Implementation issues | 18 of 286 bodies documented as read; targeted reviews only | Account for all issue-specific scope/acceptance checks and the complete dependency/coverage/sizing analysis; deduplicate identical boilerplate |

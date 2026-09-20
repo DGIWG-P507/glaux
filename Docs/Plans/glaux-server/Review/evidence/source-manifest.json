@@ -250,6 +250,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Research-deep-read-remainders slice 3: IDR-042 unread sections (3-4, 6, 7, 9, 10, 15, 16, 19-20), including the instructed re-test of the F-03 cache gap, which was reinforced (Pass 3c iteration 18)"
+    },
+    {
+      "name": "24-pass-3c-19-research-slice4-and-batch-queue.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-19",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "BFE12A3D4F7795FAE5B187FEC94B2E9B48AAC7CAC2B9A05840DE4A341FB8C776",
+      "original_bytes": 20578,
+      "published_sha256": "BFE12A3D4F7795FAE5B187FEC94B2E9B48AAC7CAC2B9A05840DE4A341FB8C776",
+      "published_bytes": 20578,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Research-deep-read-remainders slice 4: IDR-043 unread sections, with a confirmed F-17 instance; plus the construction of the complete 30-batch remaining queue recorded in batch_queue (Pass 3c iteration 19)"
     }
   ]
 }
