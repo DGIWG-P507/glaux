@@ -392,6 +392,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 28: batch 9 reopened as partial before any reading, its four omitted risks-and-open-questions sections read, the required section-by-section coverage comparison run which found one further omission, batch 9 then completed; followed by queue batch 10, key-section screen E over IDR-021 to IDR-025. Withdraws the iteration 27 characterization of R-017-09 as half adopted. Records four further accepted sources, a stated mechanism and the first named owners for the F-03 cache instance"
+    },
+    {
+      "name": "34-pass-3c-29-batch11-storage-query-and-write-boundaries.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "D3F15F9ACDFF17954780F178EC50EF45D3C066C310DB676A83BE3C5E34ECCD60",
+      "original_bytes": 17943,
+      "published_sha256": "D3F15F9ACDFF17954780F178EC50EF45D3C066C310DB676A83BE3C5E34ECCD60",
+      "published_bytes": 17943,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 29, queue batch 11, key-section screen F over IDR-026, IDR-027, IDR-028, IDR-032 and IDR-033. Records three new F-17 instances, withdraws the iterations 27 and 28 F-17 bound as wrongly computed and replaces it with an enumerated population of at least eleven accepted reports, adds four accepted sources to the F-03 cache instance including the rule stated in the finding own terms, and bounds fq-12 to a list of 25 accepted reports with no Guide reference marker while withdrawing the iteration 28 contrast"
     }
   ]
 }
