@@ -406,6 +406,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 29, queue batch 11, key-section screen F over IDR-026, IDR-027, IDR-028, IDR-032 and IDR-033. Records three new F-17 instances, withdraws the iterations 27 and 28 F-17 bound as wrongly computed and replaces it with an enumerated population of at least eleven accepted reports, adds four accepted sources to the F-03 cache instance including the rule stated in the finding own terms, and bounds fq-12 to a list of 25 accepted reports with no Guide reference marker while withdrawing the iteration 28 contrast"
+    },
+    {
+      "name": "35-pass-3c-30-batch12-platform-streaming-and-deployment.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "56A80E151F1A63C29AADC87305E04987CA851880A404A196A96E4E989D40E810",
+      "original_bytes": 17521,
+      "published_sha256": "56A80E151F1A63C29AADC87305E04987CA851880A404A196A96E4E989D40E810",
+      "published_bytes": 17521,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 30, queue batch 12, key-section screen G over IDR-035, IDR-044, IDR-045, IDR-046, IDR-047 and IDR-048. Records three new F-17 instances found under wordings the iteration 29 pattern did not match, re-runs the whole-corpus scan to a converged 16 of 67, specifies the F-17 remedy from the IDR-026 model closing sentence, records IDR-035 as the most completely adopted report in the review including its pinned upstream commit and all five profile deviations, and adds a second accepted source to fq-09. IDR-044 moves from partial to screened, leaving no partial research report outstanding"
     }
   ]
 }
