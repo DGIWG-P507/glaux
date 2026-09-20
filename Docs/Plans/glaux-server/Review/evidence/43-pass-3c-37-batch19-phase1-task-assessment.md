@@ -152,3 +152,22 @@ These are not the same thing and neither substitutes for the other. The thirteen
 **Where the corrected figures are recorded.** `backlog_analysis.issue_read_count` in the review state now carries the unique count, its derivation from IDs, the named overlap, and the separate fully-assessed count. The 24 per-issue entries for #3-#26 carry this report as an evidence pointer, with the five overlapping entries retaining their earlier pointers alongside.
 
 Recorded in [44-pass-3c-38-batch20-phase2-task-assessment.md](44-pass-3c-38-batch20-phase2-task-assessment.md), Section 1.
+
+---
+
+## Appendix B - Correction appended in iteration 39 (September 20, 2026)
+
+Everything above Appendix A is the report as authored in iteration 37. Appendix A was added in iteration 38. This appendix corrects two further statements and is added so that a reader of this report alone finds them.
+
+**1. The targeted-only count is 12, not thirteen.** Appendix A says "The thirteen issues read in earlier passes outside #3-#26 were read for targeted checks." That subtracted only the five issues overlapping this batch. Issue **#56** also carries prior evidence and falls inside the range batch 20 later assessed, so six of the eighteen prior-evidence issues sit inside the assessed ranges and **twelve** sit outside: #71, #72, #98, #99, #104, #130, #156, #163, #164, #168, #174 and #240. The figures now reconcile exactly: 55 assessed + 12 targeted-only = 67 unique.
+
+**2. Section 4's counts do not measure the boundary F-12 records, and the framing there is withdrawn.** Section 4 presents six tasks as stating "the actual-side independence boundary" and treats that as measuring F-12's residual. That conflates two different rules.
+
+- **Expected-answer independence:** do not derive the expected answer from the server's own output. This is what nearly all the cited wording says, including "not by converting the serializer's output into an oracle", "not server output", "self-generated golden" and "independently of server decoding".
+- **F-12's actual residual:** whether a runner may *interpret the actual response* by deserializing it into the production crate's own wire types, while holding an independently authored expectation. That is a separate question, and almost none of the cited wording addresses it.
+
+The six examples are real and good practice, but they evidence the first rule, not the second. They are retained as observations about oracle discipline in the work instructions and are **not** a measurement of F-12's boundary.
+
+**F-12 itself is unchanged and is not weakened.** It rests on the Guide-text analysis recorded in iteration 34: Guide line 901 forbids the server's serializers *as the sole oracle* and permits *ordinary* format libraries, and a production DTO is neither, so the sentence does not settle the question. That basis is untouched by this correction.
+
+Recorded in [45-pass-3c-39-batch21-task-assessment.md](45-pass-3c-39-batch21-task-assessment.md), Section 1.

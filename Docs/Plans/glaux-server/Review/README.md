@@ -10,7 +10,17 @@
 2. Read **instructions.md**, especially the rule for recording disagreements without interrupting coverage.
 3. Use **current_work** in **review-state.json** to resume the exact unfinished step or next batch, and **batch_queue** in the same file to see the whole numbered remainder. Do not reload every archived response.
 
-The last substantive reviewer response is **Pass 3c, iteration 38**, which reconciled the previous batch's records and then executed queue batch 20.
+The last substantive reviewer response is **Pass 3c, iteration 39**, which made two corrections and then executed queue batch 21.
+
+**A counting claim is withdrawn, and not replaced.** The two previous responses tallied tasks said to state the boundary the response-interpretation finding records, and compared the tallies to conclude a pattern search missed about half of them. Those tallies ran two different rules together: not deriving your expected answer from the server's output, which is what the quoted wording nearly always says, and whether a test may decode the actual response using the production code's own types, which is the open question. Since neither tally counted the second, no ratio between them meant anything. No replacement count is needed, because a corpus count was never going to answer it, which is why the finding rests on reading a single sentence in the conformance rules. The finding itself is unchanged and is not weakened.
+
+The targeted-only issue count is corrected to 12, so the figures reconcile exactly: assessed plus targeted-only equals unique read.
+
+**All 31 Phase 2b tasks are adequate**, bringing the total to 86 assessed with none found inadequate. The tasks are notable for refusing research the Guide superseded, for building genuinely discriminating spatial cases, and for modelling the Guide's documented paging choice rather than contradicting it.
+
+**The abstract-test finding narrowed.** Its owning task forbids exactly the wrong route inference and forbids importing server traversal logic into the conformance runner, so the guard is in place. What is still missing is the documented adaptation itself, which remains fixture content owned by that task rather than a gap in the Guide.
+
+The previous response, **iteration 38**, assessed the 31 Phase 2a tasks.
 
 **The issue read count published last time was wrong.** It reported 42, which came from adding one batch's 24 to the 18 recorded before it without removing the five issues counted twice. The correct figure is **37**. It is now derived from distinct issue IDs rather than from adding batch totals, and that derivation earned its keep immediately: it caught a second overlap in this batch before publication rather than after.
 
@@ -18,7 +28,7 @@ Two measures are now kept apart, because they answer different questions. Sixty-
 
 **All 31 Phase 2a tasks are adequate**, bringing the assessed total to 55 with none found inadequate. Three habits recur and each answers a concern this review holds: the tasks refuse to invent rules the source does not contain, they construct discriminating rather than confirming test cases, and they tie to specific Guide lines rather than gesturing at sections.
 
-**The response-interpretation finding now has a measured rate.** Reading finds the boundary stated in 12 of the 55 tasks assessed, about 22 percent. A pattern search across all 286 finds 28, about 10 percent. So the pattern under-detects by roughly half, which is the third confirmation that the corpus figure is a floor rather than a count.
+**A counting claim about the response-interpretation finding is withdrawn.** Two previous responses tallied tasks said to state the boundary that finding records, and compared the tallies to conclude a pattern search misses about half of them. Those tallies ran two different rules together: not deriving your expected answer from the server's output, which is what the quoted wording nearly always says, and whether a test may decode the actual response using the production code's own types, which is the open question. Since neither tally counted the second, no ratio between them means anything, and no replacement count is needed. The finding itself is unchanged and rests where it always did, on a single sentence in the conformance rules that forbids the server's serializers as the sole oracle and permits ordinary format libraries, while a production type is neither.
 
 A fourth defect in the review's own saved state was corrected before assessing: a batch title claimed a split at capability-group boundaries that does not exist. A contiguity check across all eight issue batches confirmed no issue is orphaned.
 
@@ -140,15 +150,15 @@ Batch 9 then produced the strongest result the relation-spelling finding has had
 
 The batch also produced a useful negative result. All six reports screened record their acceptance correctly, which bounds **F-17** as a residue in particular reports rather than a systemic practice. And it produced the clearest example yet of accepted research whose central mechanism is deliberately not adopted: the provenance report asks for a PROV evidence graph, and the project declines it three times on the record while adopting the obligations the report derives. No new finding number and no new follow-up question.
 
-Every remaining finish condition is mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, 20 done, 7 remaining.** Baseline, standards, research, scenarios and verification are complete; the rest cover the issue backlog and the final assessment. It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
+Every remaining finish condition is mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, 21 done, 6 remaining.** Baseline, standards, research, scenarios and verification are complete; the rest cover the issue backlog and the final assessment. It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
 
 Iteration 20 corrected two accounting problems in that queue. Issue fidelity is now established by comparing all 286 issues against their Roadmap leaves rather than by sampling 18 of them, since a sample cannot establish complete coverage; the environment was checked first to confirm a complete comparison is achievable. The six partial reports left out of the first version are now assigned to the cluster batches that already cover their topics, reusing their recorded evidence and screening only unread sections, with no batch added for them. Three issue batches were combined because the complete comparison lets matching leaf content be reused instead of reviewed twice, which is what moved the count from 30 to 27. The count is a workload estimate with six recorded uncertainties, not a quota and not a completion guarantee.
 
 The one evidenced Guide gap from the research remainder slices remains the response-cache instance under **F-03**, which now rests on six accepted reports and, since iteration 25, reads as a partial adoption of one numbered recommendation rather than an unspecified area. Everything else in those four slices was either adopted or a recorded scope choice.
 
-The record has **22 finding IDs, including two withdrawals**, with subsequent qualifications preserved. No standards check is outstanding. **67 of 286** issue bodies are documented as read by a reviewer, derived from distinct issue IDs, and **55** tasks have been assessed for scope and acceptance adequacy; all 286 have been fetched and compared mechanically.
+The record has **22 finding IDs, including two withdrawals**, with subsequent qualifications preserved. No standards check is outstanding. **96 of 286** issue bodies are documented as read by a reviewer, derived from distinct issue IDs, and **86** tasks have been assessed for scope and acceptance adequacy; the other 10 read issues carry targeted checks only. All 286 have been fetched and compared mechanically.
 
-The next selected batch is **batch 21 of 27**: issues #58 to #88, beginning mid-group with the last child of capability group 2.3. The machine state is authoritative for that cursor as review continues.
+The next selected batch is **batch 22 of 27**: issues #89 to #127. The machine state is authoritative for that cursor as review continues.
 
 ## What lives here
 

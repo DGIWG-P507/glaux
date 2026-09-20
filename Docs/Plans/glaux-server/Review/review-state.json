@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-20",
-  "latest_report": "Pass 3c iteration 38 (batch 19 reconciled and read count corrected to 37 on a unique-ID basis, then batch 20; all 31 tasks adequate, F-12 pattern shown to under-detect by half)",
+  "latest_report": "Pass 3c iteration 39 (targeted-only count corrected to 12 and F-12 tallies withdrawn as a conflation, then batch 21; all 31 tasks adequate, F-09 guard found in issue #81)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -1377,254 +1377,314 @@
     {
       "number": 58,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/58",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 59,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/59",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 60,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/60",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 61,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/61",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 62,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/62",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 63,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/63",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 64,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/64",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 65,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/65",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 66,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/66",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 67,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/67",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 68,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/68",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 69,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/69",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 70,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/70",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 71,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/71",
       "full_body_read_reported": true,
-      "review_status": "targeted_prior_review",
+      "review_status": "scope_and_acceptance_assessed_batch21",
       "evidence": [
-        "evidence/06-pass-3c-02.txt"
+        "evidence/06-pass-3c-02.txt",
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
       ],
-      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 72,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/72",
       "full_body_read_reported": true,
-      "review_status": "targeted_prior_review",
+      "review_status": "scope_and_acceptance_assessed_batch21",
       "evidence": [
-        "evidence/06-pass-3c-02.txt"
+        "evidence/06-pass-3c-02.txt",
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
       ],
-      "conclusion_or_remaining_question": "Prior targeted checks are recorded; complete issue-specific scope/dependency/acceptance assessment is not established. Reuse those checks."
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 73,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/73",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 74,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/74",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 75,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/75",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 76,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/76",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 77,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/77",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 78,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/78",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 79,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/79",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 80,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/80",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 81,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/81",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started. F-09 NOTE: this is the finding recorded affected work. Its exclusions forbid inferring routes by appending item IDs to every nested list and forbid importing server traversal logic into the conformance runner, so it carries the guard against the wrong route inference. What it does not supply is the documented deployedSystems adaptation itself under Guide line 909. F-09 residual is narrower but not closed, and remains fixture content owned by this issue rather than a Guide gap."
     },
     {
       "number": 82,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/82",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 83,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/83",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 84,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/84",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 85,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/85",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 86,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/86",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 87,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/87",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 88,
       "url": "https://github.com/DGIWG-P507/glaux-server/issues/88",
-      "full_body_read_reported": false,
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Issue-specific review not recorded. Examine unique scope, prerequisites and verification when selected; do not reread identical boilerplate."
+      "full_body_read_reported": true,
+      "review_status": "scope_and_acceptance_assessed_batch21",
+      "evidence": [
+        "evidence/45-pass-3c-39-batch21-task-assessment.md"
+      ],
+      "conclusion_or_remaining_question": "Assessed in full as one unit in iteration 39 (queue batch 21): deliverable, exclusions, prerequisites and environment constraints, acceptance criteria and verification approach together, against Guide v1.3 and the findings register. Result: scope and acceptance criteria ADEQUATE; no gap evidenced against a named Guide line. Execution is not assessed: the issue remains open with an Execution record reading Not started."
     },
     {
       "number": 89,
@@ -3372,24 +3432,25 @@
     "per_task_assessment": {
       "status": "in_progress",
       "assessed_batches": [
-        "19 (Phase 1, issues #3-#26, iteration 37)",
-        "20 (Phase 2a, issues #27-#57, iteration 38)"
+        "19 (Phase 1, #3-#26, iteration 37)",
+        "20 (Phase 2a, #27-#57, iteration 38)",
+        "21 (Phase 2b, #58-#88, iteration 39)"
       ],
-      "assessed_count": 55,
-      "remaining_count": 231,
-      "remaining_issues": "#58 to #288, covered by batches 21 to 26",
-      "result_so_far": "All 55 assessed tasks adequate against the Guide. No task scope or acceptance criteria found inadequate; no new finding number and no new follow-up question across batches 19 and 20.",
+      "assessed_count": 86,
+      "remaining_count": 200,
+      "remaining_issues": "#89 to #288, covered by batches 22 to 26",
+      "result_so_far": "All 86 assessed tasks adequate against the Guide across batches 19, 20 and 21. No task scope or acceptance criteria found inadequate; no new finding number and no new follow-up question.",
       "shared_passages_assessed_once": [
         "Version-pinning construction in the Sources section, assessed in iteration 37 and CARRIED TO ALL 286. All 286 cite Guide v1.2 and Goal v1.7 while current are v1.3 and v1.8, and the Roadmap reference varies v1.1 to v1.9 across thirteen planning commits. SOUND for four inspected reasons: the drift is disclosed and instructed by the issues themselves; 2363 commit-pinned blob links across 286 issues mean every Guide and Roadmap reference resolves to the text it was written against; exactly 286 blob/main links exist and all are the CONTRIBUTING guide where currency is what a contributor needs; and Guide v1.3 changed the Section 1.1 anchors, which ZERO issues cite. Not a finding.",
         "Common completion checklist and Execution record, assessed in iteration 35 (batch 17), one variant each across all 286. Carries the Guide Section 8.1.1 false-green and independent-expected-results rules into every unit of work. CORRECTED in iteration 37: it does NOT carry the actual-side response-interpretation boundary, because its phrase is use independent expected RESULTS, which is the expectation side."
       ],
       "unique_read_note": "Unique reviewer-read issue count after batch 19 is 37, derived from distinct issue IDs. The 24 fully assessed tasks are a separate and stricter measure.",
-      "f12_measurement": "Tasks stating the actual-side independence boundary: 6 of 24 in batch 19, 6 of 31 in batch 20, so 12 of 55 assessed, about 22 percent. A pattern search across all 286 finds 28, about 10 percent, so the pattern under-detects by roughly half. That is the THIRD independent confirmation that the corpus figure is a lower bound; the first two came from widening the pattern twice inside batch 19."
+      "f12_measurement": "WITHDRAWN IN ITERATION 39. The tallies recorded in iterations 37 and 38, 12 of 55 assessed against 28 of 286 by pattern, and the inference that the pattern under-detects by roughly half, are withdrawn. Both counts measured a conflated category: expected-answer independence, meaning do not derive the expected answer from server output, rather than F-12 residual, which is whether a runner may interpret the ACTUAL response through production wire types while holding an independent expectation. Almost none of the cited wording addresses the second. No ratio between the counts supports a claim about detection and NO REPLACEMENT CENSUS IS NEEDED, because a corpus count cannot answer the question. The quoted examples are accurate and are retained as observations about oracle discipline in the work instructions. F-12 itself is unchanged and not weakened; it rests on the iteration 34 Guide-text analysis of line 901."
     },
     "issue_read_count": {
-      "unique_reviewer_read": 67,
-      "derivation": "Derived from distinct issue IDs carrying a reviewer evidence pointer, never by adding batch totals. History: 18 before batch 19; batch 19 read #3-#26 with FIVE overlapping the prior set (#3, #15, #19, #21, #22), giving 37; batch 20 read #27-#57 with ONE overlapping the prior set (#56), giving 67.",
-      "fully_assessed_tasks": 55,
+      "unique_reviewer_read": 96,
+      "derivation": "Derived from distinct issue IDs carrying a reviewer evidence pointer, never by adding batch totals. History: 18 before batch 19; batch 19 read #3-#26 with five overlaps (#3, #15, #19, #21, #22) giving 37; batch 20 read #27-#57 with one overlap (#56) giving 67; batch 21 read #58-#88 with two overlaps (#71, #72) giving 96.",
+      "fully_assessed_tasks": 86,
       "fully_assessed_scope": "Batch 19 (24 tasks, #3-#26) and batch 20 (31 tasks, #27-#57), each assessed for scope and acceptance adequacy. A STRICTER AND DIFFERENT MEASURE from the unique read count: the 13 issues read in earlier passes outside #3-#57 were read for targeted checks, not assessed for adequacy.",
       "mechanically_compared": 286,
       "note": "Corrected in iteration 38. Iteration 37 published 42 by adding 18 and 24 without removing the five-issue overlap. Evidence report 43 is preserved with the correction appended as its Appendix A.",
@@ -3403,8 +3464,26 @@
         ],
         "batch20": [
           56
+        ],
+        "batch21": [
+          71,
+          72
         ]
-      }
+      },
+      "targeted_only": 10,
+      "targeted_only_issues": [
+        98,
+        99,
+        104,
+        130,
+        156,
+        163,
+        164,
+        168,
+        174,
+        240
+      ],
+      "reconciliation": "86 assessed + 10 targeted-only = 96 unique. The targeted-only set shrinks as assessment batches absorb earlier-read issues; it was 12 after batch 20 and is 10 after batch 21."
     }
   },
   "review_areas": [
@@ -3601,11 +3680,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 38 (batch 19 reconciliation and read-count correction, then queue batch 20)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 39 (targeted-only correction and F-12 tally withdrawal, then queue batch 21)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 38 reconciled the batch 19 records, corrected the read count to a unique-ID basis, corrected the batch 20 boundary claim, assessed all 31 batch 20 tasks and published this checkpoint. Batch 21 has not been started. Remaining per-task assessment: issues #58 to #288, 231 tasks, batches 21 to 26.",
+    "unfinished_step": "None. Iteration 39 corrected the targeted-only count, withdrew the F-12 tallies, assessed all 31 batch 21 tasks and published this checkpoint. Batch 22 has not been started. Remaining per-task assessment: issues #89 to #288, 200 tasks, batches 22 to 26.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3638,16 +3717,17 @@
       "evidence/41-pass-3c-35-batch17-leaf-to-issue-comparison.md",
       "evidence/42-pass-3c-36-batch18-dependency-coverage-sizing.md",
       "evidence/43-pass-3c-37-batch19-phase1-task-assessment.md",
-      "evidence/44-pass-3c-38-batch20-phase2-task-assessment.md"
+      "evidence/44-pass-3c-38-batch20-phase2-task-assessment.md",
+      "evidence/45-pass-3c-39-batch21-task-assessment.md"
     ],
     "next_batch": {
-      "title": "Batch 21 of 27: issues #58 to #88",
+      "title": "Batch 22 of 27: issues #89 to #127",
       "check_ids": [],
-      "source_scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #58-#88 (31 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it. BEGINS MID-GROUP: issue #58 is leaf 2.3.10, the last child of group 2.3, because batch 20 stopped at #57. Groups 2.4, 2.5 and 2.6 follow in full. REUSE the preserved snapshot; do not re-fetch. Work in small groups and record assessed tasks, findings and exact remaining issue numbers after each, so an interrupted session resumes from the first unassessed task. REUSE WITHOUT REPEATING: the shared version-pinning passage (iteration 37), the shared boilerplate (iteration 35 with the iteration 37 correction), the verification strategy (iteration 34), and the F-12 measurement method (iterations 37 and 38). Assess each task as one unit. Raise a finding only where a gap is evidenced against a named Guide line or a recorded finding. CARRY FORWARD: count how many tasks state the actual-side independence boundary and update the running figure, currently 12 of 55 assessed against 28 of 286 by pattern, with the pattern known to under-detect by roughly half.",
-      "stop_condition": "Account for every task in the batch; state for each whether its scope and acceptance criteria are adequate; reuse shared-passage assessments rather than repeating them; update the unique read count from issue IDs and keep it distinct from the fully-assessed count; state whether any carried follow-up question or finding gained evidence; mark batch_queue entry 21 done only when all its tasks are accounted for, and set entry 22 as next; save and publish the checkpoint.",
+      "source_scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #89-#127 (39 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it. REUSE the preserved snapshot; do not re-fetch. Work in small groups at Roadmap capability-group boundaries and record assessed tasks, findings and exact remaining issue numbers after each, so an interrupted session resumes from the first unassessed task. REUSE WITHOUT REPEATING: the shared version-pinning passage (iteration 37), the shared boilerplate (iteration 35, corrected iteration 37), the verification strategy (iteration 34). DO NOT reintroduce a tally of tasks said to state the F-12 boundary: iteration 39 withdrew those counts as a conflation of expected-answer independence with the actual-response-interpretation question, and no replacement census is wanted. Observations about oracle discipline may be recorded qualitatively without being presented as a measurement of F-12. Assess each task as one unit. Raise a finding only where a gap is evidenced against a named Guide line or a recorded finding. Derive the unique read count from issue IDs and name any overlaps.",
+      "stop_condition": "Account for every task in the batch; state for each whether its scope and acceptance criteria are adequate; reuse shared-passage assessments rather than repeating them; derive the unique read count from issue IDs, name the overlaps and keep it distinct from the fully-assessed count; state whether any carried follow-up question or finding gained evidence; mark batch_queue entry 22 done only when all its tasks are accounted for, and set entry 23 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 21 of 27; 7 remain. Per-task assessment: 55 of 286 done, 231 remaining across batches 21 to 26. Batch 27 is the final assessment."
+    "queue_pointer": "batch_queue.queue entry 22 of 27; 6 remain. Per-task assessment: 86 of 286 done, 200 remaining across batches 22 to 26. Batch 27 is the final assessment."
   },
   "batch_history": [
     {
@@ -4240,6 +4320,28 @@
       ],
       "next_work": "Batch 21 of 27: issues #58 to #88, beginning with leaf 2.3.10 (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 39: corrected the targeted-only count to 12, withdrew the F-12 tallies published in iterations 37 and 38 as a conflation of two different rules, then executed batch 21, issues #58 to #88, in four groups. Preserved evidence reports 43 and 44 and appended the corrections to each. Assessed each task as one unit. Used the preserved snapshot; made no network request and re-fetched nothing. Added the iteration evidence report and its manifest entry.",
+      "coverage_completed": [
+        "targeted-only count corrected to 12, reconciling 55 assessed + 12 = 67 unique at that point",
+        "F-12 tallies and the under-detection inference withdrawn; no replacement census",
+        "batch 21 complete: all 31 tasks assessed, issues #58 to #88"
+      ],
+      "material_points": [
+        "TARGETED-ONLY COUNT CORRECTED TO 12. Reports 43 and 44 said thirteen, having subtracted only the five batch 19 overlaps and not #56. Six of the eighteen prior-evidence issues sit inside the assessed ranges and twelve outside: #71, #72, #98, #99, #104, #130, #156, #163, #164, #168, #174 and #240. After batch 21 the targeted-only set shrinks to ten, because #71 and #72 are now assessed.",
+        "F-12 TALLIES WITHDRAWN. Iterations 37 and 38 counted tasks said to state the actual-side independence boundary, reported 12 of 55 against 28 of 286 by pattern, and inferred the pattern under-detects by roughly half. Both counts measured a CONFLATED CATEGORY. Expected-answer independence, meaning do not derive the expected answer from server output, is what nearly all the quoted wording says. F-12 residual is whether a runner may interpret the ACTUAL response by deserializing it into production wire types while holding an independent expectation, and almost none of the wording addresses that. Since neither tally counted the boundary in question, no ratio between them supports a detection claim. NO REPLACEMENT CENSUS: a corpus count cannot answer this, which is why the finding rests on text analysis. The quoted examples are accurate and are retained as observations about oracle discipline.",
+        "F-12 ITSELF UNCHANGED AND NOT WEAKENED. It rests where iteration 34 put it, on Guide line 901 forbidding the server serializers as the SOLE oracle while permitting ORDINARY format libraries, with a production DTO being neither. That basis never depended on the withdrawn counts.",
+        "ALL 31 BATCH 21 TASKS ADEQUATE. #67 and #84 require deriving expectations from the Guide and not from superseded mandatory-header research, writing the review own research-versus-adoption distinction into the work instructions. #76 seeds a candidate whose bounding box overlaps but whose actual geometry does not and requires the exact predicate to exclude it, matching Guide 442 and 521. #78 compares scripted inserts and deletes against an independently authored changing-view model and excludes any cross-request snapshot guarantee, the task-level counterpart of the Guide 444 departure recorded as a stated non-adoption. #79 changes hidden resources while holding the permitted view fixed, matching Guide 610 and 975. #77 forbids replacing source validity with receipt or commit time, matching Guide 376.",
+        "F-09 OWNING TASK CARRIES THE GUARD. Issue #81, the finding recorded affected work, forbids inferring routes by appending item IDs to every nested list and forbids importing server traversal logic into the conformance runner, and requires deliberately wrong parents or missing descendants to be detected rather than copied from server output. Iteration 34 established that Guide 909 carries the general rule; #81 supplies the specific guard. What neither supplies is the documented deployedSystems adaptation itself recorded under 909. The residual is narrower but not closed and remains fixture content owned by #81 rather than a Guide gap. Disposition unchanged.",
+        "Group 2.6, the conformance-runner group, aligns with Guide 901 existing prohibition on importing server selection logic or serializers as the oracle. Recorded as an observation and explicitly NOT treated as evidence about the F-12 residual, per the clarification above.",
+        "No new finding number and no new follow-up question."
+      ],
+      "next_work": "Batch 22 of 27: issues #89 to #127 (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -4411,7 +4513,7 @@
   "batch_queue": {
     "created": "2026-09-19",
     "created_by": "Claude Code (Claude Opus 5) during Pass 3c iteration 19",
-    "revised": "2026-09-20 (iteration 38): batch 19 records reconciled, read count corrected to a unique basis, batch 20 boundary corrected and executed. Count unchanged at 27.",
+    "revised": "2026-09-20 (iteration 39): targeted-only count corrected, F-12 tallies withdrawn, batch 21 executed. Count unchanged at 27.",
     "purpose": "Finite numbered queue covering every remaining finish condition recorded in review_areas, remaining_checks and backlog_analysis. It is a cursor structure inside this state file, not a separate planning document, and it adds no scope.",
     "status_note": "This queue is a workload estimate, not a quota. Compatible batches are combined where feasible and the count is expected to move as evidence arrives.",
     "sizing_basis": "Each batch is sized against what iterations 16-20 actually absorbed: roughly 350-850 lines of source plus its Guide cross-checks. Research key-section batches group five to eight reports because a screen is lighter per line than a deep-read accounting. Issue batches follow Roadmap phase and group boundaries, which are the functional units.",
@@ -4436,7 +4538,8 @@
       "Iteration 35: 27 batches (17 done, 10 remaining). Batch 17 executed. The recorded largest sizing uncertainty is RESOLVED FAVOURABLY: the leaf-to-issue difference inventory is empty, so batches 19 to 26 are lighter than allowed for rather than heavier, and no batch is added.",
       "Iteration 36: 27 batches (18 done, 9 remaining). Batch 18 executed, completing the whole-backlog analysis. The phase-batch reuse rule was corrected before the analysis: batches 19 to 26 assess each task as one unit against the Guide and findings, reusing matching content as one shared copy rather than skipping it. Count unchanged; no batch added or removed.",
       "Iteration 37: 27 batches (19 done, 8 remaining). Batch 19 executed, the first per-task semantic assessment, covering all 24 Phase 1 tasks with none left unaccounted.",
-      "Iteration 38: 27 batches (20 done, 7 remaining). Batch 20 executed, all 31 tasks assessed. Read count placed on a unique-ID basis and corrected from 42 to 37, now 68 after this batch."
+      "Iteration 38: 27 batches (20 done, 7 remaining). Batch 20 executed, all 31 tasks assessed. Read count placed on a unique-ID basis and corrected from 42 to 37, now 68 after this batch.",
+      "Iteration 39: 27 batches (21 done, 6 remaining). Batch 21 executed, all 31 tasks assessed. Unique reviewer-read now 96; tasks fully assessed 86."
     ],
     "reuse_rules": [
       "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
@@ -4464,8 +4567,8 @@
       "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
     "total_batches": 27,
-    "done": 20,
-    "remaining": 7,
+    "done": 21,
+    "remaining": 6,
     "queue": [
       {
         "batch": 1,
@@ -4674,8 +4777,8 @@
         "scope": "Account for the issue-specific unique scope, prerequisites and verification criteria of issues #58-#88 (31 issues) against the Guide and the findings register. Use batch 17 difference inventory: content that matched its Roadmap leaf is reused, not reviewed again. Do not re-check boilerplate (batch 17) or re-derive dependencies (batch 18). REUSE RULE CLARIFIED IN ITERATION 36, BEFORE ANY PHASE BATCH RUNS. Iteration 35 wrote that batches 19 to 26 reduce to the content the issues add beyond their leaves. That was wrong and is withdrawn. Matching Roadmap content is reused as ONE SHARED COPY, not excluded from semantic review. The leaf Scope and Done text IS each task scope and acceptance criteria, so it must be assessed for adequacy against the Guide and the findings; batch 17 established only that it was copied faithfully, and MECHANICAL EQUALITY ALONE DOES NOT ESTABLISH ADEQUACY. What batch 17 removed is the need to re-read the same text 286 times and the need to reconcile issue against leaf, not the need to judge whether the scope and acceptance are right. Each task is assessed with its scope, its acceptance criteria and its added fields TOGETHER, as one unit, because the added Verification approach and Not included fields qualify the acceptance text and cannot be judged apart from it. Any substantive assessment already recorded for a task or for a shared passage is reused without repeating it.",
         "size_basis": "31 leaves, issues #58-#88; leaf 2.3.10 plus groups 2.4, 2.5 and 2.6 complete. Begins mid-group 2.3; see the batch 20 note.",
         "coverage_state": "genuinely_unreviewed",
-        "status": "queued",
-        "note": "Two already read: #71 and #72. Reuse those recorded reads rather than repeating them. BOUNDARY NOTE, iteration 38: this batch begins with leaf 2.3.10 at issue #58, the last child of group 2.3, because the batch 20 range stops at #57. Coverage is contiguous and complete; only the group-boundary claim was inaccurate."
+        "status": "done_iteration_39",
+        "note": "Two already read: #71 and #72. Reuse those recorded reads rather than repeating them. BOUNDARY NOTE, iteration 38: this batch begins with leaf 2.3.10 at issue #58, the last child of group 2.3, because the batch 20 range stops at #57. Coverage is contiguous and complete; only the group-boundary claim was inaccurate. EXECUTED IN ITERATION 39. All 31 tasks accounted for; batch complete. Issues #58 to #88 assessed in four groups: leaf 2.3.10 alone, then groups 2.4, 2.5 and 2.6 in full. ALL 31 ADEQUATE. Notable strengths: #67 and #84 require deriving expectations from the Guide and NOT from superseded mandatory-header research, which is the review own accepted-research-versus-adopted-mechanism distinction written into the work instructions; #76 seeds a candidate whose bounding box overlaps but whose geometry does not and requires the exact predicate to exclude it, matching Guide 442 and 521; #78 compares scripted changes against an independently authored CHANGING-VIEW model and excludes any cross-request snapshot guarantee, which is the task-level counterpart of the Guide 444 departure this review recorded as a stated non-adoption; #79 changes hidden resources while holding the permitted view fixed, matching Guide 610 and 975. F-09: its recorded affected work #81 is in this batch and CARRIES THE GUARD, forbidding route inference by appending item IDs to nested lists and forbidding import of server traversal logic into the conformance runner; what is still absent is the documented deployedSystems adaptation itself under Guide 909, so the residual is narrower but not closed and remains fixture content owned by #81. Group 2.6 aligns with Guide 901 existing prohibition and is recorded as an observation, NOT as F-12 evidence, per the iteration 39 clarification."
       },
       {
         "batch": 22,

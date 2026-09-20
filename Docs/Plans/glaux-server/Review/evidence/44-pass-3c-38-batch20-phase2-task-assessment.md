@@ -134,3 +134,28 @@ The corpus counts in §5 come from a pattern search whose under-detection is mea
 Evidence reports 31 through 42 are preserved unchanged. Report 43 is preserved with a correction appended as its Appendix A; its authored body is byte-for-byte unchanged.
 
 No implementation, Goal, Guide, Roadmap, issue or upstream change was made. Nothing was written to the implementation repository. `review_complete` remains `false`.
+
+---
+
+## Appendix A - Correction appended in iteration 39 (September 20, 2026)
+
+Everything above this rule is the report as authored in iteration 38 and is unchanged.
+
+**1. The targeted-only count is 12, not thirteen.** Section 1.2 says "The thirteen issues read in earlier passes outside #3-#57". Six of the eighteen prior-evidence issues fall inside the assessed ranges, #3, #15, #19, #21, #22 and #56, so **twelve** sit outside: #71, #72, #98, #99, #104, #130, #156, #163, #164, #168, #174 and #240. The figures reconcile exactly: 55 assessed + 12 targeted-only = 67 unique.
+
+**2. Section 5's "under-detects by roughly half" is withdrawn.** That inference compared a reading count of 12 in 55 against a pattern count of 28 in 286 and concluded the pattern misses about half. It does not hold, because **both counts measure the same conflated category rather than the boundary F-12 records.**
+
+Two rules were run together:
+
+| Rule | What it requires | Present in the cited wording |
+|---|---|---|
+| Expected-answer independence | Do not derive the expected answer from the server's own output | Yes, this is what nearly all of it says |
+| F-12's residual | Whether the runner may interpret the *actual response* through production wire types while holding an independent expectation | Almost never |
+
+Phrases such as "not by converting the serializer's output into an oracle", "self-generated golden" and "independently of server decoding" constrain where the expectation comes from. They do not say how the actual response may be decoded. Issue #14's "a successful round-trip through the same faulty conversion is insufficient" comes closest, and even it speaks to proof structure rather than to response interpretation in a contract test.
+
+So neither the 12 nor the 28 is a count of tasks addressing F-12's boundary, and no ratio between them supports a claim about detection. **The comparison, the percentages and the under-detection conclusion are withdrawn.** No replacement census is required or implied: the question was not one a corpus count could answer.
+
+**What stands.** The six examples in Section 5 are accurate quotations and good practice, retained as observations about oracle discipline in the work instructions. The batch 20 assessment result, all 31 tasks adequate, is unaffected. **F-12 is unchanged and not weakened**: it rests on the Guide-text analysis from iteration 34, that Guide line 901 forbids the server's serializers as the *sole* oracle and permits *ordinary* format libraries while a production DTO is neither. That basis never depended on these counts.
+
+Recorded in [45-pass-3c-39-batch21-task-assessment.md](45-pass-3c-39-batch21-task-assessment.md), Section 1.
