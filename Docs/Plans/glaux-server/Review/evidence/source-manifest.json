@@ -320,6 +320,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Queue batch 5, the committed deep read of IDR-055, including the IDR-039A handoff verification, the finding that IDR-055 is not accepted and its consequence for batch 16, and a fifth corroborating source for the F-03 response-cache instance (Pass 3c iteration 23)"
+    },
+    {
+      "name": "29-pass-3c-24-idr055-acceptance-correction-and-batch6.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "8C7D4963E442092106330D07A06385A6FB056F3894715BFC777508201111A5FB",
+      "original_bytes": 18342,
+      "published_sha256": "8C7D4963E442092106330D07A06385A6FB056F3894715BFC777508201111A5FB",
+      "published_bytes": 18342,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "IDR-055 acceptance correction appended to report 28 without rewriting it, including the reversal into a second F-17 instance and the replaced batch 16 caveat; and queue batch 6, key-section screen A over IDR-001 to IDR-007 (Pass 3c iteration 24)"
     }
   ]
 }
