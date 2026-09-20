@@ -562,6 +562,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 39: corrects the targeted-only issue count to 12, withdraws the F-12 tallies from iterations 37 and 38 as a conflation of expected-answer independence with the actual-response-interpretation question without replacing them, and executes queue batch 21, the assessment of issues #58 to #88, all 31 adequate. Records that F-09 owning task #81 carries the guard against the wrong route inference while the documented adaptation itself is still absent"
+    },
+    {
+      "name": "46-pass-3c-40-batch22-phase3-task-assessment.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "B8F84D537CD1FBE54C2C700732CDF9AAC01DB3AF9C75232A7A0B607D48E83C6B",
+      "original_bytes": 8157,
+      "published_sha256": "B8F84D537CD1FBE54C2C700732CDF9AAC01DB3AF9C75232A7A0B607D48E83C6B",
+      "published_bytes": 8157,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 40, queue batch 22, the Phase 3 per-task assessment of issues #89 to #127, all 39 adequate. Records that the latest-selection task matches Guide line 440 in full including tie retention, that F-19 is confirmed a second time because the Phase 3 restore task also omits audit, and that the counting record is now computed from the per-issue entries rather than maintained as prose arithmetic"
     }
   ]
 }
