@@ -378,6 +378,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 27: two bounded batch-8 corrections followed by queue batch 9. Correction A withdraws the iteration 26 claim that the unique-newest CS-GO latest fixture corroborates the broad-latest criticism. Correction B completes the omitted 102-line open-question screening of IDR-014C to IDR-014G. Batch 9 is key-section screen D over IDR-015 to IDR-020, whose material result is that IDR-017 R-017-08 states the relation-spelling rule F-11 asks for while Guide line 485 diverges from it"
+    },
+    {
+      "name": "33-pass-3c-28-batch9-completion-and-batch10.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "6C7691776B3250441C7203F0E3B99D5D8954F579C98DC4BAC0620D9EE5433290",
+      "original_bytes": 24395,
+      "published_sha256": "6C7691776B3250441C7203F0E3B99D5D8954F579C98DC4BAC0620D9EE5433290",
+      "published_bytes": 24395,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 28: batch 9 reopened as partial before any reading, its four omitted risks-and-open-questions sections read, the required section-by-section coverage comparison run which found one further omission, batch 9 then completed; followed by queue batch 10, key-section screen E over IDR-021 to IDR-025. Withdraws the iteration 27 characterization of R-017-09 as half adopted. Records four further accepted sources, a stated mechanism and the first named owners for the F-03 cache instance"
     }
   ]
 }

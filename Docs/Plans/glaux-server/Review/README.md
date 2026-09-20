@@ -10,7 +10,17 @@
 2. Read **instructions.md**, especially the rule for recording disagreements without interrupting coverage.
 3. Use **current_work** in **review-state.json** to resume the exact unfinished step or next batch, and **batch_queue** in the same file to see the whole numbered remainder. Do not reload every archived response.
 
-The last substantive reviewer response is **Pass 3c, iteration 27**, which made two bounded corrections to the previous batch and then executed queue batch 9.
+The last substantive reviewer response is **Pass 3c, iteration 28**, which reopened the previous batch, finished it, and then executed queue batch 10.
+
+Batch 9 had been recorded as complete while assigned sections of four of its six reports were unread. It was reset to partial before anything was read, so the record was accurate about the gap while the gap was open, and the missing sections were then finished. The comparison against the saved scope that followed found one further omission, a decision register in a fifth report, which was also read. That comparison is now a published stop condition for every remaining screen batch rather than a stated intention, because this was the second batch running to be marked done with subsections unread.
+
+Finishing those sections corrected something. Iteration 27 had read one recommendation as half adopted, on the grounds that the Guide uses a URN where the research asks for an HTTPS namespace. The same report lists the final namespace URI as an open question routed to named owners, so the Guide chose inside an open question rather than departing from a settled rule. That characterization is withdrawn. The main relation-spelling result under **F-11** is unaffected and stands in full.
+
+Batch 10 then produced the strongest evidence the response-cache item under **F-03** has had. It had rested on reports about security, policy, testing and content negotiation, which left open whether the requirement was an artifact of those subject areas. Three reports about data contracts and storage state it independently, a fourth states the mechanism, which is recording the policy version with the cached representation, and a fifth names the two topics expected to settle the HTTP-layer part. The item now rests on ten accepted reports across five unrelated subject areas. Its substance, severity and remedy are unchanged and no escalation is proposed.
+
+Batch 10 is also the most closely adopted batch screened so far, with near-verbatim matches across persistence, migrations, schema resolution and unit handling, and all five of its reports are cited in the Guide. No new finding number and no new follow-up question.
+
+The previous response, **iteration 27**, made two bounded corrections to batch 8 and then executed queue batch 9.
 
 The first correction withdraws a claim. Iteration 26 reported that a peer project's test for the latest-value selector, which asserts that exactly one item comes back, corroborates the accepted research's criticism of that peer. It does not. The fixture seeds a single newest observation, so it never exercises tied timestamps at all, and nothing in it would distinguish a correct implementation from an incorrect one. What the test records is its author's expectation, not the server's behavior. The observation beside it survives untouched: the adjacent time-range test asserts only how many items came back and never which one, so it would pass if the wrong observation were returned. The earlier evidence report is preserved with its body unchanged and the correction appended to it, so a reader who has only that report still finds the correction.
 
@@ -20,7 +30,7 @@ Batch 9 then produced the strongest result the relation-spelling finding has had
 
 The batch also produced a useful negative result. All six reports screened record their acceptance correctly, which bounds **F-17** as a residue in particular reports rather than a systemic practice. And it produced the clearest example yet of accepted research whose central mechanism is deliberately not adopted: the provenance report asks for a PROV evidence graph, and the project declines it three times on the record while adopting the obligations the report derives. No new finding number and no new follow-up question.
 
-Every remaining finish condition is mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, 9 done, 18 remaining.** It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
+Every remaining finish condition is mapped to a finite numbered queue held in `batch_queue` of [review-state.json](review-state.json): **27 batches, 10 done, 17 remaining.** It covers the committed deep reads, a key-section screen of the reports whose read depth was never recorded, the end-to-end scenario pass, the verification-quality pass, the issue backlog and the final assessment, and it separates genuinely unreviewed work from coverage that was simply never recorded and from bookkeeping already corrected.
 
 Iteration 20 corrected two accounting problems in that queue. Issue fidelity is now established by comparing all 286 issues against their Roadmap leaves rather than by sampling 18 of them, since a sample cannot establish complete coverage; the environment was checked first to confirm a complete comparison is achievable. The six partial reports left out of the first version are now assigned to the cluster batches that already cover their topics, reusing their recorded evidence and screening only unread sections, with no batch added for them. Three issue batches were combined because the complete comparison lets matching leaf content be reused instead of reviewed twice, which is what moved the count from 30 to 27. The count is a workload estimate with six recorded uncertainties, not a quota and not a completion guarantee.
 
@@ -28,7 +38,7 @@ The one evidenced Guide gap from the research remainder slices remains the respo
 
 The record has **22 finding IDs, including two withdrawals**, with subsequent qualifications preserved. No standards check is outstanding, and **18 of 286** issue bodies are documented as read.
 
-The next selected batch is **batch 10 of 27**: the fifth key-section screen, covering the encoding, schema and validation reports. The machine state is authoritative for that cursor as review continues.
+The next selected batch is **batch 11 of 27**: the sixth key-section screen. The machine state is authoritative for that cursor as review continues.
 
 ## What lives here
 
@@ -50,7 +60,7 @@ The purpose is to finish the review, not maintain an endless reading queue. Reus
 |---|---|---|
 | 1. Baseline/planning documents | Completed at the recorded baseline | Reuse it; check relevant subsequent changes only |
 | 2. Standards | Complete for the carried checks: six carried groups closed (SWE quality, array flags, Features Part 3/CQL2 identifiers, SensorML class identifiers, IDR-011 Section 14.3 abstract-test rows, Part 2 Annex A.1 inheritance) and the F-13 extension question resolved | Met; later passes may raise targeted standards questions, each recorded in `remaining_checks` with evidence |
-| 3. Research and peer evidence | Partially complete; all four committed deep reads complete (18 reports fully read), key-section screens A to D done (27 more screened), and the pinned CS-GO/OSH checks complete; remaining work queued as batches 10-14 | Account for key findings/recommendations/open questions across 71 reports through the key-section sweep; not blanket full reads of every plan/report |
+| 3. Research and peer evidence | Partially complete; all four committed deep reads complete (18 reports fully read), key-section screens A to E done (32 more screened), and the pinned CS-GO/OSH checks complete; remaining work queued as batches 11-14 | Account for key findings/recommendations/open questions across 71 reports through the key-section sweep; not blanket full reads of every plan/report |
 | 4. End-to-end scenarios | Selected analysis exists | Account for the approved capability workflows and consequential failures/security/provenance boundaries |
 | 5. Verification quality | Selected checks exist | Assess independent expected answers, meaningful failure detection and appropriate real-system checks across the planned capabilities |
 | 6. Implementation issues | 18 of 286 bodies documented as read; targeted reviews only | Account for all issue-specific scope/acceptance checks and the complete dependency/coverage/sizing analysis; deduplicate identical boilerplate |
