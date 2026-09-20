@@ -420,6 +420,20 @@
       "publication_change": "none_byte_identical",
       "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
       "covers": "Pass 3c iteration 30, queue batch 12, key-section screen G over IDR-035, IDR-044, IDR-045, IDR-046, IDR-047 and IDR-048. Records three new F-17 instances found under wordings the iteration 29 pattern did not match, re-runs the whole-corpus scan to a converged 16 of 67, specifies the F-17 remedy from the IDR-026 model closing sentence, records IDR-035 as the most completely adopted report in the review including its pinned upstream commit and all five profile deviations, and adds a second accepted source to fq-09. IDR-044 moves from partial to screened, leaving no partial research report outstanding"
+    },
+    {
+      "name": "36-pass-3c-31-batch13-operations-fixtures-performance-interop.md",
+      "source_kind": "reviewer_authored_iteration_report",
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "original_sha256": "EE94393E041D9B365D56903A5C491A96EA21EDD365757FC5EB8DDE2ADFC3D1F0",
+      "original_bytes": 15628,
+      "published_sha256": "EE94393E041D9B365D56903A5C491A96EA21EDD365757FC5EB8DDE2ADFC3D1F0",
+      "published_bytes": 15628,
+      "publication_change": "none_byte_identical",
+      "line_endings": "LF as authored; no workstation paths or secrets were present, so no transformation was applied",
+      "covers": "Pass 3c iteration 31, queue batch 13, key-section screen H over IDR-049, IDR-051, IDR-053, IDR-054 and IDR-056. Enumerates a second F-17 sub-form, reports with no acceptance header fields at all, which no earlier scan could detect and which is the form that misled the review in iteration 23. Complete two-form population is 20 of 67 with a changed severity ordering, IDR-053 and IDR-054 being the worst case. Corrects the F-17 record for IDR-052. Records two stated non-adoptions and adds two accepted sources to F-12"
     }
   ]
 }

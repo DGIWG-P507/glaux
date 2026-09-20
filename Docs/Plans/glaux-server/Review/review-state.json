@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-09-20",
-  "latest_report": "Pass 3c iteration 30 (queue batch 12; three new F-17 instances and the converged scan at 16 of 67, with the remedy fully specified from IDR-026; IDR-035 recorded as the most completely adopted report in the review)",
+  "latest_report": "Pass 3c iteration 31 (queue batch 13; a second F-17 sub-form enumerated, complete population now 20 of 67 with a changed severity ordering)",
   "basis": "Reconstruction from supplied reports and recorded Codex qualifications; not a new technical audit or approval.",
   "planning_baseline": "a310eaee2e80bb861197822a3c5bb12164ca9ac3",
   "server_baseline_reported": "b1a80298305fd62164160058cde6d1794f533174",
@@ -674,11 +674,13 @@
     {
       "id": "IDR-049",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-049-migration-upgrade-backup-and-restore-strategy-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen H completed iteration 31 (queue batch 13). Section 17 Recommendations (12 items), Section 18 (18.1 risk register, 18.2 constraints, 18.3 open questions with owners) and the decision register at Section 7.1 read in iteration 31. Sections 1-16 and 19 onward not read. Not read for this screen and recorded as such: the executive summary and the validation-against-plan section. Accepted, September 16, 2026, with a correct acceptance header AND a correct closing statement; NO F-17 instance, and one of the cleanest records in the corpus. Recommendation 2, migrations only through an explicit same-image administrative command with serve never auto-migrating, is adopted near-verbatim at Guide 529. Recommendation 8, restore only into fresh isolated targets activated through an independently authorized fenced cutover, is adopted near-verbatim at Guide 529 and 531, which fences an old serving instance and forbids a test clone publishing or commanding as the original. Recommendation 9, never redispatch restored commands, is adopted at Guide 531. Recommendation 10, stable event IDs with lineage-bound cursors and explicit gap and resnapshot behavior, is adopted at Guide 531 through the recovery epoch. These are the Guide lines the F-19 restore instance already concerns; no change to that finding. The Guide cites this report at lines 515, 531 and 1202.",
+      "review_status": "key_sections_screened",
+      "evidence": [
+        "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md"
+      ],
+      "conclusion_or_remaining_question": "Screened, not fully read. No F-17 instance; records acceptance correctly in header and closing. No new finding. Recovery recommendations adopted near-verbatim at Guide 529 and 531."
     },
     {
       "id": "IDR-050",
@@ -694,40 +696,47 @@
     {
       "id": "IDR-051",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-051-requirement-to-test-traceability-strategy-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen H completed iteration 31 (queue batch 13). Section 17 Recommendations (16 items), Section 18 Risks, Constraints and Open Questions including the bounded open-question list, and the decision register at Sections 11.3 and 16.2 read in iteration 31. Sections 1-10, 12-15 and 19 onward not read. Not read for this screen and recorded as such: the executive summary and the validation-against-plan section. Accepted per the governance record. F-17 FORM B INSTANCE: no Accepted By and no Acceptance Date header fields, although the closing checklist at line 921 does record Accepted by Glaux Project Lead on September 16, 2026, which makes this the mildest Form B variant since the status is discoverable, just not where other reports put it. STATED NON-ADOPTION: the central mechanism, a normalized typed requirement-to-verification graph with constrained YAML sources and canonical JSON digests, is not adopted. The Guide contains no traceability mechanism at all and line 1118 declines it on two counts, naming both a graph/evidence database and a separate requirements/decision-document set. This is the same shape as the IDR-019 PROV graph from batch 9: a large accepted report whose architecture is deliberately declined on the record while its derived obligations are adopted. Those obligations are adopted: recommendation 8, never convert a normative deviation or waived failure into a conformance pass, at Guide 901-907 and 959; and recommendation 12, keep the oracle independent and do not let the service under test or issue labels self-grade coverage, at Guide 955 and 959, where a quarantined check remains an explicit evidence gap and not a pass. The Guide defines no R051 reference marker and cites this report nowhere; it is on the bounded fq-12 list and is the SECOND report found to be both uncited and to have its central mechanism declined, after IDR-019.",
+      "review_status": "key_sections_screened",
+      "evidence": [
+        "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md"
+      ],
+      "conclusion_or_remaining_question": "Screened, not fully read. F-17 Form B instance, mildest variant. No new finding. Traceability graph is a stated non-adoption at Guide 1118; its derived obligations are adopted."
     },
     {
       "id": "IDR-052",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-052-rust-test-driven-architecture-and-multi-layer-test-strategy-report.md",
       "documented_read_depth": "full",
-      "note": "Full read reported; not a claim of every assertion independently verified.",
+      "note": "Full read reported; not a claim of every assertion independently verified. F-17 ACCOUNTING CORRECTED IN ITERATION 31: this report is accepted per the governance record but carries NO Accepted By or Acceptance Date header fields. It is an F-17 Form B instance. The defect was never noted when this report was recorded as fully read, because the review had not yet enumerated the missing-header sub-form; the two scans built in iterations 29 and 30 searched only for stale closing wording. Its closing checklist at line 1025 does record Accepted by Glaux Project Lead on September 16, 2026, so this is the mildest Form B variant. Corrected here rather than left implying a clean result, as IDR-006 and IDR-014E were in iteration 29.",
       "review_status": "targeted_prior_review",
       "evidence": [
-        "evidence/06-pass-3c-02.txt"
+        "evidence/06-pass-3c-02.txt",
+        "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md"
       ],
       "conclusion_or_remaining_question": "Reuse the recorded full read and findings. Reconcile existing key-section dispositions without automatically rereading; record any substantive gap."
     },
     {
       "id": "IDR-053",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-053-test-data-fixtures-golden-files-and-scenario-corpus-strategy-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen H completed iteration 31 (queue batch 13). Section 16 Recommendations (15 items), Section 17 (17.1 risk register, 17.2 resolved plan questions, 17.3 open implementation decisions) and the decision register at Sections 7.1 and 7.4 read in iteration 31. Sections 1-6, 8-15 and 18 onward not read. Not read for this screen and recorded as such: the executive summary and the validation-against-plan section. Accepted per the governance record. F-17 FORM B INSTANCE, AND THE WORST VARIANT IN THE FINDING: no acceptance header fields, and the closing checklist at line 837 carries an UNCHECKED box reading Plan-owner acceptance and acceptance date recorded. The document does not merely omit the status; it affirmatively states acceptance has not been recorded while the governance ledger records it. A reader consulting this report alone would conclude it is unaccepted, which is exactly the error iteration 23 made with IDR-055. Recommendations 11 and 12, exact goldens only for deliberate lexical contracts and prohibiting CI snapshot acceptance with governed normalization, are adopted near-verbatim at Guide 955. Recommendation 5 and the live-endpoint risk row are adopted at Guide 944. Recommendations 7 and 10, partitioned fixtures and a synthetic first scenario, are adopted at Guide 944. MATERIAL FOR F-12: the risk row fixture output copied from server, with the consequence circular tests bless defects and the control independent expected facts and four-role separation, is a further accepted source for the independence boundary; Guide 955 already carries the rule. The Guide cites this report at lines 944, 952 and 1205.",
+      "review_status": "key_sections_screened",
+      "evidence": [
+        "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md"
+      ],
+      "conclusion_or_remaining_question": "Screened, not fully read. F-17 Form B instance and the WORST variant: an unchecked acceptance box asserting the opposite of the ledger. No new finding. Fixture recommendations adopted near-verbatim at Guide 944 and 955."
     },
     {
       "id": "IDR-054",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-054-performance-load-stress-and-streaming-test-strategy-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen H completed iteration 31 (queue batch 13). Section 17 Recommendations (15 items), Section 18 (18.1 risk register, 18.2 resolved plan questions, 18.3 open implementation and operational decisions) and the decision register at Section 15.2 read in iteration 31. Sections 1-14, 16 and 19 onward not read. Not read for this screen and recorded as such: the executive summary and the validation-against-plan section. Accepted per the governance record. F-17 FORM B INSTANCE, WORST VARIANT: no acceptance header fields, and the closing checklist at line 792 carries an UNCHECKED box reading Plan-owner acceptance and acceptance date recorded, asserting the opposite of the ledger. Recommendations 1 and 7, correctness-gated evidence on a stated environment and labelling quantities as project benchmark definitions rather than operational predictions, are adopted near-verbatim at Guide 989: record correctness alongside latency, memory and queue growth on a stated dataset and machine, and do not adopt invented production service levels or claim scale from a microbenchmark. STATED NON-ADOPTION: its pinned tool selections, k6, Criterion, Vegeta and others with exact versions, are not named in the Guide, which names a different set at line 962 for property, fuzz, mutation and coverage work and says to select and pin actual versions when their owning tasks establish compatibility, license and platform suitability. The Guide adopts the principles and defers the tool choices, the same practice recorded for IDR-044 in iteration 30. Not a defect. The Guide cites this report at lines 989 and 1206.",
+      "review_status": "key_sections_screened",
+      "evidence": [
+        "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md"
+      ],
+      "conclusion_or_remaining_question": "Screened, not fully read. F-17 Form B instance and WORST variant. No new finding. Performance principles adopted near-verbatim at Guide 989; tool pins deliberately deferred."
     },
     {
       "id": "IDR-055",
@@ -744,11 +753,13 @@
     {
       "id": "IDR-056",
       "path": "Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-056-interoperability-test-matrix-for-external-csapi-clients-report.md",
-      "documented_read_depth": "not_established_from_supplied_coverage",
-      "note": "Do not infer either a full read or that no incidental excerpt was ever seen.",
-      "review_status": "not_recorded",
-      "evidence": [],
-      "conclusion_or_remaining_question": "Do not infer either a full read or that no incidental excerpt was ever seen."
+      "documented_read_depth": "key_sections_screened",
+      "note": "Key-section screen H completed iteration 31 (queue batch 13). Section 17 Recommendations (14 items), Section 18 Risks, Constraints and Open Questions, and the Evidence and Decision Legend read in iteration 31. Sections 1-16 and 19 onward not read. Not read for this screen and recorded as such: the executive summary and the validation-against-plan section. Accepted per the governance record. F-17 INSTANCE IN BOTH FORMS: no acceptance header fields, and stale In Review wording at line 585. Already counted in the iteration 30 Form A list; the missing header is new information from this batch. Its risk row, a client assumption becoming a server contract controlled by a normative accepted oracle plus raw replay before attribution, is adopted near-verbatim at Guide 991: a client workaround is evidence of interoperability behavior, not permission to change the standard contract. Recommendations 2 and 11, pin exact client source and releases and never block on mutable public demos, are adopted at Guide 991 and 944. Recommendation 9, keeping MQTT and Part 3 a version-pinned outbound experimental lane separate from conformance, is adopted at Guide 268 and 549. MATERIAL FOR F-12: recommendation 6, treat curl and Rust transcripts as attribution oracles and not extra semantic-client votes, is a further accepted source for the independence boundary. The Guide cites this report at lines 991 and 1207.",
+      "review_status": "key_sections_screened",
+      "evidence": [
+        "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md"
+      ],
+      "conclusion_or_remaining_question": "Screened, not fully read. F-17 instance in BOTH forms. No new finding. Interoperability recommendations adopted near-verbatim at Guide 991."
     },
     {
       "id": "IDR-058",
@@ -3191,9 +3202,10 @@
         "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md",
         "evidence/33-pass-3c-28-batch9-completion-and-batch10.md",
         "evidence/34-pass-3c-29-batch11-storage-query-and-write-boundaries.md",
-        "evidence/35-pass-3c-30-batch12-platform-streaming-and-deployment.md"
+        "evidence/35-pass-3c-30-batch12-platform-streaming-and-deployment.md",
+        "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md"
       ],
-      "finish_condition": "Account for key findings/recommendations/open questions across all topic reports, committed consequential deep reads and remaining peer-source checks; reuse previous work. Progress: 18 reports fully read including all four committed deep reads; 43 reports screened at their key sections through clusters A to G; the pinned CS-GO and OpenSensorHub peer-source checks complete and closed. Remaining: key-section clusters H and I, queue batches 13 and 14. No partial research report remains."
+      "finish_condition": "Account for key findings/recommendations/open questions across all topic reports, committed consequential deep reads and remaining peer-source checks; reuse previous work. Progress: 18 reports fully read including all four committed deep reads; 48 reports screened at their key sections through clusters A to H; the pinned CS-GO and OpenSensorHub peer-source checks complete and closed. Remaining: key-section cluster I only, queue batch 14. No partial research report remains."
     },
     {
       "area": "scenarios",
@@ -3326,9 +3338,10 @@
         "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md",
         "evidence/33-pass-3c-28-batch9-completion-and-batch10.md",
         "evidence/34-pass-3c-29-batch11-storage-query-and-write-boundaries.md",
-        "evidence/35-pass-3c-30-batch12-platform-streaming-and-deployment.md"
+        "evidence/35-pass-3c-30-batch12-platform-streaming-and-deployment.md",
+        "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md"
       ],
-      "conclusion_or_remaining_question": "Systematic topic key-section accounting. Screen scope for every cluster batch: recommendations, risks and open questions, and any decision register, read in full including every subsection. Executive summaries and validation-against-plan sections are outside the screen and are recorded per report as not read. Cluster A closed in iteration 24 (batch 6): IDR-001 to IDR-007. Cluster B closed in iteration 25 (batch 7): IDR-009, IDR-010, IDR-010A, IDR-012, IDR-013, IDR-014. Cluster C closed in iteration 26 (batch 8) and completed in iteration 27 (Correction B), which read the 102 omitted Open Questions lines in IDR-014C to IDR-014G. Cluster D covered in iteration 27 (batch 9), REOPENED AS PARTIAL and COMPLETED in iteration 28, which read the 157 omitted risks-and-open-questions lines in IDR-016, IDR-017, IDR-018 and IDR-020 and, from the scope comparison, the omitted IDR-015 section 15 decision register. Cluster E closed in iteration 28 (batch 10): IDR-021, IDR-022, IDR-023, IDR-024, IDR-025. Cluster F closed in iteration 29 (batch 11): IDR-026, IDR-027, IDR-028, IDR-032, IDR-033. Cluster G closed in iteration 30 (batch 12): IDR-035, IDR-044, IDR-045, IDR-046, IDR-047, IDR-048. IDR-044 moved from partial to screened, so NO PARTIAL RESEARCH REPORT REMAINS. Remaining clusters: H (batch 13) and I (batch 14, which includes IDR-062). Next: cluster H, batch 13. This is the only open research check."
+      "conclusion_or_remaining_question": "Systematic topic key-section accounting. Screen scope for every cluster batch: recommendations, risks and open questions, and any decision register, read in full including every subsection. Executive summaries and validation-against-plan sections are outside the screen and are recorded per report as not read. Cluster A closed in iteration 24 (batch 6): IDR-001 to IDR-007. Cluster B closed in iteration 25 (batch 7): IDR-009, IDR-010, IDR-010A, IDR-012, IDR-013, IDR-014. Cluster C closed in iteration 26 (batch 8) and completed in iteration 27 (Correction B), which read the 102 omitted Open Questions lines in IDR-014C to IDR-014G. Cluster D covered in iteration 27 (batch 9), REOPENED AS PARTIAL and COMPLETED in iteration 28, which read the 157 omitted risks-and-open-questions lines in IDR-016, IDR-017, IDR-018 and IDR-020 and, from the scope comparison, the omitted IDR-015 section 15 decision register. Cluster E closed in iteration 28 (batch 10): IDR-021, IDR-022, IDR-023, IDR-024, IDR-025. Cluster F closed in iteration 29 (batch 11): IDR-026, IDR-027, IDR-028, IDR-032, IDR-033. Cluster G closed in iteration 30 (batch 12): IDR-035, IDR-044, IDR-045, IDR-046, IDR-047, IDR-048. IDR-044 moved from partial to screened, so NO PARTIAL RESEARCH REPORT REMAINS. Cluster H closed in iteration 31 (batch 13): IDR-049, IDR-051, IDR-053, IDR-054, IDR-056. Remaining cluster: I (batch 14): IDR-058, IDR-059, IDR-060, IDR-061 and IDR-062. Next: cluster I, batch 14, which is the LAST cluster; completing it closes this check. This is the only open research check."
     },
     {
       "id": "peer-source-spot-checks",
@@ -3342,11 +3355,11 @@
     }
   ],
   "current_work": {
-    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 30 (queue batch 12, key-section screen G, platform, streaming, architecture, deployment and configuration)",
+    "last_substantive_checkpoint": "Claude Code Pass 3c iteration 31 (queue batch 13, key-section screen H, operations, traceability, fixtures, performance and interoperability)",
     "provider": "Claude Code",
     "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration; iteration 16 ran on Claude Sonnet 5 in the same provider",
     "active_batch": null,
-    "unfinished_step": "None. Iteration 30 executed batch 12, published its coverage comparison, re-ran the converged F-17 scan and published this checkpoint. Batch 13 has not been started.",
+    "unfinished_step": "None. Iteration 31 executed batch 13, published its coverage comparison, enumerated the second F-17 sub-form and published this checkpoint. Batch 14 has not been started.",
     "evidence_already_obtained": [
       "evidence/02-pass-2.txt",
       "evidence/03-pass-3a.txt",
@@ -3371,18 +3384,19 @@
       "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md",
       "evidence/33-pass-3c-28-batch9-completion-and-batch10.md",
       "evidence/34-pass-3c-29-batch11-storage-query-and-write-boundaries.md",
-      "evidence/35-pass-3c-30-batch12-platform-streaming-and-deployment.md"
+      "evidence/35-pass-3c-30-batch12-platform-streaming-and-deployment.md",
+      "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md"
     ],
     "next_batch": {
-      "title": "Batch 13 of 27: key-section screen H",
+      "title": "Batch 14 of 27: key-section screen I, the final research cluster",
       "check_ids": [
         "research-key-section-sweep"
       ],
-      "source_scope": "Screen the key sections of: IDR-049, IDR-051, IDR-053, IDR-054, IDR-056. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report. SCREEN SCOPE, reconciled in iteration 28: recommendations, risks and open questions, and any decision register, each read IN FULL INCLUDING EVERY SUBSECTION. Stopping at the first subsection of a risks-and-open-questions section is the specific error that required corrections in iterations 27 and 28. Executive summaries and validation-against-plan sections are outside the screen and must be recorded per report as not read: a validation-against-plan section is a report self-assessment against its own research plan and an executive summary restates what the decision sections carry in decision-usable form, so neither contributes to accounting research against the Guide. This wording matches how batches 6 to 10 were actually executed and recorded; it narrows no coverage that was ever performed, and the unread sections stay recorded per report so the choice is visible and reversible. MANDATORY BEFORE MARKING DONE: build the coverage comparison from the section headings BEFORE reading, then publish it report by report and section by section. Check acceptance in the governance record AND search each report for stale acceptance wording; iteration 30 established the converged variant set, so use all of it, and record any report using a variant outside that set because it would move the F-17 count again. Account each report against Guide v1.3 and raise a finding only where a divergence is evidenced at a named Guide line.",
-      "stop_condition": "Publish the section-by-section coverage comparison for every report in the batch; record each report with an accurate screened-section list and an explicit not-read list; check both acceptance and residue wording; state whether any carried follow-up question gained evidence; update the research-key-section-sweep conclusion to list exactly which clusters remain; mark batch_queue entry 13 done and set entry 14 as next; save and publish the checkpoint.",
+      "source_scope": "Screen the key sections of: IDR-058, IDR-059, IDR-060, IDR-061, IDR-062. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report. SCREEN SCOPE, reconciled in iteration 28: recommendations, risks and open questions, and any decision register, each read IN FULL INCLUDING EVERY SUBSECTION. Stopping at the first subsection of a risks-and-open-questions section is the specific error that required corrections in iterations 27 and 28. Executive summaries and validation-against-plan sections are outside the screen and must be recorded per report as not read: a validation-against-plan section is a report self-assessment against its own research plan and an executive summary restates what the decision sections carry in decision-usable form, so neither contributes to accounting research against the Guide. This wording matches how batches 6 to 10 were actually executed and recorded; it narrows no coverage that was ever performed, and the unread sections stay recorded per report so the choice is visible and reversible. THIS IS THE LAST RESEARCH KEY-SECTION BATCH. Completing it closes research-key-section-sweep, the only open research check, and completes review area 3. MANDATORY BEFORE MARKING DONE: build the coverage comparison from the section headings BEFORE reading and publish it report by report. Check acceptance in the governance record AND check BOTH F-17 sub-forms per report: stale closing wording, and missing Accepted By or Acceptance Date header fields. Iteration 31 established that the second form exists and was previously uncounted, so check both and record any variant outside the observed set. IDR-061 is the provenance interoperability study the Guide reaches IDR-019 through, and IDR-062 is the CS-GO engineering-practices study deferred from batch 8, so state whether either bears on F-03, F-11 or fq-12. Account each report against Guide v1.3 and raise a finding only where a divergence is evidenced at a named Guide line.",
+      "stop_condition": "Publish the section-by-section coverage comparison for every report in the batch; record each report with an accurate screened-section list and an explicit not-read list; check acceptance and both F-17 sub-forms; state whether any carried follow-up question gained evidence; CLOSE research-key-section-sweep and update review_areas for the research area; mark batch_queue entry 14 done and set entry 15 as next; save and publish the checkpoint.",
       "authorization": "Next user proceed; no new approval gate between normal checks inside the batch."
     },
-    "queue_pointer": "batch_queue.queue entry 13 of 27; 15 remain. Follow the queue in order unless the user selects otherwise."
+    "queue_pointer": "batch_queue.queue entry 14 of 27; 14 remain. Batch 14 is the last research batch; batches 15 onward cover scenarios, verification, issues and the final assessment."
   },
   "batch_history": [
     {
@@ -3782,6 +3796,31 @@
       ],
       "next_work": "Batch 13 of 27: key-section screen H (see current_work.next_batch).",
       "review_complete": false
+    },
+    {
+      "date": "2026-09-20",
+      "provider": "Claude Code",
+      "model": "Claude Opus 5 (model ID claude-opus-5), per the active-model identification supplied by the environment at the time of this iteration",
+      "activity": "Pass 3c iteration 31, queue batch 13: key-section screen H over the operations, traceability, fixtures, performance and interoperability reports IDR-049, IDR-051, IDR-053, IDR-054 and IDR-056. The coverage comparison was built from the section headings before reading and is published. Acceptance was checked in the governance record and each report was searched for stale acceptance wording. Four of the five turned out to have no acceptance header fields at all, a sub-form no earlier scan could have detected, so a scan covering BOTH F-17 sub-forms was run across all 67 accepted reports. Added the iteration evidence report and its manifest entry.",
+      "coverage_completed": [
+        "research-key-section-sweep cluster H (queue batch 13): IDR-049, IDR-051, IDR-053, IDR-054, IDR-056",
+        "F-17 accounting corrected for IDR-052, recorded as fully read with no instance noted"
+      ],
+      "material_points": [
+        "F-17 SECOND SUB-FORM, NEVER PREVIOUSLY ENUMERATED. Four of this batch five reports, IDR-051, IDR-053, IDR-054 and IDR-056, have no Accepted By and no Acceptance Date header fields although the governance record lists them as Accepted. Iterations 29 and 30 searched for stale closing wording contradicting a CORRECT header, so neither scan could ever have found a report with no header. This is the form that misled this review in iteration 23, when it concluded IDR-055 was unaccepted. The review built two complete scans for the other sub-form and never went back to enumerate the one that had actually caused a wrong conclusion.",
+        "F-17 COMPLETE TWO-FORM POPULATION: TWENTY of 67 accepted reports. Form A, stale wording with a correct header, 14 reports. Form B, no acceptance header, 4 reports: IDR-051, IDR-052, IDR-053, IDR-054. Both forms, 2 reports: IDR-055 and IDR-056. Clean: 47. IDR-057 is the synthesis report itself.",
+        "F-17 SEVERITY ORDERING CHANGED. Form B is not uniform. IDR-053 and IDR-054 are the WORST CASE in the whole finding: no header, plus a closing checklist carrying an UNCHECKED box reading Plan-owner acceptance and acceptance date recorded. The document affirmatively asserts the opposite of the ledger, so a reader consulting it alone would conclude it is unaccepted, exactly the iteration 23 error. IDR-055 and IDR-056 are next, missing header plus stale prose. The 14 Form A reports follow, contradictory but with a correct header available. IDR-051 and IDR-052 are mildest, carrying a dated acceptance in the closing checklist, correct information in an unusual place.",
+        "F-17 disposition UNCHANGED at optional editorial cleanup, Low. The governance ledger is correct and controlling for all twenty; the synthesis report line 120 states there are no unresolved acceptance dependencies, which is true at the ledger level and is exactly why the per-report residue matters. The IDR-026 remedy recorded in iteration 30 fixes both forms, because a dated closing acceptance record supplies in the body precisely what Form B lacks in the header. What changes is that the editorial pass can now start with the two reports that state the opposite of the truth.",
+        "METHOD NOTE recorded in the evidence report: this is the third growth of the F-17 population, from three to eleven to sixteen to twenty, and every growth came from the review widening its own search rather than from new evidence. The first two were corrections of a flawed method; this one differs in kind, because the sub-form was known from iteration 24 and simply never enumerated.",
+        "Adoption otherwise close. Guide 529 and 531 carry IDR-049 recommendations 2, 8, 9 and 10 near-verbatim on explicit administrative migrations, fenced restore cutover, never redispatching restored commands and the recovery epoch; these are the Guide lines F-19 already concerns and that finding does not change. Guide 955 carries IDR-053 recommendations 11 and 12 near-verbatim on goldens and snapshot acceptance. Guide 989 carries IDR-054 recommendations 1 and 7. Guide 991 carries the IDR-056 client-assumption rule near-verbatim.",
+        "Two stated non-adoptions, neither a defect. The IDR-051 requirement-to-verification graph is declined at Guide 1118 on two counts, as a graph/evidence database and as a separate requirements/decision-document set, the same shape as the IDR-019 PROV graph; its derived obligations are adopted at Guide 901-907, 955 and 959. The IDR-054 pinned tool selections are not named, and the Guide defers tool pinning to implementation, the same practice recorded for IDR-044.",
+        "ITERATION 30 CORROBORATED: Guide line 297 states the IDR-045 package-set non-adoption directly and by citation, using three initial production packages without creating every package suggested in that report before it contains useful code. That is a cleaner record of the non-adoption than the review had found.",
+        "F-12 gained two more accepted sources, now four: the IDR-053 risk row on fixture output copied from the server blessing defects, controlled by independent expected facts and four-role separation, and IDR-056 recommendation 6 treating transcripts as attribution oracles rather than extra semantic-client votes. Guide 955 already carries the rule. Disposition unchanged.",
+        "fq-12 predicted this batch correctly. IDR-051 is the second report found to be both uncited and to have its central mechanism declined, after IDR-019. Recorded as an observation, not raised.",
+        "No new finding number and no new follow-up question."
+      ],
+      "next_work": "Batch 14 of 27: key-section screen I, the LAST research cluster; completing it closes research-key-section-sweep (see current_work.next_batch).",
+      "review_complete": false
     }
   ],
   "follow_up_questions": [
@@ -3925,9 +3964,10 @@
         "evidence/29-pass-3c-24-idr055-acceptance-correction-and-batch6.md",
         "evidence/32-pass-3c-27-batch8-corrections-and-batch9.md",
         "evidence/33-pass-3c-28-batch9-completion-and-batch10.md",
-        "evidence/34-pass-3c-29-batch11-storage-query-and-write-boundaries.md"
+        "evidence/34-pass-3c-29-batch11-storage-query-and-write-boundaries.md",
+        "evidence/36-pass-3c-31-batch13-operations-fixtures-performance-interop.md"
       ],
-      "supporting_note": "Reference-completeness observation, not a substantive gap: iteration 23 established that the Guide security-test families at line 612 match IDR-055 closely. Raised only because the iteration 23 explanation for the absence (that the report was an unaccepted proposal) was withdrawn when the acceptance was confirmed. Iteration 27 broadened the subject from one report to four and confirmed the character is unchanged: in every case checked so far the Guide carries the substance. Batch 9 verified that for IDR-016, IDR-017 and IDR-019 by accounting their recommendations against named Guide lines. ITERATION 28 CONTRAST: all five batch-10 reports are cited in the Guide, which defines R021 through R025 and uses them at lines 337, 404, 410, 418, 515 and throughout Section 13. The three uncited accepted reports are therefore not part of a general pattern of undercitation, which strengthens the reading that this is reference completeness for specific entries rather than a systemic omission. ITERATION 29 CORRECTION: the iteration 28 contrast, that all five batch-10 reports being cited strengthens the reading of a non-systemic omission, was drawn from too small a sample and does not generalize. Of the five batch-11 reports only IDR-027 has a marker. The complete comparison above replaces both the iteration 27 anecdote and the iteration 28 contrast. Character unchanged: not a substantive gap, and in every case checked so far the Guide carries the substance."
+      "supporting_note": "Reference-completeness observation, not a substantive gap: iteration 23 established that the Guide security-test families at line 612 match IDR-055 closely. Raised only because the iteration 23 explanation for the absence (that the report was an unaccepted proposal) was withdrawn when the acceptance was confirmed. Iteration 27 broadened the subject from one report to four and confirmed the character is unchanged: in every case checked so far the Guide carries the substance. Batch 9 verified that for IDR-016, IDR-017 and IDR-019 by accounting their recommendations against named Guide lines. ITERATION 28 CONTRAST: all five batch-10 reports are cited in the Guide, which defines R021 through R025 and uses them at lines 337, 404, 410, 418, 515 and throughout Section 13. The three uncited accepted reports are therefore not part of a general pattern of undercitation, which strengthens the reading that this is reference completeness for specific entries rather than a systemic omission. ITERATION 29 CORRECTION: the iteration 28 contrast, that all five batch-10 reports being cited strengthens the reading of a non-systemic omission, was drawn from too small a sample and does not generalize. Of the five batch-11 reports only IDR-027 has a marker. The complete comparison above replaces both the iteration 27 anecdote and the iteration 28 contrast. Character unchanged: not a substantive gap, and in every case checked so far the Guide carries the substance. ITERATION 31: the bounded list predicted batch 13 correctly. R049, R053, R054 and R056 have markers; IDR-051 has none and is on the list. IDR-051 is the SECOND report found to be both uncited and to have its central mechanism declined by the Guide, after IDR-019. Recorded as an observation and not raised: in both cases the Guide carries the report derived obligations while declining its architecture, and states the non-adoption at line 1118."
     },
     {
       "id": "fq-13-issuetime-systemtype-systemkind",
@@ -3951,7 +3991,7 @@
   "batch_queue": {
     "created": "2026-09-19",
     "created_by": "Claude Code (Claude Opus 5) during Pass 3c iteration 19",
-    "revised": "2026-09-20 (iteration 30): batch 12 executed. Count unchanged at 27.",
+    "revised": "2026-09-20 (iteration 31): batch 13 executed. Count unchanged at 27.",
     "purpose": "Finite numbered queue covering every remaining finish condition recorded in review_areas, remaining_checks and backlog_analysis. It is a cursor structure inside this state file, not a separate planning document, and it adds no scope.",
     "status_note": "This queue is a workload estimate, not a quota. Compatible batches are combined where feasible and the count is expected to move as evidence arrives.",
     "sizing_basis": "Each batch is sized against what iterations 16-20 actually absorbed: roughly 350-850 lines of source plus its Guide cross-checks. Research key-section batches group five to eight reports because a screen is lighter per line than a deep-read accounting. Issue batches follow Roadmap phase and group boundaries, which are the functional units.",
@@ -3968,7 +4008,8 @@
       "Iteration 28: 27 batches (8 done, 19 remaining) after batch 9 was reset from done to partial. The iteration 27 count of 9 done was wrong because batch 9 left assigned risk and open-question sections unread. No batch was added or removed; the count returns to 9 done once the omission is finished in this same iteration.",
       "Iteration 28: 27 batches (10 done, 17 remaining). Batch 9 was reset to partial at the start of the iteration, completed, and batch 10 executed in the same iteration. Count unchanged; no batch added or removed.",
       "Iteration 29: 27 batches (11 done, 16 remaining). Batch 11 executed. Count unchanged; no batch added or removed.",
-      "Iteration 30: 27 batches (12 done, 15 remaining). Batch 12 executed. Count unchanged; no batch added or removed."
+      "Iteration 30: 27 batches (12 done, 15 remaining). Batch 12 executed. Count unchanged; no batch added or removed.",
+      "Iteration 31: 27 batches (13 done, 14 remaining). Batch 13 executed. Count unchanged; no batch added or removed. Batch 14 is the last research key-section batch; completing it closes research-key-section-sweep and leaves the issue, scenario, verification and final-assessment batches."
     ],
     "reuse_rules": [
       "Batch 17 reviews the common issue boilerplate once and every distinct variant; batches 19-26 never re-check it.",
@@ -3994,8 +4035,8 @@
       "Unauthenticated GitHub API access is rate limited to 60 requests per hour. Batch 17 needs three list requests, so this is ample, but a switch to per-issue requests would not fit."
     ],
     "total_batches": 27,
-    "done": 12,
-    "remaining": 15,
+    "done": 13,
+    "remaining": 14,
     "queue": [
       {
         "batch": 1,
@@ -4124,8 +4165,8 @@
         "scope": "Screen the key sections of: IDR-049, IDR-051, IDR-053, IDR-054, IDR-056. Account each against Guide v1.3 and raise a finding only where a Guide gap is evidenced. This is a screen, not a full read of each report. SCREEN SCOPE, reconciled in iteration 28: recommendations, risks and open questions, and any decision register, each read IN FULL INCLUDING EVERY SUBSECTION. Stopping at the first subsection of a risks-and-open-questions section is the specific error that required corrections in iterations 27 and 28. Executive summaries and validation-against-plan sections are outside the screen and must be recorded per report as not read: a validation-against-plan section is a report self-assessment against its own research plan and an executive summary restates what the decision sections carry in decision-usable form, so neither contributes to accounting research against the Guide. This wording matches how batches 6 to 10 were actually executed and recorded; it narrows no coverage that was ever performed, and the unread sections stay recorded per report so the choice is visible and reversible.",
         "size_basis": "5 reports, roughly 500-800 lines of key sections",
         "coverage_state": "coverage_not_established_plus_partial",
-        "status": "queued",
-        "note": "Read depth was never recorded for these reports. The standing note is that neither a full read nor the absence of any incidental excerpt may be inferred, so a screen establishes coverage."
+        "status": "done_iteration_31",
+        "note": "Executed in iteration 31. Five reports screened at recommendations, the full risks-and-open-questions sections and their decision registers; the coverage comparison was built from the section headings before reading and is published in evidence/36 Section 1; none recorded as fully read. MATERIAL RESULT: a SECOND F-17 SUB-FORM, never previously enumerated. Four of the five reports have NO Accepted By and no Acceptance Date header fields at all, although the governance record lists them as Accepted. Iterations 29 and 30 searched only for stale closing wording contradicting a correct header, so no earlier scan could have found this form. It is the form that misled this review in iteration 23 with IDR-055. Scanning all 67 accepted reports for both forms gives TWENTY affected: 14 Form A, 4 Form B (IDR-051, 052, 053, 054), and 2 in both forms (IDR-055, IDR-056). Form B is not uniform and the severity ordering changed: IDR-053 and IDR-054 are the WORST CASE in the finding because their closing checklists carry an UNCHECKED box reading Plan-owner acceptance and acceptance date recorded, affirmatively asserting the opposite of the ledger, while IDR-051 and IDR-052 record a dated acceptance in the closing checklist and are the mildest variant. IDR-052 was recorded as fully read with no instance noted and is corrected. Disposition unchanged at optional editorial cleanup, Low; the IDR-026 remedy fixes both forms because it supplies in the body what Form B lacks in the header. Adoption otherwise close: Guide 529 and 531 carry the IDR-049 recovery recommendations near-verbatim, and Guide 955, 989 and 991 carry IDR-053, IDR-054 and IDR-056. Two stated non-adoptions, neither a defect: the IDR-051 traceability graph declined at Guide 1118 on two counts, and the IDR-054 tool pins deferred. Guide line 297 was found to name IDR-045 directly while declining its package set, corroborating the iteration 30 record. F-12 gained two more accepted sources, now four. No new finding number and no new follow-up question."
       },
       {
         "batch": 14,
