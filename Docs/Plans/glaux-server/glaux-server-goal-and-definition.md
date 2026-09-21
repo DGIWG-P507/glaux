@@ -1,9 +1,9 @@
 # Glaux Server Goal and Definition
-**Version:** 1.9<br>
+**Version:** 1.10<br>
 **Date:** 21 September 2026<br>
 **Status:** Approved
 
-**Revision summary:** Adopts the project lead's selected, bounded experimental Part 5 Protobuf alternative in place of implementation deferral. Implementation Guide v1.20 pins the OSH compatibility target and defines supported operations, structures, limitations and verification. This adds an experimental completion deliverable without replacing required SWE Binary or changing the published Parts 1/2 target. Roadmap, issue and README propagation is the next bounded iteration, not completed by this scope decision; see the [current handoff](Review/action-list.md#current-part-5-planning-adjustment).
+**Revision summary:** Aligns the already approved Goal v1.9 Part 5 scope with Implementation Guide v1.21 and Roadmap v1.35's explicit task owners. The Roadmap now defines 302 tasks, including 16 added experimental tasks; current publication evidence and the next handoff live in the [action list](Review/action-list.md#current-part-5-planning-adjustment). No capability, source pin or experimental limitation is changed by this navigation/status revision.
 
 ---
 
