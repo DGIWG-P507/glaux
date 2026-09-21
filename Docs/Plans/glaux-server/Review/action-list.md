@@ -1,6 +1,6 @@
 # Glaux Server review follow-up actions
 
-**Status: the approved response-test/audit and cache/order planning updates are delivered in the Guide and their thirteen named issues. Software implementation remains pending; other actions remain proposed.**
+**Status: the approved response-test/audit and cache/order updates are delivered. Exchange/audit-boundary and exporter-accountability changes are adopted in Guide v1.6; their three issue amendments are being published. Software implementation remains pending; other actions remain proposed.**
 
 **Prepared:** September 20, 2026. The review remains complete. This is the working action checklist for using its results, not another review, research plan, requirements document or replacement roadmap.
 
@@ -8,7 +8,7 @@
 
 Keep the Goal, architecture and 286-task backlog. Choose the licence and confirm how automated checks will be enforced, then make a small set of agreed clarifications in the existing Guide and issue instructions. Handle later technical questions before their owning tasks, not as prerequisites to starting the entire project. Leave optional cleanup and withdrawn findings out of the critical path.
 
-Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.5 / Roadmap v1.20, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
+Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.6 / Roadmap v1.21, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
 
 Except for explicitly adopted rows recorded below, these are **recommendations**, not standards obligations or changes to finding severity. Document/issue updates do not establish executed software correctness.
 
@@ -71,6 +71,18 @@ The project lead's next September 20, 2026 `proceed` authorises **only** the pro
 
 **Validation/result:** assistant review found no material defect in the Guide/Roadmap diff or the four published amendment prefixes. All 286 Roadmap leaf definitions and dependencies were compared unchanged; relative file links and whitespace checks passed. The checklist retains all 22 finding IDs and 13 question IDs. The completed review's state, findings, evidence and manifest were not changed. F-03's cache instance and F-14(c) are now resolved at the design and task-instruction level. Other F-03 policy questions, the other F-14 subparts, all unadopted proposals and actual implementation remain separate.
 
+## Fourth authorised update — exchange boundary and export accountability
+
+The project lead's next September 20, 2026 `proceed` authorises the proposed F-21/F-22 changes in the existing Guide and issues #239/#240/#287. Guide v1.6 and Roadmap v1.21 record adoption. The manifest field contract, Goal v1.8, all 286 task definitions/dependencies and the completed review are unchanged.
+
+| Existing owner | Adopted instruction / publication status |
+|---|---|
+| [#239 — manifest contract](https://github.com/DGIWG-P507/glaux-server/issues/239) | Transferred production context is not the source server's complete authenticated audit trail. Preserve the existing schema/fields; no audit-replication format. **Guide adopted; issue amendment pending.** |
+| [#240 — authorised export](https://github.com/DGIWG-P507/glaux-server/issues/240) | Record exact bounded generation privately, then reauthorize staged content/dependencies and commit a distinct release attempt before exposing bytes. Append the observed handoff outcome; interruption or failed outcome recording must remain uncertain, not receipt or rollback. Protect audit metadata independently. **Guide adopted; issue amendment pending.** |
+| [#287 — final documentation](https://github.com/DGIWG-P507/glaux-server/issues/287) | Explain production context versus local audit, recovery-point limits and generation/attempt/handoff versus receipt using actual implementation evidence. **Guide adopted; issue amendment pending.** |
+
+**Boundary:** this strengthens the existing administrative export/audit path, not ordinary read logging, a new transport, audit-history replication or a delivery-receipt platform. No database/file/network atomicity is promised. Required audit failure before handoff prevents release; possible exposure after handoff cannot be undone by a failed audit commit. Denials retain the already adopted bounded reporting policy. No licence/settings change, installation or coding is authorised. Publication/readback evidence will be recorded after the three issue amendments are delivered.
+
 ## Decisions needed from the project lead
 
 There is no need to personally resolve every technical detail. The technical recommendations below can be accepted or adjusted as a group, with the explicitly unresolved interpretations left for their named tasks.
@@ -80,7 +92,7 @@ There is no need to personally resolve every technical detail. The technical rec
 | F-01 — project licence | **Project lead selects the organisation-approved licence.** Dependencies do not select it for us. No peer copying is planned; revisit reuse terms only if copying is proposed. | Before [#4](https://github.com/DGIWG-P507/glaux-server/issues/4). |
 | F-02 — enforced checks | Inspection above confirms no enforced checks at its recorded time. **Recommend required automated checks before merges**, retaining PR-per-issue and assistant merging after checks, without mandatory human review. Configuration still needs authorisation and real check names from #6. | Decide early; implement/verify with [#6](https://github.com/DGIWG-P507/glaux-server/issues/6), before dependent merges such as #7. |
 
-**Decision record:** licence remains unselected; enforcement changes remain unauthorised. The first bounded Guide/issue update, its second propagation pass and the third cache/order update are approved and delivered. The third update adopts F-03's cache instance and F-14(c) only; this does not convert the remaining recommendations into requirements.
+**Decision record:** licence remains unselected; enforcement changes remain unauthorised. The first three bounded updates are approved and delivered. The fourth adopts F-21/F-22 only; this does not convert the remaining recommendations into requirements.
 
 ## Recommended bounded changes
 
@@ -94,8 +106,8 @@ I recommend adopting these improvements in existing Guide sections and issue acc
 | F-19 — audit survival and cleanup | **Adopted in Guide v1.4:** include audit at the backup's recovery point in restore comparisons. Define authorised retention and distinguish serving, administrative and retention permissions. Do not promise unavailable post-backup records. **Durability is not tamper-proofing:** no hash-chain or audit-replication project. | Guide §§4.7/4.10/8, scenario 6; #15/#26/#251/#254/#283. **Guide and named issue amendments delivered; implementation pending.** |
 | F-19 — post-backup deletions | Address restored resources deleted after the backup. Reconcile available deletion evidence before serving; otherwise state the limitation and operator decision, not a false continuity guarantee. Do not assume an external deletion ledger. | Guide §4.7/scenario 6; #26/#126/#251–#252/#283. Done when behaviour and a fixture cover local reads and re-export. Separate from audit survival. |
 | F-20 — denied actions | **Adopted in Guide v1.4:** bounded denial categories, safe fields and recording-failure behaviour. **Audit failure never authorises the denied operation.** No independent logging platform. | Guide §4.10; #15/#22/#280. **Guide and named issue amendments delivered; implementation pending.** |
-| F-21 — what exchange does not transfer | Say plainly that exchanging resources and supplied production context does not replicate the source server's complete authenticated audit trail. Backup only protects its captured recovery point. | Guide §4.11 and exchange documentation; #239/#240 and #287. Complete with consistent explanatory wording; no audit-synchronisation feature. |
-| F-22 — export accountability | Record export generation and authorised release/handoff durably, protecting actor/recipient/scope metadata. Specify failure/partial-output handling. Neither event proves recipient receipt. | Guide §§4.10/4.11; #240. Done when events and failure tests are specified; no delivery-receipt platform. |
+| F-21 — what exchange does not transfer | **Adopted in Guide v1.6:** resource exchange and supplied production context do not replicate the source server's complete authenticated audit trail. Backup only protects its captured recovery point. | Guide §4.11 and exchange documentation; #239/#240/#287. **Guide adopted; issue publication pending.** No audit-synchronisation feature. |
+| F-22 — export accountability | **Adopted in Guide v1.6:** durable generation and release-attempt records precede handoff; protect actor/recipient/scope metadata, reauthorize staged content and record only observed outcomes. Failure/partial/uncertain output is explicit; none proves recipient receipt. | Guide §§4.10/4.11/8; #240, with #287 documenting the limits. **Guide adopted; issue publication pending; implementation pending.** No delivery-receipt platform. |
 | fq-09 — metrics and traces | Make metrics/traces internal or access-restricted by default, distinct from minimal public liveness. Use the existing deployment/access-control approach; do not create another administration service. | Guide §4.12; #256. Complete when the exposure boundary and an unauthorised-access check are explicit. This remains a proposed resolution of the recorded question. |
 
 ## Interpretations to carry into existing work
@@ -150,4 +162,4 @@ A new research plan needs a substantial unanswered design question, a consequenc
 2. **Apply approved actions:** prioritise early owners (#15/#19/#22/#26/#56), then later owners before their work. Update Guide versions/cross-references and existing issue instructions, preserving their original pinned baselines and recording approved amendments. Change Roadmap leaves only when necessary; do not create another backlog.
 3. **Record and implement:** link delivered changes against these rows. Distinguish document changes from executed tests. Resume the existing one-issue/PR workflow without waiting for optional cleanup.
 
-**Current handoff:** the authorised cache/order update and its four issue amendments are delivered; stop here. Recommended next bounded update, **not yet approved**: F-21/F-22, clarifying what exchange does not transfer and recording export generation/release accountability in Guide §§4.10/4.11 and existing issues #239/#240/#287. This would not add audit-trail replication or a delivery-receipt platform. Licence/enforcement decisions remain outstanding; no coding or settings changes are authorised by the delivered updates. No implementation issue is complete. The closed `review-state.json` remains review coverage, not an implementation queue.
+**Current handoff:** finish the authorised F-21/F-22 update by publishing and verifying its three issue amendments, then record delivery and stop. No other proposal, coding or settings change is authorised by this update. Licence/enforcement decisions remain outstanding. No implementation issue is complete. The closed `review-state.json` remains review coverage, not an implementation queue.
