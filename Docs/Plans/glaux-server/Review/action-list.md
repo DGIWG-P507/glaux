@@ -1,6 +1,6 @@
 # Glaux Server review follow-up actions
 
-**Status: first bounded technical update authorised; Guide changes prepared, early issue publication pending. Other actions remain proposed.**
+**Status: first bounded technical update published and verified. Later propagation is pending; other actions remain proposed.**
 
 **Prepared:** September 20, 2026. The review remains complete. This is the working action checklist for using its results, not another review, research plan, requirements document or replacement roadmap.
 
@@ -18,12 +18,14 @@ The project lead's `proceed` after the bounded next-step proposal authorised F-1
 
 | Delivery | Current result |
 |---|---|
-| Guide / current references | Guide v1.4 adopts the selected response-test and audit rules; Roadmap v1.19 aligns the reference without changing task scope, numbering or dependencies. |
-| #15 — transactional audit | Amendment prepared: exact audit fields, atomic failure rollback, serving/admin/retention separation and the denial-recording boundary. **Issue publication pending.** |
-| #19 — HTTP response checks | Amendment prepared: inspect required wire fields independently of production-type normalisation; prove a known-bad response fails without banning permitted extensions. **Issue publication pending.** |
-| #22 — denied actions | Amendment prepared: selected categories as implemented, safe fields, finite bounds and failure checks that never allow the denied operation. **Issue publication pending.** |
-| #26 — initial restore | Amendment prepared: compare captured audit against an independent pre-backup manifest and reject missing/corrupt required audit. No promise of post-backup recovery. **Issue publication pending.** |
+| Guide / current references | [Published planning commit 0d06e6c](https://github.com/DGIWG-P507/glaux/commit/0d06e6cc3d71ab8c8ac510c0cbcffccc0af82b57): Guide v1.4 adopts the selected rules; Roadmap v1.19 aligns the reference without changing task scope, numbering or dependencies. |
+| [#15 — transactional audit](https://github.com/DGIWG-P507/glaux-server/issues/15) | **Amendment published and read back:** exact audit fields, atomic failure rollback, serving/admin/retention separation and the denial-recording boundary. |
+| [#19 — HTTP response checks](https://github.com/DGIWG-P507/glaux-server/issues/19) | **Amendment published and read back:** inspect required wire fields independently of production-type normalisation; prove a known-bad response fails without banning permitted extensions. |
+| [#22 — denied actions](https://github.com/DGIWG-P507/glaux-server/issues/22) | **Amendment published and read back:** selected categories as implemented, safe fields, finite bounds and failure checks that never allow the denied operation. |
+| [#26 — initial restore](https://github.com/DGIWG-P507/glaux-server/issues/26) | **Amendment published and read back:** compare captured audit against an independent pre-backup manifest and reject missing/corrupt required audit. No promise of post-backup recovery. |
 | Runtime proof | None: these are planning/acceptance changes. Issues remain open and implementation has not started. |
+
+**Publication evidence:** the four amendment bodies were read back exactly on 21 September 2026 at 00:57 UTC (20 September local). Each points to Guide commit `0d06e6cc3d71ab8c8ac510c0cbcffccc0af82b57` and retains the full original issue body and preparation pins after the amendment divider. Titles and open status are unchanged. The GitHub app connector rejected the first edit with a permission error and changed nothing; the authorised edits then used the existing Git account, which has repository write permission, without changing permissions or exposing credentials. Static link/whitespace checks passed, all 286 Roadmap leaf definitions were compared unchanged, and assistant diff review found no material contradiction. No runtime test was executed or represented as passed.
 
 **Still to propagate under these adopted Guide rules:** #80 (runner), #251/#254/#283 (full restore/retention) and #280 (denial regression), plus applicable later resource owners as implemented. Do not mark F-12/F-19/F-20 wholly delivered from four early amendments. F-19's separate post-backup-deletion proposal remains unadopted. Other proposed changes below remain for a later authorised iteration.
 
@@ -117,4 +119,4 @@ A new research plan needs a substantial unanswered design question, a consequenc
 2. **Apply approved actions:** prioritise early owners (#15/#19/#22/#26/#56), then later owners before their work. Update Guide versions/cross-references and existing issue instructions, preserving their original pinned baselines and recording approved amendments. Change Roadmap leaves only when necessary; do not create another backlog.
 3. **Record and implement:** link delivered changes against these rows. Distinguish document changes from executed tests. Resume the existing one-issue/PR workflow without waiting for optional cleanup.
 
-**Current handoff:** publish the Guide/Roadmap update, then attach its exact commit-pinned amendments to #15/#19/#22/#26 and read them back before recording delivery. Preserve each original issue body and preparation pins; an amendment extends verification rather than closing an issue. Stop after this bounded update. Licence/enforcement choices and later action batches remain outstanding. The closed `review-state.json` remains review coverage, not an implementation queue.
+**Current handoff:** the first bounded Guide/early-issue update is delivered; stop here. Later amendments under the adopted rules remain #80/#251/#254/#280/#283, with applicable family-specific cases handled by their owners. Other proposal rows and licence/enforcement decisions remain outstanding, not implicitly approved. No implementation issue is complete. The closed `review-state.json` remains review coverage, not an implementation queue.
