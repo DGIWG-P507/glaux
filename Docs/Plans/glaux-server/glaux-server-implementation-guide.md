@@ -3,7 +3,7 @@
 **Version:** 1.21<br>
 **Date:** 21 September 2026<br>
 **Effort:** Glaux Server<br>
-**Status:** Baselined — Part 5 task ownership defined; publication status in action list; implementation not started<br>
+**Status:** Baselined — Part 5 task ownership published and verified; implementation not started<br>
 **Depends On:** [Glaux Server Goal and Definition v1.10](glaux-server-goal-and-definition.md), Approved
 
 **Revision summary:** Carries the already adopted §4.3.1 experiment into Roadmap v1.35's 16 additional tasks and explicit integration/release owners, with 302 total tasks across 45 groups. Goal v1.10 aligns navigation without changing the approved scope. This revision changes current references and handoff only, not the Protobuf wire contract, source pins, architecture, core SWE obligations or completed research/review. The [action list](Review/action-list.md#current-part-5-planning-adjustment) records actual issue/README publication and verification; document text does not imply that code or runtime tests exist.

@@ -3,10 +3,10 @@
 **Version:** 1.35<br>
 **Date:** 21 September 2026<br>
 **Effort:** Glaux Server<br>
-**Status:** Part 5 issue publication in progress — implementation not started<br>
+**Status:** Expanded issue set published and verified — implementation not started<br>
 **Depends On:** [Goal and Definition v1.10](glaux-server-goal-and-definition.md), Approved<br>
 **Implements:** [Implementation Guide v1.21][Guide], Baselined<br>
-**Implementation status:** All 302 tasks across nine phases and 45 groups remain planned, not verified complete. The original 286 issues are published; 16 added Part 5 leaves and bounded existing-owner amendments are being published and verified in this iteration. Existing task/issue IDs are preserved. No implementation begins until this expanded coverage is verified; the [current action handoff](Review/action-list.md#current-part-5-planning-adjustment) records publication progress, not coding authority.
+**Implementation status:** All 302 tasks across nine phases and 45 groups remain planned, not verified complete. The original 286 issues and 16 added Part 5 issues are published and verified, including 16 bounded existing-owner amendments. Existing task/issue IDs and prior issue bodies are preserved. The [current action handoff](Review/action-list.md#current-part-5-planning-adjustment) records publication evidence and the next implementation candidate, not coding authority for this planning iteration.
 
 **Revision summary:** Propagates the already approved Goal v1.9 / Guide v1.20 Part 5 experiment into 16 issue-sized tasks in groups 4.5, 5.6, 6.5 and 9.5. Goal v1.10 / Guide v1.21 align current references and handoff without changing that contract. Ten existing integration/release leaves gain explicit coverage or prerequisites; six earlier owners retain their core scope with handoff amendments. Original issue bodies/pins and the completed review remain historical. Publication, separate review and validation are recorded in §5.3 and the action list; no coding, installation or settings change is authorised.
 
@@ -537,21 +537,21 @@ All implementation subtasks are initially **planned**, with **sizing target: one
    - Dependencies: 4.4 and the existing shared model/observation foundations; no dependency from core SWE tasks back to this experiment.
    - Issue-sized subtasks:
      - **4.5.1 Establish pinned Protobuf sources and independent fixtures.** Scope: Record the two selected OSH pins, trusted schema/options provenance and licence treatment; establish tested compatible Rust dependencies and independently authored envelope/scalar fixtures in the existing standards package. Done: Pinned roots, field numbers, options and import expectations are reproducible without a live upstream dependency; source terms are checked before vendoring and fixture expectations are not generated from production serializers. Guide: §§4.3.1, 7.5, 8.1. Depends: 1.2, 4.4.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#293](https://github.com/DGIWG-P507/glaux-server/issues/293).
      - **4.5.2 Compile eligible immutable Protobuf descriptors.** Scope: Compile flat-record eligibility and the pinned observation/command root definitions, ordered field mapping and trusted import closure; bind emitted descriptor bytes, digest, root and mapping to the immutable stream contract. Done: Independent schemas produce expected field numbers/types/options; invalid or reserved names, unsupported structures/presence contracts and untrusted imports fail, while stable revision bindings cannot be reinterpreted by regeneration. Guide: §§4.3.1, 4.7, 6.5, 8.1. Depends: 4.5.1.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#294](https://github.com/DGIWG-P507/glaux-server/issues/294).
      - **4.5.3 Encode and decode scalar observation messages.** Scope: Implement the five selected scalar mappings and observation envelope under the compiled contract, including explicit timestamps, proto3 scalar defaults, identity/FOI restrictions and bounded handling of unknown fields. Done: Independent values and bytes preserve signed int32, exact finite binary64, UTF-8 and timestamp precision; default omission is not missing data, and invalid constraints, missing times, unsupported FOI or lossy values fail explicitly. Guide: §§4.3.1, 8.1. Depends: 4.5.2.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#295](https://github.com/DGIWG-P507/glaux-server/issues/295).
      - **4.5.4 Implement bounded Protobuf message framing.** Scope: Add shared varint-length framing for observation sequences and exactly-one-command bodies, with incremental parsing and finite byte, record, allocation and time bounds. Done: Valid frames decode identically across chunk boundaries; empty observation reads differ from prohibited empty writes, and overflow, truncation, trailing partial data, excess command frames and resource-budget violations fail without partial request acceptance. Guide: §§4.3.1, 6.4, 8.1–8.3. Depends: 4.5.3.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#296](https://github.com/DGIWG-P507/glaux-server/issues/296).
      - **4.5.5 Expose observation descriptors and experimental format negotiation.** Scope: Integrate DataStream descriptor GET, explicit disabled-by-default enablement and operation/contract-qualified format metadata through existing schema, negotiation and access paths. Done: JSON wrappers, published obsFormat and explicit media selection match the profile; unsupported selectors/media and denied discovery return safe errors, and disabled or ineligible behavior is not advertised or added to conformance output. Guide: §§4.3.1, 6.2, 7.5, 8.2. Depends: 4.5.2, 4.4.4.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#297](https://github.com/DGIWG-P507/glaux-server/issues/297).
      - **4.5.6 Integrate atomic Protobuf observation submission.** Scope: Wire nested DataStream observation POST into existing authorization, immutable revision, time/ID validation, retry and atomic batch persistence using the bounded decoder. Done: Independent HTTP/database checks retain exact accepted values and generated locations; parent conflicts, unsupported FOI/values, missing times, malformed frames and denied requests cause no partial observation, audit-success or publication commit. Guide: §§4.3.1, 4.4, 4.6, 6.4, 8.2. Depends: 4.5.4, 4.5.5.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#298](https://github.com/DGIWG-P507/glaux-server/issues/298).
      - **4.5.7 Integrate scoped Protobuf observation retrieval and paging.** Scope: Implement only nested DataStream list GET with existing authorized native filters, latest ties, ascending order and opaque paging, prevalidating the bounded page and supplying HTTP Link continuation. Done: Independent results preserve exact selected values/times and schema context across pages; selected unrepresentable records fail visibly rather than disappearing or falling back, and global/item/collection Protobuf operations remain unsupported. Guide: §§4.3.1, 4.4, 6.2–6.3, 8.2. Depends: 4.5.6, 3.3.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#299](https://github.com/DGIWG-P507/glaux-server/issues/299).
      - **4.5.8 Prove independent observation Protobuf compatibility.** Scope: Run both codec directions against the exact pinned OSH implementation in an approved isolated environment, then verify the selected Glaux HTTP observation operations and cross-format logical equivalence. Done: Independent expected values pass for OSH-produced and OSH-consumed bytes and the selected HTTP paths; peer deviations, unknown-field loss and context/FOI/presence restrictions are reported without substituting self-roundtrips or unrun evidence. Guide: §§4.3.1, 7.5, 8.1–8.2. Depends: 4.5.6, 4.5.7, 4.4.5.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#300](https://github.com/DGIWG-P507/glaux-server/issues/300).
 
 **Phase exit:** All applicable codecs and observation wire paths are implemented and tested, not merely stubs. Difficult component/encoding combinations remain required; any failed conformance obligation is an explicit unresolved implementation task.
 
@@ -681,13 +681,13 @@ Phase 4 also requires group 4.5's selected Protobuf observation/descriptor and p
    - Dependencies: 4.5 and existing 5.1–5.5 consumers specified by each leaf; no broker dependency.
    - Issue-sized subtasks:
      - **5.6.1 Integrate Protobuf command descriptors and envelope codec.** Scope: Expose the ControlStream descriptor wrapper through cmdFormat and implement the selected command envelope/parameter codec using existing immutable schemas and shared framing. Done: Independent descriptors and bytes retain root, field numbers, units and server-owned identity/time rules; the wrapper uses commandFormat while the query remains cmdFormat, and unsupported FOI, shapes or unsafe imports fail. Guide: §§4.3.1, 4.9, 6.2, 8.1. Depends: 4.5.8, 5.1.3.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#301](https://github.com/DGIWG-P507/glaux-server/issues/301).
      - **5.6.2 Integrate single-command Protobuf submission.** Scope: Admit exactly one framed command through the existing synchronous/asynchronous command paths, preserving authenticated submitter, server receipt time, retry safety and independently negotiated JSON status response. Done: Real HTTP/database/adapter checks establish existing status and Location/Content-Location behavior; extra frames, malformed known values, parent/sender spoofing, unsupported parameters or access failure cause no admitted command or device effect. Guide: §§4.3.1, 4.9, 6.4, 8.2. Depends: 5.6.1, 5.2, 5.3.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#302](https://github.com/DGIWG-P507/glaux-server/issues/302).
      - **5.6.3 Integrate individual Command Protobuf retrieval.** Scope: Serve the selected representation only from canonical individual Command GET after resolving the authorized parent/revision and checking representability. Done: Independent HTTP checks recover actual server identifiers, retained issue time, permitted sender and exact parameters; unsupported FOI or values fail explicitly and list/status/result/feasibility/mutation representations stay unadvertised. Guide: §§4.3.1, 4.9, 6.2, 8.2. Depends: 5.6.1, 5.5.1.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#303](https://github.com/DGIWG-P507/glaux-server/issues/303).
      - **5.6.4 Prove command Protobuf compatibility and unchanged effects.** Scope: Run both command codec directions with the pinned OSH implementation and selected HTTP submission/retrieval with independent clients and the deterministic adapter. Done: Independent logical/cross-format expectations and effect counts pass; Glaux receipt-time and selector differences are explicit, and bare decoding or self-roundtrips cannot substitute for actual HTTP/authority/effect evidence. Guide: §§4.3.1, 4.9, 7.5, 8.2. Depends: 5.6.2, 5.6.3, 5.5.12.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#304](https://github.com/DGIWG-P507/glaux-server/issues/304).
 
 **Phase exit:** Full command and feasibility workflows pass through a deterministic adapter and independent HTTP checks, with all required formats/mutations. Public lifecycle, internal execution evidence and uncertain physical effects remain distinct. No universal device-safety or accreditation claim follows.
 
@@ -770,11 +770,11 @@ The phase's selected Protobuf command operations and peer evidence are owned by 
    - Dependencies: 4.5 and existing 6.3–6.4 paths; no extension to inbound writes, commands, SSE or CloudEvents.
    - Issue-sized subtasks:
      - **6.5.1 Publish selected native Protobuf observation messages.** Scope: Add eligible Observation/status-observation DataStream topics with swe-proto suffix, actual content type, binary indication and exactly one framed message using the committed publication path. Done: Broker-captured bytes recover the independently expected record with available schema context; an unrepresentable record blocks that representation with bounded diagnostics rather than false delivery, and other representations retain their own progress. Guide: §§4.3.1, 4.8, 8.2. Depends: 4.5.8, 6.3.4.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#305](https://github.com/DGIWG-P507/glaux-server/issues/305).
      - **6.5.2 Expose Protobuf publication metadata and audience boundaries.** Scope: Extend generated AsyncAPI and enabled-channel discovery with the profile, root, descriptor link, one-frame contract and limitations; enforce existing topic/audience and schema-discovery permissions. Done: Independent metadata and broker checks agree with actual enabled channels; unauthorized discovery, unenforceable audiences and revoked subscribers cannot obtain protected context or bytes, while disabled experiments advertise nothing. Guide: §§4.3.1, 4.8, 4.10, 8.2. Depends: 6.5.1, 6.3.6, 6.3.7.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#306](https://github.com/DGIWG-P507/glaux-server/issues/306).
      - **6.5.3 Verify Protobuf broker interruption and isolation.** Scope: Run real-broker framing, duplicate, denial/revocation and outage checks for the new payload path, including blocked representability and isolation from existing transports. Done: Exact selected bytes/context and failure outcomes pass with finite work; disabled Protobuf and broker failure preserve ordinary HTTP/tasking and each representation's independent progress/failure state, not delivery through a failed broker, and no ACK or empty/unrun suite is treated as recipient or interoperability proof. Guide: §§4.3.1, 4.8, 7.5, 8.2. Depends: 6.5.2, 6.3.8, 6.4.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#307](https://github.com/DGIWG-P507/glaux-server/issues/307).
 
 **Phase exit:** Ordered retained publication, SSE replay and the actual experimental MQTT adapter pass their defined tests. No claim of disconnected MQTT completeness is made, and SSE's administrative snapshot bootstrap is not marked complete until Phase 8.
 
@@ -1017,7 +1017,7 @@ Group 6.5 separately establishes the Protobuf native payload, metadata/audience 
    - Dependencies: 4.5, 5.6, 6.5, 7.4 and 8.4. Despite this appended ID, execute before 9.1.9 and the release gate; never depend on parent 9.1 or 9.4.
    - Issue-sized subtasks:
      - **9.5.1 Reverify the complete selected Protobuf experiment.** Scope: Re-run the already implemented peer, HTTP and broker suites on the candidate, accounting every selected operation, logical restriction and documented deviation together with enhanced-filter, restore/retention and recovery checks. Done: Both pinned-peer directions, selected operations, authorization/cache/hostile-input cases and configuration/examples have explicit passing or unresolved outcomes; full experimental completion cannot be claimed from disabled behavior, incomplete coverage or core-class evidence. Guide: §§4.3.1, 7.5, 8.2, 10. Depends: 4.5, 5.6, 6.5, 7.4, 8.4.
-       - GitHub issue: Publication pending.
+       - GitHub issue: [#308](https://github.com/DGIWG-P507/glaux-server/issues/308).
 
 **Phase exit:** The full reference implementation has reproducible evidence and documentation matching its actual behavior. This is the completion target, not the current state of this drafting iteration.
 
@@ -1053,7 +1053,7 @@ One iteration is a sizing target. If execution demonstrates that a leaf is too l
 
 ### 5.3 Immediate next step
 
-**Current expanded publication:** 286 existing issues plus 16 new leaves = 302 tasks. Part 5 issue creation/readback and the 16 named existing-owner amendments are in progress; no new issue number is assumed before GitHub returns it. The [action list](Review/action-list.md#current-part-5-planning-adjustment) is the handoff if interrupted. No code task starts during this publication iteration.
+**Current expanded publication:** 286 existing issues plus 16 new leaves = 302 tasks. Tasks `4.5.1`–`4.5.8` are issues #293–#300, `5.6.1`–`5.6.4` are #301–#304, `6.5.1`–`6.5.3` are #305–#307, and `9.5.1` is #308. All sixteen new bodies and sixteen existing-owner amendments were read back exactly on September 21, 2026. Reconciliation established 302 unique task/issue pairs and 1787 exact expanded prerequisite links, with no missing reference or dependency cycle. All prior issue bodies and metadata were preserved; the other 270 issues were untouched. The [action list](Review/action-list.md#current-part-5-planning-adjustment) links both delivery PRs and their separate-review records. No code task starts during this publication iteration.
 
 **Original 286-issue publication record:** all initial issues were published and verified; this historical reconciliation does not cover the later Part 5 additions. The first batch covers tasks `1.1.1`–`1.5.3` as server issues #3–#26; the second covers `2.1.1`–`2.2.10` as issues #27–#48; the third covers `2.3.1`–`2.4.10` as issues #49–#68; the fourth covers `2.5.1`–`2.6.9` as issues #69–#88; the fifth covers `3.1.1`–`3.3.7` as issues #89–#114; the sixth covers `3.4.1`–`4.2.6` as issues #115–#139; the seventh covers `4.3.1`–`5.1.6` as issues #140–#161; the eighth covers `5.2.1`–`5.4.4` as issues #162–#180; the ninth covers `5.5.1`–`6.1.4` as issues #181–#201; the tenth covers `6.2.1`–`7.1.4` as issues #202–#222; the eleventh covers `7.2.1`–`8.1.6` as issues #223–#244; the twelfth covers `8.2.1`–`8.4.5` as issues #245–#262; the thirteenth covers `9.1.1`–`9.4.3` as issues #263–#288. Each is linked beside its leaf. All remain open and marked **Not started** at this handoff. The final 26 bodies and their 240 prerequisite links were verified; the previous 260 bodies remain unchanged. Whole-set paginated reconciliation covered 286 unique tasks across all nine phases and 41 groups, with 1676 exact prerequisite links and 286 adjacent Roadmap issue links. Checks included exact titles/scope/completion criteria, populated template sections, unchanged common completion/execution instructions, unchecked checklists, historical Roadmap source lines/versions and valid pinned Guide links. Goal v1.7 and Guide v1.2 contents were unchanged across all 13 publication baselines. Goal v1.8 and Guide v1.3 now add explanation/navigation without changing the task scope or those historical issue pins. These are publication checks, not executed server tests or accepted implementation work; no phase's implementation is complete.
 
@@ -1061,7 +1061,7 @@ The publication reconciliation above records the original issue set. Guide v1.4'
 
 **Next implementation candidate, after verified publication and a subsequent authorisation:** [task 1.1.1 / issue #3](https://github.com/DGIWG-P507/glaux-server/issues/3): inspect the actual server checkout and approved tool/database availability, and document what is present or missing under that issue's scope. Follow the existing one-branch/one-PR-per-issue workflow; the assistant may merge after applicable checks and separate assistant review, without adding a human approval pause unless one is otherwise required. Do not install missing software implicitly or fold later build/implementation issues into this first task.
 
-The original issue set is complete. Finish and verify publication of the 16 approved additions and named amendments before implementation resumes one dependency-ready issue per authorised iteration. Later build/database work still depends on the approved-prerequisite inspection; missing tools are not permission to install them.
+The expanded issue set is complete and verified. Resume only one dependency-ready issue per subsequent authorised iteration. Later build/database work still depends on the approved-prerequisite inspection; missing tools are not permission to install them.
 
 ## 6. Coverage, Milestones and Deliverables
 
