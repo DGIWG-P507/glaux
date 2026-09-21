@@ -1,6 +1,6 @@
 # Glaux Server review follow-up actions
 
-**Status: all eleven approved bounded updates are delivered. Guide v1.13 and seven verified issue amendments complete the planned Guide/issue clarification pass with F-18's ControlStream and separate Feasibility admission rules. Software proofs, licence/enforcement decisions, owner-timed questions and optional cleanup remain distinct outstanding work.**
+**Status: review follow-up remains in progress. The first eleven updates are delivered, not the whole action list. The twelfth update adopts fq-01/fq-02 in Guide v1.14; publication is tracked below. Six other technical questions, licence/enforcement decisions, optional cleanup and all software proofs remain outstanding. No handoff into implementation is authorised by this update.**
 
 **Prepared:** September 20, 2026. The review remains complete. This is the working action checklist for using its results, not another review, research plan, requirements document or replacement roadmap.
 
@@ -8,7 +8,7 @@
 
 Keep the Goal, architecture and 286-task backlog. Choose the licence and confirm how automated checks will be enforced, then make a small set of agreed clarifications in the existing Guide and issue instructions. Handle later technical questions before their owning tasks, not as prerequisites to starting the entire project. Leave optional cleanup and withdrawn findings out of the critical path.
 
-Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.13 / Roadmap v1.28, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
+Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.14 / Roadmap v1.29, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
 
 Except for explicitly adopted rows recorded below, these are **recommendations**, not standards obligations or changes to finding severity. Document/issue updates do not establish executed software correctness.
 
@@ -182,6 +182,31 @@ The project lead's next September 20, 2026 `proceed` authorises the bounded F-18
 
 **Validation/result:** independent assistant source/diff and all seven published-prefix checks found no material correction needed. All 286 Roadmap leaf definitions/dependencies were compared unchanged; 86 relative-file references and whitespace checks passed. All 22 finding IDs and 13 question IDs remain accounted for. Only this checklist changed inside the Review folder; `review_complete` stays true and historical findings/evidence remain unchanged. The documented choices and fixture instructions are delivered, not executed server proof or a resolved upstream standard.
 
+## Twelfth authorised update — SWE schema entry points and Quantity labels
+
+After the lead requested an explicit accounting of unfinished review actions, the next `proceed` authorises fq-01/fq-02 together, not implementation. Guide v1.14 / Roadmap v1.29 select fixed published JSON/Text/Binary descriptor definitions while retaining complete wrapper validation, and retain the published nonempty Quantity label in JSON. No upstream schema is weakened or silently repaired. A descriptor passing structural validation is not a working codec; a label describes the component, not each measurement value.
+
+| Question / owner | Selected treatment and delivery |
+|---|---|
+| fq-01; #7/#8, then #140 | Preserve original artifacts; select the named encoding definition from a fixed local mapping and enforce the enclosing format. Require binary root-fail/fragment-pass/wrapper-pass diagnostics and malformed-descriptor negatives, followed at #140 by component/layout checks. **Guide/issue publication pending.** |
+| fq-02; #7/#8, then #28/#128 | Retain required Quantity labels without synthesising defaults. Require paired labelled/missing-label fixtures plus empty/null/wrong-type variants and nested-wrapper checks. Do not extrapolate a new label requirement to other families. **Guide/issue publication pending.** |
+
+**Source basis:** rechecked [OGC 24-014, SWE Common 3.0.0](https://docs.ogc.org/is/24-014/24-014.html), published 16 July 2025: §8.2.2, requirement 55/A.54, §§9.6–9.7 and requirements 70–71. §9.7.1 explicitly points to the BinaryEncoding definition, so choosing it is not an invented binary schema. The conceptual optional-label wording remains recorded beside JSON's stricter validation; no upstream correction is claimed. Reused evidence report 17 and the two saved questions only; no research area reopened.
+
+The following registry bytes were retrieved and hashed on 21 September 2026 UTC (20 September local), without rewriting line endings. These URLs are versioned locations, not immutable commit pins. They identify this source check, not an already packaged or reference-complete corpus. #7 must preserve/check the originals and their complete dependency closure, recording any authoritative change rather than silently refreshing it. The separate CSAPI Git commit does not pin these registry bytes.
+
+| Official artifact under `https://schemas.opengis.net/sweCommon/3.0/json/` | Bytes | SHA-256 |
+|---|---:|---|
+| `encodings.json` | 8221 | `9d432bbec5ffebeda21d612ab1ec6b22d4e8011ac967820ba17c07b0391e73ab` |
+| `Quantity.json` | 943 | `dc23d3496ae02a6d1de756d441aa12f248e74a1ff3feafda826640af04115b52` |
+| `DataArray.json` | 2335 | `2ed614d7bcfd45c7cc5b53d9f267f3667548a8193cb3ff9b066588cdc422bd0c` |
+| `AbstractSweIdentifiable.json` | 612 | `22130e687acfa3efbddacc75b0107c99db0e72988acef33163457af767e284d9` |
+| `sweCommon.json` | 1395 | `efc265b38f3fd540693e8a352f463f1c9a98667ddb55d6d42f6cc00e08edcc14` |
+
+**Boundary:** original issue bodies/pins, all 286 leaves/dependencies, Goal v1.8 and historical review evidence remain unchanged. No XML capability, public schema selector, arbitrary-reference fetching, default label, licence/settings change, installation, upstream filing or software implementation. Source inspection and hashing are not execution through the future Glaux validator. fq-01/fq-02 are answered at the design/instruction level; delivery still needs the five verified amendments below, and runtime proof remains with their tasks.
+
+**Publication evidence:** pending planning commit, issue amendments and exact readbacks. No issue is complete or closed by this update.
+
 ## Decisions needed from the project lead
 
 There is no need to personally resolve every technical detail. The technical recommendations below can be accepted or adjusted as a group, with the explicitly unresolved interpretations left for their named tasks.
@@ -191,7 +216,7 @@ There is no need to personally resolve every technical detail. The technical rec
 | F-01 — project licence | **Project lead selects the organisation-approved licence.** Dependencies do not select it for us. No peer copying is planned; revisit reuse terms only if copying is proposed. | Before [#4](https://github.com/DGIWG-P507/glaux-server/issues/4). |
 | F-02 — enforced checks | Inspection above confirms no enforced checks at its recorded time. **Recommend required automated checks before merges**, retaining PR-per-issue and assistant merging after checks, without mandatory human review. Configuration still needs authorisation and real check names from #6. | Decide early; implement/verify with [#6](https://github.com/DGIWG-P507/glaux-server/issues/6), before dependent merges such as #7. |
 
-**Decision record:** licence remains unselected; enforcement changes remain unauthorised. All eleven bounded updates are delivered; the eleventh covers only F-18's stated metadata/admission choices and existing owners. This completes the selected Guide/issue clarification pass, not software implementation or the remaining owner decisions. It does not convert optional cleanup or later questions into pre-implementation requirements.
+**Decision record:** licence remains unselected; enforcement changes remain unauthorised. The first eleven updates completed the originally selected amendment group, not the whole review action list. The lead then kept review follow-up active and authorised fq-01/fq-02; the twelfth update records that work. Six other technical questions remain unresolved, and optional cleanup remains optional. No implementation handoff has been approved.
 
 ## Recommended bounded changes
 
@@ -236,12 +261,12 @@ These do not justify another broad standards study. Reuse the recorded evidence;
 
 ## Remaining questions: route them, do not commission twelve studies
 
-The review's questions remain recorded in [review-state.json](review-state.json). Except for the explicitly recorded fq-07/fq-08/fq-09 follow-up dispositions, the following is a proposed handling plan, **not a claim they are answered**. Linked issues are affected owners, not newly assigned research projects.
+The review's questions remain recorded in [review-state.json](review-state.json). Follow-up dispositions for fq-01/fq-02/fq-07/fq-08/fq-09 are recorded here without rewriting that historical review. Six technical questions remain open: fq-03/fq-04/fq-05/fq-06/fq-11/fq-13. Their previous placement at implementation tasks was scheduling, not proof they could not be addressed before coding. Linked issues are affected owners, not newly assigned research projects; unadopted treatments below are recommendations, not answered questions.
 
 | Question | Proposed handling and timing |
 |---|---|
-| fq-01 — binary encoding omitted from root schema | Check whether the actual validation path uses that root before the Phase 4.3 binary work; if it does not, record inapplicability. Do not rewrite a schema that the path never uses. |
-| fq-02 — optional prose label versus required schema label | Resolve for minimal component/publisher fixtures in Phase 2.1, before the Phase 4.1 codec fixtures inherit them. Record the source conflict and selected validation behaviour. |
+| fq-01 — binary encoding omitted from root schema | **Answered in Guide v1.14:** complete applicable wrappers plus fixed published descriptor definitions, not universal validation through the incomplete root. #7/#8 prove the selected early structural path; #140 adds binary compilation evidence. Preserve the differing original-root result. Publication status is in the twelfth update; software proof remains pending. |
+| fq-02 — optional prose label versus required schema label | **Answered in Guide v1.14:** retain nonempty Quantity labels in JSON and record the conceptual distinction. #7/#8 establish fixtures/structural checks; #28/#128 verify component and nested record contracts. No label fabrication or new blanket rule. Publication status is in the twelfth update; software proof remains pending. |
 | fq-03 — LineString in GeometryCollection | Carry the exact prose/schema discrepancy into the spatial fixtures for #231/#237, alongside the existing singleton adaptation. No full filtering re-review. |
 | fq-04 — SensorML media-type note | Confirm whether a required client/fixture needs the legacy alias while implementing negotiation. Keep the published type canonical; no speculative compatibility feature. |
 | fq-05 — additional abstract-test seams | Account for the recorded candidates in #80/#121 and the relevant Part 2 encoding tests. Verify the still-unverified A.115 candidate before treating it as a defect. Use F-08's qualification rule. |
@@ -261,4 +286,4 @@ A new research plan needs a substantial unanswered design question, a consequenc
 2. **Apply approved actions:** prioritise early owners (#15/#19/#22/#26/#56), then later owners before their work. Update Guide versions/cross-references and existing issue instructions, preserving their original pinned baselines and recording approved amendments. Change Roadmap leaves only when necessary; do not create another backlog.
 3. **Record and implement:** link delivered changes against these rows. Distinguish document changes from executed tests. Resume the existing one-issue/PR workflow without waiting for optional cleanup.
 
-**Current handoff:** the F-18 update is delivered and the selected Guide/issue clarification pass is complete; stop here. Recommended next authorised iteration is the existing [task 1.1.1 / issue #3](https://github.com/DGIWG-P507/glaux-server/issues/3), under Roadmap §5.3: inspect the actual server checkout and approved tool/database availability, document what is present or missing, and use the existing one-branch/one-PR-per-issue workflow. No implicit installation or unrelated build work; applicable checks and assistant review still precede merging. This awaits the lead's `proceed` and does not start #3 in this iteration. The lead must select the organisation-approved licence before #4; enforcement configuration still needs authorisation and real check names from #6 before dependent merges. Remaining owner-timed questions stay with their listed tasks; optional editorial cleanup does not become another prerequisite review. No implementation issue is complete. The closed `review-state.json` remains review coverage, not an implementation queue.
+**Current handoff:** remain on the review action list, not issue #3. This iteration addresses fq-01/fq-02 and stops after their documentation/issue delivery is verified. Six technical questions remain open. The recommended next bounded follow-up is fq-03/fq-05: the recorded spatial-literal and published-test discrepancies, using their existing source evidence and owners, without a new research plan or broad re-review. This awaits the lead's next `proceed`; no subsequent work starts automatically. Licence selection before #4, enforcement authorisation/real checks from #6, and optional editorial cleanup remain distinct unfinished actions. No implementation issue is complete. The closed `review-state.json` remains historical review coverage, not proof that follow-up or implementation is complete.
