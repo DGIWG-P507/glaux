@@ -1,6 +1,6 @@
 # Glaux Server review follow-up actions
 
-**Status: all seven approved bounded updates are delivered. Guide v1.9 and four verified issue amendments now state the per-relation spelling/comparison rules. Software implementation remains pending; other actions remain proposed.**
+**Status: the first seven approved bounded updates are delivered. Guide v1.10 clarifies the existing latest-observation interpretation; its #112 amendment is pending publication. Software implementation remains pending; other actions remain proposed.**
 
 **Prepared:** September 20, 2026. The review remains complete. This is the working action checklist for using its results, not another review, research plan, requirements document or replacement roadmap.
 
@@ -8,7 +8,7 @@
 
 Keep the Goal, architecture and 286-task backlog. Choose the licence and confirm how automated checks will be enforced, then make a small set of agreed clarifications in the existing Guide and issue instructions. Handle later technical questions before their owning tasks, not as prerequisites to starting the entire project. Leave optional cleanup and withdrawn findings out of the critical path.
 
-Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.9 / Roadmap v1.24, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
+Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.10 / Roadmap v1.25, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
 
 Except for explicitly adopted rows recorded below, these are **recommendations**, not standards obligations or changes to finding severity. Document/issue updates do not establish executed software correctness.
 
@@ -138,6 +138,12 @@ Primary checks: [Part 1](https://docs.ogc.org/is/23-001/23-001.html) §7.9, §§
 
 **Validation/result:** independent assistant source/diff review and published-prefix review found no material defect. All 286 Roadmap leaf definitions/dependencies were compared unchanged; 86 relative-file references and whitespace checks passed. The checklist retains all 22 finding IDs and 13 question IDs. The upstream example correction was checked as a three-relation change in one example, not a revised standard. Only this checklist changed inside the Review folder; its closed state, findings, evidence and manifest remain intact. F-11's implementation instructions are delivered, not executed conformance evidence or a claim to have resolved the remaining published contradictions.
 
+## Eighth authorised update — latest-observation interpretation
+
+The project lead's next September 20, 2026 `proceed` authorises F-07's documentation/fixture clarification in Guide §§4.4/8/13 and existing [#112](https://github.com/DGIWG-P507/glaux-server/issues/112). Guide v1.10 / Roadmap v1.25 retain the existing rule: authorise, scope and filter first, then take one greatest result time across the eligible selection and retain all ties. A nested stream can contain multiple sampling features; it is not implicitly a latest-per-feature query. A small scope/expected-ID example makes the distinction concrete, with empty-set, paging and freshness limits stated separately.
+
+**Evidence and boundary:** rechecked [Part 2 requirement 50D](https://docs.ogc.org/is/23-002/23-002.html#_req_advanced-filtering_obs-by-resulttime) and [A.50](https://docs.ogc.org/is/23-002/23-002.html#_conf_advanced-filtering_obs-by-resulttime), reusing IDR-011 §7.4/P-011-03 and IDR-034 §10.1. The special value is required, but grouping is not explicitly specified; the endpoint-wide operator remains a labelled Glaux interpretation. A.50 omits the special value, so the latest/scope/tie checks are separately identified supplements, not evidence that the published test already covered it. No new grouping, snapshot, freshness guarantee, peer-implementation assertion, upstream filing or broad research. Original issue scope/body/pins, all 286 leaves/dependencies, Goal v1.8 and the closed review remain unchanged. **#112 amendment pending.** No licence/settings change, installation or coding is authorised.
+
 ## Decisions needed from the project lead
 
 There is no need to personally resolve every technical detail. The technical recommendations below can be accepted or adjusted as a group, with the explicitly unresolved interpretations left for their named tasks.
@@ -147,7 +153,7 @@ There is no need to personally resolve every technical detail. The technical rec
 | F-01 — project licence | **Project lead selects the organisation-approved licence.** Dependencies do not select it for us. No peer copying is planned; revisit reuse terms only if copying is proposed. | Before [#4](https://github.com/DGIWG-P507/glaux-server/issues/4). |
 | F-02 — enforced checks | Inspection above confirms no enforced checks at its recorded time. **Recommend required automated checks before merges**, retaining PR-per-issue and assistant merging after checks, without mandatory human review. Configuration still needs authorisation and real check names from #6. | Decide early; implement/verify with [#6](https://github.com/DGIWG-P507/glaux-server/issues/6), before dependent merges such as #7. |
 
-**Decision record:** licence remains unselected; enforcement changes remain unauthorised. All seven bounded updates are delivered; the seventh adopts only F-11's per-relation spelling/comparison clarification. This does not convert the remaining recommendations into requirements.
+**Decision record:** licence remains unselected; enforcement changes remain unauthorised. The first seven bounded updates are delivered; the eighth clarifies only F-07's existing latest-selection interpretation without changing behavior. This does not convert the remaining recommendations into requirements.
 
 ## Recommended bounded changes
 
@@ -171,7 +177,7 @@ These do not justify another broad standards study. Reuse the recorded evidence;
 
 | Finding | Recommended treatment | Existing owner / stopping point |
 |---|---|---|
-| F-07 — latest observations | Keep the selected authorised-and-filtered maximum result time, retaining ties. Document the interpretation and interoperability limits beside the existing fixtures. Make no claim about peer behaviour. | Guide §§4.4/13; #112. Stop when the selected rule and limits are explicit; no behaviour change. |
+| F-07 — latest observations | **Clarified in Guide v1.10:** retain the selected authorised-and-filtered endpoint-wide maximum and all ties, including multiple feature series within one stream; document client limits and supplemental-test status. No peer-behavior claim or semantic change. | Guide §§4.4/8/13; #112. **Guide delivered; issue publication pending; implementation pending.** |
 | F-08 and F-09 — imperfect published tests | Document both-parts prerequisite conflicts and the `deployedSystems` adaptation. Preserve source/adapted procedures and qualified results, including SWE array-form and CQL2 singleton/dataset qualifications. An adapted pass is not an unmodified official pass. | Guide §§7.2/13; #80–#82/#121–#122; SWE/filtering #267–#268; declarations #271/#288. Stop at traceable procedures and evidence labels. |
 | F-11 — relation spelling | **Adopted in Guide v1.9:** applicable Part 1 Table 3 output and relation-only case-insensitive comparison, with named source-preserving test adaptations. Preserve the separate event JSON exception, AsyncAPI URN and full queryables URI; no universal prefix rule or runtime legacy adapter. Upstream event mapping remains qualified. | Guide §§4.1.1/4.5/8/13; #56/#212/#214/#228. **Guide and named issue amendments delivered; implementation pending.** |
 | F-13 — unknown observation members | Select preserve-as-opaque, ignore or reject for unmapped members; the review does **not** choose. Keep POST/PUT/PATCH consistent without weakening known/read-only-field validation. Resolve ordinary observation JSON first, then family-specific rules—not universal rejection. | Guide §§4.6/13; #98–#102. Stop with the choice, the misleading `foi@id` example, and method-consistency tests documented. |
@@ -217,4 +223,4 @@ A new research plan needs a substantial unanswered design question, a consequenc
 2. **Apply approved actions:** prioritise early owners (#15/#19/#22/#26/#56), then later owners before their work. Update Guide versions/cross-references and existing issue instructions, preserving their original pinned baselines and recording approved amendments. Change Roadmap leaves only when necessary; do not create another backlog.
 3. **Record and implement:** link delivered changes against these rows. Distinguish document changes from executed tests. Resume the existing one-issue/PR workflow without waiting for optional cleanup.
 
-**Current handoff:** the F-11 update is delivered; stop here. Recommended next bounded iteration: F-07, document the selected latest-observation interpretation and interoperability limits in the existing Guide and #112. Retain the authorised-and-filtered greatest result time with all ties; no behavior change, peer-implementation claim or broad research. This next proposal awaits the lead's `proceed`. Other proposals and licence/enforcement decisions remain outstanding. No implementation issue is complete. The closed `review-state.json` remains review coverage, not an implementation queue.
+**Current handoff:** finish the authorised F-07 update by publishing and verifying #112's amendment, record delivery, then stop. No other proposal, coding or settings change is authorised by this update. Licence/enforcement decisions remain outstanding. No implementation issue is complete. The closed `review-state.json` remains review coverage, not an implementation queue.
