@@ -1,6 +1,6 @@
 # Glaux Server review follow-up actions
 
-**Status: proposed for project-lead decision; no fixes approved or implemented by this document.**
+**Status: first bounded technical update authorised; Guide changes prepared, early issue publication pending. Other actions remain proposed.**
 
 **Prepared:** September 20, 2026. The review remains complete. This is the working action checklist for using its results, not another review, research plan, requirements document or replacement roadmap.
 
@@ -8,9 +8,35 @@
 
 Keep the Goal, architecture and 286-task backlog. Choose the licence and confirm how automated checks will be enforced, then make a small set of agreed clarifications in the existing Guide and issue instructions. Handle later technical questions before their owning tasks, not as prerequisites to starting the entire project. Leave optional cleanup and withdrawn findings out of the critical path.
 
-Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Planning baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
+Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.4 / Roadmap v1.19, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
 
-These are **recommendations**, not standards obligations or changes to finding severity. Record decisions and resulting change links here; publication alone does not complete an action.
+Except for explicitly adopted rows recorded below, these are **recommendations**, not standards obligations or changes to finding severity. Document/issue updates do not establish executed software correctness.
+
+## First authorised update — 20 September 2026
+
+The project lead's `proceed` after the bounded next-step proposal authorised F-12 independent response checks, early F-19 audit expectations and F-20 denial auditing in the Guide and issues #15/#19/#22/#26, plus read-only F-02 inspection. It did **not** approve every row, licence selection, enforcement-setting changes, installations or coding. The completed review and its evidence remain unchanged.
+
+| Delivery | Current result |
+|---|---|
+| Guide / current references | Guide v1.4 adopts the selected response-test and audit rules; Roadmap v1.19 aligns the reference without changing task scope, numbering or dependencies. |
+| #15 — transactional audit | Amendment prepared: exact audit fields, atomic failure rollback, serving/admin/retention separation and the denial-recording boundary. **Issue publication pending.** |
+| #19 — HTTP response checks | Amendment prepared: inspect required wire fields independently of production-type normalisation; prove a known-bad response fails without banning permitted extensions. **Issue publication pending.** |
+| #22 — denied actions | Amendment prepared: selected categories as implemented, safe fields, finite bounds and failure checks that never allow the denied operation. **Issue publication pending.** |
+| #26 — initial restore | Amendment prepared: compare captured audit against an independent pre-backup manifest and reject missing/corrupt required audit. No promise of post-backup recovery. **Issue publication pending.** |
+| Runtime proof | None: these are planning/acceptance changes. Issues remain open and implementation has not started. |
+
+**Still to propagate under these adopted Guide rules:** #80 (runner), #251/#254/#283 (full restore/retention) and #280 (denial regression), plus applicable later resource owners as implemented. Do not mark F-12/F-19/F-20 wholly delivered from four early amendments. F-19's separate post-backup-deletion proposal remains unadopted. Other proposed changes below remain for a later authorised iteration.
+
+### Current merge-check inspection — F-02
+
+Observed **20 September 2026 local / 21 September 2026 00:49 UTC**, server HEAD `b1a80298305fd62164160058cde6d1794f533174`:
+
+- [Main branch](https://api.github.com/repos/DGIWG-P507/glaux-server/branches/main): `protected: false`; required-check enforcement `off`; no required contexts/checks.
+- [Repository/parent rulesets](https://api.github.com/repos/DGIWG-P507/glaux-server/rulesets?includes_parents=true) and [effective main rules](https://api.github.com/repos/DGIWG-P507/glaux-server/rules/branches/main): both empty.
+- [Workflow inventory](https://api.github.com/repos/DGIWG-P507/glaux-server/actions/workflows): zero workflows. The pinned tree has no workflow files; current HEAD has no check runs or commit statuses.
+- The dedicated protection endpoint returned a connector administration-permission error. That error is **not** the basis for the result; the successful branch/rules reads above establish that no checks are enforced. Public effective-rules/workflow reads required no credentials.
+
+**Outcome:** inspection delivered; configuration remains pending and unauthorised. #6 must first establish actual working checks—there are no existing job names to select. Before dependent code merges, the project lead needs to approve applying required-check enforcement to those real checks, with no new mandatory human-review gate. No setting was changed, and no successful CI run is claimed.
 
 ## Decisions needed from the project lead
 
@@ -21,7 +47,7 @@ There is no need to personally resolve every technical detail. The technical rec
 | F-01 — project licence | **Project lead selects the organisation-approved licence.** Dependencies do not select it for us. No peer copying is planned; revisit reuse terms only if copying is proposed. | Before [#4](https://github.com/DGIWG-P507/glaux-server/issues/4). |
 | F-02 — enforced checks | Inspect current controls; the review only established the old baseline. **Recommend required automated checks before merges**, retaining PR-per-issue and assistant merging after checks, without mandatory human review. Report any enforcement limitation before changing settings. | Decide early; implement/verify with [#6](https://github.com/DGIWG-P507/glaux-server/issues/6), before dependent merges such as #7. |
 
-**Decision record:** licence not selected here; enforcement changes not authorised here; technical recommendations not yet accepted. This iteration authorises drafting and publishing this checklist only.
+**Decision record:** licence remains unselected; enforcement changes remain unauthorised. Only the first bounded update recorded above is approved. This does not convert the remaining recommendations into requirements.
 
 ## Recommended bounded changes
 
@@ -30,7 +56,7 @@ I recommend adopting these improvements in existing Guide sections and issue acc
 | Finding | Proposed change and why | Where it belongs / evidence of completion |
 |---|---|---|
 | F-03 — cached responses | Bind validators/cache reuse to the authorised representation; default protected responses to `Cache-Control: private, no-store`. Require cross-caller and hidden-change leakage tests. Keep HTTP freshness distinct from observation freshness. No new cache service. | Guide §§4.6/6.2/8, scenarios 8/9; #151/#264. Done when the rule and discriminating checks are explicit. |
-| F-12 — independent response checks | Adopt optional hardening: examine relevant raw response fields with ordinary format tools, not only production types that may hide dropped/coerced fields. Require a malformed/missing-field fixture that must fail. Production-type checks may supplement, not replace, that evidence. **Proposed policy, not permission already settled by the Guide.** | Guide §§7.2/8.1.1; #19/#80. Done when the boundary and negative fixture are explicit; no new framework. |
+| F-12 — independent response checks | **Adopted in Guide v1.4:** examine relevant raw response fields with ordinary format tools, not only production types that may hide dropped/coerced fields. Require a malformed/missing-field fixture that must fail. Production-type checks may supplement, not replace, that evidence. This was an open boundary resolved by this approved change, not permission established by the reviewed baseline. | Guide §§7.2/8.1.1; #19/#80. Early delivery above; later propagation still pending. No new framework. |
 | F-14(c) — observation ordering | State **ascending** explicitly for the existing observation sort key and tie-breaker, as the accepted research recommends. Do not change the selected changing-view paging model. | Guide §4.4; #113 (observation paging), then #233. Complete when direction and ordered expected results are explicit. |
 | F-19 — audit survival and cleanup | Include audit at the backup's recovery point in restore comparisons. Define authorised retention and distinguish serving, administrative and retention permissions. Do not promise unavailable post-backup records. **Durability is not tamper-proofing:** no hash-chain or audit-replication project. | Guide §§4.7/4.10/8, scenario 6; #15/#26, then #251/#254/#283. Done when restore and retain/remove checks name audit and its limits. |
 | F-19 — post-backup deletions | Address restored resources deleted after the backup. Reconcile available deletion evidence before serving; otherwise state the limitation and operator decision, not a false continuity guarantee. Do not assume an external deletion ledger. | Guide §4.7/scenario 6; #26/#126/#251–#252/#283. Done when behaviour and a fixture cover local reads and re-export. Separate from audit survival. |
@@ -91,4 +117,4 @@ A new research plan needs a substantial unanswered design question, a consequenc
 2. **Apply approved actions:** prioritise early owners (#15/#19/#22/#26/#56), then later owners before their work. Update Guide versions/cross-references and existing issue instructions, preserving their original pinned baselines and recording approved amendments. Change Roadmap leaves only when necessary; do not create another backlog.
 3. **Record and implement:** link delivered changes against these rows. Distinguish document changes from executed tests. Resume the existing one-issue/PR workflow without waiting for optional cleanup.
 
-**Current handoff:** proposals ready for discussion; no approved design, server issue, setting or software changed. Next: agree actions and outstanding owner choices. This file tracks follow-up; the closed `review-state.json` remains review coverage, not an implementation queue.
+**Current handoff:** publish the Guide/Roadmap update, then attach its exact commit-pinned amendments to #15/#19/#22/#26 and read them back before recording delivery. Preserve each original issue body and preparation pins; an amendment extends verification rather than closing an issue. Stop after this bounded update. Licence/enforcement choices and later action batches remain outstanding. The closed `review-state.json` remains review coverage, not an implementation queue.

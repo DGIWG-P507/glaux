@@ -2,7 +2,7 @@
 
 **Status: complete.** The pre-implementation review finished on September 20, 2026. Start with [the final consolidated assessment](evidence/51-pass-3c-45-final-consolidated-assessment.md). This folder remains the shared record of how that conclusion was reached, across Copilot and other AI providers; it is no longer an open queue, and further review would be a new authorization with its own scope.
 
-**Acting on the results:** [Review follow-up actions](action-list.md) translates the findings into proposed changes, existing issue owners and project-lead decisions. It is a proposal for using the completed review, not approval of fixes or a reopened review queue.
+**Acting on the results:** [Review follow-up actions](action-list.md) records approved changes, their delivery, remaining proposals and project-lead decisions. Follow-up approvals are recorded there; they do not reopen this completed review or rewrite its historical evidence.
 
 [Planning documents](../README.md) · [Findings and current assessment](findings.md) · [Review instructions](instructions.md) · [Coverage and handoff state](review-state.json) · [Evidence manifest](evidence/source-manifest.json)
 

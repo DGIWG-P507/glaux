@@ -1,14 +1,14 @@
 # Glaux Server Roadmap
 
-**Version:** 1.18<br>
-**Date:** 19 September 2026<br>
+**Version:** 1.19<br>
+**Date:** 20 September 2026<br>
 **Effort:** Glaux Server<br>
 **Status:** Initial GitHub issue publication complete — implementation not started<br>
 **Depends On:** [Goal and Definition v1.8](glaux-server-goal-and-definition.md), Approved<br>
-**Implements:** [Implementation Guide v1.3][Guide], Baselined<br>
+**Implements:** [Implementation Guide v1.4][Guide], Baselined<br>
 **Implementation status:** All implementation subtasks remain planned, not verified complete. All 286 initial issues across nine phases and 41 groups are published, linked and verified; none remain to publish. The complete-set publication check has passed. Implementation begins only on the next `proceed`, with task 1.1.1 / issue #3.
 
-**Revision summary:** Aligns current planning references with Goal v1.8's navigation links and Guide v1.3's Goal-paired implementation explanations. This is a documentation-only update: approved scope, technical contracts, all nine phases, 41 groups, 286 task definitions, dependencies and issue links remain unchanged. All 286 issues were published and reconciled at the v1.17 handoff; their version/commit-pinned preparation references remain historical, with current planning rules resolved before execution. Implementation has not started; §5.3 still hands off to task 1.1.1 / issue #3.
+**Revision summary:** Aligns the current Guide reference with v1.4's authorised early response-test and audit clarifications. Existing leaf scope, IDs, dependencies and sequencing are unchanged; verification amendments are attached to existing issues #15, #19, #22 and #26 while their original preparation pins remain intact. Later propagation remains tracked in the [review action checklist](Review/action-list.md). The completed review is not reopened, implementation has not started, and this documentation iteration does not execute task 1.1.1 / issue #3.
 
 ## 1. Purpose and Executive Summary
 
@@ -46,7 +46,7 @@ Provide the small three-package Rust workspace and PostgreSQL/PostGIS design alr
 
 ## 2. Planning Assumptions and Constraints
 
-- Goal v1.8 and Guide v1.3 control this Roadmap. Read [Guide §1.1: How the implementation fulfills the Goal](glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for the paired capability and technology explanations. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
+- Goal v1.8 and Guide v1.4 control this Roadmap. Read [Guide §1.1: How the implementation fulfills the Goal](glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for the paired capability and technology explanations. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
 - Each implementation task includes its tests, safe error/access behavior, API/example updates and relevant source/test identifiers. A passing happy path alone is not task completion.
 - Preserve original standards/schema artifacts and the Guide's explicit interpretations. Do not silently adopt moving drafts or claim that a project interpretation resolved an upstream ambiguity.
 - Use a real PostgreSQL/PostGIS test instance and independent HTTP checks from the first persistent slice. Keep expected values independent of server serializers and query code.
@@ -1148,7 +1148,9 @@ Version 1.17 records the thirteenth and final publication batch on September 19,
 
 Version 1.18 records the project lead's September 19, 2026 `proceed` to add Goal-paired capability/technology explanations and align current document references. Guide v1.3 explains the existing design; Goal v1.8 adds direct navigation from its unchanged capability statements. This Roadmap updates its current baseline links, not the 286 leaves, their dependencies or their published issues. Historical research and issue-preparation records retain the versions and commits they used. A stale research-plan status banner now directs readers to this Roadmap for the current handoff.
 
-Approved capability scope, detailed design contracts and accepted research findings remain unchanged. This iteration updates documentation and references only; it does not install software, implement the server, perform production actions or mark an implementation issue complete.
+Version 1.19 records the project lead's September 20, 2026 `proceed` for the first bounded post-review Guide/early-issue update. Guide v1.4 clarifies independent actual-response checks and early audit recording, permissions and restoration. The existing Guide-resolution rule applies those approved changes; issue-specific verification amendments target #15/#19/#22/#26, with later owners tracked in the action checklist. No leaf is added, removed, renumbered or resequenced. Historical preparation pins and review snapshots remain unchanged, and issue amendments are not executed acceptance evidence.
+
+Approved capability scope and accepted research findings remain unchanged. This iteration updates documentation and issue verification instructions only; it does not install software, implement the server, change repository settings or mark an implementation issue complete.
 
 Use version updates for material sequencing or scope changes. Technical design changes belong in the Guide; mission/scope changes belong in the Goal first. Keep task-to-Guide/test connections current without copying the standards into a separate requirement list. Historical research acceptance and findings remain unchanged.
 
