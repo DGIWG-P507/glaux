@@ -1,9 +1,9 @@
 # Glaux Server Goal and Definition
-**Version:** 1.8<br>
-**Date:** 19 September 2026<br>
+**Version:** 1.9<br>
+**Date:** 21 September 2026<br>
 **Status:** Approved
 
-**Revision summary:** Adds direct links from the Goal's capability sections to the paired explanations in Implementation Guide v1.3, showing which selected technologies and mechanisms fulfill each description. This is a navigation-only update authorized by the project lead; the approved Goal v1.7 requirements, scope, standards baseline and experimental boundaries are unchanged.
+**Revision summary:** Adopts the project lead's selected, bounded experimental Part 5 Protobuf alternative in place of implementation deferral. Implementation Guide v1.20 pins the OSH compatibility target and defines supported operations, structures, limitations and verification. This adds an experimental completion deliverable without replacing required SWE Binary or changing the published Parts 1/2 target. Roadmap, issue and README propagation is the next bounded iteration, not completed by this scope decision; see the [current handoff](Review/action-list.md#current-part-5-planning-adjustment).
 
 ---
 
@@ -65,6 +65,10 @@ Glaux Server shall implement bounded enhanced observation filtering using OGC AP
 
 The project lead approved these two additions through the September 17, 2026 `proceed` following the combined scope discussion. Their bounded implementation and verification are part of server completion, even though a deployment may disable optional capabilities. Acceptance of the earlier research alone was not that scope decision.
 
+Glaux Server shall also implement a **bounded, explicitly experimental Protobuf capability associated with the developing CSAPI Part 5 work**, targeting the pinned OpenSensorHub proposal identified in [Implementation Guide §4.3.1](glaux-server-implementation-guide.md#431-experimental-part-5-protobuf-subset). The selected subset covers schema discovery, context-bound observation exchange, command-parameter submission/retrieval and outbound native observation publication. The Guide defines the exact supported operations and SWE structures, source pins, framing, compatibility differences and rejection rules. This is not full OSH compatibility or conformance to an approved Part 5 standard, nor a commitment to all proposed Part 5 encodings. Required ordinary JSON and SWE JSON/Text/Binary capabilities remain intact.
+
+The project lead selected this alternative and authorised its Goal/Guide amendment through the September 21, 2026 `proceed`, superseding the earlier Part 5 deferral. Its bounded implementation, documented limitations and independent interoperability evidence are part of server completion, even if a deployment disables the experiment. The [Part 5 study](../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-060-csapi-part-5-protobuf-first-implementation-study-report.md) remains the historical assessment, not rewritten to recommend the later choice. This approval starts planning propagation, not software implementation.
+
 ---
 
 ## 5. Core Capability Scope
@@ -95,6 +99,8 @@ The selected experimental Part 4 specializations shall be managed through the ex
 Glaux Server shall support standards-aligned access to connected-system information and related data, including structured resource retrieval, observation access, metadata access, historical query behavior, exchange of sensor-derived information, and preservation of contextual binding between data, producing systems, observed properties, features of interest, time, location, provenance, and validity.
 
 Storage, retrieval, and supported conversions shall preserve the applicable schema bindings, units, and temporal meaning. Any limitations of a supported conversion shall be documented; conversion shall not silently change the meaning of the data.
+
+The selected Protobuf experiment adds a compact binary representation for its supported observation and command values, using the same logical contracts and access rules. Context required to interpret a message and information not carried by that representation shall be explicit. Unsupported structures or conversions shall fail visibly; successful parsing alone shall not establish interoperability, complete resource preservation or a performance benefit.
 
 Enhanced observation filtering shall distinguish direct sampling geometry from an intersecting sampling ancestor, current geometry from geometry applicable at observation time, and measured values from property identifiers or serialized text. Missing historical evidence shall not silently be replaced with present-day location. Result filtering shall preserve type, unit and nil-value meaning and shall not disclose protected related information.
 
@@ -239,7 +245,7 @@ These exclusions do not prevent Glaux Server from supporting integration pattern
 ## 10. Summary Statement
 Glaux Server is intended to be a full-scope, open-source, standards-correct Rust reference implementation of OGC API - Connected Systems and its applicable SensorML and SWE Common requirements, serving the Glaux ecosystem and the STANAG 4789 / AEP-4789 core APIs and encodings package.
 
-Its resources and APIs shall support connected-system discovery, description, access, exchange, streaming, status, events, and tasking across NATO, national, coalition, federated, tactical, and DDIL-informed environments. Experimental Part 3 publish/subscribe and the selected static Part 4 sampling specializations retain explicit draft status. Bounded Features Part 3/CQL2 observation filtering adds the agreed spatial and measured-value query capability without changing the approved CSAPI baseline.
+Its resources and APIs shall support connected-system discovery, description, access, exchange, streaming, status, events, and tasking across NATO, national, coalition, federated, tactical, and DDIL-informed environments. Experimental Part 3 publish/subscribe, the selected static Part 4 sampling specializations and the pinned OSH-targeted Part 5 Protobuf subset retain explicit experimental status and limitations. Bounded Features Part 3/CQL2 observation filtering adds the agreed spatial and measured-value query capability without changing the approved CSAPI baseline.
 
 The resulting server shall be understandable, maintainable, independently usable with documented dependencies, and verifiable through standards-based tests and external clients. The full intended capability remains the goal throughout incremental implementation.
 
