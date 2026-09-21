@@ -1,6 +1,6 @@
 # Glaux Server review follow-up actions
 
-**Status: the approved response-test/audit, cache/order and exchange/export-accountability planning updates are delivered in the Guide and their sixteen named issues. Software implementation remains pending; other actions remain proposed.**
+**Status: the first four bounded updates are delivered. The diagnostics-access clarification is adopted in Guide v1.7; its issue #256 amendment is being published. Software implementation remains pending; other actions remain proposed.**
 
 **Prepared:** September 20, 2026. The review remains complete. This is the working action checklist for using its results, not another review, research plan, requirements document or replacement roadmap.
 
@@ -8,7 +8,7 @@
 
 Keep the Goal, architecture and 286-task backlog. Choose the licence and confirm how automated checks will be enforced, then make a small set of agreed clarifications in the existing Guide and issue instructions. Handle later technical questions before their owning tasks, not as prerequisites to starting the entire project. Leave optional cleanup and withdrawn findings out of the critical path.
 
-Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.6 / Roadmap v1.21, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
+Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.7 / Roadmap v1.22, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
 
 Except for explicitly adopted rows recorded below, these are **recommendations**, not standards obligations or changes to finding severity. Document/issue updates do not establish executed software correctness.
 
@@ -87,6 +87,12 @@ The project lead's next September 20, 2026 `proceed` authorises the proposed F-2
 
 **Validation/result:** assistant review found no material defect in the Guide/Roadmap design or the three published amendment prefixes, including the distinction between durable audit and external handoff. All 286 Roadmap leaf definitions/dependencies and the manifest field table were compared unchanged. Relative file links and whitespace checks passed; all 22 finding IDs and 13 question IDs remain accounted for. F-21/F-22 are addressed at the design/task-instruction level; implementation, failure-injection evidence and candidate documentation remain the owning issues' work. The completed review's state, findings, evidence and manifest are unchanged, not retrospectively rewritten as a clean baseline.
 
+## Fifth authorised update — metrics and trace access
+
+The project lead's next September 20, 2026 `proceed` authorises fq-09's proposed diagnostics-access clarification in Guide §4.12 and [existing issue #256](https://github.com/DGIWG-P507/glaux-server/issues/256). Guide v1.7 and Roadmap v1.22 record adoption; issue publication remains pending. Metrics and enabled traces must be internal or access-restricted by default through existing deployment/access controls, including effective proxy/port routing and configured diagnostic files/sinks. Minimal public liveness stays separate from protected detail. Tests need both permitted inspection and unauthorised denial/unreachability; redaction/cardinality checks remain separate.
+
+**Boundary:** no required new tracing instrumentation, collector/backend, telemetry API or administration service. Disabled/unconfigured sinks are recorded as absent rather than passed integrations. Goal v1.8, all 286 task definitions/dependencies, the existing readiness semantics and the completed review remain unchanged. The question is resolved in the approved planning baseline, not erased from the historical review. No licence, settings, installation or coding is authorised. Publication/readback evidence will be recorded after the issue amendment is delivered.
+
 ## Decisions needed from the project lead
 
 There is no need to personally resolve every technical detail. The technical recommendations below can be accepted or adjusted as a group, with the explicitly unresolved interpretations left for their named tasks.
@@ -96,7 +102,7 @@ There is no need to personally resolve every technical detail. The technical rec
 | F-01 — project licence | **Project lead selects the organisation-approved licence.** Dependencies do not select it for us. No peer copying is planned; revisit reuse terms only if copying is proposed. | Before [#4](https://github.com/DGIWG-P507/glaux-server/issues/4). |
 | F-02 — enforced checks | Inspection above confirms no enforced checks at its recorded time. **Recommend required automated checks before merges**, retaining PR-per-issue and assistant merging after checks, without mandatory human review. Configuration still needs authorisation and real check names from #6. | Decide early; implement/verify with [#6](https://github.com/DGIWG-P507/glaux-server/issues/6), before dependent merges such as #7. |
 
-**Decision record:** licence remains unselected; enforcement changes remain unauthorised. All four bounded updates above are approved and delivered. The fourth adopts F-21/F-22 only; this does not convert the remaining recommendations into requirements.
+**Decision record:** licence remains unselected; enforcement changes remain unauthorised. The first four bounded updates are approved and delivered; the fifth adopts fq-09 only. This does not convert the remaining recommendations into requirements.
 
 ## Recommended bounded changes
 
@@ -112,7 +118,7 @@ I recommend adopting these improvements in existing Guide sections and issue acc
 | F-20 — denied actions | **Adopted in Guide v1.4:** bounded denial categories, safe fields and recording-failure behaviour. **Audit failure never authorises the denied operation.** No independent logging platform. | Guide §4.10; #15/#22/#280. **Guide and named issue amendments delivered; implementation pending.** |
 | F-21 — what exchange does not transfer | **Adopted in Guide v1.6:** resource exchange and supplied production context do not replicate the source server's complete authenticated audit trail. Backup only protects its captured recovery point. | Guide §4.11 and exchange documentation; #239/#240/#287. **Guide and named issue amendments delivered; implementation pending.** No audit-synchronisation feature. |
 | F-22 — export accountability | **Adopted in Guide v1.6:** durable generation and release-attempt records precede handoff; protect actor/recipient/scope metadata, reauthorize staged content and record only observed outcomes. Failure/partial/uncertain output is explicit; none proves recipient receipt. | Guide §§4.10/4.11/8; #240, with #287 documenting the limits. **Guide and named issue amendments delivered; implementation pending.** No delivery-receipt platform. |
-| fq-09 — metrics and traces | Make metrics/traces internal or access-restricted by default, distinct from minimal public liveness. Use the existing deployment/access-control approach; do not create another administration service. | Guide §4.12; #256. Complete when the exposure boundary and an unauthorised-access check are explicit. This remains a proposed resolution of the recorded question. |
+| fq-09 — metrics and traces | **Adopted in Guide v1.7:** metrics/enabled traces are internal or access-restricted by default, distinct from minimal public liveness. Verify the effective routing and permitted/unauthorised access. Use existing controls; no new backend or administration service. | Guide §4.12; #256. **Guide adopted; issue publication pending; implementation pending.** The historical review question remains intact. |
 
 ## Interpretations to carry into existing work
 
@@ -141,7 +147,7 @@ These do not justify another broad standards study. Reuse the recorded evidence;
 
 ## Remaining questions: route them, do not commission twelve studies
 
-The review's questions remain recorded in [review-state.json](review-state.json). The following is a proposed handling plan, **not a claim they are answered**. Linked issues are affected owners, not newly assigned research projects.
+The review's questions remain recorded in [review-state.json](review-state.json). Except for the explicitly adopted fq-09 resolution, the following is a proposed handling plan, **not a claim they are answered**. Linked issues are affected owners, not newly assigned research projects.
 
 | Question | Proposed handling and timing |
 |---|---|
@@ -153,7 +159,7 @@ The review's questions remain recorded in [review-state.json](review-state.json)
 | fq-06 — Part 2 collection exposure | Decide which resource families are exposed through `/collections` when defining discovery, **before** their conformance fixtures, not only at release. Carry the decision into #271/#288 so applicable inherited tests are neither omitted nor claimed inapplicable without reason. Do not choose exposure merely to reduce testing. |
 | fq-07 — both-parts wording | Fold into F-08. No separate workstream. |
 | fq-08 — unknown-member policy across families | Fold into F-13. Distinguish ordinary JSON, GeoJSON foreign members and SensorML extension rules before extending a rule between families. |
-| fq-09 — metrics/traces access | Proposed resolution is in the bounded-changes table above; needs adoption, not a new study. |
+| fq-09 — metrics/traces access | Resolved at the planning level by Guide v1.7; delivery and implementation status are in the bounded-changes table above. No new study. |
 | fq-11 — future result time | Check the exact cited obligation before adding a rejection test in observation writes (#98–#102). Do not turn an unsupported research assertion into input rejection. |
 | fq-12 — reference markers | Optional cleanup above; no separate workstream. |
 | fq-13 — issue time and System kind/type | Reuse the recorded deferral and settle only the affected metadata/admission fields before their fixtures. Document the selected reading; do not infer a complete new model. |
@@ -166,4 +172,4 @@ A new research plan needs a substantial unanswered design question, a consequenc
 2. **Apply approved actions:** prioritise early owners (#15/#19/#22/#26/#56), then later owners before their work. Update Guide versions/cross-references and existing issue instructions, preserving their original pinned baselines and recording approved amendments. Change Roadmap leaves only when necessary; do not create another backlog.
 3. **Record and implement:** link delivered changes against these rows. Distinguish document changes from executed tests. Resume the existing one-issue/PR workflow without waiting for optional cleanup.
 
-**Current handoff:** the authorised F-21/F-22 update and its three issue amendments are delivered; stop here. Recommended next bounded update, **not yet approved**: fq-09, making metrics/traces internal or access-restricted by default while keeping minimal public liveness separate, in Guide §4.12 and existing issue #256. Use the existing deployment/access-control approach, not another administration service. Licence/enforcement decisions remain outstanding; no coding or settings change is authorised by the delivered updates. No implementation issue is complete. The closed `review-state.json` remains review coverage, not an implementation queue.
+**Current handoff:** finish the authorised fq-09 update by publishing and verifying its issue #256 amendment, then record delivery and stop. No other proposal, coding or settings change is authorised by this update. Licence/enforcement decisions remain outstanding. No implementation issue is complete. The closed `review-state.json` remains review coverage, not an implementation queue.
