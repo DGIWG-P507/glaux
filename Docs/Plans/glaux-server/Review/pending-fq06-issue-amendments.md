@@ -1,22 +1,26 @@
-# Pending fq-06 issue amendments
+# fq-06 issue amendments — delivery completed
 
-These seven prepared amendments belong to the fourteenth update in [the review action list](action-list.md#fourteenth-authorised-update--part-2-collection-exposure). They are **not published to their issues**. Guide v1.16 / Roadmap v1.31 are published at [664abdf](https://github.com/DGIWG-P507/glaux/commit/664abdf9de954d178d277aa1aaa7370207049c58). Six other amendments (#57/#80/#94/#100/#119/#121) were published and read back exactly.
+These seven amendments belong to the fourteenth update in [the review action list](action-list.md#fourteenth-authorised-update--part-2-collection-exposure). All seven are **published to their issue bodies and verified**, completing all thirteen fq-06 amendments. Guide v1.16 / Roadmap v1.31 remain published at [664abdf](https://github.com/DGIWG-P507/glaux/commit/664abdf9de954d178d277aa1aaa7370207049c58). The six previously delivered amendments (#57/#80/#94/#100/#119/#121) were reconfirmed present once and open. This file retains its original path and saved texts as delivery history; it is no longer a pending queue.
+
+**Verified delivery — 21 September 2026, 16:37:54 UTC:** following the lead's organisation-installation setup and new retry authorisation, the connected GitHub issue-edit operation succeeded. Each saved amendment below was prepended unchanged to its full live issue body after a pre-write comparison; exact complete-body readback verified preservation of earlier instructions and preparation pins. Titles, labels, assignees, milestones and open states are unchanged. Complete comment lists were checked before writing and at final verification and remained empty; no comment fallback was needed. No issue is complete or closed, and implementation/tests remain not started. Do not post these amendments again.
+
+## Earlier access failures — historical record
 
 On 21 September 2026, the execution policy blocked the second issue-update batch before publication. Subsequent readbacks found all seven bodies unchanged from the pre-edit snapshots. The connected GitHub update tool also returned `403 Resource not accessible by integration` for #122. No permission changes or alternate credential workarounds were attempted. No issue is closed or software implemented by these instructions.
 
-## Retry and comment fallback — 21 September 2026
+## Earlier retry and comment fallback — 21 September 2026
 
 The project lead explicitly authorised retrying body edits and using issue comments if edits are blocked, with sufficient time for responses. The connected GitHub tool completed both attempts on #122 with definitive `403 Resource not accessible by integration` responses: first the body edit, then comment creation. Neither was a timeout or an interrupted request. At **13:50:26 UTC**, readback of all seven issues and their comment lists confirmed unchanged bodies/open states and zero comments. No amendment was delivered by this retry, and no repeated comment writes were attempted on the other six after the permission denial.
 
-Comment delivery is now authorised as an alternative to prepending. For each saved amendment below, keep the substantive instructions and pinned links unchanged; immediately after the heading add: “This approved amendment is delivered as a comment at the project lead's request. It supplements the existing issue description and earlier amendments; preparation pins and completion checklists remain in place.” Replace the final paragraph with “Implementation and tests remain **not started**.” and omit the trailing divider. The original issue body stays intact. Record the exact verified comment URL as delivery evidence if this route succeeds.
+Comment delivery was authorised as an alternative to prepending. The saved fallback instructions were to keep the substantive instructions and pinned links unchanged; immediately after the heading add: “This approved amendment is delivered as a comment at the project lead's request. It supplements the existing issue description and earlier amendments; preparation pins and completion checklists remain in place.” Replace the final paragraph with “Implementation and tests remain **not started**.” and omit the trailing divider. The original issue body would stay intact, with the exact verified comment URL recorded as delivery evidence. This alternative was not used; the issue-body deliveries above are complete.
 
-## Resume only with an authorised issue or comment write connection
+## Retry safeguards used for the completed delivery
 
-Read the current action list, each live issue and its complete comment thread first. Preserve the current body, earlier amendments, title, labels and open state. Check whether an equivalent `664abdf` amendment is already in the body or comments; do not duplicate it. Inspect intervening changes and reconcile any overlap before writing. For a body edit, prepend the corresponding text below to the full live body, using a pre-write comparison and exact post-write readback; do not replace the issue with the amendment alone. If an edit is denied, the lead permits comment delivery using the wrapper above, provided that operation is authorised by the connection. Await each write's actual result; after an ambiguous result, read the issue/comments before any retry. A definitive permission denial is not resolved by waiting or bypassing access controls. Record verified delivery and its method/URL in the action list; do not move to fq-04 or implementation while these seven are still pending. Retain this file as the saved handoff, updating its delivery status rather than claiming these drafts were published.
+The completed retry read the current action list, each live issue and its complete comment thread; checked for an existing equivalent `664abdf` amendment; compared the live body immediately before writing; and verified the complete result afterwards. Saved text was added to the full body, never substituted for it. Each write's actual result was awaited. No access control was bypassed. Delivery method and issue URLs are recorded here and in the action list. The seven-item remainder is now empty; any next topic requires the next bounded authorisation, and this delivery does not authorise implementation.
 
 ## Issue #122 — [3.5.2] System Event and ordinary-JSON class cases
 
-[Existing issue](https://github.com/DGIWG-P507/glaux-server/issues/122) — **pending**. Exact prepend text:
+[Updated issue](https://github.com/DGIWG-P507/glaux-server/issues/122) — **delivered by body edit; exact readback verified 21 September 2026 at 16:37:54 UTC**. Preserved prepend text:
 
 ~~~~markdown
 ## Approved review-follow-up amendment — Part 2 collections (664abdf)
@@ -37,7 +41,7 @@ Implementation and tests remain **not started**. Preserve the original body, pri
 
 ## Issue #157 — [5.1.2] Expose ControlStream identities and associations
 
-[Existing issue](https://github.com/DGIWG-P507/glaux-server/issues/157) — **pending**. Exact prepend text:
+[Updated issue](https://github.com/DGIWG-P507/glaux-server/issues/157) — **delivered by body edit; exact readback verified 21 September 2026 at 16:37:54 UTC**. Preserved prepend text:
 
 ~~~~markdown
 ## Approved review-follow-up amendment — Part 2 collections (664abdf)
@@ -58,7 +62,7 @@ Implementation and tests remain **not started**. Preserve the original body, pri
 
 ## Issue #164 — [5.2.3] Expose asynchronous command POST and reads
 
-[Existing issue](https://github.com/DGIWG-P507/glaux-server/issues/164) — **pending**. Exact prepend text:
+[Updated issue](https://github.com/DGIWG-P507/glaux-server/issues/164) — **delivered by body edit; exact readback verified 21 September 2026 at 16:37:54 UTC**. Preserved prepend text:
 
 ~~~~markdown
 ## Approved review-follow-up amendment — Part 2 collections (664abdf)
@@ -79,7 +83,7 @@ Implementation and tests remain **not started**. Preserve the original body, pri
 
 ## Issue #177 — [5.4.1] Admit and discover asynchronous feasibility requests
 
-[Existing issue](https://github.com/DGIWG-P507/glaux-server/issues/177) — **pending**. Exact prepend text:
+[Updated issue](https://github.com/DGIWG-P507/glaux-server/issues/177) — **delivered by body edit; exact readback verified 21 September 2026 at 16:37:54 UTC**. Preserved prepend text:
 
 ~~~~markdown
 ## Approved review-follow-up amendment — Part 2 collections (664abdf)
@@ -100,7 +104,7 @@ Implementation and tests remain **not started**. Preserve the original body, pri
 
 ## Issue #196 — [5.5.16] Publish the independent tasking workflow
 
-[Existing issue](https://github.com/DGIWG-P507/glaux-server/issues/196) — **pending**. Exact prepend text:
+[Updated issue](https://github.com/DGIWG-P507/glaux-server/issues/196) — **delivered by body edit; exact readback verified 21 September 2026 at 16:37:54 UTC**. Preserved prepend text:
 
 ~~~~markdown
 ## Approved review-follow-up amendment — Part 2 collections (664abdf)
@@ -121,7 +125,7 @@ Implementation and tests remain **not started**. Preserve the original body, pri
 
 ## Issue #271 — [9.1.9] Reconcile declarations with candidate evidence
 
-[Existing issue](https://github.com/DGIWG-P507/glaux-server/issues/271) — **pending**. Exact prepend text:
+[Updated issue](https://github.com/DGIWG-P507/glaux-server/issues/271) — **delivered by body edit; exact readback verified 21 September 2026 at 16:37:54 UTC**. Preserved prepend text:
 
 ~~~~markdown
 ## Approved review-follow-up amendment — Part 2 collections (664abdf)
@@ -142,7 +146,7 @@ Implementation and tests remain **not started**. Preserve the original body, pri
 
 ## Issue #288 — [9.4.3] Record the evidence-backed completion result
 
-[Existing issue](https://github.com/DGIWG-P507/glaux-server/issues/288) — **pending**. Exact prepend text:
+[Updated issue](https://github.com/DGIWG-P507/glaux-server/issues/288) — **delivered by body edit; exact readback verified 21 September 2026 at 16:37:54 UTC**. Preserved prepend text:
 
 ~~~~markdown
 ## Approved review-follow-up amendment — Part 2 collections (664abdf)
