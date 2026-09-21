@@ -4,9 +4,15 @@ These seven prepared amendments belong to the fourteenth update in [the review a
 
 On 21 September 2026, the execution policy blocked the second issue-update batch before publication. Subsequent readbacks found all seven bodies unchanged from the pre-edit snapshots. The connected GitHub update tool also returned `403 Resource not accessible by integration` for #122. No permission changes or alternate credential workarounds were attempted. No issue is closed or software implemented by these instructions.
 
-## Resume only with an authorised issue-write connection
+## Retry and comment fallback — 21 September 2026
 
-Read the current action list and each live issue first. Preserve its entire current body, earlier amendments, title, labels and open state. Check whether this exact `664abdf` amendment has already been applied; do not duplicate it. Inspect intervening changes and reconcile any overlap before writing. Prepend the corresponding text below to the full live body, using a pre-write comparison and exact post-write readback. Do not replace an issue with the amendment alone. Record verified delivery in the action list; do not move to fq-04 or implementation while these seven are still pending. Retain this file as the saved handoff, updating its delivery status rather than claiming these drafts were published.
+The project lead explicitly authorised retrying body edits and using issue comments if edits are blocked, with sufficient time for responses. The connected GitHub tool completed both attempts on #122 with definitive `403 Resource not accessible by integration` responses: first the body edit, then comment creation. Neither was a timeout or an interrupted request. At **13:50:26 UTC**, readback of all seven issues and their comment lists confirmed unchanged bodies/open states and zero comments. No amendment was delivered by this retry, and no repeated comment writes were attempted on the other six after the permission denial.
+
+Comment delivery is now authorised as an alternative to prepending. For each saved amendment below, keep the substantive instructions and pinned links unchanged; immediately after the heading add: “This approved amendment is delivered as a comment at the project lead's request. It supplements the existing issue description and earlier amendments; preparation pins and completion checklists remain in place.” Replace the final paragraph with “Implementation and tests remain **not started**.” and omit the trailing divider. The original issue body stays intact. Record the exact verified comment URL as delivery evidence if this route succeeds.
+
+## Resume only with an authorised issue or comment write connection
+
+Read the current action list, each live issue and its complete comment thread first. Preserve the current body, earlier amendments, title, labels and open state. Check whether an equivalent `664abdf` amendment is already in the body or comments; do not duplicate it. Inspect intervening changes and reconcile any overlap before writing. For a body edit, prepend the corresponding text below to the full live body, using a pre-write comparison and exact post-write readback; do not replace the issue with the amendment alone. If an edit is denied, the lead permits comment delivery using the wrapper above, provided that operation is authorised by the connection. Await each write's actual result; after an ambiguous result, read the issue/comments before any retry. A definitive permission denial is not resolved by waiting or bypassing access controls. Record verified delivery and its method/URL in the action list; do not move to fq-04 or implementation while these seven are still pending. Retain this file as the saved handoff, updating its delivery status rather than claiming these drafts were published.
 
 ## Issue #122 — [3.5.2] System Event and ordinary-JSON class cases
 
@@ -154,4 +160,3 @@ Implementation and tests remain **not started**. Preserve the original body, pri
 ---
 
 ~~~~
-
