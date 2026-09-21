@@ -1,6 +1,6 @@
 # Glaux Server review follow-up actions
 
-**Status: the approved response-test and audit planning updates are published in the Guide and all nine named owning issues. Software implementation remains pending; other actions remain proposed.**
+**Status: response-test/audit planning updates are delivered in the Guide and nine named issues. The next authorised cache/order update is adopted in Guide v1.5; its four issue amendments are being published. Software implementation remains pending; other actions remain proposed.**
 
 **Prepared:** September 20, 2026. The review remains complete. This is the working action checklist for using its results, not another review, research plan, requirements document or replacement roadmap.
 
@@ -8,7 +8,7 @@
 
 Keep the Goal, architecture and 286-task backlog. Choose the licence and confirm how automated checks will be enforced, then make a small set of agreed clarifications in the existing Guide and issue instructions. Handle later technical questions before their owning tasks, not as prerequisites to starting the entire project. Leave optional cleanup and withdrawn findings out of the critical path.
 
-Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.4 / Roadmap v1.19, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
+Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.5 / Roadmap v1.20, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
 
 Except for explicitly adopted rows recorded below, these are **recommendations**, not standards obligations or changes to finding severity. Document/issue updates do not establish executed software correctness.
 
@@ -56,6 +56,17 @@ The project lead's next `proceed` authorised carrying the **already adopted** Gu
 
 **Result:** the planned Guide/issue propagation for F-12, F-20 and F-19's audit-survival/retention component is delivered across nine issues in two bounded updates. This does not close the implementation work, reopen the review or settle F-19's distinct post-backup-deletion proposal. Other checklist proposals and licence/enforcement decisions remain outstanding.
 
+## Third authorised update — cache protection and observation order
+
+The project lead's next September 20, 2026 `proceed` authorises **only** the proposed F-03 cache/validator update and F-14(c) ascending observation-order clarification, including their existing issue owners. Guide v1.5 and Roadmap v1.20 record adoption. Goal v1.8, all 286 task definitions/dependencies and the completed review remain unchanged.
+
+| Delivery | Adopted instruction / current publication status |
+|---|---|
+| Guide §§4.6/6.2/8/9; [#151](https://github.com/DGIWG-P507/glaux-server/issues/151), [#264](https://github.com/DGIWG-P507/glaux-server/issues/264) | Protected responses default to `private, no-store`; validators and any internal response-cache reuse describe the authorised representation, not hidden stored state. Tests distinguish hidden-only from visible changes, different callers, revocation, trusted-proxy identity and HTTP versus domain freshness. **Guide adopted; issue amendments pending publication.** |
+| Guide §§4.4/8; [#113](https://github.com/DGIWG-P507/glaux-server/issues/113), [#233](https://github.com/DGIWG-P507/glaux-server/issues/233) | Ascending result time, then ascending ID, with exact multi-page/tie expectations and faults reversing either direction. Latest ties, filter scope, reauthorization and changing-view paging remain intact. **Guide adopted; issue amendments pending publication.** |
+
+**Boundary:** no cache service, client sorting API, snapshot guarantee or mandatory write-precondition policy is added. `no-store` does not make unsafe validators safe or guarantee that a malicious cache complies. No licence, enforcement setting, installation or coding is authorised. The source check was limited to the already identified IDR-012/034 passages and RFC 9110/9111 rules; no research or review area was reopened. Publication/readback evidence will be recorded here after the four amendments are delivered.
+
 ## Decisions needed from the project lead
 
 There is no need to personally resolve every technical detail. The technical recommendations below can be accepted or adjusted as a group, with the explicitly unresolved interpretations left for their named tasks.
@@ -65,7 +76,7 @@ There is no need to personally resolve every technical detail. The technical rec
 | F-01 — project licence | **Project lead selects the organisation-approved licence.** Dependencies do not select it for us. No peer copying is planned; revisit reuse terms only if copying is proposed. | Before [#4](https://github.com/DGIWG-P507/glaux-server/issues/4). |
 | F-02 — enforced checks | Inspection above confirms no enforced checks at its recorded time. **Recommend required automated checks before merges**, retaining PR-per-issue and assistant merging after checks, without mandatory human review. Configuration still needs authorisation and real check names from #6. | Decide early; implement/verify with [#6](https://github.com/DGIWG-P507/glaux-server/issues/6), before dependent merges such as #7. |
 
-**Decision record:** licence remains unselected; enforcement changes remain unauthorised. The first bounded Guide/issue update and its second propagation pass are approved and delivered. This does not convert the remaining recommendations into requirements.
+**Decision record:** licence remains unselected; enforcement changes remain unauthorised. The first bounded Guide/issue update and its second propagation pass are approved and delivered. The third update approves F-03's cache instance and F-14(c) only; this does not convert the remaining recommendations into requirements.
 
 ## Recommended bounded changes
 
@@ -73,9 +84,9 @@ I recommend adopting these improvements in existing Guide sections and issue acc
 
 | Finding | Proposed change and why | Where it belongs / evidence of completion |
 |---|---|---|
-| F-03 — cached responses | Bind validators/cache reuse to the authorised representation; default protected responses to `Cache-Control: private, no-store`. Require cross-caller and hidden-change leakage tests. Keep HTTP freshness distinct from observation freshness. No new cache service. | Guide §§4.6/6.2/8, scenarios 8/9; #151/#264. Done when the rule and discriminating checks are explicit. |
+| F-03 — cached responses | **Adopted in Guide v1.5:** bind validators/cache reuse to the authorised representation; default protected responses to `Cache-Control: private, no-store`. Require cross-caller, hidden-change, visible-change and revocation tests. Keep HTTP freshness distinct from observation freshness. No new cache service. | Guide §§4.6/6.2/8/9, scenarios 8/9; #151/#264. **Guide adopted; issue publication pending below. Implementation pending.** This resolves the cache instance, not every policy question under F-03. |
 | F-12 — independent response checks | **Adopted in Guide v1.4:** examine relevant raw response fields with ordinary format tools, not only production types that may hide dropped/coerced fields. Require a malformed/missing-field fixture that must fail. Production-type checks may supplement, not replace, that evidence. This was an open boundary resolved by this approved change, not permission established by the reviewed baseline. | Guide §§7.2/8.1.1; #19/#80. **Guide and named issue amendments delivered; implementation pending.** No new framework. |
-| F-14(c) — observation ordering | State **ascending** explicitly for the existing observation sort key and tie-breaker, as the accepted research recommends. Do not change the selected changing-view paging model. | Guide §4.4; #113 (observation paging), then #233. Complete when direction and ordered expected results are explicit. |
+| F-14(c) — observation ordering | **Adopted in Guide v1.5:** ascending result time, then ascending ID, with independent ordered expected results across ties/pages and a fault reversing each direction. Do not change the selected changing-view paging model. | Guide §§4.4/8; #113 (observation paging), then #233. **Guide adopted; issue publication pending below. Implementation pending.** |
 | F-19 — audit survival and cleanup | **Adopted in Guide v1.4:** include audit at the backup's recovery point in restore comparisons. Define authorised retention and distinguish serving, administrative and retention permissions. Do not promise unavailable post-backup records. **Durability is not tamper-proofing:** no hash-chain or audit-replication project. | Guide §§4.7/4.10/8, scenario 6; #15/#26/#251/#254/#283. **Guide and named issue amendments delivered; implementation pending.** |
 | F-19 — post-backup deletions | Address restored resources deleted after the backup. Reconcile available deletion evidence before serving; otherwise state the limitation and operator decision, not a false continuity guarantee. Do not assume an external deletion ledger. | Guide §4.7/scenario 6; #26/#126/#251–#252/#283. Done when behaviour and a fixture cover local reads and re-export. Separate from audit survival. |
 | F-20 — denied actions | **Adopted in Guide v1.4:** bounded denial categories, safe fields and recording-failure behaviour. **Audit failure never authorises the denied operation.** No independent logging platform. | Guide §4.10; #15/#22/#280. **Guide and named issue amendments delivered; implementation pending.** |
@@ -135,4 +146,4 @@ A new research plan needs a substantial unanswered design question, a consequenc
 2. **Apply approved actions:** prioritise early owners (#15/#19/#22/#26/#56), then later owners before their work. Update Guide versions/cross-references and existing issue instructions, preserving their original pinned baselines and recording approved amendments. Change Roadmap leaves only when necessary; do not create another backlog.
 3. **Record and implement:** link delivered changes against these rows. Distinguish document changes from executed tests. Resume the existing one-issue/PR workflow without waiting for optional cleanup.
 
-**Current handoff:** the approved response-test/audit planning update and all named issue propagation are delivered; stop here. Recommended next bounded update, **not yet approved**: F-03 cache/validator protection and F-14(c) explicit ascending observation order, with their existing Guide sections and issues #151/#264 and #113/#233. Licence/enforcement decisions remain outstanding; no coding or settings changes are authorised by these two updates. No implementation issue is complete. The closed `review-state.json` remains review coverage, not an implementation queue.
+**Current handoff:** finish the authorised cache/order update by publishing and verifying its four issue amendments, then record delivery and stop. No other proposal, coding or settings change is authorised by this update. Licence/enforcement decisions remain outstanding. No implementation issue is complete. The closed `review-state.json` remains review coverage, not an implementation queue.
