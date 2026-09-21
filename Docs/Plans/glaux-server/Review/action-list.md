@@ -1,6 +1,6 @@
 # Glaux Server review follow-up actions
 
-**Status: review/Part 5 planning follow-ups and licensing are delivered. The first Rust workspace and GitHub-hosted build/test workflow are established under #4; its PR/issue records actual runs, review, merge and completion. This is not a running CSAPI service. #5 is next after #4 closes and a subsequent authorisation; full CI and required-check enforcement remain with #6. No laptop installation or permanent cloud service is required.**
+**Status: review/Part 5 planning follow-ups and licensing are delivered. #4 established the Rust build; #5 adds the isolated PostgreSQL/PostGIS lifecycle harness on GitHub. Its issue/PR records actual execution, review, merge and completion. This is not a running CSAPI service or Rust application storage. #6 is next after #5 closes and a subsequent authorisation; it retains full CI and required-check enforcement. No laptop installation or permanent cloud service is required.**
 
 **Prepared:** September 20, 2026. The review remains complete. This is the working action checklist for using its results, not another review, research plan, requirements document or replacement roadmap.
 
@@ -500,3 +500,11 @@ The next `proceed` authorised #4's workspace and minimum hosted execution, not d
 [Current build/test instructions](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/setup.md#current-build-and-test-commands) and the issue/PR are the execution record. #4 closes only after its reviewed head passes and merges; the companion planning PR publishes this handoff after that closure. Nothing was installed on the company laptop and no database, persistent cloud resource or repository control was changed.
 
 **Next:** [#5 / task 1.1.3](https://github.com/DGIWG-P507/glaux-server/issues/5), the isolated PostgreSQL/PostGIS harness on GitHub, when separately authorised. It extends the existing workflow rather than starting another environment study. #6 retains full CI/failure-sensitivity/enforcement obligations before dependent #7 merges. This status update does not change Roadmap v1.37 scope, any of the 302 task definitions/dependencies, Goal v1.10, Guide v1.21 or the historical review.
+
+### Database-test handoff — task 1.1.3
+
+The subsequent `proceed` authorised #5 only. [Server PR #313](https://github.com/DGIWG-P507/glaux-server/pull/313) and [its issue](https://github.com/DGIWG-P507/glaux-server/issues/5) record the real PostgreSQL/PostGIS lifecycle checks, initial deliberate failing reset assertion, restored passing head and separate review. The [database-test instructions](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/database-tests.md) identify the image digest, actual version expectations, migration, fixtures and cleanup limits. Containers are disposable, privately owned, network-isolated and tmpfs-backed; no user database or company-laptop installation is involved.
+
+The harness uses the image's psql to prove database identity, PostGIS/initial migration, repeat/reset/concurrent isolation and fatal lifecycle failures. It does not implement or prove Rust SQLx storage, CSAPI resources, backup/restore or production deployment. #5 closes only after its actual reviewed-head checks and merge; this planning handoff publishes after closure.
+
+**Current next step:** [#6 / task 1.1.4](https://github.com/DGIWG-P507/glaux-server/issues/6), after a subsequent authorisation. Extend the existing workflow to the complete initial suite, clean reproduction, dependency/licence inventory and full failure-sensitivity evidence, then implement and prove required-check enforcement before dependent #7 merges. #5 does not claim those controls already exist. All 302 task definitions/dependencies and Goal v1.10 / Guide v1.21 / Roadmap v1.37 remain unchanged.
