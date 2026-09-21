@@ -1,14 +1,14 @@
 # Glaux Server Roadmap
 
-**Version:** 1.32<br>
+**Version:** 1.33<br>
 **Date:** 21 September 2026<br>
 **Effort:** Glaux Server<br>
 **Status:** Initial GitHub issue publication complete — implementation not started<br>
 **Depends On:** [Goal and Definition v1.8](glaux-server-goal-and-definition.md), Approved<br>
-**Implements:** [Implementation Guide v1.17][Guide], Baselined<br>
+**Implements:** [Implementation Guide v1.18][Guide], Baselined<br>
 **Implementation status:** All implementation subtasks remain planned, not verified complete. All 286 initial issues across nine phases and 41 groups are published, linked and verified; none remain to publish. The complete-set publication check has passed. The first implementation authorisation begins with task 1.1.1 / issue #3; the [review action checklist](Review/action-list.md) records the current bounded documentation handoff, which is not coding authorisation.
 
-**Revision summary:** Aligns the current Guide reference with v1.17's SensorML media-type boundary (fq-04). #83 owns the applicable media/representation fixtures; #85/#86 record pinned client subsets and actual headers without inventing a vendor-alias requirement. Original issue bodies/pins and all leaf definitions, IDs, dependencies and sequencing remain unchanged. The [review action checklist](Review/action-list.md) records delivery and two remaining technical questions. No new compatibility feature or task is added. Review follow-up continues; this documentation iteration does not execute task 1.1.1 / issue #3.
+**Revision summary:** Aligns the current Guide reference with v1.18's observation result-time boundary (fq-11). #99 owns exact time/admission checks; #101/#102/#104 apply them to replacement, complete patched state and atomic batches. Original issue bodies/pins and all leaf definitions, IDs, dependencies and sequencing remain unchanged. The [review action checklist](Review/action-list.md) records delivery and one remaining technical question. No new clock service or task is added. Review follow-up continues; this documentation iteration does not execute task 1.1.1 / issue #3.
 
 ## 1. Purpose and Executive Summary
 
@@ -46,7 +46,7 @@ Provide the small three-package Rust workspace and PostgreSQL/PostGIS design alr
 
 ## 2. Planning Assumptions and Constraints
 
-- Goal v1.8 and Guide v1.17 control this Roadmap. Read [Guide §1.1: How the implementation fulfills the Goal](glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for the paired capability and technology explanations. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
+- Goal v1.8 and Guide v1.18 control this Roadmap. Read [Guide §1.1: How the implementation fulfills the Goal](glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for the paired capability and technology explanations. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
 - Each implementation task includes its tests, safe error/access behavior, API/example updates and relevant source/test identifiers. A passing happy path alone is not task completion.
 - Preserve original standards/schema artifacts and the Guide's explicit interpretations. Do not silently adopt moving drafts or claim that a project interpretation resolved an upstream ambiguity.
 - Use a real PostgreSQL/PostGIS test instance and independent HTTP checks from the first persistent slice. Keep expected values independent of server serializers and query code.
@@ -1177,6 +1177,8 @@ Version 1.30 records the bounded September 21, 2026 `proceed`: Guide v1.15 addre
 Version 1.31 records the next bounded September 21, 2026 `proceed`: Guide v1.16 selects six default Part 2 collections for generic discovery under the existing resource/view model. #57/#80 own shared foundations without early Part 2 implementation; #94/#100/#119/#157/#164/#177 own family views; #121/#122/#196/#271/#288 carry source-specific collection and completion evidence. A.2's selector also retains exposed Property collections, not just Part 2 types. All leaves/dependencies remain unchanged. Three technical questions and the separate decisions/cleanup remain; no implementation starts.
 
 Version 1.32 records the bounded September 21, 2026 `proceed`: Guide v1.17 clarifies canonical SensorML media handling without selecting the optional vendor alias. Existing #83/#85/#86 carry media-contract and client-subset evidence; no Phase 2 SensorML proof is pulled into the Phase 1 HTTP foundation. All leaves/dependencies remain unchanged. Two technical questions and the separate decisions/cleanup remain; no implementation starts.
+
+Version 1.33 records the bounded September 21, 2026 `proceed`: Guide v1.18 clarifies observation result-time semantics and explicit Glaux comparison/error choices. Existing #99/#101/#102/#104 carry stage-specific supplemental validation and rollback evidence, without moving #99's complete time work into #98. All leaves/dependencies remain unchanged. fq-13 and the separate decisions/cleanup remain; no implementation starts.
 
 Approved capability scope and accepted research findings remain unchanged. This iteration updates documentation and issue verification instructions only; it does not install software, implement the server, change repository settings or mark an implementation issue complete.
 
