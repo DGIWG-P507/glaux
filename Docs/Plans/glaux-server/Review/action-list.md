@@ -1,6 +1,6 @@
 # Glaux Server review follow-up actions
 
-**Status: review follow-up remains in progress. Twelve bounded updates are delivered, not the whole action list. The twelfth resolves fq-01/fq-02 at the design/instruction level in Guide v1.14 and five verified issue amendments. Six other technical questions, licence/enforcement decisions, optional cleanup and all software proofs remain outstanding. No handoff into implementation is authorised by this update.**
+**Status: review follow-up remains in progress. Twelve bounded updates are delivered. The thirteenth adopts fq-03/fq-05 in Guide v1.15; publication is tracked below. Four other technical questions, licence/enforcement decisions, optional cleanup and all software proofs remain outstanding. No handoff into implementation is authorised by this update.**
 
 **Prepared:** September 20, 2026. The review remains complete. This is the working action checklist for using its results, not another review, research plan, requirements document or replacement roadmap.
 
@@ -8,7 +8,7 @@
 
 Keep the Goal, architecture and 286-task backlog. Choose the licence and confirm how automated checks will be enforced, then make a small set of agreed clarifications in the existing Guide and issue instructions. Handle later technical questions before their owning tasks, not as prerequisites to starting the entire project. Leave optional cleanup and withdrawn findings out of the critical path.
 
-Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.14 / Roadmap v1.29, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
+Sources: [final assessment and controlling Erratum A](evidence/51-pass-3c-45-final-consolidated-assessment.md#erratum-a---two-statements-corrected), [findings](findings.md), and [saved questions](review-state.json), at [review-close commit abf2efa](https://github.com/DGIWG-P507/glaux/tree/abf2efad7761d44f63c2f7d4c68f8ff023027ab1/Docs/Plans/glaux-server/Review). Reviewed baseline: Goal v1.8, Guide v1.3, Roadmap v1.18. Current approved follow-up: Guide v1.15 / Roadmap v1.30, with Goal v1.8 unchanged. Every issue number below belongs to [glaux-server](https://github.com/DGIWG-P507/glaux-server/issues).
 
 Except for explicitly adopted rows recorded below, these are **recommendations**, not standards obligations or changes to finding severity. Document/issue updates do not establish executed software correctness.
 
@@ -209,6 +209,25 @@ The following registry bytes were retrieved and hashed on 21 September 2026 UTC 
 
 **Validation/result:** independent source/diff and live-prefix review found no material issue. All 286 Roadmap leaf definitions/dependencies were compared unchanged; 87 relative-file links and whitespace checks passed, with all 22 finding IDs and 13 question IDs retained. Only this action list changed within Review; its completed historical state, findings, manifest and evidence remain unchanged. No software test ran. Six technical questions remain; completing this update does not authorise implementation.
 
+## Thirteenth authorised update — spatial literals and published-test discrepancies
+
+The next September 21, 2026 `proceed` authorises fq-03/fq-05, continuing the action list rather than starting implementation. Guide v1.15 / Roadmap v1.30 record the two treatments; four other technical questions remain open.
+
+| Question | Adopted treatment / delivery |
+|---|---|
+| fq-03 — LineString members | Accept the already schema-permitted member type; add a two-member LineString/Point fixture with exact expected observations, separately from the existing singleton adaptation. #231/#237 are the owners. **Guide/issue publication pending.** |
+| fq-05 — five recorded test discrepancies | Use Guide §7.2.3's named corrections and supplemental canonical-resource checks. Preserve original/adapted/supplemental outcomes, recommendation strength and actual coverage; no test with zero exercised resources proves canonical accessibility. **Guide/issue publication pending.** |
+
+**Sources checked:** [CQL2 21-065r2](https://docs.ogc.org/is/21-065r2/21-065r2.html) §7.6.1, requirement 12 and Annexes B/C.1; [CSAPI Part 1](https://docs.ogc.org/is/23-001/23-001.html) A.66; [Part 2](https://docs.ogc.org/is/23-002/23-002.html) requirements 31/61/115, canonical-URL requirements/tests and A.115; [Features Part 1](https://docs.ogc.org/is/17-069r4/17-069r4.html) §§7.15.2/7.15.4. All five recorded fq-05 candidates are confirmed, including the previously unverified A.115. Reused evidence reports 18/19/29/49; historical reports and review dispositions are unchanged.
+
+The [official CQL2 schema](https://schemas.opengis.net/cql2/1.0/cql2.json) retrieved on 21 September 2026 has **18,389 bytes**, SHA-256 `6dce2fc3817ceda2d74c040c1464207cb45b5c2fc9be3aa7f33e2238089e2605`. Its member union includes LineString; its separate `minItems: 2` constraint is unchanged. This identifies the inspected registry bytes, not an immutable URL, packaged-corpus claim or executed validation result. No member-schema relaxation or CQL2 Text endpoint is selected.
+
+**Existing delivery owners:** #80 records shared source annotations/failure handling without executing later families; #121/#122/#196 supply the implemented-family canonical evidence; #191 carries time/limit fixtures; #149/#192/#267 carry Text HTTP tests; #231/#237 carry spatial fixtures; #271 reconciles source and candidate evidence. #196 also distinguishes matching historical CommandStatus from a different current Command status. The live #149 is the observation Text HTTP owner; #154 is a codec-interface task and is not amended. Full original bodies, earlier amendments and pins must remain intact.
+
+**Boundary:** this does not decide fq-06 collection exposure, change the required resource endpoints, turn Recommendation 5 into a new mandatory standard requirement, add a test platform, relax geometry validation or claim OGC has corrected the source. All 286 leaves/dependencies, Goal v1.8 and completed review artifacts remain unchanged. No licence/settings change, installation, upstream filing or coding. The discriminating fixtures are instructions for the existing tasks, not software tests run in this iteration.
+
+**Publication evidence:** pending planning commit, eleven issue amendments and exact readbacks. No issue is complete or closed by this update.
+
 ## Decisions needed from the project lead
 
 There is no need to personally resolve every technical detail. The technical recommendations below can be accepted or adjusted as a group, with the explicitly unresolved interpretations left for their named tasks.
@@ -218,7 +237,7 @@ There is no need to personally resolve every technical detail. The technical rec
 | F-01 — project licence | **Project lead selects the organisation-approved licence.** Dependencies do not select it for us. No peer copying is planned; revisit reuse terms only if copying is proposed. | Before [#4](https://github.com/DGIWG-P507/glaux-server/issues/4). |
 | F-02 — enforced checks | Inspection above confirms no enforced checks at its recorded time. **Recommend required automated checks before merges**, retaining PR-per-issue and assistant merging after checks, without mandatory human review. Configuration still needs authorisation and real check names from #6. | Decide early; implement/verify with [#6](https://github.com/DGIWG-P507/glaux-server/issues/6), before dependent merges such as #7. |
 
-**Decision record:** licence remains unselected; enforcement changes remain unauthorised. The first eleven updates completed the originally selected amendment group, not the whole review action list. The lead then kept review follow-up active and authorised fq-01/fq-02; the twelfth update records that work. Six other technical questions remain unresolved, and optional cleanup remains optional. No implementation handoff has been approved.
+**Decision record:** licence remains unselected; enforcement changes remain unauthorised. The first eleven updates completed the originally selected amendment group, not the whole action list. The lead kept follow-up active: the twelfth update delivered fq-01/fq-02 and the thirteenth addresses fq-03/fq-05. Four other technical questions remain unresolved, and optional cleanup remains optional. No implementation handoff has been approved.
 
 ## Recommended bounded changes
 
@@ -263,15 +282,15 @@ These do not justify another broad standards study. Reuse the recorded evidence;
 
 ## Remaining questions: route them, do not commission twelve studies
 
-The review's questions remain recorded in [review-state.json](review-state.json). Follow-up dispositions for fq-01/fq-02/fq-07/fq-08/fq-09 are recorded here without rewriting that historical review. Six technical questions remain open: fq-03/fq-04/fq-05/fq-06/fq-11/fq-13. Their previous placement at implementation tasks was scheduling, not proof they could not be addressed before coding. Linked issues are affected owners, not newly assigned research projects; unadopted treatments below are recommendations, not answered questions.
+The review's questions remain recorded in [review-state.json](review-state.json). Follow-up dispositions for fq-01/fq-02/fq-03/fq-05/fq-07/fq-08/fq-09 are recorded here without rewriting that historical review. Four technical questions remain open: fq-04/fq-06/fq-11/fq-13. Their previous placement at implementation tasks was scheduling, not proof they could not be addressed before coding. Linked issues are affected owners, not newly assigned research projects; unadopted treatments below are recommendations, not answered questions.
 
 | Question | Proposed handling and timing |
 |---|---|
 | fq-01 — binary encoding omitted from root schema | **Answered in Guide v1.14:** complete applicable wrappers plus fixed published descriptor definitions, not universal validation through the incomplete root. #7/#8 prove the selected early structural path; #140 adds binary compilation evidence. Preserve the differing original-root result. Publication status is in the twelfth update; software proof remains pending. |
 | fq-02 — optional prose label versus required schema label | **Answered in Guide v1.14:** retain nonempty Quantity labels in JSON and record the conceptual distinction. #7/#8 establish fixtures/structural checks; #28/#128 verify component and nested record contracts. No label fabrication or new blanket rule. Publication status is in the twelfth update; software proof remains pending. |
-| fq-03 — LineString in GeometryCollection | Carry the exact prose/schema discrepancy into the spatial fixtures for #231/#237, alongside the existing singleton adaptation. No full filtering re-review. |
+| fq-03 — LineString in GeometryCollection | **Answered in Guide v1.15:** accept the member under the published grammar/schema, with a two-member exact-result fixture in #231/#237. Keep singleton adaptation separate; no member-schema change. Publication status is in the thirteenth update; runtime proof remains pending. |
 | fq-04 — SensorML media-type note | Confirm whether a required client/fixture needs the legacy alias while implementing negotiation. Keep the published type canonical; no speculative compatibility feature. |
-| fq-05 — additional abstract-test seams | Account for the recorded candidates in #80/#121 and the relevant Part 2 encoding tests. Verify the still-unverified A.115 candidate before treating it as a defect. Use F-08's qualification rule. |
+| fq-05 — additional abstract-test seams | **Answered in Guide v1.15 §7.2.3:** all five named candidates checked, including A.115; preserve original/adapted/supplemental outcomes and non-vacuous canonical checks at the existing stages. Publication status is in the thirteenth update; no software proof or collection-exposure choice is claimed. |
 | fq-06 — Part 2 collection exposure | Decide which resource families are exposed through `/collections` when defining discovery, **before** their conformance fixtures, not only at release. Carry the decision into #271/#288 so applicable inherited tests are neither omitted nor claimed inapplicable without reason. Do not choose exposure merely to reduce testing. |
 | fq-07 — both-parts wording | Folded into Guide v1.11's F-08 treatment and the named issue amendments. No separate workstream or claim of an upstream resolution. |
 | fq-08 — unknown-member policy across families | Resolved narrowly by Guide v1.12's F-13 choice: keep representation-specific rules. The observation-envelope ignore policy does not extend to GeoJSON, SensorML, other Part 2 resources or nested schema-defined content. |
@@ -288,4 +307,4 @@ A new research plan needs a substantial unanswered design question, a consequenc
 2. **Apply approved actions:** prioritise early owners (#15/#19/#22/#26/#56), then later owners before their work. Update Guide versions/cross-references and existing issue instructions, preserving their original pinned baselines and recording approved amendments. Change Roadmap leaves only when necessary; do not create another backlog.
 3. **Record and implement:** link delivered changes against these rows. Distinguish document changes from executed tests. Resume the existing one-issue/PR workflow without waiting for optional cleanup.
 
-**Current handoff:** remain on the review action list, not issue #3. fq-01/fq-02 are delivered at the design/instruction level; stop here. Six technical questions remain open. The recommended next bounded follow-up is fq-03/fq-05: the recorded spatial-literal and published-test discrepancies, using their existing source evidence and owners, without a new research plan or broad re-review. This awaits the lead's next `proceed`; no subsequent work starts automatically. Licence selection before #4, enforcement authorisation/real checks from #6, and optional editorial cleanup remain distinct unfinished actions. No implementation issue is complete. The closed `review-state.json` remains historical review coverage, not proof that follow-up or implementation is complete.
+**Current handoff:** remain on the review action list, not issue #3. This iteration stops after fq-03/fq-05 documentation/issue delivery is verified. Four technical questions remain open. The recommended next bounded follow-up is fq-06: decide and document which Part 2 resource families appear through `/collections`, checking their actual requirements and existing discovery/test owners. Do not choose exposure merely to reduce testing. This awaits the lead's next `proceed`; no subsequent work starts automatically. fq-04/fq-11/fq-13, licence/enforcement decisions and optional editorial cleanup remain separately unfinished. No implementation issue is complete. The closed `review-state.json` remains historical review coverage, not proof that follow-up or implementation is complete.

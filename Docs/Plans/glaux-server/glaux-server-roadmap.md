@@ -1,14 +1,14 @@
 # Glaux Server Roadmap
 
-**Version:** 1.29<br>
-**Date:** 20 September 2026<br>
+**Version:** 1.30<br>
+**Date:** 21 September 2026<br>
 **Effort:** Glaux Server<br>
 **Status:** Initial GitHub issue publication complete — implementation not started<br>
 **Depends On:** [Goal and Definition v1.8](glaux-server-goal-and-definition.md), Approved<br>
-**Implements:** [Implementation Guide v1.14][Guide], Baselined<br>
+**Implements:** [Implementation Guide v1.15][Guide], Baselined<br>
 **Implementation status:** All implementation subtasks remain planned, not verified complete. All 286 initial issues across nine phases and 41 groups are published, linked and verified; none remain to publish. The complete-set publication check has passed. The first implementation authorisation begins with task 1.1.1 / issue #3; the [review action checklist](Review/action-list.md) records the current bounded documentation handoff, which is not coding authorisation.
 
-**Revision summary:** Aligns the current Guide reference with v1.14's SWE encoding entry points and required Quantity JSON labels (fq-01/fq-02). Existing #7/#8/#28/#128/#140 receive stage-specific source/structural/component/wrapper/compiler checks, preserving original bodies and pins. The [review action checklist](Review/action-list.md) records delivery and the six other technical questions still open. All leaf definitions, IDs, dependencies and sequencing are unchanged. No schema fork, new codec or task is added. The completed review is not reopened; review follow-up continues and this documentation iteration does not execute task 1.1.1 / issue #3.
+**Revision summary:** Aligns the current Guide reference with v1.15's LineString-member and published-test treatments (fq-03/fq-05). Existing #80/#121/#122/#149/#191/#192/#196/#231/#237/#267/#271 receive stage-specific fixture/evidence instructions, preserving original bodies and pins. The [review action checklist](Review/action-list.md) records delivery and four remaining technical questions. All leaf definitions, IDs, dependencies and sequencing are unchanged. No collection-exposure decision, new endpoint or task is added. Review follow-up continues; this documentation iteration does not execute task 1.1.1 / issue #3.
 
 ## 1. Purpose and Executive Summary
 
@@ -46,7 +46,7 @@ Provide the small three-package Rust workspace and PostgreSQL/PostGIS design alr
 
 ## 2. Planning Assumptions and Constraints
 
-- Goal v1.8 and Guide v1.14 control this Roadmap. Read [Guide §1.1: How the implementation fulfills the Goal](glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for the paired capability and technology explanations. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
+- Goal v1.8 and Guide v1.15 control this Roadmap. Read [Guide §1.1: How the implementation fulfills the Goal](glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for the paired capability and technology explanations. Research is supporting evidence; its proposed mechanisms are not additional tasks unless the Guide selected them.
 - Each implementation task includes its tests, safe error/access behavior, API/example updates and relevant source/test identifiers. A passing happy path alone is not task completion.
 - Preserve original standards/schema artifacts and the Guide's explicit interpretations. Do not silently adopt moving drafts or claim that a project interpretation resolved an upstream ambiguity.
 - Use a real PostgreSQL/PostGIS test instance and independent HTTP checks from the first persistent slice. Keep expected values independent of server serializers and query code.
@@ -1171,6 +1171,8 @@ Version 1.27 records the next bounded September 20, 2026 `proceed`: Guide v1.12 
 Version 1.28 records the next bounded September 20, 2026 `proceed`: Guide v1.13 clarifies F-18's false/null/missing distinctions and separates Command acceptance from Feasibility evaluation. #156/#159/#160 own generated-metadata/protected-mutation checks; #163/#164 and #177/#180 own the corresponding admission boundaries at their existing stages. All 286 leaf definitions/dependencies and historical pins remain unchanged. No new lifecycle, probing subsystem, execution guarantee or task is added.
 
 Version 1.29 records the next bounded September 20, 2026 `proceed`: Guide v1.14 addresses fq-01/fq-02 with fixed published descriptor entry points and unchanged required Quantity labels in JSON. Existing #7/#8 own source packaging and structural proof, #28 the Quantity model, #128 nested SWE JSON contracts and #140 binary compilation. All leaves/dependencies remain unchanged. The action checklist keeps six other technical questions, licence/enforcement decisions and optional cleanup visible; finishing these two questions is not a handoff into implementation.
+
+Version 1.30 records the bounded September 21, 2026 `proceed`: Guide v1.15 addresses fq-03/fq-05 through independent geometry fixtures and source-preserving test adaptations/supplements. #80 supplies shared conventions, #121/#122/#196 non-vacuous canonical checks, #191 status-time evidence, #149/#192/#267 Text HTTP checks, #231/#237 LineString-member evidence and #271 reconciliation. All leaves/dependencies remain unchanged; four technical questions and the separate decisions/cleanup remain on the action list. No implementation starts.
 
 Approved capability scope and accepted research findings remain unchanged. This iteration updates documentation and issue verification instructions only; it does not install software, implement the server, change repository settings or mark an implementation issue complete.
 
