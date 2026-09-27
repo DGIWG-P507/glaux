@@ -15,10 +15,12 @@
 - This is the project lead's decision of 27 September 2026, adopting [Phase 1 implementation review finding P1-03](../Implementation-Reviews/Phase-1/findings.md#p1-03--each-delivery-is-written-up-several-times-and-the-file-read-first-keeps-growing).
 
 **Progress on 27 September 2026:**
-- Done: #3–#23 (tasks 1.1.1–1.1.4 and 1.2.1–1.4.6) are closed.
-- Next: task 1.1.5 ([#338](https://github.com/DGIWG-P507/glaux-server/issues/338), CI time budget), [added](../glaux-server-roadmap.md#phase-1-running-foundation-and-first-registration) in Roadmap v1.38 from [finding P1-01](../Implementation-Reviews/Phase-1/findings.md#p1-01--ci-is-likely-to-reach-its-20-minute-limit-within-the-next-few-issues). Its issue link is beside the Roadmap leaf.
-- Then #24 / task 1.5.1 resumes. It was in progress on branch `task/1.5.1-system-create` (draft PR #333) and paused. Update that branch from `main` first.
+- Done: tasks 1.1.1–1.4.6 are closed (#3–#23, and [#338](https://github.com/DGIWG-P507/glaux-server/issues/338) for the CI time budget).
+- #24 / task 1.5.1 is merged (PR #333) and still needs its closing execution record.
+- #25 and #26 finish Phase 1. Then [review gate 1](../glaux-server-roadmap.md#54-review-gates) pauses implementation for the Phase 1 review.
 - Check GitHub for anything later.
+
+**Review gates:** before starting any server task, check the open [`review-gate` issues](https://github.com/DGIWG-P507/glaux-server/issues?q=is%3Aopen+label%3Areview-gate). The fifteen gates, what each blocks, and the rule are in [Roadmap §5.4](../glaux-server-roadmap.md#54-review-gates).
 
 **Standing decisions:**
 
@@ -31,6 +33,7 @@
 | Adopted clarifications from the pre-implementation review, now in Guide v1.4–v1.19 and dated issue amendments | 20–21 Sep 2026 | [Recommended bounded changes](#recommended-bounded-changes); [Interpretations](#interpretations-to-carry-into-existing-work) |
 | **P1-01:** add task 1.1.5 to restructure CI before #24 resumes.<br>• Checks run in parallel lanes behind the existing required `Rust bootstrap` result.<br>• The per-job time limit is raised.<br>• No check is removed. | 27 Sep 2026 | Roadmap v1.38; [finding P1-01](../Implementation-Reviews/Phase-1/findings.md#p1-01--ci-is-likely-to-reach-its-20-minute-limit-within-the-next-few-issues) |
 | **P1-03:** record each delivery once, as described above | 27 Sep 2026 | [finding P1-03](../Implementation-Reviews/Phase-1/findings.md#p1-03--each-delivery-is-written-up-several-times-and-the-file-read-first-keeps-growing) |
+| **Review gates:** implementation pauses at fifteen fixed points (phase ends, two checkpoints, health checks, final review). Each is a `review-gate` issue that only the project lead closes. These are periodic project-lead review pauses; they do not change the per-PR review and merge policy above. | 27 Sep 2026 | Roadmap v1.39 [§5.4](../glaux-server-roadmap.md#54-review-gates) |
 
 Phase 1 implementation review finding P1-02 has not been acted on and remains open in the [review](../Implementation-Reviews/Phase-1/findings.md). Review steps 2–5 have not started.
 
