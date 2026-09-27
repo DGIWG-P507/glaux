@@ -1,6 +1,6 @@
 # Glaux Server implementation review — Phase 1
 
-**Status: open. Folder set up; no review step has started.** Set up 27 September 2026.
+**Status: open. Step 1 (delivery pipeline) is complete, with [three findings](findings.md) awaiting project-lead decisions; P1-01 is time-sensitive. Steps 2–5 have not started.** Set up 27 September 2026; step 1 completed the same day.
 
 [Findings](findings.md) · [Evidence](evidence/) · [Scoping observations](evidence/00-scoping-observations.md) · [Planning documents](../../README.md) · [Completed pre-implementation review](../../Review/README.md)
 
