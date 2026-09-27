@@ -10,13 +10,13 @@
 - All 122 `Build` workflow runs that existed at collection time. The last two were from #24's in-progress branch `task/1.5.1-system-create`. Their timings were read, but their code was not.
 - Planning `DGIWG-P507/glaux` main at `98afc78`.
 
-**Method:** workflow runs, jobs, step timings, PRs and issue comments were read through GitHub's REST API. The project lead's stored Git login was used for reading only, to get the higher rate limit. The project lead had approved using that login for PR creation earlier the same day, and should confirm that read use is also acceptable. The server tree was inspected in a read-only clone, and planning document sizes are Git blob sizes. Nothing on the server, in CI, in the issues, in the settings or in the action list/Roadmap was changed, and nothing was installed.
+**Method:** workflow runs, jobs, step timings, PRs and issue comments were read through GitHub's REST API. The project lead's stored Git login was used for reading only, to get the higher rate limit. Earlier the same day, the project lead approved in session (no written record) using that login to create PRs, and should confirm that read use is also acceptable. The server tree was inspected in a read-only clone, and planning document sizes are Git blob sizes. Nothing on the server, in CI, in the issues, in the settings or in the action list/Roadmap was changed, and nothing was installed.
 
 ## Answer in brief
 
 **Mostly yes, with one hard limit that is close.** The per-issue workflow is disciplined and has kept `main` green, with one exception (§2.4). But:
 
-1. **CI is likely to reach its 20-minute timeout within the next one to three issues (#24–#26).** No open task owns fixing that (§1).
+1. **CI is likely to reach its 20-minute timeout within the next few issues:** around #25–#28, and possibly #24 given runner variation. No open task owns fixing that (§1).
 2. **Working without a compiler costs extra CI round trips** on most issues. The cost is real but moderate (§2).
 3. **The per-issue handoff records are written in several places.** The one sessions are told to read first grows by about 3.9 KB per issue (§3).
 
@@ -41,11 +41,14 @@ Job duration comes from the job's `started_at`/`completed_at`, so it excludes qu
 
 The least-squares slope is **0.79 minutes per task** across all 20 tasks and **1.39** across the last nine (1.3.3 → 1.4.6). Runs of the same task vary by up to about 3 minutes (1.4.2 took 8.85 and 12.03 minutes on two green heads).
 
-The workflow sets `timeout-minutes: 20`. From 17.80 minutes, a green run would reach 20 minutes:
-- at about #26, at the overall rate;
-- at about #25, at the recent rate.
+The workflow sets `timeout-minutes: 20`. When a green run would reach it depends on the starting point:
 
-Runner variation could make #24 itself exceed it. #24's branch has already added a new step, "Prove System creation through the actual HTTP and transaction boundary".
+| Starting point | At the overall rate (0.79) | At the recent rate (1.39) |
+|---|---|---|
+| 1.4.6's last green PR run (17.80 min) | about #26 | about #25 |
+| Current `main` (`d0ef755`: 17.13 min on the #332 PR run, 16.67 min on the main push) | about #27–#28 | about #26 |
+
+Runner variation of up to about 3 minutes could bring this forward, even to #24. #24's branch has already added a new step, "Prove System creation through the actual HTTP and transaction boundary".
 
 As an illustration only, not a forecast: continuing at 0.8 minutes per task for 281 more tasks would add about 3.7 hours to every run.
 
@@ -66,7 +69,7 @@ This is the latest green `main` run ([36324667106](https://github.com/DGIWG-P507
 
 Four things drive the growth:
 
-- **The fixed false-green controls get slower as the code grows.** The largest step (247 seconds, 25%) is `test-ci-failures.py`. It holds nine fixed controls added at task 1.1.4, which prove that a failing assertion, missing service, or empty, filtered or skipped suite cannot pass. Each control recompiles and reruns the workspace and database suites in a fresh copy, so its cost tracks the codebase. The separate reviewer found it took 150 seconds at 1.3.1 (run 36010154715) and 235 seconds at 1.4.5 (run 36286855260).
+- **The fixed false-green controls get slower as the code grows.** The largest step (247 seconds, 25%) is `test-ci-failures.py`. It holds nine fixed controls added at task 1.1.4, which prove that a failing assertion, missing service, or empty, filtered or skipped suite cannot pass. Each control reruns either the Rust workspace suite (recompiling it in a fresh copy) or the database suite, so its cost tracks the codebase. The separate reviewer found it took 150 seconds at 1.3.1 (run 36010154715) and 235 seconds at 1.4.5 (run 36286855260).
 - **Every earlier per-task proof and fault control reruns on every PR.** Nearly every task adds a real-listener or real-database proof, and most add a "disposable fault" control. That control compiles a deliberately broken copy of the source and requires the exact assertion to fail. This is how the project demonstrates that each test can detect its intended mistake (Guide §8.1.1). These controls sit inside the eight 24–45-second steps and the other proof steps, and they stay in the required job permanently.
 - **Nothing is cached between runs.** The workflow has no Cargo or build cache, so every run fetches and compiles all dependencies. Clippy, the build and each disposable copy all compile.
 - **Everything runs in one job, in sequence.** Of the 39 recorded step entries, many could run independently: formatting and Clippy, unit and fuzz tests, database proofs, listener proofs, the browser smoke and fault controls.
@@ -80,7 +83,7 @@ Four things drive the growth:
 
 Any restructure therefore has to keep one required, unconditional result that fails unless every part actually ran and passed. One common pattern is a final job keeping the `Rust bootstrap` name that needs all the other jobs and fails on any result other than success. That leaves the ruleset unchanged.
 
-Three other rules apply. Current practice (rerun everything on every PR) is stricter than they require:
+Three other rules apply. Current practice (rerun everything on every PR) appears stricter than they require, although the Guide defines neither "affected" nor how often CI discovery must be rechecked:
 
 - **Guide §8.1.1** says to "Never silently discard a required test to meet a runtime budget". Its closing paragraph says "Every implementation PR runs applicable fast checks, bounded property/regression cases and affected real-database/HTTP tests". It adds that "A scheduled result belongs to its actual commit and cannot substitute for a missing required PR check", and that "Phase completion reruns affected workflows".
 - **Roadmap §8** says scheduled jobs "are not mandatory on every PR and do not replace its required checks".
@@ -101,7 +104,7 @@ Task 1.1.4 ([#6](https://github.com/DGIWG-P507/glaux-server/issues/6)) establish
 ### 2.1 Per-task PR runs
 
 These are PR-event runs only, by branch. Each failed run is classified by its first failed step:
-- **Format:** the step "Verify formatting and locked dependencies" (`rustfmt --check`).
+- **Format:** the step "Verify formatting and locked dependencies", or its earlier name "Verify formatting and lockfile reproduction". It runs `rustfmt --check` and also fails on Cargo.lock drift.
 - **Lint:** Clippy, the first step that compiles, so compile errors also show up here.
 - **Deps:** the dependency fetch.
 - **Deliberate:** a step designed to stop the run, such as "Prepare task 8 dependency evidence (deliberately not acceptance)".
@@ -145,7 +148,7 @@ The PR records confirm that no local toolchain was used. The comments on [PR #33
 
 The project lead's 21 September 2026 choice of GitHub-hosted Linux, with no company-laptop installation, makes CI the implementing assistant's compiler. Server `CONTRIBUTING.md` says "The company laptop is an editing/Git interface, not a required Rust/database host". The project lead reports that the implementing assistant is ChatGPT, and the PR #98 record calls its reviewer a "separate non-author OpenAI agent".
 
-**Where it runs.** PR #98 records the SHA-256 of the project lead's untracked PITON file, `0FABAC0B…6A38`. That file exists only in the local planning checkout, and hashing it there gives the identical value. This suggests the implementing assistant works against the project lead's local checkout. If so, a local toolchain would mean installing on the company laptop, which is excluded. Any compiler access would need a different working environment. Where the sessions actually run was not otherwise established.
+**Where it runs.** PR #98 records the SHA-256 of the project lead's untracked PITON file, `0FABAC0B…6A38`. That file is untracked (not on GitHub) and is present in this local checkout, which is in a OneDrive-synced folder. Hashing it there gives the identical value. This suggests the implementing assistant works against the project lead's local checkout. If so, a local toolchain would mean installing on the company laptop, which is excluded. Any compiler access would need a different working environment. Where the sessions actually run was not otherwise established.
 
 ### 2.3 How much it costs
 

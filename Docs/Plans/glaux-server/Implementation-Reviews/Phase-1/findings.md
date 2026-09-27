@@ -12,7 +12,7 @@ Step 1 (delivery pipeline) is complete. Steps 2–5 have not started. The [scopi
 
 ### P1-01 — CI is likely to reach its 20-minute limit within the next few issues
 
-**In plain English:** The automatic checks now take about 18 minutes, and each finished issue adds roughly one more minute. The job is set to stop at 20 minutes. Probably at #25 or #26, and possibly at #24, a check will fail for lack of time rather than because anything is wrong. Nothing can merge until someone changes the CI, and no planned task owns that change.
+**In plain English:** The automatic checks now take about 18 minutes, and each finished issue adds roughly one more minute. The job is set to stop at 20 minutes. Probably somewhere between #25 and #28, and possibly as early as #24, a check will fail for lack of time rather than because anything is wrong. Nothing can merge until someone changes the CI, and no planned task owns that change.
 
 - **Step:** 1, [evidence §1](evidence/01-delivery-pipeline.md#1-ci-time-and-structure).
 - **Examined:** server `d0ef755`, plus all 122 workflow runs to #24's first two runs.
@@ -39,7 +39,7 @@ Step 1 (delivery pipeline) is complete. Steps 2–5 have not started. The [scopi
 
 ### P1-02 — The implementing assistant uses CI as its compiler
 
-**In plain English:** By project rule, the AI writing the code does not use Rust tools on this machine. It finds formatting and compile mistakes only by pushing to GitHub and waiting. This costs several extra round trips per issue but has not slowed delivery much, so it matters less than P1-01.
+**In plain English:** By project rule, the AI writing the code does not use Rust tools on the project lead's laptop. It finds formatting and compile mistakes only by pushing to GitHub and waiting. This costs several extra round trips per issue but has not slowed delivery much, so it matters less than P1-01.
 
 - **Step:** 1, [evidence §2](evidence/01-delivery-pipeline.md#2-working-without-a-compiler).
 - **Examined:** 101 PR runs from task 1.1.2 to #24's branch.
