@@ -8,7 +8,7 @@
 **Implements:** [Implementation Guide v1.21][Guide], Baselined<br>
 **Implementation status:** The 303-task outline across nine phases and 45 groups is published. As of 27 September 2026, tasks 1.1.1–1.4.6 (#3–#23 and #338) are closed, and #24 / task 1.5.1 is merged and awaiting its closing record. Implementation pauses at the fifteen review gates in §5.4. GitHub issues are the live per-issue status, and a phase or group completes only when all its constituent work passes. The action list's [Current state](Review/action-list.md#current-state) holds standing decisions. The historical #23 handoff remains in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
 
-**Revision summary:** On 27 September 2026 the project lead decided that implementation pauses for review at fixed points. §5.4 defines fifteen review gates, each tracked as a server issue labelled `review-gate`. Each gate is recorded as an added prerequisite on the first task it pauses, and it blocks that task and every later one until the project lead closes it. No task definitions, IDs or other dependencies change, and Goal v1.10 and Guide v1.21 are unchanged. v1.38's P1-01/P1-03 changes remain as recorded in §10.
+**Revision summary:** On 27 September 2026 the project lead decided that implementation pauses for review at fixed points. §5.4 defines fifteen review gates, each tracked as a server issue labelled `review-gate`. Each gate blocks its stated range until the project lead closes it. It is recorded as an added prerequisite on the first task it pauses, and on 22 other tasks that could otherwise start early. It does not change per-PR merge policy. No task definitions, IDs or other dependencies change, and Goal v1.10 and Guide v1.21 are unchanged. v1.38's P1-01/P1-03 changes remain as recorded in §10.
 
 ## 1. Purpose and Executive Summary
 
@@ -60,7 +60,7 @@ Provide the small three-package Rust workspace and PostgreSQL/PostGIS design alr
 
 ### 3.1 Execution dependencies
 
-Follow the phase overview by default and the subtask prerequisites below when choosing the next issue. Parallel assistance may support the current issue, but does not authorize starting additional implementation issues in the same iteration. Shared foundations precede their consumers:
+Follow the phase overview by default and the subtask prerequisites below when choosing the next issue, skipping any task paused by an open review gate (§5.4). Parallel assistance may support the current issue, but does not authorize starting additional implementation issues in the same iteration. Shared foundations precede their consumers:
 
 - Operation-aware validation, typed identities, access checks, migrations, audit and transactional outgoing work precede the first public mutation.
 - The shared SWE component model and immutable schema binding precede storing values under those contracts. JSON-only increments do not eliminate Text/Binary work.
@@ -1075,12 +1075,23 @@ On 27 September 2026 the project lead decided that implementation pauses for rev
 
 **How a gate works:**
 - Each gate is a `DGIWG-P507/glaux-server` issue labelled [`review-gate`](https://github.com/DGIWG-P507/glaux-server/issues?q=label%3Areview-gate). It is not a Roadmap task.
+- **All fifteen gates are open from the start.** The next gate is the lowest-numbered open one.
 - While a gate is open, no task in its blocked range may start.
-  - A range written "≥ X" covers task X and every task with a later ID, comparing phase, then group, then task number. That includes appended experimental groups.
-- The first task a gate pauses carries a dated amendment adding the gate as a prerequisite.
-- Implementation sessions also check the open `review-gate` issues before starting any task. If no unblocked task is ready, the session stops and tells the project lead which gate is next.
-- The review runs on the project lead's authorisation and is recorded under `Docs/Plans/glaux-server/Implementation-Reviews/Phase-N/`.
-- **Only the project lead closes a gate**, after reading its outcome. Review findings remain recommendations until adopted through the existing change process.
+  - A range written "≥ X" covers task X and every task with a later ID.
+  - IDs compare as numbers, part by part: phase, then group, then task. So 2.3.10 comes after 2.3.4.
+  - Appended experimental groups sit where their number puts them. For example, 4.5 comes after 4.4 and before 5.1.
+- **Two ways a paused task is held:**
+  - The first task each gate pauses carries a dated amendment adding the gate as a prerequisite.
+  - So does every other paused task whose listed prerequisites alone could let it start before the gate is reached. That makes 37 amendments in all, and each gate issue lists its extra tasks.
+- **Sessions check gates before starting any task.** Implementation sessions check the open `review-gate` issues before starting any task, and when they name the next dependency-ready issue in an execution record.
+  - They skip tasks in an open gate's range.
+  - If no unblocked task is ready, they stop and tell the project lead which gate is next.
+  - If they cannot check the gates, they do not start a task.
+- **Reviews and closing:**
+  - The review runs on the project lead's authorisation and is recorded under `Docs/Plans/glaux-server/Implementation-Reviews/Phase-N/`.
+  - **Only the project lead closes a gate**, after reading its outcome.
+  - Review findings remain recommendations until adopted through the existing change process.
+- **What gates do not change:** gates are periodic project-lead review pauses. They do not change the per-PR review and merge policy (§5.2) or the phase exit criteria (§7).
 
 **Kinds of gate:**
 - **Full review:** the phase-end review. Its steps are chosen when the gate is reached, from what the phase actually built.
@@ -1303,9 +1314,10 @@ Version 1.38 records the project lead's 27 September 2026 adoption of Phase 1 im
 - Goal v1.10, Guide v1.21 and all other task IDs, definitions and dependencies are unchanged.
 
 Version 1.39 records the project lead's 27 September 2026 decision to pause implementation at fifteen review gates (§5.4).
-- Each gate is a `review-gate` server issue, added as a prerequisite to the first task it pauses.
+- Each gate is a `review-gate` server issue. It is added as a prerequisite to the first task it pauses, and to 22 other paused tasks whose listed prerequisites would otherwise let them start early.
 - The gates fall at every phase end, at a Phase 2 checkpoint after the first new resource types, at a Phase 5 command-safety checkpoint, at health checks inside Phases 2–5, and before the release candidate.
 - Implementation sessions check open gates before starting a task, and only the project lead closes a gate.
+- Gates do not change the per-PR review and merge policy (§5.2) or the phase exit criteria (§7).
 - No task definition, ID or other dependency changes. Goal v1.10 and Guide v1.21 are unchanged.
 
 Use version updates for material sequencing or scope changes. Technical design changes belong in the Guide; mission/scope changes belong in the Goal first. Keep task-to-Guide/test connections current without copying the standards into a separate requirement list. Historical research acceptance and findings remain unchanged.
