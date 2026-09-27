@@ -16,7 +16,7 @@
 
 **Progress on 27 September 2026:**
 - Done: #3–#23 (tasks 1.1.1–1.1.4 and 1.2.1–1.4.6) are closed.
-- Next: task 1.1.5 (CI time budget), [added](../glaux-server-roadmap.md#phase-1-running-foundation-and-first-registration) in Roadmap v1.38 from [finding P1-01](../Implementation-Reviews/Phase-1/findings.md#p1-01--ci-is-likely-to-reach-its-20-minute-limit-within-the-next-few-issues). Its issue link is beside the Roadmap leaf.
+- Next: task 1.1.5 ([#338](https://github.com/DGIWG-P507/glaux-server/issues/338), CI time budget), [added](../glaux-server-roadmap.md#phase-1-running-foundation-and-first-registration) in Roadmap v1.38 from [finding P1-01](../Implementation-Reviews/Phase-1/findings.md#p1-01--ci-is-likely-to-reach-its-20-minute-limit-within-the-next-few-issues). Its issue link is beside the Roadmap leaf.
 - Then #24 / task 1.5.1 resumes. It was in progress on branch `task/1.5.1-system-create` (draft PR #333) and paused. Update that branch from `main` first.
 - Check GitHub for anything later.
 
