@@ -1,6 +1,6 @@
 # Glaux Server implementation review — Phase 1
 
-**Status: open. Step 1 (delivery pipeline) is complete. Of its [three findings](findings.md), P1-01 and P1-03 were adopted on 27 September 2026 and P1-02 remains open. Steps 2–5 have not started.** Set up 27 September 2026; step 1 completed the same day.
+**Status: open. Step 1 (delivery pipeline) is complete. Of its [three findings](findings.md), P1-01 and P1-03 were adopted on 27 September 2026 and P1-02 remains open. Steps 2–5 have not started; they run at review gate 1, after #26.** Set up 27 September 2026; step 1 completed the same day.
 
 [Findings](findings.md) · [Evidence](evidence/) · [Scoping observations](evidence/00-scoping-observations.md) · [Planning documents](../../README.md) · [Completed pre-implementation review](../../Review/README.md)
 
@@ -8,7 +8,13 @@
 
 The [pre-implementation review](../../Review/README.md) checked the *plan*. It is complete and stays as a historical record. This review checks the *implementation*: the code, tests, CI and delivery workflow built so far for Roadmap Phase 1 (issues #3–#26).
 
-The project lead intends to hold a review like this when each phase completes, one folder per phase (`../Phase-2/` and so on). That is an intention, not a gate. Whether a later phase waits for a review is the project lead's decision at the time.
+Each phase gets its own review folder (`../Phase-2/` and so on).
+
+**Review gates.** On 27 September 2026 the project lead made reviews gate implementation, so that nobody has to remember when to run them.
+- There are fifteen `review-gate` issues, defined in [Roadmap §5.4](../../glaux-server-roadmap.md#54-review-gates): one at every phase end, a Phase 2 checkpoint, a Phase 5 command-safety checkpoint, health checks inside Phases 2–5, and a final review.
+- Each gate pauses implementation until the project lead closes it.
+- Steps 2–5 of this review run at gate 1, after #26.
+- This folder, with its charter, findings format and numbered evidence, is the template for later phase folders.
 
 This Phase 1 review opens a little before the phase ends. The delivery-pipeline step is eligible first because CI is close to its time limit (see [scoping observations §2](evidence/00-scoping-observations.md#2-ci-duration-against-its-limit)). It still needs its own `proceed`. The other steps wait for the Phase 1 work they examine.
 
@@ -51,7 +57,7 @@ These do not block the folder or step 1.
 
 1. Is the OS4CSAPI TypeScript client, named in Guide §8.1 as an external-client check, mostly AI-written? If so, it has the same limitation as the Botts suite.
 2. Is there a person available for step 3 or the security code? For example, someone at Riverside Research (a submitting organisation of CSAPI Part 1), someone from the OpenSensorHub team, or an OGC code-sprint contact.
-3. Should Phase 2 wait for step 3's result?
+3. ~~Should Phase 2 wait for step 3's result?~~ Answered 27 September 2026: yes. Review gate 1 pauses Phase 2 until the project lead closes it.
 
 ## How to record work
 

@@ -1,17 +1,14 @@
 # Glaux Server Roadmap
 
-**Version:** 1.38<br>
+**Version:** 1.39<br>
 **Date:** 27 September 2026<br>
 **Effort:** Glaux Server<br>
 **Status:** Issue set published; Phase 1 implementation in progress. Per-issue status lives in GitHub issues; this document's status is updated when a capability group or phase completes.<br>
 **Depends On:** [Goal and Definition v1.10](glaux-server-goal-and-definition.md), Approved<br>
 **Implements:** [Implementation Guide v1.21][Guide], Baselined<br>
-**Implementation status:** The 303-task outline across nine phases and 45 groups is published. As of 27 September 2026, #3–#23 (tasks 1.1.1–1.1.4 and 1.2.1–1.4.6) are closed. New task 1.1.5 restructures CI and is next; #24 / task 1.5.1 then resumes. GitHub issues are the live per-issue status, and a phase or group completes only when all its constituent work passes. The action list's [Current state](Review/action-list.md#current-state) holds standing decisions. The historical #23 handoff remains in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
+**Implementation status:** The 303-task outline across nine phases and 45 groups is published. As of 27 September 2026, tasks 1.1.1–1.4.6 (#3–#23 and #338) are closed, and #24 / task 1.5.1 is merged and awaiting its closing record. Implementation pauses at the fifteen review gates in §5.4. GitHub issues are the live per-issue status, and a phase or group completes only when all its constituent work passes. The action list's [Current state](Review/action-list.md#current-state) holds standing decisions. The historical #23 handoff remains in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
 
-**Revision summary:** The project lead adopted Phase 1 implementation review findings P1-01 and P1-03 on 27 September 2026.
-- **P1-01** adds leaf 1.1.5, which restructures the existing CI into parallel lanes behind the unchanged required `Rust bootstrap` result, before its time limit is reached. Total tasks: 303.
-- **P1-03:** each issue's delivery is recorded in its server PR and issue execution record. This document is updated at group or phase completion and no longer after each issue (§8).
-- Goal v1.10 and Guide v1.21 are unchanged. All other task definitions, IDs and dependencies are unchanged.
+**Revision summary:** On 27 September 2026 the project lead decided that implementation pauses for review at fixed points. §5.4 defines fifteen review gates, each tracked as a server issue labelled `review-gate`. Each gate is recorded as an added prerequisite on the first task it pauses, and it blocks that task and every later one until the project lead closes it. No task definitions, IDs or other dependencies change, and Goal v1.10 and Guide v1.21 are unchanged. v1.38's P1-01/P1-03 changes remain as recorded in §10.
 
 ## 1. Purpose and Executive Summary
 
@@ -1065,12 +1062,50 @@ One iteration is a sizing target. If execution demonstrates that a leaf is too l
 The publication reconciliation above records the original issue set. Guide v1.4's approved response-test/audit amendments have been delivered to #15/#19/#22/#26/#80/#251/#254/#280/#283, v1.5's cache/order amendments to #151/#264 and #113/#233, v1.6's exchange/audit amendments to #239/#240/#287, v1.7's diagnostics-access amendment to #256, v1.8's post-backup-deletion amendments to #26/#126/#251/#252/#283, v1.9's per-relation spelling/comparison amendments to #56/#212/#214/#228, v1.10's latest-selection interpretation/supplemental fixtures to #112, v1.11's prerequisite/deployment-test qualifications to #80–#82/#121–#122/#271/#288, and v1.12's observation unknown-member policy to #98–#102. Guide v1.13 clarifies ControlStream metadata and Command/Feasibility admission for #156/#159/#160/#163/#164/#177/#180, preserving original bodies, earlier amendments and pins; current delivery and remaining decisions are in the [action checklist](Review/action-list.md). Follow-up documentation authorisations do not execute implementation tasks.
 
 **Current execution status:** GitHub issues record per-issue status and delivery; each closed issue's execution record names the next ready issue.
-- As of 27 September 2026, tasks 1.1.1–1.1.4 and 1.2.1–1.4.6 (#3–#23) are closed. The historical #23 handoff is in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
-- Task 1.1.5 is next.
-- #24 / task 1.5.1 then resumes from its existing branch.
+- As of 27 September 2026, tasks 1.1.1–1.4.6 (#3–#23 and #338) are closed. The historical #23 handoff is in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
+- #24 / task 1.5.1 is merged and needs its closing execution record. #25 and #26 follow.
+- Review gate 1 (§5.4) then pauses implementation for the Phase 1 review.
 - This paragraph is updated when a capability group or phase completes, not after each issue.
 
 The expanded issue set is complete and verified. Resume only one dependency-ready issue per subsequent authorised iteration. Later build/database work still depends on the approved-prerequisite inspection; missing tools are not permission to install them.
+
+### 5.4 Review gates
+
+On 27 September 2026 the project lead decided that implementation pauses for review at fixed points, so that nobody has to remember the right moment.
+
+**How a gate works:**
+- Each gate is a `DGIWG-P507/glaux-server` issue labelled [`review-gate`](https://github.com/DGIWG-P507/glaux-server/issues?q=label%3Areview-gate). It is not a Roadmap task.
+- While a gate is open, no task in its blocked range may start.
+  - A range written "≥ X" covers task X and every task with a later ID, comparing phase, then group, then task number. That includes appended experimental groups.
+- The first task a gate pauses carries a dated amendment adding the gate as a prerequisite.
+- Implementation sessions also check the open `review-gate` issues before starting any task. If no unblocked task is ready, the session stops and tells the project lead which gate is next.
+- The review runs on the project lead's authorisation and is recorded under `Docs/Plans/glaux-server/Implementation-Reviews/Phase-N/`.
+- **Only the project lead closes a gate**, after reading its outcome. Review findings remain recommendations until adopted through the existing change process.
+
+**Kinds of gate:**
+- **Full review:** the phase-end review. Its steps are chosen when the gate is reached, from what the phase actually built.
+- **Checkpoint:** a focused check at a risky moment.
+- **Health check:** repeats the Phase 1 review's step 1 measurements. It reports briefly and escalates only if a threshold is crossed.
+
+| Gate | Kind | Reached when | Blocks | First task paused |
+|---|---|---|---|---|
+| 1 | Full review, Phase 1 | Phase 1 closed (#3–#26, #338) | ≥ 2.1.1 | 2.1.1 (#27) |
+| 2 | Checkpoint: first new resource types | 2.1.1–2.3.3 closed (#27–#51) | ≥ 2.3.4 | 2.3.4 (#52) |
+| 3 | Health check | 2.3.4–2.4.10 closed (#52–#68) | ≥ 2.5.1 | 2.5.1 (#69) |
+| 4 | Full review, Phase 2 | Phase 2 closed (#27–#88) | ≥ 3.1.1 | 3.1.1 (#89) |
+| 5 | Health check | 3.1.1–3.2.10 closed (#89–#107) | ≥ 3.3.1 | 3.3.1 (#108) |
+| 6 | Full review, Phase 3 | Phase 3 closed (#89–#127) | ≥ 4.1.1 | 4.1.1 (#128) |
+| 7 | Health check | 4.1.1–4.3.8 closed (#128–#147) | ≥ 4.4.1 | 4.4.1 (#148) |
+| 8 | Full review, Phase 4 | Phase 4 closed (#128–#155, #293–#300) | ≥ 5.1.1 | 5.1.1 (#156) |
+| 9 | Checkpoint: command safety | 5.1.1–5.2.9 closed (#156–#170) | ≥ 5.3.1 | 5.3.1 (#171) |
+| 10 | Health check | 5.3.1–5.4.4 closed (#171–#180) | ≥ 5.5.1 | 5.5.1 (#181) |
+| 11 | Full review, Phase 5 | Phase 5 closed (#156–#197, #301–#304) | ≥ 6.1.1 | 6.1.1 (#198) |
+| 12 | Full review, Phase 6 | Phase 6 closed (#198–#218, #305–#307) | ≥ 7.1.1 | 7.1.1 (#219) |
+| 13 | Full review, Phase 7 | Phase 7 closed (#219–#238) | ≥ 8.1.1 | 8.1.1 (#239) |
+| 14 | Full review, Phase 8 | Phase 8 closed (#239–#262) | ≥ 9.1.1 | 9.1.1 (#263) |
+| 15 | Final review before the release candidate | 9.1.1–9.3.7 and 9.5.1 closed (#263–#285, #308) | 9.4.1–9.4.3 only | 9.4.1 (#286) |
+
+Gates nest, so an earlier open gate also covers everything a later one blocks. Adding, moving or removing a gate is a planning change for the project lead.
 
 ## 6. Coverage, Milestones and Deliverables
 
@@ -1266,6 +1301,12 @@ Version 1.38 records the project lead's 27 September 2026 adoption of Phase 1 im
 - **P1-01:** new leaf 1.1.5 restructures the existing hosted CI into parallel lanes behind the unchanged required `Rust bootstrap` result before its 20-minute job limit is reached, removing no check. It depends on 1.1.4 and precedes the resumption of 1.5.1 / #24 without changing that issue's dependencies. The total becomes 303 tasks, and Phase 1 has 25.
 - **P1-03:** §§5.3 and 8 and the header now record each issue's delivery once, in its server PR and issue execution record. This document's status is updated at capability-group or phase completion. The action list gains a Current state section, and its historical per-issue handoffs are frozen in place.
 - Goal v1.10, Guide v1.21 and all other task IDs, definitions and dependencies are unchanged.
+
+Version 1.39 records the project lead's 27 September 2026 decision to pause implementation at fifteen review gates (§5.4).
+- Each gate is a `review-gate` server issue, added as a prerequisite to the first task it pauses.
+- The gates fall at every phase end, at a Phase 2 checkpoint after the first new resource types, at a Phase 5 command-safety checkpoint, at health checks inside Phases 2–5, and before the release candidate.
+- Implementation sessions check open gates before starting a task, and only the project lead closes a gate.
+- No task definition, ID or other dependency changes. Goal v1.10 and Guide v1.21 are unchanged.
 
 Use version updates for material sequencing or scope changes. Technical design changes belong in the Guide; mission/scope changes belong in the Goal first. Keep task-to-Guide/test connections current without copying the standards into a separate requirement list. Historical research acceptance and findings remain unchanged.
 
