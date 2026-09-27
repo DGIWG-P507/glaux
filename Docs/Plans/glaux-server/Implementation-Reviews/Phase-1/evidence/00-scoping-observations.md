@@ -31,7 +31,7 @@ Each task so far has added its own CI steps to the one job. Queue wait and runne
 
 ## 3. Why CI runs fail
 
-The 25 most recent failed runs from `actions/runs?status=failure`, keyed on each job's first failed step:
+The 25 most recent failed runs from `actions/runs?status=failure`, retrieved during the 27 September 2026 scoping session (exact time not recorded) and keyed on each job's first failed step. The separate reviewer later reproduced the same tally from 27 failed runs. The two newest of those came from #24's branch (PR #333); this document does not otherwise inspect that branch.
 
 | First failed step | Runs |
 |---|---:|
@@ -41,14 +41,23 @@ The 25 most recent failed runs from `actions/runs?status=failure`, keyed on each
 | Prove initial discovery | 2 |
 | Six other steps, one each (one of them a deliberate stop step) | 6 |
 
-The PR records say this outright. [PR #330's execution record](https://github.com/DGIWG-P507/glaux-server/pull/330) reports "No local runtime used" and describes applying CI's generated rustfmt patch artifact. Its preparation failures included a compile stop from an unavailable import and a Clippy type-complexity stop. By count of PR runs in the listing, #21, #22 and #23 each took five to nine runs to reach a passing head.
+Most first failures come from formatting, lint or compile checks that a local Rust toolchain would normally catch before pushing. The comments on [PR #330](https://github.com/DGIWG-P507/glaux-server/pull/330) show how this works in practice:
+- No local runtime or installation was used.
+- A formatter-only stop was fixed by applying CI's generated rustfmt patch.
+- There was a compile stop over an unavailable `axum::Json` import.
+- There was a Clippy type-complexity stop.
+
+By count of PR runs in the listing, #21, #22 and #23 took 5, 7 and 9 runs to reach a passing head. Separately, one of the three browser-rendering failures was the `main` push run after PR #331 merged (`74408da`). `main` stayed red until PR #332 merged.
 
 The project lead chose GitHub-hosted Linux, with no company-laptop installation, on 21 September 2026 (see server `CONTRIBUTING.md`). This observation does not question that choice. It measures what the choice currently costs.
 
 ## 4. Size of the per-task records
 
-- `Review/action-list.md` was created at `345397e` on 20 September 2026 with 14,577 characters. At `273002a` it is 196,134 bytes. Most of the growth is per-task implementation handoffs (tasks 1.1.2–1.4.6). AGENTS.md tells every session to read this file first.
-- Server tree at `d0ef755`: 10,869 lines of Rust under `crates/*/src`; 11,097 lines under `crates/*/examples`, mostly 11 `*-proof.rs` programs of 676–1,407 lines each; 636 lines under `crates/*/tests`; 39 Python scripts (5,721 lines in `scripts/` including non-Python files); 11 `docs/*-tests.md` files.
+- `Review/action-list.md` (Git blob sizes) was 14,778 bytes when created at `345397e` on 20 September 2026 and is 195,364 bytes at `273002a`.
+  - It reached 118,341 bytes at `f2d9f91` (21 September), before the first implementation handoff. That part came from the pre-implementation follow-up updates, the Part 5 planning, and the licence and setup decisions.
+  - The per-task implementation handoffs for tasks 1.1.2–1.4.6 then added about 77 KB, roughly 3.9 KB per task.
+  - AGENTS.md tells every session to read this file first.
+- Server tree at `d0ef755`: 10,869 lines of Rust under `crates/*/src`; 11,097 lines under `crates/*/examples`, mostly 11 `glaux-server` `*-proof.rs` programs of 676–1,407 lines each, plus the 164-line `glaux-standards/examples/discovery-schema-proof.rs`; 636 lines under `crates/*/tests`; 39 Python scripts (5,721 lines in `scripts/` including non-Python files); 11 `docs/*-tests.md` files.
 
 ## 5. How far the write path is shared
 
@@ -56,16 +65,19 @@ The trusted write/storage layer at `d0ef755` is System-specific: `SystemRecord` 
 
 ## 6. Test expectations traced to the standard
 
-A search of `crates/*/examples`, `crates/*/tests`, `crates/*/src` and `scripts/` for `/req/`, `/conf/` and `/ats/` identifiers found only `/conf/api-common`. The server `docs/` cite RFC 9110, 9457, 3986, 8259, 9068, 8725, 7517 and 6750 for the HTTP and authentication work.
+A search of `crates/*/examples`, `crates/*/tests`, `crates/*/src` and `scripts/` for URI-style `/req/`, `/conf/` and `/ats/` identifiers found only `/conf/api-common`. That search does not catch prose citations. The `docs/*-tests.md` files cite Guide sections. The HTTP and authentication docs cite RFC 9110, 9457, 3986, 8259, 9068, 8725, 7517 and 6750, and other docs cite further RFCs.
 
-This may be expected. Most Phase 1 work so far (storage, value types, authentication, permissions) has no CSAPI requirement behind it. Guide §8.1.1 already requires each test to "state the controlling requirement, independently expected answer and a plausible wrong behavior". Whether that is being met for CSAPI-facing behavior starts to matter with #24.
+This may be expected. Most Phase 1 work so far (storage, value types, authentication, permissions) has no CSAPI requirement behind it. Guide §8.1.1 says tests should "state the controlling requirement, independently expected answer and a plausible wrong behavior", applied "in proportion to the behavior being changed". Whether that is being met for CSAPI-facing behavior starts to matter with #24.
 
 ## 7. External conformance suites and peer implementations
 
-- **Botts ETS.** [`Botts-Innovative-Research/ets-ogcapi-connectedsystems10`](https://github.com/Botts-Innovative-Research/ets-ogcapi-connectedsystems10) was created 28 April 2026 and last pushed 4 August 2026. Its README describes a pre-beta TEAM Engine suite for Parts 1 and 2 (240 procedures) that is not an official CITE submission. [IDR-050](../../../../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-050-conformance-harness-strategy-report.md) concluded that no *official* public CSAPI suite existed at its evidence freeze (16 September 2026). It did not mention this unofficial suite.
-  - The project lead states that this suite was written entirely by AI, by someone who is not a software developer.
-  - **It is therefore not used as an independent test oracle in this review.** Two AI-derived readings of the same standard may share errors. Independently developed software is known to fail on the same inputs more often than chance (Knight and Leveson, IEEE TSE 1986), and LLM errors are correlated across models (["Correlated Errors in Large Language Models", ICML 2025](https://arxiv.org/abs/2506.07962)).
-- **OpenSensorHub.** [`opensensorhub/osh-core`](https://github.com/opensensorhub/osh-core) was created 15 October 2015. Its top contributor, `alexrobin`, has 1,975 commits. The pinned CSAPI Part 1 source in the server corpus (`23-001r0.adoc`) names Alexandre Robin as editor. Riverside Research is listed among the submitting organisations. Most of this code predates AI coding assistants, but it is still not an oracle: the project's research documented places where OSH departs from the standard.
+- **Botts ETS.** [`Botts-Innovative-Research/ets-ogcapi-connectedsystems10`](https://github.com/Botts-Innovative-Research/ets-ogcapi-connectedsystems10) was created 28 April 2026 and last pushed 4 August 2026. Its README describes a pre-beta TEAM Engine suite for Parts 1 and 2 ("240 total / 191 exact / 2 helper / 47 candidate" procedures) that is not a CITE submission. Botts Innovative Research is also listed as a submitting organisation of CSAPI Part 1. [IDR-050](../../../../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Reports/idr-srv-050-conformance-harness-strategy-report.md) concluded that no *official* public CSAPI suite existed at its evidence freeze (16 September 2026). It did not mention this unofficial suite.
+  - The project lead reports that the suite's test logic is AI-generated.
+  - **It is therefore not used as an independent test oracle** (a trusted source of expected answers) in this review. Two AI-derived readings of the same standard may share errors. Independently developed software is known to fail on the same inputs more often than chance (Knight and Leveson, IEEE TSE 1986), and LLM errors are correlated across models (["Correlated Errors in Large Language Models", ICML 2025](https://arxiv.org/abs/2506.07962)).
+- **OpenSensorHub.** [`opensensorhub/osh-core`](https://github.com/opensensorhub/osh-core) was created 17 October 2015 as a fork of `sensiasoft/sensorhub`, which was created 29 October 2014. Its top contributor, `alexrobin` (profile name "Alex Robin"), has 1,975 commits.
+  - The pinned CSAPI Part 1 source in the server corpus (`23-001r0.adoc`) gives `:fullname: Alexandre Robin`, which in this document format names the editor. That he is the same person as `alexrobin` is plausible but inferred. Riverside Research is listed among the submitting organisations.
+  - The project's history is long, but how much of the current CSAPI code predates AI coding assistants was not measured.
+  - It is not an oracle either: the project's research documented places where OSH departs from the standard.
 - **OS4CSAPI client.** The Guide §8.1 names the "pinned OS4CSAPI TypeScript client" as one external-client check. [`OS4CSAPI/ogc-client-CSAPI_2`](https://github.com/OS4CSAPI/ogc-client-CSAPI_2) is a fork of `camptocamp/ogc-client`, created 31 January 2026. How much of its CSAPI code was written by AI was not established here.
 
 ## 8. Standards activity upstream
@@ -74,4 +86,4 @@ The [Connected Systems SWG repository](https://github.com/opengeospatial/ogcapi-
 
 ## 9. Research on AI-to-AI review
 
-Cross-model review helped unevenly in one study ([arXiv 2607.21656](https://arxiv.org/abs/2607.21656), competitive-programming tasks): a stronger reviewer improved weaker drafts, while the reverse lowered accuracy. Other work reports that same-session self-review tends to repeat its own errors ([arXiv 2603.12123](https://arxiv.org/abs/2603.12123)). This supports using model diversity and fresh context to *find* issues. It does not make any AI review a substitute for human-anchored evidence.
+Cross-model review helped unevenly in one study ([arXiv 2607.21656](https://arxiv.org/abs/2607.21656), competitive-programming tasks): a stronger reviewer improved weaker drafts, while the reverse lowered accuracy. Other work reports that review in the same session as production detects fewer errors than review in a separate session ([arXiv 2603.12123](https://arxiv.org/abs/2603.12123)). This supports using model diversity and fresh context to *find* issues. It does not make any AI review a substitute for human-anchored evidence.

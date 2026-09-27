@@ -4,7 +4,7 @@
 - [Implementation Guide](glaux-server-implementation-guide.md) — the selected design and verification approach.
 - [Roadmap](glaux-server-roadmap.md) — ordered, issue-sized implementation work.
 - [Pre-implementation review](Review/README.md) — completed assessment, findings, coverage and preserved evidence.
-- [Implementation review — Phase 1](Implementation-Reviews/Phase-1/README.md) — open review of the Phase 1 code, tests and delivery workflow; later phases are intended to get their own folder alongside it.
 - [Review follow-up actions](Review/action-list.md) — adopted changes and delivery evidence, remaining proposals, existing issue owners and project-lead decisions. An explicitly recorded approval is distinct from publication of a proposal.
+- [Implementation review — Phase 1](Implementation-Reviews/Phase-1/README.md) — open review of the Phase 1 code, tests and delivery workflow; later phases are intended to get their own folder alongside it.
 
 The review informs the approved planning documents. Its recommendations do not amend them automatically.
