@@ -64,6 +64,7 @@ These do not block the folder or step 1.
 - **One evidence file per completed step iteration** in `evidence/`, numbered in order (`01-delivery-pipeline.md`, …). Start each with: step, date, reviewer and model (if known), server and planning commits examined, and what was and was not checked.
 - **Findings go in [findings.md](findings.md)**, in the format shown there. Each finding opens with one plain-English sentence and links to its evidence.
 - **Keep this README's status line current.** Don't repeat findings here.
+- **Record who built and reviewed the phase.** Each full review lists which assistant, with provider and model where known, implemented and reviewed each task in the phase. It notes anything learned from switching between assistants (see server `CONTRIBUTING.md`, "Changing the implementing assistant"). It confirms that any work reviewed by its own implementer's provider got the cross-provider check before the gate closes.
 - **Never edit an earlier evidence file** to make it agree with a later one. Add a correction instead.
 - **Keep it small.** No machine-state file, cursor or batch queue unless a step actually needs one.
 - **Separate review before publishing,** following [AGENTS.md](../../../../../AGENTS.md): a different agent/session inspects the actual diff. The reviewed commit and outcome go in the delivery record (the PR description).
