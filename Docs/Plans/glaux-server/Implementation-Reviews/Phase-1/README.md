@@ -38,7 +38,7 @@ Each step has a fixed question and stops once that question is answered. It does
 The assistants that write the code also write its tests, and assistant reviewers can share their blind spots. This review therefore prefers evidence that no AI wrote, in this order:
 
 1. **The standard's own human-written material:** its text, abstract tests (Annex A), schemas and examples.
-2. **Mature peer software built mainly by people,** chiefly OpenSensorHub. Its codebase dates from 2014, and its main contributor appears to be the CSAPI Part 1 editor.
+2. **Mature peer software with a long human-developed history,** chiefly OpenSensorHub. Its codebase dates from 2014, and its main contributor appears to be the CSAPI Part 1 editor.
 3. **Human expert time,** kept for the highest-risk points: step 3, the authentication and permission code, and the places where the Guide records Glaux's own reading of an unclear or conflicting part of the standard.
 4. **Tools:** mutation testing and security scanners.
 5. **A different AI model with fresh context.** Cheapest and weakest; used to find issues, not to settle them.

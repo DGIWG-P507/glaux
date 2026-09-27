@@ -31,7 +31,7 @@ Each task so far has added its own CI steps to the one job. Queue wait and runne
 
 ## 3. Why CI runs fail
 
-The 25 most recent failed runs from `actions/runs?status=failure`, retrieved during the 27 September 2026 scoping session (exact time not recorded) and keyed on each job's first failed step. The separate reviewer later reproduced the same tally from 27 failed runs. The two newest of those came from #24's branch (PR #333); this document does not otherwise inspect that branch.
+The 25 most recent failed runs from `actions/runs?status=failure`, retrieved during the 27 September 2026 scoping session (exact time not recorded) and keyed on each job's first failed step. The separate reviewer later fetched the 27 most recent failed runs; either 25-run window gives the same tally. The two newest of those came from #24's branch (PR #333); this document does not otherwise inspect that branch.
 
 | First failed step | Runs |
 |---|---:|
@@ -65,7 +65,7 @@ The trusted write/storage layer at `d0ef755` is System-specific: `SystemRecord` 
 
 ## 6. Test expectations traced to the standard
 
-A search of `crates/*/examples`, `crates/*/tests`, `crates/*/src` and `scripts/` for URI-style `/req/`, `/conf/` and `/ats/` identifiers found only `/conf/api-common`. That search does not catch prose citations. The `docs/*-tests.md` files cite Guide sections. The HTTP and authentication docs cite RFC 9110, 9457, 3986, 8259, 9068, 8725, 7517 and 6750, and other docs cite further RFCs.
+A search of `crates/*/examples`, `crates/*/tests`, `crates/*/src` and `scripts/` for URI-style `/req/`, `/conf/` and `/ats/` identifiers found only `/conf/api-common`. That search does not catch prose citations. Ten of the 11 `docs/*-tests.md` files cite Guide sections; `database-tests.md` does not. The HTTP and authentication docs cite RFC 9110, 9457, 3986, 8259, 9068, 8725, 7517 and 6750, and other docs cite further RFCs.
 
 This may be expected. Most Phase 1 work so far (storage, value types, authentication, permissions) has no CSAPI requirement behind it. Guide §8.1.1 says tests should "state the controlling requirement, independently expected answer and a plausible wrong behavior", applied "in proportion to the behavior being changed". Whether that is being met for CSAPI-facing behavior starts to matter with #24.
 
