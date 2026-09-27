@@ -1,8 +1,38 @@
 # Glaux Server review follow-up actions
 
-**Status: review/Part 5 planning follow-ups and licensing are delivered. #3–#20 established the initial build/database/CI/corpus/validation/value foundations, System storage and retry-safe writes, runtime configuration/health, shared HTTP handling, JWT verification and loopback-only development identities. #21 completed bounded configured HTTPS signing-key refresh, rotation and fail-closed expiry/outage behavior; [PR #329](https://github.com/DGIWG-P507/glaux-server/pull/329) is merged and [issue #21](https://github.com/DGIWG-P507/glaux-server/issues/21) is closed. [#22 / task 1.4.5](https://github.com/DGIWG-P507/glaux-server/issues/22), action/source/resource permissions, is next, requiring separate authorisation. The production listener remains health-only; resource policy, CSAPI resources, discovery, codecs and later capabilities remain unimplemented. No laptop installation or permanent cloud service is required.**
+**Status: see [Current state](#current-state).** Everything after that section is the historical record. It is no longer updated after each issue.
 
 **Prepared:** September 20, 2026. The review remains complete. This is the working action checklist for using its results, not another review, research plan, requirements document or replacement roadmap.
+
+## Current state
+
+**Updated 27 September 2026. Read this section first.** It changes only when the project lead makes a decision or a Roadmap capability group or phase completes.
+
+**Where delivery status lives.** Each implementation issue's delivery is recorded once: in its server PR (evidence and separate-review record) and in the issue's execution record, which also names the next ready issue. GitHub issues are the live per-issue status.
+- No per-issue section is added here, and no per-issue planning PR is made.
+- The Roadmap's status is updated when a capability group or phase completes.
+- The per-issue handoff sections below, for tasks 1.1.2–1.4.6 (#4–#23), are frozen in place so existing links keep working.
+- This is the project lead's decision of 27 September 2026, adopting [Phase 1 implementation review finding P1-03](../Implementation-Reviews/Phase-1/findings.md#p1-03--each-delivery-is-written-up-several-times-and-the-file-read-first-keeps-growing).
+
+**Progress on 27 September 2026:**
+- Done: #3–#23 (tasks 1.1.1–1.1.4 and 1.2.1–1.4.6) are closed.
+- Next: task 1.1.5 ([#338](https://github.com/DGIWG-P507/glaux-server/issues/338), CI time budget), [added](../glaux-server-roadmap.md#phase-1-running-foundation-and-first-registration) in Roadmap v1.38 from [finding P1-01](../Implementation-Reviews/Phase-1/findings.md#p1-01--ci-is-likely-to-reach-its-20-minute-limit-within-the-next-few-issues). Its issue link is beside the Roadmap leaf.
+- Then #24 / task 1.5.1 resumes. It was in progress on branch `task/1.5.1-system-create` (draft PR #333) and paused. Update that branch from `main` first.
+- Check GitHub for anything later.
+
+**Standing decisions:**
+
+| Decision | Date | Details |
+|---|---|---|
+| Apache-2.0 for original server code and documentation | 21 Sep 2026 | [Licence decision](#licence-decision--21-september-2026) |
+| How issues are worked:<br>• one authorised issue per `proceed`<br>• one branch and PR per issue<br>• separate assistant review before merge<br>• assistant merge after checks pass<br>• required `Rust bootstrap` check with no bypass<br>• no mandatory human-approval pause | 18 and 21 Sep 2026 | [Review and enforcement decision](#review-and-enforcement-decision--21-september-2026); server `CONTRIBUTING.md` |
+| Builds and tests run on GitHub-hosted Linux, with no company-laptop installation | 21 Sep 2026 | [How we carry this out](#how-we-carry-this-out) |
+| Bounded experimental Part 5 Protobuf scope | 21 Sep 2026 | [Current Part 5 planning adjustment](#current-part-5-planning-adjustment) |
+| Adopted clarifications from the pre-implementation review, now in Guide v1.4–v1.19 and dated issue amendments | 20–21 Sep 2026 | [Recommended bounded changes](#recommended-bounded-changes); [Interpretations](#interpretations-to-carry-into-existing-work) |
+| **P1-01:** add task 1.1.5 to restructure CI before #24 resumes.<br>• Checks run in parallel lanes behind the existing required `Rust bootstrap` result.<br>• The per-job time limit is raised.<br>• No check is removed. | 27 Sep 2026 | Roadmap v1.38; [finding P1-01](../Implementation-Reviews/Phase-1/findings.md#p1-01--ci-is-likely-to-reach-its-20-minute-limit-within-the-next-few-issues) |
+| **P1-03:** record each delivery once, as described above | 27 Sep 2026 | [finding P1-03](../Implementation-Reviews/Phase-1/findings.md#p1-03--each-delivery-is-written-up-several-times-and-the-file-read-first-keeps-growing) |
+
+Phase 1 implementation review finding P1-02 has not been acted on and remains open in the [review](../Implementation-Reviews/Phase-1/findings.md). Review steps 2–5 have not started.
 
 ## The recommendation in plain English
 
