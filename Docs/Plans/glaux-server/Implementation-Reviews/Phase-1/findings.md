@@ -2,13 +2,13 @@
 
 [Review start page](README.md) · [Evidence](evidence/)
 
-Step 1 (delivery pipeline) is complete. Steps 2–5 have not started. The [scoping observations](evidence/00-scoping-observations.md) are starting points for the steps to check, not findings.
+Step 1 (delivery pipeline) is complete. The project lead adopted P1-01 and P1-03 on 27 September 2026; P1-02 remains open. Steps 2–5 have not started. The [scoping observations](evidence/00-scoping-observations.md) are starting points for the steps to check, not findings.
 
 | ID | Title | Severity | Status |
 |---|---|---|---|
-| [P1-01](#p1-01--ci-is-likely-to-reach-its-20-minute-limit-within-the-next-few-issues) | CI is likely to reach its 20-minute limit within the next few issues | High | Open |
+| [P1-01](#p1-01--ci-is-likely-to-reach-its-20-minute-limit-within-the-next-few-issues) | CI is likely to reach its 20-minute limit within the next few issues | High | Adopted |
 | [P1-02](#p1-02--the-implementing-assistant-uses-ci-as-its-compiler) | The implementing assistant uses CI as its compiler | Low | Open |
-| [P1-03](#p1-03--each-delivery-is-written-up-several-times-and-the-file-read-first-keeps-growing) | Each delivery is written up several times, and the file read first keeps growing | Medium | Open |
+| [P1-03](#p1-03--each-delivery-is-written-up-several-times-and-the-file-read-first-keeps-growing) | Each delivery is written up several times, and the file read first keeps growing | Medium | Adopted |
 
 ### P1-01 — CI is likely to reach its 20-minute limit within the next few issues
 
@@ -35,7 +35,7 @@ Step 1 (delivery pipeline) is complete. Steps 2–5 have not started. The [scopi
   - D. Record an explicit "affected checks" rule for older per-task proofs.
 
   Any split must keep one unconditional required result that fails on skipped work.
-- **Status:** Open.
+- **Status:** Adopted on 27 September 2026 as Roadmap task 1.1.5 (v1.38), using options A and C. Option B (caching) and option D were not taken. Recorded in the [action list Current state](../../Review/action-list.md#current-state).
 
 ### P1-02 — The implementing assistant uses CI as its compiler
 
@@ -74,7 +74,7 @@ Step 1 (delivery pipeline) is complete. Steps 2–5 have not started. The [scopi
 - **Kind:** recommendation about working practice.
 - **Severity:** Medium.
 - **Suggested owner:** project-lead decision, [evidence §5](evidence/01-delivery-pipeline.md#5-options-for-the-project-lead) option F. That would mean recording each delivery once (issue record plus server PR), keeping the action list to current state and decisions with historical handoffs moved unchanged to an archive, and updating the Roadmap status at group or phase completion. Adopting it changes planning `AGENTS.md`.
-- **Status:** Open.
+- **Status:** Adopted on 27 September 2026. Recorded in the [action list Current state](../../Review/action-list.md#current-state), planning `AGENTS.md`, Roadmap v1.38 §8 and server `CONTRIBUTING.md`. The historical handoffs are frozen in place rather than moved to an archive, because Roadmap, issue and PR links point into them.
 
 ## Format
 
