@@ -74,7 +74,9 @@ Step 1 (delivery pipeline) is complete. The project lead adopted P1-01 and P1-03
 - **Kind:** recommendation about working practice.
 - **Severity:** Medium.
 - **Suggested owner:** project-lead decision, [evidence §5](evidence/01-delivery-pipeline.md#5-options-for-the-project-lead) option F. That would mean recording each delivery once (issue record plus server PR), keeping the action list to current state and decisions with historical handoffs moved unchanged to an archive, and updating the Roadmap status at group or phase completion. Adopting it changes planning `AGENTS.md`.
-- **Status:** Adopted on 27 September 2026. Recorded in the [action list Current state](../../Review/action-list.md#current-state), planning `AGENTS.md`, Roadmap v1.38 §8 and server `CONTRIBUTING.md`. The historical handoffs are frozen in place rather than moved to an archive, because Roadmap, issue and PR links point into them.
+- **Status:** Adopted on 27 September 2026. Recorded in the [action list Current state](../../Review/action-list.md#current-state), planning `AGENTS.md`, Roadmap v1.38 §8 and server `CONTRIBUTING.md` (via task 1.1.5's server PR #334).
+  - The historical handoffs are frozen in place rather than moved to an archive, because Roadmap, issue and PR links point into them.
+  - As a result the action list stops growing but stays about 198 KB. Sessions are pointed to its Current state section only.
 
 ## Format
 
