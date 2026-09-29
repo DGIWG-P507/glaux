@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.116<br>
-**Date:** September 19, 2026<br>
-**Status:** Original IDR and supplements 058–062 complete and accepted; research findings and acceptance records unchanged. See the [current Roadmap handoff](../../../../../Plans/glaux-server/glaux-server-roadmap.md#53-immediate-next-step) for issue-publication and implementation status, and the [Guide's Goal-paired explanations](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for how the approved capabilities will be implemented<br>
+**Version:** 3.117<br>
+**Date:** September 29, 2026<br>
+**Status:** Original IDR and supplements 058–062 complete and accepted; research findings and acceptance records unchanged. Client supplements 063–066 are planned; each runs and is reported individually before the Phase 1 implementation review resumes. See the [current Roadmap handoff](../../../../../Plans/glaux-server/glaux-server-roadmap.md#53-immediate-next-step) for issue-publication and implementation status, and the [Guide's Goal-paired explanations](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for how the approved capabilities will be implemented<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -75,7 +75,7 @@ The shared upstream-history register is maintained across topics as supporting e
 ---
 
 **Original IDR Topics:** 67 (complete and accepted)<br>
-**Post-Synthesis Supplemental Topics:** 5 (IDR-SRV-058 through IDR-SRV-062 complete and accepted)
+**Post-Synthesis Supplemental Topics:** 9 (IDR-SRV-058 through IDR-SRV-062 complete and accepted; IDR-SRV-063 through IDR-SRV-066 planned)
 
 Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
@@ -491,6 +491,49 @@ The original 67-topic IDR and IDR-SRV-057 synthesis were completed and accepted 
 - Sequence: Plan/publication, research/report acceptance, synthesis, discussion and approved clarification edits are complete. Guide v1.1 / Roadmap v1.2 incorporated the initial test-lifecycle/reproduction and contributor-guidance clarifications; subsequent approved revisions retain all 286 task IDs/titles/dependencies. Implementation-issue publication now proceeds in user-authorized batches before coding, with current progress and the next batch maintained in Roadmap §5. The established one-ready-issue-per-iteration implementation workflow follows complete issue publication and verification; no special acceptance phrase is required.
 - Boundary: Preserve IDR-SRV-014B, original completion/acceptance counts and supplements 058–061. Distinguish upstream authorship from audit-fork contributions, stated rationale from inference, test presence from TDD, and source inspection from executed verification. No automatic scope/stack change, new planning framework, software installation, maintainer outreach, implementation issue creation or server implementation.
 
+#### IDR-SRV-063 to IDR-SRV-066: CSAPI Client Studies
+
+The project lead requested these four studies on September 29, 2026, before the [Phase 1 implementation review](../../../../../Plans/glaux-server/Implementation-Reviews/Phase-1/README.md) continues past step 1, because they may influence that review. They respond to the project lead's answer to the charter's first question: the OS4CSAPI TypeScript client named in Guide §8.1 is mostly AI-written. The project lead reports that the OSH Viewer and OSCAR Viewer are the most human-written CSAPI clients, and that cs-client-ts and Aleph were written by a senior developer with AI assistance. Each study is planned with the existing template, executed on its own `proceed` and reported individually, in the order listed. That order is proposed for the project lead to confirm; the lead listed Aleph before cs-client-ts, which Aleph depends on.
+
+Common boundary for all four:
+- Client behaviour is informative evidence, and the approved standard stays the authority.
+- Authorship statements stay attributed, with no inference of AI use.
+- Source or fixtures are reused only on terms that apply to them. Two targets had no license file at the preliminary check.
+- No laptop installation, maintainer contact or upstream posting.
+- No change to the Goal, Guide, Roadmap, IDR-SRV-056 or server code without a later, separate `proceed`.
+
+##### IDR-SRV-063: OSH Viewer and OSH JS Toolkit Client Study
+
+- Status: Plan prepared for publication, September 29, 2026. No research has been run.
+- Sequence: plan publication first; research and report on a later `proceed`; report acceptance on the next. No synthesis addendum or planning edit is planned unless the project lead authorises one after acceptance.
+- Focus: The OSH Viewer and the `osh-js` revision it resolves. Covers the targeted API version (its `sweapi` modules may predate published CSAPI), requests, response dependencies, tolerance and tests. Each finding is judged against CSAPI and mapped to Glaux dispositions.
+- Plan: [idr-srv-063-osh-viewer-and-osh-js-client-study.md](idr-srv-063-osh-viewer-and-osh-js-client-study.md).
+- Output target: `IDR Reports/idr-srv-063-osh-viewer-and-osh-js-client-study-report.md`.
+
+##### IDR-SRV-064: OSCAR Viewer Client Study
+
+- Status: Plan prepared for publication, September 29, 2026. No research has been run. Starts after IDR-SRV-063 is accepted.
+- Sequence: plan publication first; research and report on a later `proceed`; report acceptance on the next. No synthesis addendum or planning edit is planned unless the project lead authorises one after acceptance.
+- Focus: The OSCAR Viewer and the Connected Systems data sources in the `earocorn/osh-js` fork it depends on. Covers lineage differences from IDR-SRV-063, and requests, streams, commands, response dependencies and tests, judged against CSAPI.
+- Plan: [idr-srv-064-oscar-viewer-client-study.md](idr-srv-064-oscar-viewer-client-study.md).
+- Output target: `IDR Reports/idr-srv-064-oscar-viewer-client-study-report.md`.
+
+##### IDR-SRV-065: cs-client-ts Client Library Study
+
+- Status: Plan prepared for publication, September 29, 2026. No research has been run. Starts after IDR-SRV-064 is accepted.
+- Sequence: plan publication first; research and report on a later `proceed`; report acceptance on the next. No synthesis addendum or planning edit is planned unless the project lead authorises one after acceptance.
+- Focus: The `cs-client-ts` library, published as `cs-api-client`. Covers coverage, request construction, response models, tests and fixture origins. It also assesses independence explicitly, because the same author wrote CS-GO (IDR-SRV-014B and IDR-SRV-062).
+- Plan: [idr-srv-065-cs-client-ts-client-library-study.md](idr-srv-065-cs-client-ts-client-library-study.md).
+- Output target: `IDR Reports/idr-srv-065-cs-client-ts-client-library-study-report.md`.
+
+##### IDR-SRV-066: Aleph (Alephex) Connected Systems UI Client Study
+
+- Status: Plan prepared for publication, September 29, 2026. No research has been run. Starts after IDR-SRV-065 is accepted.
+- Sequence: plan publication first; research and report on a later `proceed`; report acceptance on the next. No synthesis addendum or planning edit is planned unless the project lead authorises one after acceptance.
+- Focus: The Aleph application (`Alephex`) built on `cs-api-client` `0.1.3`. Covers end-to-end workflows, library-versus-application attribution, MQTT and OpenID Connect use, tests, and a short cross-study note for the Phase 1 review.
+- Plan: [idr-srv-066-aleph-connected-systems-ui-client-study.md](idr-srv-066-aleph-connected-systems-ui-client-study.md).
+- Output target: `IDR Reports/idr-srv-066-aleph-connected-systems-ui-client-study-report.md`.
+
 ---
 
 ## Topic Execution Order
@@ -760,6 +803,7 @@ The final report must:
 | 2026-09-18 | Test-Quality Review and Approved Corrections | The project lead paused issue publication for a rigorous read-only assessment of existing research, current planning, CS-GO test source and primary testing guidance, then authorized focused corrections with `proceed`. Guide v1.2, Roadmap v1.4 and server issue/contributor instructions make behavioral failure evidence, assertion review, targeted generated-input/mutation checks, false-green prevention and readable reporting explicit | Existing research informs the correction; no new research topic or evidence framework. Strengthens 1.1.4 and common testing rules while preserving all 286 IDs/titles/dependencies and Goal v1.7. No runtime verification, installations, implementation issues or server code; complete issue publication remains next | Glaux Project Lead (assessment request and correction authorization) |
 | 2026-09-18 | Batched Issue Publication — Phase 1 | The project lead approved approximately 20–30 issues per publication iteration, starting with Phase 1's 24. Roadmap v1.5 links the reviewed and read-back server issues #3–#26 and records the next 22-issue batch in groups 2.1–2.2 | All 286 leaf definitions/dependencies, Goal v1.7, Guide v1.2 and accepted research remain unchanged. All initial issues must be published and reconciled before coding; this iteration creates no server code, installs no software and completes no implementation issue. Current execution handoff remains in Roadmap §5 rather than a separate issue catalog | Glaux Project Lead (batch-publication authorization) |
 | 2026-09-19 | Capability Explanations and Current Planning Links | Guide v1.3 pairs the Goal's capability descriptions with the selected implementation technologies and mechanisms; Goal v1.8 adds direct navigation and Roadmap v1.18 aligns current references. The initial 286 issues were published and reconciled at the Roadmap v1.17 handoff | Research, accepted findings, technical contracts and task definitions are unchanged. This index update corrects the current status banner only, retaining dated research and publication records. Current implementation status and the next authorized step remain in the Roadmap; no server implementation starts here | Glaux Project Lead (documentation and reference-update authorization) |
+| 2026-09-29 | CSAPI Client Study Planning | Registered IDR-SRV-063 to IDR-SRV-066 and drafted their plans with the existing template: OSH Viewer and OSH JS Toolkit, OSCAR Viewer, cs-client-ts, and Aleph (Alephex). Each is executed and reported individually, in that proposed order. Plan and publication only: no research has been run, and the Goal, Guide and server code are unchanged | The project lead reported that the OS4CSAPI TypeScript client is mostly AI-written, and asked for evidence from human-developed clients before the Phase 1 implementation review continues | Glaux Project Lead (planning authorization) |
 
 ---
 
@@ -788,6 +832,10 @@ Supplemental progress is tracked separately from the completed category totals a
 | IDR-SRV-060 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum C retained; Guide v1.0 retains Part 5 deferral and existing codec separation | 2026-09-18 |
 | IDR-SRV-061 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum D retained; Guide v1.0 clarifications assigned in Roadmap v1.1 issue-sized outline | 2026-09-18 |
 | IDR-SRV-062 | Complete (1/1) | 1/1 | 1/1 | Research accepted; synthesis/discussion complete; approved clarifications in Guide v1.1 / Roadmap v1.2; issue publication next | 2026-09-18 |
+| IDR-SRV-063 | Complete (1/1) | 0/1 | 0/1 | Plan prepared for publication; research awaits its own `proceed` | 2026-09-29 |
+| IDR-SRV-064 | Complete (1/1) | 0/1 | 0/1 | Plan prepared for publication; research awaits its own `proceed` | 2026-09-29 |
+| IDR-SRV-065 | Complete (1/1) | 0/1 | 0/1 | Plan prepared for publication; research awaits its own `proceed` | 2026-09-29 |
+| IDR-SRV-066 | Complete (1/1) | 0/1 | 0/1 | Plan prepared for publication; research awaits its own `proceed` | 2026-09-29 |
 
 ---
 
