@@ -1,10 +1,10 @@
 # Section 065: cs-client-ts Client Library Study - Research Plan
 
 **Topic ID:** IDR-SRV-065<br>
-**Status:** Planned<br>
+**Status:** Research complete; report in review; acceptance by merging the report PR<br>
 **Last Updated:** September 29, 2026<br>
 **Estimated Research Time:** Not yet calibrated; four bounded phases below, with further research iterations only if needed for the stated coverage.<br>
-**Actual Research Time:** TBD until complete<br>
+**Actual Research Time:** About 25 minutes of research and drafting, 22:30–22:55 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Nothing was executed or installed.<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-065-cs-client-ts-client-library-study-report.md`
 
 ---
@@ -218,16 +218,16 @@ This study follows the two OSH-family studies. It comes directly before IDR-SRV-
 
 This topic research is complete when:
 
-- [ ] Q1–Q6 have evidence-backed answers, or explicit limitations and their consequences.
-- [ ] The baselines are pinned: the published `0.1.3` package as primary, its closest committed source `a632798` (with the match confirmed or its limits stated), and the `0.1.2`-era commit `4724b0e`. Every material difference between them is recorded.
-- [ ] Independence from CS-GO and AI-assisted sources is assessed from evidence. Fixture origins are classified, and the shallow-history limit is stated.
-- [ ] Every material request and model assumption is traceable to a source anchor and classified against exact standard identifiers.
-- [ ] Test analysis explains what representative tests detect and whether their expected values are independent. Source inspection is distinguished from execution.
-- [ ] The license status is recorded, and recommendations describe behaviour in Glaux's own terms.
-- [ ] Phase 1 expectations are compared with implemented Glaux behaviour, later-gate checks are listed, and the IDR-SRV-066 handoff is recorded.
-- [ ] Each material lesson has a Glaux disposition with Guide/Roadmap references. "No change" is acceptable.
-- [ ] Relevant official repository history is consulted and authority-classified where the standards-history register applies.
-- [ ] The report follows the report template and validates these criteria.
+- [x] Q1–Q6 have evidence-backed answers, or explicit limitations and their consequences.
+- [x] The baselines are pinned: the published `0.1.3` package as primary, its closest committed source `a632798` (with the match confirmed or its limits stated), and the `0.1.2`-era commit `4724b0e`. Every material difference between them is recorded.
+- [x] Independence from CS-GO and AI-assisted sources is assessed from evidence. Fixture origins are classified, and the shallow-history limit is stated.
+- [x] Every material request and model assumption is traceable to a source anchor and classified against exact standard identifiers.
+- [x] Test analysis explains what representative tests detect and whether their expected values are independent. Source inspection is distinguished from execution.
+- [x] The license status is recorded, and recommendations describe behaviour in Glaux's own terms.
+- [x] Phase 1 expectations are compared with implemented Glaux behaviour, later-gate checks are listed, and the IDR-SRV-066 handoff is recorded.
+- [x] Each material lesson has a Glaux disposition with Guide/Roadmap references. "No change" is acceptable.
+- [x] Relevant official repository history is consulted and authority-classified where the standards-history register applies.
+- [x] The report follows the report template and validates these criteria.
 
 Completion does not require running the tests, contacting the author, reading every file or certifying the library. Any such limit narrows the relevant conclusion; it does not disappear from the report.
 
@@ -279,16 +279,16 @@ Internal prerequisites are not waived by labelling them unavailable or deferred.
 
 ## 9. Research Status Checklist
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 synthesis complete
+- [x] Deliverable draft complete
+- [ ] Deliverable reviewed (separate review pending)
 - [ ] Deliverable accepted
 
-**Actual Research Time:** [Fill in at completion]<br>
-**Completion Date:** [Fill in at completion]
+**Actual Research Time:** About 25 minutes of research and drafting, 22:30–22:55 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Nothing was executed or installed.<br>
+**Completion Date:** September 29, 2026 (research and report; acceptance pending)
 
 ---
 
