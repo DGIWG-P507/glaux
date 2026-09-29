@@ -512,7 +512,7 @@ Common boundary for all four:
 
 ##### IDR-SRV-064: OSCAR Viewer Client Study
 
-- Status: Plan prepared for publication, September 29, 2026. No research has been run.
+- Status: Plan prepared for publication, September 29, 2026. No research has been run. Starts after IDR-SRV-063 is accepted.
 - Sequence: plan publication first; research and report on a later `proceed`; report acceptance on the next. No synthesis addendum or planning edit is planned unless the project lead authorises one after acceptance.
 - Focus: The OSCAR Viewer and the Connected Systems data sources in the `earocorn/osh-js` fork it depends on. Covers lineage differences from IDR-SRV-063, and requests, streams, commands, response dependencies and tests, judged against CSAPI.
 - Plan: [idr-srv-064-oscar-viewer-client-study.md](idr-srv-064-oscar-viewer-client-study.md).
@@ -520,7 +520,7 @@ Common boundary for all four:
 
 ##### IDR-SRV-065: cs-client-ts Client Library Study
 
-- Status: Plan prepared for publication, September 29, 2026. No research has been run.
+- Status: Plan prepared for publication, September 29, 2026. No research has been run. Starts after IDR-SRV-064 is accepted.
 - Sequence: plan publication first; research and report on a later `proceed`; report acceptance on the next. No synthesis addendum or planning edit is planned unless the project lead authorises one after acceptance.
 - Focus: The `cs-client-ts` library, published as `cs-api-client`. Covers coverage, request construction, response models, tests and fixture origins. It also assesses independence explicitly, because the same author wrote CS-GO (IDR-SRV-014B and IDR-SRV-062).
 - Plan: [idr-srv-065-cs-client-ts-client-library-study.md](idr-srv-065-cs-client-ts-client-library-study.md).
@@ -528,7 +528,7 @@ Common boundary for all four:
 
 ##### IDR-SRV-066: Aleph (Alephex) Connected Systems UI Client Study
 
-- Status: Plan prepared for publication, September 29, 2026. No research has been run.
+- Status: Plan prepared for publication, September 29, 2026. No research has been run. Starts after IDR-SRV-065 is accepted.
 - Sequence: plan publication first; research and report on a later `proceed`; report acceptance on the next. No synthesis addendum or planning edit is planned unless the project lead authorises one after acceptance.
 - Focus: The Aleph application (`Alephex`) built on `cs-api-client` `0.1.3`. Covers end-to-end workflows, library-versus-application attribution, MQTT and OpenID Connect use, tests, and a short cross-study note for the Phase 1 review.
 - Plan: [idr-srv-066-aleph-connected-systems-ui-client-study.md](idr-srv-066-aleph-connected-systems-ui-client-study.md).

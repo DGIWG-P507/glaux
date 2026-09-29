@@ -8,7 +8,7 @@
 **Implements:** [Implementation Guide v1.21][Guide], Baselined<br>
 **Implementation status:** The 303-task outline across nine phases and 45 groups is published. As of 29 September 2026, Phase 1 is complete: tasks 1.1.1–1.5.3 (#3–#26 and #338) are closed, and review gate 1 pauses Phase 2. Implementation pauses at the fifteen review gates in §5.4. GitHub issues are the live per-issue status, and a phase or group completes only when all its constituent work passes. The action list's [Current state](Review/action-list.md#current-state) holds standing decisions. The historical #23 handoff remains in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
 
-**Revision summary:** On 27 September 2026 the project lead decided that implementation pauses for review at fixed points. §5.4 defines fifteen review gates, each tracked as a server issue labelled `review-gate`. Each gate blocks its stated range until the project lead closes it. It is recorded as an added prerequisite on the first task it pauses, and on 22 other tasks that could otherwise start early. It does not change per-PR merge policy. No task definitions, IDs or other dependencies change, and Goal v1.10 and Guide v1.21 are unchanged. v1.38's P1-01/P1-03 changes remain as recorded in §10.
+**Revision summary:** Phase 1 completed on 29 September 2026, and review gate 1 now pauses Phase 2. The project lead also decided that four client research studies (IDR-SRV-063 to IDR-SRV-066) come before the rest of the Phase 1 review. No task definitions, IDs or dependencies change, and Goal v1.10 and Guide v1.21 are unchanged. The review gates from v1.39 and the P1-01/P1-03 changes from v1.38 remain as recorded in §§5.4 and 10.
 
 ## 1. Purpose and Executive Summary
 

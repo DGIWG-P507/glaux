@@ -83,7 +83,7 @@ Studying OSCAR after IDR-SRV-063 lets the report state exactly what the fork add
    - Which response members, identifiers, links, relations, time and geometry formats, datastream schemas, paging, status and error behaviours does it read or require?
    - Where is it strict, tolerant or silently lossy?
 4. **Q4 — Standards alignment:** For each material dependency, what does CSAPI (and incorporated Common/Features, SWE Common and SensorML) require? Classify the behaviour as conforming, tolerant, draft-era, OSH-specific, experimental or non-conforming.
-5. **Q5 — Tests and quality evidence:** What do OSCAR's Cypress tests, and the fork's tests and examples on the Connected Systems path, establish? Are their expected values independent? At the preliminary check OSCAR has 11 end-to-end spec files (one aggregates the others) and 5 component spec files, plus two scheduled run logs from April 22, 2026.
+5. **Q5 — Tests and quality evidence:** What do OSCAR's Cypress tests, and the fork's tests and examples on the Connected Systems path, establish? Are their expected values independent? At the preliminary check OSCAR has 10 end-to-end spec files (`all-specs.cy.tsx` imports seven of the others) and 5 component spec files. It also has `GeneralTestingActions.tsx`, which contains tests that Cypress's default spec pattern does not pick up, and two scheduled run logs from April 22, 2026.
 6. **Q6 — Transfer to Glaux:** Which concrete expectations, fixtures or checks should inform:
    - the Phase 1 review;
    - later gates, especially those covering Part 2 dynamic data, commands and events;
@@ -96,7 +96,7 @@ Studying OSCAR after IDR-SRV-063 lets the report state exactly what the fork add
 
 **Identity, lineage and history (Q1)**
 
-- Record OSCAR's default branch and commit, the resolved fork revision, and the upstream `osh-js` point where the fork diverged.
+- Record OSCAR's default branch and commit, the resolved fork revision, and the upstream `osh-js` point where the fork diverged. At the preliminary check the fork's merge base with `mcs_baseline` is `549c630`, one commit before IDR-SRV-063's 2024 baseline `8a959d4`.
 - Summarise the fork's Connected Systems changes relative to IDR-SRV-063's baseline: new or renamed modules, removed assumptions and changed parsers.
 - Summarise OSCAR's history for the CSAPI path from commits, pull requests, issues and releases. Choose representative cases: introduction of Connected Systems support, a behaviour change and a defect fix.
 

@@ -138,7 +138,7 @@ It is the only studied client whose dependencies at the preliminary check includ
   - `.env.example` (variable names only).
 
   Record the actual execution snapshot.
-- **Library:** `cs-api-client` `0.1.3`, which on npm was built from commit `4724b0e075f2d491885caa3824fcf0da23a464d1` (IDR-SRV-065's primary baseline). Confirm the version Aleph's lockfile actually resolves. The newer, unpublished library head is not what Aleph uses.
+- **Library:** `cs-api-client` `0.1.3` as locked in Aleph's `pnpm-lock.yaml` (integrity `sha512-aN54cvRElSuQ/…`), which is IDR-SRV-065's primary baseline. Its closest committed source is `a6327989f5cec3c36422a121a2fe676e8a6bbe6d`, as IDR-SRV-065 establishes.
 - **Independence comparison:** [CS-GO](https://github.com/SomethingCreativeStudios/connected-systems-go) at the IDR-SRV-062 pin and, where needed, its current head. Use it only as needed to judge shared interpretation.
 - **History entry points:** commits, any pull requests, issues and tags, with totals recorded.
 - **Controlling standards:**

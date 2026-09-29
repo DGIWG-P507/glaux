@@ -48,7 +48,7 @@ This study follows the two OSH-family studies. It comes directly before IDR-SRV-
   - The project lead reports AI assistance. Do not infer which parts were AI-assisted.
 - **History is shallow.**
   - At the preliminary check the repository has 8 reachable commits and about 222 files, including 30 test files (`*.test.ts`) and 98 JSON fixtures under `test/`. The development history appears to be largely squashed.
-  - Two commit messages state deliberate departures from the standard: `4724b0e` ("Broke from standard just a little bit...", the source of npm `0.1.2` and `0.1.3`) and `a632798` ("Adding name param to abstract process optionally... break from standard"). The study examines both as history cases.
+  - Two commit messages state deliberate departures from the standard: `4724b0e` ("Broke from standard just a little bit...", which npm records as the source commit of both `0.1.2` and `0.1.3`, although its own `package.json` says `0.1.1`) and `a632798` ("Adding name param to abstract process optionally... break from standard"). The study examines both as history cases.
   - Do not draw conclusions about process, test-first sequencing or evolution that the history cannot support. State the limit.
 - **No license.**
   - The repository shows no license file at the preliminary check. Reading and analysis are permitted.
@@ -61,8 +61,9 @@ This study follows the two OSH-family studies. It comes directly before IDR-SRV-
   - Run the library's tests only in an already permitted, isolated environment, and record the revision, command, dependencies and results. Otherwise the study is source inspection, stated as such.
   - Do not call external servers. No maintainer contact and no upstream posts.
 - **Pin both versions, and say which is which.**
-  - npm `0.1.3` (published September 1, 2026) was built from commit `4724b0e075f2d491885caa3824fcf0da23a464d1`. This is the code Aleph resolves, and it is the **primary baseline**.
-  - The repository head `a6327989f5cec3c36422a121a2fe676e8a6bbe6d` (September 15, 2026) is newer but unpublished, although its `package.json` still says `0.1.3`. It is studied as a labelled secondary baseline, mainly for the change in `a632798`.
+  - The **primary baseline** is the published npm `0.1.3` package (September 1, 2026) that Aleph's lockfile pins (integrity `sha512-aN54cvRElSuQ/…`). npm records its source commit as `4724b0e`, but that commit's `package.json` says `0.1.1`, so the package was published from uncommitted work.
+  - At the preliminary check, the package's compiled code includes the changes later committed as `a6327989f5cec3c36422a121a2fe676e8a6bbe6d` (September 15, 2026), the first commit whose `package.json` says `0.1.3`. Treat `a632798` as the closest committed source for `0.1.3`, and confirm that match by comparing the package with the commit.
+  - `4724b0e075f2d491885caa3824fcf0da23a464d1` is studied as the labelled `0.1.2`-era baseline.
 - **Scope.** Study the library at both baselines. Compare with CS-GO only as far as needed to judge independence and shared interpretation. Do not re-study CS-GO.
 
 ---
@@ -97,7 +98,7 @@ This study follows the two OSH-family studies. It comes directly before IDR-SRV-
 
 **Identity and independence (Q1)**
 
-- Record both baselines: the npm versions (`0.1.0`–`0.1.3`) with their recorded source commits and tarball contents, and the unpublished repository head. Describe every difference that matters to requests, models or tests.
+- Record the baselines: the npm versions (`0.1.0`–`0.1.3`) with their recorded source commits and tarball contents, the closest committed source for `0.1.3` (`a632798`), and the `0.1.2`-era commit (`4724b0e`). Describe every difference that matters to requests, models or tests.
 - Identify statements of targeted Parts or versions in the README, package metadata and code. The package claims Parts 1, 2 and 3; record the draft Part 3 support separately.
 - Examine the two stated departures from the standard (`4724b0e`, `a632798`): what changed, which requirement it departs from, and whether the change is documented for users.
 - Compare selected type definitions and fixtures with CS-GO's representations at the IDR-SRV-062 pin, and with the standard's examples and schemas. Classify each fixture's origin as standard example, CS-GO-derived, hand-written or unknown.
@@ -137,7 +138,7 @@ This study follows the two OSH-family studies. It comes directly before IDR-SRV-
 ## 3. Primary Resources
 
 - **Library repository:** [SomethingCreativeStudios/cs-client-ts][Lib] at default branch `main`, commit [`a6327989f5cec3c36422a121a2fe676e8a6bbe6d`][LibPin] (preliminary check, September 29, 2026). Includes `README.md`, `package.json`, `src/` (starting at `src/api/`), `test/` and configuration. Record the actual execution snapshot.
-- **Published package:** [`cs-api-client`](https://www.npmjs.com/package/cs-api-client) on npm, latest `0.1.3` (September 1, 2026, built from [`4724b0e075f2d491885caa3824fcf0da23a464d1`][LibNpm]). Include the published tarball contents and the version history.
+- **Published package:** [`cs-api-client`](https://www.npmjs.com/package/cs-api-client) on npm, latest `0.1.3` (September 1, 2026), as locked by Aleph. Its closest committed source is [`a632798`][LibPin]; npm's recorded source commit is [`4724b0e`][LibNpm], the `0.1.2`-era baseline. Include the published tarball contents and the version history.
 - **Independence comparison:** [CS-GO](https://github.com/SomethingCreativeStudios/connected-systems-go) at the IDR-SRV-062 pin `b1fd2e0e9bd69e222d05258d659a842ca24502cb` and, where needed, its current head. Use only the representations, examples and tests needed for the independence assessment.
 - **History entry points:** commits, any pull requests, issues and tags, with totals recorded.
 - **Controlling standards:**
@@ -218,7 +219,7 @@ This study follows the two OSH-family studies. It comes directly before IDR-SRV-
 This topic research is complete when:
 
 - [ ] Q1–Q6 have evidence-backed answers, or explicit limitations and their consequences.
-- [ ] Both baselines are pinned (npm `0.1.3` from `4724b0e` as primary, and the unpublished head `a632798`), and every material difference between them is recorded.
+- [ ] The baselines are pinned: the published `0.1.3` package as primary, its closest committed source `a632798` (with the match confirmed or its limits stated), and the `0.1.2`-era commit `4724b0e`. Every material difference between them is recorded.
 - [ ] Independence from CS-GO and AI-assisted sources is assessed from evidence. Fixture origins are classified, and the shallow-history limit is stated.
 - [ ] Every material request and model assumption is traceable to a source anchor and classified against exact standard identifiers.
 - [ ] Test analysis explains what representative tests detect and whether their expected values are independent. Source inspection is distinguished from execution.
