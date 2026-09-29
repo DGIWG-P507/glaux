@@ -1,7 +1,7 @@
 # Section 063: OSH Viewer and OSH JS Toolkit Client Study - Research Report
 
 **Topic ID:** IDR-SRV-063<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-063 plan](../IDR%20Plans/idr-srv-063-osh-viewer-and-osh-js-client-study.md)<br>
 **Overall Research Plan:** [Controlling overall IDR plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Q1–Q6. The client's requests, response dependencies, targeted API version and test evidence are established from source. Runtime behaviour is unexecuted and stated as a limit.<br>
@@ -21,8 +21,8 @@
 
 **Document Purpose:** Independent, human-developed client evidence for the Phase 1 implementation review (especially steps 2 and 5), later review gates and IDR-SRV-056's client matrix. It is not a requirements document, and it does not authorise copying client behaviour.<br>
 **Author(s):** Glaux research workflow, AI-assisted<br>
-**Accepted By:** TBD until project-lead acceptance<br>
-**Acceptance Date:** TBD<br>
+**Accepted By:** Glaux Project Lead, through the next `proceed` after report publication in PR #107 (merge `bff229d`)<br>
+**Acceptance Date:** September 29, 2026<br>
 **Date:** September 29, 2026<br>
 **Last Updated:** September 29, 2026
 
@@ -402,7 +402,7 @@ These show intended usage against a live OSH server. They make no assertions, so
 
 ## 10. Next Steps and Handoff
 
-1. Project-lead review and acceptance of this report. Owner: Glaux Project Lead. Due: next `proceed`.
+1. Project-lead review and acceptance of this report. Owner: Glaux Project Lead. Done: accepted September 29, 2026. Acceptance does not adopt Recommendation 2 or change any planning document.
 2. On acceptance, IDR-SRV-064 (OSCAR Viewer) starts on its own `proceed`. It compares its `osh-js` fork with baselines A and B here (the fork's merge base `549c630` is A's parent). Owner: Glaux research workflow.
 3. Recommendation 2 (CORS ownership) waits for a project-lead decision. This report changes no planning document.
 
@@ -470,7 +470,7 @@ The standards were read from the published HTML. Schemas were read from the Glau
 - [x] Recommendations are explicit and actionable
 - [x] Risks and open questions are documented
 - [x] Success criteria validation is complete
-- [ ] Plan-owner acceptance and acceptance date are recorded before the topic is treated as complete downstream
+- [x] Plan-owner acceptance and acceptance date are recorded before the topic is treated as complete downstream
 - [x] Next steps are assigned
 
 [Viewer]: https://github.com/opensensorhub/osh-viewer

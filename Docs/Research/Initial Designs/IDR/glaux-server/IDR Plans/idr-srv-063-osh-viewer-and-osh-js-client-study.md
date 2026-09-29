@@ -1,7 +1,7 @@
 # Section 063: OSH Viewer and OSH JS Toolkit Client Study - Research Plan
 
 **Topic ID:** IDR-SRV-063<br>
-**Status:** Research complete; report in review; project-lead acceptance pending<br>
+**Status:** Complete; report accepted September 29, 2026<br>
 **Last Updated:** September 29, 2026<br>
 **Estimated Research Time:** Not yet calibrated; four bounded phases below, with further research iterations only if needed for the stated coverage.<br>
 **Actual Research Time:** About 20 minutes of research and drafting, 15:29–15:50 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Nothing was executed or installed.<br>
@@ -330,11 +330,11 @@ Internal prerequisites are not waived by labelling them unavailable or deferred.
 - [x] Phase 3 complete
 - [x] Phase 4 synthesis complete
 - [x] Deliverable draft complete
-- [x] Deliverable reviewed (separate reviewer: `8509200` had seven blocking corrections; `4528f1f` had one count correction; the final record commit is confirmed separately in its PR; project-lead acceptance pending)
-- [ ] Deliverable accepted
+- [x] Deliverable reviewed (separate reviewer: `8509200` had seven blocking corrections; `4528f1f` had one count correction; the final record commit is confirmed separately in its PR; the final commit `aca9f12` was clean)
+- [x] Deliverable accepted (Glaux Project Lead, September 29, 2026, after PR #107 merged as `bff229d`)
 
 **Actual Research Time:** About 20 minutes of research and drafting, 15:29–15:50 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Nothing was executed or installed.<br>
-**Completion Date:** September 29, 2026 (research and report; acceptance pending)
+**Completion Date:** September 29, 2026 (report accepted the same day)
 
 ---
 

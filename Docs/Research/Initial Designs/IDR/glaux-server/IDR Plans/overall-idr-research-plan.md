@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.118<br>
+**Version:** 3.119<br>
 **Date:** September 29, 2026<br>
-**Status:** Original IDR and supplements 058–062 complete and accepted; research findings and acceptance records unchanged. Client supplement 063 research is complete and its report is in review; 064–066 are planned. Each runs and is reported individually before the Phase 1 implementation review resumes. See the [current Roadmap handoff](../../../../../Plans/glaux-server/glaux-server-roadmap.md#53-immediate-next-step) for issue-publication and implementation status, and the [Guide's Goal-paired explanations](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for how the approved capabilities will be implemented<br>
+**Status:** Original IDR and supplements 058–062 complete and accepted; research findings and acceptance records unchanged. Client supplement 063 is complete and accepted; 064–066 are planned, and 064 starts on its own `proceed`. Each runs and is reported individually before the Phase 1 implementation review resumes. See the [current Roadmap handoff](../../../../../Plans/glaux-server/glaux-server-roadmap.md#53-immediate-next-step) for issue-publication and implementation status, and the [Guide's Goal-paired explanations](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for how the approved capabilities will be implemented<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -75,7 +75,7 @@ The shared upstream-history register is maintained across topics as supporting e
 ---
 
 **Original IDR Topics:** 67 (complete and accepted)<br>
-**Post-Synthesis Supplemental Topics:** 9 (IDR-SRV-058 through IDR-SRV-062 complete and accepted; IDR-SRV-063 research complete, report in review; IDR-SRV-064 through IDR-SRV-066 planned)
+**Post-Synthesis Supplemental Topics:** 9 (IDR-SRV-058 through IDR-SRV-062 complete and accepted; IDR-SRV-063 complete and accepted; IDR-SRV-064 through IDR-SRV-066 planned)
 
 Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
@@ -504,9 +504,9 @@ Common boundary for all four:
 
 ##### IDR-SRV-063: OSH Viewer and OSH JS Toolkit Client Study
 
-- Status: Research complete; report in review, acceptance pending. The project lead's September 29, 2026 `proceed` after plan publication in `85367c0` authorized this research/report iteration only.
+- Status: Complete and accepted, September 29, 2026. The project lead's `proceed` after plan publication in `85367c0` authorized the research/report iteration; the next `proceed`, after the report merged in PR #107 (`bff229d`), accepted it.
 - Report: [idr-srv-063-osh-viewer-and-osh-js-client-study-report.md](../IDR%20Reports/idr-srv-063-osh-viewer-and-osh-js-client-study-report.md). The viewer targets the pre-standard "Draft OGC Sensor Web API" hosted by OpenSensorHub. The System fields it reads match Glaux's implemented representation, and its other differences are covered by existing Guide rules and Roadmap tasks. One bounded discussion item (which Roadmap task owns configured-origin CORS) is proposed, not adopted.
-- Sequence: plan publication and research/report complete. Report acceptance on the next `proceed`. No synthesis addendum or planning edit is planned unless the project lead authorises one after acceptance.
+- Sequence: plan publication, research/report and acceptance complete. No synthesis addendum or planning edit is planned unless the project lead authorises one after acceptance.
 - Focus: The OSH Viewer and the `osh-js` revision it resolves. Covers the targeted API version (its `sweapi` modules may predate published CSAPI), requests, response dependencies, tolerance and tests. Each finding is judged against CSAPI and mapped to Glaux dispositions.
 - Plan: [idr-srv-063-osh-viewer-and-osh-js-client-study.md](idr-srv-063-osh-viewer-and-osh-js-client-study.md).
 - Output target: `IDR Reports/idr-srv-063-osh-viewer-and-osh-js-client-study-report.md`.
@@ -807,6 +807,7 @@ The final report must:
 | 2026-09-29 | CSAPI Client Study Planning | Registered IDR-SRV-063 to IDR-SRV-066 and drafted their plans with the existing template: OSH Viewer and OSH JS Toolkit, OSCAR Viewer, cs-client-ts, and Aleph (Alephex). Each is executed and reported individually, in that proposed order. Plan and publication only: no research has been run, and the Goal, Guide and server code are unchanged | The project lead reported that the OS4CSAPI TypeScript client is mostly AI-written, and asked for evidence from human-developed clients before the Phase 1 implementation review continues | Glaux Project Lead (planning authorization) |
 | 2026-09-29 | IDR-SRV-063 Plan Acceptance and Research Authorization | After PR #106 merged the plans (`85367c0`), the project lead's `proceed` authorized the IDR-SRV-063 research/report iteration | Report acceptance stays a separate step; IDR-SRV-064 to 066 and the Phase 1 review steps remain waiting | Glaux Project Lead |
 | 2026-09-29 | IDR-SRV-063 Research Completion | Traced every viewer and toolkit request at `052befa` and `osh-js` `8a959d4`/`d3aa99c`, established the Sensor Web API draft as the target, classified dependencies against CSAPI Parts 1–2, Features and pinned schemas, and compared them with Glaux Server `27955c1`; report placed in review | System representation consistent with the fields an independent client reads; draft-era differences already covered by Guide/Roadmap; CORS ownership proposed for discussion, not adopted. Nothing executed; no Goal, Guide, Roadmap or server change | Pending Glaux Project Lead review |
+| 2026-09-29 | IDR-SRV-063 Acceptance | The project lead's `proceed` after PR #107 merged (`bff229d`) accepted the report for downstream use | Accepts the research without adopting its proposed CORS-ownership discussion or changing the Goal, Guide or Roadmap. IDR-SRV-064 starts on its own `proceed` | Glaux Project Lead |
 
 ---
 
@@ -835,7 +836,7 @@ Supplemental progress is tracked separately from the completed category totals a
 | IDR-SRV-060 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum C retained; Guide v1.0 retains Part 5 deferral and existing codec separation | 2026-09-18 |
 | IDR-SRV-061 | Complete (1/1) | 1/1 | 1/1 | Research accepted; Addendum D retained; Guide v1.0 clarifications assigned in Roadmap v1.1 issue-sized outline | 2026-09-18 |
 | IDR-SRV-062 | Complete (1/1) | 1/1 | 1/1 | Research accepted; synthesis/discussion complete; approved clarifications in Guide v1.1 / Roadmap v1.2; issue publication next | 2026-09-18 |
-| IDR-SRV-063 | Complete (1/1) | 1/1 | 0/1 | Research complete; report in review; acceptance next on `proceed` | 2026-09-29 |
+| IDR-SRV-063 | Complete (1/1) | 1/1 | 1/1 | Research complete and accepted | 2026-09-29 |
 | IDR-SRV-064 | Complete (1/1) | 0/1 | 0/1 | Plan prepared for publication; research awaits its own `proceed` | 2026-09-29 |
 | IDR-SRV-065 | Complete (1/1) | 0/1 | 0/1 | Plan prepared for publication; research awaits its own `proceed` | 2026-09-29 |
 | IDR-SRV-066 | Complete (1/1) | 0/1 | 0/1 | Plan prepared for publication; research awaits its own `proceed` | 2026-09-29 |
