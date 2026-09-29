@@ -62,14 +62,14 @@ Those parts match the standard and Glaux's plans. [Findings §4.1–4.4](#41-q1-
 
 **It still depends on OSH-only extras that Glaux has deliberately not planned.** Glaux would reject or not provide these:
 - **Undeclared query parameters:** `searchMembers`, `format` and `offset`, plus `validTime=latest` on System and datastream lists. The OGC Features standard requires a server to reject parameters its API description does not declare; Glaux's Guide rejects them too.
-- **OSH-only routes:** an `/observations/count` endpoint, an `order` parameter, and control-stream-level status streams.
+- **OSH-only routes and filters:** an `/observations/count` endpoint, an `order` parameter, a text `filter` expression, and control-stream-level status reads and streams.
 - **Sign-in:** a session cookie from the OSH server, or Basic credentials. Glaux accepts only Bearer tokens.
 - **Live data:** MQTT topics that are the HTTP path plus a query string. Glaux's planned topics use a different, fixed structure.
 
 **Where OSCAR meets Glaux's Phase 1 work, the System fields agree.** OSCAR reads each listed System's `id`, `properties.uid` and `properties.name`, the same paths as Glaux's GeoJSON System. Like the OSH Viewer, it needs a System list that Glaux has not built yet.
 
 **Four findings are worth carrying into later reviews:**
-1. **Command success codes.** Glaux will answer a command POST with `201 Created` (Guide §6.4). OSCAR's report screen only proceeds on exactly `200`, while its other screens accept any success. An interoperability test for Roadmap 5.2/5.3 should include a client like this.
+1. **Command responses and status.** Glaux will answer a command POST with `201 Created` (Guide §6.4). OSCAR's report screen only proceeds on exactly `200`, while its other screens accept any success. The same screen also treats `ACCEPTED` as "finished". Under the published status codes `ACCEPTED` is not final, and a finished command reports `COMPLETED`, which that screen never recognises. An interoperability test for Roadmap 5.2/5.3 should include a client like this.
 2. **Silent truncation.** OSCAR stops paging when a page is shorter than it asked for. If a server caps page size below OSCAR's request (for example a configured maximum under 500), OSCAR silently shows only the first page. Glaux publishes and clamps limits (Guide §6.3), so its documentation and tests should make that visible.
 3. **The official OpenAPI files differ slightly from the normative text.** They define an `f` parameter that no operation uses, and a `validTime` parameter only for System history. This supports Glaux's existing choices and IDR-SRV-063's classifications, and changes neither.
 4. **The CORS item from IDR-SRV-063 has a practical alternative.** OSCAR avoids cross-origin access by being served from the same address as its OSH server. That is evidence for the pending CORS-ownership discussion, not a decision.
@@ -83,7 +83,7 @@ This is **IDR-SRV-064**, the second of the four client studies, run after IDR-SR
 | Plan question | Coverage status | Evidence location |
 |---|---|---|
 | Q1 — Identity, version, lineage | Complete; one resolved fork revision; per-module API version classified | §4.1, §12.1 |
-| Q2 — Requests, streams and commands | Complete for every CSAPI-facing path in OSCAR and the fork modules it uses | §4.2, §12.2 |
+| Q2 — Requests, streams and commands | Complete: every distinct request route OSCAR sends, directly or through the fork (O1–O17); repeated call sites are grouped by route | §4.2, §12.2 |
 | Q3 — Response dependencies | Complete from source; runtime behaviour inferred, not executed | §4.3 |
 | Q4 — Standards alignment | Complete for every material dependency | §4.4 |
 | Q5 — Tests and quality evidence | Complete, including the two recorded runs | §4.5 |
@@ -128,15 +128,16 @@ All access dates are **2026-09-29 (UTC)**.
   - GitHub contributor counts: `kalynstricklin` 485, `tipatterson-dev` 133, `earocorn` 87, `n-garay` 65, `salsajeries` 47, and a few smaller contributors.
 - **Fork `add-consys`:**
   - 65 commits since its merge base with upstream `mcs_baseline`, `549c630`. That is IDR-SRV-063 baseline A's parent.
-  - Authors of those commits: Alex Almanza, who also commits as `earocorn` (same email; 32 in total), `kalynstricklin` (18), and upstream maintainer Mathieu Dhainaut (15, from merged upstream work).
+  - Authors of those commits: Alex Almanza, who also commits as `earocorn` (three email addresses, including the GitHub noreply address for `earocorn`; 32 in total), `kalynstricklin` (18), and upstream maintainer Mathieu Dhainaut (15, from merged upstream work).
   - 5 fork pull requests (all closed) and no issues.
 - **Upstream `opensensorhub/osh-js`:**
   - `earocorn`'s [pull request #781][PR781] "Add Connected Systems" (head `earocorn:add-consys`) was **closed without merging** on August 5, 2025, with no comments.
   - Two smaller pull requests from the same author were merged: #780 (feature-of-interest route names) and #820 (packaging).
 - **npm:**
-  - `osh-js` versions 3.1.2–3.1.5 were published by `earocorn`, who shares npm maintenance with `mdhsl`. Their recorded source commits are fork commits: `591de78`, `d41767a`, `d1fb02e` and `b2e8954` (3.1.5).
+  - All seven `osh-js` 3.x versions (3.0.0–3.1.5) were published by `earocorn`, who shares npm maintenance with `mdhsl`.
+  - For 3.1.1–3.1.5 the recorded source commits are on the fork's `add-consys` branch: `22fd413`, `591de78`, `d41767a`, `d1fb02e` and `b2e8954`. The 3.0.0 and 3.1.0 source commits (`ccdea29`, `134bd21`) are in neither clone.
   - The package metadata still names the upstream repository, which contains none of them.
-  - This resolves IDR-SRV-063's open note about where `osh-js` 3.x came from. The 3.0.0 source commit, `ccdea29`, is in neither clone.
+  - This largely answers IDR-SRV-063's open note about where `osh-js` 3.x came from.
 
 ### 3.2 Supporting Sources Reviewed
 
@@ -215,9 +216,16 @@ All access dates are **2026-09-29 (UTC)**.
 | O5 | `GET /observations?dataStream={ids}&resultTime=../{t}&filter={expr}&order=desc&format=application/om+json&offset&limit` | Fork, from OSCAR | Event list ([`EventTable.tsx` L212–219][EvtTab]) |
 | O6 | `GET /observations/count?resultTime=…&format=…&dataStream=…&filter=…` | OSCAR | Event counts; reads `count` ([`EventTable.tsx` L226–245][EvtTab], [`StatusTable.tsx` L84–110][StatTab]) |
 | O7 | `POST /controlstreams/{id}/commands` with `Content-Type: application/json` and a body `{"parameters": {…}}` | OSCAR | 8 call sites in 7 files ([`OSCARCommands.ts` L5–18][Cmds]) |
-| O8 | MQTT subscribe `{prefix}/datastreams/{id}/observations?format=…` and `{prefix}/controlstreams/{id}/status?format=…` | Fork, from OSCAR | Prefix defaults to `/api` ([`LaneCollection.ts` L222–243][Lane], [`MqttProvider.js` L78–110][MqttProv]) |
+| O8 | MQTT subscribe `{prefix}/datastreams/{id}/observations?format=…` and `{prefix}/controlstreams/{id}/status?format=…` | Fork, from OSCAR | Prefix defaults to `/api`; the `?format=` suffix is added in [`MqttTopicConnector.js` L26–27][MqttTopic] ([`LaneCollection.ts` L222–243][Lane], [`MqttProvider.js` L78–110][MqttProv]) |
 | O9 | WebSocket `…/systems/{sysid}/controlstreams/{csid}/commands/{cmdid}/status` | Fork, from OSCAR's report screen | Asynchronous command follow-up ([`Report.tsx` L91–120][Report], [`Command.js` L44–77][ForkCmd]) |
 | O10 | `GET /datastreams/{id}/schema?obsFormat=…` | Fork parsers | Before decoding observations, as in IDR-SRV-063 |
+| O11 | `GET /systems/{id}/controlstreams?format=application/json&validTime=latest&offset&limit=100` | Fork `System.searchControlStreams` | Report and national views ([`Report.tsx` L75][Report], [`national-view/page.tsx` L69][Natl]) |
+| O12 | `GET /systems/{id}/datastreams?…validTime=latest…&limit=10` | Fork `System.searchDataStreams` | Map site diagram ([`MapComponent.tsx` L337][Map]) |
+| O13 | `GET /datastreams/{id}` | Fork `getDataStreamById` | Lane status views ([`dashboard/LaneStatus.tsx` L151][DashLane]) |
+| O14 | `GET /datastreams/{id}/observations?resultTime=latest` or `{start}/{end}`, `format=application/om+json`, `offset`, `limit` | Fork `DataStream.searchObservations` | About 13 call sites, for example [`MapComponent.tsx` L119][Map], [`AdjudicationDetail.tsx` L146][AdjSearch] and [`ChartUtils.tsx` L156][Chart] |
+| O15 | `GET /observations?observedProperty=…&resultTime=latest` | Fork, through `Node.fetchLatestObservationWithFilter` | National view ([`national-view/page.tsx` L232][Natl]) |
+| O16 | HTTP `GET /controlstreams/{id}/status?statusCode=COMPLETED&format=application/json&offset&limit=100` | Fork `ControlStream.searchStatus` | Adjudication log ([`AdjudicationLog.tsx` L187][AdjLog]) |
+| O17 | `GET /controlstreams/{id}/schema` | Fork `ControlStream.getSchema` | Report screen ([`Report.tsx` L124][Report]) |
 
 **Also in the code but not used:**
 - `Systems.ts` defines `GET /systems/{id}/datastreams` and `GET /systems/{id}/subsystems`, but nothing imports or calls them. [`Systems.ts` L35–69][Sys]
@@ -237,19 +245,19 @@ All access dates are **2026-09-29 (UTC)**.
 
 | Response | Members read | If missing or unexpected (inference from code) |
 |---|---|---|
-| O2 Systems | `items[]`; each item's `id`, `properties.uid`, `properties.name` (the fork wraps each item, so OSCAR reads `system.properties.properties.uid`) | No `items`: the fork turns the missing array into a single `undefined` entry, and OSCAR's lane sorting then fails on it (inference), so no lanes are built for that node. The UID prefix decides lane grouping |
+| O2 Systems | `items[]`; each item's `id`, `properties.uid`, `properties.name` (the fork wraps each item, so OSCAR reads `system.properties.properties.uid`) | No `items`: the fork turns the missing array into a single `undefined` entry, and OSCAR's System loop then fails on it ([`Node.ts` L285][Node]; inference), so no lanes are built for that node. The UID prefix decides lane grouping |
 | O3/O4 Datastreams, control streams | `items[]`; each item's `id`, `system@id` (matched to a System's `id`) and `system@link.uid` | **Missing `system@id` drops the stream from its lane silently.** A published-shape server sends `system@link`, not `system@id` |
 | O5/O8 Observations | OM JSON `items[]` (O5); SWE records (O8) decoded with the schema from O10 | Parsers null-check (`58aef16`); unknown formats throw |
 | O6 Count | `count` | Non-OK or error: logged and treated as 0 |
 | O7 Command response | `response.ok`; for video, `results[0].data.streamPath`; the report screen needs **`status == 200`**, then `statusCode`, `command@id` and `results[0].data.reportPath` | Report screen: any other success code, such as 201, falls to its non-200 branch and the report does not start. Other screens accept any 2xx ([`Report.tsx` L97][Report], [`VideoMedia.tsx` L88–100][Video], [`AdjudicationDetail.tsx` L475–494][Adj]) |
-| O8/O9 Status | `statusCode` (`PENDING`, `ACCEPTED`, `FAILED`), `results[0].data` | Other codes are shown as-is |
+| O8/O9 Status | `statusCode` (`PENDING`, `ACCEPTED`, `FAILED`), `results[0].data` | The report screen treats **`ACCEPTED` as completion** and reads `results[0].data.reportPath` there, on both the synchronous path and the WebSocket path. **`COMPLETED` only updates the displayed status, so the report never opens** ([`Report.tsx` L126–170][Report]). By contrast, the adjudication log asks for `statusCode=COMPLETED` (O16) |
 
 **Tolerance and silent loss:**
 - **Paging:**
   - The fork computes `offset` values and stops on the first short page. It never reads `next` links, `numberMatched` or `numberReturned`. [`Collection.js` L45–100][ForkColl]
   - If a server returns fewer items than requested for any reason other than the end of the data, for example a lower maximum `limit`, the rest is silently missing.
 - **HTTP status:**
-  - The fork's `Collection` and `fetchAsJson` throw on non-OK responses, and OSCAR's direct calls check `ok`, which is better than the OSH Viewer.
+  - The fork's `Collection` and `fetchAsJson` throw on non-OK responses, and most of OSCAR's direct calls check `ok`, which is better than the OSH Viewer. One does not: the national view reads `results[0].data` from its command response even after a non-OK status.
   - The fork's `postAsJson` neither awaits nor returns its request, so its errors are lost. [`ConnectedSystemsApi.js` L141–161][ForkBase] OSCAR avoids that helper and posts commands itself.
 - **Latent defect:** `createRealTimeConSysApi` chooses its path with `typeof stream == DataStream`, which is never true in JavaScript. Its only caller passes a control stream, so the output is correct today. [`LaneCollection.ts` L237][Lane]
 
@@ -263,24 +271,26 @@ Classification key: **C** conforming; **D** draft-era (the Sensor Web API draft,
 | `GET /systems` list | Part 1 Req 6 `/req/system/resources-endpoint` | C (path) | 405 today; Roadmap 2.3.1, 2.3.9 |
 | `items[]` of GeoJSON-shaped Systems for `format=application/json` | Pinned schemas: GeoJSON collection uses `features`; SensorML collection uses `items` | O (same hybrid as IDR-SRV-063) | Follows the schemas; Roadmap 2.3.9 |
 | `searchMembers=true` | Part 1 uses `recursive` (Req 10–12 `/req/subsystem/recursive-*`) | O (alias noted in 014A) | Guide §6.3 lists `recursive`; undeclared parameters are rejected (Features Req 8, Guide §4.4) |
-| `validTime=latest` on `/systems`, `/datastreams`, `/controlstreams` | The official OpenAPI defines `validTime` only on System history; list filtering uses `datetime` (Part 1 Req 3). `latest` is not an RFC 3339 value | O | Rejected as undeclared or malformed; Guide §13 |
+| `validTime=latest` on `/systems`, `/datastreams`, `/controlstreams` | The official OpenAPI defines `validTime` only on System history; list filtering uses `datetime` (Part 1 Req 3). `latest` is not an RFC 3339 value | O | Rejected as undeclared or malformed (Guide §4.4, "Reject malformed or unsupported parameters") |
 | `format=…` query parameter | Not defined. The official Part 2 OpenAPI has an `f` parameter file that no operation references | O | Guide §6.2 selects `Accept`/`obsFormat`, no `f` |
 | `offset`/`limit`, stop on short page | Features Rec 17–19 (`next` links); no public `offset` | O | Guide §6.3: opaque `next`, published and clamped limits; Roadmap 2.5.10, 3.3.6 |
 | `system={ids}` on datastreams and control streams | Part 1/2 system filters (`/req/advanced-filtering/*`) | C | Guide §6.3; Roadmap 3.3.x |
 | `system@id` on datastreams and control streams | Pinned `dataStream.json`/`controlStream.json` require `system@link` | O | Follows the schema; OSCAR also reads `system@link.uid` |
 | `dataStream={ids}` on `/observations` | Official Part 2 OpenAPI `dataStreamIdList.yaml` (`name: dataStream`) | C | Declared where Glaux implements observation filters (Roadmap 3.3.1) |
-| `resultTime=../{t}` | Part 2 Req 50 `/req/advanced-filtering/obs-by-resulttime` | C | Roadmap 3.3.2 |
-| `filter={expr}` on observations | Not Part 2; CQL2 through Features Part 3 | O (OSH), X for Glaux | Guide §4.4.1 selects CQL2 with named queryables on a single datastream. OSCAR's multi-datastream expression is not guaranteed |
+| `resultTime=../{t}` and `resultTime=latest` | Part 2 Req 50 `/req/advanced-filtering/obs-by-resulttime` | C | Roadmap 3.3.2, 3.3.5 (Guide §§4.4, 6.3) |
+| Nested `/systems/{id}/controlstreams`, `/systems/{id}/datastreams`; `/datastreams/{id}`; `/datastreams/{id}/observations`; `/controlstreams/{id}/schema` | Part 2 nested and canonical resource endpoints | C (paths); OM JSON responses D/O | Roadmap 3.1.6, 3.2.3, 5.1.2, 5.1.3 |
+| `filter={expr}` on observations (a text expression over result fields, for example in [`StatusTable.tsx` L91][StatTab]) | Not Part 2; CQL2 through Features Part 3 | O | Rejected by Glaux: Guide §6.3.1 accepts only `cql2-json` ("`filter-lang=cql2-text` is unsupported"), and `/observations/queryables` offers only `id` and `samplingGeometry`; result-field queryables exist only per datastream. Roadmap 7.3.4 |
 | `order=desc` | Not in the Part 2 parameters | O | Undeclared, so rejected |
 | `/observations/count` | Not in Parts 1–2 | O | Counts come as optional collection counts (Roadmap 3.3.6), not a separate route |
 | `obsFormat` on schema; `swe+json`/`swe+binary` | Part 2 Req 11; SWE encodings | C | Roadmap 3.1.6, 4.4.4 |
 | `application/om+json` | Not in Part 2 | D/O | Not supported |
 | `POST /controlstreams/{id}/commands` with `{"parameters": …}` | Part 2 Req 71 `/req/create-replace-delete/command`; pinned `command.json` | C | Roadmap 5.2.3, 5.3.x |
 | Requires `200` on command POST (report screen) | Part 2 leaves the creation response to the create class; Glaux selects `201` + `Location` + status body (Guide §6.4) | Client assumption | Later-gate check (§4.6) |
-| Status `statusCode`, `command@id`, `results[].data` | Pinned `commandStatus.json` and `commandResult.json` (inline result); Part 2 note on synchronous status in the HTTP response | C | Guide §4.9; Roadmap 5.2.5, 5.2.6, 5.3.2 |
-| Status at `/systems/{sysid}/controlstreams/{csid}/commands/{cmdid}/status` and `/controlstreams/{id}/status` | Part 2 Req 32 gives `{api_root}/command/{cmdId}/status` (the upstream singular spelling); there is no control-stream-level status route | O | Guide §13 uses `/commands/{id}/status` consistently; no alias |
-| MQTT topics `{prefix}/datastreams/{id}/observations?format=…` | Not in Parts 1–2; draft Part 3 bindings differ | O | Guide §4.8 topics such as `data/datastreams/{id}/observations/json` under a configured prefix; Roadmap 6.3.2 |
-| WebSocket status follow-up | Not in Parts 1–2 | O | No WebSocket planned (Guide §4.8) |
+| Status members `statusCode`, `command@id`, `results[].data` | Pinned `commandStatus.json` and `commandResult.json` (inline result); Part 2 note on synchronous status in the HTTP response | C (members) | Guide §4.9; Roadmap 5.2.5, 5.2.6, 5.3.2 |
+| Report screen treats `ACCEPTED` as final and ignores `COMPLETED` | Pinned `commandStatusCode.json`: `ACCEPTED` is not a final state; `COMPLETED`, `REJECTED` and `FAILED` are | Client assumption, not conforming | Glaux returns terminal `COMPLETED`/`REJECTED`/`FAILED` for synchronous work (Guide §§4.9, 6.4); later-gate check |
+| Status at `/systems/{sysid}/controlstreams/{csid}/commands/{cmdid}/status` (WebSocket) and `/controlstreams/{id}/status` (HTTP GET and MQTT) | Part 2 Req 32 gives `{api_root}/command/{cmdId}/status` (the upstream singular spelling); there is no control-stream-level status route | O | Guide §13 uses `/commands/{id}/status` consistently; no alias |
+| MQTT topics `{prefix}/datastreams/{id}/observations?format=…` | Not in Parts 1–2; draft Part 3 bindings differ | O | Guide §4.8 topics such as `data/datastreams/{id}/observations/json` under the configured prefix and the `glaux-csapi-part3-exp/0.1` binding segment; Roadmap 6.3.2 |
+| WebSocket status follow-up | Not in Parts 1–2 | O | Not planned: the Guide plans only SSE and MQTT (§4.8) |
 | Session cookie or Basic credentials | Deployment matter | O | Bearer only ([authentication][Auth]; Guide §4.10) |
 
 **Interpretation:** OSCAR's *resource model and command semantics* are published CSAPI. Its *query dialect, paging, counts, live topics and sign-in* are OSH-specific. Every compared Glaux choice agrees with the published text. The official OpenAPI evidence confirms, rather than changes, IDR-SRV-063's classifications of `f` and `validTime`.
@@ -311,6 +321,10 @@ Classification key: **C** conforming; **D** draft-era (the Sensor Web API draft,
   - `commands.test.js` and `systems.test.js` are empty.
   - No CI workflow runs them.
 
+- **Fork showcase examples** (`showcase/examples/chart-archive-realtime-synchronized-consysapi`, `consysapi-video-with-control-vuejs-synchronized` and `showcase-dev/examples/datasource-consysapi`):
+  - These are demonstrations. They point `consysapi` data sources at a public OSH demonstration server, for example an observation stream over MQTT, and contain no assertions.
+  - They show intended usage, and a failure would appear only as a visibly wrong page. They are not treated as tests.
+
 **Interpretation:** OSCAR has more test evidence than the OSH Viewer, but none of it independently asserts API contract details. Glaux cannot reuse these tests as oracles. Their value is in showing which workflows matter to real users: lane discovery, commands with results, and event counts.
 
 ### 4.6 Q6 — Transfer to Glaux
@@ -319,7 +333,7 @@ Classification key: **C** conforming; **D** draft-era (the Sensor Web API draft,
 
 | OSCAR expectation | Glaux today | Result |
 |---|---|---|
-| `GET {root}` succeeds | The landing page exists when discovery is enabled. OSCAR's session cookie or Basic credential is not accepted; with the root protected, OSCAR reports the node unreachable | **Conflict, by design** (authentication) |
+| `GET {root}` succeeds | When discovery is enabled the root is public at `27955c1` (only the System routes are wrapped by authentication), so OSCAR's reachability check succeeds, subject to the open `Content-Type` question in §8.2 | **Consistent.** The authentication conflict appears at the protected System routes: OSCAR's cookie or Basic credential gets 401 there |
 | List Systems | `GET /systems` gives 405 | **Conflict for now**; planned (2.3.1, 2.3.9, 2.5.10) |
 | Each listed System item has `id`, `properties.uid`, `properties.name` | The same paths in the GeoJSON System | **Consistent** (as in IDR-SRV-063) |
 | UID-based grouping of Systems | Glaux keeps UIDs exactly as submitted | **Consistent**; UID spelling is client data |
@@ -332,9 +346,10 @@ Classification key: **C** conforming; **D** draft-era (the Sensor Web API draft,
 | 2.3.x / 2.5.10 Systems lists | `recursive` works; `searchMembers`, `format`, `offset` and `validTime=latest` give 400. The published maximum `limit` and the `next` link are visible, so a short page is not mistaken for the end |
 | 3.1.x Datastreams | `system@link` with `uid`/`href`; the `system` filter; no undocumented `system@id` |
 | 3.3.1, 3.3.2, 3.3.6 Observations | The `dataStream` list filter and `resultTime` open intervals behave as published. Counts are the optional authorised collection counts, and there is no `/observations/count` route |
-| 4.4.1 (CQL2) | Document whether multi-datastream observation filters are supported; OSCAR's event queries need them |
+| 7.3.4 (CQL2) | OSCAR's text filter on `/observations` is rejected with a clear 400 (CQL2 JSON only; result queryables per datastream) |
 | 5.2.3, 5.3.x Commands | `201` + `Location` + status body. Include a client check like OSCAR's report screen, which expects `200`. The inline `results[].data` shape follows `commandResult.json` |
-| 5.2.5 Status | `/commands/{id}/status`; no nested or control-stream-level alias |
+| 5.2.5, 5.3.2 Status | A synchronous result ends in `COMPLETED`, `REJECTED` or `FAILED`, and `ACCEPTED` is never presented as final. Note that a client like OSCAR's report screen, which completes on `ACCEPTED`, would not finish |
+| 5.2.5 Status paths | `/commands/{id}/status`; no nested or control-stream-level alias, over HTTP or MQTT |
 | 6.3.2 MQTT topics | The documented topic structure is exact; OSH-style `…/observations?format=…` topics are not served |
 
 **IDR-SRV-056 recommendation:**
@@ -396,7 +411,6 @@ Classification key: **C** conforming; **D** draft-era (the Sensor Web API draft,
 ### 8.2 Open Questions
 
 - **Does Glaux's HTTP boundary reject a `Content-Type` header on a bodiless GET?** OSCAR sends one on its reachability and count requests. The server documentation read here does not settle it. It is for the HTTP-boundary owner (Roadmap 1.4.2), not this study.
-- **Should Guide §4.4.1's CQL2 contract say whether filters spanning several datastreams are supported?** This is for the enhanced-filtering task owner.
 - **How does cs-client-ts (IDR-SRV-065), by the same developer as CS-GO, compare?** That study answers it.
 
 ## 9. Validation Against Plan Success Criteria
@@ -471,11 +485,11 @@ The analysis ([link][Analysis]) is dated January 31, 2026, eight months before t
 | Analysis point | Result at `4b49c7c` |
 |---|---|
 | Systems searched with `searchMembers=true` and `validTime=latest` | **Confirmed** (O2) |
-| `GET /systems/{id}/subsystems` and `/systems/{id}/datastreams` used | **Rejected**: defined in `Systems.ts` but never called |
+| `GET /systems/{id}/subsystems` and `/systems/{id}/datastreams` used | **Partly**: `/subsystems` is never called (`Systems.ts` is unused); `/systems/{id}/datastreams` is called through the fork's System object (O12), not `Systems.ts` |
 | Datastreams filtered by `system` ids, page size 1000 | **Confirmed** (O3); Systems use 500 |
 | `/observations` with `dataStream`, `resultTime`, `filter`, `order=desc` | **Confirmed** (O5) |
 | `/observations/count` endpoint | **Confirmed** (O6); the auth-from-local-storage detail is **outdated**, since credentials left browser storage in `c2101fe` |
-| `GET /controlstreams/{id}/status` | **Partly**: used as an MQTT topic (O8), not an HTTP GET |
+| `GET /controlstreams/{id}/status` | **Confirmed**: an HTTP GET with `statusCode=COMPLETED` (O16), and also used as an MQTT topic (O8) |
 | `POST /controlstreams/{id}/commands` | **Confirmed** (O7) |
 | MQTT for live data; "No WebSocket observed" | MQTT **confirmed**. "No WebSocket" **rejected**: the report screen streams command status over WebSocket (O9) |
 | Formats `swe+binary` for video, else `swe+json`; no `Accept` negotiation | **Confirmed** |
@@ -508,11 +522,18 @@ The analysis ([link][Analysis]) is dated January 31, 2026, eight months before t
 [DSC]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/contexts/DataSourceContext.tsx#L118-L129
 [Nav]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/_components/Navbar.tsx#L141-L160
 [Cmds]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/lib/data/oscar/OSCARCommands.ts#L5-L18
-[Report]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/_components/reportgen/Report.tsx#L91-L120
+[Report]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/_components/reportgen/Report.tsx#L70-L175
 [Video]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/_components/lane-view/VideoMedia.tsx#L88-L100
 [Adj]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/_components/adjudication/AdjudicationDetail.tsx#L475-L494
 [EvtTab]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/_components/event-table/EventTable.tsx#L212-L245
 [StatTab]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/_components/lane-view/StatusTable.tsx#L84-L110
+[Natl]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/national-view/page.tsx#L60-L240
+[Map]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/_components/maps/MapComponent.tsx#L110-L350
+[DashLane]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/_components/dashboard/LaneStatus.tsx#L145-L160
+[AdjSearch]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/_components/adjudication/AdjudicationDetail.tsx#L140-L150
+[Chart]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/utils/ChartUtils.tsx#L150-L160
+[AdjLog]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/app/_components/adjudication/AdjudicationLog.tsx#L180-L240
+[MqttTopic]: https://github.com/earocorn/osh-js/blob/73dacad5c7338722763263ef0ff5928fbd19de5b/source/core/connector/MqttTopicConnector.js#L26-L33
 [Lane]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/lib/data/oscar/LaneCollection.ts#L194-L243
 [Slice]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/src/lib/state/OSHSlice.tsx#L80-L98
 [CyLane]: https://github.com/Botts-Innovative-Research/oscar-viewer/blob/4b49c7cedc841c875dbb63613dfd21c34b8fa6ed/cypress/component/LaneDiscovery.cy.ts
