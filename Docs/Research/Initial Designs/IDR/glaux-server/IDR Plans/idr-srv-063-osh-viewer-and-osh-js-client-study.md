@@ -330,7 +330,7 @@ Internal prerequisites are not waived by labelling them unavailable or deferred.
 - [x] Phase 3 complete
 - [x] Phase 4 synthesis complete
 - [x] Deliverable draft complete
-- [x] Deliverable reviewed (source, plan-alignment and separate-reviewer checks; project-lead acceptance pending)
+- [ ] Deliverable reviewed (separate review of `8509200` found blocking corrections; the corrected commit needs its own review)
 - [ ] Deliverable accepted
 
 **Actual Research Time:** About 20 minutes of research and drafting, 15:29–15:50 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Nothing was executed or installed.<br>
