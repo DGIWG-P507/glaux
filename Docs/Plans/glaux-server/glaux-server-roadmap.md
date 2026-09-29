@@ -1,9 +1,9 @@
 # Glaux Server Roadmap
 
-**Version:** 1.39<br>
-**Date:** 27 September 2026<br>
+**Version:** 1.40<br>
+**Date:** 29 September 2026<br>
 **Effort:** Glaux Server<br>
-**Status:** Issue set published; Phase 1 implementation in progress. Per-issue status lives in GitHub issues; this document's status is updated when a capability group or phase completes.<br>
+**Status:** Issue set published; Phase 1 implementation complete (29 September 2026); review gate 1 pauses Phase 2. Per-issue status lives in GitHub issues; this document's status is updated when a capability group or phase completes.<br>
 **Depends On:** [Goal and Definition v1.10](glaux-server-goal-and-definition.md), Approved<br>
 **Implements:** [Implementation Guide v1.21][Guide], Baselined<br>
 **Implementation status:** The 303-task outline across nine phases and 45 groups is published. As of 27 September 2026, tasks 1.1.1–1.4.6 (#3–#23 and #338) are closed, and #24 / task 1.5.1 is merged and awaiting its closing record. Implementation pauses at the fifteen review gates in §5.4. GitHub issues are the live per-issue status, and a phase or group completes only when all its constituent work passes. The action list's [Current state](Review/action-list.md#current-state) holds standing decisions. The historical #23 handoff remains in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
@@ -1062,9 +1062,8 @@ One iteration is a sizing target. If execution demonstrates that a leaf is too l
 The publication reconciliation above records the original issue set. Guide v1.4's approved response-test/audit amendments have been delivered to #15/#19/#22/#26/#80/#251/#254/#280/#283, v1.5's cache/order amendments to #151/#264 and #113/#233, v1.6's exchange/audit amendments to #239/#240/#287, v1.7's diagnostics-access amendment to #256, v1.8's post-backup-deletion amendments to #26/#126/#251/#252/#283, v1.9's per-relation spelling/comparison amendments to #56/#212/#214/#228, v1.10's latest-selection interpretation/supplemental fixtures to #112, v1.11's prerequisite/deployment-test qualifications to #80–#82/#121–#122/#271/#288, and v1.12's observation unknown-member policy to #98–#102. Guide v1.13 clarifies ControlStream metadata and Command/Feasibility admission for #156/#159/#160/#163/#164/#177/#180, preserving original bodies, earlier amendments and pins; current delivery and remaining decisions are in the [action checklist](Review/action-list.md). Follow-up documentation authorisations do not execute implementation tasks.
 
 **Current execution status:** GitHub issues record per-issue status and delivery; each closed issue's execution record names the next ready issue.
-- As of 27 September 2026, tasks 1.1.1–1.4.6 (#3–#23 and #338) are closed. The historical #23 handoff is in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
-- #24 / task 1.5.1 is merged and needs its closing execution record. #25 and #26 follow.
-- Review gate 1 (§5.4) then pauses implementation for the Phase 1 review.
+- As of 29 September 2026, Phase 1 is complete: tasks 1.1.1–1.5.3 (#3–#26 and #338) are closed. The historical #23 handoff is in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
+- Review gate 1 (§5.4) pauses Phase 2. Before the Phase 1 review continues, the project lead ordered four client research studies (IDR-SRV-063 to IDR-SRV-066; see the [action list](Review/action-list.md#current-state)).
 - This paragraph is updated when a capability group or phase completes, not after each issue.
 
 The expanded issue set is complete and verified. Resume only one dependency-ready issue per subsequent authorised iteration. Later build/database work still depends on the approved-prerequisite inspection; missing tools are not permission to install them.
@@ -1319,6 +1318,8 @@ Version 1.39 records the project lead's 27 September 2026 decision to pause impl
 - Implementation sessions check open gates before starting a task, and only the project lead closes a gate.
 - Gates do not change the per-PR review and merge policy (§5.2) or the phase exit criteria (§7).
 - No task definition, ID or other dependency changes. Goal v1.10 and Guide v1.21 are unchanged.
+
+Version 1.40 records Phase 1 completion on 29 September 2026. Tasks 1.1.1–1.5.3 are closed, and review gate 1 now pauses Phase 2. It also records the project lead's decision that four client research studies (IDR-SRV-063 to IDR-SRV-066) precede the rest of the Phase 1 review. No task definition, ID or dependency changes. Goal v1.10 and Guide v1.21 are unchanged.
 
 Use version updates for material sequencing or scope changes. Technical design changes belong in the Guide; mission/scope changes belong in the Goal first. Keep task-to-Guide/test connections current without copying the standards into a separate requirement list. Historical research acceptance and findings remain unchanged.
 
