@@ -109,7 +109,7 @@ All access dates are **2026-09-29 (UTC)**.
 **History inventories** (commits from local clones; pull-request, issue and release totals from the GitHub API, unauthenticated):
 - Viewer: 71 commits. Nick Garay made 70 of them (65 + 5 across two email identities) and Alex Robin 1 (the initial commit).
 - `osh-js`: 2,041 commits across all branches, 1,563 of them reachable from `mcs_baseline`. Mathieu Dhainaut appears under five name spellings with 1,299 commits on that branch; next are Alex Robin (126, two spellings) and Richard Becker (44).
-- `osh-js` has 35 non-Dependabot remote branches, including `master` (2021), `master-nys`, `mcs_baseline` and `dev` (June 26, 2026), plus feature branches such as `ellipses`, `external_window_support` and `nexrad`. The bot `dependabot[bot]` has 13 commits on `mcs_baseline`.
+- `osh-js` has 34 non-Dependabot remote branches, including `master` (2021), `master-nys`, `mcs_baseline` and `dev` (June 26, 2026), plus feature branches such as `ellipses`, `external_window_support` and `nexrad`. The bot `dependabot[bot]` has 13 commits on `mcs_baseline`.
 - Pull requests and issues: the viewer has 4 pull requests, 1 issue, no releases and no tags. `osh-js` has 450 pull requests, 372 issues and 5 releases; its tags stop at `2.1.0`. Counts were taken, not every record read; the selected history cases below come from commits.
 
 **npm:**
