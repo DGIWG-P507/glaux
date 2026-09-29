@@ -1,10 +1,10 @@
 # Section 064: OSCAR Viewer Client Study - Research Plan
 
 **Topic ID:** IDR-SRV-064<br>
-**Status:** Planned<br>
+**Status:** Research complete; report in review; project-lead acceptance pending<br>
 **Last Updated:** September 29, 2026<br>
 **Estimated Research Time:** Not yet calibrated; four bounded phases below, with further research iterations only if needed for the stated coverage.<br>
-**Actual Research Time:** TBD until complete<br>
+**Actual Research Time:** About 25 minutes of research and drafting, 21:09–21:35 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Nothing was executed or installed.<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-064-oscar-viewer-client-study-report.md`
 
 ---
@@ -228,17 +228,17 @@ Studying OSCAR after IDR-SRV-063 lets the report state exactly what the fork add
 
 This topic research is complete when:
 
-- [ ] Q1–Q6 have evidence-backed answers, or explicit limitations and their consequences.
-- [ ] OSCAR's commit and its resolved fork revision are pinned, and the fork's differences from the IDR-SRV-063 baseline are stated.
-- [ ] Each data source's targeted API version is classified, and draft-era, OSH-specific and experimental behaviour is kept separate from published-standard expectations.
-- [ ] Every material request, stream and response dependency is traceable to a source anchor and classified against exact standard identifiers.
-- [ ] The existing OS4CSAPI analysis is used only as a pointer, and each point taken from it is confirmed or rejected from source.
-- [ ] Test and example analysis distinguishes assertions from demonstrations, and source inspection from execution.
-- [ ] Authorship statements are attributed, and no AI-use inference is made.
-- [ ] Phase 1 expectations are compared with implemented Glaux behaviour, and later-gate checks are listed.
-- [ ] Each material lesson has a Glaux disposition with Guide/Roadmap references. "No change" is acceptable.
-- [ ] Relevant official repository history is consulted and authority-classified where the standards-history register applies.
-- [ ] The report follows the report template and validates these criteria.
+- [x] Q1–Q6 have evidence-backed answers, or explicit limitations and their consequences.
+- [x] OSCAR's commit and its resolved fork revision are pinned, and the fork's differences from the IDR-SRV-063 baseline are stated.
+- [x] Each data source's targeted API version is classified, and draft-era, OSH-specific and experimental behaviour is kept separate from published-standard expectations.
+- [x] Every material request, stream and response dependency is traceable to a source anchor and classified against exact standard identifiers.
+- [x] The existing OS4CSAPI analysis is used only as a pointer, and each point taken from it is confirmed or rejected from source.
+- [x] Test and example analysis distinguishes assertions from demonstrations, and source inspection from execution.
+- [x] Authorship statements are attributed, and no AI-use inference is made.
+- [x] Phase 1 expectations are compared with implemented Glaux behaviour, and later-gate checks are listed.
+- [x] Each material lesson has a Glaux disposition with Guide/Roadmap references. "No change" is acceptable.
+- [x] Relevant official repository history is consulted and authority-classified where the standards-history register applies.
+- [x] The report follows the report template and validates these criteria.
 
 Completion does not require running OSCAR, contacting maintainers, reading every file or certifying the client. Any such limit narrows the relevant conclusion; it does not disappear from the report.
 
@@ -288,16 +288,16 @@ Internal prerequisites are not waived by labelling them unavailable or deferred.
 
 ## 9. Research Status Checklist
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 synthesis complete
+- [x] Deliverable draft complete
+- [ ] Deliverable reviewed (separate review pending)
 - [ ] Deliverable accepted
 
-**Actual Research Time:** [Fill in at completion]<br>
-**Completion Date:** [Fill in at completion]
+**Actual Research Time:** About 25 minutes of research and drafting, 21:09–21:35 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Nothing was executed or installed.<br>
+**Completion Date:** September 29, 2026 (research and report; acceptance pending)
 
 ---
 
