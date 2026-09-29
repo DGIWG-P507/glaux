@@ -36,7 +36,7 @@ Each material finding must say whether current Glaux planning already covers it,
 
 ### Why This Topic Order
 
-Glaux's existing client evidence depends heavily on sources the project lead reports are mostly AI-written: the OS4CSAPI TypeScript client named in Guide §8.1, and the unofficial Botts TEAM Engine suite. The project lead reports that the OSH Viewer and the client libraries behind it are the most human-written CSAPI clients available.
+Glaux's existing client evidence depends heavily on two sources that the project lead reports are AI-written: the OS4CSAPI TypeScript client named in Guide §8.1 (mostly AI-written), and the unofficial Botts TEAM Engine suite (AI-generated test logic). The project lead names the OSH Viewer, with the OSCAR Viewer, as the most human-written CSAPI clients available. `osh-js` is studied because the viewer depends on it; the lead's statement does not itself cover the toolkit.
 
 `osh-js` has public history from 2015. Its main contributor has over 1,000 commits. It is the natural baseline for the OSCAR Viewer study (IDR-SRV-064), which depends on a fork of the same library.
 
@@ -44,14 +44,27 @@ Studying this family first gives the later studies a reference point, and gives 
 
 ### Critical Constraints
 
-- **Establish the API version first.**
-  - At the preliminary check, the viewer's CSAPI-related code lives under `source/core/sweapi/` in `osh-js`. "SWE API" is an earlier name used during CSAPI's development.
-  - The study must determine whether the pinned code targets published CSAPI Part 1/Part 2, a pre-publication draft, an OSH-specific extension, or a mixture.
+- **Study the viewer's own request code first.**
+  - At the preliminary check, the viewer builds its own CSAPI-style requests in `src/net/`, using fixed paths from `src/data/Constants.tsx` (API root `/sensorhub/api`). They include:
+    - `SystemRequest.tsx`: Systems, plus `/systems/{id}/members` and `/systems/{id}/controls`;
+    - `DataStreamsRequest.tsx`: Datastreams;
+    - `DataStreamSchemaRequest.tsx`: datastream schemas;
+    - `DescribeSystemRequest.tsx`.
+  - It uses `osh-js` mainly for observation data, through `osh-js/source/core/datasource/sweapi/`, and for UI and utility modules.
+  - The study traces both paths, and attributes every request to either the viewer or the toolkit.
+- **Establish the API version.**
+  - The toolkit's CSAPI-related modules are named `sweapi` ("SWE API"). Paths such as `members` and `controls` may be early signs of draft-era routes.
+  - The study must determine, per request, whether the pinned code targets published CSAPI Part 1/Part 2, a pre-publication draft, an OSH-specific extension, or a mixture. It does not assume that a name implies a version.
   - A draft-era behaviour is historical client evidence, not an expectation Glaux must meet.
-- **Pin moving references.**
-  - The viewer's `package.json` points to `osh-js` through a moving branch (`#mcs_baseline`).
-  - The viewer's last commit is `052befa09b8f076520bff77ef5d39f6624b6411d` (April 10, 2024), but that branch's head is `d3aa99cef7de0b4e6f928b1a77f07b898f6747e9` (April 20, 2026).
-  - Determine which `osh-js` revision the viewer actually resolved from its lockfile or build records. Where that cannot be established, study the dated branch head as a separate, explicitly labelled baseline. Never silently assume the two are the same.
+- **Bound the non-CSAPI services.**
+  - The viewer also uses OGC Sensor Observation Service (SOS; `CapabilitiesRequest.tsx`, `/sensorhub/sos`) and defines a Sensor Planning Service path (`/sensorhub/sps`).
+  - These are in scope only so they can be identified and classified as outside CSAPI.
+- **Pin the toolkit revision honestly.**
+  - The viewer's `package.json` points to `osh-js` through a moving branch (`#mcs_baseline`), and the viewer repository has **no lockfile** at the pin, so the revision it was built against cannot be read from it.
+  - Study two explicitly labelled baselines:
+    - the `mcs_baseline` commit current at the viewer's last commit (`052befa09b8f076520bff77ef5d39f6624b6411d`, April 10, 2024), which at the preliminary check is [`8a959d440ea989dd32c6894229f051df8f5c87da`][Oshjs2024] (March 20, 2024);
+    - the branch head [`d3aa99cef7de0b4e6f928b1a77f07b898f6747e9`][OshJsPin] (April 20, 2026).
+  - Record any build evidence that narrows this further. Never silently assume either baseline is what the viewer ran.
 - **Treat this as informative evidence.**
   - Client behaviour, comments, tests and omissions do not replace the standard or change Glaux's approved scope.
   - Where a client and the standard disagree, the standard wins and the disagreement is recorded.
@@ -67,7 +80,7 @@ Studying this family first gives the later studies a reference point, and gives 
   - Running the viewer, toolkit tests or builds requires an already permitted, isolated environment and must be recorded exactly. Otherwise the study is source inspection, and its conclusions say so.
   - No contact with maintainers, no issues or comments upstream, and no use of external servers or real data.
 - **Scope.**
-  - Study the CSAPI-facing path and what it needs. `osh-js` has about 1,900 files at the branch head, including SOS, video, map and chart components.
+  - Study the CSAPI-facing paths in the viewer and the toolkit, and what they need. `osh-js` has about 1,900 files at the branch head, including SOS, video, map and chart components.
   - Inventory the rest only enough to bound it. Do not audit the whole toolkit.
 
 ---
@@ -101,13 +114,14 @@ Studying this family first gives the later studies a reference point, and gives 
 
 **Identity and history (Q1)**
 
-- Record the viewer's default branch and commit, and the `osh-js` revision actually used, as above. Record the release tags and published package versions that correspond.
+- Record the viewer's default branch and commit, and both labelled `osh-js` baselines, as above. Record the release tags and published package versions that correspond.
 - Establish where `sweapi` code first appears, how it changed, and whether any later branch renames or restructures it toward published CSAPI.
 - Summarise authorship from commit, contributor and pull-request records. Distinguish long-standing maintainers, occasional contributors and bots. Record any stated use of tools or assistants without inferring unstated use.
 
 **Requests and discovery (Q2)**
 
-- Trace, from viewer configuration and UI actions, every request the CSAPI path can send: resource families (Systems, Deployments, Procedures, Sampling Features, Properties, Datastreams, Observations, Control Streams, Commands, System Events), nested routes, identifiers and query parameters.
+- Trace, from viewer configuration and UI actions, every request the CSAPI paths can send, whether built in the viewer's `src/net/` or in the toolkit: resource families (Systems, Deployments, Procedures, Sampling Features, Properties, Datastreams, Observations, Control Streams, Commands, System Events), nested routes such as `members` and `controls`, identifiers and query parameters (for example the fixed `validTime=../..`).
+- Identify every SOS or SPS request, and classify it as outside CSAPI.
 - Record the parameters used, such as limit/paging, time, spatial bounds, filters, `f` or `Accept`, and select or properties.
 - Record how the root URL, API description, conformance declaration or collections are used, if at all. Record whether the client hard-codes paths or discovers them from links.
 - Record content types sent and accepted, authentication methods, websocket/MQTT or other streaming use, and SWE Common JSON, Text or Binary handling.
@@ -144,12 +158,19 @@ Studying this family first gives the later studies a reference point, and gives 
 
 ## 3. Primary Resources
 
-- **OSH Viewer:** [opensensorhub/osh-viewer][Viewer] at default branch `main`, commit [`052befa09b8f076520bff77ef5d39f6624b6411d`][ViewerPin] (preliminary check, September 29, 2026). Includes `package.json`, any lockfile, `src/` (including `src/components/systems/`), build configuration and README. Record the actual execution snapshot.
-- **OSH JS Toolkit:** [opensensorhub/osh-js][OshJs].
-  - Branch `mcs_baseline`, head [`d3aa99cef7de0b4e6f928b1a77f07b898f6747e9`][OshJsPin] (April 20, 2026).
-  - The revision the viewer actually resolved, if different.
-  - Default branch `master`, head `d7ba5bace3abb81cfe7fcd2791600cdd4a10620f` (November 26, 2021), for comparison.
-  - Start from `source/core/sweapi/` and follow its data sources, parsers and connectors. Discover actual paths from the tree.
+- **OSH Viewer:** [opensensorhub/osh-viewer][Viewer] at default branch `main`, commit [`052befa09b8f076520bff77ef5d39f6624b6411d`][ViewerPin] (preliminary check, September 29, 2026). Start from:
+  - `src/net/` (the viewer's own requests);
+  - `src/observables/`;
+  - `src/data/Constants.tsx` (fixed API, SOS and SPS paths);
+  - `src/components/systems/`;
+  - `package.json` (there is no lockfile at the pin), build configuration and README.
+
+  Record the actual execution snapshot.
+- **OSH JS Toolkit:** [opensensorhub/osh-js][OshJs], at two labelled baselines:
+  - `mcs_baseline` as of the viewer's last commit: [`8a959d440ea989dd32c6894229f051df8f5c87da`][Oshjs2024] (March 20, 2024);
+  - `mcs_baseline` head: [`d3aa99cef7de0b4e6f928b1a77f07b898f6747e9`][OshJsPin] (April 20, 2026).
+
+  Default branch `master`, head `d7ba5bace3abb81cfe7fcd2791600cdd4a10620f` (November 26, 2021), is for history comparison only. Start from the modules the viewer imports, especially `source/core/datasource/sweapi/`, then the related `source/core/sweapi/` code, parsers and connectors. Discover actual paths from the tree.
 - **History entry points:** commits, pull requests, issues, releases and published npm versions for both repositories, with pagination and totals recorded.
 - **Controlling standards:**
   - [CSAPI Part 1](https://docs.ogc.org/is/23-001/23-001.html) and [Part 2](https://docs.ogc.org/is/23-002/23-002.html), with their abstract test suites, schemas and examples;
@@ -165,9 +186,9 @@ Studying this family first gives the later studies a reference point, and gives 
 - [IDR-SRV-056 external-client matrix](../IDR%20Reports/idr-srv-056-interoperability-test-matrix-for-external-csapi-clients-report.md), [IDR-SRV-014E client smoke tests](../IDR%20Reports/idr-srv-014e-os4csapi-client-smoke-test-findings-study-report.md) and [IDR-SRV-014G community lessons](../IDR%20Reports/idr-srv-014g-os4csapi-discussions-lessons-learned-study-report.md): existing client findings to reconcile, not repeat.
 - [IDR-SRV-009](../IDR%20Reports/idr-srv-009-landing-page-api-definition-and-conformance-declaration-behavior-report.md), [011](../IDR%20Reports/idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md), [012](../IDR%20Reports/idr-srv-012-content-negotiation-media-types-and-encoding-selection-report.md) and [013](../IDR%20Reports/idr-srv-013-error-model-http-status-codes-and-failure-semantics-report.md): Glaux's accepted discovery, query, negotiation and error baselines.
 - The OS4CSAPI [oscar-viewer analysis](https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/main/docs/research/requirements/csapi-oscarviewer-analysis.md) listed in the references register.
-  - It concerns the related OSCAR Viewer, and comes from a project the project lead reports is mostly AI-written.
+  - It concerns the related OSCAR Viewer, and comes from the OS4CSAPI project, whose TypeScript client the project lead reports is mostly AI-written. Its analysis documents are treated with the same caution.
   - Use it only as a pointer to places to check. It is not evidence.
-- Current planning: [Goal v1.10](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md), [Guide v1.21](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) (§§4.1–4.4, 6.2–6.4, 8.1–8.2, 13), [Roadmap v1.39](../../../../../Plans/glaux-server/glaux-server-roadmap.md) and the [Phase 1 review charter](../../../../../Plans/glaux-server/Implementation-Reviews/Phase-1/README.md).
+- Current planning: [Goal v1.10](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md), [Guide v1.21](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) (§§4.1–4.4, 6.2–6.4, 8.1–8.2, 13), [Roadmap v1.40](../../../../../Plans/glaux-server/glaux-server-roadmap.md) and the [Phase 1 review charter](../../../../../Plans/glaux-server/Implementation-Reviews/Phase-1/README.md).
 - Implemented Glaux behaviour for comparison: server [`docs/system-create.md`](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/system-create.md), [`docs/system-read.md`](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/system-read.md) and [`docs/discovery.md`](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/discovery.md) at the recorded server commit.
 
 ---
@@ -179,8 +200,8 @@ Studying this family first gives the later studies a reference point, and gives 
 **Objective:** Pin exactly what is studied and bound the investigation.
 
 **Tasks:**
-1. Refresh and record repository identities, default branches, the pinned commits above and the retrieval date. Resolve the viewer's actual `osh-js` revision from its lockfile or build configuration, and record how.
-2. Inventory both trees. Mark the CSAPI-facing path (viewer components, `sweapi` modules, parsers, data sources) separately from unrelated toolkit areas that receive inventory-level mention only.
+1. Refresh and record repository identities, default branches, the pinned commits above and the retrieval date. Confirm there is no lockfile, and record any other build evidence that narrows which `osh-js` revision the viewer used. Keep both labelled baselines unless the evidence settles it.
+2. Inventory both trees. Mark the CSAPI-facing paths (viewer `src/net/`, `src/observables/` and components; the imported toolkit data sources, parsers and `sweapi` modules) separately from SOS/SPS use and from unrelated toolkit areas that receive inventory-level mention only.
 3. Determine the targeted API version. Compare endpoint names, member names and media types with published CSAPI and with earlier draft terminology. Check the history of `sweapi` for renames or restructuring.
 4. Screen commit, contributor, pull-request, issue and release inventories with pagination and totals. Select representative history cases for the CSAPI path, such as introduction, a behaviour change and a bug fix.
 5. Consult only implicated entries of the standards-history register.
@@ -192,7 +213,7 @@ Studying this family first gives the later studies a reference point, and gives 
 **Objective:** Answer Q2 and Q3 from source.
 
 **Tasks:**
-1. Starting from viewer entry points and configuration, trace each CSAPI request through the toolkit to the network call. Record method, path pattern, parameters, headers and body.
+1. Starting from viewer entry points and configuration, trace each CSAPI request to its network call: through `src/net/` for the viewer's own requests, or through the imported toolkit data sources for observations. Record method, path pattern, parameters, headers and body, and whether the viewer or the toolkit builds each request. Where the two toolkit baselines differ, record both.
 2. For each response handled, record the members, links and formats read. Record whether each is required, optional with a fallback, or ignored, and what happens when it is missing or unexpected.
 3. Examine discovery, paging, error handling, retries, authentication and streaming. Record hard-coded assumptions.
 4. Build a request/response dependency table and link each row to its source anchor at the pinned commit.
@@ -230,7 +251,8 @@ Studying this family first gives the later studies a reference point, and gives 
 This topic research is complete when:
 
 - [ ] Q1–Q6 have evidence-backed answers, or explicit limitations and their consequences.
-- [ ] The studied revisions are pinned, including the viewer's actual `osh-js` revision or a documented reason it cannot be established.
+- [ ] The viewer commit and both labelled `osh-js` baselines are pinned, with the missing lockfile and any narrowing build evidence recorded.
+- [ ] Every request is attributed to the viewer or the toolkit, and SOS/SPS use is identified and classified as outside CSAPI.
 - [ ] The targeted API version is established or explicitly left unresolved.
 - [ ] Every material request and response dependency is traceable to a source anchor and classified against exact standard identifiers.
 - [ ] Draft-era and OSH-specific behaviour is kept separate from published-standard expectations.
@@ -238,6 +260,7 @@ This topic research is complete when:
 - [ ] Authorship statements are attributed, and no AI-use inference is made.
 - [ ] Phase 1 expectations are compared with implemented Glaux behaviour, and later-gate checks are listed.
 - [ ] Each material lesson has a Glaux disposition with Guide/Roadmap references. "No change" is acceptable.
+- [ ] Relevant official repository history is consulted and authority-classified where the standards-history register applies.
 - [ ] The report follows the report template and validates these criteria.
 
 Completion does not require running the viewer, contacting maintainers, reading every toolkit file, or certifying the client. Any such limit narrows the relevant conclusion; it does not disappear from the report.
@@ -317,9 +340,9 @@ Internal prerequisites are not waived by labelling them unavailable or deferred.
 
 ## 10. Notes and Open Questions
 
-- The project lead reports that the OSH Viewer and OSCAR Viewer are among the most human-written CSAPI clients. That motivates the study; it is not itself evidence about any particular behaviour.
+- The project lead names the OSH Viewer and OSCAR Viewer as the most human-written CSAPI clients. That motivates the study; it is not itself evidence about any particular behaviour.
 - The viewer was last changed in April 2024, so it may predate parts of the published standard. Findings about an older draft are still useful as history, but must not be read as current requirements.
-- The moving `mcs_baseline` reference means the viewer's behaviour depends on which toolkit revision is built. The report must make that explicit.
+- The moving `mcs_baseline` reference and the missing lockfile mean the viewer's observation behaviour depends on which toolkit revision is built. The report must make that explicit, using both baselines.
 - Stop when the questions and representative flows are covered, with usable findings and explicit unknowns. Broader investigation needs a demonstrated decision need.
 
 ---
@@ -335,3 +358,4 @@ Internal prerequisites are not waived by labelling them unavailable or deferred.
 [ViewerPin]: https://github.com/opensensorhub/osh-viewer/tree/052befa09b8f076520bff77ef5d39f6624b6411d
 [OshJs]: https://github.com/opensensorhub/osh-js
 [OshJsPin]: https://github.com/opensensorhub/osh-js/tree/d3aa99cef7de0b4e6f928b1a77f07b898f6747e9
+[Oshjs2024]: https://github.com/opensensorhub/osh-js/tree/8a959d440ea989dd32c6894229f051df8f5c87da

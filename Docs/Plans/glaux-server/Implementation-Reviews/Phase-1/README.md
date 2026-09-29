@@ -13,7 +13,7 @@ Each phase gets its own review folder (`../Phase-2/` and so on).
 **Review gates.** On 27 September 2026 the project lead made reviews gate implementation, so that nobody has to remember when to run them.
 - There are fifteen `review-gate` issues, defined in [Roadmap §5.4](../../glaux-server-roadmap.md#54-review-gates): one at every phase end, a Phase 2 checkpoint, a Phase 5 command-safety checkpoint, health checks inside Phases 2–5, and a final review.
 - Each gate pauses implementation until the project lead closes it.
-- Steps 2–5 of this review must be complete before gate 1 closes. Steps 2 and 5 may start earlier, as the step table allows.
+- Steps 2–5 of this review must be complete before gate 1 closes. Steps 2 and 5 were eligible earlier under the step table, but since 29 September 2026 no step starts before the client studies ([below](#client-studies-before-steps-25)) are accepted.
 - This folder, with its charter, findings format and numbered evidence, is the template for later phase folders.
 
 This Phase 1 review opens a little before the phase ends. The delivery-pipeline step is eligible first because CI is close to its time limit (see [scoping observations §2](evidence/00-scoping-observations.md#2-ci-duration-against-its-limit)). It still needs its own `proceed`. The other steps wait for the Phase 1 work they examine.
@@ -45,7 +45,7 @@ The assistants that write the code also write its tests, and assistant reviewers
 
 1. **The standard's own human-written material:** its text, abstract tests (Annex A), schemas and examples.
 2. **Mature peer software with a long human-developed history,** chiefly OpenSensorHub. Its codebase dates from 2014, and its main contributor appears to be the CSAPI Part 1 editor. Client-side evidence comes from the studies listed under [Client studies before steps 2–5](#client-studies-before-steps-25).
-3. **Human expert time,** kept for the highest-risk points: step 3, the authentication and permission code, and the places where the Guide records Glaux's own reading of an unclear or conflicting part of the standard.
+3. **Human expert time,** kept for the highest-risk points: step 3, the authentication and permission code, and the places where the Guide records Glaux's own reading of an unclear or conflicting part of the standard. No person is available for this review (question 2 below).
 4. **Tools:** mutation testing and security scanners.
 5. **A different AI model with fresh context.** Cheapest and weakest; used to find issues, not to settle them.
 
@@ -53,7 +53,7 @@ The assistants that write the code also write its tests, and assistant reviewers
 
 ## Client studies before steps 2–5
 
-On 29 September 2026 the project lead decided that steps 2–5 wait until four research studies of human-developed CSAPI clients are complete and accepted, because their findings may change what those steps check. They are registered as [IDR-SRV-063 to IDR-SRV-066](../../../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Plans/overall-idr-research-plan.md#idr-srv-063-to-idr-srv-066-human-developed-csapi-client-studies) in the overall research plan. Each uses the existing research-plan and report templates, runs on its own `proceed`, and produces its own report, in this order:
+On 29 September 2026 the project lead decided that steps 2–5 wait until four research studies of CSAPI clients are complete and accepted, because their findings may change what those steps check. They are registered as [IDR-SRV-063 to IDR-SRV-066](../../../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Plans/overall-idr-research-plan.md#idr-srv-063-to-idr-srv-066-csapi-client-studies) in the overall research plan. Each uses the existing research-plan and report templates, runs on its own `proceed`, and produces its own report, in this proposed order (the project lead listed Aleph before cs-client-ts; cs-client-ts comes first because Aleph depends on it):
 
 1. [OSH Viewer and OSH JS Toolkit](../../../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Plans/idr-srv-063-osh-viewer-and-osh-js-client-study.md) (IDR-SRV-063).
 2. [OSCAR Viewer](../../../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Plans/idr-srv-064-oscar-viewer-client-study.md) (IDR-SRV-064).
@@ -68,11 +68,14 @@ Once all four reports are accepted, the next `proceed` resumes this review. Thei
 
 These do not block the folder or step 1.
 
-1. ~~Is the OS4CSAPI TypeScript client, named in Guide §8.1 as an external-client check, mostly AI-written?~~ Answered 29 September 2026: yes, mostly AI-written. It has the same limitation as the Botts suite: its expected behaviour is not independent evidence. The project lead named the human-developed clients now being studied ([above](#client-studies-before-steps-25)). Any change to Guide §8.1's use of this client waits for those studies and a separate decision.
+1. ~~Is the OS4CSAPI TypeScript client, named in Guide §8.1 as an external-client check, mostly AI-written?~~ Answered 29 September 2026: yes, mostly AI-written. It has the same limitation as the Botts suite: its expected behaviour is not independent evidence. The project lead named the OSH Viewer and OSCAR Viewer as the most human-written CSAPI clients, and Aleph and cs-client-ts as written by a senior developer with AI assistance. Those clients are now being studied ([above](#client-studies-before-steps-25)).
+   - *Proposed consequence, not separately confirmed by the project lead:* any change to Guide §8.1's use of the OS4CSAPI client waits for those studies and a separate decision.
 2. ~~Is there a person available for step 3 or the security code? For example, someone at Riverside Research (a submitting organisation of CSAPI Part 1), someone from the OpenSensorHub team, or an OGC code-sprint contact.~~ Answered 29 September 2026: no, no person is available.
-   - Step 3 and the authentication and permission code therefore rely on sources 1, 2, 4 and 5 above. Step 4's tool checks carry extra weight for those areas.
-   - Each affected evidence file states that no human expert reviewed that area.
-   - The project lead decides whether to close gate 1 with that limitation stated.
+   - *Proposed consequences, not separately confirmed by the project lead:*
+     - Step 3 and the authentication and permission code rely on sources 1, 2, 4 and 5 above. How much weight step 4's tool checks carry is decided in step 4's own proposal.
+     - Each affected evidence file states that no human expert reviewed that area.
+     - The project lead decides whether to close gate 1 with that limitation stated.
+     - #25 and #26 were implemented by Claude (Anthropic), and [CONTRIBUTING](https://github.com/DGIWG-P507/glaux-server/blob/main/CONTRIBUTING.md#changing-the-implementing-assistant)'s cross-provider rule lets a person review them instead of another provider. With no person available, if gate 1's review runs through Anthropic, an assistant from a different provider must review those tasks, or the review states the limitation.
 3. ~~Should Phase 2 wait for step 3's result?~~ Answered 27 September 2026: yes. Review gate 1 pauses Phase 2 until the project lead closes it.
 
 ## How to record work

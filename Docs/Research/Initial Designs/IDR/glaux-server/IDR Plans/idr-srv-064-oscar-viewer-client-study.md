@@ -53,7 +53,7 @@ Studying OSCAR after IDR-SRV-063 lets the report state exactly what the fork add
   - Where OSCAR and the standard disagree, the standard wins and the disagreement is recorded.
   - A client tolerating a server behaviour is not proof that the behaviour conforms.
 - **Keep the existing analysis in its place.**
-  - The references register lists an [OSCAR Viewer analysis](https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/main/docs/research/requirements/csapi-oscarviewer-analysis.md) from the OS4CSAPI project, which the project lead reports is mostly AI-written.
+  - The references register lists an [OSCAR Viewer analysis](https://github.com/OS4CSAPI/ogc-client-CSAPI_2/blob/main/docs/research/requirements/csapi-oscarviewer-analysis.md) from the OS4CSAPI project, whose TypeScript client the project lead reports is mostly AI-written. Its analysis documents are treated with the same caution.
   - Use it only as a list of places to check. Confirm or reject each point from OSCAR's own source.
 - **Keep authorship claims attributed.**
   - Separate the project lead's report, observable history (for example, `kalynstricklin` 485 commits, `tipatterson-dev` 133, `earocorn` 87 at the preliminary check) and inference.
@@ -83,7 +83,7 @@ Studying OSCAR after IDR-SRV-063 lets the report state exactly what the fork add
    - Which response members, identifiers, links, relations, time and geometry formats, datastream schemas, paging, status and error behaviours does it read or require?
    - Where is it strict, tolerant or silently lossy?
 4. **Q4 — Standards alignment:** For each material dependency, what does CSAPI (and incorporated Common/Features, SWE Common and SensorML) require? Classify the behaviour as conforming, tolerant, draft-era, OSH-specific, experimental or non-conforming.
-5. **Q5 — Tests and quality evidence:** What do OSCAR's 12 test files, and the fork's tests and examples on the Connected Systems path, establish? Are their expected values independent?
+5. **Q5 — Tests and quality evidence:** What do OSCAR's Cypress tests, and the fork's tests and examples on the Connected Systems path, establish? Are their expected values independent? At the preliminary check OSCAR has 11 end-to-end spec files (one aggregates the others) and 5 component spec files, plus two scheduled run logs from April 22, 2026.
 6. **Q6 — Transfer to Glaux:** Which concrete expectations, fixtures or checks should inform:
    - the Phase 1 review;
    - later gates, especially those covering Part 2 dynamic data, commands and events;
@@ -129,7 +129,8 @@ Studying OSCAR after IDR-SRV-063 lets the report state exactly what the fork add
 
 **Tests and examples (Q5)**
 
-- For representative OSCAR tests, and the fork's tests and `consysapi` showcase examples, explain setup, input, expected result, assertion and the failure each would catch. Distinguish live-server tests, recorded responses, mocks and demonstration-only examples.
+- For representative OSCAR Cypress tests, and the fork's tests and `consysapi` showcase examples, explain setup, input, expected result, assertion and the failure each would catch. Distinguish live-server tests, recorded responses, mocks and demonstration-only examples.
+- Use the two scheduled Cypress run logs as recorded execution evidence: state what ran, against which server, and what passed or failed. A log is evidence of that run only, not of the current code.
 
 **Transfer to Glaux (Q6)**
 
@@ -165,7 +166,7 @@ Studying OSCAR after IDR-SRV-063 lets the report state exactly what the fork add
 - [IDR-SRV-056](../IDR%20Reports/idr-srv-056-interoperability-test-matrix-for-external-csapi-clients-report.md), [014E](../IDR%20Reports/idr-srv-014e-os4csapi-client-smoke-test-findings-study-report.md) and [014G](../IDR%20Reports/idr-srv-014g-os4csapi-discussions-lessons-learned-study-report.md): existing client findings to reconcile.
 - [IDR-SRV-034](../IDR%20Reports/idr-srv-034-datastream-observation-and-status-update-semantics-report.md), [035](../IDR%20Reports/idr-srv-035-streaming-and-event-publication-strategy-report.md), [036](../IDR%20Reports/idr-srv-036-control-stream-and-command-lifecycle-model-report.md), [011](../IDR%20Reports/idr-srv-011-query-filtering-sorting-pagination-and-selection-semantics-report.md), [012](../IDR%20Reports/idr-srv-012-content-negotiation-media-types-and-encoding-selection-report.md) and [013](../IDR%20Reports/idr-srv-013-error-model-http-status-codes-and-failure-semantics-report.md): Glaux's accepted dynamic-data, streaming, command, query, negotiation and error baselines.
 - The OS4CSAPI OSCAR analysis named in Section 1, used only as a list of places to check.
-- Current planning: [Goal v1.10](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md), [Guide v1.21](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) (§§4.1–4.9, 6.2–6.4, 8.1–8.2, 13), [Roadmap v1.39](../../../../../Plans/glaux-server/glaux-server-roadmap.md) and the [Phase 1 review charter](../../../../../Plans/glaux-server/Implementation-Reviews/Phase-1/README.md).
+- Current planning: [Goal v1.10](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md), [Guide v1.21](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) (§§4.1–4.9, 6.2–6.4, 8.1–8.2, 13), [Roadmap v1.40](../../../../../Plans/glaux-server/glaux-server-roadmap.md) and the [Phase 1 review charter](../../../../../Plans/glaux-server/Implementation-Reviews/Phase-1/README.md).
 - Implemented Glaux behaviour for comparison: server [`docs/system-create.md`](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/system-create.md), [`docs/system-read.md`](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/system-read.md) and [`docs/discovery.md`](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/discovery.md) at the recorded server commit.
 
 ---
@@ -236,6 +237,7 @@ This topic research is complete when:
 - [ ] Authorship statements are attributed, and no AI-use inference is made.
 - [ ] Phase 1 expectations are compared with implemented Glaux behaviour, and later-gate checks are listed.
 - [ ] Each material lesson has a Glaux disposition with Guide/Roadmap references. "No change" is acceptable.
+- [ ] Relevant official repository history is consulted and authority-classified where the standards-history register applies.
 - [ ] The report follows the report template and validates these criteria.
 
 Completion does not require running OSCAR, contacting maintainers, reading every file or certifying the client. Any such limit narrows the relevant conclusion; it does not disappear from the report.

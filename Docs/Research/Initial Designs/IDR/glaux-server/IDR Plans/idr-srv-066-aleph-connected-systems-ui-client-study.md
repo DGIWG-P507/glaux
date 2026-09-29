@@ -36,7 +36,7 @@ Give each material finding a Glaux disposition: already covered, a bounded chang
 
 Aleph depends on `cs-api-client` at exactly version `0.1.3`, so it follows IDR-SRV-065. Its request-level behaviour can then be attributed correctly: to the library, or to the application's own additions.
 
-It is the only studied client whose dependencies at the preliminary check include both MQTT (`mqtt`) and OpenID Connect (`oidc-client-ts`). It therefore gives the most direct evidence about streaming and authenticated use from a single application, which later Glaux gates (Part 2 dynamic data, draft Part 3, security) will need.
+It is the only studied client whose dependencies at the preliminary check include both MQTT (`mqtt`) and OpenID Connect (`oidc-client-ts`). Its MQTT use probably runs through the library's own publish/subscribe module (`cs-api-client/mqtt`), which IDR-SRV-065 studies. So this study's own contribution is how a real application wires streaming and sign-in together in user workflows, which later Glaux gates (Part 2 dynamic data, draft Part 3, security) will need.
 
 ### Critical Constraints
 
@@ -47,7 +47,7 @@ It is the only studied client whose dependencies at the preliminary check includ
   - The same developer wrote CS-GO, the library and this application, and the project lead reports AI assistance.
   - Agreement among the three is not independent confirmation, and the report must not treat it as such.
   - Do not infer which parts were AI-assisted.
-- **Shallow history.** At the preliminary check the repository has 9 reachable commits and about 526 files, including 60 test files. Do not draw conclusions about process or evolution that the history cannot support.
+- **Shallow history.** At the preliminary check the repository has 9 reachable commits and about 526 files, including 59 spec files (58 unit and component specs, and one Playwright end-to-end spec, `e2e/vue.spec.ts`) and 57 Storybook stories. Do not draw conclusions about process or evolution that the history cannot support.
 - **No license.**
   - The repository shows no license file at the preliminary check. Reading and analysis are permitted.
   - No source, components or fixtures may be copied into Glaux.
@@ -79,7 +79,7 @@ It is the only studied client whose dependencies at the preliminary check includ
    - How does it behave when they are missing, extra, slow or failing?
 4. **Q4 — Standards alignment:** For each material dependency, what do CSAPI Parts 1 and 2 (and incorporated Common/Features, SWE Common, SensorML and, where used, the draft Part 3 material) require or allow? Classify the dependency as conforming, stricter, tolerant, CS-GO-specific, draft or experimental, outside CSAPI, or non-conforming.
 5. **Q5 — Tests and quality evidence:**
-   - What do the unit and component tests (Vitest), end-to-end tests (Playwright) and stories establish about server-facing behaviour?
+   - What do the unit and component specs (Vitest), the single end-to-end spec (Playwright) and the 57 stories establish about server-facing behaviour?
    - Are their expected values independent, and what server do they assume?
 6. **Q6 — Transfer to Glaux:** Which concrete expectations, workflows or checks should inform:
    - the Phase 1 review;
@@ -100,7 +100,7 @@ It is the only studied client whose dependencies at the preliminary check includ
 **Server capabilities per workflow (Q2)**
 
 - For each workflow, trace from UI action to library call, or to a direct request made without the library. Record resource families, nested routes, parameters, filters, paging, format selection and headers.
-- Record the MQTT use: broker discovery, topic structure and message formats. Relate it to the draft Part 3 material and Glaux's experimental boundary (Guide §4.8), and classify it.
+- Record the MQTT use: broker discovery, topic structure and message formats, and whether each comes from the library's `mqtt` module or from Aleph's own code. Relate it to the draft Part 3 material and Glaux's experimental boundary (Guide §4.8), and classify it.
 - Record the OpenID Connect use: flow, token handling, the scopes or claims assumed, and how tokens reach the server. Relate this to Glaux's authentication design (Guide §4.10).
 
 **Response dependencies and failure handling (Q3)**
@@ -138,7 +138,7 @@ It is the only studied client whose dependencies at the preliminary check includ
   - `.env.example` (variable names only).
 
   Record the actual execution snapshot.
-- **Library:** `cs-api-client` `0.1.3` as studied in IDR-SRV-065, and the version Aleph actually resolves.
+- **Library:** `cs-api-client` `0.1.3`, which on npm was built from commit `4724b0e075f2d491885caa3824fcf0da23a464d1` (IDR-SRV-065's primary baseline). Confirm the version Aleph's lockfile actually resolves. The newer, unpublished library head is not what Aleph uses.
 - **Independence comparison:** [CS-GO](https://github.com/SomethingCreativeStudios/connected-systems-go) at the IDR-SRV-062 pin and, where needed, its current head. Use it only as needed to judge shared interpretation.
 - **History entry points:** commits, any pull requests, issues and tags, with totals recorded.
 - **Controlling standards:**
@@ -158,7 +158,7 @@ It is the only studied client whose dependencies at the preliminary check includ
 - [IDR-SRV-014B](../IDR%20Reports/idr-srv-014b-connected-systems-go-csapi-server-implementation-study-report.md) and [IDR-SRV-062](../IDR%20Reports/idr-srv-062-cs-go-engineering-practices-and-development-history-study-report.md): the same author's server and practices.
 - [IDR-SRV-014H draft Part 3](../IDR%20Reports/idr-srv-014h-draft-csapi-part-3-publish-subscribe-and-implementation-study-report.md), [035 streaming](../IDR%20Reports/idr-srv-035-streaming-and-event-publication-strategy-report.md), [039 security threat model](../IDR%20Reports/idr-srv-039-authentication-authorization-and-api-security-threat-model-report.md) and [055 security tests](../IDR%20Reports/idr-srv-055-security-authorization-and-command-control-test-strategy-report.md): Glaux's accepted streaming and security baselines.
 - [IDR-SRV-056](../IDR%20Reports/idr-srv-056-interoperability-test-matrix-for-external-csapi-clients-report.md), [014E](../IDR%20Reports/idr-srv-014e-os4csapi-client-smoke-test-findings-study-report.md) and [014G](../IDR%20Reports/idr-srv-014g-os4csapi-discussions-lessons-learned-study-report.md): existing client findings to reconcile.
-- Current planning: [Goal v1.10](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md), [Guide v1.21](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) (§§4.1–4.10, 4.12, 6.2–6.4, 8.1–8.2, 13), [Roadmap v1.39](../../../../../Plans/glaux-server/glaux-server-roadmap.md) and the [Phase 1 review charter](../../../../../Plans/glaux-server/Implementation-Reviews/Phase-1/README.md).
+- Current planning: [Goal v1.10](../../../../../Plans/glaux-server/glaux-server-goal-and-definition.md), [Guide v1.21](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md) (§§4.1–4.10, 4.12, 6.2–6.4, 8.1–8.2, 13), [Roadmap v1.40](../../../../../Plans/glaux-server/glaux-server-roadmap.md) and the [Phase 1 review charter](../../../../../Plans/glaux-server/Implementation-Reviews/Phase-1/README.md).
 - Implemented Glaux behaviour for comparison: server [`docs/system-create.md`](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/system-create.md), [`docs/system-read.md`](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/system-read.md), [`docs/discovery.md`](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/discovery.md) and [`docs/authentication.md`](https://github.com/DGIWG-P507/glaux-server/blob/main/docs/authentication.md) at the recorded server commit.
 
 ---
@@ -230,6 +230,7 @@ This topic research is complete when:
 - [ ] Test analysis explains what representative tests detect, which server they assume and whether their expectations are independent. Source inspection is distinguished from execution.
 - [ ] Phase 1 expectations are compared with implemented Glaux behaviour, later-gate workflows are listed, and the cross-study note is included.
 - [ ] Each material lesson has a Glaux disposition with Guide/Roadmap references. "No change" is acceptable.
+- [ ] Relevant official repository history is consulted and authority-classified where the standards-history register applies.
 - [ ] The report follows the report template and validates these criteria.
 
 Completion does not require running Aleph, contacting the author, reading every component or certifying the application. Any such limit narrows the relevant conclusion; it does not disappear from the report.
@@ -262,7 +263,7 @@ Keep the plain-language summary readable on its own. The report is evidence, not
 **Internal project prerequisites (completion gates):**
 
 - This plan and its registration in the [overall plan](overall-idr-research-plan.md) are published.
-- The IDR-SRV-065 report is complete and accepted, because this study builds on its library findings.
+- The IDR-SRV-065 report is complete and accepted, because this study builds on its library findings. The project lead listed Aleph before cs-client-ts; this order is proposed for the lead to confirm.
 - The project lead's `proceed` authorises execution.
 
 Internal prerequisites are not waived by labelling them unavailable or deferred. Reorder or change them only through an explicit, recorded update to the controlling overall plan or this plan's approved dependency record.
