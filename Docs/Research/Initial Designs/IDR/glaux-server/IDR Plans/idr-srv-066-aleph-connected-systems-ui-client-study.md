@@ -48,9 +48,9 @@ It is the only studied client whose dependencies at the preliminary check includ
   - Agreement among the three is not independent confirmation, and the report must not treat it as such.
   - Do not infer which parts were AI-assisted.
 - **Shallow history.** At the preliminary check the repository has 9 reachable commits and about 526 files, including 59 spec files (58 unit and component specs, and one Playwright end-to-end spec, `e2e/vue.spec.ts`) and 57 Storybook stories. Do not draw conclusions about process or evolution that the history cannot support.
-- **No license.**
+- **Licensing.**
   - The repository shows no license file at the preliminary check. Reading and analysis are permitted.
-  - No source, components or fixtures may be copied into Glaux.
+  - Record the license status at execution. Any reuse follows the terms that apply to it.
 - **Treat this as informative evidence.**
   - Where Aleph and the standard disagree, the standard wins and the disagreement is recorded.
   - Features beyond CSAPI, such as draft Part 3 streaming, OpenID Connect or UI conventions, are classified as such and are not Glaux requirements.

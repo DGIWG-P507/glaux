@@ -50,9 +50,9 @@ This study follows the two OSH-family studies. It comes directly before IDR-SRV-
   - At the preliminary check the repository has 8 reachable commits and about 222 files, including 30 test files (`*.test.ts`) and 98 JSON fixtures under `test/`. The development history appears to be largely squashed.
   - Two commit messages state deliberate departures from the standard: `4724b0e` ("Broke from standard just a little bit...", which npm records as the source commit of both `0.1.2` and `0.1.3`, although its own `package.json` says `0.1.1`) and `a632798` ("Adding name param to abstract process optionally... break from standard"). The study examines both as history cases.
   - Do not draw conclusions about process, test-first sequencing or evolution that the history cannot support. State the limit.
-- **No license.**
+- **Licensing.**
   - The repository shows no license file at the preliminary check. Reading and analysis are permitted.
-  - No source, types or fixtures may be copied into Glaux. Recommendations describe behaviour in Glaux's own terms.
+  - Record the license status at execution. Any reuse follows the terms that apply to it. Recommendations describe behaviour in Glaux's own terms.
 - **Treat this as informative evidence.**
   - Where the library and the standard disagree, the standard wins and the disagreement is recorded.
   - A typed model accepting or requiring a member is not proof of what the standard requires.
@@ -223,7 +223,7 @@ This topic research is complete when:
 - [ ] Independence from CS-GO and AI-assisted sources is assessed from evidence. Fixture origins are classified, and the shallow-history limit is stated.
 - [ ] Every material request and model assumption is traceable to a source anchor and classified against exact standard identifiers.
 - [ ] Test analysis explains what representative tests detect and whether their expected values are independent. Source inspection is distinguished from execution.
-- [ ] No source, type or fixture is copied into Glaux, and recommendations describe behaviour in Glaux's own terms.
+- [ ] The license status is recorded, and recommendations describe behaviour in Glaux's own terms.
 - [ ] Phase 1 expectations are compared with implemented Glaux behaviour, later-gate checks are listed, and the IDR-SRV-066 handoff is recorded.
 - [ ] Each material lesson has a Glaux disposition with Guide/Roadmap references. "No change" is acceptable.
 - [ ] Relevant official repository history is consulted and authority-classified where the standards-history register applies.

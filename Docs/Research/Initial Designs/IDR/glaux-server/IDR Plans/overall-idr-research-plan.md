@@ -498,7 +498,7 @@ The project lead requested these four studies on September 29, 2026, before the 
 Common boundary for all four:
 - Client behaviour is informative evidence, and the approved standard stays the authority.
 - Authorship statements stay attributed, with no inference of AI use.
-- No source or fixture is copied without a licensing decision. Two targets have no license.
+- Source or fixtures are reused only on terms that apply to them. Two targets had no license file at the preliminary check.
 - No laptop installation, maintainer contact or upstream posting.
 - No change to the Goal, Guide, Roadmap, IDR-SRV-056 or server code without a later, separate `proceed`.
 
