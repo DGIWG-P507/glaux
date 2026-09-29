@@ -371,7 +371,7 @@ Classification key: **C** conforming; **D** draft-era (the Sensor Web API draft,
 1. **Use this report as Phase 1 review evidence.** It confirms again that the Phase 1 System fields are consistent with an independent client, and that the list, authentication and dialect gaps are deliberate.
    - Priority: High.
    - Preconditions: project-lead acceptance.
-2. **Carry the later-gate checks in §4.6 into the relevant gate reviews**, especially the `201` command response and visible page limits. These are review prompts, not new requirements.
+2. **Carry the later-gate checks in §4.6 into the relevant gate reviews**, especially the `201` command response, terminal `COMPLETED` versus non-final `ACCEPTED` status, and visible page limits. These are review prompts, not new requirements.
    - Priority: Medium.
 3. **Record OSCAR as a future IDR-SRV-056 candidate for a pinned published-route subset**, with its authentication limit stated.
    - Priority: Low.
@@ -387,6 +387,7 @@ Classification key: **C** conforming; **D** draft-era (the Sensor Web API draft,
 - **Architecture and implementation:** none. The findings support the existing negotiation, paging, command-response, status-path and MQTT-topic choices.
 - **Testing:** later gates gain concrete client-shaped cases:
   - a `201` handled by a client that expects `200`;
+  - a synchronous status that ends in `COMPLETED`, handled by a client that treats `ACCEPTED` as final;
   - a short page with a `next` link;
   - `system@link` without `system@id`;
   - undeclared-parameter rejection.
