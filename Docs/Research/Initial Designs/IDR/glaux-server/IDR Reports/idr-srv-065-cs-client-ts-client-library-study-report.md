@@ -164,7 +164,7 @@ All access dates are **2026-09-29 (UTC)**.
 |---|---|---|
 | Exact copy of an official Part 1/2, SensorML or SWE Common example | 91 | All 32 SWE Common fixtures; GeoJSON Systems (`thermometer-sensor`, `uav-platform`); Part 2 datastreams, observations, schemas, commands and statuses |
 | Exact copy of a draft Part 3 example | 3 | The three pub/sub event fixtures |
-| Adapted from official examples | 4 | Two SensorML deployments that are the official `spec/deployment.json` and `spec/deployment_sd001.json` with the elided `"contacts": [ ... ]` filled in; two `compare/` fixtures composed from several official SensorML examples (ThermoPro TP60S content; about 78–79% of their long strings appear in the official set, and no single file covers more than about 30%) |
+| Adapted from official examples | 4 | Two SensorML deployments that are the official `spec/deployment.json` and `spec/deployment_sd001.json` with the elided `"contacts": [ ... ]` filled in (compared by hand); two `compare/` fixtures composed from several official SensorML examples (ThermoPro TP60S content; about 78–79% of their long strings appear in the official set, and no single file covers more than about 30%) |
 | CS-GO-derived, or hand-written without an official source | 0 found | — |
 
 **Interpretation:**
@@ -176,7 +176,7 @@ All access dates are **2026-09-29 (UTC)**.
 | Commit | Change | Published source | CS-GO | Classification |
 |---|---|---|---|---|
 | [`4724b0e`][LibNpm] "Broke from standard just a little bit…" (commit body: "This makes more sense to me and will be brought up") | An observation may carry **both** `result` and `result@link` (was exactly one) | Pinned `observation.json` has `oneOf` `result` / `result@link` | [`observation_json.go` L144–149][CsGoObs] also requires only "either", so it accepts both | **Shared tolerant reading against the schema.** Agreement between the two is not independent confirmation |
-| [`a632798`][LibPin] "…break from standard" | SensorML input/output/parameter names **and** SWE Common aggregate slot names (DataRecord fields, Vector coordinates, DataArray/Matrix element type, DataChoice items, component roots) become optional and may be display labels ("optionally named by an interoperable CS server"); a test adds a DataRecord field named `"air temperature"` | SWE `SoftNamedProperty` requires `name` as a `NameToken` (`^[A-Za-z][A-Za-z0-9_\-]*$`) | Not checked | **Tolerant.** The server that motivated it is not identified in the public record |
+| [`a632798`][LibPin] "…break from standard" | SensorML input/output/parameter names **and** SWE Common aggregate slot names (DataRecord fields, Vector coordinates, DataArray/Matrix element type, DataChoice items) become optional and may be display labels ("optionally named by an interoperable CS server"); a test adds a DataRecord field named `"air temperature"` | SWE `SoftNamedProperty` requires `name` as a `NameToken` (`^[A-Za-z][A-Za-z0-9_\-]*$`) | Not checked | **Tolerant.** The server that motivated it is not identified in the public record |
 
 Neither departure is documented in the README.
 
@@ -233,7 +233,7 @@ Neither departure is documented in the README.
 - **Silent behaviours:**
   - **Lossy common model:** fields with no representation in the target encoding are dropped on write, as the README documents.
   - **Inline command status discarded:** `createCommand` keeps only the id.
-  - **Query strings:** a caller-supplied `datetime` string is passed through unchecked. Four test files use `datetime=latest`. Part 2 defines `latest` only for `resultTime`, so on `datetime` it is not a valid RFC 3339 value.
+  - **Query strings:** a caller-supplied `datetime` string is passed through unchecked. Four test files use `datetime=latest`. Part 2 defines `latest` only for `resultTime`, so on `datetime` it is neither RFC 3339 nor a defined special value.
 
 ### 4.4 Q4 — Standards alignment
 
@@ -421,8 +421,9 @@ git clone https://github.com/SomethingCreativeStudios/cs-client-ts.git          
 curl -O https://registry.npmjs.org/cs-api-client/-/cs-api-client-0.1.3.tgz         # sha512 aN54cvRElSuQ/...
 grep -rl ComponentNameSchema npm-0.1.3/package/dist                                  # 5 files (0 in 0.1.2)
 # 190 official example JSON files downloaded from ogcapi-connected-systems@8e03b23, and
-# 3 draft Part 3 examples from @6f529a1; 19 official files that are not valid JSON (placeholder
-# `[ ... ]` or schema fragments) were excluded from exact matching and checked by hand;
+# 3 draft Part 3 examples from @6f529a1; 19 official files that are not valid JSON (`...` elisions
+# or bare property snippets) were excluded from exact matching; the two relevant to fixtures
+# (spec/deployment.json, deployment_sd001.json) were compared by hand;
 # every fixture's key-sorted JSON compared with
 # each example, then string-overlap scoring for non-identical files (Node script, no packages).
 ```
@@ -446,7 +447,7 @@ grep -rl ComponentNameSchema npm-0.1.3/package/dist                             
   - SensorML (15);
   - SWE Common (32).
 - **3 exact matches** with the draft Part 3 event examples at `6f529a1`.
-- **4 adapted:** `sensorml/deployment/deployment.json` and `deployment_sd001.json` are the official `sensorml/schemas/json/examples/spec/deployment.json` and `deployment_sd001.json` with the elided `contacts` filled in (checked by hand, because the official files are not valid JSON); `compare/procedure_tp60s.json` and `compare/system_tp60s_instance.json` are composed from several official SensorML examples.
+- **4 adapted:** `sensorml/deployment/deployment.json` and `deployment_sd001.json` are the official `sensorml/schemas/json/examples/spec/deployment.json` and `deployment_sd001.json` with the elided `contacts` filled in (compared by hand, because those official files are not valid JSON); `compare/procedure_tp60s.json` and `compare/system_tp60s_instance.json` are composed from several official SensorML examples.
 - **0** with no official source.
 
 ---
