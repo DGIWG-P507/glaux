@@ -1,7 +1,7 @@
 # Section 064: OSCAR Viewer Client Study - Research Report
 
 **Topic ID:** IDR-SRV-064<br>
-**Report Status:** In Review<br>
+**Report Status:** Final<br>
 **Research Plan:** [IDR-SRV-064 plan](../IDR%20Plans/idr-srv-064-oscar-viewer-client-study.md)<br>
 **Overall Research Plan:** [Controlling overall IDR plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Q1–Q6. Requests, streams, commands, response dependencies, lineage and test evidence are established from source and from two recorded test runs. Nothing was executed in this study.<br>
@@ -27,8 +27,8 @@
 
 **Document Purpose:** Independent client evidence for the Phase 1 implementation review, for later review gates (especially dynamic data, commands and live delivery) and for IDR-SRV-056. It is not a requirements document, and it does not authorise copying client behaviour.<br>
 **Author(s):** Glaux research workflow, AI-assisted<br>
-**Accepted By:** TBD until project-lead acceptance<br>
-**Acceptance Date:** TBD<br>
+**Accepted By:** Glaux Project Lead, by merging the report in PR #109 (merge `4cbd607`)<br>
+**Acceptance Date:** September 29, 2026<br>
 **Date:** September 29, 2026<br>
 **Last Updated:** September 29, 2026
 
@@ -432,7 +432,7 @@ Classification key: **C** conforming; **D** draft-era (the Sensor Web API draft,
 
 ## 10. Next Steps and Handoff
 
-1. Project-lead review and acceptance of this report. Owner: Glaux Project Lead. Due: next `proceed`.
+1. Project-lead review and acceptance of this report. Owner: Glaux Project Lead. Done: accepted September 29, 2026 by merging PR #109. Acceptance adopts no recommendation and changes no planning document.
 2. On acceptance, IDR-SRV-065 (cs-client-ts) starts on its own `proceed`. Owner: Glaux research workflow.
 3. Recommendations 3 and 4 wait for the separately authorised IDR-SRV-056 and CORS discussions.
 
@@ -513,7 +513,7 @@ The analysis ([link][Analysis]) is dated January 31, 2026, eight months before t
 - [x] Recommendations are explicit and actionable
 - [x] Risks and open questions are documented
 - [x] Success criteria validation is complete
-- [ ] Plan-owner acceptance and acceptance date are recorded before the topic is treated as complete downstream
+- [x] Plan-owner acceptance and acceptance date are recorded before the topic is treated as complete downstream
 - [x] Next steps are assigned
 
 [Oscar]: https://github.com/Botts-Innovative-Research/oscar-viewer
