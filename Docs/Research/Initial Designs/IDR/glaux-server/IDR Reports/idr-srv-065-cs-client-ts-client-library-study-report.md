@@ -4,14 +4,14 @@
 **Report Status:** In Review<br>
 **Research Plan:** [IDR-SRV-065 plan](../IDR%20Plans/idr-srv-065-cs-client-ts-client-library-study.md)<br>
 **Overall Research Plan:** [Controlling overall IDR plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
-**Research Questions Covered:** Q1–Q6. Coverage, request construction, models, tolerance, fixture origins and independence are established from source and from the published package. Tests were not executed.<br>
+**Research Questions Covered:** Q1–Q6. Coverage, request construction, models, tolerance, fixture origins and independence are established from source and from the published package. Neither the library nor its tests were executed.<br>
 **Methodology Used:**
 - Source inspection of the repository at `a632798` and `4724b0e`, and of the four published npm tarballs.
 - A programmatic comparison of all 98 test fixtures with the official OGC example files.
 - Targeted comparison with CS-GO for the two stated departures from the standard.
 - Mapping to the published CSAPI text, the pinned schemas, the draft Part 3 text and Glaux's implemented Phase 1 behaviour.
 
-**Research Time:** About 25 minutes of research and drafting, 22:30–22:55 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Nothing was executed or installed.<br>
+**Research Time:** About 25 minutes of research and drafting, 22:30–22:55 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Neither the library nor its tests were executed; only read-only downloads and a local Node comparison script were run. Nothing was installed.<br>
 **Primary Sources:**
 - [cs-client-ts at `a632798`][LibPin] and [`4724b0e`][LibNpm]
 - [`cs-api-client` on npm][Npm] (0.1.0–0.1.3)
@@ -62,17 +62,17 @@
 
 [Findings §4.2–4.4](#42-q2--coverage-and-requests).
 
-**It works with Glaux's Phase 1 today, with one setting.**
+**From reading its code, it should work with Glaux's Phase 1 today, with one setting (not yet run).**
 - It can create a System and read it back, provided the caller asks for GeoJSON (`format: "geojson"`) and supplies a Bearer token.
 - Its minimal GeoJSON create body is exactly Glaux's minimal request.
-- Glaux's `201`, `Location` header and GeoJSON response all satisfy the library's checks.
+- Glaux's `201`, `Location` header and GeoJSON response should all satisfy the library's checks (inferred from code).
 - Its default is SensorML, which Glaux's Phase 1 answers with `415` (on create) or `406` (on read). Glaux plans SensorML in Roadmap 2.2.3 and 2.3.1.
 
 **Independence is limited, but in an unexpected way.**
 - 94 of its 98 test fixtures are exact copies of OGC's official examples, and the other 4 are adapted from them. So its expected values come from the standard's own examples, not from CS-GO.
 - Its two self-described "breaks from standard" both *loosen* the schemas:
   - an observation may carry both `result` and `result@link`;
-  - SensorML input and output names become optional.
+  - names become optional free text, both for SensorML inputs and outputs and for SWE Common data fields and components, which appear in datastream and control-stream schemas.
 - The first matches CS-GO's own rule exactly, so the two share that reading against the published schema. Glaux's plan follows the schema (Roadmap 3.2.3).
 
 **Recommendation:**
@@ -164,7 +164,7 @@ All access dates are **2026-09-29 (UTC)**.
 |---|---|---|
 | Exact copy of an official Part 1/2, SensorML or SWE Common example | 91 | All 32 SWE Common fixtures; GeoJSON Systems (`thermometer-sensor`, `uav-platform`); Part 2 datastreams, observations, schemas, commands and statuses |
 | Exact copy of a draft Part 3 example | 3 | The three pub/sub event fixtures |
-| Adapted from official examples (56–93% string overlap) | 4 | Two `compare/` fixtures derived from `weather_station_system.json`; two SensorML deployments derived from `collectionItem_deployment.json` |
+| Adapted from official examples | 4 | Two SensorML deployments that are the official `spec/deployment.json` and `spec/deployment_sd001.json` with the elided `"contacts": [ ... ]` filled in; two `compare/` fixtures composed from several official SensorML examples (ThermoPro TP60S content; about 78–79% of their long strings appear in the official set, and no single file covers more than about 30%) |
 | CS-GO-derived, or hand-written without an official source | 0 found | — |
 
 **Interpretation:**
@@ -176,7 +176,7 @@ All access dates are **2026-09-29 (UTC)**.
 | Commit | Change | Published source | CS-GO | Classification |
 |---|---|---|---|---|
 | [`4724b0e`][LibNpm] "Broke from standard just a little bit…" (commit body: "This makes more sense to me and will be brought up") | An observation may carry **both** `result` and `result@link` (was exactly one) | Pinned `observation.json` has `oneOf` `result` / `result@link` | [`observation_json.go` L144–149][CsGoObs] also requires only "either", so it accepts both | **Shared tolerant reading against the schema.** Agreement between the two is not independent confirmation |
-| [`a632798`][LibPin] "…break from standard" | SensorML input/output/parameter `name` becomes optional and may be a display label ("optionally named by an interoperable CS server") | SWE `SoftNamedProperty` requires `name` as a `NameToken` (`^[A-Za-z][A-Za-z0-9_\-]*$`) | Not checked | **Tolerant.** The server that motivated it is not identified in the public record |
+| [`a632798`][LibPin] "…break from standard" | SensorML input/output/parameter names **and** SWE Common aggregate slot names (DataRecord fields, Vector coordinates, DataArray/Matrix element type, DataChoice items, component roots) become optional and may be display labels ("optionally named by an interoperable CS server"); a test adds a DataRecord field named `"air temperature"` | SWE `SoftNamedProperty` requires `name` as a `NameToken` (`^[A-Za-z][A-Za-z0-9_\-]*$`) | Not checked | **Tolerant.** The server that motivated it is not identified in the public record |
 
 Neither departure is documented in the README.
 
@@ -233,7 +233,7 @@ Neither departure is documented in the README.
 - **Silent behaviours:**
   - **Lossy common model:** fields with no representation in the target encoding are dropped on write, as the README documents.
   - **Inline command status discarded:** `createCommand` keeps only the id.
-  - **Query strings:** a caller-supplied `datetime` string is passed through unchecked. A test uses `datetime=latest`, which is not an RFC 3339 value.
+  - **Query strings:** a caller-supplied `datetime` string is passed through unchecked. Four test files use `datetime=latest`. Part 2 defines `latest` only for `resultTime`, so on `datetime` it is not a valid RFC 3339 value.
 
 ### 4.4 Q4 — Standards alignment
 
@@ -252,7 +252,7 @@ Classification key: **C** conforming; **S** stricter than required; **T** tolera
 | Problem Details errors | Features/HTTP | C | Glaux emits Problem Details |
 | Bearer and OAuth | Deployment matter | C with Glaux | Glaux accepts Bearer only (Guide §4.10) |
 | `result` and `result@link` both allowed | Pinned `observation.json` `oneOf` | G/T | Glaux follows the schema: mixed result forms fail (Roadmap 3.2.3) |
-| SensorML IO `name` optional or free text | SWE `SoftNamedProperty`/`NameToken` | T (N if written) | Glaux emits and requires names (Roadmap 2.2.3) |
+| SensorML IO and SWE component/field `name` optional or free text | SWE `SoftNamedProperty`/`NameToken` (used by the pinned `DataRecord`, `Vector`, `DataChoice` and `DataArray` schemas) | T (N if written) | Glaux emits and requires valid names (Roadmap 2.2.3 for SensorML; 3.1.1, 3.1.5 for datastream schemas; 5.1.1 for control-stream schemas) |
 | `parentSystem` matched by bare or `ogc-rel:` form only | Guide §4.1.1 (link-relation spelling) | T/limited | Glaux emits `ogc-rel:parentSystem`, so it matches |
 | CloudEvents `org.ogc.api.consys.<resource>.<op>`, including `subsystem` | Draft Part 3 `/req/resource-events/event-types`; the draft's token list includes `subsystem` | X (matches the draft) | Guide §4.8 uses the same scheme, but reports subsystems as `system`. The library accepts both |
 | Caller-chosen MQTT channels | Draft Part 3 MQTT class | X | Compatible with Guide §4.8 topics if configured; Roadmap 6.3.2 |
@@ -279,7 +279,7 @@ Classification key: **C** conforming; **S** stricter than required; **T** tolera
     - `create` with and without `Location`;
     - counts across pages;
     - three-page `next` traversal.
-  - 48 negative checks across the suite assert thrown errors or failed parses. For example, an observation with neither result form is rejected.
+  - Roughly 35–48 negative checks, depending on how they are counted, assert thrown errors, rejected promises or failed parses. For example, an observation with neither result form is rejected.
 - **Limits:**
   - The fixtures are the standard's own examples. The tests show the library accepts them, not that a server conforms.
   - Some checks are weak (for example `uniqueId` "truthy").
@@ -295,7 +295,7 @@ Classification key: **C** conforming; **S** stricter than required; **T** tolera
 | `systems.create(input, { format: "geojson" })` with only `uniqueId`, `label` and `featureType` sends `{"type":"Feature","geometry":null,"properties":{"featureType","uid","name"}}` as `application/geo+json` | Exactly the minimal accepted request; `201`, empty body, `Location` | **Meets** |
 | The same call with `description`, `assetType`, `validTime`, a position or links | Currently `422` (an implementation limit, not a standards claim) | **Conflict for now**; Roadmap 2.3.1 |
 | Default `create` or `get` (SensorML) | `415` / `406` | **Conflict for now**; Roadmap 2.2.3, 2.3.1 |
-| `systems.get(id, { format: "geojson" })` validates `type`, `id`, `geometry: null`, `properties.uid/name/featureType` and `links[self]` | Glaux's System matches the library schema | **Meets** |
+| `systems.get(id, { format: "geojson" })` validates `type`, `id`, `geometry: null` and `properties.uid/name/featureType`, and accepts the `self` link (links need only `href`) | Glaux's System matches the library schema | **Meets** (inferred from code) |
 | `create` needs `Location` and takes the last segment | `Location: {root}/systems/{id}` | **Meets** |
 | Bearer or OAuth | Bearer only | **Meets** when configured |
 | `systems.list()` | `405` | **Conflict for now**; Roadmap 2.3.1, 2.3.9, 2.5.10 |
@@ -305,7 +305,8 @@ Classification key: **C** conforming; **S** stricter than required; **T** tolera
 | Gate area (Roadmap) | Check to include |
 |---|---|
 | 2.2.3, 2.3.1 SensorML | SensorML read and write work for the library's default format. IO components without a valid `name` are rejected on write |
-| 2.3.9, 2.5.10 Lists | `features`/`items` by format; `next` works when followed as an opaque `href` with no client-added query |
+| 2.3.9, 2.5.10 Lists | `features`/`items` by format; `next` works when followed as an opaque `href` with no client-added query. The library treats any `href` not starting with `http` as relative to its base URL, so an absolute `next` link is safest |
+| 3.1.1, 3.1.5, 5.1.1 Schemas | A datastream or control-stream schema whose record fields lack a valid `NameToken` name is rejected on write |
 | 3.2.3 Observations | A write with both `result` and `result@link` gives the documented error. Reads never emit both |
 | 5.2.3, 5.3.x Commands | The `201` + `Location` + status body still lets a client that keeps only the id retrieve the status at `/commands/{id}/status` |
 | 6.1.x, 6.3.x Events | Resource Events validate against the library's CloudEvents model; a subsystem change is reported as `system`, which the library accepts |
@@ -333,7 +334,7 @@ Classification key: **C** conforming; **S** stricter than required; **T** tolera
 
 ## 6. Key Recommendations
 
-1. **Use this report as Phase 1 review evidence.** An independent, standards-aligned client can create and read a Glaux System using GeoJSON and Bearer authentication, with no adaptation.
+1. **Use this report as Phase 1 review evidence.** An independent, standards-aligned client should be able to create and read a Glaux System using GeoJSON and Bearer authentication, with no adaptation (inferred from code; not executed).
    - Priority: High.
    - Preconditions: project-lead acceptance (report PR merge).
 2. **Carry the §4.6 gate checks into their reviews**, especially the SensorML default format, rejecting mixed result forms on write, and `next` traversal.
@@ -374,7 +375,7 @@ Classification key: **C** conforming; **S** stricter than required; **T** tolera
 
 ### 8.2 Open Questions
 
-- **Which server motivated optional or free-text SensorML IO names?** The public record does not say. It matters only if Glaux later receives such descriptions; it is for the SensorML mapping owner (Roadmap 2.2.3).
+- **Which server motivated optional or free-text SensorML IO and SWE component names?** The public record does not say. It matters only if Glaux later receives such descriptions or schemas; it is for the SensorML and stream-schema owners (Roadmap 2.2.3, 3.1.1, 3.1.5, 5.1.1).
 - **Should Glaux's documentation state that it emits `ogc-rel:` relation tokens rather than full URIs?** Clients like this one match only the short forms. This is for the link-relation owner (Guide §4.1.1); it is not a proposed change.
 
 ## 9. Validation Against Plan Success Criteria
@@ -420,7 +421,9 @@ git clone https://github.com/SomethingCreativeStudios/cs-client-ts.git          
 curl -O https://registry.npmjs.org/cs-api-client/-/cs-api-client-0.1.3.tgz         # sha512 aN54cvRElSuQ/...
 grep -rl ComponentNameSchema npm-0.1.3/package/dist                                  # 5 files (0 in 0.1.2)
 # 190 official example JSON files downloaded from ogcapi-connected-systems@8e03b23, and
-# 3 draft Part 3 examples from @6f529a1; every fixture's key-sorted JSON compared with
+# 3 draft Part 3 examples from @6f529a1; 19 official files that are not valid JSON (placeholder
+# `[ ... ]` or schema fragments) were excluded from exact matching and checked by hand;
+# every fixture's key-sorted JSON compared with
 # each example, then string-overlap scoring for non-identical files (Node script, no packages).
 ```
 
@@ -443,7 +446,7 @@ grep -rl ComponentNameSchema npm-0.1.3/package/dist                             
   - SensorML (15);
   - SWE Common (32).
 - **3 exact matches** with the draft Part 3 event examples at `6f529a1`.
-- **4 adapted:** `compare/procedure_tp60s.json` (79%) and `compare/system_tp60s_instance.json` (78%) from `weather_station_system.json`; `sensorml/deployment/deployment_sd001.json` (93%) and `deployment.json` (56%) from `collectionItem_deployment.json`.
+- **4 adapted:** `sensorml/deployment/deployment.json` and `deployment_sd001.json` are the official `sensorml/schemas/json/examples/spec/deployment.json` and `deployment_sd001.json` with the elided `contacts` filled in (checked by hand, because the official files are not valid JSON); `compare/procedure_tp60s.json` and `compare/system_tp60s_instance.json` are composed from several official SensorML examples.
 - **0** with no official source.
 
 ---

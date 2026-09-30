@@ -4,7 +4,7 @@
 **Status:** Research complete; report in review; acceptance by merging the report PR<br>
 **Last Updated:** September 29, 2026<br>
 **Estimated Research Time:** Not yet calibrated; four bounded phases below, with further research iterations only if needed for the stated coverage.<br>
-**Actual Research Time:** About 25 minutes of research and drafting, 22:30–22:55 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Nothing was executed or installed.<br>
+**Actual Research Time:** About 25 minutes of research and drafting, 22:30–22:55 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Neither the library nor its tests were executed; only read-only downloads and a local Node comparison script were run. Nothing was installed.<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-065-cs-client-ts-client-library-study-report.md`
 
 ---
@@ -287,7 +287,7 @@ Internal prerequisites are not waived by labelling them unavailable or deferred.
 - [ ] Deliverable reviewed (separate review pending)
 - [ ] Deliverable accepted
 
-**Actual Research Time:** About 25 minutes of research and drafting, 22:30–22:55 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Nothing was executed or installed.<br>
+**Actual Research Time:** About 25 minutes of research and drafting, 22:30–22:55 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Neither the library nor its tests were executed; only read-only downloads and a local Node comparison script were run. Nothing was installed.<br>
 **Completion Date:** September 29, 2026 (research and report; acceptance pending)
 
 ---
