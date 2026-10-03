@@ -2,7 +2,7 @@
 
 [Review start page](README.md) · [Evidence](evidence/)
 
-Step 1 (delivery pipeline) is complete. The project lead adopted P1-01 and P1-03 on 27 September 2026; P1-02 remains open. Steps 2–5 have not started. The [scoping observations](evidence/00-scoping-observations.md) are starting points for the steps to check, not findings.
+Steps 1 (delivery pipeline) and 2 (test-source audit) are complete. The project lead adopted P1-01 and P1-03 on 27 September 2026; P1-02 remains open. Step 2 adds no finding: the [bounded source-to-test sample](evidence/02-test-source-audit.md) supports its selected expected answers, while distinguishing published rules, the selected transaction draft and Glaux's Phase 1 choices. It neither executed tests nor establishes whole-suite correctness or conformance. Steps 3–5 have not started. The [scoping observations](evidence/00-scoping-observations.md) are starting points for the steps to check, not findings.
 
 | ID | Title | Severity | Status |
 |---|---|---|---|

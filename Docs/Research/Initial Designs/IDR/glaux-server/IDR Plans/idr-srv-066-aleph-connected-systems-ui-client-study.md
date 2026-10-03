@@ -1,7 +1,7 @@
 # Section 066: Aleph (Alephex) Connected Systems UI Client Study - Research Plan
 
 **Topic ID:** IDR-SRV-066<br>
-**Status:** Research complete; report in review — October 3, 2026<br>
+**Status:** Complete and accepted — October 3, 2026<br>
 **Last Updated:** October 3, 2026<br>
 **Estimated Research Time:** Not yet calibrated; four bounded phases below, with further research iterations only if needed for the stated coverage.<br>
 **Actual Research Time:** One source-based AI research/report iteration, October 3, 2026; retrieval began 15:29 UTC, with drafting and separate review in the same iteration. No application or tests executed.<br>
@@ -287,11 +287,11 @@ Internal prerequisites are not waived by labelling them unavailable or deferred.
 - [x] Phase 3 complete
 - [x] Phase 4 synthesis complete
 - [x] Deliverable draft complete
-- [ ] Deliverable reviewed by project lead (separate pre-publication assistant review recorded in report PR)
-- [ ] Deliverable accepted
+- [x] Deliverable reviewed by project lead — accepted through report PR #111 merge; separate pre-publication assistant review recorded in that PR
+- [x] Deliverable accepted — October 3, 2026, project-lead merge of [PR #111](https://github.com/DGIWG-P507/glaux/pull/111)
 
 **Actual Research Time:** One source-based AI research/report iteration, October 3, 2026; see the [report](../IDR%20Reports/idr-srv-066-aleph-connected-systems-ui-client-study-report.md) for method, pins, coverage and unexecuted checks.<br>
-**Completion Date:** Research/report completed October 3, 2026; acceptance pending the project lead's report-PR merge. No downstream artifact or implementation change authorized.
+**Completion Date:** Research/report completed and accepted October 3, 2026. The project lead merged PR #111 as `f74eb659bab70b394b1027d1d43b3066561762de`; the following `proceed` authorizes Phase 1 review step 2 only. No recommendation is automatically adopted and no server implementation change is authorized.
 
 ---
 

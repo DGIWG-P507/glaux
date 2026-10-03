@@ -1,8 +1,8 @@
 # Glaux Server implementation review — Phase 1
 
-**Status: open. Step 1 (delivery pipeline) is complete. Of its [three findings](findings.md), P1-01 and P1-03 were adopted on 27 September 2026 and P1-02 remains open. Phase 1 implementation finished on 29 September 2026 (#26 closed). Steps 2–5 have not started. They wait for four client research studies ([below](#client-studies-before-steps-25)) and must be complete before review gate 1 closes.** Set up 27 September 2026; step 1 completed the same day.
+**Status: open. Steps 1 (delivery pipeline) and 2 (test-source audit) are complete. Step 2 found no incorrect expected answer or unsupported source claim requiring a new finding in its bounded sample; it did not execute tests or establish full conformance. Of the [three step-1 findings](findings.md), P1-01 and P1-03 were adopted on 27 September 2026 and P1-02 remains open. Phase 1 implementation finished on 29 September 2026 (#26 closed). All four client studies are accepted. Steps 3–5 have not started; each needs its own `proceed`, and all must complete before the project lead closes review gate 1.** Set up 27 September 2026; step 1 completed the same day; step 2 completed 3 October 2026.
 
-[Findings](findings.md) · [Evidence](evidence/) · [Scoping observations](evidence/00-scoping-observations.md) · [Planning documents](../../README.md) · [Completed pre-implementation review](../../Review/README.md)
+[Findings](findings.md) · [Test-source audit](evidence/02-test-source-audit.md) · [Evidence](evidence/) · [Scoping observations](evidence/00-scoping-observations.md) · [Planning documents](../../README.md) · [Completed pre-implementation review](../../Review/README.md)
 
 ## What this review is
 
@@ -64,11 +64,13 @@ The project lead reports that the first two are the most human-written CSAPI cli
 
 Once all four reports are accepted, the next `proceed` resumes this review. Their findings feed step 2 (where test answers come from), step 5 (the OpenSensorHub comparison) and the client checks that later gates run. They do not change the standard's authority.
 
+**Completed 3 October 2026:** the project lead's merge of [PR #111](https://github.com/DGIWG-P507/glaux/pull/111), `f74eb659bab70b394b1027d1d43b3066561762de`, accepted IDR-SRV-066, completing the four-study prerequisite. The following `proceed` authorized step 2. Its [evidence](evidence/02-test-source-audit.md) reuses the accepted studies without treating a client application's preferences as server requirements. The next bounded step is **step 3, Phase 1 architecture**, on a new `proceed`; Phase 2 remains blocked by [gate 1 (#339)](https://github.com/DGIWG-P507/glaux-server/issues/339).
+
 ## Questions for the project lead
 
 These do not block the folder or step 1.
 
-1. ~~Is the OS4CSAPI TypeScript client, named in Guide §8.1 as an external-client check, mostly AI-written?~~ Answered 29 September 2026: yes, mostly AI-written. It has the same limitation as the Botts suite: its expected behaviour is not independent evidence. The project lead named the OSH Viewer and OSCAR Viewer as the most human-written CSAPI clients, and Aleph and cs-client-ts as written by a senior developer with AI assistance. Those clients are now being studied ([above](#client-studies-before-steps-25)).
+1. ~~Is the OS4CSAPI TypeScript client, named in Guide §8.1 as an external-client check, mostly AI-written?~~ Answered 29 September 2026: yes, mostly AI-written. It has the same limitation as the Botts suite: its expected behaviour is not independent evidence. The project lead named the OSH Viewer and OSCAR Viewer as the most human-written CSAPI clients, and Aleph and cs-client-ts as written by a senior developer with AI assistance. Those studies are now complete and accepted ([above](#client-studies-before-steps-25)).
    - *Proposed consequence, not separately confirmed by the project lead:* any change to Guide §8.1's use of the OS4CSAPI client waits for those studies and a separate decision.
 2. ~~Is there a person available for step 3 or the security code? For example, someone at Riverside Research (a submitting organisation of CSAPI Part 1), someone from the OpenSensorHub team, or an OGC code-sprint contact.~~ Answered 29 September 2026: no, no person is available.
    - *Proposed consequences, not separately confirmed by the project lead:*
