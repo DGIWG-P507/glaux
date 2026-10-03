@@ -1,0 +1,825 @@
+{
+  "source_head": "75dc8b11ac691ba6cd91bfcccfef4d8fb04d4351",
+  "baseline_head": "27955c1b9260cd811ad6bc08f85feab43ad65028",
+  "diagnostic_pr": "https://github.com/DGIWG-P507/glaux-server/pull/358",
+  "run_url": "https://github.com/DGIWG-P507/glaux-server/actions/runs/37141240649",
+  "jobs": [
+    {
+      "id": 111255950577,
+      "name": "CI lane: HTTP, authentication and key-refresh proofs",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 37141240649,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Identify the checked-out commit and runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Select the pinned toolchain on the hosted runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Fetch the locked dependency archives",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Build every workspace target before time-limited suites",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Prove shared HTTP contracts with an independent listener client",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Prove caller authentication through an independent listener",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Prove bounded signing-key refresh against an isolated HTTPS issuer",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Verify original corpus digests after this lane's checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Preserve actual execution evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 22
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23
+        }
+      ]
+    },
+    {
+      "id": 111255950636,
+      "name": "CI lane: runtime, permission and discovery proofs",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 37141240649,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Identify the checked-out commit and runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Select the pinned toolchain on the hosted runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Fetch the locked dependency archives",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Build every workspace target before time-limited suites",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Fetch the pinned disposable database image",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Prove runtime configuration and live storage readiness",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Prove System creation through the actual HTTP and transaction boundary",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Prove canonical System retrieval across a real server restart",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Prove action source and resource permissions through a real listener and database",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Prove initial discovery and reject misleading declarations",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Render local API documentation with external browser traffic blocked",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Verify original corpus digests after this lane's checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Preserve actual execution evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Post Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 30
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 31
+        }
+      ]
+    },
+    {
+      "id": 111255950667,
+      "name": "CI lane: Rust tests, parser campaigns and value faults",
+      "status": "completed",
+      "conclusion": "failure",
+      "run_id": 37141240649,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Identify the checked-out commit and runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Select the pinned toolchain on the hosted runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Fetch the locked dependency archives",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Build every workspace target before time-limited suites",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Verify original corpus digests before projection execution",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Run initial tests and applicable doctests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Exercise the bounded schema-parser mutation campaign",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Prove public identity type boundaries and wrong-acceptance detection",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Exercise exact numeric parsing and detect lossy numeric faults",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Exercise exact time parsing and detect time faults",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Check original corpus and offline fault controls",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Verify validation assertions detect disposable faults",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Verify directional projection assertions detect disposable faults",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Verify original corpus digests after projection execution",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16
+        },
+        {
+          "name": "Review bounded Phase 1 mutation sensitivity",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 17
+        },
+        {
+          "name": "Verify source and corpus preservation after review mutations",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 18
+        },
+        {
+          "name": "Preserve actual execution evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        },
+        {
+          "name": "Post Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 38
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 39
+        }
+      ]
+    },
+    {
+      "id": 111255950677,
+      "name": "CI lane: false-green controls after unmodified baselines",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 37141240649,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Identify the checked-out commit and runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Select the pinned toolchain on the hosted runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Fetch the locked dependency archives",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Build every workspace target before time-limited suites",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Fetch the pinned disposable database image",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Run unmodified Rust tests before the false-green controls",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Run unmodified database lifecycle tests before the false-green controls",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Verify required execution rejects disposable failures",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Verify original corpus digests after this lane's checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Preserve actual execution evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Post Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 24
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25
+        }
+      ]
+    },
+    {
+      "id": 111255950678,
+      "name": "CI lane: formatting, lint, build and inventory",
+      "status": "completed",
+      "conclusion": "failure",
+      "run_id": 37141240649,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Identify the checked-out commit and runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Select the pinned toolchain on the hosted runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Fetch the locked dependency archives",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Verify formatting and locked dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Lint Rust and check Python syntax",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Build all three packages",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Verify original corpus digests before this lane's checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Check package boundaries and test discovery",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Fetch the pinned disposable database image",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Inventory resolved dependencies and licence evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Verify original corpus digests after this lane's checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Review Phase 1 source and locked dependencies (artifact only)",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 14
+        },
+        {
+          "name": "Verify source and corpus preservation after review scanners",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Preserve actual execution evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16
+        },
+        {
+          "name": "Post Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 32
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 33
+        }
+      ]
+    },
+    {
+      "id": 111255950700,
+      "name": "CI lane: database lifecycle, storage and write proofs",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 37141240649,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Identify the checked-out commit and runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Select the pinned toolchain on the hosted runner",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Fetch the locked dependency archives",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Build every workspace target before time-limited suites",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Fetch the pinned disposable database image",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Exercise real database lifecycle and failure cases",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Prove exact time through the real isolated database",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Prove System identity repository and real database constraints",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Prove exact revision and source-artifact storage",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Prove atomic application writes and omission detection",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Prove conditional writes and comparison omission detection",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Prove scoped write retries and intent omission detection",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Prove isolated backup and restore of the first System",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Verify original corpus digests after this lane's checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16
+        },
+        {
+          "name": "Preserve actual execution evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17
+        },
+        {
+          "name": "Post Check out the exact task commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 34
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 35
+        }
+      ]
+    },
+    {
+      "id": 111257827264,
+      "name": "Rust bootstrap",
+      "status": "completed",
+      "conclusion": "failure",
+      "run_id": 37141240649,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Require every reviewed check lane to have run and succeeded",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 2
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11281150131,
+      "name": "ci-evidence-ci-controls",
+      "size_in_bytes": 23851,
+      "url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11281150131",
+      "archive_download_url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11281150131/zip",
+      "expired": false,
+      "created_at": "2026-10-03T17:46:11Z",
+      "expires_at": "2026-10-17T17:46:10Z",
+      "updated_at": "2026-10-03T17:46:11Z",
+      "digest": "sha256:363b8102f84c21a19d90b6f111c7d2bcf3b979d660330d18030fc03301c8dcdd",
+      "workflow_run": {
+        "id": 37141240649,
+        "repository_id": 1261992778,
+        "head_repository_id": 1261992778,
+        "head_branch": "review/phase1-step4-diagnostics",
+        "head_sha": "75dc8b11ac691ba6cd91bfcccfef4d8fb04d4351"
+      }
+    },
+    {
+      "id": 11280930448,
+      "name": "ci-evidence-rust-suites",
+      "size_in_bytes": 3516579,
+      "url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11280930448",
+      "archive_download_url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11280930448/zip",
+      "expired": false,
+      "created_at": "2026-10-03T17:47:36Z",
+      "expires_at": "2026-10-17T17:47:34Z",
+      "updated_at": "2026-10-03T17:47:36Z",
+      "digest": "sha256:abf8c54ebfaa449307f217198a9c32c0dc82f1c1efd4ccca18270c7acf0e1b89",
+      "workflow_run": {
+        "id": 37141240649,
+        "repository_id": 1261992778,
+        "head_repository_id": 1261992778,
+        "head_branch": "review/phase1-step4-diagnostics",
+        "head_sha": "75dc8b11ac691ba6cd91bfcccfef4d8fb04d4351"
+      }
+    },
+    {
+      "id": 11280647220,
+      "name": "ci-evidence-database-storage",
+      "size_in_bytes": 14915,
+      "url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11280647220",
+      "archive_download_url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11280647220/zip",
+      "expired": false,
+      "created_at": "2026-10-03T17:46:09Z",
+      "expires_at": "2026-10-17T17:46:08Z",
+      "updated_at": "2026-10-03T17:46:09Z",
+      "digest": "sha256:984eec94d3e805f1f8cf81d4868d09c06d7066afdefa8d3ecedef662816fa14b",
+      "workflow_run": {
+        "id": 37141240649,
+        "repository_id": 1261992778,
+        "head_repository_id": 1261992778,
+        "head_branch": "review/phase1-step4-diagnostics",
+        "head_sha": "75dc8b11ac691ba6cd91bfcccfef4d8fb04d4351"
+      }
+    },
+    {
+      "id": 11280487326,
+      "name": "ci-evidence-listener-proofs",
+      "size_in_bytes": 8554,
+      "url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11280487326",
+      "archive_download_url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11280487326/zip",
+      "expired": false,
+      "created_at": "2026-10-03T17:41:23Z",
+      "expires_at": "2026-10-17T17:41:22Z",
+      "updated_at": "2026-10-03T17:41:23Z",
+      "digest": "sha256:0af673104e8ce323e5a45f6d5aac9b610902dacb2f7301cdacd50397d590d1b4",
+      "workflow_run": {
+        "id": 37141240649,
+        "repository_id": 1261992778,
+        "head_repository_id": 1261992778,
+        "head_branch": "review/phase1-step4-diagnostics",
+        "head_sha": "75dc8b11ac691ba6cd91bfcccfef4d8fb04d4351"
+      }
+    },
+    {
+      "id": 11280442849,
+      "name": "ci-evidence-static-checks",
+      "size_in_bytes": 4633846,
+      "url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11280442849",
+      "archive_download_url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11280442849/zip",
+      "expired": false,
+      "created_at": "2026-10-03T17:47:16Z",
+      "expires_at": "2026-10-17T17:47:15Z",
+      "updated_at": "2026-10-03T17:47:16Z",
+      "digest": "sha256:1538ea0f87810e3a0f739f4f8ded59e7fb45b2b078716264e4e87891b5eda1e7",
+      "workflow_run": {
+        "id": 37141240649,
+        "repository_id": 1261992778,
+        "head_repository_id": 1261992778,
+        "head_branch": "review/phase1-step4-diagnostics",
+        "head_sha": "75dc8b11ac691ba6cd91bfcccfef4d8fb04d4351"
+      }
+    },
+    {
+      "id": 11280248635,
+      "name": "ci-evidence-database-service",
+      "size_in_bytes": 33429,
+      "url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11280248635",
+      "archive_download_url": "https://api.github.com/repos/DGIWG-P507/glaux-server/actions/artifacts/11280248635/zip",
+      "expired": false,
+      "created_at": "2026-10-03T17:48:36Z",
+      "expires_at": "2026-10-17T17:48:35Z",
+      "updated_at": "2026-10-03T17:48:36Z",
+      "digest": "sha256:610cc491673c19dbe721a6dfe950593279c201fb8abd5734578cdc0dd4f7dafd",
+      "workflow_run": {
+        "id": 37141240649,
+        "repository_id": 1261992778,
+        "head_repository_id": 1261992778,
+        "head_branch": "review/phase1-step4-diagnostics",
+        "head_sha": "75dc8b11ac691ba6cd91bfcccfef4d8fb04d4351"
+      }
+    }
+  ],
+  "note": "Read-only GitHub connector snapshots retrieved after completion. Original mutation ZIP hash is in artifacts; local mutation-records.zip repack omits only downloaded cargo-mutants executable archive. No result file contents were edited."
+}

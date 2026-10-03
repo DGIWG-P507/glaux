@@ -2,7 +2,7 @@
 
 [Review start page](README.md) · [Evidence](evidence/)
 
-Steps 1–3 are complete. The project lead adopted P1-01 and P1-03 on 27 September 2026; P1-02 remains open. Step 2 adds no finding: the [bounded source-to-test sample](evidence/02-test-source-audit.md) supports its selected expected answers, while distinguishing published rules, the selected transaction draft and Glaux's Phase 1 choices. Step 3's [architecture inspection](evidence/03-phase-1-architecture.md) adds P1-04 and locates Phase 2 extension work within existing tasks; it found no blocking architecture defect in its sample. Neither source-inspection step executed tests or establishes whole-suite correctness or conformance. The [step-4 proposal](evidence/04-test-strength-and-security-proposal.md) is ready, adds no finding and awaits approval before execution. Step 5 has not started. The [scoping observations](evidence/00-scoping-observations.md) are starting points for the steps to check, not findings.
+Steps 1–3 are complete. The project lead adopted P1-01 and P1-03 on 27 September 2026; P1-02 remains open. Step 2 adds no finding: the [bounded source-to-test sample](evidence/02-test-source-audit.md) supports its selected expected answers, while distinguishing published rules, the selected transaction draft and Glaux's Phase 1 choices. Step 3's [architecture inspection](evidence/03-phase-1-architecture.md) adds P1-04 and locates Phase 2 extension work within existing tasks; it found no blocking architecture defect in its sample. Neither source-inspection step executed tests or establishes whole-suite correctness or conformance. Step 4's [hosted results](evidence/05-test-strength-and-security-results.md) add P1-05, a bounded unit-test gap. Rust security analysis remains incomplete; completed scans reported no candidates, not proof of complete security. Step 5 has not started. The [scoping observations](evidence/00-scoping-observations.md) are starting points for the steps to check, not findings.
 
 | ID | Title | Severity | Status |
 |---|---|---|---|
@@ -10,6 +10,7 @@ Steps 1–3 are complete. The project lead adopted P1-01 and P1-03 on 27 Septemb
 | [P1-02](#p1-02--the-implementing-assistant-uses-ci-as-its-compiler) | The implementing assistant uses CI as its compiler | Low | Open |
 | [P1-03](#p1-03--each-delivery-is-written-up-several-times-and-the-file-read-first-keeps-growing) | Each delivery is written up several times, and the file read first keeps growing | Medium | Adopted |
 | [P1-04](#p1-04--api-proof-programs-repeat-process-and-wire-client-plumbing) | API proof programs repeat process and wire-client plumbing | Low | Open |
+| [P1-05](#p1-05--source-permission-unit-tests-miss-the-allowing-case) | Source-permission unit tests miss the allowing case | Low | Open |
 
 ### P1-01 — CI is likely to reach its 20-minute limit within the next few issues
 
@@ -91,6 +92,19 @@ Steps 1–3 are complete. The project lead adopted P1-01 and P1-03 on 27 Septemb
 - **Severity:** Low.
 - **Suggested owner:** project-lead decision; if adopted, incremental test-only factoring within #49/#50 as those proofs grow, with later runner integration at #80. No new framework or prerequisite issue proposed. Preserve independent expectations, ordered execution evidence and fault-control sensitivity.
 - **Status:** Open.
+
+### P1-05 — Source-permission unit tests miss the allowing case
+
+**In plain English:** A small permission helper can be changed to reject everyone and its library tests still pass. Add examples showing that legitimate access succeeds, alongside the existing rejection checks. This is a test gap, not evidence that the current server denies everyone or admits unauthorized users.
+
+- **Step:** 4, [mutation results](evidence/05-test-strength-and-security-results.md#mutation-results).
+- **Examined:** server baseline `27955c1b9260cd811ad6bc08f85feab43ad65028`, unchanged production sources on diagnostic head `75dc8b11ac691ba6cd91bfcccfef4d8fb04d4351`; [run 37141240649](https://github.com/DGIWG-P507/glaux-server/actions/runs/37141240649).
+- **What was seen:** of 21 generated mutations in four functions, only `PermissionSet::allows_source -> false` survived. All 33 library tests passed with that mutation. The existing policy test (`authorization.rs:978–1063`) directly calls `allows_source` only for the empty source-D grant at line 1005. Its source-A fixture provides a concrete allowing case that constant false would wrongly reject.
+- **Why it matters:** the fast unit layer does not protect the helper's allowing behavior. The separate System-create HTTP/database proof expects successful creation and source inspection indicates it would be affected; that proof was not executed against this mutant. Do not claim a whole-CI blind spot or production vulnerability from this sample.
+- **Kind:** test-strength recommendation, not a new standards rule or scope requirement.
+- **Severity:** Low.
+- **Suggested owner:** project-lead decision on a small test-only follow-up to #20/#24: add positive assertions for a nonempty resource-specific grant and an unrestricted grant, then show that the same constant-false fault fails the intended assertion. No production redesign or new testing framework is needed. Implementation remains unauthorized until adopted.
+- **Status:** Open. Neither this recommendation nor P1-04 is adopted by authorizing the diagnostic run.
 
 ## Format
 
