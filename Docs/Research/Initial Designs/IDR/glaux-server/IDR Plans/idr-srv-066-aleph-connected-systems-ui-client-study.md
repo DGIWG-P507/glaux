@@ -1,10 +1,10 @@
 # Section 066: Aleph (Alephex) Connected Systems UI Client Study - Research Plan
 
 **Topic ID:** IDR-SRV-066<br>
-**Status:** Planned<br>
-**Last Updated:** September 29, 2026<br>
+**Status:** Research complete; report in review — October 3, 2026<br>
+**Last Updated:** October 3, 2026<br>
 **Estimated Research Time:** Not yet calibrated; four bounded phases below, with further research iterations only if needed for the stated coverage.<br>
-**Actual Research Time:** TBD until complete<br>
+**Actual Research Time:** One source-based AI research/report iteration, October 3, 2026; retrieval began 15:29 UTC, with drafting and separate review in the same iteration. No application or tests executed.<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-066-aleph-connected-systems-ui-client-study-report.md`
 
 ---
@@ -221,17 +221,17 @@ It is the only studied client whose dependencies at the preliminary check includ
 
 This topic research is complete when:
 
-- [ ] Q1–Q6 have evidence-backed answers, or explicit limitations and their consequences.
-- [ ] The application commit and the resolved library version are pinned.
-- [ ] Every request-level finding is attributed to library or application.
-- [ ] User workflows are mapped. Every material dependency is traceable to a source anchor and classified against exact standard identifiers or as outside CSAPI.
-- [ ] MQTT and OpenID Connect use is classified against Glaux's selected scope. No secret or real-deployment value is reproduced.
-- [ ] Independence limits (shared author, AI assistance, shallow history) are stated.
-- [ ] Test analysis explains what representative tests detect, which server they assume and whether their expectations are independent. Source inspection is distinguished from execution.
-- [ ] Phase 1 expectations are compared with implemented Glaux behaviour, later-gate workflows are listed, and the cross-study note is included.
-- [ ] Each material lesson has a Glaux disposition with Guide/Roadmap references. "No change" is acceptable.
-- [ ] Relevant official repository history is consulted and authority-classified where the standards-history register applies.
-- [ ] The report follows the report template and validates these criteria.
+- [x] Q1–Q6 have evidence-backed answers, or explicit limitations and their consequences.
+- [x] The application commit and the resolved library version are pinned.
+- [x] Every request-level finding is attributed to library or application.
+- [x] User workflows are mapped. Every material dependency is traceable to a source anchor and classified against exact standard identifiers or as outside CSAPI.
+- [x] MQTT and OpenID Connect use is classified against Glaux's selected scope. No secret or real-deployment value is reproduced.
+- [x] Independence limits (shared author, AI assistance, shallow history) are stated.
+- [x] Test analysis explains what representative tests detect, which server they assume and whether their expectations are independent. Source inspection is distinguished from execution.
+- [x] Phase 1 expectations are compared with implemented Glaux behaviour, later-gate workflows are listed, and the cross-study note is included.
+- [x] Each material lesson has a Glaux disposition with Guide/Roadmap references. "No change" is acceptable.
+- [x] Relevant official repository history is consulted and authority-classified where the standards-history register applies.
+- [x] The report follows the report template and validates these criteria.
 
 Completion does not require running Aleph, contacting the author, reading every component or certifying the application. Any such limit narrows the relevant conclusion; it does not disappear from the report.
 
@@ -282,16 +282,16 @@ Internal prerequisites are not waived by labelling them unavailable or deferred.
 
 ## 9. Research Status Checklist
 
-- [ ] Phase 1 complete
-- [ ] Phase 2 complete
-- [ ] Phase 3 complete
-- [ ] Phase 4 synthesis complete
-- [ ] Deliverable draft complete
-- [ ] Deliverable reviewed
+- [x] Phase 1 complete
+- [x] Phase 2 complete
+- [x] Phase 3 complete
+- [x] Phase 4 synthesis complete
+- [x] Deliverable draft complete
+- [ ] Deliverable reviewed by project lead (separate pre-publication assistant review recorded in report PR)
 - [ ] Deliverable accepted
 
-**Actual Research Time:** [Fill in at completion]<br>
-**Completion Date:** [Fill in at completion]
+**Actual Research Time:** One source-based AI research/report iteration, October 3, 2026; see the [report](../IDR%20Reports/idr-srv-066-aleph-connected-systems-ui-client-study-report.md) for method, pins, coverage and unexecuted checks.<br>
+**Completion Date:** Research/report completed October 3, 2026; acceptance pending the project lead's report-PR merge. No downstream artifact or implementation change authorized.
 
 ---
 

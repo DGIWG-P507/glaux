@@ -1,13 +1,13 @@
 # OGC API - Connected Systems Upstream Standards-History Evidence Register
 
-**Version:** 1.16<br>
+**Version:** 1.17<br>
 **Status:** Active supporting evidence<br>
 **Initial screening completed:** August 1, 2026<br>
 **Register owner:** Glaux Project Lead<br>
 **Official repository:** https://github.com/opengeospatial/ogcapi-connected-systems<br>
 **Published-source tag checked:** [`v1.0.0`](https://github.com/opengeospatial/ogcapi-connected-systems/releases/tag/v1.0.0), commit [`8e03b236`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/8e03b236a049849f2ccc24b4fd9fdce5ff69bed2)<br>
 **Mutable `master` snapshot checked:** September 18, 2026, commit [`3fd86c73`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/3fd86c73e744b7e2faaf7f1c17366bfb9ff4cd6f); unchanged in bounded IDR-SRV-061 review<br>
-**Mutable `part3-working-draft` snapshot checked:** September 17, 2026, commit [`6f529a15`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/6f529a15bfa63259febc3620378d3e5a06305333); unchanged in bounded IDR-SRV-060 review<br>
+**Mutable `part3-working-draft` snapshot checked:** October 3, 2026, commit [`72b8ec05`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/72b8ec0519806688438bde0ed1cd3fe3cfd09103); bounded IDR-SRV-066 refresh below. Glaux's selected experimental pin remains `6f529a15bfa63259febc3620378d3e5a06305333`<br>
 **Mutable `part4-working-draft` snapshot checked:** September 17, 2026, commit [`05a3c62d`](https://github.com/opengeospatial/ogcapi-connected-systems/commit/05a3c62d198ee52d0cf81a734b700967b7d864a1); unchanged across bounded IDR-SRV-058/059 reviews, not approved adoption<br>
 **Mutable OGC API - Features CRUD dependency snapshot checked:** September 14, 2026, commit [`4e30324a`](https://github.com/opengeospatial/ogcapi-features/commit/4e30324a14b682ff4a26ee43aad1eb6428c846a3), document `20-002r2`, `1.0.0-SNAPSHOT`, Draft<br>
 
@@ -85,6 +85,15 @@ No unrelated full-history refresh was performed; historical screening totals rem
 - **Published-result provenance:** #46/#65/#83/#101 remain closed. PRs #93, #97 and #127 remain merged, and compare responses establish their merge commits as ancestors of `v1.0.0`; use the published artifacts for requirements, not closure alone.
 
 The bounded searches did not establish an additional public exact-input provenance contract. That is not a claim of global absence or an audit of unpublished work. Peer implementation paths and tests are recorded separately in the report and are not official standards dispositions. Historical full-screen totals below remain unchanged.
+
+### Aleph Client and Part 3 Supplemental Evidence — October 3, 2026
+
+[IDR-SRV-066](../IDR%20Reports/idr-srv-066-aleph-connected-systems-ui-client-study-report.md) checked only the history implicated by the application: legacy history, sorting, System Event mapping, live-description discovery and Part 3 event/representation changes. Earlier dated entries retain their historical meaning; this is not a complete register refresh or a change to the selected Guide baseline.
+
+- Issues [#149](https://github.com/opengeospatial/ogcapi-connected-systems/issues/149), [#175](https://github.com/opengeospatial/ogcapi-connected-systems/issues/175) and [#201](https://github.com/opengeospatial/ogcapi-connected-systems/issues/201) remain open. Their history/sorting/System Event discussions supply no new approved rule. Discovery-related [#14](https://github.com/opengeospatial/ogcapi-connected-systems/issues/14), [#68](https://github.com/opengeospatial/ogcapi-connected-systems/issues/68) and [#189](https://github.com/opengeospatial/ogcapi-connected-systems/issues/189) also remain open. **UP** for unresolved proposals; published outcomes remain separately controlling.
+- The [pinned Part 3 comparison](https://github.com/opengeospatial/ogcapi-connected-systems/compare/6f529a15bfa63259febc3620378d3e5a06305333...72b8ec0519806688438bde0ed1cd3fe3cfd09103) is 12 commits ahead, with 26 changed files. The newer draft changes the event prefix from `org.ogc.api.consys.*` to `org.ogc.api.csapi.*`, replaces `parentId` with `resourceparent`, and permits actual JSON-representation media types/full representations in optional event data. See [event properties](https://github.com/opengeospatial/ogcapi-connected-systems/blob/72b8ec0519806688438bde0ed1cd3fe3cfd09103/api/part3/standard/requirements/events/req_event_properties.adoc#L4-L28) and [event tokens](https://github.com/opengeospatial/ogcapi-connected-systems/blob/72b8ec0519806688438bde0ed1cd3fe3cfd09103/api/part3/standard/sections/cloudevents-properties.adoc#L19-L29).
+- Representation offering/selection previously recorded as an unincorporated proposal is incorporated in this newer working draft: [offering](https://github.com/opengeospatial/ogcapi-connected-systems/blob/72b8ec0519806688438bde0ed1cd3fe3cfd09103/api/part3/standard/requirements/data/req_representation_offering.adoc), [selection](https://github.com/opengeospatial/ogcapi-connected-systems/blob/72b8ec0519806688438bde0ed1cd3fe3cfd09103/api/part3/standard/requirements/data/req_representation_selection.adoc). [PR #205](https://github.com/opengeospatial/ogcapi-connected-systems/pull/205) merged; [#190](https://github.com/opengeospatial/ogcapi-connected-systems/issues/190), [#191](https://github.com/opengeospatial/ogcapi-connected-systems/issues/191) and [#194](https://github.com/opengeospatial/ogcapi-connected-systems/issues/194) closed September 24. **PCD**, not approved publication. Two draft abstract tests do not constitute a completed ATS; the MQTT clause remains unfinished and this change supplies no AsyncAPI contract.
+- Aleph at `7af6c076` and its exact npm `cs-api-client` 0.1.3 still use the older `consys` / `parentId` forms. Glaux's selected profile also intentionally differs from that old draft in lowercase `parentid`, discovery, topics and other documented choices. Client, selected Glaux experiment and newer draft must not be treated as one compatible contract. **Informative compatibility evidence only**; no profile migration, Part 5 scope change, or new conformance claim is adopted here.
 
 ## 4. Screening Coverage and Selection Rules
 
