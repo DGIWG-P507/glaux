@@ -1,7 +1,7 @@
 # Section 066: Aleph (Alephex) Connected Systems UI Client Study - Research Report
 
 **Topic ID:** IDR-SRV-066<br>
-**Report Status:** In Review — research complete; project-lead acceptance pending<br>
+**Report Status:** Complete and accepted — October 3, 2026<br>
 **Research Plan:** [IDR-SRV-066 plan](../IDR%20Plans/idr-srv-066-aleph-connected-systems-ui-client-study.md)<br>
 **Overall Research Plan:** [Controlling overall IDR plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Q1–Q6, through source inspection and representative test analysis. No application, identity-provider, broker or Glaux interoperability run was performed.<br>
@@ -19,8 +19,8 @@
 
 **Document Purpose:** Establish what the Aleph application adds to its library's expectations, which lessons inform Phase 1 and later gates, and whether to consider it for the external-client matrix. This report neither changes requirements nor authorizes client-code reuse.<br>
 **Author(s):** Codex, with separate source-analysis agents; AI-assisted research<br>
-**Accepted By:** TBD — the project lead's merge of this report PR constitutes acceptance under the September 29, 2026 decision<br>
-**Acceptance Date:** TBD<br>
+**Accepted By:** Glaux Project Lead, by merging [PR #111](https://github.com/DGIWG-P507/glaux/pull/111) as `f74eb659bab70b394b1027d1d43b3066561762de` under the September 29, 2026 acceptance-by-merge decision<br>
+**Acceptance Date:** October 3, 2026 (merge recorded at 16:00:23 UTC)<br>
 **Date:** October 3, 2026<br>
 **Last Updated:** October 3, 2026
 
@@ -355,12 +355,12 @@ These questions do not prevent the source-based study from completing or require
 
 ## 10. Next Steps and Handoff
 
-1. **Separate reviewer:** inspect this actual research diff, source anchors, plan coverage and validation evidence before publication; record the reviewed commit and outcome in the PR. This is separate assistant review, not human expert review or research acceptance.
-2. **Project lead:** review/merge the report PR if satisfied. Under the September 29 decision, that merge accepts IDR-066. Acceptance fields remain pending until the merge is recorded.
-3. **On the next `proceed` after acceptance:** record acceptance and resume **Phase 1 review step 2, the test-source audit**, under its [existing charter][Phase1]. Do not start step 3, Phase 2 coding or a new research topic automatically.
+1. **Separate review completed:** [PR #111](https://github.com/DGIWG-P507/glaux/pull/111) records review of the final research head `52de1fbead186c71834bebedbf021c2705fab223`, approved for publication with no blocking findings. This is separate assistant review, not human expert review.
+2. **Project-lead acceptance completed:** the project lead merged PR #111 on October 3, 2026, then explicitly confirmed that the merge constitutes approval. Substantive research findings and runtime limits are unchanged.
+3. **Following `proceed`:** records that acceptance and authorizes **Phase 1 review step 2, the test-source audit**, under its [existing charter][Phase1]. It does not authorize step 3, Phase 2 coding or a new research topic automatically.
 4. **Later existing gate owners:** reuse this report's bounded candidates when relevant. Changes to IDR-056, the selected experimental profile, Guide or Roadmap require separate authorization.
 
-The four-client research sequence is **researched but not all accepted** until this report's merge. Review gate 1 remains open; only the project lead closes it. No action-list handoff, implementation issue, archived completed-review evidence or server file is changed by this study.
+The four-client research sequence is **complete and accepted**. Review gate 1 remains open; only the project lead closes it. No action-list handoff, implementation issue, archived completed-review evidence or server file is changed by this study or its acceptance record.
 
 ---
 
@@ -416,7 +416,7 @@ This list refines existing coverage; it does not require a new test service, ano
 - [x] Recommendations are explicit and actionable
 - [x] Risks and open questions are documented
 - [x] Success criteria validation is complete
-- [ ] Plan-owner acceptance and acceptance date recorded — pending project-lead merge
+- [x] Plan-owner acceptance and acceptance date recorded — project-lead merge of PR #111, October 3, 2026
 - [x] Next steps are assigned
 
 [App]: https://github.com/SomethingCreativeStudios/Alephex/tree/7af6c076a4edec1959fc138b11d13e309baf5e67
