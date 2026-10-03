@@ -6,7 +6,7 @@
 
 ## Current state
 
-**Updated 29 September 2026. Read this section first.** It changes only when the project lead makes a decision or a Roadmap capability group or phase completes.
+**Updated 3 October 2026. Read this section first.** It changes only when the project lead makes a decision or a Roadmap capability group or phase completes.
 
 **Where delivery status lives.** Each implementation issue's delivery is recorded once: in its server PR (evidence and separate-review record) and in the issue's execution record, which also names the next ready issue. GitHub issues are the live per-issue status.
 - No per-issue section is added here, and no per-issue planning PR is made.
@@ -14,10 +14,10 @@
 - The per-issue handoff sections below, for tasks 1.1.2–1.4.6 (#4–#23), are frozen in place so existing links keep working.
 - This is the project lead's decision of 27 September 2026, adopting [Phase 1 implementation review finding P1-03](../Implementation-Reviews/Phase-1/findings.md#p1-03--each-delivery-is-written-up-several-times-and-the-file-read-first-keeps-growing).
 
-**Progress on 29 September 2026:**
+**Progress on 3 October 2026:**
 - Done: Phase 1 is complete. Tasks 1.1.1–1.5.3 are closed (#3–#26, and [#338](https://github.com/DGIWG-P507/glaux-server/issues/338) for the CI time budget). Claude (Anthropic) implemented #25 and #26 while Codex was out of usage.
 - [Review gate 1](../glaux-server-roadmap.md#54-review-gates) now pauses Phase 2 for the Phase 1 review.
-- Next: the four client research studies ([IDR-SRV-063 to IDR-SRV-066](../../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Plans/overall-idr-research-plan.md#idr-srv-063-to-idr-srv-066-csapi-client-studies)), one per `proceed`, then the Phase 1 review's steps 2–5.
+- The four client studies are accepted and Phase 1 review steps 1–3 are complete. The next `proceed`, following publication of the step-4 proposal in [PR #114](https://github.com/DGIWG-P507/glaux/pull/114), approved its bounded hosted execution and results report. This is the current authorized work; see the [review start page](../Implementation-Reviews/Phase-1/README.md) for its execution status.
 - Check GitHub for anything later.
 
 **Review gates:** before starting any server task, check the open [`review-gate` issues](https://github.com/DGIWG-P507/glaux-server/issues?q=is%3Aopen+label%3Areview-gate). The fifteen gates, what each blocks, and the rule are in [Roadmap §5.4](../glaux-server-roadmap.md#54-review-gates).
@@ -36,8 +36,9 @@
 | **Review gates:** implementation pauses at fifteen fixed points (phase ends, two checkpoints, health checks, final review). Each is a `review-gate` issue that only the project lead closes. These are periodic project-lead review pauses; they do not change the per-PR review and merge policy above. | 27 Sep 2026 | Roadmap v1.39 [§5.4](../glaux-server-roadmap.md#54-review-gates) |
 | **Changing the implementing assistant:** if one AI assistant runs out of usage, the project lead may assign work to another, under exactly the same rules.<br>• One implementer at a time: a claim comment naming the assistant before starting. Only the project lead reassigns a claimed issue.<br>• Record which assistant implemented and reviewed each task.<br>• If the provider running a phase's gate review also implemented tasks in that phase, a different provider (or a person) reviews those tasks before the gate closes.<br>• When an assistant cannot merge, the project lead merges the reviewed head and the assistant then closes the issue.<br>First assigned on 27 September 2026: #24's closing record, #25 and #26 to Claude while Codex is out of usage. The trade-off is less cross-provider independence, recovered by the cross-review. Each full gate review records what switching taught us. | 27 Sep 2026 | Server `CONTRIBUTING.md`, [Changing the implementing assistant](https://github.com/DGIWG-P507/glaux-server/blob/main/CONTRIBUTING.md#changing-the-implementing-assistant) |
 | **Client studies before the Phase 1 review continues:** four separate research studies of CSAPI clients (OSH Viewer and OSH JS Toolkit, OSCAR Viewer, cs-client-ts, Aleph) run and are reported individually before review steps 2–5. The OS4CSAPI client is recorded as mostly AI-written. No person is available for human expert review. | 29 Sep 2026 | [Phase 1 review charter](../Implementation-Reviews/Phase-1/README.md#client-studies-before-steps-25); [IDR-SRV-063 to IDR-SRV-066](../../../Research/Initial%20Designs/IDR/glaux-server/IDR%20Plans/overall-idr-research-plan.md#idr-srv-063-to-idr-srv-066-csapi-client-studies) |
+| **Phase 1 review step 4 execution approved:** one temporary, do-not-merge server diagnostic PR; existing fault-control evidence; a four-function mutation pilot (at most 24 changes, six per function); CodeQL CLI artifact-only scans and a locked-dependency advisory scan. GitHub-hosted runners only, existing six-lane gate and 30-minute limits, separate review before tool execution and publication, at most one diagnosed infrastructure/setup retry. No production fixes, permanent CI/settings changes, Step 5, Phase 2 or gate closure. | 3 Oct 2026 | Project lead's `proceed` following [PR #114](https://github.com/DGIWG-P507/glaux/pull/114); the [approved proposal](../Implementation-Reviews/Phase-1/evidence/04-test-strength-and-security-proposal.md) controls the scope. Close the diagnostic PR without merging and retain its branch. |
 
-Phase 1 implementation review finding P1-02 has not been acted on and remains open in the [review](../Implementation-Reviews/Phase-1/findings.md). Review steps 2–5 have not started; they wait for the four client studies.
+Phase 1 implementation review findings P1-02 and P1-04 remain open in the [review](../Implementation-Reviews/Phase-1/findings.md). Step 4 execution is authorized as above; Step 5 and gate closure remain separate decisions. Earlier evidence and the historical sections below are unchanged.
 
 ## The recommendation in plain English
 
