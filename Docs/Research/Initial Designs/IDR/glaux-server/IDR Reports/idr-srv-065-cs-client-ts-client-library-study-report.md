@@ -1,7 +1,7 @@
 # Section 065: cs-client-ts Client Library Study - Research Report
 
 **Topic ID:** IDR-SRV-065<br>
-**Report Status:** In Review<br>
+**Report Status:** Final — accepted September 30, 2026<br>
 **Research Plan:** [IDR-SRV-065 plan](../IDR%20Plans/idr-srv-065-cs-client-ts-client-library-study.md)<br>
 **Overall Research Plan:** [Controlling overall IDR plan](../IDR%20Plans/overall-idr-research-plan.md)<br>
 **Research Questions Covered:** Q1–Q6. Coverage, request construction, models, tolerance, fixture origins and independence are established from source and from the published package. Neither the library nor its tests were executed.<br>
@@ -26,10 +26,10 @@
 
 **Document Purpose:** Independent-as-far-as-possible client evidence for the Phase 1 review and later gates, a recommendation on IDR-SRV-056, and the library baseline for IDR-SRV-066 (Aleph). It is not a requirements document, and it does not authorise copying client code.<br>
 **Author(s):** Glaux research workflow, AI-assisted<br>
-**Accepted By:** TBD until project-lead acceptance (merge of this report's PR)<br>
-**Acceptance Date:** TBD<br>
+**Accepted By:** Glaux Project Lead, by merging [PR #110](https://github.com/DGIWG-P507/glaux/pull/110) as `2105f60d7992335971c5fc8be73132160db92067`, under the September 29 report-merge acceptance decision<br>
+**Acceptance Date:** September 30, 2026 (recorded October 3, 2026)<br>
 **Date:** September 29, 2026<br>
-**Last Updated:** September 29, 2026
+**Last Updated:** October 3, 2026 (acceptance record only; findings unchanged)
 
 ---
 
@@ -395,8 +395,8 @@ Classification key: **C** conforming; **S** stricter than required; **T** tolera
 
 ## 10. Next Steps and Handoff
 
-1. Project-lead acceptance by merging this report's PR, recorded on the next `proceed` (decision of September 29, 2026). Owner: Glaux Project Lead.
-2. IDR-SRV-066 (Aleph) starts on that `proceed`, using §4.6's handoff. Owner: Glaux research workflow.
+1. Accepted by the project lead's September 30, 2026 merge of PR #110; recorded October 3 under the decision of September 29. Acceptance does not adopt recommendations or change implementation scope.
+2. The October 3, 2026 `proceed` authorises IDR-SRV-066 (Aleph), using §4.6's handoff. Owner: Glaux research workflow.
 3. Recommendation 3 waits for a separately authorised IDR-SRV-056 discussion.
 
 No Goal, Guide, Roadmap, synthesis, server code or issue was changed by this study.
@@ -467,7 +467,7 @@ grep -rl ComponentNameSchema npm-0.1.3/package/dist                             
 - [x] Recommendations are explicit and actionable
 - [x] Risks and open questions are documented
 - [x] Success criteria validation is complete
-- [ ] Plan-owner acceptance and acceptance date are recorded before the topic is treated as complete downstream
+- [x] Plan-owner acceptance and acceptance date are recorded before the topic is treated as complete downstream
 - [x] Next steps are assigned
 
 [Lib]: https://github.com/SomethingCreativeStudios/cs-client-ts

@@ -1,8 +1,8 @@
 # Section 065: cs-client-ts Client Library Study - Research Plan
 
 **Topic ID:** IDR-SRV-065<br>
-**Status:** Research complete; report in review; acceptance by merging the report PR<br>
-**Last Updated:** September 29, 2026<br>
+**Status:** Complete and accepted — project-lead merge of PR #110, September 30, 2026<br>
+**Last Updated:** October 3, 2026 (acceptance record)<br>
 **Estimated Research Time:** Not yet calibrated; four bounded phases below, with further research iterations only if needed for the stated coverage.<br>
 **Actual Research Time:** About 25 minutes of research and drafting, 22:30–22:55 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Neither the library nor its tests were executed; only read-only downloads and a local Node comparison script were run. Nothing was installed.<br>
 **Deliverable Target:** `Docs/Research/Initial Designs/IDR/glaux-server/IDR Reports/idr-srv-065-cs-client-ts-client-library-study-report.md`
@@ -285,10 +285,10 @@ Internal prerequisites are not waived by labelling them unavailable or deferred.
 - [x] Phase 4 synthesis complete
 - [x] Deliverable draft complete
 - [x] Deliverable reviewed (separate reviewer: `4051a44` had four blocking corrections; `4f871ed` was clean; the final record commit is confirmed in its PR; acceptance by merging the report PR)
-- [ ] Deliverable accepted
+- [x] Deliverable accepted by project-lead merge of [PR #110](https://github.com/DGIWG-P507/glaux/pull/110), September 30, 2026; recorded October 3
 
 **Actual Research Time:** About 25 minutes of research and drafting, 22:30–22:55 UTC September 29, 2026, in one AI-assisted iteration, before separate review. This is not a human-hours estimate. Neither the library nor its tests were executed; only read-only downloads and a local Node comparison script were run. Nothing was installed.<br>
-**Completion Date:** September 29, 2026 (research and report; acceptance pending)
+**Completion Date:** September 29, 2026 (research and report); September 30, 2026 (accepted)
 
 ---
 

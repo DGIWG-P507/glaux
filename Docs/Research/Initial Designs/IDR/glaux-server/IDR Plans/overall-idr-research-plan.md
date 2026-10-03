@@ -1,8 +1,8 @@
 # Glaux Server Overall IDR Research Plan
 
-**Version:** 3.122<br>
-**Date:** September 29, 2026<br>
-**Status:** Original IDR and supplements 058–062 complete and accepted; research findings and acceptance records unchanged. Client supplements 063 and 064 are complete and accepted; 065 research is complete and its report is in review; 066 is planned. Each runs and is reported individually before the Phase 1 implementation review resumes. See the [current Roadmap handoff](../../../../../Plans/glaux-server/glaux-server-roadmap.md#53-immediate-next-step) for issue-publication and implementation status, and the [Guide's Goal-paired explanations](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for how the approved capabilities will be implemented<br>
+**Version:** 3.123<br>
+**Date:** October 3, 2026<br>
+**Status:** Original IDR and supplements 058–062 complete and accepted; research findings and acceptance records unchanged. Client supplements 063–065 are complete and accepted; 066 research is complete and its report is in review. After its acceptance, the Phase 1 implementation review resumes on a new `proceed`. See the [current Roadmap handoff](../../../../../Plans/glaux-server/glaux-server-roadmap.md#53-immediate-next-step) for issue-publication and implementation status, and the [Guide's Goal-paired explanations](../../../../../Plans/glaux-server/glaux-server-implementation-guide.md#11-how-the-implementation-fulfills-the-goal) for how the approved capabilities will be implemented<br>
 **Scope:** Initial Design Research (IDR) for `glaux-server`<br>
 **Plan Owner:** Glaux Project Lead<br>
 **Final Report Model:** Indexed synthesis topic `IDR-SRV-057`<br>
@@ -75,7 +75,7 @@ The shared upstream-history register is maintained across topics as supporting e
 ---
 
 **Original IDR Topics:** 67 (complete and accepted)<br>
-**Post-Synthesis Supplemental Topics:** 9 (IDR-SRV-058 through IDR-SRV-062 complete and accepted; IDR-SRV-063 and IDR-SRV-064 complete and accepted; IDR-SRV-065 research complete, report in review; IDR-SRV-066 planned)
+**Post-Synthesis Supplemental Topics:** 9 (IDR-SRV-058 through IDR-SRV-065 complete and accepted; IDR-SRV-066 research complete, report in review)
 
 Throughout the Glaux Server IDR plan set, a numeric topic range includes every letter-suffixed topic inserted within that indexed range unless the text explicitly excludes it. For example, `IDR-SRV-001` through `IDR-SRV-040` includes `IDR-SRV-010A`, `IDR-SRV-014A` through `IDR-SRV-014H`, and `IDR-SRV-039A`.
 
@@ -522,7 +522,7 @@ Common boundary for all four:
 
 ##### IDR-SRV-065: cs-client-ts Client Library Study
 
-- Status: Research complete; report in review. The project lead's September 29, 2026 `proceed` after PR #109 merged (`4cbd607`) authorized this research/report iteration.
+- Status: Complete and accepted September 30, 2026, by the project lead's merge of [PR #110](https://github.com/DGIWG-P507/glaux/pull/110), `2105f60d7992335971c5fc8be73132160db92067`. Acceptance recorded October 3 under the September 29 acceptance-by-merge decision; substantive findings unchanged.
 - Report: [idr-srv-065-cs-client-ts-client-library-study-report.md](../IDR%20Reports/idr-srv-065-cs-client-ts-client-library-study-report.md). The library is strongly aligned with published CSAPI and can create and read a Glaux System using GeoJSON and Bearer authentication. 94 of 98 fixtures are exact OGC examples; one tolerant reading on observation results is shared with CS-GO. No planning change is proposed.
 - Sequence: plan publication first; research and report on a later `proceed`. Merging the report PR is the project lead's acceptance, recorded on the next `proceed` together with the next study (project-lead decision, September 29, 2026). No synthesis addendum or planning edit is planned unless the project lead authorises one after acceptance.
 - Focus: The `cs-client-ts` library, published as `cs-api-client`. Covers coverage, request construction, response models, tests and fixture origins. It also assesses independence explicitly, because the same author wrote CS-GO (IDR-SRV-014B and IDR-SRV-062).
@@ -531,7 +531,8 @@ Common boundary for all four:
 
 ##### IDR-SRV-066: Aleph (Alephex) Connected Systems UI Client Study
 
-- Status: Plan prepared for publication, September 29, 2026. No research has been run. Starts after IDR-SRV-065 is accepted.
+- Status: Research complete; report in review, October 3, 2026. The project lead's `proceed` authorized this study after IDR-SRV-065 acceptance. Nothing in Aleph, its tests or a live Glaux/client environment was executed.
+- Report: [idr-srv-066-aleph-connected-systems-ui-client-study-report.md](../IDR%20Reports/idr-srv-066-aleph-connected-systems-ui-client-study-report.md). Application at `7af6c076`, exact library 0.1.3 and Glaux `27955c1`: Aleph's SensorML/list workflows require later capabilities despite the library's minimal GeoJSON path; OIDC disables its MQTT transport, and experimental discovery/media/event contracts differ. A bounded history refresh records newer Part 3 draft `72b8ec05` without adopting it. Conditional later client-matrix inclusion; no Goal/Guide/Roadmap change recommended.
 - Sequence: plan publication first; research and report on a later `proceed`. Merging the report PR is the project lead's acceptance, recorded on the next `proceed` together with the next study (project-lead decision, September 29, 2026). No synthesis addendum or planning edit is planned unless the project lead authorises one after acceptance.
 - Focus: The Aleph application (`Alephex`) built on `cs-api-client` `0.1.3`. Covers end-to-end workflows, library-versus-application attribution, MQTT and OpenID Connect use, tests, and a short cross-study note for the Phase 1 review.
 - Plan: [idr-srv-066-aleph-connected-systems-ui-client-study.md](idr-srv-066-aleph-connected-systems-ui-client-study.md).
@@ -814,6 +815,8 @@ The final report must:
 | 2026-09-29 | Report Acceptance by Merge | The project lead decided that merging a client-study report PR is their acceptance of that report, so no separate acceptance `proceed` or PR is needed. The next `proceed` records the acceptance together with the next study | Applies only to the client-study reports IDR-SRV-064 through IDR-SRV-066; separate review of each report before its PR is unchanged | Glaux Project Lead |
 | 2026-09-29 | IDR-SRV-064 Acceptance and IDR-SRV-065 Research Authorization | Merging PR #109 (`4cbd607`) accepted the IDR-SRV-064 report; the following `proceed` authorized the IDR-SRV-065 research/report iteration | Accepts IDR-SRV-064 without adopting its recommendations or changing the Goal, Guide or Roadmap | Glaux Project Lead |
 | 2026-09-29 | IDR-SRV-065 Research Completion | Studied cs-client-ts at `a632798` and `4724b0e` and the npm 0.1.0–0.1.3 packages (0.1.3 matched to `a632798`), classified all 98 fixtures against official OGC and draft Part 3 examples, checked the two stated departures against the schemas and CS-GO, and compared with Glaux Server `27955c1`; report placed in review | Phase 1 GeoJSON create/read path consistent with Glaux; SensorML default and later-gate checks identified; no planning change proposed. Nothing executed; no Goal, Guide, Roadmap or server change | Pending Glaux Project Lead review |
+| 2026-09-30 (recorded 2026-10-03) | IDR-SRV-065 Acceptance | The project lead merged report PR #110 as `2105f60d7992335971c5fc8be73132160db92067`; this accepts IDR-SRV-065 under the September 29 rule | Records existing acceptance without reopening research or adopting new requirements | Glaux Project Lead |
+| 2026-10-03 | IDR-SRV-066 Research Authorization and Completion | The project lead's `proceed` authorized the final client study after IDR-SRV-065 acceptance. Source-based report completed against Alephex `7af6c076`, npm 0.1.3 and Glaux `27955c1`; report in review, with a bounded Part 3 history refresh | No software installation/execution or downstream plan/code change. Project-lead merge accepts the report; the next `proceed` then resumes Phase 1 review step 2, not implementation | Glaux Project Lead (research authorization); report acceptance pending |
 
 ---
 
@@ -844,8 +847,8 @@ Supplemental progress is tracked separately from the completed category totals a
 | IDR-SRV-062 | Complete (1/1) | 1/1 | 1/1 | Research accepted; synthesis/discussion complete; approved clarifications in Guide v1.1 / Roadmap v1.2; issue publication next | 2026-09-18 |
 | IDR-SRV-063 | Complete (1/1) | 1/1 | 1/1 | Research complete and accepted | 2026-09-29 |
 | IDR-SRV-064 | Complete (1/1) | 1/1 | 1/1 | Research complete and accepted | 2026-09-29 |
-| IDR-SRV-065 | Complete (1/1) | 1/1 | 0/1 | Research complete; report in review; acceptance by merging its PR | 2026-09-29 |
-| IDR-SRV-066 | Complete (1/1) | 0/1 | 0/1 | Plan prepared for publication; research awaits its own `proceed` | 2026-09-29 |
+| IDR-SRV-065 | Complete (1/1) | 1/1 | 1/1 | Accepted September 30 by PR #110 merge; recorded October 3 | 2026-10-03 |
+| IDR-SRV-066 | Complete (1/1) | 1/1 | 0/1 | Research complete; report in review; acceptance by project-lead merge | 2026-10-03 |
 
 ---
 
