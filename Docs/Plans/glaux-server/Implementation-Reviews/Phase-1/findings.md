@@ -2,13 +2,14 @@
 
 [Review start page](README.md) · [Evidence](evidence/)
 
-Steps 1 (delivery pipeline) and 2 (test-source audit) are complete. The project lead adopted P1-01 and P1-03 on 27 September 2026; P1-02 remains open. Step 2 adds no finding: the [bounded source-to-test sample](evidence/02-test-source-audit.md) supports its selected expected answers, while distinguishing published rules, the selected transaction draft and Glaux's Phase 1 choices. It neither executed tests nor establishes whole-suite correctness or conformance. Steps 3–5 have not started. The [scoping observations](evidence/00-scoping-observations.md) are starting points for the steps to check, not findings.
+Steps 1–3 are complete. The project lead adopted P1-01 and P1-03 on 27 September 2026; P1-02 remains open. Step 2 adds no finding: the [bounded source-to-test sample](evidence/02-test-source-audit.md) supports its selected expected answers, while distinguishing published rules, the selected transaction draft and Glaux's Phase 1 choices. Step 3's [architecture inspection](evidence/03-phase-1-architecture.md) adds P1-04 and locates Phase 2 extension work within existing tasks; it found no blocking architecture defect in its sample. Neither source-inspection step executed tests or establishes whole-suite correctness or conformance. Steps 4–5 have not started. The [scoping observations](evidence/00-scoping-observations.md) are starting points for the steps to check, not findings.
 
 | ID | Title | Severity | Status |
 |---|---|---|---|
 | [P1-01](#p1-01--ci-is-likely-to-reach-its-20-minute-limit-within-the-next-few-issues) | CI is likely to reach its 20-minute limit within the next few issues | High | Adopted |
 | [P1-02](#p1-02--the-implementing-assistant-uses-ci-as-its-compiler) | The implementing assistant uses CI as its compiler | Low | Open |
 | [P1-03](#p1-03--each-delivery-is-written-up-several-times-and-the-file-read-first-keeps-growing) | Each delivery is written up several times, and the file read first keeps growing | Medium | Adopted |
+| [P1-04](#p1-04--api-proof-programs-repeat-process-and-wire-client-plumbing) | API proof programs repeat process and wire-client plumbing | Low | Open |
 
 ### P1-01 — CI is likely to reach its 20-minute limit within the next few issues
 
@@ -77,6 +78,19 @@ Steps 1 (delivery pipeline) and 2 (test-source audit) are complete. The project 
 - **Status:** Adopted on 27 September 2026. Recorded in the [action list Current state](../../Review/action-list.md#current-state), planning `AGENTS.md`, Roadmap v1.38 §8 and server `CONTRIBUTING.md` (via task 1.1.5's server PR #334).
   - The historical handoffs are frozen in place rather than moved to an archive, because Roadmap, issue and PR links point into them.
   - As a result the action list stops growing but stays about 198 KB. Sessions are pointed to its Current state section only.
+
+### P1-04 — API proof programs repeat process and wire-client plumbing
+
+**In plain English:** The creation and retrieval tests repeat code for starting the server, cleaning up and reading its responses. A fix to that plumbing has multiple copies to find. Share those mechanics as the next capabilities are added, while keeping each test's expected answer independently written.
+
+- **Step:** 3, [evidence §4](evidence/03-phase-1-architecture.md#4-p1-04--share-proof-plumbing-not-expected-answers).
+- **Examined:** server `27955c1b9260cd811ad6bc08f85feab43ad65028`; planning `145e0d40b869d56ae2568b485ffe8f50408ccf87`.
+- **What was seen:** `system-create-proof.rs` lines 37–186 and `system-read-proof.rs` lines 39–189 repeat fixture/process handling; their wire helpers repeat bounded HTTP parsing, with a legitimate HEAD-specific difference. Three Python wrappers repeat build and completion-marker handling. The evidence supplies pinned source links and identifies existing shared helpers.
+- **Why it matters:** future fixes can diverge as more capability proofs are added. No incorrect outcome, runtime delay or quantitative CI forecast is asserted.
+- **Kind:** maintenance recommendation, not a standards obligation or adopted requirement.
+- **Severity:** Low.
+- **Suggested owner:** project-lead decision; if adopted, incremental test-only factoring within #49/#50 as those proofs grow, with later runner integration at #80. No new framework or prerequisite issue proposed. Preserve independent expectations, ordered execution evidence and fault-control sensitivity.
+- **Status:** Open.
 
 ## Format
 

@@ -1,8 +1,8 @@
 # Glaux Server implementation review — Phase 1
 
-**Status: open. Steps 1 (delivery pipeline) and 2 (test-source audit) are complete. Step 2 found no incorrect expected answer or unsupported source claim requiring a new finding in its bounded sample; it did not execute tests or establish full conformance. Of the [three step-1 findings](findings.md), P1-01 and P1-03 were adopted on 27 September 2026 and P1-02 remains open. Phase 1 implementation finished on 29 September 2026 (#26 closed). All four client studies are accepted. Steps 3–5 have not started; each needs its own `proceed`, and all must complete before the project lead closes review gate 1.** Set up 27 September 2026; step 1 completed the same day; step 2 completed 3 October 2026.
+**Status: open. Steps 1–3 are complete; steps 4–5 have not started. Step 3 found no blocking architecture defect in its bounded source inspection and added one Low maintenance recommendation, P1-04. P1-01 and P1-03 are adopted; P1-02 and P1-04 remain open. Phase 1 implementation finished on 29 September 2026 (#26 closed), and all four client studies are accepted. Next is step 4's proposal, on its own `proceed`; no new tools or campaigns are authorized by this status. The remaining steps must complete before the project lead closes review gate 1.** Set up 27 September 2026; step 1 completed the same day; steps 2–3 completed 3 October 2026. Neither source-inspection step executed tests or established full correctness/conformance.
 
-[Findings](findings.md) · [Test-source audit](evidence/02-test-source-audit.md) · [Evidence](evidence/) · [Scoping observations](evidence/00-scoping-observations.md) · [Planning documents](../../README.md) · [Completed pre-implementation review](../../Review/README.md)
+[Findings](findings.md) · [Architecture review](evidence/03-phase-1-architecture.md) · [Test-source audit](evidence/02-test-source-audit.md) · [Evidence](evidence/) · [Scoping observations](evidence/00-scoping-observations.md) · [Planning documents](../../README.md) · [Completed pre-implementation review](../../Review/README.md)
 
 ## What this review is
 
@@ -64,7 +64,7 @@ The project lead reports that the first two are the most human-written CSAPI cli
 
 Once all four reports are accepted, the next `proceed` resumes this review. Their findings feed step 2 (where test answers come from), step 5 (the OpenSensorHub comparison) and the client checks that later gates run. They do not change the standard's authority.
 
-**Completed 3 October 2026:** the project lead's merge of [PR #111](https://github.com/DGIWG-P507/glaux/pull/111), `f74eb659bab70b394b1027d1d43b3066561762de`, accepted IDR-SRV-066, completing the four-study prerequisite. The following `proceed` authorized step 2. Its [evidence](evidence/02-test-source-audit.md) reuses the accepted studies without treating a client application's preferences as server requirements. The next bounded step is **step 3, Phase 1 architecture**, on a new `proceed`; Phase 2 remains blocked by [gate 1 (#339)](https://github.com/DGIWG-P507/glaux-server/issues/339).
+**Completed 3 October 2026:** the project lead's merge of [PR #111](https://github.com/DGIWG-P507/glaux/pull/111), `f74eb659bab70b394b1027d1d43b3066561762de`, accepted IDR-SRV-066, completing the four-study prerequisite. The following `proceed` authorized step 2. Its [evidence](evidence/02-test-source-audit.md) reuses the accepted studies without treating a client application's preferences as server requirements. The project lead then merged [PR #112](https://github.com/DGIWG-P507/glaux/pull/112) and authorized step 3, now recorded in the [architecture review](evidence/03-phase-1-architecture.md). The next bounded step is **step 4's test-strength/security-scanning proposal**, on a new `proceed`; Phase 2 remains blocked by [gate 1 (#339)](https://github.com/DGIWG-P507/glaux-server/issues/339).
 
 ## Questions for the project lead
 
