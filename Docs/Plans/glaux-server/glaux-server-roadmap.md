@@ -1,14 +1,14 @@
 # Glaux Server Roadmap
 
-**Version:** 1.40<br>
-**Date:** 29 September 2026<br>
+**Version:** 1.41<br>
+**Date:** 4 October 2026<br>
 **Effort:** Glaux Server<br>
-**Status:** Issue set published; Phase 1 implementation complete (29 September 2026); review gate 1 pauses Phase 2. Per-issue status lives in GitHub issues; this document's status is updated when a capability group or phase completes.<br>
+**Status:** Original Phase 1 implementation complete (29 September 2026); adopted test-only follow-up 1.5.4 pending; review gate 1 pauses Phase 2. Per-issue delivery status lives in GitHub issues.<br>
 **Depends On:** [Goal and Definition v1.10](glaux-server-goal-and-definition.md), Approved<br>
 **Implements:** [Implementation Guide v1.21][Guide], Baselined<br>
-**Implementation status:** The 303-task outline across nine phases and 45 groups is published. As of 29 September 2026, Phase 1 is complete: tasks 1.1.1–1.5.3 (#3–#26 and #338) are closed, and review gate 1 pauses Phase 2. Implementation pauses at the fifteen review gates in §5.4. GitHub issues are the live per-issue status, and a phase or group completes only when all its constituent work passes. The action list's [Current state](Review/action-list.md#current-state) holds standing decisions. The historical #23 handoff remains in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
+**Implementation status:** The outline now has 304 tasks across nine phases and 45 groups. The 303 earlier task identities are unchanged. Phase 1's original tasks 1.1.1–1.5.3 (#3–#26 and #338) remain closed; its new test-only follow-up 1.5.4 / [#361](https://github.com/DGIWG-P507/glaux-server/issues/361) is pending. Review gate 1 pauses Phase 2. Implementation pauses at the fifteen review gates in §5.4. GitHub issues are the live per-issue status, and a phase or group completes only when all its constituent work passes. The action list's [Current state](Review/action-list.md#current-state) holds standing decisions. The historical #23 handoff remains in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
 
-**Revision summary:** Phase 1 completed on 29 September 2026, and review gate 1 now pauses Phase 2. The project lead also decided that four client research studies (IDR-SRV-063 to IDR-SRV-066) come before the rest of the Phase 1 review. No task definitions, IDs or dependencies change, and Goal v1.10 and Guide v1.21 are unchanged. The review gates from v1.39 and the P1-01/P1-03 changes from v1.38 remain as recorded in §§5.4 and 10.
+**Revision summary:** The project lead's 4 October decision adds only test-fix leaf 1.5.4 for P1-05 and bounded test-maintenance acceptance items under 2.3.1, 2.3.2 and 2.6.1 for P1-04. The existing 2.3.1 dependency on group 1.5 now includes its new child. Partial OSH comparison evidence is accepted and further comparison work ended in the review charter; no missing check is claimed complete. P1-02's environment change is not adopted. Goal v1.10, Guide v1.21 and all other tasks remain unchanged; no code or gate closure is authorised by publishing this update.
 
 ## 1. Purpose and Executive Summary
 
@@ -24,7 +24,7 @@ The numbered order is the default execution order. The dependency column identif
 
 | Phase | Main result | Prerequisites | Capability groups | Issue-sized subtasks | Status |
 |---|---|---|---:|---:|---|
-| 1. Running foundation and first registration | Buildable service; authorized System creation/read through real storage; initial tests and restore proof | Goal/Guide baseline and selected build/test environment | 5 | 25 | In progress |
+| 1. Running foundation and first registration | Buildable service; authorized System creation/read through real storage; initial tests and restore proof | Goal/Guide baseline and selected build/test environment | 5 | 26 | Original work complete; test follow-up 1.5.4 pending |
 | 2. Complete Part 1 resources | Descriptions, relationships, collections, representations, native filters and required writes | Phase 1 | 6 | 62 | Planned |
 | 3. Observations, status and System Events | Schema-bound ordinary-JSON ingestion, retrieval and native querying | Phase 2 | 5 | 39 | Planned |
 | 4. Complete SWE payload encodings | SWE JSON, Text and Binary observation paths with exact value preservation; selected experimental Protobuf observation subset | Phase 3; shared component model from Phase 2 | 5 | 36 | Planned |
@@ -34,7 +34,7 @@ The numbered order is the default execution order. The dependency column identif
 | 8. Exchange, interrupted operation and restore | Bounded administrative exchange, complete recovery workflows and operational examples | Phases 5–7; log/SSE from Phase 6 | 4 | 24 | Planned |
 | 9. Integrated verification and release readiness | Full-target evidence including the bounded Protobuf experiment, external-client workflows and clean reference setup | Phases 1–8 | 5 | 27 | Planned |
 
-The 45 two-level IDs (for example, `2.3`) are capability groups, not individual implementation issues. Their **303 three-level children** (for example, `2.3.1`) are the current issue-sized task outline: the original 286, 16 approved Part 5 additions, and task 1.1.5, added from the Phase 1 implementation review. Each child is intended to include implementation, verification and relevant documentation within one AI iteration after its dependencies are ready. The issue count is derived from this breakdown, not a preset quota or a delivery-time estimate. Publication proceeds in authorized batches under §5; §5.3 records the current handoff.
+The 45 two-level IDs (for example, `2.3`) are capability groups, not individual implementation issues. Their **304 three-level children** (for example, `2.3.1`) are the current issue-sized task outline: the original 286, 16 approved Part 5 additions, and Phase 1 review follow-ups 1.1.5 and 1.5.4. Each child is intended to include implementation, verification and relevant documentation within one AI iteration after its dependencies are ready. The issue count is derived from this breakdown, not a preset quota or a delivery-time estimate. Publication proceeds in authorized batches under §5; §5.3 records the current handoff.
 
 **Effort estimate:** Not yet calibrated. Phase/group complexity labels identify technical risk, not hours. One iteration per leaf is the sizing target, including tests and documentation, not a guarantee against an unexpected blocker. Do not infer calendar duration, staffing or lines of code from issue counts. Use actual execution to correct a demonstrably oversized leaf explicitly; do not turn a broad parent group into an issue or silently spread it across unspecified future slices.
 
@@ -166,6 +166,8 @@ All implementation subtasks are initially **planned**, with **sizing target: one
        - GitHub issue: [#25](https://github.com/DGIWG-P507/glaux-server/issues/25).
      - **1.5.3 Restore the first System in an isolated database.** Scope: Add a reproducible backup/restore example for current resources, revisions and artifacts with effects disabled in the clone. Done: The independent System workflow passes after restore, exact context is preserved, no outgoing work is delivered and the original database is untouched. Guide: §§4.7, 4.12, 8.2. Depends: 1.5.2.
        - GitHub issue: [#26](https://github.com/DGIWG-P507/glaux-server/issues/26).
+     - **1.5.4 Close the source-permission unit-test gap.** Scope: Add positive `PermissionSet::allows_source` unit assertions for nonempty resource-specific and unrestricted grants, preserving the existing rejection cases. Done: The unchanged implementation passes; a disposable constant-false replacement compiles and fails the intended allowing assertion; the original production code is restored and required CI passes on the reviewed head. No production redesign, new tool or broad mutation campaign. Guide: §§4.10, 8.1.1. Depends: 1.4.5, 1.5.1. Added 4 October 2026 from adopted finding P1-05; execute only on the next authorised iteration, then return to the project lead for gate 1.
+       - GitHub issue: [#361](https://github.com/DGIWG-P507/glaux-server/issues/361).
 
 **Phase exit:** The documented build and first real workflow pass with safe negative cases and an initial restore proof. Exactness/recursive-validation failures affecting subsequent storage are resolved or explicitly block that dependent work. The server remains an accurately described partial implementation.
 
@@ -237,8 +239,10 @@ All implementation subtasks are initially **planned**, with **sizing target: one
    - Dependencies: 2.2; extend the real persisted slice, not a parallel resource store.
    - Issue-sized subtasks:
      - **2.3.1 Complete System registration and reads.** Scope: Extend the first persisted System path to the complete selected description, UID uniqueness, canonical/list responses and source revisions. Done: Rich valid Systems survive restart in both formats; duplicate UIDs and denied registration fail without partial rows or outgoing work. Guide: §§4.1–4.3, 6.1–6.2. Depends: 2.2, 1.5.
+       - Adopted P1-04 maintenance, 4 October 2026: as these proofs grow, extract their duplicated process/fixture/wire mechanics into small shared test helpers. Keep expected answers independent, preserve HEAD handling, isolation/cleanup and fault sensitivity, and link the result in the issue's closing record. No general framework or separate cleanup campaign.
        - GitHub issue: [#49](https://github.com/DGIWG-P507/glaux-server/issues/49).
      - **2.3.2 Procedure registration and reads.** Scope: Add Procedure persistence, POST, canonical GET/list and authorized System-to-Procedure associations. Done: Registered Procedures are discoverable with stable identity in both formats; wrong target types, UID conflicts and unauthorized references fail safely. Guide: §§4.1–4.3, 6.1–6.2. Depends: 2.3.1.
+       - Adopted P1-04 maintenance, 4 October 2026: reuse 2.3.1's test mechanics rather than copy them for Procedures; retain independently authored Procedure expectations and fault sensitivity. Link the reuse in the closing record.
        - GitHub issue: [#50](https://github.com/DGIWG-P507/glaux-server/issues/50).
      - **2.3.3 Deployment registration and reads.** Scope: Add Deployment persistence, POST, canonical GET/list and typed System participation. Done: Multiple participating Systems retain distinct identities and valid deployment context; invalid memberships and unauthorized links cannot be committed or disclosed. Guide: §§4.1–4.3, 6.1–6.2. Depends: 2.3.1.
        - GitHub issue: [#51](https://github.com/DGIWG-P507/glaux-server/issues/51).
@@ -314,6 +318,7 @@ All implementation subtasks are initially **planned**, with **sizing target: one
    - Dependencies: 2.1–2.5. Advertise a class only when its own complete obligations pass.
    - Issue-sized subtasks:
      - **2.6.1 Common and Features prerequisite HTTP tests.** Scope: Extend the independent runner with the applicable landing, API, conformance, collection, linking and core request tests and source identifiers. Done: Real-server positive/negative cases pass through a path-prefixed root, while malformed links or overstated declarations fail the runner. Guide: §§1.2, 4.1, 7.1–7.3, 8.1. Depends: 2.1, 2.2, 2.3, 2.4, 2.5.
+       - Adopted P1-04 maintenance, 4 October 2026: reuse the shared mechanics where applicable during the already-planned runner integration; preserve independent raw-response checks and expected answers. Record reused helpers or justified layer differences in the closing record, without a new framework or repository-wide refactor.
        - GitHub issue: [#80](https://github.com/DGIWG-P507/glaux-server/issues/80).
      - **2.6.2 System and deployment class tests.** Scope: Implement independent direct-class tests for Systems/Subystems and Deployments/Subdeployments using the connected fixture. Done: Required routes, canonical identities, recursive sets and relationships pass; deliberately wrong parents or missing descendants are detected rather than copied from server output. Guide: §§4.2, 7.1–7.2, 8.2. Depends: 2.6.1.
        - GitHub issue: [#81](https://github.com/DGIWG-P507/glaux-server/issues/81).
@@ -1063,8 +1068,9 @@ The publication reconciliation above records the original issue set. Guide v1.4'
 
 **Current execution status:** GitHub issues record per-issue status and delivery; each closed issue's execution record names the next ready issue.
 - As of 29 September 2026, Phase 1 is complete: tasks 1.1.1–1.5.3 (#3–#26 and #338) are closed. The historical #23 handoff is in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
-- Review gate 1 (§5.4) pauses Phase 2. Before the Phase 1 review continues, the project lead ordered four client research studies (IDR-SRV-063 to IDR-SRV-066; see the [action list](Review/action-list.md#current-state)).
-- This paragraph is updated when a capability group or phase completes, not after each issue.
+- On 4 October 2026, the project lead added only the test-fix follow-up 1.5.4 / [#361](https://github.com/DGIWG-P507/glaux-server/issues/361), bringing the published outline to 304 tasks. The original 25 Phase 1 deliveries remain complete; the corrective task is not started. #49's expanded prerequisites include this new child of group 1.5.
+- Review gate 1 (§5.4) still pauses Phase 2. The four client studies are accepted; the lead has ended further OSH comparison with its partial evidence preserved. Next, on a new `proceed`, is 1.5.4, then the lead's gate decision. [Current decisions](Review/action-list.md#current-state).
+- This paragraph changes for approved planning decisions and capability-group/phase completion, not per-issue handoffs.
 
 The expanded issue set is complete and verified. Resume only one dependency-ready issue per subsequent authorised iteration. Later build/database work still depends on the approved-prerequisite inspection; missing tools are not permission to install them.
 
@@ -1320,6 +1326,8 @@ Version 1.39 records the project lead's 27 September 2026 decision to pause impl
 - No task definition, ID or other dependency changes. Goal v1.10 and Guide v1.21 are unchanged.
 
 Version 1.40 records Phase 1 completion on 29 September 2026. Tasks 1.1.1–1.5.3 are closed, and review gate 1 now pauses Phase 2. It also records the project lead's decision that four client research studies (IDR-SRV-063 to IDR-SRV-066) precede the rest of the Phase 1 review. No task definition, ID or dependency changes. Goal v1.10 and Guide v1.21 are unchanged.
+
+Version 1.41 records the project lead's 4 October 2026 review dispositions: add test-only leaf 1.5.4 / #361 for P1-05 (304 tasks total, 26 in Phase 1), and bounded P1-04 maintenance checklists in existing #49/#50/#80. #49's existing group-1.5 dependency expands to include #361. The review charter accepts partial Step 5 evidence and ends further OSH work; P1-02 is not adopted. Earlier evidence, closed deliveries, all other task IDs/dependencies, Goal v1.10 and Guide v1.21 remain unchanged. Publication is not execution and gate 1 is not closed.
 
 Use version updates for material sequencing or scope changes. Technical design changes belong in the Guide; mission/scope changes belong in the Goal first. Keep task-to-Guide/test connections current without copying the standards into a separate requirement list. Historical research acceptance and findings remain unchanged.
 

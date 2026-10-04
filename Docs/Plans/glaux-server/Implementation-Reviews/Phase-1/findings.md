@@ -2,15 +2,15 @@
 
 [Review start page](README.md) · [Evidence](evidence/)
 
-Steps 1–4 are complete within their stated bounds. The project lead adopted P1-01 and P1-03 on 27 September 2026; P1-02 remains open. Step 2 adds no finding: the [bounded source-to-test sample](evidence/02-test-source-audit.md) supports its selected expected answers, while distinguishing published rules, the selected transaction draft and Glaux's Phase 1 choices. Step 3's [architecture inspection](evidence/03-phase-1-architecture.md) adds P1-04 and locates Phase 2 extension work within existing tasks; it found no blocking architecture defect in its sample. Neither source-inspection step executed tests or establishes whole-suite correctness or conformance. Step 4's [hosted results](evidence/05-test-strength-and-security-results.md) add P1-05, a bounded unit-test gap. The [Rust follow-up](evidence/06-rust-security-followup.md) completed all selected queries with no reported security results, but modeling limits remain and the diagnostic stayed red. Step 5's [partial comparison](evidence/08-opensensorhub-comparison-results.md) adds no Glaux finding: its eight groups passed, while ten peer cases and peer conformance-document navigation remain unrun. The reported peer differences and diagnostic error do not establish completed interoperability. The [scoping observations](evidence/00-scoping-observations.md) are starting points for the steps to check, not findings.
+Steps 1–4 are complete within their stated bounds. The project lead adopted P1-01 and P1-03 on 27 September 2026; the 4 October decision does not adopt P1-02 and adopts P1-04/P1-05 with delivery pending. Step 2 adds no finding: the [bounded source-to-test sample](evidence/02-test-source-audit.md) supports its selected expected answers, while distinguishing published rules, the selected transaction draft and Glaux's Phase 1 choices. Step 3's [architecture inspection](evidence/03-phase-1-architecture.md) adds P1-04 and locates Phase 2 extension work within existing tasks; it found no blocking architecture defect in its sample. Neither source-inspection step executed tests or establishes whole-suite correctness or conformance. Step 4's [hosted results](evidence/05-test-strength-and-security-results.md) add P1-05, a bounded unit-test gap. The [Rust follow-up](evidence/06-rust-security-followup.md) completed all selected queries with no reported security results, but modeling limits remain and the diagnostic stayed red. Step 5's [partial comparison](evidence/08-opensensorhub-comparison-results.md) adds no Glaux finding: its eight groups passed, while ten peer cases and peer conformance-document navigation remain unrun. The reported peer differences and diagnostic error do not establish completed interoperability. The project lead accepted that partial evidence and ended Step 5 on 4 October; no further comparison run is queued. The [scoping observations](evidence/00-scoping-observations.md) are starting points for the steps to check, not findings.
 
 | ID | Title | Severity | Status |
 |---|---|---|---|
 | [P1-01](#p1-01--ci-is-likely-to-reach-its-20-minute-limit-within-the-next-few-issues) | CI is likely to reach its 20-minute limit within the next few issues | High | Adopted |
-| [P1-02](#p1-02--the-implementing-assistant-uses-ci-as-its-compiler) | The implementing assistant uses CI as its compiler | Low | Open |
+| [P1-02](#p1-02--the-implementing-assistant-uses-ci-as-its-compiler) | The implementing assistant uses CI as its compiler | Low | Not adopted; retain current workflow |
 | [P1-03](#p1-03--each-delivery-is-written-up-several-times-and-the-file-read-first-keeps-growing) | Each delivery is written up several times, and the file read first keeps growing | Medium | Adopted |
-| [P1-04](#p1-04--api-proof-programs-repeat-process-and-wire-client-plumbing) | API proof programs repeat process and wire-client plumbing | Low | Open |
-| [P1-05](#p1-05--source-permission-unit-tests-miss-the-allowing-case) | Source-permission unit tests miss the allowing case | Low | Open |
+| [P1-04](#p1-04--api-proof-programs-repeat-process-and-wire-client-plumbing) | API proof programs repeat process and wire-client plumbing | Low | Adopted; pending under #49/#50/#80 |
+| [P1-05](#p1-05--source-permission-unit-tests-miss-the-allowing-case) | Source-permission unit tests miss the allowing case | Low | Adopted; pending under #361 |
 
 ### P1-01 — CI is likely to reach its 20-minute limit within the next few issues
 
@@ -59,7 +59,7 @@ Steps 1–4 are complete within their stated bounds. The project lead adopted P1
 - **Kind:** recommendation.
 - **Severity:** Low.
 - **Suggested owner:** project-lead decision, [evidence §5](evidence/01-delivery-pipeline.md#5-options-for-the-project-lead) option E. Because the laptop is excluded, this would mean giving the assistant a different working environment with a pinned toolchain. That is a larger change than it sounds, and not worth making for this finding alone.
-- **Status:** Open.
+- **Status:** Not adopted, 4 October 2026. The project lead retains the GitHub-hosted workflow and accepts its extra compile-feedback round trips; no environment-change task is queued. [Decision](../../Review/action-list.md#current-state).
 
 ### P1-03 — Each delivery is written up several times, and the file read first keeps growing
 
@@ -88,10 +88,10 @@ Steps 1–4 are complete within their stated bounds. The project lead adopted P1
 - **Examined:** server `27955c1b9260cd811ad6bc08f85feab43ad65028`; planning `145e0d40b869d56ae2568b485ffe8f50408ccf87`.
 - **What was seen:** `system-create-proof.rs` lines 37–186 and `system-read-proof.rs` lines 39–189 repeat fixture/process handling; their wire helpers repeat bounded HTTP parsing, with a legitimate HEAD-specific difference. Three Python wrappers repeat build and completion-marker handling. The evidence supplies pinned source links and identifies existing shared helpers.
 - **Why it matters:** future fixes can diverge as more capability proofs are added. No incorrect outcome, runtime delay or quantitative CI forecast is asserted.
-- **Kind:** maintenance recommendation, not a standards obligation or adopted requirement.
+- **Kind:** project maintenance recommendation, adopted below; not a standards obligation.
 - **Severity:** Low.
-- **Suggested owner:** project-lead decision; if adopted, incremental test-only factoring within #49/#50 as those proofs grow, with later runner integration at #80. No new framework or prerequisite issue proposed. Preserve independent expectations, ordered execution evidence and fault-control sensitivity.
-- **Status:** Open.
+- **Owner:** [#49](https://github.com/DGIWG-P507/glaux-server/issues/49) owns incremental extraction of shared process/fixture/wire mechanics as the System proofs grow; [#50](https://github.com/DGIWG-P507/glaux-server/issues/50) reuses them for Procedures; [#80](https://github.com/DGIWG-P507/glaux-server/issues/80) accounts for reuse in its already-planned independent runner. Preserve independently authored expectations, HEAD handling, isolation/cleanup and fault-control sensitivity. No new framework or Phase 1 prerequisite is introduced.
+- **Status:** Adopted, 4 October 2026; delivery pending under the three owning issues. Their dated acceptance checklists require a linked result in the closing record; any unfinished portion must name a next owner and needs project-lead approval if scope or timing changes. Do not mark this delivered merely because it is assigned. [Decision](../../Review/action-list.md#current-state).
 
 ### P1-05 — Source-permission unit tests miss the allowing case
 
@@ -103,8 +103,8 @@ Steps 1–4 are complete within their stated bounds. The project lead adopted P1
 - **Why it matters:** the fast unit layer does not protect the helper's allowing behavior. The separate System-create HTTP/database proof expects successful creation and source inspection indicates it would be affected; that proof was not executed against this mutant. Do not claim a whole-CI blind spot or production vulnerability from this sample.
 - **Kind:** test-strength recommendation, not a new standards rule or scope requirement.
 - **Severity:** Low.
-- **Suggested owner:** project-lead decision on a small test-only follow-up to #20/#24: add positive assertions for a nonempty resource-specific grant and an unrestricted grant, then show that the same constant-false fault fails the intended assertion. No production redesign or new testing framework is needed. Implementation remains unauthorized until adopted.
-- **Status:** Open. Neither this recommendation nor P1-04 is adopted by authorizing the diagnostic run.
+- **Owner:** [1.5.4 / #361](https://github.com/DGIWG-P507/glaux-server/issues/361), a small test-only follow-up to permission task #22 and the System path #24: add positive assertions for a nonempty resource-specific grant and an unrestricted grant, then show that the same constant-false fault fails the intended assertion. This corrects the earlier suggested #20 attribution: #20 introduced authentication; #22 owns action/source/resource permissions. No production redesign or new testing framework is needed.
+- **Status:** Adopted, 4 October 2026; not implemented. The [decision](../../Review/action-list.md#current-state) authorises publishing this task; its execution needs the next `proceed`. The original diagnostic approval did not itself adopt the recommendation. Record delivery once in the server PR and issue; gate 1 remains the project lead's decision.
 
 ## Format
 
