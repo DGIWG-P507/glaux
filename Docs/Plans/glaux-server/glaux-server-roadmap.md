@@ -1,14 +1,14 @@
 # Glaux Server Roadmap
 
-**Version:** 1.41<br>
-**Date:** 4 October 2026<br>
+**Version:** 1.42<br>
+**Date:** 22 October 2026<br>
 **Effort:** Glaux Server<br>
-**Status:** Original Phase 1 implementation complete (29 September 2026); adopted test-only follow-up 1.5.4 pending; review gate 1 pauses Phase 2. Per-issue delivery status lives in GitHub issues.<br>
+**Status:** Phase 1 including follow-up 1.5.4 complete; review gate 1 closed by the project lead; Phase 2 in progress with capability group 2.1 complete. Per-issue delivery status lives in GitHub issues.<br>
 **Depends On:** [Goal and Definition v1.10](glaux-server-goal-and-definition.md), Approved<br>
 **Implements:** [Implementation Guide v1.21][Guide], Baselined<br>
-**Implementation status:** The outline now has 304 tasks across nine phases and 45 groups. The 303 earlier task identities are unchanged. Phase 1's original tasks 1.1.1–1.5.3 (#3–#26 and #338) remain closed; its new test-only follow-up 1.5.4 / [#361](https://github.com/DGIWG-P507/glaux-server/issues/361) is pending. Review gate 1 pauses Phase 2. Implementation pauses at the fifteen review gates in §5.4. GitHub issues are the live per-issue status, and a phase or group completes only when all its constituent work passes. The action list's [Current state](Review/action-list.md#current-state) holds standing decisions. The historical #23 handoff remains in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
+**Implementation status:** The outline has 304 tasks across nine phases and 45 groups; task identities and dependencies are unchanged. Phase 1's tasks (#3–#26, #338 and [#361](https://github.com/DGIWG-P507/glaux-server/issues/361)) are complete, and the project lead closed [review gate 1 / #339](https://github.com/DGIWG-P507/glaux-server/issues/339) on 4 October. Group 2.1's twelve tasks (#27–#38) are complete; other Phase 2 groups remain to be implemented. The earliest open gate is [#340](https://github.com/DGIWG-P507/glaux-server/issues/340), blocking task 2.3.4 onward. Check live gates under §5.4 before each task. GitHub issues are the live per-issue status, and a phase or group completes only when all its constituent work passes. The action list's [Current state](Review/action-list.md#current-state) holds standing decisions. The historical #23 handoff remains in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
 
-**Revision summary:** The project lead's 4 October decision adds only test-fix leaf 1.5.4 for P1-05 and bounded test-maintenance acceptance items under 2.3.1, 2.3.2 and 2.6.1 for P1-04. The existing 2.3.1 dependency on group 1.5 now includes its new child. Partial OSH comparison evidence is accepted and further comparison work ended in the review charter; no missing check is claimed complete. P1-02's environment change is not adopted. Goal v1.10, Guide v1.21 and all other tasks remain unchanged; no code or gate closure is authorised by publishing this update.
+**Revision summary:** Records capability group 2.1 completion and reconciles the already-completed Phase 1 follow-up and project-lead gate decision. This is a progress update, not a scope or sequencing change. Goal v1.10, Guide v1.21, all 304 leaf definitions/dependencies and historical review evidence remain unchanged. No further implementation or gate closure is authorised by this update.
 
 ## 1. Purpose and Executive Summary
 
@@ -24,8 +24,8 @@ The numbered order is the default execution order. The dependency column identif
 
 | Phase | Main result | Prerequisites | Capability groups | Issue-sized subtasks | Status |
 |---|---|---|---:|---:|---|
-| 1. Running foundation and first registration | Buildable service; authorized System creation/read through real storage; initial tests and restore proof | Goal/Guide baseline and selected build/test environment | 5 | 26 | Original work complete; test follow-up 1.5.4 pending |
-| 2. Complete Part 1 resources | Descriptions, relationships, collections, representations, native filters and required writes | Phase 1 | 6 | 62 | Planned |
+| 1. Running foundation and first registration | Buildable service; authorized System creation/read through real storage; initial tests and restore proof | Goal/Guide baseline and selected build/test environment | 5 | 26 | Complete, including test follow-up 1.5.4 |
+| 2. Complete Part 1 resources | Descriptions, relationships, collections, representations, native filters and required writes | Phase 1 | 6 | 62 | In progress; group 2.1 complete |
 | 3. Observations, status and System Events | Schema-bound ordinary-JSON ingestion, retrieval and native querying | Phase 2 | 5 | 39 | Planned |
 | 4. Complete SWE payload encodings | SWE JSON, Text and Binary observation paths with exact value preservation; selected experimental Protobuf observation subset | Phase 3; shared component model from Phase 2 | 5 | 36 | Planned |
 | 5. Commands and feasibility | Full synchronous/asynchronous tasking, status/results and required mutations; selected Protobuf command operations | Phase 2 and Phase 4's shared contracts/codecs | 6 | 46 | Planned |
@@ -180,6 +180,7 @@ All implementation subtasks are initially **planned**, with **sizing target: one
 **Guide:** §§4.1–4.3, 4.6–4.7, 4.10, 6.1–6.3, 7.1, 13.
 
 1. **2.1 Complete the shared SWE component model — High.**
+   - Status: **Complete, 22 October 2026.** All twelve children (#27–#38) are closed; the final assembly delivery is [server PR #374](https://github.com/DGIWG-P507/glaux-server/pull/374). This completes bounded component/descriptor contracts and their tests, not executable payload codecs, stream/persistence integration or a conformance-class declaration.
    - Scope/deliverables: Implement all applicable scalar/range, record/vector, choice, array/matrix and geometry descriptions, references, units, constraints, nils and quality. Compile immutable contracts with bounded traversal and retain source artifacts.
    - Verification: Positive/negative fixtures cover every family, nested combinations, order, exact values, local dynamic-quality references, all four quality types, missing/nil distinctions and recursive abuse. Unknown-member acceptance is not semantic validation.
    - Dependencies: 1.2–1.3; execution slices should group related component families with their tests.
@@ -1067,9 +1068,9 @@ One iteration is a sizing target. If execution demonstrates that a leaf is too l
 The publication reconciliation above records the original issue set. Guide v1.4's approved response-test/audit amendments have been delivered to #15/#19/#22/#26/#80/#251/#254/#280/#283, v1.5's cache/order amendments to #151/#264 and #113/#233, v1.6's exchange/audit amendments to #239/#240/#287, v1.7's diagnostics-access amendment to #256, v1.8's post-backup-deletion amendments to #26/#126/#251/#252/#283, v1.9's per-relation spelling/comparison amendments to #56/#212/#214/#228, v1.10's latest-selection interpretation/supplemental fixtures to #112, v1.11's prerequisite/deployment-test qualifications to #80–#82/#121–#122/#271/#288, and v1.12's observation unknown-member policy to #98–#102. Guide v1.13 clarifies ControlStream metadata and Command/Feasibility admission for #156/#159/#160/#163/#164/#177/#180, preserving original bodies, earlier amendments and pins; current delivery and remaining decisions are in the [action checklist](Review/action-list.md). Follow-up documentation authorisations do not execute implementation tasks.
 
 **Current execution status:** GitHub issues record per-issue status and delivery; each closed issue's execution record names the next ready issue.
-- As of 29 September 2026, Phase 1 is complete: tasks 1.1.1–1.5.3 (#3–#26 and #338) are closed. The historical #23 handoff is in the [action list](Review/action-list.md#initial-discovery-handoff--task-146).
-- On 4 October 2026, the project lead added only the test-fix follow-up 1.5.4 / [#361](https://github.com/DGIWG-P507/glaux-server/issues/361), bringing the published outline to 304 tasks. The original 25 Phase 1 deliveries remain complete; the corrective task is not started. #49's expanded prerequisites include this new child of group 1.5.
-- Review gate 1 (§5.4) still pauses Phase 2. The four client studies are accepted; the lead has ended further OSH comparison with its partial evidence preserved. Next, on a new `proceed`, is 1.5.4, then the lead's gate decision. [Current decisions](Review/action-list.md#current-state).
+- Phase 1's original tasks 1.1.1–1.5.3 (#3–#26 and #338) and its adopted follow-up 1.5.4 / [#361](https://github.com/DGIWG-P507/glaux-server/issues/361) are complete. The project lead closed [gate 1 / #339](https://github.com/DGIWG-P507/glaux-server/issues/339) on 4 October. The accepted partial OSH evidence and ended comparison activity remain unchanged; missing checks are not converted into passes.
+- As of 22 October, all twelve group-2.1 tasks (#27–#38) are complete. [Server PR #374](https://github.com/DGIWG-P507/glaux-server/pull/374) records the final immutable-contract assembly, separate review and actual checks. This is not Phase 2 completion.
+- Next, only on a new `proceed`: [2.2.1 / #39](https://github.com/DGIWG-P507/glaux-server/issues/39), Common SensorML descriptive content. Its prerequisites are complete; earliest open gate [#340](https://github.com/DGIWG-P507/glaux-server/issues/340) blocks 2.3.4 onward, not #39. Recheck live issues/gates before starting. [Current decisions](Review/action-list.md#current-state).
 - This paragraph changes for approved planning decisions and capability-group/phase completion, not per-issue handoffs.
 
 The expanded issue set is complete and verified. Resume only one dependency-ready issue per subsequent authorised iteration. Later build/database work still depends on the approved-prerequisite inspection; missing tools are not permission to install them.
@@ -1328,6 +1329,8 @@ Version 1.39 records the project lead's 27 September 2026 decision to pause impl
 Version 1.40 records Phase 1 completion on 29 September 2026. Tasks 1.1.1–1.5.3 are closed, and review gate 1 now pauses Phase 2. It also records the project lead's decision that four client research studies (IDR-SRV-063 to IDR-SRV-066) precede the rest of the Phase 1 review. No task definition, ID or dependency changes. Goal v1.10 and Guide v1.21 are unchanged.
 
 Version 1.41 records the project lead's 4 October 2026 review dispositions: add test-only leaf 1.5.4 / #361 for P1-05 (304 tasks total, 26 in Phase 1), and bounded P1-04 maintenance checklists in existing #49/#50/#80. #49's existing group-1.5 dependency expands to include #361. The review charter accepts partial Step 5 evidence and ends further OSH work; P1-02 is not adopted. Earlier evidence, closed deliveries, all other task IDs/dependencies, Goal v1.10 and Guide v1.21 remain unchanged. Publication is not execution and gate 1 is not closed.
+
+Version 1.42 records group 2.1 completion on 22 October 2026 and reconciles the already-delivered #361 follow-up and project-lead closure of gate 1. The milestone update follows the standing group-completion rule, not a per-issue planning handoff. All 304 leaf definitions, IDs, dependencies, issue links and scope remain unchanged, as do Goal v1.10 and Guide v1.21. The next ready task is 2.2.1 / #39; this update does not authorise starting it or closing any gate.
 
 Use version updates for material sequencing or scope changes. Technical design changes belong in the Guide; mission/scope changes belong in the Goal first. Keep task-to-Guide/test connections current without copying the standards into a separate requirement list. Historical research acceptance and findings remain unchanged.
 

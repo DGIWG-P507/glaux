@@ -6,7 +6,7 @@
 
 ## Current state
 
-**Updated 4 October 2026. Read this section first.** It changes only when the project lead makes a decision or a Roadmap capability group or phase completes.
+**Updated 22 October 2026. Read this section first.** It changes only when the project lead makes a decision or a Roadmap capability group or phase completes.
 
 **Where delivery status lives.** Each implementation issue's delivery is recorded once: in its server PR (evidence and separate-review record) and in the issue's execution record, which also names the next ready issue. GitHub issues are the live per-issue status.
 - No per-issue section is added here, and no per-issue planning PR is made.
@@ -14,11 +14,12 @@
 - The per-issue handoff sections below, for tasks 1.1.2–1.4.6 (#4–#23), are frozen in place so existing links keep working.
 - This is the project lead's decision of 27 September 2026, adopting [Phase 1 implementation review finding P1-03](../Implementation-Reviews/Phase-1/findings.md#p1-03--each-delivery-is-written-up-several-times-and-the-file-read-first-keeps-growing).
 
-**Progress on 4 October 2026:**
-- Done: the original Phase 1 implementation is complete. Tasks 1.1.1–1.5.3 remain closed (#3–#26, and [#338](https://github.com/DGIWG-P507/glaux-server/issues/338) for the CI time budget). Claude (Anthropic) implemented #25 and #26 while Codex was out of usage. The newly adopted test-only follow-up 1.5.4 is pending; completed work is not reopened.
-- [Review gate 1](../glaux-server-roadmap.md#54-review-gates) now pauses Phase 2 for the Phase 1 review.
+**Progress on 22 October 2026:**
+- Done: Phase 1, including the test-only P1-05 follow-up [1.5.4 / #361](https://github.com/DGIWG-P507/glaux-server/issues/361). Tasks 1.1.1–1.5.3 remain closed (#3–#26, and [#338](https://github.com/DGIWG-P507/glaux-server/issues/338) for the CI time budget). Claude (Anthropic) implemented #25 and #26 while Codex was out of usage. Completed work is not reopened.
+- The project lead closed [review gate 1 / #339](https://github.com/DGIWG-P507/glaux-server/issues/339) on 4 October. Phase 2 is in progress, not complete.
+- Done: all twelve tasks in **group 2.1, the shared SWE component model** (#27–#38). [Server PR #374](https://github.com/DGIWG-P507/glaux-server/pull/374) records the final immutable-contract assembly and its checks/review. This supplies bounded component descriptions and compiled plans; later tasks still own executable codecs, stream/persistence integration and conformance evidence. [Roadmap v1.42](../glaux-server-roadmap.md) records this group milestone.
 - The four client studies are accepted and review steps 1–4 are complete within their recorded limits. On 4 October the project lead accepted Step 5's [partial comparison evidence](../Implementation-Reviews/Phase-1/evidence/08-opensensorhub-comparison-results.md) and ended that activity. The proposed additional OSH run is not adopted; missing checks remain missing, not passed. This explicitly replaces the charter's requirement to complete all Step 5 groups before the gate decision, without closing the gate or waiving other recorded limits.
-- Next, only on a new `proceed`: [1.5.4 / #361](https://github.com/DGIWG-P507/glaux-server/issues/361), the focused P1-05 permission-unit-test fix. Then return to the project lead for gate 1, not another review campaign. This documentation/issue-publication iteration runs no tests and starts no implementation.
+- Next, only on a new `proceed`: [2.2.1 / #39](https://github.com/DGIWG-P507/glaux-server/issues/39), Common SensorML descriptive content. Its prerequisites are complete. The earliest open gate, [#340](https://github.com/DGIWG-P507/glaux-server/issues/340), blocks 2.3.4 onward, not #39; recheck live gates and claims before starting.
 - Check GitHub for anything later.
 
 **Review gates:** before starting any server task, check the open [`review-gate` issues](https://github.com/DGIWG-P507/glaux-server/issues?q=is%3Aopen+label%3Areview-gate). The fifteen gates, what each blocks, and the rule are in [Roadmap §5.4](../glaux-server-roadmap.md#54-review-gates).
@@ -43,7 +44,7 @@
 | **End Step 5 with accepted partial evidence.** No further OSH comparison or diagnostic correction run. Preserve the original results and their unrun checks. This supersedes evidence 08's completion-run recommendation and the charter's full-Step-5 completion expectation for this gate only; it is not interoperability certification or gate closure. | 4 Oct 2026 | Project lead accepted the bounded closure direction and authorised this documentation/issue update through `proceed`; [Phase 1 review disposition](../Implementation-Reviews/Phase-1/README.md#project-lead-disposition--4-october-2026). |
 | **P1-05 now; P1-04 in existing later work; P1-02 not adopted.** Add only test-fix leaf 1.5.4 / [#361](https://github.com/DGIWG-P507/glaux-server/issues/361), for the next authorised implementation iteration. Adopt incremental test-plumbing maintenance under [#49](https://github.com/DGIWG-P507/glaux-server/issues/49), reuse under [#50](https://github.com/DGIWG-P507/glaux-server/issues/50), and later runner integration under [#80](https://github.com/DGIWG-P507/glaux-server/issues/80); no new framework or Phase 1 blocker. Retain GitHub-hosted compilation with no environment-change task. | 4 Oct 2026 | [Findings and owning issues](../Implementation-Reviews/Phase-1/findings.md); Roadmap v1.41 records the one new test-only leaf and bounded acceptance additions. Future issue checklists require a linked disposition, so the work does not depend on conversation memory. |
 
-P1-05 and P1-04 are adopted but not delivered; P1-02 is not adopted. Their owners and completion evidence belong in the linked server issues/PRs. No new research, repeat scan/comparison, production redesign, Phase 2 work or gate closure is authorised here. Earlier evidence and the historical sections below are unchanged.
+P1-05 is delivered under #361. P1-04 remains assigned to later #49/#50/#80, not forgotten or claimed delivered; P1-02 is not adopted. Their completion evidence belongs in the linked server issues/PRs. No new research, repeat scan/comparison, production redesign, further implementation or gate closure is authorised by this milestone update. Earlier evidence and the historical sections below are unchanged.
 
 ## The recommendation in plain English
 
